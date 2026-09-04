@@ -1,0 +1,50 @@
+name: apply-day1-audit-staging
+
+on:
+  push:
+    branches:
+      - day1-audit-stage-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct and verify audited payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat \
+            .audit/part00 .audit/part01 .audit/part02 .audit/part03 \
+            .audit/part04 .audit/part05 .audit/part06 .audit/part07 \
+            .audit/part08 .audit/part09 .audit/part10 \
+            > /tmp/day1_audit_payload.tar.gz
+          echo "595a3c9a62101d8e07f25b87ca257080c8c6a8a6926eb6facc78c4ecc0b179bb  /tmp/day1_audit_payload.tar.gz" | sha256sum -c -
+          file_count="$(tar -tzf /tmp/day1_audit_payload.tar.gz | grep -v '/$' | wc -l | tr -d ' ')"
+          test "$file_count" = "111"
+          tar -xzf /tmp/day1_audit_payload.tar.gz -C .
+          rm -rf .audit
+          rm -f .github/workflows/apply-day1-audit-staging.yml
+
+      - name: Pedagogy gate
+        run: python scripts/pedagogy_check.py
+
+      - name: Quality gate
+        run: python scripts/quality_check.py
+
+      - name: Commit clean audited tree to staging
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "staging: apply audited Day 01 repair"
+          git push origin HEAD:day1-audit-stage-20260904
