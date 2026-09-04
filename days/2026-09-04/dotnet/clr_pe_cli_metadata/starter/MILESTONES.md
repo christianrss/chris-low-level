@@ -1,0 +1,8 @@
+- [x] DOS/PE signatures
+- [x] PE32/PE32+ CLI directory
+- [x] RVA-to-file mapping
+- [x] CLI header metadata RVA
+- [x] BSJB metadata signature
+- [ ] metadata version string + stream headers
+- [ ] #Strings/#Blob/#GUID/#US heaps
+- [ ] TypeDef/MethodDef tables

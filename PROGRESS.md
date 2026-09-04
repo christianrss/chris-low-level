@@ -28,3 +28,6 @@ Do not create dozens of shallow projects. Deepen the milestone projects and intr
 
 - Day 02 implemented: arena allocator, tensor/strides matmul, instrumented sorting research, state-vector quantum simulator, graphical OS reference compositor, debugger protocol v1, ELF64 defensive parsing.
 - Long-term roadmap explicitly expanded to graphical OS + first-party debugger, multimedia creative stack, game engine, algorithms, quantum and additional research/system gaps.
+- Started four parallel managed/runtime tracks: `chris-dotnet-bench`, `chris-dotnet-pe`, `chris-node-streaming`, and `chris-js`.
+- .NET/C# senior production engineering now remains permanently parallel to CLR/CIL/JIT/GC from-scratch work; Node.js/TypeScript senior production engineering remains permanently parallel to JavaScript VM/JIT/V8/libuv/event-loop work.
+- Node and C++ managed/runtime projects were executed locally; .NET projects are structurally complete but were not executed because the validation container has no .NET SDK.

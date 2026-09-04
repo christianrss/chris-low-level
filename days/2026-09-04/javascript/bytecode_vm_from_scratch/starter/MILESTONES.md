@@ -1,0 +1,12 @@
+- [x] lexer
+- [x] recursive-descent parser
+- [x] stack bytecode
+- [x] bytecode VM
+- [x] globals + arithmetic + print
+- [ ] explicit AST
+- [ ] functions and lexical scopes
+- [ ] closures
+- [ ] objects/shapes
+- [ ] GC
+- [ ] IR/SSA JIT
+- [ ] type feedback + deopt

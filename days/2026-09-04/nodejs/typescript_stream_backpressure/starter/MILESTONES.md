@@ -1,0 +1,8 @@
+- [x] bounded line framing
+- [x] fragmented chunk tests
+- [x] backpressure demo
+- [x] benchmark harness
+- [ ] socket integration
+- [ ] AbortController cancellation
+- [ ] AsyncLocalStorage trace context
+- [ ] worker-thread CPU stage

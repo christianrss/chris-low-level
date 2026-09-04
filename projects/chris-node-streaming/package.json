@@ -1,0 +1,10 @@
+{
+  "name": "chris-node-streaming",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "bench": "node --experimental-strip-types benchmarks/bench.ts",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  }
+}

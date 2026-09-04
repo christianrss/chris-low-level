@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/Chris.DotNet.Buffers/Chris.DotNet.Buffers.csproj" />
+  <Project Path="tests/Chris.DotNet.Bench.Tests/Chris.DotNet.Bench.Tests.csproj" />
+  <Project Path="benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj" />
+</Solution>

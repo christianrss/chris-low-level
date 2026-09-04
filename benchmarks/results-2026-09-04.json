@@ -22,5 +22,13 @@
     "chris-os": {"width": 640, "height": 360, "frames": 40, "seconds": 0.020634, "fps": 1938.54},
     "chris-debugger": {"packets": 300000, "seconds": 0.0490019, "packets_per_s": 6122210},
     "chris-binary-toolkit-elf64": {"headers": 300000, "seconds": 0.506625, "headers_per_s": 592154}
+  },
+  "node_streaming_addendum": {
+    "node": "v22.16.0",
+    "lines": 100000,
+    "warmup_runs": 2,
+    "samples_ms": [3930.8441980000007, 3811.453771999999, 4068.854889000002, 4047.092413999999, 4227.296698000002],
+    "median_ms": 4047.092413999999,
+    "local_only": true
   }
 }

@@ -1,0 +1,5 @@
+- [x] Span/BinaryPrimitives framing
+- [x] ArrayPool owner
+- [ ] System.IO.Pipelines integration
+- [ ] Socket server + cancellation
+- [ ] allocation/throughput regression harness
