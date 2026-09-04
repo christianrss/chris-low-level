@@ -17,10 +17,17 @@ static void run_case(const std::string& name, const std::vector<int>& input) {
     const auto quick_stats = quick_sort(quick_values);
     const auto quick_end = std::chrono::steady_clock::now();
 
-    const auto merge_us = std::chrono::duration_cast<std::chrono::microseconds>(merge_end - merge_start).count();
-    const auto quick_us = std::chrono::duration_cast<std::chrono::microseconds>(quick_end - quick_start).count();
+    const auto merge_us = std::chrono::duration_cast<std::chrono::microseconds>(
+        merge_end - merge_start).count();
+    const auto quick_us = std::chrono::duration_cast<std::chrono::microseconds>(
+        quick_end - quick_start).count();
 
-    std::cout << name << " n=" << input.size() << " merge_us=" << merge_us << " merge_cmp=" << merge_stats.comparisons << " quick_us=" << quick_us << " quick_cmp=" << quick_stats.comparisons << "\n";
+    std::cout << name
+              << " n=" << input.size()
+              << " merge_us=" << merge_us
+              << " merge_cmp=" << merge_stats.comparisons
+              << " quick_us=" << quick_us
+              << " quick_cmp=" << quick_stats.comparisons << "\n";
 }
 
 int main() {

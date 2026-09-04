@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.20)
+project(chris_tensor LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_library(chris_tensor src/tensor.cpp)
+target_include_directories(chris_tensor PUBLIC include)
+if(MSVC)
+  target_compile_options(chris_tensor PRIVATE /W4 /permissive-)
+else()
+  target_compile_options(chris_tensor PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+add_executable(tensor_tests tests/tensor_tests.cpp)
+target_link_libraries(tensor_tests PRIVATE chris_tensor)
+
+option(CHRIS_BUILD_BENCHMARKS "Build benchmark targets" OFF)
+if(CHRIS_BUILD_BENCHMARKS)
+  add_executable(tensor_benchmark benchmarks/tensor_benchmark.cpp)
+  target_link_libraries(tensor_benchmark PRIVATE chris_tensor)
+endif()
+
+enable_testing()
+add_test(NAME tensor_tests COMMAND tensor_tests)

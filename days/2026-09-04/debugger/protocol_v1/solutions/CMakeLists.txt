@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.20)
+project(chris_debugger LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_library(chris_debug_protocol src/protocol.cpp)
+target_include_directories(chris_debug_protocol PUBLIC include)
+if(MSVC)
+  target_compile_options(chris_debug_protocol PRIVATE /W4 /permissive-)
+else()
+  target_compile_options(chris_debug_protocol PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+add_executable(debugger_tests tests/debugger_tests.cpp)
+target_link_libraries(debugger_tests PRIVATE chris_debug_protocol)
+
+option(CHRIS_BUILD_BENCHMARKS "Build benchmark targets" OFF)
+if(CHRIS_BUILD_BENCHMARKS)
+  add_executable(debugger_benchmark benchmarks/debugger_benchmark.cpp)
+  target_link_libraries(debugger_benchmark PRIVATE chris_debug_protocol)
+endif()
+
+enable_testing()
+add_test(NAME debugger_tests COMMAND debugger_tests)
