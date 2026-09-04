@@ -26,7 +26,7 @@ The target is not to collect tutorial projects. The target is to build **vertica
 ## Repository model
 
 ```text
-days/YYYY-MM-DD/   complete pedagogical source/material for that day
+days/YYYY-MM-DD/   complete pedagogical material for that day
 projects/          cumulative portfolio-quality implementations
 benchmarks/        reproducible measurements + small result files
 research/          hypotheses, experiments, ablations and conclusions
@@ -36,8 +36,6 @@ scripts/           validation/build/benchmark automation
 ```
 
 `days/` intentionally contains `starter/` and `solutions/`. `projects/` contains the clean cumulative software that should look like normal engineering repositories.
-
-The **master DOCX and package manifest are distributed in the daily ZIP**, not versioned in Git. This keeps binary/document-package churn out of the source history while preserving the full study artifact in each delivery.
 
 ## Day 01 implemented projects
 
@@ -76,7 +74,7 @@ Every mature project should eventually show:
 
 ## Start
 
-Read [`START_HERE.md`](START_HERE.md), then follow the Day 01 material under [`days/2026-09-03/`](days/2026-09-03/). The matching master DOCX is inside the daily ZIP delivery.
+Read [`START_HERE.md`](START_HERE.md), then open the master Day 01 DOCX under `days/2026-09-03/`.
 
 Portable repository validation:
 
@@ -88,4 +86,8 @@ python scripts/run_all_benchmarks.py
 
 The lab is intentionally honest about what was and was not tested. Hardware-specific, Windows-specific, firmware and QEMU milestones are documented separately until the required environment is available.
 
-For the complete mapping from the curriculum directives to Day 01 evidence and future milestones, see [`docs/DIRECTIVES_COVERAGE.md`](docs/DIRECTIVES_COVERAGE.md).
+For the complete mapping from the user-defined curriculum directives to Day 01 evidence and future milestones, see [`docs/DIRECTIVES_COVERAGE.md`](docs/DIRECTIVES_COVERAGE.md).
+
+## Day 02 — 2026-09-04
+
+Adds `chris-arena`, `chris-tensor`, `chris-algorithms`, `chris-qsim`, the first host-reference milestone of `chris-os`, the first protocol milestone of `chris-debugger`, and ELF64 parsing in `chris-binary-toolkit`. See `days/2026-09-04/README.md`.

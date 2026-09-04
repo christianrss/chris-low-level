@@ -23,3 +23,8 @@ Boot/UEFI/firmware, toolchains/linkers, kernels/drivers, hardware architecture, 
 
 ### Next emphasis
 Do not create dozens of shallow projects. Deepen the milestone projects and introduce new repositories only when they have source, tests, docs and a measurable objective.
+
+## 2026-09-04
+
+- Day 02 implemented: arena allocator, tensor/strides matmul, instrumented sorting research, state-vector quantum simulator, graphical OS reference compositor, debugger protocol v1, ELF64 defensive parsing.
+- Long-term roadmap explicitly expanded to graphical OS + first-party debugger, multimedia creative stack, game engine, algorithms, quantum and additional research/system gaps.

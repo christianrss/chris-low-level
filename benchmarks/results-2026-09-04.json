@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-04",
+  "environment": {
+    "os": "Linux 6.18.35 x86_64",
+    "compiler": "GCC/G++ 14.2.0",
+    "python": "3.13.5"
+  },
+  "day02": {
+    "chris-arena": {"allocations": 2000000, "arena_ns": 9390205, "heap_ns": 114239737},
+    "chris-tensor": {"n": 128, "repetitions": 4, "seconds": 0.0103879, "gflops": 1.61508},
+    "chris-algorithms": {
+      "random": {"merge_us": 980, "merge_comparisons": 147678, "quick_us": 791, "quick_comparisons": 193075},
+      "sorted": {"merge_us": 235, "merge_comparisons": 79312, "quick_us": 51486, "quick_comparisons": 71609635},
+      "reversed": {"merge_us": 229, "merge_comparisons": 84331, "quick_us": 50107, "quick_comparisons": 71792768},
+      "duplicates": {"merge_us": 627, "merge_comparisons": 144778, "quick_us": 2657, "quick_comparisons": 4561956}
+    },
+    "chris-qsim": [
+      {"qubits": 10, "amplitudes": 1024, "bytes": 16384, "gates_per_s": 705617},
+      {"qubits": 14, "amplitudes": 16384, "bytes": 262144, "gates_per_s": 41872.4},
+      {"qubits": 18, "amplitudes": 262144, "bytes": 4194304, "gates_per_s": 2548.94}
+    ],
+    "chris-os": {"width": 640, "height": 360, "frames": 40, "seconds": 0.020634, "fps": 1938.54},
+    "chris-debugger": {"packets": 300000, "seconds": 0.0490019, "packets_per_s": 6122210},
+    "chris-binary-toolkit-elf64": {"headers": 300000, "seconds": 0.506625, "headers_per_s": 592154}
+  }
+}
