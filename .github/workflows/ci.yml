@@ -28,7 +28,7 @@ jobs:
       - name: Build and test with Visual Studio generator
         shell: pwsh
         run: |
-          $projects = @('chris-vm','chris-autograd','chris-disassembler','chris-binary-toolkit','chris-renderer')
+          $projects = @('chris-vm','chris-autograd','chris-disassembler','chris-binary-toolkit','chris-renderer','chris-assembly-lab','chris-cpu','chris-nasm','chris-boot','chris-terminal','chris-http','chris-p2p','chris-chain','chris-driver-lab')
           foreach ($p in $projects) {
             cmake -S "projects/$p" -B "build/$p" -A x64
             cmake --build "build/$p" --config Release

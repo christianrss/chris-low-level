@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20)
+project(chris_p2p NONE)
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+enable_testing()
+add_test(NAME gossip_tests COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_gossip.py)

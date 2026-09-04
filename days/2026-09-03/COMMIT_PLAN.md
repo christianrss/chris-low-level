@@ -1,15 +1,44 @@
-# Suggested Day 01 commit plan
+# Suggested Day 01 Commit Plan
 
-Use small commits after you actually complete each step. Suggested messages are examples, not requirements.
+Do not make one giant "day 1" commit. A stronger history separates tests, features and documentation.
 
-1. `test(vm): define checksum and execution expectations`
-2. `feat(vm): implement CLVM loader and interpreter`
-3. `test(ai): add gradient and autograd checks`
-4. `feat(ai): implement manual training and scalar autograd`
-5. `test(re): add string extractor cases`
-6. `feat(re): implement benign binary string extractor`
-7. `test(disasm): add ELF/PE inspection regression checks`
-8. `feat(disasm): decode initial x86-64 instructions`
-9. `test(graphics): add transform and physics regression tests`
-10. `feat(graphics): implement shared real-time scene core`
-11. `bench(day01): record reproducible baseline results`
+```text
+test(vm): define binary-format and execution expectations
+feat(vm): implement CLVM loader and interpreter
+
+test(ai): add gradient and autograd checks
+feat(ai): implement manual training and scalar autograd
+
+test(disasm): add executable inspection regressions
+feat(disasm): decode initial x86-64 instructions
+
+test(cpu): define fetch/decode/execute invariants
+feat(cpu): implement tiny CPU core
+
+test(asm): define ABI sum behavior
+feat(asm): implement x86-64 System V sum
+
+test(assembler): define exact x86-64 byte encodings
+feat(assembler): emit mov-imm64 and core opcodes
+
+test(boot): verify boot image size and signature
+feat(boot): generate first 512-byte BIOS sector
+
+test(terminal): define fragmented CSI behavior
+feat(terminal): implement incremental ESC/CSI parser
+
+test(http): define fragmented request behavior
+feat(http): implement incremental request parser
+
+test(p2p): define duplicate-suppression invariants
+feat(p2p): implement deterministic gossip
+
+test(chain): define tamper and PoW validation
+feat(chain): implement local toy hash chain
+
+test(driver): define descriptor ownership invariants
+feat(driver): implement descriptor-ring simulator
+
+bench(day01): record consolidated baselines
+docs(day01): document architecture and research roadmap
+```

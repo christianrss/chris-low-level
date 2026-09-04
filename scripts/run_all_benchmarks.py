@@ -1,83 +1,38 @@
 from __future__ import annotations
-
-import subprocess
-import sys
+import os, shutil, subprocess, sys
 from pathlib import Path
-
 ROOT = Path(__file__).resolve().parents[1]
-BUILD_ROOT = ROOT / ".local-build"
-
-
-def build(name: str) -> Path:
-    source = ROOT / "projects" / name
-    build_dir = BUILD_ROOT / name
-    if not (build_dir / "CMakeCache.txt").exists():
-        subprocess.run(
-            [
-                "cmake",
-                "-S",
-                str(source),
-                "-B",
-                str(build_dir),
-                "-DCMAKE_BUILD_TYPE=Release",
-            ],
-            check=True,
-        )
-        subprocess.run(
-            ["cmake", "--build", str(build_dir), "--config", "Release"],
-            check=True,
-        )
-    return build_dir
-
-
-def executable(build_dir: Path, name: str) -> Path:
-    candidates = [
-        build_dir / name,
-        build_dir / "Release" / f"{name}.exe",
-        build_dir / f"{name}.exe",
-    ]
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate
-    raise FileNotFoundError(name)
-
-
-vm_build = build("chris-vm")
-subprocess.run(
-    [
-        sys.executable,
-        str(ROOT / "projects/chris-vm/benchmarks/benchmark.py"),
-        str(executable(vm_build, "clvm")),
-    ],
-    check=True,
-)
-
-subprocess.run(
-    [sys.executable, str(ROOT / "projects/chris-autograd/benchmarks/benchmark.py")],
-    check=True,
-)
-
-dis_build = build("chris-disassembler")
-subprocess.run(
-    [
-        sys.executable,
-        str(ROOT / "projects/chris-disassembler/benchmarks/benchmark.py"),
-        str(executable(dis_build, "miniobjdump")),
-        str(executable(dis_build, "test_target")),
-    ],
-    check=True,
-)
-
-subprocess.run(
-    [
-        sys.executable,
-        str(ROOT / "projects/chris-binary-toolkit/benchmarks/benchmark.py"),
-    ],
-    check=True,
-)
-
-render_build = build("chris-renderer")
-subprocess.run(
-    [str(executable(render_build, "core_benchmark"))],
-    check=True,
-)
+BUILD = ROOT / '.local-build-bench'
+CPP_PROJECTS = {
+    'chris-cpu': 'cpu_benchmark',
+    'chris-terminal': 'terminal_benchmark',
+    'chris-http': 'http_benchmark',
+    'chris-driver-lab': 'driver_ring_benchmark',
+}
+if os.name != 'nt' and os.uname().machine in ('x86_64','amd64'):
+    CPP_PROJECTS['chris-assembly-lab'] = 'assembly_benchmark'
+for name, exe in CPP_PROJECTS.items():
+    build = BUILD / name
+    if build.exists(): shutil.rmtree(build)
+    subprocess.run(
+        [
+            'cmake',
+            '-S', str(ROOT / 'projects' / name),
+            '-B', str(build),
+            '-DCMAKE_BUILD_TYPE=Release',
+            '-DCHRIS_BUILD_BENCHMARKS=ON',
+        ],
+        check=True,
+    )
+    subprocess.run(['cmake','--build',str(build),'--config','Release'],check=True)
+    suffix = '.exe' if os.name == 'nt' else ''
+    candidates = [build/(exe+suffix), build/'Release'/(exe+suffix)]
+    binary = next((p for p in candidates if p.exists()), None)
+    if binary: subprocess.run([str(binary)],check=True)
+for script in [
+    ROOT/'projects/chris-nasm/benchmarks/benchmark.py',
+    ROOT/'projects/chris-p2p/benchmarks/benchmark.py',
+    ROOT/'projects/chris-chain/benchmarks/benchmark.py',
+    ROOT/'projects/chris-autograd/benchmarks/benchmark.py',
+]:
+    subprocess.run([sys.executable, str(script)], check=True)

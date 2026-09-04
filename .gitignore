@@ -1,14 +1,15 @@
-# CMake / Ninja
+# Generic build outputs
 build/
 build-*/
 cmake-build-*/
+.local-build/
+.local-build-bench/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
-.ninja_deps
-.ninja_log
+Testing/
 
 # Visual Studio / MSVC
 .vs/
@@ -22,53 +23,48 @@ compile_commands.json
 *.idb
 *.tlog
 *.lastbuildstate
-x64/
-x86/
-Debug/
-Release/
-RelWithDebInfo/
-MinSizeRel/
 
-# Native binaries/libraries
+# Executables/libraries
 *.exe
 *.dll
+*.so
+*.so.*
+*.dylib
 *.lib
 *.a
-*.so
-*.dylib
 *.out
 
 # Python
 __pycache__/
-*.py[cod]
+*.pyc
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
 .venv/
 venv/
 
 # Rust
 target/
 
-# CUDA / profiling
-*.cubin
-*.fatbin
-*.ptx
-*.nsys-rep
-*.ncu-rep
-
-# Generated lab outputs
+# Generated lab artifacts
 *.clvm
-benchmark_results.local.*
-profile-results/
-frames/
-captures/
+*.bin
+*.img
+*.iso
+*.qcow2
+*.vhd
+*.vhdx
+*.pcap
+*.pcapng
 
-# Editors / OS
-.vscode/
-.idea/
+# Logs/temp
+*.log
+*.tmp
+*.bak
+*.swp
 .DS_Store
-Thumbs.db
 
-# Daily delivery archives should be GitHub Release assets, not Git history
-Laboratorio_LowLevel_Unificado_*.zip
+# Large ML artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf

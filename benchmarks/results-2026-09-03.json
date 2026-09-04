@@ -1,21 +1,101 @@
 {
   "date": "2026-09-03",
   "environment": {
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
     "os": "Linux 6.18.35 x86_64",
-    "compiler": "GCC 14.2.0",
+    "compiler": "GCC/G++ 14.2.0",
     "python": "3.13.5",
     "cmake": "3.31.6",
-    "note": "validation container; rerun on user hardware"
+    "note": "validation container; rerun on user hardware before publishing comparisons"
   },
   "results": {
-    "chris-vm": {"median_ms": 1.1774, "runs": 30, "includes_process_startup": true},
-    "chris-autograd-python": {"median_ms": 0.5086, "runs": 50},
-    "chris-disassembler": {"median_ms": 1.2773, "runs": 30, "target_bytes": 15960, "includes_process_startup": true},
+    "chris-vm": {
+      "median_ms": 1.1774,
+      "runs": 30,
+      "includes_process_startup": true
+    },
+    "chris-autograd-python": {
+      "median_ms": 0.5061,
+      "runs": 50,
+      "min_ms": 0.4938,
+      "max_ms": 0.7556
+    },
+    "chris-disassembler": {
+      "median_ms": 1.2773,
+      "runs": 30,
+      "includes_process_startup": true
+    },
     "chris-binary-toolkit": [
-      {"size_mib": 1, "throughput_mib_s": 16.31},
-      {"size_mib": 4, "throughput_mib_s": 16.24},
-      {"size_mib": 8, "throughput_mib_s": 16.28}
+      {
+        "size_mib": 1,
+        "throughput_mib_s": 16.31
+      },
+      {
+        "size_mib": 4,
+        "throughput_mib_s": 16.24
+      },
+      {
+        "size_mib": 8,
+        "throughput_mib_s": 16.28
+      }
     ],
-    "chris-renderer-core": {"iterations": 1000000, "ns_per_iteration": 162.938}
+    "chris-renderer-core": {
+      "iterations": 1000000,
+      "ns_per_iteration": 162.938
+    },
+    "chris-assembly-lab": {
+      "c_seconds": 0.011554,
+      "asm_seconds": 0.023541,
+      "note": "simple scalar call/loop microbenchmark"
+    },
+    "chris-cpu": {
+      "instructions": 650000,
+      "mips": 123.239,
+      "nanoseconds": 5274306
+    },
+    "chris-nasm": {
+      "lines": 800000,
+      "seconds": 0.564002,
+      "lines_per_second": 1418434,
+      "output_bytes": 230000
+    },
+    "chris-terminal": {
+      "mib": 20.0003,
+      "seconds": 0.044705,
+      "throughput_mib_s": 447.385
+    },
+    "chris-http": {
+      "requests": 200000,
+      "seconds": 0.119699,
+      "requests_per_second": 1670860
+    },
+    "chris-p2p": {
+      "peers": 2000,
+      "reached": 2000,
+      "deliveries": 2000,
+      "seconds": 0.002543
+    },
+    "chris-chain": [
+      {
+        "difficulty": 1,
+        "median_ms": 0.072,
+        "median_nonce": 15.5
+      },
+      {
+        "difficulty": 2,
+        "median_ms": 0.816,
+        "median_nonce": 191.5
+      },
+      {
+        "difficulty": 3,
+        "median_ms": 19.758,
+        "median_nonce": 4543.5
+      }
+    ],
+    "chris-driver-lab": {
+      "completed": 2000000,
+      "seconds": 0.0192417,
+      "descriptors_per_second": 103941000
+    }
   }
 }

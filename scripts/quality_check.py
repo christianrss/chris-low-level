@@ -11,7 +11,11 @@ checked = 0
 for path in ROOT.rglob("*"):
     if not path.is_file() or path.suffix.lower() not in TEXT_EXT:
         continue
-    if any(part in {"build", "target", ".git", ".local-build"} or part.startswith("build-") for part in path.parts):
+    if any(
+        part in {"build", "target", ".git", ".local-build", ".local-build-bench"}
+        or part.startswith("build-")
+        for part in path.parts
+    ):
         continue
 
     text = path.read_text(encoding="utf-8", errors="replace")
