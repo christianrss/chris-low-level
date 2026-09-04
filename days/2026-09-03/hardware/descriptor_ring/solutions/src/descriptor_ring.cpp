@@ -1,3 +1,7 @@
+// PEDAGOGY-SOLUTION: RING-SUBMIT-01
+// PEDAGOGY-SOLUTION: RING-COMPLETE-01
+// PEDAGOGY-SOLUTION: RING-RECLAIM-01
+
 #include "descriptor_ring.hpp"
 #include <stdexcept>
 

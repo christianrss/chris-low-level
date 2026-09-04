@@ -37,5 +37,11 @@ if current.ttl > 0:
 
 Crie A-B-C-A. Uma mensagem com TTL alto deve gerar exatamente 3 entregas, não um loop infinito. Depois crie A-B-C-D com TTL=1 e espere apenas A e B.
 
-A solução final está em `solutions/gossip.py`.
+Agora compare sua implementação com a seção acima e rode os testes antes de consultar `solutions/gossip.py`.
 
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `P2P-GOSSIP-01` — `starter/gossip.py` → `solutions/gossip.py`.

@@ -24,3 +24,7 @@ endif()
 
 add_executable(core_tests tests/core_tests.cpp)
 target_link_libraries(core_tests PRIVATE scene_core)
+
+
+enable_testing()
+add_test(NAME scene_core_tests COMMAND core_tests)

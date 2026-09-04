@@ -446,9 +446,9 @@ Monte e execute `countdown.asm`. Saída:
 
 ---
 
-## Desafio - como adicionar LOAD/STORE
+## Prévia de próximo milestone — LOAD/STORE (não é TODO obrigatório do starter de hoje)
 
-Este desafio não exige copiar uma solução pronta; ele ensina design de ISA.
+Esta seção é uma **prévia de design**, não uma implementação exigida para concluir o Day 01. O starter/solution desta entrega terminam em `JMP/JZ`; LOAD/STORE entram em milestone posterior. O objetivo aqui é entender quais componentes precisam mudar juntos.
 
 ### 1. Adicione memória linear à VM
 
@@ -485,3 +485,14 @@ Por exemplo:
 ### 6. Atualize o validador
 
 O validador Rust precisa reconhecer que LOAD/STORE consomem um byte de imediato. Essa é a principal lição: **quando o formato muda, todos os produtores e consumidores precisam mudar juntos**.
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `CLVM-C-FNV-01` — `starter/src/clvm_loader.c` → `solutions/src/clvm_loader.c`.
+- `CLVM-C-HEADER-01` — `starter/src/clvm_loader.c` → `solutions/src/clvm_loader.c`.
+- `CLVM-VM-ARITH-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
+- `CLVM-VM-JUMP-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
+- `CLVM-PY-FNV-01` — `starter/tools/assemble.py` → `solutions/tools/assemble.py`.
+- `CLVM-ASM-LABELS-01` — `starter/tools/assemble.py` → `solutions/tools/assemble.py`.

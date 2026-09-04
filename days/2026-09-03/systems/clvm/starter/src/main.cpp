@@ -59,8 +59,8 @@ int run(const clvm_image& image, bool trace) {
             case Op::Halt:
                 return 0;
 
-            // TODO MEDIUM: implement ADD/SUB/MUL/DIV/DUP/PRINT with checks.
-            // TODO HARD: implement JMP/JZ with signed i16 relative offsets.
+            // TODO [CLVM-VM-ARITH-01]: implement ADD/SUB/MUL/DIV/DUP/PRINT with checks.
+            // TODO [CLVM-VM-JUMP-01]: implement JMP/JZ with signed i16 relative offsets.
             default:
                 std::cerr << "unimplemented/unknown opcode at pc="
                           << opcode_pc << '\n';

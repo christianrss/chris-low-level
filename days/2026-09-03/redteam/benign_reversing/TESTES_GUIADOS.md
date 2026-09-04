@@ -21,3 +21,14 @@ Com `minimum=5`, `b"ABCD\x00ABCDE\x00"` deve retornar somente `ABCDE`.
 ## Por que isto importa para reversing?
 
 Parsers binários vivem de limites e classificação de bytes. Esses testes treinam a mesma disciplina que você usará ao implementar PE/ELF parsing, hex view e disassembly.
+
+## Cobertura pedagógica auditada
+
+Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser considerado concluído.
+
+- `RE-YARA-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `RE-STRINGS-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+
+Arquivos de teste automatizado presentes no starter:
+- `starter/tests/test_ascii_strings.py`
+- `starter/tests/test_rule.py`

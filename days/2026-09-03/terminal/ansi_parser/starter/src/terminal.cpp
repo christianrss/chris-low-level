@@ -12,14 +12,14 @@ void Terminal::put(char ch) {
 }
 
 int Terminal::param_or(int fallback) const { return fallback; }
-void Terminal::handle_csi(char) { /* TODO */ }
+void Terminal::handle_csi(char) { /* TODO [TERM-CSI-01] */ }
 
 void Terminal::feed(const std::string& bytes) {
     for (char ch : bytes) {
         if (ch == '\r') col_ = 0;
         else if (ch == '\n') row_ = (row_ + 1 < rows_) ? row_ + 1 : row_;
         else if (static_cast<unsigned char>(ch) >= 0x20) put(ch);
-        // TODO: add ESC -> CSI incremental state machine.
+        // TODO [TERM-FEED-01]: add ESC -> CSI incremental state machine.
     }
 }
 

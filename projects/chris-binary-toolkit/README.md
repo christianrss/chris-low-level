@@ -30,7 +30,3 @@ The project currently scans only printable ASCII sequences and operates on files
 - binary diff;
 - memory-mapped large-file support;
 - controlled process-memory exercises against a self-authored target.
-
-## Day 02 extension
-
-Day 02 adds a strict ELF64 identification/header parser with synthetic fixtures, truncation/magic checks and no process access. It remains a defensive/educational binary-inspection tool for owned samples.

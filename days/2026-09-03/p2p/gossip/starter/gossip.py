@@ -22,7 +22,7 @@ class GossipNetwork:
         self.neighbors[a].add(b); self.neighbors[b].add(a)
 
     def broadcast(self, origin: str, message: Message) -> set[str]:
-        # TODO: queue propagation + per-peer duplicate suppression + TTL.
+        # TODO [P2P-GOSSIP-01]: queue propagation + per-peer duplicate suppression + TTL.
         if origin not in self.neighbors: raise KeyError(origin)
         self.seen[origin].add(message.message_id)
         self.deliveries.append((origin, message.message_id))

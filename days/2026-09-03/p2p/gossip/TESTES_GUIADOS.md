@@ -12,3 +12,12 @@ A solucao limpa e seus testes estao em `solutions/` e em `projects/chris-p2p/`. 
 
 ## Evidencia para Git
 Commits recomendados: `test(...): define ...` antes de `feat(...): implement ...`. Isso deixa visivel no historico que o comportamento foi especificado antes da solucao.
+
+## Cobertura pedagógica auditada
+
+Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser considerado concluído.
+
+- `P2P-GOSSIP-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+
+Arquivos de teste automatizado presentes no starter:
+- `starter/tests/test_gossip.py`

@@ -1,3 +1,7 @@
+// PEDAGOGY-SOLUTION: AI-C-GRAD-01
+// PEDAGOGY-SOLUTION: AI-C-AVG-01
+// PEDAGOGY-SOLUTION: AI-C-SGD-01
+
 #include <math.h>
 #include <stdio.h>
 

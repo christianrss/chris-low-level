@@ -36,3 +36,17 @@ Crie um bytecode cujo `JMP` aponte para fora do código. A VM deve detectar o de
 ## Como depurar um teste quebrado
 
 Use `--trace` e acompanhe `pc`, opcode e stack. Se a falha ocorrer antes da execução, coloque breakpoint em `clvm_parse`. Se ocorrer em branch, observe o valor de `pc` antes e depois de `checked_jump`.
+
+## Cobertura pedagógica auditada
+
+Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser considerado concluído.
+
+- `CLVM-VM-ARITH-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `CLVM-VM-JUMP-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `CLVM-C-FNV-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `CLVM-C-HEADER-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `CLVM-PY-FNV-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `CLVM-ASM-LABELS-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+
+Arquivos de teste automatizado presentes no starter:
+- `starter/tests/integration_test.py`

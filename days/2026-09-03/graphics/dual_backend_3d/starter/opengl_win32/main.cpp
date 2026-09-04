@@ -122,6 +122,9 @@ constexpr Vertex kCube[] = {
 };
 
 SceneState g_scene;
+CameraState g_camera;
+POINT g_last_mouse{};
+bool g_have_last_mouse = false;
 HDC g_device_context = nullptr;
 HGLRC g_render_context = nullptr;
 int g_width = 1100;
@@ -226,7 +229,7 @@ uniform vec3 u_color;
 varying vec3 v_normal;
 
 void main() {
-    // TODO (MEDIO): implemente iluminacao Lambert usando v_normal.
+    // TODO [GFX-LAMBERT-01]: normalize normal, compute diffuse, add ambient.
     gl_FragColor = vec4(u_color, 1.0);
 }
 )GLSL";
@@ -298,9 +301,15 @@ bool initialize_wgl(HWND window) {
     return wglMakeCurrent(g_device_context, g_render_context) == TRUE;
 }
 
+void update_camera_keyboard(float frame_dt) {
+    // TODO [GFX-CAMERA-04]: same movement contract as software backend.
+    (void)frame_dt;
+}
+
 void render_scene() {
     glViewport(0, 0, g_width, g_height);
     glEnable(GL_DEPTH_TEST);
+    // TODO [GFX-CULL-03]: enable GL_CULL_FACE, cull back faces, select CCW.
     glClearColor(0.062f, 0.094f, 0.125f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -329,7 +338,7 @@ void render_scene() {
     const float aspect =
         static_cast<float>(g_width) /
         static_cast<float>(std::max(1, g_height));
-    const Mat4 view_projection = projection_matrix(aspect) * view_matrix();
+    const Mat4 view_projection = projection_matrix(aspect) * view_matrix(g_camera);
 
     for (const DrawItem& item : build_draw_list(g_scene)) {
         const Mat4 model_view_projection = view_projection * item.model;
@@ -373,6 +382,8 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
 
             if (wparam == 'R') {
                 reset_scene(g_scene);
+                g_camera = CameraState{};
+                g_have_last_mouse = false;
                 return 0;
             }
 
@@ -381,6 +392,10 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
                 return 0;
             }
             break;
+
+        case WM_MOUSEMOVE:
+            // TODO [GFX-CAMERA-05]: same yaw/pitch update as software backend.
+            return 0;
 
         case WM_DESTROY:
             PostQuitMessage(0);
@@ -451,6 +466,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
     }
 
     reset_scene(g_scene);
+    g_camera = CameraState{};
 
     auto previous_time = std::chrono::steady_clock::now();
     double accumulator = 0.0;
@@ -476,6 +492,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
         previous_time = current_time;
 
         delta_time = std::min(delta_time, 0.05);
+        update_camera_keyboard(static_cast<float>(delta_time));
         accumulator += delta_time;
 
         while (accumulator >= kFixedTimeStep) {

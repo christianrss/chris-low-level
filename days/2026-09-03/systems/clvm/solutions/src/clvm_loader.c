@@ -1,3 +1,6 @@
+// PEDAGOGY-SOLUTION: CLVM-C-FNV-01
+// PEDAGOGY-SOLUTION: CLVM-C-HEADER-01
+
 #include "clvm_format.h"
 
 #include <stdio.h>

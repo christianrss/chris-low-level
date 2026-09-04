@@ -1,3 +1,6 @@
+# PEDAGOGY-SOLUTION: CLVM-PY-FNV-01
+# PEDAGOGY-SOLUTION: CLVM-ASM-LABELS-01
+
 #!/usr/bin/env python3
 """Assembler educacional em duas passagens para o formato CLVM."""
 

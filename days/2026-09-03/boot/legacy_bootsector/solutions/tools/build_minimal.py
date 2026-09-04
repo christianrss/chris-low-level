@@ -1,3 +1,5 @@
+# PEDAGOGY-SOLUTION: BOOT-IMAGE-01
+
 from __future__ import annotations
 
 

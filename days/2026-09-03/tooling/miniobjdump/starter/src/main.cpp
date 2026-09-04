@@ -12,7 +12,7 @@ std::uint16_t read_u16_le(const std::vector<std::uint8_t>& data, std::size_t off
         throw std::runtime_error("truncated u16");
     }
 
-    // TODO: combine two bytes in little-endian order.
+    // TODO [OBJDUMP-U16-01]: combine two bytes in little-endian order.
     return 0;
 }
 
@@ -21,7 +21,7 @@ std::uint32_t read_u32_le(const std::vector<std::uint8_t>& data, std::size_t off
         throw std::runtime_error("truncated u32");
     }
 
-    // TODO: combine four bytes in little-endian order.
+    // TODO [OBJDUMP-U32-01]: combine four bytes in little-endian order.
     return 0;
 }
 
@@ -58,7 +58,7 @@ int main(int argc, char** argv) {
             std::cout << "unknown format\n";
         }
 
-        // TODO: parse headers, enumerate sections and decode .text.
+        // TODO [OBJDUMP-PARSE-01]: parse headers, enumerate sections and decode .text.
         return 0;
     } catch (const std::exception& error) {
         std::cerr << "error: " << error.what() << "\n";

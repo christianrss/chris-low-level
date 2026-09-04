@@ -15,3 +15,14 @@ else()
     target_compile_options(miniobjdump PRIVATE -Wall -Wextra -Wpedantic)
     target_compile_options(test_target PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+
+
+enable_testing()
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(
+    NAME inspect_own_target
+    COMMAND ${Python3_EXECUTABLE}
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/integration_test.py
+        $<TARGET_FILE:miniobjdump>
+        $<TARGET_FILE:test_target>
+)

@@ -38,6 +38,21 @@ int main() {
         assert(cpu.memory(0x0101) == 0x12);
     }
 
+
+    {
+        TinyCpu cpu;
+        std::vector<std::uint8_t> program = {
+            op(TinyCpu::Op::MovI), 0, 1, 0,        // 0..3
+            op(TinyCpu::Op::Jnz), 0, 12, 0,       // 4..7 -> jump to HALT at 12
+            op(TinyCpu::Op::MovI), 1, 99, 0,      // 8..11 must be skipped
+            op(TinyCpu::Op::Halt),                 // 12
+        };
+        cpu.load_program(program);
+        cpu.run();
+        assert(cpu.reg(1) == 0);
+        assert(cpu.pc() == 13);
+    }
+
     {
         TinyCpu cpu;
         bool threw = false;

@@ -40,3 +40,9 @@ assert image[:9] == bytes.fromhex("b4 0e b0 48 cd 10 f4 eb fd")
 
 O arquivo `solutions/src/bootsector.asm` mostra a versão NASM equivalente. NASM/QEMU não foram usados para afirmar execução neste ambiente; o teste deste milestone é estrutural/binário.
 
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `BOOT-IMAGE-01` — `starter/tools/build_minimal.py` → `solutions/tools/build_minimal.py`.

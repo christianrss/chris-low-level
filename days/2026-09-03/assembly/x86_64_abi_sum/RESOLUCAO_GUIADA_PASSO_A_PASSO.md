@@ -52,3 +52,9 @@ Depois adicione overflow modular com `{UINT64_MAX, 1}` esperando zero.
 ## Solução final
 A implementação comentada/limpa está em `solutions/src/sum_x86_64.S`. Não use a solução antes de fazer o teste falhar e tentar o loop.
 
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `ASM-SUM-01` — `starter/src/sum_x86_64.S` → `solutions/src/sum_x86_64.S`.

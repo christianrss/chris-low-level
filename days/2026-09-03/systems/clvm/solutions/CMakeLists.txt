@@ -13,3 +13,9 @@ else()
   target_compile_options(clvm_loader PRIVATE -Wall -Wextra -Wpedantic)
   target_compile_options(clvm PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+
+
+enable_testing()
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME clvm_integration
+    COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/integration_test.py $<TARGET_FILE:clvm> ${CMAKE_CURRENT_SOURCE_DIR})

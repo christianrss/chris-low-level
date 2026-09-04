@@ -17,12 +17,12 @@ int main(void) {
             const double prediction = weight * xs[i] + bias;
             const double error = prediction - ys[i];
 
-            // TODO: derive and accumulate dL/dw and dL/db.
+            // TODO [AI-C-GRAD-01]: derive and accumulate dL/dw and dL/db.
             (void)error;
         }
 
-        // TODO: average the gradients over the batch.
-        // TODO: perform the SGD update.
+        // TODO [AI-C-AVG-01]: average the gradients over the batch.
+        // TODO [AI-C-SGD-01]: perform the SGD update.
         (void)d_weight;
         (void)d_bias;
         (void)learning_rate;

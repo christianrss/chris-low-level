@@ -1,3 +1,6 @@
+// PEDAGOGY-SOLUTION: TERM-CSI-01
+// PEDAGOGY-SOLUTION: TERM-FEED-01
+
 #include "terminal.hpp"
 #include <algorithm>
 #include <cctype>

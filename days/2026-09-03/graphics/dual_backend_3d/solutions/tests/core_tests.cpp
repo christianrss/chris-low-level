@@ -41,12 +41,39 @@ void test_draw_list_contains_expected_items() {
     assert(draw_list.size() == 5);
 }
 
+void test_default_camera_matches_original_view() {
+    const CameraState camera{};
+    const Vec4 origin = view_matrix(camera) * Vec4{0.0f, 0.0f, 0.0f, 1.0f};
+    assert(approximately_equal(origin.x, 0.0f));
+    assert(approximately_equal(origin.y, 0.0f));
+    assert(approximately_equal(origin.z, -6.0f));
+    assert(approximately_equal(origin.w, 1.0f));
+}
+
+void test_camera_yaw_changes_forward_direction() {
+    CameraState camera{};
+    constexpr float kHalfPi = 1.57079632679f;
+    camera.yaw = kHalfPi;
+    const Vec3 forward = camera_forward(camera);
+    assert(forward.x > 0.999f);
+    assert(std::fabs(forward.z) < 0.001f);
+}
+
+void test_screen_winding_helper() {
+    assert(screen_triangle_front_facing(2.0f));
+    assert(!screen_triangle_front_facing(-2.0f));
+    assert(!screen_triangle_front_facing(0.0f));
+}
+
 } // namespace
 
 int main() {
     test_identity_matrix();
     test_physics_moves_body_downward();
     test_draw_list_contains_expected_items();
+    test_default_camera_matches_original_view();
+    test_camera_yaw_changes_forward_direction();
+    test_screen_winding_helper();
 
     std::cout << "core_tests: all tests passed\n";
     return 0;

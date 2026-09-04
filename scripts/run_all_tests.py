@@ -21,12 +21,6 @@ PROJECTS = [
     "chris-p2p",
     "chris-chain",
     "chris-driver-lab",
-    "chris-arena",
-    "chris-tensor",
-    "chris-algorithms",
-    "chris-qsim",
-    "chris-os",
-    "chris-debugger",
 ]
 
 for name in PROJECTS:

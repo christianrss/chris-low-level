@@ -253,3 +253,10 @@ cmake --build build-release
 - símbolos/debug info podem mudar.
 
 Não existe um assembly universal: o resultado depende de compilador, versão, arquitetura e flags. A resolução correta é saber **como comparar e explicar as diferenças**, não decorar bytes específicos.
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `RE-YARA-01` — `starter/rules/lab_target.yar` → `solutions/rules/lab_target.yar`.
+- `RE-STRINGS-01` — `starter/tools/ascii_strings.py` → `solutions/tools/ascii_strings.py`.

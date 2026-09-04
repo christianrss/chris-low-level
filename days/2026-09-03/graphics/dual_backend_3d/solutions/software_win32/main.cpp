@@ -1,3 +1,8 @@
+// PEDAGOGY-SOLUTION: GFX-RASTER-01
+// PEDAGOGY-SOLUTION: GFX-CULL-02
+// PEDAGOGY-SOLUTION: GFX-CAMERA-04
+// PEDAGOGY-SOLUTION: GFX-CAMERA-05
+
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif
@@ -72,6 +77,9 @@ constexpr int kCubeIndices[36] = {
 
 Framebuffer g_framebuffer;
 SceneState g_scene;
+CameraState g_camera;
+POINT g_last_mouse{};
+bool g_have_last_mouse = false;
 
 std::uint32_t rgb(Vec3 color, float light) {
     const auto to_channel = [light](float value) {
@@ -205,6 +213,14 @@ void draw_cube(Framebuffer& framebuffer, const DrawItem& item, const Mat4& view_
         const int i2 = kCubeIndices[i + 2];
 
         if (visible[i0] && visible[i1] && visible[i2]) {
+            const float signed_area = edge(
+                vertices[i0].x, vertices[i0].y,
+                vertices[i1].x, vertices[i1].y,
+                vertices[i2].x, vertices[i2].y);
+            if (!screen_triangle_front_facing(signed_area)) {
+                continue;
+            }
+
             rasterize_triangle(
                 framebuffer,
                 vertices[i0],
@@ -212,6 +228,25 @@ void draw_cube(Framebuffer& framebuffer, const DrawItem& item, const Mat4& view_
                 vertices[i2],
                 item.color);
         }
+    }
+}
+
+void update_camera_keyboard(float frame_dt) {
+    constexpr float kCameraSpeed = 3.0f;
+    const Vec3 forward = camera_forward(g_camera);
+    const Vec3 right = camera_right(g_camera);
+
+    if ((GetAsyncKeyState('W') & 0x8000) != 0) {
+        g_camera.position = g_camera.position + forward * (kCameraSpeed * frame_dt);
+    }
+    if ((GetAsyncKeyState('S') & 0x8000) != 0) {
+        g_camera.position = g_camera.position - forward * (kCameraSpeed * frame_dt);
+    }
+    if ((GetAsyncKeyState('D') & 0x8000) != 0) {
+        g_camera.position = g_camera.position + right * (kCameraSpeed * frame_dt);
+    }
+    if ((GetAsyncKeyState('A') & 0x8000) != 0) {
+        g_camera.position = g_camera.position - right * (kCameraSpeed * frame_dt);
     }
 }
 
@@ -267,6 +302,8 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
 
             if (wparam == 'R') {
                 reset_scene(g_scene);
+                g_camera = CameraState{};
+                g_have_last_mouse = false;
                 return 0;
             }
 
@@ -275,6 +312,26 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
                 return 0;
             }
             break;
+
+        case WM_MOUSEMOVE: {
+            const POINT current{
+                static_cast<short>(LOWORD(lparam)),
+                static_cast<short>(HIWORD(lparam)),
+            };
+            if (g_have_last_mouse) {
+                constexpr float kMouseSensitivity = 0.004f;
+                const float dx = static_cast<float>(current.x - g_last_mouse.x);
+                const float dy = static_cast<float>(current.y - g_last_mouse.y);
+                g_camera.yaw += dx * kMouseSensitivity;
+                g_camera.pitch = std::clamp(
+                    g_camera.pitch - dy * kMouseSensitivity,
+                    -1.45f,
+                    1.45f);
+            }
+            g_last_mouse = current;
+            g_have_last_mouse = true;
+            return 0;
+        }
 
         case WM_DESTROY:
             PostQuitMessage(0);
@@ -322,6 +379,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
 
     g_framebuffer.resize(1100, 720);
     reset_scene(g_scene);
+    g_camera = CameraState{};
 
     auto previous_time = std::chrono::steady_clock::now();
     double accumulator = 0.0;
@@ -348,6 +406,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
 
         // Prevent a debugger pause/window drag from producing a giant physics step.
         delta_time = std::min(delta_time, 0.05);
+        update_camera_keyboard(static_cast<float>(delta_time));
         accumulator += delta_time;
 
         while (accumulator >= kFixedTimeStep) {
@@ -360,7 +419,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
         const float aspect =
             static_cast<float>(g_framebuffer.width) /
             static_cast<float>(std::max(1, g_framebuffer.height));
-        const Mat4 view_projection = projection_matrix(aspect) * view_matrix();
+        const Mat4 view_projection = projection_matrix(aspect) * view_matrix(g_camera);
 
         for (const DrawItem& item : build_draw_list(g_scene)) {
             draw_cube(g_framebuffer, item, view_projection);

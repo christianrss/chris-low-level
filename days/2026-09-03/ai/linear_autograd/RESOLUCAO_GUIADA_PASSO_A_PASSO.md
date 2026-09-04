@@ -401,3 +401,16 @@ dL/db = -6
 ### Comparação opcional com PyTorch
 
 Rode `solutions/python/reference_pytorch.py` se PyTorch já estiver instalado. O objetivo não é usar PyTorch para resolver o exercício, mas confirmar que a sua matemática manual produz os mesmos gradientes.
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `AI-AUTOGRAD-ADD-01` — `starter/python/autograd_scalar.py` → `solutions/python/autograd_scalar.py`.
+- `AI-AUTOGRAD-MUL-01` — `starter/python/autograd_scalar.py` → `solutions/python/autograd_scalar.py`.
+- `AI-AUTOGRAD-BWD-01` — `starter/python/autograd_scalar.py` → `solutions/python/autograd_scalar.py`.
+- `AI-PY-GRAD-01` — `starter/python/linear_train.py` → `solutions/python/linear_train.py`.
+- `AI-PY-SGD-01` — `starter/python/linear_train.py` → `solutions/python/linear_train.py`.
+- `AI-C-GRAD-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
+- `AI-C-AVG-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
+- `AI-C-SGD-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.

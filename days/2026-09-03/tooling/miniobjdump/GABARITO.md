@@ -8,3 +8,5 @@ A solução demonstra:
 - localização de `.text`;
 - decoder mínimo x86-64 com fallback seguro para bytes desconhecidos;
 - cálculo de destino para `CALL rel32` e `JMP rel32` relativo ao endereço da próxima instrução.
+
+- extensão auditada do decoder para `INT3` (`0xCC`) e `LEAVE` (`0xC9`).

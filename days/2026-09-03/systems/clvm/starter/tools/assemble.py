@@ -25,7 +25,7 @@ OPS = {
 
 
 def fnv1a32(data: bytes) -> int:
-    """TODO FÁCIL: implemente FNV-1a 32-bit."""
+    """TODO [CLVM-PY-FNV-01]: implemente FNV-1a 32-bit."""
     return 0
 
 
@@ -56,7 +56,7 @@ def assemble(text: str) -> bytes:
             output.append(OPS[opcode_name])
         elif line.endswith(":") or opcode_name in ("JMP", "JZ"):
             raise NotImplementedError(
-                "TODO DIFÍCIL: implemente labels em duas passagens + JMP/JZ"
+                "TODO [CLVM-ASM-LABELS-01]: implemente labels em duas passagens + JMP/JZ"
             )
         else:
             raise ValueError(f"instrução desconhecida: {opcode_name}")

@@ -1,3 +1,7 @@
+# PEDAGOGY-SOLUTION: AI-AUTOGRAD-ADD-01
+# PEDAGOGY-SOLUTION: AI-AUTOGRAD-MUL-01
+# PEDAGOGY-SOLUTION: AI-AUTOGRAD-BWD-01
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field

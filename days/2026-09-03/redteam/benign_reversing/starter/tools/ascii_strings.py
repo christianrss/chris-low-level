@@ -9,7 +9,7 @@ def extract_ascii_strings(data: bytes, minimum: int = 5) -> list[tuple[int, str]
 
     results: list[tuple[int, str]] = []
 
-    # TODO: walk byte-by-byte, remember the start of a printable run,
+    # TODO [RE-STRINGS-01]: walk byte-by-byte, remember the start of a printable run,
     # close the run when a non-printable byte is found and keep only runs
     # whose length is at least `minimum`.
     _ = (data, minimum)

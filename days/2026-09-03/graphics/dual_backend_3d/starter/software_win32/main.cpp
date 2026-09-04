@@ -72,6 +72,9 @@ constexpr int kCubeIndices[36] = {
 
 Framebuffer g_framebuffer;
 SceneState g_scene;
+CameraState g_camera;
+POINT g_last_mouse{};
+bool g_have_last_mouse = false;
 
 std::uint32_t rgb(Vec3 color, float light) {
     const auto to_channel = [light](float value) {
@@ -130,20 +133,14 @@ void rasterize_triangle(
     const ScreenVertex& c,
     Vec3 base_color) {
 
-    // TODO (MEDIO): implemente aqui o rasterizador por edge functions.
-    // Requisitos:
-    // 1. bounding box do triangulo;
-    // 2. teste de cobertura com coordenadas baricentricas;
-    // 3. interpolacao de profundidade;
-    // 4. depth test antes de escrever no framebuffer.
-    //
-    // O corpo temporario abaixo mantem o projeto compilavel antes do exercicio.
+    // TODO [GFX-RASTER-01]: area + bounding box + Lambert + barycentrics + depth test.
     (void)framebuffer;
     (void)a;
     (void)b;
     (void)c;
     (void)base_color;
 }
+
 void draw_cube(Framebuffer& framebuffer, const DrawItem& item, const Mat4& view_projection) {
     ScreenVertex vertices[8]{};
     bool visible[8]{};
@@ -164,6 +161,7 @@ void draw_cube(Framebuffer& framebuffer, const DrawItem& item, const Mat4& view_
         const int i2 = kCubeIndices[i + 2];
 
         if (visible[i0] && visible[i1] && visible[i2]) {
+            // TODO [GFX-CULL-02]: compute signed area and skip back-facing triangles.
             rasterize_triangle(
                 framebuffer,
                 vertices[i0],
@@ -172,6 +170,11 @@ void draw_cube(Framebuffer& framebuffer, const DrawItem& item, const Mat4& view_
                 item.color);
         }
     }
+}
+
+void update_camera_keyboard(float frame_dt) {
+    // TODO [GFX-CAMERA-04]: W/S move along forward; A/D along right.
+    (void)frame_dt;
 }
 
 void present(HWND window) {
@@ -226,6 +229,8 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
 
             if (wparam == 'R') {
                 reset_scene(g_scene);
+                g_camera = CameraState{};
+                g_have_last_mouse = false;
                 return 0;
             }
 
@@ -234,6 +239,10 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
                 return 0;
             }
             break;
+
+        case WM_MOUSEMOVE:
+            // TODO [GFX-CAMERA-05]: convert mouse delta to yaw/pitch and clamp pitch.
+            return 0;
 
         case WM_DESTROY:
             PostQuitMessage(0);
@@ -281,6 +290,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
 
     g_framebuffer.resize(1100, 720);
     reset_scene(g_scene);
+    g_camera = CameraState{};
 
     auto previous_time = std::chrono::steady_clock::now();
     double accumulator = 0.0;
@@ -307,6 +317,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
 
         // Prevent a debugger pause/window drag from producing a giant physics step.
         delta_time = std::min(delta_time, 0.05);
+        update_camera_keyboard(static_cast<float>(delta_time));
         accumulator += delta_time;
 
         while (accumulator >= kFixedTimeStep) {
@@ -319,7 +330,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
         const float aspect =
             static_cast<float>(g_framebuffer.width) /
             static_cast<float>(std::max(1, g_framebuffer.height));
-        const Mat4 view_projection = projection_matrix(aspect) * view_matrix();
+        const Mat4 view_projection = projection_matrix(aspect) * view_matrix(g_camera);
 
         for (const DrawItem& item : build_draw_list(g_scene)) {
             draw_cube(g_framebuffer, item, view_projection);

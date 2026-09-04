@@ -1,3 +1,6 @@
+# PEDAGOGY-SOLUTION: AI-PY-GRAD-01
+# PEDAGOGY-SOLUTION: AI-PY-SGD-01
+
 from __future__ import annotations
 
 

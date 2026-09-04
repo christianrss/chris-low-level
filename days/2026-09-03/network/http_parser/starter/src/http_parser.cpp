@@ -8,7 +8,7 @@ bool HttpRequestParser::feed(const std::string& bytes) {
 }
 
 void HttpRequestParser::try_parse() {
-    // TODO: find CRLF CRLF, parse request line/headers and wait for Content-Length bytes.
+    // TODO [HTTP-PARSE-01]: find CRLF CRLF, parse request line/headers and wait for Content-Length bytes.
 }
 
 const HttpRequest& HttpRequestParser::request() const {

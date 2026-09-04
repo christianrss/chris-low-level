@@ -6,16 +6,16 @@ DescriptorRing::DescriptorRing(std::size_t capacity) : ring_(capacity) {
 }
 
 bool DescriptorRing::submit(std::uint32_t) {
-    // TODO: full check, descriptor ownership and producer wrap-around.
+    // TODO [RING-SUBMIT-01]: full check, descriptor ownership and producer wrap-around.
     return false;
 }
 
 bool DescriptorRing::device_complete_one() {
-    // TODO: complete the next device-owned descriptor.
+    // TODO [RING-COMPLETE-01]: complete the next device-owned descriptor.
     return false;
 }
 
 std::optional<std::uint32_t> DescriptorRing::reclaim() {
-    // TODO: return completed descriptors in consumer order.
+    // TODO [RING-RECLAIM-01]: return completed descriptors in consumer order.
     return std::nullopt;
 }

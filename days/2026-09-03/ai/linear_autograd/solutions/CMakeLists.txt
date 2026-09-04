@@ -10,3 +10,9 @@ if(MSVC)
 else()
     target_compile_options(linear_train PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+
+
+enable_testing()
+add_test(NAME c_linear_train COMMAND linear_train)
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME python_autograd_tests COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_autograd.py)

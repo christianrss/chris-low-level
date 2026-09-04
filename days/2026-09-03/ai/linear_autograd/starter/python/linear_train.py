@@ -16,10 +16,10 @@ def train(epochs: int = 1000, learning_rate: float = 0.01) -> tuple[float, float
             prediction = weight * x + bias
             error = prediction - target
 
-            # TODO: derive dL/dw and dL/db and accumulate them.
+            # TODO [AI-PY-GRAD-01]: derive dL/dw and dL/db and accumulate them.
             _ = (x, error)
 
-        # TODO: average gradients and update weight/bias using SGD.
+        # TODO [AI-PY-SGD-01]: average gradients and update weight/bias using SGD.
         _ = (d_weight, d_bias, learning_rate)
 
     return weight, bias

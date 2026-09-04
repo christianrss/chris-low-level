@@ -68,6 +68,21 @@ Mat4 scale(float x, float y, float z);
 Mat4 rotate_z(float radians);
 Mat4 rotate_y(float radians);
 Mat4 perspective(float fov_y_radians, float aspect, float z_near, float z_far);
+Mat4 look_at(Vec3 eye, Vec3 target, Vec3 world_up);
+
+struct CameraState {
+    Vec3 position{0.0f, 0.0f, 6.0f};
+    float yaw = 0.0f;
+    float pitch = 0.0f;
+};
+
+Vec3 camera_forward(const CameraState& camera);
+Vec3 camera_right(const CameraState& camera);
+Mat4 view_matrix(const CameraState& camera);
+
+// Because the software viewport flips Y, front-facing CCW triangles in NDC
+// arrive with a positive signed area using this lab's edge() convention.
+bool screen_triangle_front_facing(float signed_area);
 
 struct Body {
     Vec3 position{1.25f, 1.5f, 0.0f};

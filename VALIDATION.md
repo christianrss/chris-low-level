@@ -40,7 +40,9 @@ The results are baselines for methodology and regression work, not universal per
 
 ## Master training document
 
-The Day 01 delivery ZIP contains `Treino_LowLevel_Unificado_2026-09-03.docx` (78 rendered pages). It was rendered to page images before packaging and visually reviewed for clipping/overlap/layout issues. The DOCX is intentionally kept out of Git because it is a binary delivery artifact; the reviewable Markdown source/material remains versioned here.
+- File: `days/2026-09-03/Treino_LowLevel_Unificado_2026-09-03.docx`
+- Rendered page count: 78 pages.
+- The consolidated document was rendered to page images before packaging and visually reviewed for clipping/overlap/layout issues. The original 58-page section retained its previously validated layout; the changed cover and appended consolidated section were rechecked after the final edit.
 
 ## Important environment limitations
 

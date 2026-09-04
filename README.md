@@ -21,9 +21,7 @@ The target is not to collect tutorial projects. The target is to build **vertica
 - Emulation, virtualization, JIT/DBT and hypervisor concepts.
 - Graphics, software rasterization, GPU concepts, physics and multimedia.
 - Browser, database, storage and distributed systems internals.
-- **.NET/C# senior engineering in parallel with CLR/CIL/JIT/GC internals built from first principles.**
-- **Node.js/TypeScript senior engineering in parallel with JavaScript VM/JIT/V8/libuv/event-loop internals built from first principles.**
-- Projects that normally feel "magical": allocators, runtimes, profilers, containers, Git-like storage, TCP/IP stacks, deterministic replay, mixed-mode debugging and time-travel debugging.
+- Projects that normally feel "magical": allocators, runtimes, profilers, containers, Git-like storage, TCP/IP stacks and more.
 
 ## Repository model
 
@@ -89,7 +87,3 @@ python scripts/run_all_benchmarks.py
 The lab is intentionally honest about what was and was not tested. Hardware-specific, Windows-specific, firmware and QEMU milestones are documented separately until the required environment is available.
 
 For the complete mapping from the user-defined curriculum directives to Day 01 evidence and future milestones, see [`docs/DIRECTIVES_COVERAGE.md`](docs/DIRECTIVES_COVERAGE.md).
-
-## Day 02 — 2026-09-04
-
-Adds `chris-arena`, `chris-tensor`, `chris-algorithms`, `chris-qsim`, the first host-reference milestone of `chris-os`, the first protocol milestone of `chris-debugger`, ELF64 parsing in `chris-binary-toolkit`, plus the parallel managed/runtime tracks `chris-dotnet-bench`, `chris-dotnet-pe`, `chris-node-streaming` and `chris-js`. See `days/2026-09-04/README.md` and [`docs/RUNTIME_STACKS_DOTNET_NODE.md`](docs/RUNTIME_STACKS_DOTNET_NODE.md).

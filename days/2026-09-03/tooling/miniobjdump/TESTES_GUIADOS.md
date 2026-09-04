@@ -19,3 +19,15 @@ Escolha bytes curtos que o decoder já conhece, por exemplo `90 C3` (`NOP`, `RET
 ## Próximo passo de qualidade
 
 Quando ModR/M for implementado, adicione uma tabela de casos de instrução/bytes esperados e compare também com `objdump` ou `dumpbin` como referência externa, sem usar essas ferramentas na implementação.
+
+## Cobertura pedagógica auditada
+
+Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser considerado concluído.
+
+- `OBJDUMP-U16-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `OBJDUMP-U32-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `OBJDUMP-PARSE-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+
+Arquivos de teste automatizado presentes no starter:
+- `starter/tests/test_target.c`
+- `starter/tests/integration_test.py`

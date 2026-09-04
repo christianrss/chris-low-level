@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def build_image() -> bytes:
-    # TODO: place the real-mode instruction bytes at the beginning and
+    # TODO [BOOT-IMAGE-01]: place the real-mode instruction bytes at the beginning and
     # write the legacy boot signature 55 AA at offsets 510..511.
     return bytes(512)
 

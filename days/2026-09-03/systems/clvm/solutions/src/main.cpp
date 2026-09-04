@@ -1,3 +1,6 @@
+// PEDAGOGY-SOLUTION: CLVM-VM-ARITH-01
+// PEDAGOGY-SOLUTION: CLVM-VM-JUMP-01
+
 // Reference CLVM interpreter: fetch, decode, execute and validate control flow.
 #include "clvm_format.h"
 

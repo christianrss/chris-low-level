@@ -1,3 +1,7 @@
+// PEDAGOGY-SOLUTION: OBJDUMP-U16-01
+// PEDAGOGY-SOLUTION: OBJDUMP-U32-01
+// PEDAGOGY-SOLUTION: OBJDUMP-PARSE-01
+
 #include <algorithm>
 #include <cstdint>
 #include <cstring>
@@ -96,6 +100,10 @@ void decode_x86_64(
             std::cout << "ret";
         } else if (opcode == 0x90U) {
             std::cout << "nop";
+        } else if (opcode == 0xCCU) {
+            std::cout << "int3";
+        } else if (opcode == 0xC9U) {
+            std::cout << "leave";
         } else if ((opcode == 0xE8U || opcode == 0xE9U) && pc + 4 <= end) {
             const std::int32_t displacement =
                 static_cast<std::int32_t>(read_u32_le(data, pc));

@@ -30,3 +30,19 @@ Construa `z = x*x + x`. O mesmo nó `x` participa de múltiplos caminhos. O back
 ## Como depurar
 
 Imprima a ordem topológica e `(label, data, grad)` após cada `_backward`. Se o valor forward estiver certo e o gradiente errado, o problema está na derivada local ou na ordem/accumulation do backward.
+
+## Cobertura pedagógica auditada
+
+Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser considerado concluído.
+
+- `AI-PY-GRAD-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-PY-SGD-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-AUTOGRAD-ADD-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-AUTOGRAD-MUL-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-AUTOGRAD-BWD-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-C-GRAD-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-C-AVG-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `AI-C-SGD-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+
+Arquivos de teste automatizado presentes no starter:
+- `starter/tests/test_autograd.py`

@@ -1,3 +1,5 @@
+# PEDAGOGY-SOLUTION: RE-STRINGS-01
+
 # Educational ASCII string extractor for binaries created in this lab.
 from __future__ import annotations
 

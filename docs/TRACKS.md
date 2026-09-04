@@ -32,9 +32,3 @@ Software rendering, real-time 3D, physics, animation, GPU APIs, image editor int
 
 ## "Magic" backlog
 Allocator, GC, regex engine/JIT, async runtime, green threads, lock-free queues, profiler/tracer, eBPF-like VM, userspace TCP/IP stack, Git-like CAS, container runtime, package manager, COW filesystem, search engine, window manager/compositor, remote desktop, codec, WASM runtime, emulator/VM, hypervisor, database/query engine and browser engine.
-
-
-## Managed runtimes and production stacks
-- .NET/C# production senior track + CLR internals from scratch.
-- Node.js/TypeScript production senior track + JavaScript/VM/V8/libuv internals from scratch.
-- See `docs/RUNTIME_STACKS_DOTNET_NODE.md`.

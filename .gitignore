@@ -68,8 +68,3 @@ target/
 *.ckpt
 *.safetensors
 *.gguf
-
-# Packaged training artifacts (distributed in daily ZIP, not versioned)
-*.docx
-*.zip
-PACKAGE_MANIFEST.txt

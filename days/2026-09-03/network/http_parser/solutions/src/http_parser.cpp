@@ -1,3 +1,5 @@
+// PEDAGOGY-SOLUTION: HTTP-PARSE-01
+
 #include "http_parser.hpp"
 #include <algorithm>
 #include <cctype>

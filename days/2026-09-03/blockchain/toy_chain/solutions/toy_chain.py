@@ -1,3 +1,8 @@
+# PEDAGOGY-SOLUTION: CHAIN-MERKLE-01
+# PEDAGOGY-SOLUTION: CHAIN-DIGEST-01
+# PEDAGOGY-SOLUTION: CHAIN-MINE-01
+# PEDAGOGY-SOLUTION: CHAIN-VALID-01
+
 from __future__ import annotations
 from dataclasses import dataclass, asdict
 import hashlib, json

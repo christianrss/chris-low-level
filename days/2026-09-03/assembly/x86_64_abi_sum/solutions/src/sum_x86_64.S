@@ -1,3 +1,5 @@
+# PEDAGOGY-SOLUTION: ASM-SUM-01
+
 .text
 .globl asm_sum_u64
 .type asm_sum_u64, @function

@@ -57,7 +57,7 @@ bool TinyCpu::step() {
         halted_ = true;
         return false;
     default:
-        // TODO: implement MOVI, ADD, STORE, LOAD and JNZ in small tested steps.
+        // TODO [CPU-STEP-01]: implement MOVI, ADD, STORE, LOAD and JNZ in small tested steps.
         throw std::runtime_error("TODO: opcode not implemented in starter");
     }
 }

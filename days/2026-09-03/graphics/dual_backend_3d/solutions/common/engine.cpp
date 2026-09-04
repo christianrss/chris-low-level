@@ -1,3 +1,8 @@
+// PEDAGOGY-SOLUTION: GFX-CAMERA-03
+// PEDAGOGY-SOLUTION: GFX-CAMERA-01
+// PEDAGOGY-SOLUTION: GFX-CAMERA-02
+// PEDAGOGY-SOLUTION: GFX-CULL-01
+
 #include "engine.hpp"
 
 namespace lab3d {
@@ -109,6 +114,54 @@ Mat4 perspective(float fov, float aspect, float z_near, float z_far) {
     return result;
 }
 
+
+Mat4 look_at(Vec3 eye, Vec3 target, Vec3 world_up) {
+    const Vec3 forward = normalize(target - eye);
+    const Vec3 right = normalize(cross(forward, world_up));
+    const Vec3 up = cross(right, forward);
+
+    Mat4 result = Mat4::identity();
+    result.m[0] = right.x;
+    result.m[4] = right.y;
+    result.m[8] = right.z;
+    result.m[12] = -dot(right, eye);
+
+    result.m[1] = up.x;
+    result.m[5] = up.y;
+    result.m[9] = up.z;
+    result.m[13] = -dot(up, eye);
+
+    result.m[2] = -forward.x;
+    result.m[6] = -forward.y;
+    result.m[10] = -forward.z;
+    result.m[14] = dot(forward, eye);
+    return result;
+}
+
+Vec3 camera_forward(const CameraState& camera) {
+    const float cos_pitch = std::cos(camera.pitch);
+    return normalize({
+        cos_pitch * std::sin(camera.yaw),
+        std::sin(camera.pitch),
+        -cos_pitch * std::cos(camera.yaw),
+    });
+}
+
+Vec3 camera_right(const CameraState& camera) {
+    constexpr Vec3 kWorldUp{0.0f, 1.0f, 0.0f};
+    return normalize(cross(camera_forward(camera), kWorldUp));
+}
+
+Mat4 view_matrix(const CameraState& camera) {
+    constexpr Vec3 kWorldUp{0.0f, 1.0f, 0.0f};
+    const Vec3 forward = camera_forward(camera);
+    return look_at(camera.position, camera.position + forward, kWorldUp);
+}
+
+bool screen_triangle_front_facing(float signed_area) {
+    return signed_area > 0.0f;
+}
+
 void reset_scene(SceneState& scene) {
     scene = SceneState{};
 }
@@ -208,7 +261,7 @@ std::vector<DrawItem> build_draw_list(const SceneState& scene) {
 }
 
 Mat4 view_matrix() {
-    return translate(0.0f, 0.0f, -6.0f);
+    return view_matrix(CameraState{});
 }
 
 Mat4 projection_matrix(float aspect) {

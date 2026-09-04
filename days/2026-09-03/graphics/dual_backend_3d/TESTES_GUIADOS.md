@@ -1,25 +1,81 @@
-# Testes guiados - 3D, animação e física
+# Testes guiados auditados — dual_backend_3d
 
-## Teste 1 - matriz identidade
+## 1. O CMake agora registra o teste
 
-Multiplicar qualquer vetor por `Mat4::identity()` deve preservar todos os componentes.
+A partir da pasta do módulo:
 
-## Teste 2 - tradução
+```bat
+cmake -S starter -B build-starter -A x64
+cmake --build build-starter --config Debug
+ctest --test-dir build-starter -C Debug --output-on-failure
+```
 
-Aplique `translate(2,3,4)` ao ponto `(1,1,1,1)`. O resultado deve ser aproximadamente `(3,4,5,1)`.
+Antes desta correção, `core_tests.exe` existia, mas não estava registrado via `add_test`; `ctest` podia dizer `No tests were found`. Isso foi corrigido.
 
-## Teste 3 - gravidade altera velocidade
+## 2. Estado inicial esperado do starter
 
-Depois de `physics_step(scene, dt)`, com corpo no ar, `velocity.y` deve diminuir aproximadamente `9.81*dt`.
+O build deve passar. O teste deve falhar enquanto os TODOs de câmera/culling permanecerem.
 
-## Teste 4 - piso não pode ser atravessado
+A primeira falha esperada é:
 
-Inicialize o corpo quase abaixo do piso e com velocidade negativa. Após o passo, a base do corpo deve estar no piso ou acima dele e a velocidade vertical deve ter mudado de sinal pela restituição.
+```text
+test_camera_yaw_changes_forward_direction
+```
 
-## Teste 5 - hierarquia de animação
+Isso prova que o teste realmente alcança um TODO do starter.
 
-Mude o tempo da cena. `build_draw_list()` deve produzir o mesmo número de objetos, mas as matrizes do braço devem mudar. Isso testa que a animação está realmente ligada ao tempo.
+## 3. Depois de `GFX-CAMERA-01..03` e `GFX-CULL-01`
 
-## Comparação de backends
+Rode novamente:
 
-Os testes unitários devem atingir o `scene_core`, que é compartilhado. A validação visual dos backends usa a mesma cena: se software e OpenGL divergirem, compare transformações, culling, depth convention e viewport antes de culpar a física.
+```bat
+ctest --test-dir build-starter -C Debug --output-on-failure
+```
+
+Esperado:
+
+```text
+100% tests passed
+```
+
+## 4. Testes visuais Windows
+
+Os backends Win32/WGL são validados manualmente no Windows porque o host Linux do laboratório não cria essas janelas.
+
+### Software
+
+```bat
+build-starter\Debug\software_renderer.exe
+```
+
+Checklist: rasterização, depth, iluminação, culling, WASD, mouse, P, R.
+
+### OpenGL
+
+```bat
+build-starter\Debug\opengl_renderer.exe
+```
+
+Checklist equivalente. Se shader falhar, registre o log da MessageBox.
+
+## 5. Limite de validação
+
+Os testes portáteis cobrem matemática de câmera, transform default, física básica e convenção de winding. Eles não provam que WGL/OpenGL funcionam em todo driver/hardware. Essa parte exige execução real no Windows.
+
+## Cobertura pedagógica auditada
+
+Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser considerado concluído.
+
+- `GFX-CAMERA-03` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CAMERA-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CAMERA-02` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CULL-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-LAMBERT-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CAMERA-04` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CULL-03` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CAMERA-05` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-RASTER-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `GFX-CULL-02` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+
+Arquivos de teste automatizado presentes no starter:
+- `starter/tests/core_tests.cpp`

@@ -264,7 +264,9 @@ else if (opcode == 0xCCU) {
 
 ---
 
-## Desafio principal - começar basic blocks e cross-references
+## Prévia de próximo milestone — basic blocks e cross-references (não é TODO obrigatório do starter de hoje)
+
+Esta seção é uma **prévia de design**, não uma implementação exigida para concluir o Day 01. O starter atual não contém TODO para CFG/xrefs e a solution do Day 01 não afirma implementá-los.
 
 Um **basic block** é uma sequência linear de instruções com uma entrada principal e sem branch no meio.
 
@@ -298,3 +300,11 @@ std::unordered_map<std::uint64_t, std::vector<std::uint64_t>> xrefs;
 onde `xrefs[target]` contém os endereços que apontam para `target`.
 
 Isso é a semente de uma visão gráfica estilo IDA/Ghidra.
+
+## Mapa de consistência auditada
+
+Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
+
+- `OBJDUMP-U16-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
+- `OBJDUMP-U32-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
+- `OBJDUMP-PARSE-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.

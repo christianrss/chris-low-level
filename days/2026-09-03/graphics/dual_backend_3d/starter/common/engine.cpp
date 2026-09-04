@@ -109,6 +109,38 @@ Mat4 perspective(float fov, float aspect, float z_near, float z_far) {
     return result;
 }
 
+
+Mat4 look_at(Vec3 eye, Vec3 target, Vec3 world_up) {
+    // TODO [GFX-CAMERA-03]: build the right/up/-forward basis and translation.
+    // Keep a working default so the medium rasterizer exercises can run first.
+    (void)target;
+    (void)world_up;
+    return translate(-eye.x, -eye.y, -eye.z);
+}
+
+Vec3 camera_forward(const CameraState& camera) {
+    // TODO [GFX-CAMERA-01]: derive forward from yaw/pitch.
+    (void)camera;
+    return {0.0f, 0.0f, -1.0f};
+}
+
+Vec3 camera_right(const CameraState& camera) {
+    // TODO [GFX-CAMERA-02]: cross(forward, world_up), then normalize.
+    (void)camera;
+    return {1.0f, 0.0f, 0.0f};
+}
+
+Mat4 view_matrix(const CameraState& camera) {
+    const Vec3 forward = camera_forward(camera);
+    return look_at(camera.position, camera.position + forward, {0.0f, 1.0f, 0.0f});
+}
+
+bool screen_triangle_front_facing(float signed_area) {
+    // TODO [GFX-CULL-01]: account for the Y flip in the software viewport.
+    (void)signed_area;
+    return true;
+}
+
 void reset_scene(SceneState& scene) {
     scene = SceneState{};
 }
@@ -208,7 +240,7 @@ std::vector<DrawItem> build_draw_list(const SceneState& scene) {
 }
 
 Mat4 view_matrix() {
-    return translate(0.0f, 0.0f, -6.0f);
+    return view_matrix(CameraState{});
 }
 
 Mat4 projection_matrix(float aspect) {

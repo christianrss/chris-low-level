@@ -1,10 +1,11 @@
 # Ordem de estudo deste módulo
 
 1. Leia `TEORIA_PASSO_A_PASSO.md`.
-2. Abra `starter/` e localize os TODOs.
-3. Siga `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` sem pular etapas.
-4. Compile/teste após cada etapa.
-5. Só então compare com `solutions/`.
+2. Faça `PESQUISA_GUIADA.md` sem copiar soluções externas.
+3. Abra `starter/` e localize os TODOs identificados por `GFX-*`.
+4. Siga `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` sem pular etapas.
+5. Compile/teste após cada etapa.
+6. Só então compare com `solutions/`.
 
 ---
 
@@ -14,7 +15,7 @@ A mesma cena roda em dois backends para comparar exatamente o que muda quando um
 
 - `solutions/software_win32/`: rasterizador 3D escrito na CPU. Win32 serve apenas para janela, eventos e apresentacao via `StretchDIBits`.
 - `solutions/opengl_win32/`: a mesma cena, animacao e fisica, mas os vertices sao enviados para a GPU via OpenGL. O contexto WGL e criado manualmente e as funcoes modernas sao carregadas com `wglGetProcAddress`.
-- `starter/`: versao para os exercicios. Ela continua compilavel, mas deixa TODOs no rasterizador CPU e no fragment shader.
+- `starter/`: versao para os exercicios. Ela continua compilavel e deixa TODOs auditáveis no rasterizador CPU, fragment shader, culling e câmera. O CTest também alcança TODOs portáteis, portanto o starter não fica falsamente verde.
 - `docs/COMPARISON.md`: comparacao etapa a etapa entre os dois pipelines.
 
 ## Correcao para Visual Studio 18 / MSVC

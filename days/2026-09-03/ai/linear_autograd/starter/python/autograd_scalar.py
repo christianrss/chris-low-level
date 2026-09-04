@@ -6,9 +6,9 @@ class Value:
         self.grad = 0.0
         self._prev = ()
 
-    # TODO: implement __add__ and remember the operands.
-    # TODO: implement __mul__ and remember the operands.
-    # TODO: implement backward() with a topological traversal.
+    # TODO [AI-AUTOGRAD-ADD-01]: implement __add__ and remember the operands.
+    # TODO [AI-AUTOGRAD-MUL-01]: implement __mul__ and remember the operands.
+    # TODO [AI-AUTOGRAD-BWD-01]: implement backward() with a topological traversal.
 
 
 if __name__ == "__main__":

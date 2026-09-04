@@ -6,7 +6,7 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 def merkle_root(items: list[str]) -> str:
-    # TODO: build pairwise Merkle levels.
+    # TODO [CHAIN-MERKLE-01]: build pairwise Merkle levels.
     return sha256(b"")
 
 @dataclass
@@ -17,10 +17,10 @@ class Block:
     timestamp: int
     nonce: int = 0
     def digest(self) -> str:
-        # TODO: canonical deterministic serialization.
+        # TODO [CHAIN-DIGEST-01]: canonical deterministic serialization.
         return sha256(str(self.index).encode())
     def mine(self, difficulty: int) -> str:
-        # TODO: increment nonce until the digest has the requested zero prefix.
+        # TODO [CHAIN-MINE-01]: increment nonce until the digest has the requested zero prefix.
         return self.digest()
 
 class ToyChain:
@@ -32,5 +32,5 @@ class ToyChain:
         self.blocks.append(block)
         return block
     def valid(self) -> bool:
-        # TODO: validate PoW and previous-hash links.
+        # TODO [CHAIN-VALID-01]: validate PoW and previous-hash links.
         return False
