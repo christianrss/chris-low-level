@@ -1,43 +1,26 @@
-# Validation — Day 02 (2026-09-04)
+# Day 02 validation — 2026-09-04 (pedagogical revision)
 
-## Environment
-- Linux 6.18.35 x86_64
-- GCC/G++ 14.2.0
-- CMake 3.31.6
-- Python 3.13.5
+## Pedagogical revision
+- 7 Day 02 modules now include `PESQUISA_GUIADA.md`.
+- C++ modules now have real compilable starter projects (`CMakeLists.txt`, `include/`, `src/`, `tests/`, `benchmarks/`) with explicit TODOs.
+- ELF64 triage has runnable Python starter tools/tests with deliberate `NotImplementedError` TODOs.
+- Every guided resolution identifies the exact starter file/function, supplies code in stages, explains important blocks, gives build/run/test commands, expected outcomes, debugging guidance, and a research/benchmark step.
 
-## Quality
-`python scripts/quality_check.py` passed after scanning 556 text/source files at the first Day 02 check. A final check is run again before packaging.
+## Starter validation
+All six C++ starters configure and compile successfully before completion. Their tests are intentionally expected to fail until TODOs are implemented. Both Python ELF64 starter tests intentionally fail with `NotImplementedError` before completion.
 
-## Tests
-All existing Day 01 project suites that were reached by the aggregate runner passed. The aggregate helper then hit the external execution timeout after `chris-cpu`; this was not a test failure.
+## Validated cumulative projects
+The following revised Day 02 solution projects were built and tested independently:
+- `chris-arena`: PASS
+- `chris-tensor`: PASS
+- `chris-algorithms`: PASS
+- `chris-qsim`: PASS
+- `chris-os` graphics reference: PASS
+- `chris-debugger` protocol v1: PASS
+- `chris-binary-toolkit`: PASS (2 tests)
 
-The remaining suites were executed project-by-project and passed:
-- chris-nasm
-- chris-boot
-- chris-terminal
-- chris-http
-- chris-p2p
-- chris-chain
-- chris-driver-lab
-- chris-arena
-- chris-tensor
-- chris-algorithms
-- chris-qsim
-- chris-os
-- chris-debugger
+## Aggregate runner note
+The repository-wide runner was also started. It successfully passed multiple existing projects before the external execution harness timeout was reached during the older-project portion of the suite. This is recorded as an execution-environment timeout, not as a test failure. The projects changed by this pedagogical revision were therefore rebuilt and tested individually as listed above.
 
-The new ELF64 parser regression test also passed independently.
-
-Therefore all portable project suites in the repository were covered in this validation pass, but the single aggregate helper did not complete in one invocation because of the outer harness timeout.
-
-## Benchmarks
-`python scripts/run_all_benchmarks.py` completed successfully. Day 02 results are stored in:
-- `benchmarks/results-2026-09-04.md`
-- `benchmarks/results-2026-09-04.json`
-
-## Platform limitations
-- QEMU and NASM are not installed in this execution environment, so Day 02 does not claim a booted `chris-os` or new boot-sector execution.
-- `chris-os` Day 02 is explicitly a portable graphics reference model, not a bootable kernel.
-- `chris-debugger` Day 02 implements packet framing/validation only; no live kernel stub or remote debug transport is claimed.
-- Windows-specific builds/backends are not claimed as locally validated.
+## DOCX QA
+`days/2026-09-04/Treino_LowLevel_Unificado_2026-09-04.docx` was regenerated from the revised guides, rendered to 31 page images, and every rendered page was visually inspected. No clipping, overlap, empty accidental pages, or code overflow was observed.

@@ -1,19 +1,40 @@
-# Teoria passo a passo — Tensor, shape e strides
+# Teoria passo a passo — Tensor, shape, strides e matmul
 
-## 1. Tensor não é só `vector<float>`
-Uma matriz 2x3 pode ser armazenada como seis floats. `shape=(2,3)` diz a geometria lógica; `strides` dizem quantos elementos avançar na memória ao mudar um índice.
+## 1. Dados físicos x geometria lógica
+Nosso `Tensor2D` guarda floats contíguos. Uma matriz 2x3 `[1,2,3;4,5,6]` é fisicamente `[1,2,3,4,5,6]`. `rows`/`cols` descrevem forma; *strides* dizem como transformar índice lógico em offset.
 
-## 2. Row-major
-Para uma matriz contígua row-major, `row_stride=cols` e `col_stride=1`. O elemento `(r,c)` vive em `r*row_stride + c*col_stride`.
+## 2. Fórmula de offset
+Em uma view 2D:
 
-## 3. Transpose view
-Uma transposição pode trocar shape e strides sem mover bytes: `(rows, cols, cols, 1)` vira `(cols, rows, 1, cols)`. Isso é zero-copy, mas o padrão de acesso pode ficar ruim para cache.
+```text
+offset = row * row_stride + col * col_stride
+```
+
+No projeto, strides são medidos em **elementos**, não bytes. Para 2x3 contígua: `(row_stride=3, col_stride=1)`.
+
+## 3. Transpose zero-copy
+A mesma memória pode ser vista como 3x2. Basta trocar dimensões e strides:
+
+```text
+original: rows=2 cols=3 row_stride=3 col_stride=1
+transpose: rows=3 cols=2 row_stride=1 col_stride=3
+```
 
 ## 4. Matmul
-Para `C=A*B`, `C[i,j]=sum_k A[i,k]*B[k,j]`. O algoritmo ingênuo custa aproximadamente `2*M*N*K` operações de ponto flutuante.
+Para `C=A*B`:
 
-## 5. Exercícios
-**Fácil:** derive os offsets de uma matriz 2x3.  
-**Médio:** implemente `transpose_view`.  
-**Difícil:** implemente matmul aceitando views.  
-**Desafio:** compare loop orders `ijk`, `ikj` e uma versão com `B` transposta, medindo cache/performance.
+```text
+C[i,j] = soma_k A[i,k] * B[k,j]
+```
+
+Se A é MxK, B deve ser KxN e C será MxN.
+
+## 5. Loop order do laboratório
+Usaremos `i-k-j`. Para cada `A[i,k]`, reutilizamos o valor enquanto percorremos colunas de B/saída. É uma introdução a locality; não é um GEMM otimizado.
+
+## 6. Invariantes
+- dimensões não nulas;
+- `values.size() == rows*cols`;
+- índices dentro do shape;
+- `left.cols == right.rows`;
+- views não são donas da memória.

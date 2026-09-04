@@ -1,19 +1,20 @@
-# Teoria passo a passo — Chris Debugger Protocol v1
+# Teoria passo a passo — Debug protocol v1
 
-## 1. Separação de responsabilidades
-Um debugger de kernel não é apenas uma UI. Precisamos de stub no kernel, transporte, protocolo, cliente host, símbolos, unwinder e crash dump analyzer.
+## Layout
+Header fixo de 20 bytes:
 
-## 2. Framing
-Um pacote precisa ser delimitado e validável: magic, versão, command, request id, payload length, checksum e payload.
+```text
+offset  size  campo
+0       4     magic "CKD1"
+4       2     version
+6       2     command
+8       4     request_id
+12      4     payload_size
+16      4     FNV-1a(payload)
+20      N     payload
+```
 
-## 3. Endianness
-A versão de hoje serializa inteiros em little-endian explicitamente. Isso evita depender do layout de uma `struct` C++ ou padding do compilador.
+Inteiros são little-endian. O decoder deve rejeitar header truncado, magic/version incorretos, comprimento divergente e checksum inválido.
 
-## 4. Corrupção
-O checksum FNV-1a não é segurança criptográfica; aqui ele serve apenas para detectar corrupção acidental no laboratório.
-
-## 5. Exercícios
-**Fácil:** decodifique manualmente um u32 little-endian.  
-**Médio:** implemente encoder.  
-**Difícil:** implemente decoder com length/checksum validation.  
-**Desafio:** projete uma resposta `ReadMemory` com status codes sem quebrar versionamento.
+## Arquitetura futura
+`chris-kd-stub` no kernel ↔ transporte serial/virtio/TCP ↔ protocolo ↔ cliente host `chris-debugger`. O parser precisa ser pequeno e defensivo porque no futuro estará próximo de código privilegiado.

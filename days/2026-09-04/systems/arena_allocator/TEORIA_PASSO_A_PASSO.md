@@ -1,22 +1,50 @@
-# Teoria passo a passo — Arena Allocator
+# Teoria passo a passo — Arena allocator
 
-## 1. O problema
-`malloc`/`new` resolvem muitos casos, mas cada alocação pode envolver metadados, busca por blocos livres e sincronização. Quando muitos objetos possuem o mesmo lifetime, podemos reservar uma região grande e apenas avançar um cursor.
+## 1. O problema que estamos resolvendo
+`new`/`delete` e `malloc`/`free` são interfaces gerais. Um *arena allocator* resolve um problema mais restrito: reservar um bloco grande de memória e atender várias alocações pequenas movendo apenas um cursor (`offset`). Isso troca flexibilidade por simplicidade e previsibilidade.
 
-## 2. Endereço, offset e alinhamento
-Uma arena tem `base`, `capacity` e `offset`. A próxima alocação precisa começar num endereço múltiplo de `alignment`. Para alinhamentos potência de dois, `aligned = (value + alignment - 1) & ~(alignment - 1)`.
+## 2. Modelo mental
+Imagine um vetor de bytes de 1024 posições. `offset_` começa em zero. Uma alocação de 7 bytes ocupa uma faixa; antes da próxima alocação, o endereço pode precisar ser arredondado para satisfazer um alinhamento de 8, 16, 32 bytes etc.
 
-## 3. Lifetime
-A arena não libera objetos individualmente. `reset()` descarta tudo de uma vez. Isso é excelente para frames, parsers, requests e fases temporárias, mas ruim quando objetos morrem em momentos arbitrários.
+```text
+storage_: [........................................................]
+           ^ base
+           ^ offset inicial = 0
 
-## 4. Invariantes
-- `used <= capacity`;
-- ponteiros retornados respeitam o alinhamento;
-- uma falha de capacidade nunca avança o cursor;
-- `reset()` volta `used` a zero.
+allocate(7, 8)
+           [#######]
+                  ^ próximo cursor lógico
 
-## 5. Exercícios
-**Fácil:** calcule manualmente o padding de offsets 0, 3, 16 e 31 para alinhamento 16.  
-**Médio:** implemente `align_up` e valide power-of-two.  
-**Difícil:** implemente `allocate` sem overflow de `capacity - aligned_offset`.  
-**Desafio:** adicione marker/rewind e escreva testes de regiões aninhadas.
+allocate(32, 32)
+                  .....padding.....[################################]
+```
+
+## 3. Alinhamento
+Um endereço satisfaz alinhamento `A` quando `endereco % A == 0`. No exercício aceitamos apenas alinhamentos que são potências de dois. Para esses valores, o arredondamento pode ser feito com máscara:
+
+```text
+mask = alignment - 1
+aligned = (value + mask) & ~mask
+```
+
+Você não deve decorar isso sem verificar. No papel, use `value=13`, `alignment=8`: o próximo múltiplo de 8 é 16.
+
+## 4. Por que alinhar o endereço real e não apenas offset?
+`std::vector<std::byte>::data()` tem um endereço base. Se você arredondar somente `offset_`, você implicitamente supõe que `base` já está alinhado para todo alinhamento pedido. A implementação deste laboratório calcula `base + offset_`, alinha o endereço e converte de volta para offset.
+
+## 5. Overflow e capacidade
+Nunca faça apenas `aligned_offset + size > capacity` sem pensar em overflow. A forma usada no projeto é:
+
+```text
+if aligned_offset > capacity -> falha
+if size > capacity - aligned_offset -> falha
+```
+
+## 6. Reset O(1)
+Uma arena não precisa percorrer objetos para recuperar o espaço bruto. Neste laboratório, `reset()` apenas coloca `offset_ = 0`. Isso não chama destrutores de objetos C++ que você eventualmente tenha construído manualmente nessa memória — limitação importante para fases futuras.
+
+## 7. Exercícios
+- Fácil: detectar potência de dois e calcular alinhamento no papel.
+- Médio: implementar `align_up`.
+- Difícil: implementar `allocate` com validação e exaustão.
+- Desafio: benchmark arena versus várias alocações no heap e discutir quando a comparação é justa ou injusta.

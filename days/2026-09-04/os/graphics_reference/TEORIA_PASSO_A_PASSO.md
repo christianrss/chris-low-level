@@ -1,22 +1,22 @@
-# Teoria passo a passo — Chris OS graphics reference
+# Teoria passo a passo — Surface e compositor 2D
 
-## 1. Por que user-space primeiro?
-Antes de escrever um compositor dentro do seu SO, é útil ter uma implementação portátil que funcione como oráculo. Se o backend de framebuffer produzir pixels diferentes, você tem uma referência determinística.
+## 1. Surface
+Uma surface é uma matriz de pixels RGBA em memória. Nosso layout é row-major: índice `y*width+x`.
 
-## 2. Surface
-Uma surface é largura, altura e pixels RGBA. O índice row-major é `y*width+x`.
+## 2. Clipping
+Desenhar fora do buffer corromperia memória num kernel real. `fill_rect` recorta o retângulo nos limites da surface.
 
-## 3. Clipping
-Desenhar um retângulo parcialmente fora da tela não deve acessar memória inválida. Primeiro intersectamos o retângulo com `[0,width)x[0,height)`.
+## 3. Layers
+Uma layer referencia uma surface e uma posição `(x,y)` no destino. Ordem do vetor define z-order simples: layers posteriores são compostas por cima.
 
-## 4. Alpha over
-Para alpha de 0..255: `out = (src*alpha + dst*(255-alpha))/255`. A versão de hoje mantém output alpha opaco para simplificar.
+## 4. Alpha source-over
+Usamos uma aproximação inteira para RGB, assumindo destino opaco:
 
-## 5. Window/compositor roadmap
-Futuro: shared surfaces, damage tracking, input focus, z-order, frame pacing, cursor, window protocol, GUI toolkit e backend virtio-gpu.
+```text
+out = src*alpha + dst*(1-alpha)
+```
 
-## 6. Exercícios
-**Fácil:** calcule índice de pixel.  
-**Médio:** implemente `fill_rect` com clipping.  
-**Difícil:** implemente alpha-over e z-order.  
-**Desafio:** adicione damage rectangles e meça quanto trabalho é evitado quando só 5% da tela muda.
+com alpha 0..255. Ainda não tratamos gamma correta, premultiplied alpha nem saída semi-transparente.
+
+## 5. Caminho até o SO
+CPU reference → framebuffer abstraction → window server → compositor → virtio-gpu/display driver → damage tracking/vsync/fences.

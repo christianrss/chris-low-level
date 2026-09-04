@@ -1,19 +1,27 @@
-# Teoria passo a passo — State-vector quântico
+# Teoria passo a passo — State-vector simulator
 
-## 1. Amplitudes complexas
-Um qubit `|psi>` possui amplitudes complexas `alpha` e `beta`, com `|alpha|² + |beta|² = 1`. Essas grandezas não são probabilidades diretamente; o quadrado do módulo é a probabilidade de medição.
+## 1. Estado
+Um qubit puro é `alpha|0> + beta|1>`, com `|alpha|²+|beta|²=1`. Dois qubits precisam de 4 amplitudes; n qubits, 2^n.
 
-## 2. Crescimento exponencial
-`n` qubits exigem `2^n` amplitudes. Se cada amplitude usa dois `double` (16 bytes), 30 qubits exigiriam aproximadamente 16 GiB apenas para o vetor.
+## 2. Representação
+Usamos `std::vector<std::complex<double>>`. Estado inicial |00...0> significa `state_[0]=1` e o restante zero.
 
-## 3. Gates unitários
-X troca amplitudes; Z muda a fase de `|1>`; H cria/interfere superposições. Uma operação unitária preserva a norma.
+## 3. Gate como matriz 2x2
+Para um par de amplitudes `(a0,a1)` do qubit alvo:
 
-## 4. CNOT e Bell
-Aplicar H no qubit 0 de `|00>` cria superposição. CNOT controlada por q0 e alvo q1 produz amplitudes apenas em `|00>` e `|11>`: um Bell state.
+```text
+new0 = m00*a0 + m01*a1
+new1 = m10*a0 + m11*a1
+```
 
-## 5. Exercícios
-**Fácil:** calcule H|0>.  
-**Médio:** implemente pares de amplitudes para gate de 1 qubit.  
-**Difícil:** implemente CNOT sem duplicar swaps.  
-**Desafio:** adicione medição com RNG seed e teste estatístico com tolerância justificada.
+## 4. Pareamento de índices
+`bit = 1<<qubit`. Percorremos blocos de `step=2*bit`; dentro de cada bloco pareamos índice com bit 0 e o parceiro com bit 1.
+
+## 5. Gates
+X = [[0,1],[1,0]]; Z = [[1,0],[0,-1]]; H = 1/sqrt(2)*[[1,1],[1,-1]].
+
+## 6. CNOT
+Só troca amplitudes quando control=1 e target=0, evitando fazer o swap duas vezes.
+
+## 7. Limite de memória
+Cada `complex<double>` geralmente ocupa 16 bytes. 24 qubits => 16,777,216 amplitudes, cerca de 256 MiB apenas para o vetor. O limite do exercício evita explosão acidental.

@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.20)
+project(chris_os LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_library(chris_os_graphics src/graphics.cpp)
+target_include_directories(chris_os_graphics PUBLIC include)
+if(MSVC)
+  target_compile_options(chris_os_graphics PRIVATE /W4 /permissive-)
+else()
+  target_compile_options(chris_os_graphics PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+add_executable(os_graphics_tests tests/os_graphics_tests.cpp)
+target_link_libraries(os_graphics_tests PRIVATE chris_os_graphics)
+
+option(CHRIS_BUILD_BENCHMARKS "Build benchmark targets" OFF)
+if(CHRIS_BUILD_BENCHMARKS)
+  add_executable(os_graphics_benchmark benchmarks/os_graphics_benchmark.cpp)
+  target_link_libraries(os_graphics_benchmark PRIVATE chris_os_graphics)
+endif()
+
+enable_testing()
+add_test(NAME os_graphics_tests COMMAND os_graphics_tests)

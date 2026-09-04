@@ -1,22 +1,115 @@
-# Resolução guiada — Chris Debugger: protocolo remoto v1
+# Resolução guiada passo a passo — chris-debugger protocol v1
 
-## Etapa 1 — leitura da arquitetura
-Leia `projects/chris-debugger/README.md` e `docs/architecture.md`. Identifique estado, invariantes e APIs antes de editar.
+## Baseline
 
-## Etapa 2 — fácil
-Resolva a parte conceitual descrita na teoria em papel/Markdown. O objetivo é prever índices, offsets ou estados antes do código.
+```bash
+cmake -S days/2026-09-04/debugger/protocol_v1/starter -B days/2026-09-04/debugger/protocol_v1/starter/build
+cmake --build days/2026-09-04/debugger/protocol_v1/starter/build
+ctest --test-dir days/2026-09-04/debugger/protocol_v1/starter/build --output-on-failure
+```
 
-## Etapa 3 — médio
-Abra `starter/EXERCISE_TODO.md`. Implemente a primeira operação central e crie/rode o teste correspondente. Não avance enquanto o teste não explicar claramente o erro.
+## Fácil — serialização little-endian
+Em `starter/src/protocol.cpp`, `append_u16`:
 
-## Etapa 4 — difícil
-Implemente o caminho completo. Compare com `solutions/` apenas depois da sua tentativa. Verifique edge cases e entradas inválidas.
+```cpp
+out.push_back(static_cast<std::uint8_t>(value & 0xFFu));
+out.push_back(static_cast<std::uint8_t>((value >> 8) & 0xFFu));
+```
 
-## Etapa 5 — benchmark
-Formule uma hipótese antes de medir. Rode o target/script indicado em `BENCHMARK_GUIADO.md`. Registre CPU, SO, compilador, input e pelo menos cinco repetições quando fizer comparação quantitativa.
+`append_u32`:
 
-## Etapa 6 — interpretação
-Explique por que o resultado ocorreu. Não transforme uma medição local em claim universal.
+```cpp
+for (int shift = 0; shift < 32; shift += 8) {
+    out.push_back(static_cast<std::uint8_t>((value >> shift) & 0xFFu));
+}
+```
 
-## Solução final
-A implementação validada está em `projects/chris-debugger` e foi copiada em `solutions/` para estudo comparativo.
+Decoder inverso:
+
+```cpp
+return static_cast<std::uint16_t>(
+    bytes[offset] | (static_cast<std::uint16_t>(bytes[offset + 1]) << 8));
+```
+
+E para u32:
+
+```cpp
+std::uint32_t value = 0;
+for (int shift = 0; shift < 32; shift += 8) {
+    value |= static_cast<std::uint32_t>(bytes[offset++]) << shift;
+}
+return value;
+```
+
+## Médio — checksum FNV-1a
+
+```cpp
+std::uint32_t hash = 2166136261U;
+for (std::size_t i = 0; i < size; ++i) {
+    hash ^= data[i];
+    hash *= 16777619U;
+}
+return hash;
+```
+
+Explique: isso é checksum/hash simples para detectar corrupção, **não** MAC/assinatura.
+
+## Difícil — encode
+Primeiro limite payload:
+
+```cpp
+if (packet.payload.size() > 1024 * 1024) {
+    throw std::invalid_argument("debug packet payload too large");
+}
+```
+
+Reserve e escreva campos na ordem do layout:
+
+```cpp
+std::vector<std::uint8_t> out;
+out.reserve(kHeaderSize + packet.payload.size());
+append_u32(out, kMagic);
+append_u16(out, kVersion);
+append_u16(out, static_cast<std::uint16_t>(packet.command));
+append_u32(out, packet.request_id);
+append_u32(out, static_cast<std::uint32_t>(packet.payload.size()));
+append_u32(out, fnv1a(packet.payload.data(), packet.payload.size()));
+out.insert(out.end(), packet.payload.begin(), packet.payload.end());
+return out;
+```
+
+## Desafio — decode defensivo
+Implemente validações nesta ordem: `bytes.size() >= 20`; magic; version; leia command/id/size/hash; verifique tamanho exato; copie payload; calcule hash; compare; retorne packet.
+
+Código essencial:
+
+```cpp
+if (bytes.size() < kHeaderSize) throw std::runtime_error("debug packet header truncated");
+if (read_u32(bytes, 0) != kMagic) throw std::runtime_error("debug packet magic mismatch");
+if (read_u16(bytes, 4) != kVersion) throw std::runtime_error("unsupported debug protocol version");
+```
+
+Depois:
+
+```cpp
+const auto command = static_cast<DebugCommand>(read_u16(bytes, 6));
+const std::uint32_t request_id = read_u32(bytes, 8);
+const std::uint32_t payload_size = read_u32(bytes, 12);
+const std::uint32_t expected_hash = read_u32(bytes, 16);
+```
+
+Valide tamanho antes de construir payload:
+
+```cpp
+if (bytes.size() != kHeaderSize + payload_size) {
+    throw std::runtime_error("debug packet length mismatch");
+}
+```
+
+Crie payload, valide hash e retorne `{command, request_id, std::move(payload)}`.
+
+## Testes/Debug
+O teste altera o último byte (`^=0xFF`) e espera checksum failure. Coloque breakpoint no `actual_hash != expected_hash` e compare ambos. O teste truncado `{1,2,3}` deve falhar antes de qualquer `read_u32`.
+
+## Benchmark
+O benchmark faz 300 mil encode+decode de payload de 64 bytes. Registre packets/s; depois compare quando adicionar CRC32C/SIMD ou transporte real, mantendo o mesmo payload.

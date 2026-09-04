@@ -1,22 +1,100 @@
-# Resolução guiada — Chris OS: primeiro compositor gráfico de referência
+# Resolução guiada passo a passo — Graphics reference do chris-os
 
-## Etapa 1 — leitura da arquitetura
-Leia `projects/chris-os/README.md` e `docs/architecture.md`. Identifique estado, invariantes e APIs antes de editar.
+## Baseline
 
-## Etapa 2 — fácil
-Resolva a parte conceitual descrita na teoria em papel/Markdown. O objetivo é prever índices, offsets ou estados antes do código.
+```bash
+cmake -S days/2026-09-04/os/graphics_reference/starter -B days/2026-09-04/os/graphics_reference/starter/build
+cmake --build days/2026-09-04/os/graphics_reference/starter/build
+ctest --test-dir days/2026-09-04/os/graphics_reference/starter/build --output-on-failure
+```
 
-## Etapa 3 — médio
-Abra `starter/EXERCISE_TODO.md`. Implemente a primeira operação central e crie/rode o teste correspondente. Não avance enquanto o teste não explicar claramente o erro.
+## Fácil — índice de pixel
+Abra `starter/src/graphics.cpp`, função `Surface::index`.
 
-## Etapa 4 — difícil
-Implemente o caminho completo. Compare com `solutions/` apenas depois da sua tentativa. Verifique edge cases e entradas inválidas.
+```cpp
+if (x >= width_ || y >= height_) {
+    throw std::out_of_range("pixel outside surface");
+}
+return y * width_ + x;
+```
 
-## Etapa 5 — benchmark
-Formule uma hipótese antes de medir. Rode o target/script indicado em `BENCHMARK_GUIADO.md`. Registre CPU, SO, compilador, input e pelo menos cinco repetições quando fizer comparação quantitativa.
+Para width=4 e `(x=1,y=2)`, offset=9. Desenhe a grade 4x4 e confirme.
 
-## Etapa 6 — interpretação
-Explique por que o resultado ocorreu. Não transforme uma medição local em claim universal.
+## Médio — `fill_rect` com clipping
+Comece ignorando dimensões vazias:
 
-## Solução final
-A implementação validada está em `projects/chris-os` e foi copiada em `solutions/` para estudo comparativo.
+```cpp
+if (width <= 0 || height <= 0) {
+    return;
+}
+```
+
+Calcule limites recortados:
+
+```cpp
+const int x0 = std::max(0, x);
+const int y0 = std::max(0, y);
+const int x1 = std::min(static_cast<int>(width_), x + width);
+const int y1 = std::min(static_cast<int>(height_), y + height);
+```
+
+Preencha:
+
+```cpp
+for (int py = y0; py < y1; ++py) {
+    for (int px = x0; px < x1; ++px) {
+        set_pixel(static_cast<std::size_t>(px), static_cast<std::size_t>(py), value);
+    }
+}
+```
+
+No teste `fill_rect(-1,-1,3,3)`, apenas a região [0,2)x[0,2) deve receber vermelho.
+
+## Difícil A — alpha-over
+Implemente `alpha_over`:
+
+```cpp
+const unsigned alpha = src.a;
+const unsigned inv = 255u - alpha;
+Pixel out;
+out.r = static_cast<std::uint8_t>((src.r * alpha + dst.r * inv + 127u) / 255u);
+out.g = static_cast<std::uint8_t>((src.g * alpha + dst.g * inv + 127u) / 255u);
+out.b = static_cast<std::uint8_t>((src.b * alpha + dst.b * inv + 127u) / 255u);
+out.a = 255;
+return out;
+```
+
+`+127` serve como arredondamento inteiro aproximado antes da divisão.
+
+## Difícil B — compositor
+Crie saída:
+
+```cpp
+Surface output(width, height, background);
+```
+
+Para cada layer, ignore null e percorra sua surface. Converta coordenada local `(sx,sy)` para destino `(dx,dy)`, faça clipping e então:
+
+```cpp
+output.set_pixel(
+    ux,
+    uy,
+    alpha_over(layer.surface->pixel(sx, sy), output.pixel(ux, uy)));
+```
+
+O bloco completo de loops está no gabarito `solutions/src/graphics.cpp`; tente reconstruí-lo seguindo essa transformação de coordenadas antes de comparar.
+
+## Teste esperado
+
+```text
+chris-os graphics reference tests passed
+100% tests passed
+```
+
+O pixel misturado vermelho + azul 50% deve ficar aproximadamente `(127,0,128)`.
+
+## Debug estilo sistemas
+Se clipping falhar, inspecione `x0,y0,x1,y1`. Se composição falhar, inspecione `sx,sy,dx,dy`, pixel source, pixel destination e alpha. Faça primeiro um caso 2x2 no papel.
+
+## Benchmark
+O benchmark compõe 40 frames 640x360 com duas surfaces. Compile com `CHRIS_BUILD_BENCHMARKS=ON`, rode e registre FPS. Depois use isso como baseline antes de adicionar damage tracking/SIMD.

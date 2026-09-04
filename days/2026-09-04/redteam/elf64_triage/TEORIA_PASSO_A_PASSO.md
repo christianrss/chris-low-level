@@ -1,19 +1,13 @@
-# Teoria passo a passo — Triagem ELF64 segura
+# Teoria passo a passo — ELF64 e extração de strings
 
-## 1. Escopo
-Somente fixtures sintéticas e binários próprios/benignos. Não há exploração, injeção, persistência, evasão ou acesso a processos de terceiros.
+## 1. ELF
+ELF é um formato de executável/objeto. Os primeiros bytes `0x7f 45 4c 46` identificam o formato. O array `e_ident` também informa classe e endianness.
 
-## 2. `e_ident`
-Os primeiros bytes são `0x7F 'E' 'L' 'F'`. `EI_CLASS=2` indica ELF64, `EI_DATA=1` little-endian e `EI_VERSION=1` a versão de identificação.
+## 2. Header de 64 bytes
+Nosso parser cobre apenas subset ELF64 little-endian. Isso é deliberado: primeiro construir parser pequeno, validado e testável.
 
-## 3. Campos úteis
-`e_machine` identifica a arquitetura; `e_entry` o entry point; `e_phoff/e_shoff` localizam program/section header tables; `e_phnum/e_shnum` dão contagens.
+## 3. Campos estudados
+`e_machine` identifica ISA; `e_entry` ponto de entrada; `e_phoff` e `e_shoff` apontam tabelas; contagens dizem quantas entradas existem; `e_shstrndx` indica a string table de nomes de seção.
 
-## 4. Parsing defensivo
-Sempre valide tamanho, magic, class e endianness antes de ler offsets. Parser de binário deve tratar input como não confiável, mesmo no laboratório.
-
-## 5. Exercícios
-**Fácil:** reconheça magic/class/data.  
-**Médio:** leia `e_machine` e `e_entry` com `struct.unpack_from`.  
-**Difícil:** rejeite headers truncados/invalid magic/class/data.  
-**Desafio:** adicione parser de section headers com bounds checks e nomes via `.shstrtab`.
+## 4. Strings ASCII
+Triagem simples encontra runs de bytes imprimíveis. Isso pode revelar mensagens/paths, mas também produz falsos positivos. Nunca conclua comportamento de um binário apenas por strings.

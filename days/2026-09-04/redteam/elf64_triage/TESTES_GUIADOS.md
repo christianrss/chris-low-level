@@ -1,14 +1,12 @@
 # Testes guiados — ELF64 triage
 
+Rode primeiro:
+
 ```bash
-python projects/chris-binary-toolkit/tests/test_elf64.py
+python starter/tests/test_ascii_strings.py
+python starter/tests/test_elf64.py
 ```
 
-Os testes usam um header ELF64 sintético construído em memória. Eles validam machine/entry/counts e exigem falha para truncation e magic incorreto.
+Leia os fixtures como especificação executável do subset suportado.
 
-Para o alvo benigno do próprio laboratório:
-```bash
-cmake -S projects/chris-binary-toolkit -B build/chris-binary-toolkit -DCMAKE_BUILD_TYPE=Release
-cmake --build build/chris-binary-toolkit --config Release
-ctest --test-dir build/chris-binary-toolkit --output-on-failure
-```
+Adicione casos para header truncado, magic errada, classe 32-bit e big-endian. Todo input inválido deve falhar de forma controlada, nunca por acesso fora do buffer.

@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.20)
+project(chris_qsim LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_library(chris_qsim src/qsim.cpp)
+target_include_directories(chris_qsim PUBLIC include)
+if(MSVC)
+  target_compile_options(chris_qsim PRIVATE /W4 /permissive-)
+else()
+  target_compile_options(chris_qsim PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+add_executable(qsim_tests tests/qsim_tests.cpp)
+target_link_libraries(qsim_tests PRIVATE chris_qsim)
+
+option(CHRIS_BUILD_BENCHMARKS "Build benchmark targets" OFF)
+if(CHRIS_BUILD_BENCHMARKS)
+  add_executable(qsim_benchmark benchmarks/qsim_benchmark.cpp)
+  target_link_libraries(qsim_benchmark PRIVATE chris_qsim)
+endif()
+
+enable_testing()
+add_test(NAME qsim_tests COMMAND qsim_tests)

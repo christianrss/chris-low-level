@@ -1,19 +1,16 @@
-# Teoria passo a passo — Sorting como pesquisa algorítmica
+# Teoria passo a passo — Pesquisa empírica de sorting
 
-## 1. Complexidade e entrada
-Merge sort mantém O(n log n) no pior caso. Um quicksort com pivot ingênuo pode cair para O(n²) em entradas já ordenadas.
+## 1. Duas perguntas diferentes
+Análise assintótica pergunta como custo cresce com n. Benchmark pergunta quanto uma implementação leva em uma máquina/configuração específica. Precisamos dos dois.
 
-## 2. Corretude
-Uma implementação de sorting precisa preservar o multiconjunto de elementos e produzir ordem não decrescente. Os testes comparam contra `std::sort` como oráculo, mas a explicação da corretude não depende dele.
+## 2. Merge sort
+Divide ao meio até subarrays de tamanho 1; depois intercala. A recorrência é aproximadamente `T(n)=2T(n/2)+Theta(n)`, portanto O(n log n). Usa scratch adicional O(n).
 
-## 3. Instrumentação
-Contar comparações e movimentos cria uma métrica independente do relógio. O tempo real adiciona cache, branch prediction, compilador e alocação.
+## 3. Quicksort do laboratório
+Usa Lomuto-like partition com **último elemento como pivot**. Em dados aleatórios pode funcionar bem, mas dados já ordenados produzem partições 0 e n-1 repetidamente, levando a ~n²/2 comparações.
 
-## 4. Pesquisa
-Use a mesma seed e distribuições: random, sorted, reversed e duplicates. Não tire conclusão universal de uma única máquina.
+## 4. Instrumentação
+`SortStats.comparisons` conta comparações-chave; `moves` aproxima movimentações. Não mede branches, cache misses, alocações do runtime nem frequência de CPU.
 
-## 5. Exercícios
-**Fácil:** trace merge de `[2,5]` com `[1,7]`.  
-**Médio:** implemente merge sort instrumentado.  
-**Difícil:** implemente quicksort e explique o pior caso do pivot final.  
-**Desafio:** adicione pivot aleatório/median-of-three e faça uma ablation controlada.
+## 5. Pesquisa empírica
+O benchmark usa quatro distribuições com seed fixa: random, sorted, reversed e muitos duplicates. Hipótese deve ser escrita antes de rodar.

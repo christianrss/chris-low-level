@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.20)
+project(chris_arena LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_library(chris_arena src/arena.cpp)
+target_include_directories(chris_arena PUBLIC include)
+if(MSVC)
+  target_compile_options(chris_arena PRIVATE /W4 /permissive-)
+else()
+  target_compile_options(chris_arena PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+add_executable(arena_tests tests/arena_tests.cpp)
+target_link_libraries(arena_tests PRIVATE chris_arena)
+
+option(CHRIS_BUILD_BENCHMARKS "Build benchmark targets" OFF)
+if(CHRIS_BUILD_BENCHMARKS)
+  add_executable(arena_benchmark benchmarks/arena_benchmark.cpp)
+  target_link_libraries(arena_benchmark PRIVATE chris_arena)
+endif()
+
+enable_testing()
+add_test(NAME arena_tests COMMAND arena_tests)

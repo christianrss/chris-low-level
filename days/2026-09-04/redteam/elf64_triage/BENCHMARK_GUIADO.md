@@ -1,7 +1,7 @@
-# Benchmark guiado — ELF64 parser
+# Benchmark guiado — ELF64 triage
 
-```bash
-python projects/chris-binary-toolkit/benchmarks/elf64_benchmark.py
-```
+O benchmark mede somente parsing de header ELF64 em bytes já na memória.
 
-O benchmark usa o mesmo header sintético muitas vezes para isolar custo do parser. Ele não mede I/O de disco e não deve ser interpretado como throughput de um analisador ELF completo.
+Execute pelo menos cinco vezes, registre Python, CPU e SO e use a mediana de `headers/s`.
+
+Não compare diretamente com `readelf` como se fizessem o mesmo trabalho; `readelf` analisa muito mais estruturas.
