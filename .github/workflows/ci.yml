@@ -1,0 +1,36 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  portable-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Quality
+        run: python scripts/quality_check.py
+      - name: Build and test
+        run: python scripts/run_all_tests.py
+
+  windows-msvc:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Quality
+        run: python scripts/quality_check.py
+      - name: Build and test with Visual Studio generator
+        shell: pwsh
+        run: |
+          $projects = @('chris-vm','chris-autograd','chris-disassembler','chris-binary-toolkit','chris-renderer')
+          foreach ($p in $projects) {
+            cmake -S "projects/$p" -B "build/$p" -A x64
+            cmake --build "build/$p" --config Release
+            ctest --test-dir "build/$p" -C Release --output-on-failure
+          }

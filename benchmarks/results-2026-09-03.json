@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-03",
+  "environment": {
+    "os": "Linux 6.18.35 x86_64",
+    "compiler": "GCC 14.2.0",
+    "python": "3.13.5",
+    "cmake": "3.31.6",
+    "note": "validation container; rerun on user hardware"
+  },
+  "results": {
+    "chris-vm": {"median_ms": 1.1774, "runs": 30, "includes_process_startup": true},
+    "chris-autograd-python": {"median_ms": 0.5086, "runs": 50},
+    "chris-disassembler": {"median_ms": 1.2773, "runs": 30, "target_bytes": 15960, "includes_process_startup": true},
+    "chris-binary-toolkit": [
+      {"size_mib": 1, "throughput_mib_s": 16.31},
+      {"size_mib": 4, "throughput_mib_s": 16.24},
+      {"size_mib": 8, "throughput_mib_s": 16.28}
+    ],
+    "chris-renderer-core": {"iterations": 1000000, "ns_per_iteration": 162.938}
+  }
+}

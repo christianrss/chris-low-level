@@ -1,0 +1,32 @@
+# Testes guiados - IA low-level
+
+## Teste 1 - convergência da regressão linear
+
+**Invariante:** o dataset `y=2x+1` deve produzir `w` próximo de `2` e `b` próximo de `1`.
+
+1. Importe `train()`.
+2. Execute 1000 épocas com `lr=0.01`.
+3. Use tolerâncias em vez de igualdade exata porque treinamento usa ponto flutuante.
+4. Verifique `abs(w-2) < 0.02` e `abs(b-1) < 0.05`.
+
+## Teste 2 - gradiente analítico vs numérico
+
+Este é um **gradient check**, uma técnica usada para validar backpropagation.
+
+Para `f(w)=(w*x+b-y)^2`, estime a derivada numericamente:
+
+`df/dw ~= (f(w+eps)-f(w-eps))/(2*eps)`
+
+Compare com o gradiente produzido por `Value.backward()`. Comece com `eps=1e-6` e tolerância `1e-5`.
+
+## Teste 3 - acumulação de gradientes
+
+Construa `z = x*x + x`. O mesmo nó `x` participa de múltiplos caminhos. O backward correto deve somar contribuições, não sobrescrever `grad`.
+
+## Teste 4 - operação não suportada
+
+`Value(2.0) ** 3` deve levantar `ValueError`. Este é um teste negativo de contrato da API.
+
+## Como depurar
+
+Imprima a ordem topológica e `(label, data, grad)` após cada `_backward`. Se o valor forward estiver certo e o gradiente errado, o problema está na derivada local ou na ordem/accumulation do backward.
