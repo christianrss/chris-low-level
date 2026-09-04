@@ -153,3 +153,76 @@ Milestones: `chris-autograd`, `chris-tensor`, `chris-inference`.
 - maintain releases and compatibility;
 - write technical reports/posts with measured claims;
 - eventually target contributions to Linux, coreboot, QEMU, NASM, LLVM/Clang, FFmpeg or comparable projects.
+
+## Phase 12 - Algorithms, formal methods and programming-language theory
+
+- asymptotic analysis, correctness proofs, amortized analysis and lower-bound thinking;
+- graph/string/randomized/streaming/parallel/cache-aware algorithms;
+- empirical algorithmics with adversarial inputs and PMU/cache measurements;
+- logic, invariants, safety/liveness, temporal logic and model checking;
+- SAT/SMT, symbolic execution, abstract interpretation and refinement concepts;
+- operational semantics, type systems, closures, effects, GC, bytecode and WASM.
+
+Milestones: `chris-algorithms`, `chris-algorithm-bench`, `chris-sat`, `chris-model-checker`, `chris-smt-lite`, `chris-symbolic`, `chris-lang`, `chris-typechecker`, `chris-wasm`.
+
+## Phase 13 - RTL, FPGA, ASIC/EDA and embedded real-time systems
+
+- Verilog/SystemVerilog, testbenches, assertions and waveform debugging;
+- clocks/resets, CDC, FIFOs, pipelines and timing constraints;
+- synthesis, static timing analysis and PPA trade-offs;
+- buses/interconnect, cache controllers, NoC concepts and RISC-V softcore;
+- systolic/ML accelerators and hardware/software co-design;
+- educational RTL -> synthesis -> floorplan -> placement -> CTS -> routing -> GDSII flow;
+- Cortex-M/RISC-V MCU bare metal, vector tables, ISRs, DMA, timers, GPIO and serial buses;
+- real-time scheduling, deadlines, priority inversion, watchdogs and low-power design.
+
+Milestones: `chris-riscv-rtl`, `chris-fpga-soc`, `chris-cache-rtl`, `chris-noc`, `chris-accelerator-rtl`, `chris-eda-lab`, `chris-mcu`, `chris-rtos`.
+
+## Phase 14 - Numerical/HPC and accelerator compiler/runtime systems
+
+- IEEE-754, numerical error, conditioning and stability;
+- dense/sparse linear algebra, FFT and iterative solvers;
+- OpenMP/MPI concepts, strong/weak scaling and checkpoint/restart;
+- CUDA/HIP/PTX/SPIR-V concepts, occupancy, coalescing, tiling and fusion;
+- SSA/LLVM IR/MLIR-style lowering, rewrite passes, bufferization and vectorization;
+- kernel DSLs, autotuning and accelerator simulation.
+
+Milestones: `chris-numerics`, `chris-blas`, `chris-sparse`, `chris-fft`, `chris-mpi`, `chris-kernel-lang`, `chris-mlir-lite`, `chris-gpu-runtime`, `chris-autotuner`.
+
+## Phase 15 - Distributed ML, databases, high-performance networking and reliability
+
+- AllReduce/AllGather/ReduceScatter/AllToAll and topology-aware collectives;
+- data/tensor/pipeline/expert parallelism, overlap, checkpointing and failure recovery;
+- logical clocks, failure detectors, consensus, leases, CRDTs and distributed transactions;
+- WAL, B+ trees, LSM/SSTables, MVCC, query planning/optimization and vectorized execution;
+- IPv6/routing/load balancing/QUIC/congestion control concepts;
+- eBPF/XDP, DPDK-style packet processing, zero copy, batching and RDMA concepts;
+- metrics/logs/traces, flamegraphs, tail latency, fault injection and chaos experiments.
+
+Milestones: `chris-collectives`, `chris-distributed-train`, `chris-raft`, `chris-crdt`, `chris-db`, `chris-lsm`, `chris-query`, `chris-router`, `chris-quic`, `chris-ebpf`, `chris-packet-engine`, `chris-observability`, `chris-chaos-lab`.
+
+## Phase 16 - Quantum systems, post-quantum cryptography and information theory
+
+- complex vector spaces, tensor products, gates, measurement and entanglement;
+- state-vector, stabilizer and tensor-network simulation;
+- quantum circuit parsing/IR/transpilation and error-correction concepts;
+- PQC standards and migration concepts; secret sharing, threshold/ZK/MPC/FHE concepts;
+- entropy, coding, compression, erasure/error-correction and DSP foundations.
+
+Milestones: `chris-qsim`, `chris-qasm`, `chris-qcompiler`, `chris-stabilizer`, `chris-tensor-network`, `chris-qec`, `chris-pqc-lab`, `chris-codec-core`, `chris-erasure`, `chris-dsp`.
+
+## Phase 17 - Cross-stack research integration
+
+The end state is not a checklist. Mature work should combine multiple layers in one reproducible investigation, for example:
+
+- compiler scheduling + GPU kernel + accelerator memory hierarchy;
+- RTL accelerator + simulator + compiler lowering + benchmark;
+- consensus implementation + TLA+ model + fault injection;
+- database/storage engine + crash recovery + model checking;
+- network data plane + eBPF/DPDK-style design + PMU profiling;
+- quantum simulator + SIMD/GPU kernels + numerical-error analysis;
+- ML runtime + collectives + distributed scheduling + observability.
+
+At this stage, prioritize a smaller number of deep projects with real bugs, releases, external review, performance archaeology and upstream contributions over endlessly starting new toy repositories.
+
+See [`docs/GAP_AUDIT.md`](docs/GAP_AUDIT.md) for the current coverage audit and priority order.
