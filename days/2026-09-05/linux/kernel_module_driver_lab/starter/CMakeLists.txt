@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.16)
+project(kmod_model C)
+enable_testing()
+add_executable(kmod_model device_model.c test_device_model.c)
+add_test(NAME kmod_model COMMAND kmod_model)

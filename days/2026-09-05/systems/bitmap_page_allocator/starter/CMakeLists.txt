@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(page_alloc CXX)
+set(CMAKE_CXX_STANDARD 17)
+enable_testing()
+add_executable(test_page page_allocator.cpp test_page_allocator.cpp)
+add_test(NAME page_allocator COMMAND test_page)

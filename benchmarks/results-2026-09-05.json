@@ -1,0 +1,20 @@
+{
+  "matmul_128": {
+    "repetitions": 9,
+    "naive_ms": {
+      "median": 1.31243,
+      "mean": 1.321101111111111
+    },
+    "tiled16_ms": {
+      "median": 0.956119,
+      "mean": 0.9716756666666667
+    },
+    "compiler": "g++ -O2"
+  },
+  "chris_pkg_4KiB": {
+    "repetitions": 9,
+    "median_ms": 0.48228600007860223,
+    "mean_ms": 0.4712405555740891,
+    "note": "temporary container filesystem; comparison baseline only"
+  }
+}
