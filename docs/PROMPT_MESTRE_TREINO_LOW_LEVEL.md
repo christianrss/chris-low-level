@@ -32,3 +32,5 @@ python scripts/build_day_docx.py --day YYYY-MM-DD   # opcional
 ## Retroatividade
 
 Days 01, 02 e 03 devem obedecer as mesmas regras. Corrija dias anteriores quando novas diretivas surgirem.
+
+**Sempre atualize o [`README.md`](../README.md) raiz** quando adicionar dias, scripts, docs ou mudar o fluxo de validação — ele é o índice principal do repositório.

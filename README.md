@@ -31,7 +31,7 @@ projects/          cumulative portfolio-quality implementations
 benchmarks/        reproducible measurements + small result files
 research/          hypotheses, experiments, ablations and conclusions
 docs/              methodology, architecture, safety and reading maps
-scripts/           validation/build/benchmark automation
+scripts/           validation, benchmarks, porting map, depth upgrades
 .github/workflows/ CI
 ```
 
@@ -76,28 +76,78 @@ Every mature project should eventually show:
 
 Read [`START_HERE.md`](START_HERE.md), then open the day folder you are studying:
 
-| Day | Path | Modules |
-|-----|------|---------|
-| 2026-09-03 | [`days/2026-09-03/`](days/2026-09-03/) | 13 |
-| 2026-09-04 | [`days/2026-09-04/`](days/2026-09-04/) | 11 |
-| 2026-09-05 | [`days/2026-09-05/`](days/2026-09-05/) | 10 |
+| Day | Path | Modules | Benchmarks |
+|-----|------|---------|------------|
+| 2026-09-03 | [`days/2026-09-03/`](days/2026-09-03/) | 13 | [`benchmarks/results-2026-09-03.json`](benchmarks/results-2026-09-03.json) |
+| 2026-09-04 | [`days/2026-09-04/`](days/2026-09-04/) | 11 | [`benchmarks/results-2026-09-04.json`](benchmarks/results-2026-09-04.json) |
+| 2026-09-05 | [`days/2026-09-05/`](days/2026-09-05/) | 10 | [`benchmarks/results-2026-09-05.json`](benchmarks/results-2026-09-05.json) |
 
-Per module: `TEORIA_PASSO_A_PASSO.md` → `EXERCICIOS.md` → implement in `starter/` → `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` when stuck.
+### Fluxo por módulo (ponta a ponta)
 
-Pedagogical standard: [`docs/PEDAGOGY_STANDARD.md`](docs/PEDAGOGY_STANDARD.md) + [`docs/PORTING_GUIDE.md`](docs/PORTING_GUIDE.md) + [`docs/LEARNING_PATHS.md`](docs/LEARNING_PATHS.md) + [`docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md`](docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md) + [`docs/PROMPT_MESTRE_EXTREME_QUALITY.md`](docs/PROMPT_MESTRE_EXTREME_QUALITY.md).
+```text
+START_HERE do dia
+  → TEORIA_PASSO_A_PASSO.md   (O quê / Como / Por quê)
+  → PESQUISA_GUIADA.md        (worksheet + checkpoint)
+  → EXERCICIOS.md             (Fácil → Desafio)
+  → starter/                  (TODO [ID], PEDAGOGY-TEST)
+  → TESTES_GUIADOS.md         (Casos numerados)
+  → RESOLUCAO_GUIADA_...md    (só ao travar)
+  → solutions/                (após tentativa honesta)
+  → BENCHMARK_GUIADO.md       (medir + Resultados observados)
+  → projects/chris-*          (portar — ver PORTING_GUIDE)
+  → research/                 (nota de conclusão — template em docs/)
+```
 
-Portable repository validation:
+Cada pasta `<trilha>/<modulo>/` em `days/` contém 8 arquivos MD + `starter/` + `solutions/`. **MD modular é o formato principal**; DOCX é export opcional.
+
+### Documentação pedagógica
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`docs/PEDAGOGY_STANDARD.md`](docs/PEDAGOGY_STANDARD.md) | O quê / Como / Por quê; artefatos obrigatórios |
+| [`docs/PORTING_GUIDE.md`](docs/PORTING_GUIDE.md) | Como portar lab → `projects/` |
+| [`docs/LEARNING_PATHS.md`](docs/LEARNING_PATHS.md) | Trilhas verticais multi-dia + capstones |
+| [`docs/RESEARCH_NOTE_TEMPLATE.md`](docs/RESEARCH_NOTE_TEMPLATE.md) | Template para experimentos em `research/` |
+| [`docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md`](docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md) | Índice do prompt mestre |
+| [`docs/PROMPT_MESTRE_EXTREME_QUALITY.md`](docs/PROMPT_MESTRE_EXTREME_QUALITY.md) | Thresholds e anti-padrões |
+
+### Validação
 
 ```bash
+# Gate pedagógico (34 módulos, 108 TODOs)
+python scripts/pedagogy_check_unified.py --day 2026-09-03 --all-days
+
+# Testes dos módulos do dia (solutions devem passar)
+python scripts/run_day_tests.py --day 2026-09-03 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-04 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-05 --mode solutions
+
+# Benchmarks → benchmarks/results-YYYY-MM-DD.json
+python scripts/run_day_benchmarks.py --day 2026-09-03
+python scripts/run_day_benchmarks.py --day 2026-09-04
+python scripts/run_day_benchmarks.py --day 2026-09-05
+
+# Projetos cumulativos
 python scripts/quality_check.py
-python scripts/pedagogy_check_unified.py --day 2026-09-03
-python scripts/pedagogy_check_unified.py --day 2026-09-04
-python scripts/pedagogy_check_unified.py --day 2026-09-05
 python scripts/run_all_tests.py
 python scripts/run_all_benchmarks.py
 ```
 
-Generate or refresh DOCX from Markdown:
+Trilhas de execução real (kernel `insmod`, QEMU boot, .NET SDK):
+
+```bash
+python scripts/run_real_env_checklist.py --module linux/kernel_module_driver_lab --day 2026-09-05
+```
+
+Manutenção do acervo (após mudanças estruturais):
+
+```bash
+python scripts/upgrade_depth_e2e.py --all-days
+python scripts/repair_pedagogy_depth.py
+python scripts/generate_day_scaffold.py --day YYYY-MM-DD
+```
+
+Export DOCX opcional (não é gate de qualidade):
 
 ```bash
 python scripts/build_day_docx.py --day 2026-09-03
@@ -105,9 +155,15 @@ python scripts/build_day_docx.py --day 2026-09-04
 python scripts/build_day_docx.py --day 2026-09-05
 ```
 
+CI (`.github/workflows/ci.yml`) roda pedagogy check + `run_day_tests --mode solutions` nos 3 dias + testes dos `projects/`.
+
 The lab is intentionally honest about what was and was not tested. Hardware-specific, Windows-specific, firmware and QEMU milestones are documented separately until the required environment is available.
 
 For the complete mapping from the user-defined curriculum directives to Day 01 evidence and future milestones, see [`docs/DIRECTIVES_COVERAGE.md`](docs/DIRECTIVES_COVERAGE.md).
+
+## Day 05 — 2026-09-05
+
+10 módulos: tiled matmul, CIL/.NET, estados GPU, VM bytecode com branches, rootfs/pkg, driver kernel (userspace + review), terminal ANSI, streams Node, ELF entry, bitmap page allocator. Projetos: `chris-tensor/day03_tiled_matmul`, `chris-dotnet-ilvm`, `chris-gpu-state`, `chris-js/day03_branches`, `chris-linux-pkg`, `chris-linux-module-lab`, `chris-linux-terminal`, `chris-node-streaming/day03_backpressure`, `chris-pagealloc`. Ver [`days/2026-09-05/README.md`](days/2026-09-05/README.md) e [`days/2026-09-05/START_HERE.md`](days/2026-09-05/START_HERE.md).
 
 ## Day 02 — 2026-09-04
 
