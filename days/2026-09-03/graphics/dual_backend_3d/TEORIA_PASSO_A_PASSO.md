@@ -110,3 +110,71 @@ O projeto define `NOMINMAX` antes de `windows.h` para impedir que macros histór
 - os dois backends devem mostrar a mesma cena lógica;
 - pausar/reiniciar deve preservar comportamento compartilhado;
 - o software renderer deve continuar funcionando sem chamar OpenGL.
+
+## Exemplo numérico — vértice até pixel (simplificado)
+
+Vértice local `(1,0,0,1)`, sem rotação, câmera olhando -Z, projection mapeia clip para NDC e viewport 800×600:
+
+```text
+clip  -> divide por w -> NDC (x,y in [-1,1])
+NDC x -> pixel_x = (x+1)*0.5*800
+NDC y -> pixel_y = (1-y)*0.5*600   # flip Y no software
+```
+
+Depth após divide alimenta z-buffer; menor z (convenção do lab) vence.
+
+## Back-face culling — área assinada 2D
+
+Para triângulo projetado `(x0,y0),(x1,y1),(x2,y2)`:
+
+```text
+area = (x1-x0)*(y2-y0) - (x2-x0)*(y1-y0)
+```
+
+Com flip Y do viewport software, invertemos o sinal (`GFX-CULL-01`). OpenGL usa `GL_CULL_FACE` + winding CCW (`GFX-CULL-03`).
+
+## Invariantes
+
+- Matrizes model/view/projection consistentes entre backends (`common/engine.cpp`).
+- Câmera: `forward` normalizado, `right = cross(forward, world_up)` (`GFX-CAMERA-01/02`).
+- Timestep físico fixo independente do FPS de render.
+- Depth test antes de escrever cor no framebuffer.
+- Movimento WASD usa mesma base nos dois backends (`GFX-CAMERA-04`).
+
+## Complexidade
+
+- Transform por vértice: O(1); cena com V vértices: O(V).
+- Rasterização software: O(pixels na bounding box × triângulos) — custoso na CPU.
+- OpenGL: mesmo trabalho paralelizado na GPU; CPU envia O(V) atributos.
+
+## Bugs comuns
+
+- Esquecer flip Y entre NDC e framebuffer software.
+- Normal não normalizada em Lambert → intensidade errada.
+- Culling com winding invertido (tudo desaparece).
+- Misturar graus/radianos em yaw/pitch.
+- Atualizar física com delta variável do frame (instável).
+
+## Comparação com produção
+
+| Lab dual backend | Engine comercial (Unreal/Unity) |
+|------------------|----------------------------------|
+| raster CPU + GL fixo | pipelines Vulkan/D3D12/Metal |
+| Lambert simples | PBR, shadow maps, post |
+| Win32 direto | abstração multiplataforma |
+| z-buffer float | reversed-Z, hierarchical Z |
+
+O contrato compartilhado em `engine.cpp` imita o “render thread vs RHI” de engines reais.
+
+---
+
+## Por quê — síntese pedagógica
+
+### Por quê este módulo existe?
+Conectar teoria de baixo nível a decisões de implementação verificáveis — não decorar API.
+
+### Por quê estas invariantes?
+Cada `TODO [ID]` protege uma propriedade que quebra silenciosamente em produção se ignorada (overflow, estado inválido, parsing parcial).
+
+### Por quê medir e portar para `projects/`?
+Lab isola o aprendizado; `projects/chris-*` consolida engenharia de portfólio com testes e benchmarks reproduzíveis.

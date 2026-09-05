@@ -20,3 +20,13 @@ https://en.cppreference.com/w/cpp/types/alignment_of
 
 ## Regra
 Não copie implementação de allocator pronta. Use a documentação para validar conceitos; a implementação será construída abaixo.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

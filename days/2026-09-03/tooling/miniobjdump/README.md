@@ -54,3 +54,15 @@ No Visual Studio:
 cmake -S solutions -B build-solution -A x64
 cmake --build build-solution --config Release
 ```
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-disassembler` |
+| O que levar | ELF/PE inspection + decode subset |
+| Testes a replicar | integration tests |
+| Milestone | MILESTONES.md — disassembler |
+| Commit sugerido | `feat(disasm): port miniobjdump from day01 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

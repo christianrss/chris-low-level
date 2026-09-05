@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\linux\kernel_module_driver_lab\solutions\device_model.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\linux\kernel_module_driver_lab\solutions\test_device_model.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\linux\kernel_module_driver_lab\solutions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9B1C8BAD-4B38-3DA9-BA8F-4FC89ACD67D4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

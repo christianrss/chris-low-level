@@ -15,3 +15,13 @@
 5. O que mudaria na ABI Microsoft x64?
 
 Use a ABI como contrato. O exercício deve ser derivado desse contrato, não copiado de uma função pronta.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

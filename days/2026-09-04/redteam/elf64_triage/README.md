@@ -11,3 +11,15 @@ Você vai analisar apenas um header ELF sintético/benigno e o próprio lab targ
 3. Implemente antes de consultar `solutions/`.
 4. Rode os testes guiados.
 5. Execute o benchmark e registre ambiente/resultados.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-binary-toolkit` |
+| O que levar | ELF64 header triage |
+| Testes a replicar | elf64_benchmark.py |
+| Milestone | MILESTONES.md — ELF triage |
+| Commit sugerido | `feat(toolkit): port elf64 triage from day02 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

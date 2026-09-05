@@ -1,5 +1,22 @@
 # RESOLUÇÃO GUIADA - IA low-level / Linear + Autograd
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `AI-AUTOGRAD-ADD-01` | `starter/python/autograd_scalar.py` | `Value.__add__` |
+| `AI-AUTOGRAD-MUL-01` | `starter/python/autograd_scalar.py` | `Value.__mul__` |
+| `AI-AUTOGRAD-BWD-01` | `starter/python/autograd_scalar.py` | `backward()` (travessia topológica) |
+| `AI-PY-GRAD-01` | `starter/python/linear_train.py` | `train()` — acumular dL/dw e dL/db |
+| `AI-PY-SGD-01` | `starter/python/linear_train.py` | `train()` — média do batch + update SGD |
+| `AI-C-GRAD-01` | `starter/src/linear_train.c` | `main()` — acumular gradientes no loop |
+| `AI-C-AVG-01` | `starter/src/linear_train.c` | `main()` — média dos gradientes |
+| `AI-C-SGD-01` | `starter/src/linear_train.c` | `main()` — passo SGD |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/ai/linear_autograd/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## Exercício Fácil - calcular forward, erro, loss e um passo de SGD
 
 Dados:
@@ -414,3 +431,16 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 - `AI-C-GRAD-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
 - `AI-C-AVG-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
 - `AI-C-SGD-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
+
+## Relatório de resolução
+
+Checklist ao concluir:
+
+- [ ] Python (`AI-PY-GRAD-01`, `AI-PY-SGD-01`) e C (`AI-C-GRAD-01`, `AI-C-AVG-01`, `AI-C-SGD-01`) convergem para `w≈2`, `b≈1`.
+- [ ] Autograd (`AI-AUTOGRAD-*`) reproduz `dL/dw=-12`, `dL/db=-6` no exemplo fixo.
+- [ ] `starter/python/debug_bug.py` corrigido sem consultar gabarito primeiro.
+- [ ] `python starter/tests/test_autograd.py` passa.
+
+**Depuração:** imprima `weight`, `bias` a cada 100 épocas; gradientes devem diminuir de magnitude, não explodir.
+
+**Arquivos starter editados:** `starter/python/linear_train.py`, `starter/python/autograd_scalar.py`, `starter/src/linear_train.c`.

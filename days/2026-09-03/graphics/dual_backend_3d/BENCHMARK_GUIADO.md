@@ -12,3 +12,13 @@ Depois, no Windows, crie benchmarks separados para:
 - número de objetos/triângulos escalado progressivamente.
 
 Nunca compare FPS sem registrar resolução, número de triângulos e hardware.
+
+## Resultados observados
+
+Ambiente de referência: Linux container, GCC 14.2, Python 3.13 (ver `benchmarks/results-2026-09-03.json`).
+
+| Métrica | Valor referência | Notas |
+|---------|------------------|-------|
+| Core update | ~163 ns/iter | 1M iterations |
+
+Valores são ordem de grandeza — **rerode na sua máquina** e registre mediana após warm-up.

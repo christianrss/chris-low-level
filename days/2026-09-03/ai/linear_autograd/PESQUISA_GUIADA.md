@@ -21,3 +21,13 @@ Entender a matemática e o mecanismo de autodiferenciação antes de comparar a 
 
 ## Regra de uso
 Não copie uma implementação de framework. Use as fontes para validar derivadas, invariantes e vocabulário; implemente o exercício a partir do starter e da resolução guiada.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

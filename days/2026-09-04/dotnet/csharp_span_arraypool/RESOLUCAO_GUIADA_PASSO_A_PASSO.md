@@ -85,3 +85,13 @@ Se aparecer `ObjectDisposedException`, verifique se alguma view está sendo usad
 
 ## Solução final comentada
 Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+
+## Relatório de resolução
+
+| ID | Método | Contrato |
+|----|--------|----------|
+| D2-CSHARP-WRITE-HEADER | `WriteHeader` | 8 bytes LE; valida destino e tamanho |
+| D2-CSHARP-READ-HEADER | `ReadHeader` | sem alocação; rejeita length negativo |
+| D2-CSHARP-RENT-FRAME | `RentFrame` | pool + cópia em offset 8; dispose único |
+
+Aceite: `chris-dotnet-bench tests passed`. `ObjectDisposedException` após dispose indica uso de buffer retornado ao pool. Benchmark deve mostrar redução de alocações versus `new byte[]` em loop — valide com profiler, não só tempo.

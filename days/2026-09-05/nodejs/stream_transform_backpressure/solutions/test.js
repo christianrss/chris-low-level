@@ -1,3 +1,25 @@
-import assert from 'node:assert/strict'; import { Writable } from 'node:stream'; import { once } from 'node:events'; import { LineTransform } from './line_transform.js';
-const t=new LineTransform(); const lines=[]; t.on('data',x=>lines.push(x)); const euro=Buffer.from('€'); t.write(Buffer.from('a\n\n')); t.write(Buffer.concat([Buffer.from('b'),euro.subarray(0,1)])); t.write(Buffer.concat([euro.subarray(1),Buffer.from('\nc')])); t.end(); await once(t,'end'); assert.deepEqual(lines,['a','','b€','c']);
-let falseWrites=0; let drains=0; const w=new Writable({highWaterMark:8, write(chunk,enc,cb){setTimeout(cb,2);}}); for(let i=0;i<50;i++){ if(!w.write(Buffer.alloc(8))){ falseWrites++; await once(w,'drain'); drains++; } } w.end(); await once(w,'finish'); /* TODO [NODE-BACKPRESSURE-02] validated by assertions */ assert.ok(falseWrites>0); assert.equal(drains,falseWrites); console.log('OK node streams', {falseWrites,drains});
+// PEDAGOGY-TEST [NODE-XFORM-01]: split de linhas UTF-8 com caractere multibyte
+// PEDAGOGY-TEST [NODE-BACKPRESSURE-02]: demo integrada de drain/falseWrites
+import assert from 'node:assert/strict';
+import { once } from 'node:events';
+import { runBackpressureDemo } from './backpressure_demo.js';
+import { LineTransform } from './line_transform.js';
+
+const transform = new LineTransform();
+const lines = [];
+transform.on('data', (line) => lines.push(line));
+
+const euro = Buffer.from('€');
+transform.write(Buffer.from('a\n\n'));
+transform.write(Buffer.concat([Buffer.from('b'), euro.subarray(0, 1)]));
+transform.write(Buffer.concat([euro.subarray(1), Buffer.from('\nc')]));
+transform.end();
+await once(transform, 'end');
+
+assert.deepEqual(lines, ['a', '', 'b€', 'c']);
+
+const { falseWrites, drains } = await runBackpressureDemo();
+assert.ok(falseWrites > 0);
+assert.equal(drains, falseWrites);
+
+console.log('OK node streams', { falseWrites, drains });

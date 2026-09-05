@@ -11,3 +11,15 @@ Você vai construir surfaces RGBA, clipping e alpha compositing em user space. E
 3. Implemente antes de consultar `solutions/`.
 4. Rode os testes guiados.
 5. Execute o benchmark e registre ambiente/resultados.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-os` |
+| O que levar | software compositor |
+| Testes a replicar | pixel compositing tests |
+| Milestone | MILESTONES.md — OS graphics ref |
+| Commit sugerido | `feat(os): port compositor from day02 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

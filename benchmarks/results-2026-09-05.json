@@ -16,5 +16,32 @@
     "median_ms": 0.48228600007860223,
     "mean_ms": 0.4712405555740891,
     "note": "temporary container filesystem; comparison baseline only"
+  },
+  "generated_at": "2026-09-05T19:46:44.721427+00:00",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.2"
+  },
+  "modules": {
+    "ai/tiled_matmul_cache": {
+      "status": "skip",
+      "reason": "no bench binary"
+    },
+    "graphics/vulkan_d3d12_resource_states": {
+      "status": "skip",
+      "reason": "no bench binary"
+    },
+    "linux/kernel_module_driver_lab": {
+      "status": "skip",
+      "reason": "no bench binary"
+    },
+    "systems/bitmap_page_allocator": {
+      "status": "skip",
+      "reason": "no bench binary"
+    }
+  },
+  "benchmarks": {
+    "status": "skip",
+    "reason": "no bitmap bench binary"
   }
 }

@@ -14,3 +14,13 @@
 4. Como medir cobertura e número de entregas?
 
 O laboratório é totalmente in-process; não o confunda com uma rede P2P segura/real.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

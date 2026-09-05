@@ -1,5 +1,15 @@
 # Resolução guiada auditada — HTTP request parser incremental
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `HTTP-PARSE-01` | `starter/src/http_parser.cpp` | `HttpRequestParser::try_parse()` |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/network/http_parser/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## 0. Edite
 
 ```text
@@ -41,6 +51,9 @@ static std::string trim(std::string value) {
 
 O cast para `unsigned char` evita comportamento indefinido de `std::isspace` com `char` negativo.
 
+### Por que funciona?
+Headers HTTP permitem espaços ao redor do valor; `trim` remove apenas das extremidades sem alterar o meio. `unsigned char` garante que bytes ≥ 0x80 não viram índices negativos em tabelas de locale.
+
 ## 3. `feed`
 
 Substitua o corpo por:
@@ -58,6 +71,9 @@ return complete_;
 
 `feed()` não supõe que `bytes` contém uma mensagem inteira.
 
+### Por que funciona?
+TCP entrega bytes, não mensagens. Acumular em `buffer_` e chamar `try_parse()` a cada chunk permite progresso parcial sem perder fragmentos anteriores. Lançar se `complete_` evita reparse silencioso após request fechado.
+
 ## 4. Detecte fim dos headers
 
 Em `try_parse()`:
@@ -70,6 +86,9 @@ if (header_end == std::string::npos) {
 ```
 
 Não lance erro por fragmento incompleto.
+
+### Por que funciona?
+`\r\n\r\n` é o delimitador canônico entre headers e body em HTTP/1.x. Retornar cedo quando `npos` mantém o parser em estado “aguardando mais dados” em vez de falhar em fragmento legítimo.
 
 ## 5. Request line — trecho omitido na resolução antiga
 
@@ -105,6 +124,9 @@ if (request_.version.rfind("HTTP/", 0) != 0) {
 }
 ```
 
+### Por que funciona?
+`getline` no stream limitado aos headers evita ler o body como linha de texto. Remover `\r` final trata CRLF corretamente. Três tokens com `>>` falham cedo em linhas malformadas como `BROKEN\r\n\r\n`.
+
 ## 6. Headers — também precisava do código completo
 
 ```cpp
@@ -127,6 +149,9 @@ while (std::getline(stream, line)) {
 
 Neste milestone não há folding/múltiplos headers iguais/normalização case-insensitive completa. Não invente suporte que o parser ainda não possui.
 
+### Por que funciona?
+Cada linha `Nome: valor` mapeia para um par no `map`. `trim` em nome e valor evita chaves com espaços fantasmas. `colon == npos` rejeita linha sem separador — típico de corrupção ou ataque.
+
 ## 7. Content-Length e body fragmentado
 
 ```cpp
@@ -144,6 +169,9 @@ if (buffer_.size() < body_start + content_length) {
 request_.body = buffer_.substr(body_start, content_length);
 complete_ = true;
 ```
+
+### Por que funciona?
+`body_start = header_end + 4` pula o delimitador `\r\n\r\n` (4 bytes). Comparar `buffer_.size()` com `body_start + content_length` só marca completo quando todos os bytes do body chegaram — o teste `feed("llo")` após `"...he"` depende disso.
 
 ## 8. `request()`
 
@@ -197,3 +225,22 @@ A implementação correspondente está em `solutions/src/http_parser.cpp`.
 Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
 
 - `HTTP-PARSE-01` — `starter/src/http_parser.cpp` → `solutions/src/http_parser.cpp`.
+## Relatório de resolução
+
+### O que foi validado
+
+- Todos os TODOs do `starter/` foram implementados na ordem sugerida.
+- Testes com marcadores `PEDAGOGY-TEST` passaram na solution.
+- O starter continua falhando nos pontos intencionais até o aluno completar cada ID.
+
+### Armadilhas encontradas
+
+- Leia mensagens de `assert` como contrato, não como bug do teste.
+- Compare sempre starter vs solution diff por arquivo.
+- Documente no benchmark o que *não* foi medido (I/O, rede, GPU, VM).
+
+**Saída esperada:** testes HTTP em `starter/tests/test_http.cpp` passam com feeds fragmentados.
+
+### Próximo passo sugerido
+
+Repita o módulo sem consultar a resolução, cronometrando apenas a fase de implementação. Depois leia `BENCHMARK_GUIADO.md` e registre suas observações na seção **Resultados observados**.

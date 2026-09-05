@@ -1,6 +1,15 @@
-# Testes guiados — Node.js: Transform stream + backpressure observável
+# Testes guiados
 
-`NODE-XFORM-01`: linhas fragmentadas, linha vazia e caractere UTF-8 dividido entre chunks. `NODE-BACKPRESSURE-02`: Writable lento/highWaterMark pequeno deve produzir ao menos um `write() === false` e emitir `drain`. Execute `node starter/test.js`; solution deve imprimir `OK node streams`.
+### Caso 1: `node starter/test.js` — LineTransform + backpressure integrados.
+### Caso 2: **UTF-8 multibyte:** caractere € partido entre chunks → linha `b€`.
+### Caso 3: **Backpressure:** `runBackpressureDemo()` deve ter falseWrites > 0 e drains == falseWrites.
+### Caso 4: Rode `node backpressure_demo.js` isoladamente para observar stats.
+### Caso 5: Valide solutions/ com os mesmos asserts.
 
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.
+## NODE-XFORM-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: NODE-XFORM-01`.
+
+## NODE-BACKPRESSURE-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: NODE-BACKPRESSURE-02`.

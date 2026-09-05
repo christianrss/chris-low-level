@@ -1,6 +1,16 @@
-# Testes guiados — Systems: bitmap page allocator
+# Testes guiados
 
-`SYS-PAGE-ALLOC-01`: aloca páginas 0,1,2 em ordem e esgota um allocator pequeno. `SYS-PAGE-FREE-02`: libera página, reutiliza o slot e rejeita double-free.
+### Caso 1: `cmake -B build && cmake --build build` em starter/.
+### Caso 2: **Trace page→byte→bit:** página 13 → byte 1, bit 5.
+### Caso 3: **OOM:** alocador com 3 páginas retorna -1 na 4ª chamada.
+### Caso 4: **Double-free:** `free_page` duas vezes na mesma página retorna false.
+### Caso 5: **Out-of-range:** `free_page(99)` retorna false.
+### Caso 6: Valide solutions/ com os mesmos testes.
 
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.
+## SYS-PAGE-ALLOC-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: SYS-PAGE-ALLOC-01`.
+
+## SYS-PAGE-FREE-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: SYS-PAGE-FREE-02`.

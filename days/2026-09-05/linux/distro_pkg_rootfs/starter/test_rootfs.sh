@@ -1,4 +1,5 @@
 #!/bin/sh
+# PEDAGOGY-TEST: LINUX-ROOTFS-BUILD-03
 set -eu
 TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
 sh "$(dirname "$0")/build_rootfs.sh" "$TMP/root"

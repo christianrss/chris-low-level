@@ -1,3 +1,6 @@
+# PEDAGOGY-TEST [OBJDUMP-U16-01]: leitura u16 little-endian do ELF
+# PEDAGOGY-TEST [OBJDUMP-U32-01]: leitura u32 little-endian do ELF
+# PEDAGOGY-TEST [OBJDUMP-PARSE-01]: headers, seções e decode .text
 from __future__ import annotations
 import subprocess, sys, tempfile
 from pathlib import Path

@@ -38,6 +38,9 @@ return data[row * row_stride + col * col_stride];
 
 Trace: na transposta da matriz 2x3, `row_stride=1`, `col_stride=3`. Para `(2,1)`: `2*1 + 1*3 = 5`, que aponta para o sexto valor, `6`.
 
+### Por que funciona?
+Strides generalizam layout: matriz contígua usa `(cols, 1)`; transposta usa `(1, cols)` sem copiar dados. O índice linear `row*row_stride + col*col_stride` é a fórmula única para qualquer view 2D sobre o mesmo `data`.
+
 ## Médio A — view contígua
 Localize `Tensor2D::view()` e retorne:
 
@@ -47,6 +50,9 @@ return {data_.data(), rows_, cols_, cols_, 1};
 
 A ordem do aggregate é exatamente a ordem dos campos em `TensorView2D` no header.
 
+### Por que funciona?
+`data_.data()` aponta ao início do storage; `cols_` é o stride de linha (pular uma linha = avançar `cols` elementos); `1` é stride de coluna. Zero cópia — só metadados de interpretação.
+
 ## Médio B — transpose view
 Localize `Tensor2D::transpose_view()` e escreva:
 
@@ -55,6 +61,9 @@ return {data_.data(), cols_, rows_, 1, cols_};
 ```
 
 Não há `std::vector` novo: isso é zero-copy.
+
+### Por que funciona?
+Trocar `rows`/`cols` na view inverte dimensões lógicas; strides `(1, cols)` fazem `at(i,j)` ler `data[i*1 + j*cols]` — equivalente a `A^T[j,i]` na matriz original. O teste `at(2,1) == 6` valida isso na matriz 2×3.
 
 ## Difícil — matmul
 Localize `matmul`.
@@ -91,6 +100,9 @@ for (std::size_t i = 0; i < left.rows; ++i) {
 ```cpp
 return out;
 ```
+
+### Por que funciona?
+Loop i-k-j fixa linha `i` e reutiliza `a = left.at(i,k)` no inner loop sobre `j` — menos re-leituras de `left` que i-j-k. `out` começa zerado; cada `(i,j)` acumula produtos ao longo da dimensão interna `k`. Validação `left.cols == right.rows` é obrigatória para índices coerentes.
 
 ## Faça uma multiplicação manual antes do teste
 Para:
@@ -136,3 +148,14 @@ Depois, como extensão, implemente versões `ijk` e `ikj`, use a mesma matriz/se
 
 ## Solução final comentada
 Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+
+## Relatório de resolução
+
+| ID | Função | Verificação chave |
+|----|--------|-------------------|
+| D2-TENSOR-VIEW-AT | `TensorView2D::at` | `out_of_range` fora do shape; offset por strides |
+| D2-TENSOR-VIEW | `Tensor2D::view` | strides `(cols, 1)` sem cópia |
+| D2-TENSOR-TRANSPOSE | `transpose_view` | shape invertido; strides `(1, cols)` |
+| D2-TENSOR-MATMUL | `matmul` | `left.cols==right.rows`; loop i-k-j |
+
+Aceite: `chris-tensor tests passed`. Erro clássico em matmul é trocar índices `k`/`j`; confirme manualmente C[0,0]=58 no exemplo 2x3·3x2 antes de depurar com breakpoint. Benchmark compara ordens de loop — uma variável por vez.

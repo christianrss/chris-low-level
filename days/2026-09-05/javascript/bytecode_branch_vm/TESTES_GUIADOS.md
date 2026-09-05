@@ -1,6 +1,15 @@
-# Testes guiados — JavaScript runtime from scratch: branches em bytecode VM
+# Testes guiados
 
-`JSVM-JZ-01`: condição zero vai para bloco else; condição não zero continua. `JSVM-JMP-02`: branch then pula o else. `node starter/test.js` deve falhar no TODO; solution imprime `OK jsvm branches`.
+### Caso 1: `node starter/test.js` — ramos JZ/JMP com resultado 10 ou 20.
+### Caso 2: **IP trace:** condição 0 → trace [0,1,4,5]; condição 1 → [0,1,2,3,5].
+### Caso 3: **Bad target:** JMP para índice inválido → Error.
+### Caso 4: **Step limit:** loop infinito bloqueado em 1000 passos.
+### Caso 5: Valide solutions/ com os mesmos asserts.
 
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.
+## JSVM-JMP-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: JSVM-JMP-02`.
+
+## JSVM-JZ-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: JSVM-JZ-01`.

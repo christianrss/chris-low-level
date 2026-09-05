@@ -14,3 +14,15 @@
 - `KMOD-MODEL-OPEN-01`
 - `KMOD-MODEL-IO-02`
 - `KMOD-SOURCE-REVIEW-03`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-linux-module-lab/day03` |
+| O que levar | device_model userspace + review notes |
+| Testes a replicar | test_device_model |
+| Milestone | kmod lab milestone |
+| Commit sugerido | `feat(kmod): port device model from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

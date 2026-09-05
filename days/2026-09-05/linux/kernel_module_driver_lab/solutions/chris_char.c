@@ -1,4 +1,4 @@
-// REVIEW ONLY: not built/loaded in this environment. TODO [KMOD-SOURCE-REVIEW-03]
+// PEDAGOGY-SOLUTION: KMOD-SOURCE-REVIEW-03 — revisão de fonte; não carregado neste ambiente.
 #include <linux/module.h>
 #include <linux/miscdevice.h>
 #include <linux/fs.h>

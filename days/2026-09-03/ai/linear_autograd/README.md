@@ -70,3 +70,15 @@ python solutions/tests/test_ai.py
 ```
 
 Resultado de referência do treino linear: `w` próximo de `2` e `b` próximo de `1`.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-autograd` |
+| O que levar | gradient ops + training loop (not lab harness) |
+| Testes a replicar | gradient/regression tests in project |
+| Milestone | MILESTONES.md — scalar autograd |
+| Commit sugerido | `feat(autograd): port linear training from day01 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

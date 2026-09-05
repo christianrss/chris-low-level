@@ -29,6 +29,9 @@ return y * width_ + x;
 
 Para width=4 e `(x=1,y=2)`, offset=9. Desenhe a grade 4x4 e confirme.
 
+### Por que funciona?
+Pixels são armazenados row-major: cada linha ocupa `width_` slots consecutivos. `y * width_ + x` salta `y` linhas completas e avança `x` colunas. Guard `out_of_range` evita escrita fora do buffer.
+
 ## Médio — `fill_rect` com clipping
 Comece ignorando dimensões vazias:
 
@@ -59,6 +62,9 @@ for (int py = y0; py < y1; ++py) {
 
 No teste `fill_rect(-1,-1,3,3)`, apenas a região [0,2)x[0,2) deve receber vermelho.
 
+### Por que funciona?
+`x0,y0` e `x1,y1` recortam o retângulo pedido à interseção com a surface — retângulos parcialmente fora da tela não corrompem memória nem lançam exceção. Loops semiabertos `[x0,x1)` evitam off-by-one.
+
 ## Difícil A — alpha-over
 Implemente `alpha_over`:
 
@@ -74,6 +80,9 @@ return out;
 ```
 
 `+127` serve como arredondamento inteiro aproximado antes da divisão.
+
+### Por que funciona?
+Fórmula `src*α + dst*(255-α)` com divisão por 255 implementa “over” em inteiro. `+127` antes de `/255` aproxima arredondamento para o vizinho mais próximo — vermelho+azul 50% → ~(127,0,128).
 
 ## Difícil B — compositor
 Crie saída:
@@ -110,7 +119,8 @@ for (const auto& layer : layers) {
 return output;
 ```
 
-Aqui não existe mais uma etapa essencial escondida no gabarito: offsets, clipping, conversão para `size_t`, alpha-over e retorno estão todos explícitos.
+### Por que funciona?
+Cada layer desenha por cima da composição acumulada (`alpha_over` com pixel já composto). Clipping em `(dx,dy)` ignora pixels fora da surface destino. Ordem do vetor `layers` é z-order — último layer vence.
 
 ## Teste esperado
 
@@ -130,3 +140,14 @@ O benchmark compõe 40 frames 640x360 com duas surfaces. Compile com `CHRIS_BUIL
 
 ## Solução final comentada
 Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+
+## Relatório de resolução
+
+| ID | Função | Aceite visual/numérico |
+|----|--------|------------------------|
+| D2-GFX-INDEX | `Surface::index` | `y*width+x`; fora dos limites lança |
+| D2-GFX-FILL-RECT | clipping | retângulo negativo parcialmente visível |
+| D2-GFX-ALPHA-OVER | blend | vermelho+azul 50% ≈ (127,0,128) |
+| D2-GFX-COMPOSE | z-order | layers posteriores por cima |
+
+Aceite: `chris-os graphics reference tests passed`. Depure clipping com `x0,y0,x1,y1` antes de alpha. Benchmark 640×360 estabelece baseline FPS CPU antes de otimizações futuras do chris-os.

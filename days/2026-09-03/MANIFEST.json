@@ -1,0 +1,1722 @@
+{
+  "package": "Laboratorio_LowLevel_Unificado_2026-09-03",
+  "date": "2026-09-03",
+  "modules": 13,
+  "files": [
+    {
+      "path": "ai/linear_autograd/BENCHMARK_GUIADO.md",
+      "size": 1210,
+      "sha256": "db0636239c324ffac69fdc8a5bd4fd2013f7ea4522ea5fb6c54961b1a7071edd"
+    },
+    {
+      "path": "ai/linear_autograd/EXERCICIOS.md",
+      "size": 1212,
+      "sha256": "0824b7497cb22742bfce8d0d025794f7425c83dbd9c4ba6e1cabc6832234ae3d"
+    },
+    {
+      "path": "ai/linear_autograd/GABARITO.md",
+      "size": 435,
+      "sha256": "4f1f6c2e2ab07edb59adff70f3803a108932f478566226441692444008d81004"
+    },
+    {
+      "path": "ai/linear_autograd/PESQUISA_GUIADA.md",
+      "size": 1148,
+      "sha256": "e455093c2d8637cd3886807c8180fc739b96f41c466758f02ae1912480f9af7b"
+    },
+    {
+      "path": "ai/linear_autograd/README.md",
+      "size": 1909,
+      "sha256": "142913437b849125799628f1bbb2ad5d2e907cbb384ed9645c3c8c9e3ac25cb9"
+    },
+    {
+      "path": "ai/linear_autograd/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 9132,
+      "sha256": "c0e79f8981b3e0f26314fcc83cebfd1644d4dbae31f657a96d2b88d5d8eaaf00"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/CMakeLists.txt",
+      "size": 582,
+      "sha256": "f5c5953141d63a38ad81cc157effb626081bc2a4c68bba6c7878b20d41ad2bd2"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/python/autograd_scalar.py",
+      "size": 2697,
+      "sha256": "07bf709df3bff56287f83357b8ea54392211e6c202bf825bc9676f22e7aed7c6"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/python/debug_bug_fixed.py",
+      "size": 654,
+      "sha256": "e5485df56cfcadc5e0fedda0584ff856487bce034a9e4415049c4e9699e7c386"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/python/linear_train.py",
+      "size": 878,
+      "sha256": "c1b63bc69ffd7f6bdbb229e6ccc7d3776d29338acfc4d7d47ba2631927ec6de6"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/python/reference_pytorch.py",
+      "size": 942,
+      "sha256": "916f596dc361915e9c65ee285790b052cdcfa5e6985c719c8ce0517c00071fb0"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/src/linear_train.c",
+      "size": 1830,
+      "sha256": "3fc739b7c5fbc7864bdccbaa297c82e0c402c996870bc9123eab25350ba9f9cc"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/tests/test_ai.py",
+      "size": 1135,
+      "sha256": "1236e3b9aa84854f2ce22328960ab0f1fbc7cd64e09b55246ced138f7c96b8b4"
+    },
+    {
+      "path": "ai/linear_autograd/solutions/tests/test_autograd.py",
+      "size": 1941,
+      "sha256": "f6792bffe65215ee9d36c38bfe8eca012cf70048c717408692c8a9e54b060647"
+    },
+    {
+      "path": "ai/linear_autograd/starter/CMakeLists.txt",
+      "size": 582,
+      "sha256": "f5c5953141d63a38ad81cc157effb626081bc2a4c68bba6c7878b20d41ad2bd2"
+    },
+    {
+      "path": "ai/linear_autograd/starter/python/autograd_scalar.py",
+      "size": 581,
+      "sha256": "7fc0e590727aa1d8a486f44d788757bc9b9abf2869a0a8ce1f9a9f46c1457ddf"
+    },
+    {
+      "path": "ai/linear_autograd/starter/python/debug_bug.py",
+      "size": 575,
+      "sha256": "a52fb652fba8631f1a5953a14bd7615de9cf3de309fb2e5cfb494438a02f892a"
+    },
+    {
+      "path": "ai/linear_autograd/starter/python/linear_train.py",
+      "size": 753,
+      "sha256": "942c5b5944d170889b356366271363ad2cea6356a943c502613723b29f42aaf5"
+    },
+    {
+      "path": "ai/linear_autograd/starter/src/linear_train.c",
+      "size": 888,
+      "sha256": "2676ba79e1e1ac9e2262bbf8ef61e0860452dce9aea5ec3dab8f451c0647a53b"
+    },
+    {
+      "path": "ai/linear_autograd/starter/tests/test_autograd.py",
+      "size": 1941,
+      "sha256": "f6792bffe65215ee9d36c38bfe8eca012cf70048c717408692c8a9e54b060647"
+    },
+    {
+      "path": "ai/linear_autograd/TEORIA_PASSO_A_PASSO.md",
+      "size": 3912,
+      "sha256": "7f1348a61c5bc6d7dcc4c5863add18346fc326e6a1fa117aad1bb4ed38f1e114"
+    },
+    {
+      "path": "ai/linear_autograd/TESTES_GUIADOS.md",
+      "size": 2800,
+      "sha256": "b46adf44838eb2927c57d031be57a8624303ef8af944a95db794a2e8678d58e4"
+    },
+    {
+      "path": "architecture/toy_cpu/BENCHMARK_GUIADO.md",
+      "size": 964,
+      "sha256": "4d26e3a60480ae8d21c4a8987b76aa8892ed9b4c52e4c8ceb92e800a8df97fdc"
+    },
+    {
+      "path": "architecture/toy_cpu/EXERCICIOS.md",
+      "size": 920,
+      "sha256": "be4fa0fcfc06d9d76ccf9a634a91adac83320f0507e2785b9771e8179d28e97a"
+    },
+    {
+      "path": "architecture/toy_cpu/PESQUISA_GUIADA.md",
+      "size": 1079,
+      "sha256": "1804aa1d4442c9f28ea564d52410f18f867eabfa8e8705d4ba5a190a1599077a"
+    },
+    {
+      "path": "architecture/toy_cpu/README.md",
+      "size": 319,
+      "sha256": "1b1aec26e0311cae0c5269c791ce65bc121b2f7d1735a136adb4907c5c3468c0"
+    },
+    {
+      "path": "architecture/toy_cpu/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 6231,
+      "sha256": "1ecb805d87b336f033c2b9cc9ecbfccb31af1d794ddf7fe96ceaeb376d457ee8"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/benchmarks/benchmark.cpp",
+      "size": 1188,
+      "sha256": "c674dfa4e42a5cf211efa6a091a6ef5de00eb6a969b145422079254dbc5fc592"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/CMakeLists.txt",
+      "size": 771,
+      "sha256": "cb5358d9e86f11f034b4442567427302154830c137bf6328ec6236b49c54b62a"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/docs/architecture.md",
+      "size": 351,
+      "sha256": "8003ed14aec7066727d5331cae8e3ebcebc15815b3ed038ecf83ebd0f53abc66"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/include/cpu.hpp",
+      "size": 975,
+      "sha256": "4f47fb9eadf2d244d14a19ec5941ad967b318f71beab2ab198f2f0939b3ad098"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/MILESTONES.md",
+      "size": 151,
+      "sha256": "771310737c8dd06d1a27d3faceb2de4226955f4ad3a2efd939030a5a535551c7"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/README.md",
+      "size": 1099,
+      "sha256": "c1004ad00b2f657757ed028767d9e3e4864602b4f8ef338b4ed131b79f6c929b"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/src/cpu.cpp",
+      "size": 3650,
+      "sha256": "6009b6a4298181faa26c388b83f428cb19ce1de027f8b2be9d3d944af50a7e20"
+    },
+    {
+      "path": "architecture/toy_cpu/solutions/tests/test_cpu.cpp",
+      "size": 1940,
+      "sha256": "0c846ac117a5a95829bc5f389741584bad1ef01f896fc734f9b1be7a9e4a6396"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/benchmarks/benchmark.cpp",
+      "size": 1188,
+      "sha256": "c674dfa4e42a5cf211efa6a091a6ef5de00eb6a969b145422079254dbc5fc592"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/CMakeLists.txt",
+      "size": 771,
+      "sha256": "cb5358d9e86f11f034b4442567427302154830c137bf6328ec6236b49c54b62a"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/docs/architecture.md",
+      "size": 351,
+      "sha256": "8003ed14aec7066727d5331cae8e3ebcebc15815b3ed038ecf83ebd0f53abc66"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/EXERCISE_TODO.md",
+      "size": 351,
+      "sha256": "ac9048ea7ee92d4aea8f0ea4b775847b4618abbffbc23c3970f13fae21f33e96"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/include/cpu.hpp",
+      "size": 975,
+      "sha256": "4f47fb9eadf2d244d14a19ec5941ad967b318f71beab2ab198f2f0939b3ad098"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/MILESTONES.md",
+      "size": 151,
+      "sha256": "771310737c8dd06d1a27d3faceb2de4226955f4ad3a2efd939030a5a535551c7"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/README.md",
+      "size": 1099,
+      "sha256": "c1004ad00b2f657757ed028767d9e3e4864602b4f8ef338b4ed131b79f6c929b"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/src/cpu.cpp",
+      "size": 2303,
+      "sha256": "0c57dbce9dbe5300207758468feeae767863dc6aa93438f7dd2381811bf937d6"
+    },
+    {
+      "path": "architecture/toy_cpu/starter/tests/test_cpu.cpp",
+      "size": 1940,
+      "sha256": "0c846ac117a5a95829bc5f389741584bad1ef01f896fc734f9b1be7a9e4a6396"
+    },
+    {
+      "path": "architecture/toy_cpu/TEORIA_PASSO_A_PASSO.md",
+      "size": 3483,
+      "sha256": "74a662953c8049d282106eee77d3aa02f3925c73d6950be07acd0f6064d2eda9"
+    },
+    {
+      "path": "architecture/toy_cpu/TESTES_GUIADOS.md",
+      "size": 1117,
+      "sha256": "b7dfa57f03033a43ab44dff2fd6a41aff8cb252dc1f8634c4593377e365ee3b0"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/BENCHMARK_GUIADO.md",
+      "size": 939,
+      "sha256": "df501851497c6f5a82a68d0241703b6161de7a43a7a54bdf19b27254e8ef4a13"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/EXERCICIOS.md",
+      "size": 913,
+      "sha256": "697de77c0fec2c620a6263cb7c9311904a323ee2f21555229b1c953038af4c81"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/PESQUISA_GUIADA.md",
+      "size": 684,
+      "sha256": "394f64f17ac26fc9554cc704e9b8fd7ede4c8974eccc08389e6f9a33060a28d6"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/README.md",
+      "size": 324,
+      "sha256": "d4396a431ac1ebc533f04a85934c5a8de0025cc0ca09a9ae34697deadc7d415e"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3889,
+      "sha256": "e258992ef677391c43c7cdb4323aaa874ce05cc026c55085cd7e00703eeecb17"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/benchmarks/benchmark.c",
+      "size": 952,
+      "sha256": "ac815785f627a572222face523319a25c49b37e301976a4156f57be06832de6f"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/CMakeLists.txt",
+      "size": 807,
+      "sha256": "16802b83ad9810cfca4cf9dcb7aa0f676dce27b64a6449b378575d16f941e872"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/docs/architecture.md",
+      "size": 224,
+      "sha256": "2064c8e3acde2f08dac324bc517db01c2aba527cbbf2908f62735ca5e1776dc5"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/MILESTONES.md",
+      "size": 181,
+      "sha256": "67e39132bd7b77fe688fb23dd581ca46e929709728218a3b664d51903b0683ea"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/README.md",
+      "size": 1235,
+      "sha256": "2e6730152ac769a18420ac8617e079f20cb2d34d3b639e45f487b9ab159cce84"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/src/sum_x86_64.S",
+      "size": 272,
+      "sha256": "747f5064637a9c572c0496eb4a2a17945215f6063b17c22f1c7a80e231bf0dbb"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/solutions/tests/test_sum.c",
+      "size": 569,
+      "sha256": "712eea350e4e102bf8145a832b340b396cbb80805cd8a833162d544bb7fc4cc5"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/benchmarks/benchmark.c",
+      "size": 952,
+      "sha256": "ac815785f627a572222face523319a25c49b37e301976a4156f57be06832de6f"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/CMakeLists.txt",
+      "size": 807,
+      "sha256": "16802b83ad9810cfca4cf9dcb7aa0f676dce27b64a6449b378575d16f941e872"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/docs/architecture.md",
+      "size": 224,
+      "sha256": "2064c8e3acde2f08dac324bc517db01c2aba527cbbf2908f62735ca5e1776dc5"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/EXERCISE_TODO.md",
+      "size": 347,
+      "sha256": "576fb96476eec2065ed0dc2bd9ed4e94cb2912c12acdc52ebf4a6313e58a2013"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/MILESTONES.md",
+      "size": 181,
+      "sha256": "67e39132bd7b77fe688fb23dd581ca46e929709728218a3b664d51903b0683ea"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/README.md",
+      "size": 1235,
+      "sha256": "2e6730152ac769a18420ac8617e079f20cb2d34d3b639e45f487b9ab159cce84"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/src/sum_x86_64.S",
+      "size": 202,
+      "sha256": "404ebae54ba395a5ded920fdbec21bd9f37afeca1985b98110046807c67b2a7e"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/starter/tests/test_sum.c",
+      "size": 569,
+      "sha256": "712eea350e4e102bf8145a832b340b396cbb80805cd8a833162d544bb7fc4cc5"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/TEORIA_PASSO_A_PASSO.md",
+      "size": 4164,
+      "sha256": "890b2d3f8791b633188d9ae219a1b62638493360c59401cc926df9d53dfa0b9f"
+    },
+    {
+      "path": "assembly/x86_64_abi_sum/TESTES_GUIADOS.md",
+      "size": 1119,
+      "sha256": "b23762d6406719bc2ab1fc241c74f6731ef18aa5dc258290895ad59f1a239503"
+    },
+    {
+      "path": "blockchain/toy_chain/BENCHMARK_GUIADO.md",
+      "size": 956,
+      "sha256": "9151c2027c3190bbcac1405e1a90c2dcfb7657659c0d0a3ff5d096b20f334eca"
+    },
+    {
+      "path": "blockchain/toy_chain/EXERCICIOS.md",
+      "size": 864,
+      "sha256": "695145baca14c8c67f740c1444f3df0ee95276776d0671a6a82ba3de7ae46918"
+    },
+    {
+      "path": "blockchain/toy_chain/PESQUISA_GUIADA.md",
+      "size": 825,
+      "sha256": "b3b2e4863ee7709288bbf799a2abc3b8b050249a163cd687ec01f718df3adf7d"
+    },
+    {
+      "path": "blockchain/toy_chain/README.md",
+      "size": 321,
+      "sha256": "53bf5077269e8d4111b899df971aceb7fbfdfd7ee5a1a719138545864fe47d79"
+    },
+    {
+      "path": "blockchain/toy_chain/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5455,
+      "sha256": "5151683f9988292893e998b1792f0a7333540b417a5732b066077bae55adbba2"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/benchmarks/benchmark.py",
+      "size": 526,
+      "sha256": "e86a51b9a5370db6c2e7984115e06f594288be70da69ae894aa8f33115711906"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/CMakeLists.txt",
+      "size": 243,
+      "sha256": "dc7301889cc0f868f455ba1338890bd70bad338ced68b1c250bb9f01eb47d0f0"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/docs/architecture.md",
+      "size": 281,
+      "sha256": "b49d17bda65815d6eeb94d01fa8571f60944457ae3ff3625f5cd5025c9103748"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/MILESTONES.md",
+      "size": 260,
+      "sha256": "0c3d6d82f4e239e38821de2b97aee9f5230bfa948c9f85f7de81e00dc5e9435c"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/README.md",
+      "size": 1222,
+      "sha256": "6297e8b5db94853b98ce4973734d03fdbbcb32924ac91e6511dc702d26313427"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/tests/test_chain.py",
+      "size": 908,
+      "sha256": "f8dd31e5df92d347c9b84d84c95cc2391f09087c16f36d843843ca4169b5a36c"
+    },
+    {
+      "path": "blockchain/toy_chain/solutions/toy_chain.py",
+      "size": 2274,
+      "sha256": "8ff0fbc7d05d6a104594452885621904bcc01d592b3957b81722a3eff71ba511"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/benchmarks/benchmark.py",
+      "size": 526,
+      "sha256": "e86a51b9a5370db6c2e7984115e06f594288be70da69ae894aa8f33115711906"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/CMakeLists.txt",
+      "size": 243,
+      "sha256": "dc7301889cc0f868f455ba1338890bd70bad338ced68b1c250bb9f01eb47d0f0"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/docs/architecture.md",
+      "size": 281,
+      "sha256": "b49d17bda65815d6eeb94d01fa8571f60944457ae3ff3625f5cd5025c9103748"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/EXERCISE_TODO.md",
+      "size": 351,
+      "sha256": "7dd32e4b05164945a59e85ec5701428d741235974f25f2aeaa46e1ecc7d3f131"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/MILESTONES.md",
+      "size": 260,
+      "sha256": "0c3d6d82f4e239e38821de2b97aee9f5230bfa948c9f85f7de81e00dc5e9435c"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/README.md",
+      "size": 1222,
+      "sha256": "6297e8b5db94853b98ce4973734d03fdbbcb32924ac91e6511dc702d26313427"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/tests/test_chain.py",
+      "size": 908,
+      "sha256": "f8dd31e5df92d347c9b84d84c95cc2391f09087c16f36d843843ca4169b5a36c"
+    },
+    {
+      "path": "blockchain/toy_chain/starter/toy_chain.py",
+      "size": 1238,
+      "sha256": "bdb8dcee8762f7f105a9c4882dfc24e1032365afb34d94f0c60f8f330d007fe2"
+    },
+    {
+      "path": "blockchain/toy_chain/TEORIA_PASSO_A_PASSO.md",
+      "size": 4510,
+      "sha256": "dc4a58aa8110379f26c96bdb7efe782833f39b10d478c145c3ba252caa45f8fc"
+    },
+    {
+      "path": "blockchain/toy_chain/TESTES_GUIADOS.md",
+      "size": 1619,
+      "sha256": "d2e7bbfb6e581ecf95942caa31f6af1f20163baca00d48b847016a70c34d3b40"
+    },
+    {
+      "path": "boot/legacy_bootsector/BENCHMARK_GUIADO.md",
+      "size": 944,
+      "sha256": "c5b488076dbc137a7a950272b45dfc3a55068548c4b1c19588757bea675ccc4c"
+    },
+    {
+      "path": "boot/legacy_bootsector/EXERCICIOS.md",
+      "size": 819,
+      "sha256": "aece20a1a2e75bc98f49ba499fc34c86196eb95255c0b65eadf0755ed6b0ca91"
+    },
+    {
+      "path": "boot/legacy_bootsector/PESQUISA_GUIADA.md",
+      "size": 742,
+      "sha256": "c383d414bb50f7676feca1cbca5548472a66776b9165fdc58186a54f6e7498bf"
+    },
+    {
+      "path": "boot/legacy_bootsector/README.md",
+      "size": 324,
+      "sha256": "0fbe0c1e6b928dd1ac9b7d3fe8b62b36bf53938eefd36bc70df3a255be7de734"
+    },
+    {
+      "path": "boot/legacy_bootsector/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3775,
+      "sha256": "b1f0561b956b15aad67e6b81ddfd203bc18833b773d441b97a227d2f0c6c9adc"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/CMakeLists.txt",
+      "size": 243,
+      "sha256": "56c96c811073bdbbcdc7755525fe2a44430f183c6ad6fa2b362de08394780043"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/docs/architecture.md",
+      "size": 268,
+      "sha256": "71ea1b0b16182ffba8ebcac9dab0c62c76520b34a955d3331d2e4ab7c0909580"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/MILESTONES.md",
+      "size": 255,
+      "sha256": "6de4772733331c353642d2ff7336ad86d47db4430ee5227c0a903b1cb4c9e6e2"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/README.md",
+      "size": 1370,
+      "sha256": "b0dee131a24bad6ddbbd676e120297bf1c4049abb376de648c7f4f97d83013fd"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/src/bootsector.asm",
+      "size": 200,
+      "sha256": "c1e04aaea26e0f4cecded2bbd64bfd387f95faa14e51b09b3e22b94a17c2e517"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/tests/test_boot.py",
+      "size": 756,
+      "sha256": "4b4d74862811a379f5733e899cf7946c41afaee1908ac1f60a25137823d94fff"
+    },
+    {
+      "path": "boot/legacy_bootsector/solutions/tools/build_minimal.py",
+      "size": 622,
+      "sha256": "fd7765c69fa0e3e6f9ac9d567eac925d63bb674137f1fd2f69cef5524ae7b043"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/CMakeLists.txt",
+      "size": 243,
+      "sha256": "56c96c811073bdbbcdc7755525fe2a44430f183c6ad6fa2b362de08394780043"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/docs/architecture.md",
+      "size": 268,
+      "sha256": "71ea1b0b16182ffba8ebcac9dab0c62c76520b34a955d3331d2e4ab7c0909580"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/EXERCISE_TODO.md",
+      "size": 355,
+      "sha256": "c59615ef2f51d39c2a6f6dbd78ebdd0a6f72e90c490bdcd27d55b338cac0a473"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/MILESTONES.md",
+      "size": 255,
+      "sha256": "6de4772733331c353642d2ff7336ad86d47db4430ee5227c0a903b1cb4c9e6e2"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/README.md",
+      "size": 1370,
+      "sha256": "b0dee131a24bad6ddbbd676e120297bf1c4049abb376de648c7f4f97d83013fd"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/src/bootsector.asm",
+      "size": 200,
+      "sha256": "c1e04aaea26e0f4cecded2bbd64bfd387f95faa14e51b09b3e22b94a17c2e517"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/tests/test_boot.py",
+      "size": 756,
+      "sha256": "4b4d74862811a379f5733e899cf7946c41afaee1908ac1f60a25137823d94fff"
+    },
+    {
+      "path": "boot/legacy_bootsector/starter/tools/build_minimal.py",
+      "size": 504,
+      "sha256": "f95a30dae50bcc4a8b3be9d5ae08b410ae5013f1f4c840a2adc04bd6eff0716b"
+    },
+    {
+      "path": "boot/legacy_bootsector/TEORIA_PASSO_A_PASSO.md",
+      "size": 4497,
+      "sha256": "af0536c66d4c5539c9755607469350171de38363aaf37b2291dcda8807dd6c42"
+    },
+    {
+      "path": "boot/legacy_bootsector/TESTES_GUIADOS.md",
+      "size": 1124,
+      "sha256": "c95a9d9c63e1311d031365ad23c472c89563268e22e8107c8bfe0552b54ea3b1"
+    },
+    {
+      "path": "COMMIT_PLAN.md",
+      "size": 1406,
+      "sha256": "ebc397b8cf9de07482de7027d540e1fb6f28d34b2115f3f0c063ee524286bd5f"
+    },
+    {
+      "path": "graphics/dual_backend_3d/BENCHMARK_GUIADO.md",
+      "size": 1054,
+      "sha256": "5c8e732107fda853256b8ab86646304497742615ed2a2b195c547c2fe0400e6e"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/ALL_BUILD.vcxproj",
+      "size": 43110,
+      "sha256": "5db65fc26c482e59fe64e3fe1c586f9f620da3a71dc372a78797a76edd9e68e1"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/ALL_BUILD.vcxproj.filters",
+      "size": 342,
+      "sha256": "437938bbe7f1a998982ffa9f04eb5de8b8a5af22b7fd72350c9f31c31b81825e"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/cmake_install.cmake",
+      "size": 2091,
+      "sha256": "a6d716e3ae4706330d5f00fe7c06e8c73cd5d066e0eda5245e2a1f49b60a58a1"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeCache.txt",
+      "size": 13251,
+      "sha256": "cbf9cb28eaddf3acf22ad859211fb3e5978e29b961091aba9920381798772fd8"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "41d94fa6dcb54ff89f25f46d89ecfc0b0410480e745be8c8c9935d726242b43a"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/b94ebdeaa9b063e342b3cc8c98c5f41a/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/b94ebdeaa9b063e342b3cc8c98c5f41a/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 82709,
+      "sha256": "28cdf87c40462338e9fa28f5f10c3864922f6219f8e2303d2e9d0c28bc70c505"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/generate.stamp.depend",
+      "size": 7825,
+      "sha256": "374253719a97c35a95556206f2f00c1882cda07158544b6bc488f2bde3ea208f"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/generate.stamp.list",
+      "size": 120,
+      "sha256": "5e1a032860c5c8d3f808ebe6961d61647285485ab46980c038bc476b256457e0"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/InstallScripts.json",
+      "size": 176,
+      "sha256": "8896e43ac408e8e63ad7eff0d651f8a98e92edd38c8887bb62a5286f293378e9"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CMakeFiles/TargetDirectories.txt",
+      "size": 850,
+      "sha256": "24f1317dfa0537164298643b309ade77a7d5a1ab6229271d682e443b274d1bf5"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/core_tests.vcxproj",
+      "size": 57657,
+      "sha256": "ba66d88287dd2909fdf2bfd19f5104db9765ab3daf4fe969ce76ab4fb5ec63e3"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/core_tests.vcxproj.filters",
+      "size": 699,
+      "sha256": "5111777d9f72ab0a5bc1bfd57177824b43f38370e97584734d14924f23d4583d"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/CTestTestfile.cmake",
+      "size": 2633,
+      "sha256": "d2d4d4e0688b483e74542e5b5e614dfa0d55e72f4e369d8641ed9b5336421af0"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/DualBackendLowLevel3D.slnx",
+      "size": 2324,
+      "sha256": "629afaa41bef4998604b74d0707fc94d37a1c5bbb247fdda298fef478fc2e4b1"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/opengl_renderer.vcxproj",
+      "size": 58111,
+      "sha256": "a4eb891613ea97e24ddb266d47d91c71bb71e46ff930c2d064ed6f7c848dde7e"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/opengl_renderer.vcxproj.filters",
+      "size": 700,
+      "sha256": "2d9e67006310fe9acfc69deadc12c69027817a0b587bb03d7e6dfefa81160154"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/Release/scene_core.lib",
+      "size": 84702,
+      "sha256": "12bf96df1c3edbdb7ddb429ed1fb3f2d077107745c97c9a7892ca80670a8f7f1"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/RUN_TESTS.vcxproj",
+      "size": 10278,
+      "sha256": "de0ec1444e14635e84aff20976d3715ab84be272b8aa4d132859505fa63fb3f6"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/RUN_TESTS.vcxproj.filters",
+      "size": 585,
+      "sha256": "ef04c03cba6712a1cb68706971f304b2c0c3a2c1a7fb18f4f18d00687107de22"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/scene_core.vcxproj",
+      "size": 51823,
+      "sha256": "fa4e8540a259b672daf17f4be4d313d9760595c9b964d31320673d544140f43f"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/scene_core.vcxproj.filters",
+      "size": 696,
+      "sha256": "f4da851fc346188ae12e7183b0c097920d0d471446f0146346f92fc0b7f210e9"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/software_renderer.vcxproj",
+      "size": 58095,
+      "sha256": "b93e15451197e95a8750890d2835bd26973258a3d455b980564639f333c9c461"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/software_renderer.vcxproj.filters",
+      "size": 702,
+      "sha256": "e051e637ca9c07783e3761c25781f955ea4eeb57febce54a2f03aba9ac0be4e4"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/ZERO_CHECK.vcxproj",
+      "size": 42318,
+      "sha256": "a3a1aeb59264a48db3298aebcd5ead80934c5c422f861d1556340c0154f80d25"
+    },
+    {
+      "path": "graphics/dual_backend_3d/build-solution/ZERO_CHECK.vcxproj.filters",
+      "size": 584,
+      "sha256": "98636156615cbbfcb1ea530f1c6f34c92993cc54697713ddc54ef6096b6d1b1b"
+    },
+    {
+      "path": "graphics/dual_backend_3d/docs/COMPARISON.md",
+      "size": 1010,
+      "sha256": "0d97f6f03d4559207ba5fdec4cd5282e13827e54257ddb4250692b5a08c823f6"
+    },
+    {
+      "path": "graphics/dual_backend_3d/EXERCICIOS.md",
+      "size": 985,
+      "sha256": "7e33a9667364ee00ea8de425a0ba0103db959442a8ca4aec58641db855c19973"
+    },
+    {
+      "path": "graphics/dual_backend_3d/PESQUISA_GUIADA.md",
+      "size": 1460,
+      "sha256": "9ec4dbfba82a4b0856888a80064b84970021a3246b32f5b8fe87eb2642d6daf2"
+    },
+    {
+      "path": "graphics/dual_backend_3d/README.md",
+      "size": 3890,
+      "sha256": "b33a3c0a9fe875878586bf9fd9970bfcddedccaf57d555836f047c4d81a5f82b"
+    },
+    {
+      "path": "graphics/dual_backend_3d/RESOLUCAO_APENDICE.md",
+      "size": 8230,
+      "sha256": "b4e76774c21ed6c4d29d0967fd06cb19300bad3a08b5412e6160330b9e3924c4"
+    },
+    {
+      "path": "graphics/dual_backend_3d/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 10558,
+      "sha256": "865a3c9c7fc7ff8c729a20b71a21093a2312b0cdca4db678ceea75a7d46ce0d0"
+    },
+    {
+      "path": "graphics/dual_backend_3d/solutions/CMakeLists.txt",
+      "size": 1060,
+      "sha256": "d0f1970c5d1990248186ec5b3da7aa00feb7cf44f6486f6ba9095929dc0016e9"
+    },
+    {
+      "path": "graphics/dual_backend_3d/solutions/common/engine.cpp",
+      "size": 6979,
+      "sha256": "291601438cce75c0dc24ae91395ba9db538bbe14929bcecb8dc8ab3abb2b1f38"
+    },
+    {
+      "path": "graphics/dual_backend_3d/solutions/common/engine.hpp",
+      "size": 2536,
+      "sha256": "1c722248afe349f00d3925b288b8bbf641bc0d31fdf889d4817b0342f30a1ae0"
+    },
+    {
+      "path": "graphics/dual_backend_3d/solutions/opengl_win32/main.cpp",
+      "size": 17289,
+      "sha256": "2e876a67c174988b05b5633d0bd4a829f3f6e7398fdedb53beeb3f834612df7a"
+    },
+    {
+      "path": "graphics/dual_backend_3d/solutions/software_win32/main.cpp",
+      "size": 12899,
+      "sha256": "f912d2c860821183cf78ea098de6b5c198650aaed5ae8fe45598b34849423dde"
+    },
+    {
+      "path": "graphics/dual_backend_3d/solutions/tests/core_tests.cpp",
+      "size": 2940,
+      "sha256": "626132009b21e39f666d03678a4dabb9faac9022c09c7b27dac4fad620aedbb2"
+    },
+    {
+      "path": "graphics/dual_backend_3d/starter/CMakeLists.txt",
+      "size": 1060,
+      "sha256": "d0f1970c5d1990248186ec5b3da7aa00feb7cf44f6486f6ba9095929dc0016e9"
+    },
+    {
+      "path": "graphics/dual_backend_3d/starter/common/engine.cpp",
+      "size": 6484,
+      "sha256": "ce09f154670c7c67254f403159f0f26feacb695628dc46196203165828049cac"
+    },
+    {
+      "path": "graphics/dual_backend_3d/starter/common/engine.hpp",
+      "size": 2536,
+      "sha256": "1c722248afe349f00d3925b288b8bbf641bc0d31fdf889d4817b0342f30a1ae0"
+    },
+    {
+      "path": "graphics/dual_backend_3d/starter/opengl_win32/main.cpp",
+      "size": 23273,
+      "sha256": "14ce46bbdccfe213aefc922a48c7c1e042fcb0070a12a669d1302e2c7153ced1"
+    },
+    {
+      "path": "graphics/dual_backend_3d/starter/software_win32/main.cpp",
+      "size": 11412,
+      "sha256": "10b58b90e0e85478c22460a110ed50a544d4e2fdc677871fb9b0f42253fe0dc8"
+    },
+    {
+      "path": "graphics/dual_backend_3d/starter/tests/core_tests.cpp",
+      "size": 2940,
+      "sha256": "626132009b21e39f666d03678a4dabb9faac9022c09c7b27dac4fad620aedbb2"
+    },
+    {
+      "path": "graphics/dual_backend_3d/TEORIA_PASSO_A_PASSO.md",
+      "size": 6754,
+      "sha256": "98f1c0faa25cb6ac831a77c547a9f6190891016c15afd1551dab94124fd971b3"
+    },
+    {
+      "path": "graphics/dual_backend_3d/TESTES_GUIADOS.md",
+      "size": 3448,
+      "sha256": "8dc27de791e26082fab429c8202539bdc1c5083a671f63452fdbe4d889cc6b2a"
+    },
+    {
+      "path": "Guia_Mouse_Lanterna_OpenGL.docx",
+      "size": 58118,
+      "sha256": "ba936ac36db9deb04c796ea14fba127c0ec64fa8da84903a10a405be0a124b1b"
+    },
+    {
+      "path": "hardware/descriptor_ring/BENCHMARK_GUIADO.md",
+      "size": 933,
+      "sha256": "62c3d4a4b94e5e648cdcc26aae0c0c4357515ae64d8ad01ec9e65c6cc4dc677e"
+    },
+    {
+      "path": "hardware/descriptor_ring/EXERCICIOS.md",
+      "size": 889,
+      "sha256": "bc78f9e9b035f1dac6b068ab198de35689174631cccc978a6081a3c2814ea960"
+    },
+    {
+      "path": "hardware/descriptor_ring/PESQUISA_GUIADA.md",
+      "size": 736,
+      "sha256": "803e7dc5525c3843992aa08af3a4d0bbd68f000ecbbbf529a33c82c08f49fe08"
+    },
+    {
+      "path": "hardware/descriptor_ring/README.md",
+      "size": 326,
+      "sha256": "0831485c8f4d14dfeb2158552d6da634dbced578a4d3814a4d37800d6009bbfe"
+    },
+    {
+      "path": "hardware/descriptor_ring/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3816,
+      "sha256": "6174a64101c91f083e208df3ed97f24fb0afee95c03198d142f7d557078e3ba2"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/benchmarks/benchmark.cpp",
+      "size": 809,
+      "sha256": "fbbd8d3e7216d4e0ce84bb51a206c3a36ee887d7d072cc2e544a96ef2db9f58d"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/CMakeLists.txt",
+      "size": 875,
+      "sha256": "dac330725771becb08db287b5a2098648f26815e7a458f98d3d88c764d9bf084"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/docs/architecture.md",
+      "size": 227,
+      "sha256": "919f26fb422bce063d6e3698267eebf6d6dac65465313d56039e5a043ead7a39"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/include/descriptor_ring.hpp",
+      "size": 720,
+      "sha256": "fe8c44cb3f43efcabc3ccd69db455722f8d078c5148c5cdad4f62b6ed342e016"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/MILESTONES.md",
+      "size": 206,
+      "sha256": "b9705afb35e014b2fc2df37223b67131e67af7784ff02370b76f95e5e367cdd6"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/README.md",
+      "size": 1222,
+      "sha256": "64965223b4d5727e93c512594c145afaf419ed47c856c26a2d9aac44cb1b5a0f"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/src/descriptor_ring.cpp",
+      "size": 1454,
+      "sha256": "87b9668b03bd79a37bb5ce2926783029f9a0c18e9c7d5a188a1f44d2eb2a836c"
+    },
+    {
+      "path": "hardware/descriptor_ring/solutions/tests/test_ring.cpp",
+      "size": 978,
+      "sha256": "2ec5a102451de58949ed4d2219ae5152e3211dc0b753ce304a2c5acd0f6311b5"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/benchmarks/benchmark.cpp",
+      "size": 809,
+      "sha256": "fbbd8d3e7216d4e0ce84bb51a206c3a36ee887d7d072cc2e544a96ef2db9f58d"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/CMakeLists.txt",
+      "size": 875,
+      "sha256": "dac330725771becb08db287b5a2098648f26815e7a458f98d3d88c764d9bf084"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/docs/architecture.md",
+      "size": 227,
+      "sha256": "919f26fb422bce063d6e3698267eebf6d6dac65465313d56039e5a043ead7a39"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/EXERCISE_TODO.md",
+      "size": 351,
+      "sha256": "f80f047c94ceb828e0e6257565c0e7df3d27034a54034763fb4e3f39b49377ef"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/include/descriptor_ring.hpp",
+      "size": 720,
+      "sha256": "fe8c44cb3f43efcabc3ccd69db455722f8d078c5148c5cdad4f62b6ed342e016"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/MILESTONES.md",
+      "size": 206,
+      "sha256": "b9705afb35e014b2fc2df37223b67131e67af7784ff02370b76f95e5e367cdd6"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/README.md",
+      "size": 1222,
+      "sha256": "64965223b4d5727e93c512594c145afaf419ed47c856c26a2d9aac44cb1b5a0f"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/src/descriptor_ring.cpp",
+      "size": 674,
+      "sha256": "ee3bac1a83a22e1279f9d331a8ba5138fd2dd038a10114cc6d960b6d59b17ae8"
+    },
+    {
+      "path": "hardware/descriptor_ring/starter/tests/test_ring.cpp",
+      "size": 978,
+      "sha256": "2ec5a102451de58949ed4d2219ae5152e3211dc0b753ce304a2c5acd0f6311b5"
+    },
+    {
+      "path": "hardware/descriptor_ring/TEORIA_PASSO_A_PASSO.md",
+      "size": 4309,
+      "sha256": "a9741683974b02b3e48b115d6a810b583836b2888966783dea906d27e72380cb"
+    },
+    {
+      "path": "hardware/descriptor_ring/TESTES_GUIADOS.md",
+      "size": 1461,
+      "sha256": "eef514af9322e2af29a7534fa40f5f77c4fd988b7bd841bf1c615157a7130d7e"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 63331,
+      "sha256": "d998d2439c5e58fff4508b6a1af2b40b416d043caeab2275e7b106bae83dfef0"
+    },
+    {
+      "path": "network/http_parser/BENCHMARK_GUIADO.md",
+      "size": 902,
+      "sha256": "48d1de045383677fbd5cd8830a117cbe5b2375165d8471518ac2476bf71f8eaf"
+    },
+    {
+      "path": "network/http_parser/EXERCICIOS.md",
+      "size": 790,
+      "sha256": "6ba81ad5cbbf62fc1488961e29293b07b62d190971cda7087434e931c883e7c8"
+    },
+    {
+      "path": "network/http_parser/PESQUISA_GUIADA.md",
+      "size": 776,
+      "sha256": "76e1dba90745c698fce0ea541b8698c98631820b32e9f6c6f3ab5979801c500c"
+    },
+    {
+      "path": "network/http_parser/README.md",
+      "size": 319,
+      "sha256": "9b922cefd8904b5ef2249d51469e489fd2db4c3643cd07336a4e922e89cadfb3"
+    },
+    {
+      "path": "network/http_parser/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5470,
+      "sha256": "09a39e2b4bc09e282f4c8b431500f0aae1cec11c17f567cdd02a2d19e7d52baf"
+    },
+    {
+      "path": "network/http_parser/solutions/benchmarks/benchmark.cpp",
+      "size": 806,
+      "sha256": "63bdabf4a25fce9fac64de2eef5a921f5a42b220214d11cb57d7cd29855703a8"
+    },
+    {
+      "path": "network/http_parser/solutions/CMakeLists.txt",
+      "size": 793,
+      "sha256": "39d42d97d643e2ae7721c7349659e6c2d8ce696d5b276a6f9e2864d40610be83"
+    },
+    {
+      "path": "network/http_parser/solutions/docs/architecture.md",
+      "size": 275,
+      "sha256": "eaabb7dcc0ad0403e6d208b5428cdafcde9d17353894de08599734c56314a668"
+    },
+    {
+      "path": "network/http_parser/solutions/include/http_parser.hpp",
+      "size": 529,
+      "sha256": "d77a556f6c031449aa78499d79ea2affe984000403e8abf5a961d2f8765a8e6a"
+    },
+    {
+      "path": "network/http_parser/solutions/MILESTONES.md",
+      "size": 232,
+      "sha256": "d5f4be066774835d0f097e3d5970d910b5a853d98e45983ebb9a32a3abc06365"
+    },
+    {
+      "path": "network/http_parser/solutions/README.md",
+      "size": 1146,
+      "sha256": "85bf4b679e829033060395eb1f5c7a1903425472822ac7078962c156af6733d2"
+    },
+    {
+      "path": "network/http_parser/solutions/src/http_parser.cpp",
+      "size": 2550,
+      "sha256": "2d47b14993e9e3c6a1b792f398f02b9cc8963ee68d5b6fc656617a70c567e1e4"
+    },
+    {
+      "path": "network/http_parser/solutions/tests/test_http.cpp",
+      "size": 930,
+      "sha256": "96c736e24b9039b8c2568482f126f478415cea7f0a6df56f0e6d3e61c3b1f1c5"
+    },
+    {
+      "path": "network/http_parser/starter/benchmarks/benchmark.cpp",
+      "size": 806,
+      "sha256": "63bdabf4a25fce9fac64de2eef5a921f5a42b220214d11cb57d7cd29855703a8"
+    },
+    {
+      "path": "network/http_parser/starter/CMakeLists.txt",
+      "size": 793,
+      "sha256": "39d42d97d643e2ae7721c7349659e6c2d8ce696d5b276a6f9e2864d40610be83"
+    },
+    {
+      "path": "network/http_parser/starter/docs/architecture.md",
+      "size": 275,
+      "sha256": "eaabb7dcc0ad0403e6d208b5428cdafcde9d17353894de08599734c56314a668"
+    },
+    {
+      "path": "network/http_parser/starter/EXERCISE_TODO.md",
+      "size": 350,
+      "sha256": "b4f1148a22ac28c8013b5eb33b47d45f34abdf340d72e7ddb97f30cc4df1c2c3"
+    },
+    {
+      "path": "network/http_parser/starter/include/http_parser.hpp",
+      "size": 529,
+      "sha256": "d77a556f6c031449aa78499d79ea2affe984000403e8abf5a961d2f8765a8e6a"
+    },
+    {
+      "path": "network/http_parser/starter/MILESTONES.md",
+      "size": 232,
+      "sha256": "d5f4be066774835d0f097e3d5970d910b5a853d98e45983ebb9a32a3abc06365"
+    },
+    {
+      "path": "network/http_parser/starter/README.md",
+      "size": 1146,
+      "sha256": "85bf4b679e829033060395eb1f5c7a1903425472822ac7078962c156af6733d2"
+    },
+    {
+      "path": "network/http_parser/starter/src/http_parser.cpp",
+      "size": 579,
+      "sha256": "ebc0613624d06312a0e53544e565c1e0d0247997b656135a8ba71cb0c3b8b135"
+    },
+    {
+      "path": "network/http_parser/starter/tests/test_http.cpp",
+      "size": 930,
+      "sha256": "96c736e24b9039b8c2568482f126f478415cea7f0a6df56f0e6d3e61c3b1f1c5"
+    },
+    {
+      "path": "network/http_parser/TEORIA_PASSO_A_PASSO.md",
+      "size": 3695,
+      "sha256": "c63971840ee43d3ed4240176a96283ef64c8651e0731e7626ff56f165d7ab987"
+    },
+    {
+      "path": "network/http_parser/TESTES_GUIADOS.md",
+      "size": 1120,
+      "sha256": "b612338a446bf6dddbc43b1137e6ec29499ad93b4a4cc89c1b4b77063b084a69"
+    },
+    {
+      "path": "p2p/gossip/BENCHMARK_GUIADO.md",
+      "size": 906,
+      "sha256": "f9ed9f35e382392bd1ccd59557dcd1622a292dcd7c22272e6638ae90cf685020"
+    },
+    {
+      "path": "p2p/gossip/EXERCICIOS.md",
+      "size": 746,
+      "sha256": "58a6129834aceca9328edb6fcdadfc638dc62d58abbc97e6e3d1d7082261baa1"
+    },
+    {
+      "path": "p2p/gossip/PESQUISA_GUIADA.md",
+      "size": 613,
+      "sha256": "d7f42f2ca744142126fd2cfaf334f3e20abb1ebf090d85a0c17b35d4e1ad0a0c"
+    },
+    {
+      "path": "p2p/gossip/README.md",
+      "size": 320,
+      "sha256": "b29cd818b949227fe83a9bc189d856b8f4b8ad18499e84706679f7646dba5576"
+    },
+    {
+      "path": "p2p/gossip/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3200,
+      "sha256": "84e2ba5c6fdf6f50fd1cd5ad710921da760a9b619947ddb1cd4889b281ada104"
+    },
+    {
+      "path": "p2p/gossip/solutions/benchmarks/benchmark.py",
+      "size": 521,
+      "sha256": "19a861491d88805e47e46b7879ac6cb442a3dded357bc9512058f9176fa45184"
+    },
+    {
+      "path": "p2p/gossip/solutions/CMakeLists.txt",
+      "size": 239,
+      "sha256": "a18d508bd3e09a6205a81bdba305147cb659b724fbcc54505f22b1d3a7aa4fad"
+    },
+    {
+      "path": "p2p/gossip/solutions/docs/architecture.md",
+      "size": 236,
+      "sha256": "24ec5e6a450c7b21d54f3a0796801fd7e355990002b7a7e7d5b04a7ba645dc71"
+    },
+    {
+      "path": "p2p/gossip/solutions/gossip.py",
+      "size": 1550,
+      "sha256": "457523f5b7d6fb63b3b5f8835e43eee88dfaf25ed8411f1906ae6fe12098f543"
+    },
+    {
+      "path": "p2p/gossip/solutions/MILESTONES.md",
+      "size": 252,
+      "sha256": "78b09117cb5d6e35139b00fa451a448d72e88f625a924dedce58859e6ce918a3"
+    },
+    {
+      "path": "p2p/gossip/solutions/README.md",
+      "size": 1132,
+      "sha256": "aaba9dbfaad17801209e345015792aeec4fdc603d5ff1e368d60975b508161e3"
+    },
+    {
+      "path": "p2p/gossip/solutions/tests/test_gossip.py",
+      "size": 772,
+      "sha256": "c0c92ff6458c8a5ae040ecddd0d1e3f00201f15f39bb1c9882c84111608b7182"
+    },
+    {
+      "path": "p2p/gossip/starter/benchmarks/benchmark.py",
+      "size": 521,
+      "sha256": "19a861491d88805e47e46b7879ac6cb442a3dded357bc9512058f9176fa45184"
+    },
+    {
+      "path": "p2p/gossip/starter/CMakeLists.txt",
+      "size": 239,
+      "sha256": "a18d508bd3e09a6205a81bdba305147cb659b724fbcc54505f22b1d3a7aa4fad"
+    },
+    {
+      "path": "p2p/gossip/starter/docs/architecture.md",
+      "size": 236,
+      "sha256": "24ec5e6a450c7b21d54f3a0796801fd7e355990002b7a7e7d5b04a7ba645dc71"
+    },
+    {
+      "path": "p2p/gossip/starter/EXERCISE_TODO.md",
+      "size": 352,
+      "sha256": "e948ebfa477dd5a177bb27473e504c1582ecfb0000c4e3f0d19fe6c3a9a7adbe"
+    },
+    {
+      "path": "p2p/gossip/starter/gossip.py",
+      "size": 991,
+      "sha256": "ac269d93aa92ee20cec45a17951cea1629baf970187525d72c5a274fc100c0c5"
+    },
+    {
+      "path": "p2p/gossip/starter/MILESTONES.md",
+      "size": 252,
+      "sha256": "78b09117cb5d6e35139b00fa451a448d72e88f625a924dedce58859e6ce918a3"
+    },
+    {
+      "path": "p2p/gossip/starter/README.md",
+      "size": 1132,
+      "sha256": "aaba9dbfaad17801209e345015792aeec4fdc603d5ff1e368d60975b508161e3"
+    },
+    {
+      "path": "p2p/gossip/starter/tests/test_gossip.py",
+      "size": 772,
+      "sha256": "c0c92ff6458c8a5ae040ecddd0d1e3f00201f15f39bb1c9882c84111608b7182"
+    },
+    {
+      "path": "p2p/gossip/TEORIA_PASSO_A_PASSO.md",
+      "size": 3372,
+      "sha256": "65897794ad3106c553cdeda4dc7d8e5a3d9617154b3f1338bd7b2c31400170f6"
+    },
+    {
+      "path": "p2p/gossip/TESTES_GUIADOS.md",
+      "size": 1122,
+      "sha256": "abd33f7f7c72d16f5cdef98e03f1b71a3762f12f302d1f6850d1f437bbdb8fd3"
+    },
+    {
+      "path": "README.md",
+      "size": 1203,
+      "sha256": "224c2dc443bec31927a3329b30f61d7c76cd8b5d4ffded9e0a123dabf0b1fd48"
+    },
+    {
+      "path": "redteam/benign_reversing/BENCHMARK_GUIADO.md",
+      "size": 837,
+      "sha256": "45e7210d38211b9c358d1737c6924ac9655e5599e6c6aed0a5626c7e6e4cb9dc"
+    },
+    {
+      "path": "redteam/benign_reversing/EXERCICIOS.md",
+      "size": 672,
+      "sha256": "c56c645a9787620737d2a25ffe02a1b71c299da4341ccc221b49d3414937d77d"
+    },
+    {
+      "path": "redteam/benign_reversing/GABARITO.md",
+      "size": 342,
+      "sha256": "db94b3b0d2ea6e5a891d3378fceddd9ac5b67e17e98870ced4712fcb4d55f542"
+    },
+    {
+      "path": "redteam/benign_reversing/PESQUISA_GUIADA.md",
+      "size": 841,
+      "sha256": "b0c04b0681b39b0ed2eb7bbd1853908f5adcdc8cc20f0f579b31c89cd1af5b47"
+    },
+    {
+      "path": "redteam/benign_reversing/README.md",
+      "size": 1712,
+      "sha256": "440d6477aa60c28dc71a1c7cc7520a8ecb64daff515f0a75957a8ea3f0e5b0ab"
+    },
+    {
+      "path": "redteam/benign_reversing/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 7217,
+      "sha256": "7d2d42600cff79cd084715111cafa6212f2090233494e963763970cec84ff68c"
+    },
+    {
+      "path": "redteam/benign_reversing/solutions/CMakeLists.txt",
+      "size": 625,
+      "sha256": "061eb4e137249b21c504ea78623119165154e320c9d5f7b904b2dc00be89fa9d"
+    },
+    {
+      "path": "redteam/benign_reversing/solutions/rules/lab_target.yar",
+      "size": 385,
+      "sha256": "f4600ae434f58f0282a6ac2c98ded017fc4c680c7b825830cb2266ce95d95dbc"
+    },
+    {
+      "path": "redteam/benign_reversing/solutions/src/lab_target.c",
+      "size": 1087,
+      "sha256": "4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61"
+    },
+    {
+      "path": "redteam/benign_reversing/solutions/tests/test_ascii_strings.py",
+      "size": 758,
+      "sha256": "671aacdb10dfa48ad363fd99cdb908beb0d4c3aa57c7eedee63378321d81af58"
+    },
+    {
+      "path": "redteam/benign_reversing/solutions/tests/test_rule.py",
+      "size": 613,
+      "sha256": "9b4bcce8fc61603906983b5229553bd7eedf0d9e436744be6a087a7c7ce88865"
+    },
+    {
+      "path": "redteam/benign_reversing/solutions/tools/ascii_strings.py",
+      "size": 1116,
+      "sha256": "c0f7bc6cec876a095ca8c7467a2e554047b52c46e5bde8405a31219b15166b36"
+    },
+    {
+      "path": "redteam/benign_reversing/starter/CMakeLists.txt",
+      "size": 625,
+      "sha256": "061eb4e137249b21c504ea78623119165154e320c9d5f7b904b2dc00be89fa9d"
+    },
+    {
+      "path": "redteam/benign_reversing/starter/rules/lab_target.yar",
+      "size": 220,
+      "sha256": "de48091fc271a8524a30e79e07a1928904ef30f86fea4767fca91e07b3264e01"
+    },
+    {
+      "path": "redteam/benign_reversing/starter/src/lab_target.c",
+      "size": 1087,
+      "sha256": "4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61"
+    },
+    {
+      "path": "redteam/benign_reversing/starter/tests/test_ascii_strings.py",
+      "size": 758,
+      "sha256": "671aacdb10dfa48ad363fd99cdb908beb0d4c3aa57c7eedee63378321d81af58"
+    },
+    {
+      "path": "redteam/benign_reversing/starter/tests/test_rule.py",
+      "size": 613,
+      "sha256": "9b4bcce8fc61603906983b5229553bd7eedf0d9e436744be6a087a7c7ce88865"
+    },
+    {
+      "path": "redteam/benign_reversing/starter/tools/ascii_strings.py",
+      "size": 740,
+      "sha256": "fa8d169a022c86f522aee858589a32904e5971ecc71c089fdf445a3a8f2d1409"
+    },
+    {
+      "path": "redteam/benign_reversing/TEORIA_PASSO_A_PASSO.md",
+      "size": 3959,
+      "sha256": "c3ab5107c49bc38f121e3a761908b811103908b435de2ce4d198d8067deb6812"
+    },
+    {
+      "path": "redteam/benign_reversing/TESTES_GUIADOS.md",
+      "size": 1352,
+      "sha256": "f0109a4ee65611019c765217662836cb8b6eeada4d9b32512f4eec310e0aacda"
+    },
+    {
+      "path": "scripts/pedagogy_check.py",
+      "size": 2414,
+      "sha256": "39bf1e13c414c791f53703fa44b512d97ccbbb9593a96667353691f32aa3b760"
+    },
+    {
+      "path": "scripts/upgrade_day01.py",
+      "size": 34723,
+      "sha256": "2908c0200c45c52bd0202e2f47eb3188e52bd1b0ef24b5460e69daea8b9330f0"
+    },
+    {
+      "path": "START_HERE.md",
+      "size": 1645,
+      "sha256": "bb064366b59d5b4b29b56016558e8fa2c88eeeb58c23220260a050325449325e"
+    },
+    {
+      "path": "systems/clvm/BENCHMARK_GUIADO.md",
+      "size": 1071,
+      "sha256": "70cf81c02af1ce2861b0cf4dc4bf7f38ccf1b2f6423b693daacc83c1b25a73f0"
+    },
+    {
+      "path": "systems/clvm/docs/FORMAT.md",
+      "size": 1096,
+      "sha256": "e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf"
+    },
+    {
+      "path": "systems/clvm/EXERCICIOS.md",
+      "size": 552,
+      "sha256": "d5996f142ce3617fa190c3cdbfe86144d890484532ba08eceb9b58f791f0052a"
+    },
+    {
+      "path": "systems/clvm/PESQUISA_GUIADA.md",
+      "size": 852,
+      "sha256": "ebd590dee06b380fa1b166e9581fd4e5bd3d696d8156504bc1afedcde4e7648e"
+    },
+    {
+      "path": "systems/clvm/README.md",
+      "size": 2229,
+      "sha256": "0ee09c7458f367263aeab24d5fe229de66ae14e0ebbe82b7e9628f8476553795"
+    },
+    {
+      "path": "systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 12239,
+      "sha256": "3d674f28fccc2fabfa5cf5ff9190e4e379bf7a7622775cacabf21d16bbf9a76a"
+    },
+    {
+      "path": "systems/clvm/ROADMAP.md",
+      "size": 1377,
+      "sha256": "971127579f424b08f14ab0c5f3e318629761a7ddf8f53c04790b04f972df48e5"
+    },
+    {
+      "path": "systems/clvm/solutions/CMakeLists.txt",
+      "size": 792,
+      "sha256": "2d967e3d4e65e02a6ce0d960170720aa15328098e464a2b96e8a5da1d2f165d5"
+    },
+    {
+      "path": "systems/clvm/solutions/FORMAT.md",
+      "size": 1096,
+      "sha256": "e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf"
+    },
+    {
+      "path": "systems/clvm/solutions/include/clvm_format.h",
+      "size": 844,
+      "sha256": "39527454e21b6078bb2c86224f9804dee1bae118447e47867fbcb733aaf698f3"
+    },
+    {
+      "path": "systems/clvm/solutions/programs/arithmetic.asm",
+      "size": 59,
+      "sha256": "2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290"
+    },
+    {
+      "path": "systems/clvm/solutions/programs/countdown.asm",
+      "size": 115,
+      "sha256": "f813ee1e5ffafde7ebee880b6c99211111c68e1fa2982d9d3d859ee07351402c"
+    },
+    {
+      "path": "systems/clvm/solutions/rust-validator/Cargo.toml",
+      "size": 84,
+      "sha256": "219164ac6fa7b6b8dd118719bb291873531cb0891091bae7010f3188733a0a2c"
+    },
+    {
+      "path": "systems/clvm/solutions/rust-validator/src/main.rs",
+      "size": 1861,
+      "sha256": "f44f25d890c27956fd4fde2cd9a77e654681f9319165e38435688a1316354431"
+    },
+    {
+      "path": "systems/clvm/solutions/src/clvm_loader.c",
+      "size": 2304,
+      "sha256": "a3e42461b6986ab3ed87059df4e855dbbe21d13c91f4b8f2c5980261f89d654d"
+    },
+    {
+      "path": "systems/clvm/solutions/src/main.cpp",
+      "size": 7725,
+      "sha256": "38016acfa77f6330d7d50e1ab337f6907d2601e741bfa3bed7a06131684ad05b"
+    },
+    {
+      "path": "systems/clvm/solutions/tests/integration_test.py",
+      "size": 1766,
+      "sha256": "c1076e55c0397e70dd6b46add3c4d71d650b00326f543d4939ad906091c429b4"
+    },
+    {
+      "path": "systems/clvm/solutions/tools/assemble.py",
+      "size": 3801,
+      "sha256": "f097ea09f8ac3dc21490330623b0d9263f9c28a5edca63e75182f86a15bb8b02"
+    },
+    {
+      "path": "systems/clvm/solutions/tools/inspect_clvm.py",
+      "size": 873,
+      "sha256": "5f151d2e29d24928c748a29fddf4a910c9c32068609ad1a218890529f814dc2f"
+    },
+    {
+      "path": "systems/clvm/starter/CMakeLists.txt",
+      "size": 792,
+      "sha256": "2d967e3d4e65e02a6ce0d960170720aa15328098e464a2b96e8a5da1d2f165d5"
+    },
+    {
+      "path": "systems/clvm/starter/FORMAT.md",
+      "size": 1096,
+      "sha256": "e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf"
+    },
+    {
+      "path": "systems/clvm/starter/include/clvm_format.h",
+      "size": 844,
+      "sha256": "39527454e21b6078bb2c86224f9804dee1bae118447e47867fbcb733aaf698f3"
+    },
+    {
+      "path": "systems/clvm/starter/programs/arithmetic.asm",
+      "size": 59,
+      "sha256": "2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290"
+    },
+    {
+      "path": "systems/clvm/starter/programs/countdown.asm",
+      "size": 115,
+      "sha256": "f813ee1e5ffafde7ebee880b6c99211111c68e1fa2982d9d3d859ee07351402c"
+    },
+    {
+      "path": "systems/clvm/starter/rust-validator/Cargo.toml",
+      "size": 84,
+      "sha256": "219164ac6fa7b6b8dd118719bb291873531cb0891091bae7010f3188733a0a2c"
+    },
+    {
+      "path": "systems/clvm/starter/rust-validator/src/main.rs",
+      "size": 1847,
+      "sha256": "f16a5e209a46941b95dce9e1f73417611c23215c61652ee0ed22ac8e11a1d9eb"
+    },
+    {
+      "path": "systems/clvm/starter/src/clvm_loader.c",
+      "size": 1379,
+      "sha256": "74331fe500ae2f4d4992ed2e8957e71b3626594518331d51ce6a2544f990471d"
+    },
+    {
+      "path": "systems/clvm/starter/src/main.cpp",
+      "size": 2784,
+      "sha256": "c1e49b6c3b8a7042e5793b69eb80601d7a9fa3d03bfe4697cb9143a29a9e6f29"
+    },
+    {
+      "path": "systems/clvm/starter/tests/integration_test.py",
+      "size": 1766,
+      "sha256": "c1076e55c0397e70dd6b46add3c4d71d650b00326f543d4939ad906091c429b4"
+    },
+    {
+      "path": "systems/clvm/starter/tools/assemble.py",
+      "size": 2164,
+      "sha256": "dec80ed2517321eb41ba7336d589fa227236120971551caf457336ca733acd2c"
+    },
+    {
+      "path": "systems/clvm/starter/tools/inspect_clvm.py",
+      "size": 873,
+      "sha256": "5f151d2e29d24928c748a29fddf4a910c9c32068609ad1a218890529f814dc2f"
+    },
+    {
+      "path": "systems/clvm/TEORIA_PASSO_A_PASSO.md",
+      "size": 3413,
+      "sha256": "c93a244215c47bae1778078c9def6d805baadbcd3dd44e22c2c890b1dbedc4a6"
+    },
+    {
+      "path": "systems/clvm/TESTES_GUIADOS.md",
+      "size": 2775,
+      "sha256": "dd100c424a5eba99e2412d4909f4477d935d953706b6e7183039ae5940b08089"
+    },
+    {
+      "path": "systems/clvm/tests/smoke_test.sh",
+      "size": 867,
+      "sha256": "f42d854cc252407b6bfab25f0d316a7b000804dd5448336d1f2c0c62d5fa95eb"
+    },
+    {
+      "path": "terminal/ansi_parser/BENCHMARK_GUIADO.md",
+      "size": 892,
+      "sha256": "069e819c664fd6cdb524701007395988af2b2b759ba9e66799c1caf328b3cb43"
+    },
+    {
+      "path": "terminal/ansi_parser/EXERCICIOS.md",
+      "size": 615,
+      "sha256": "ebc0957f161a034248523b8fa0bab44156bb56b89ba6a5d61832fd5f03b3faa5"
+    },
+    {
+      "path": "terminal/ansi_parser/PESQUISA_GUIADA.md",
+      "size": 741,
+      "sha256": "f7384324c435d860503eaf3c9aca426b91668bdbbe3c2d6ece91a10325b9ea25"
+    },
+    {
+      "path": "terminal/ansi_parser/README.md",
+      "size": 323,
+      "sha256": "19873eed45d3b7d837977289076d42816b45667461e52543f7131045eb52db39"
+    },
+    {
+      "path": "terminal/ansi_parser/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5270,
+      "sha256": "a75f4158c8f46bc63df283a8d6d424c8e6a17e87c564c93172c116c5a2b82654"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/benchmarks/benchmark.cpp",
+      "size": 699,
+      "sha256": "cbd422c397226ced9bf0a4a33624cb3536c90bdc07a3951d102e03bf05dcd8a1"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/CMakeLists.txt",
+      "size": 846,
+      "sha256": "bb46f450eb70806567ad8360a32255b19499f57a2fb523ee6c9531a096c1ee0d"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/docs/architecture.md",
+      "size": 287,
+      "sha256": "03155cb37df22af37b03635566cf9f7ecb91b985cfcc48ea7061d257f657827b"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/include/terminal.hpp",
+      "size": 747,
+      "sha256": "8ef1e49a073fc4ce315b9e55ac2a687ad0dde56f6241dfbea24ad6cf52e75763"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/MILESTONES.md",
+      "size": 226,
+      "sha256": "61ea870f2f50972986634c196433d8d755d841d34cc2d60e204eb2e0a9489d3f"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/README.md",
+      "size": 1149,
+      "sha256": "5884ea72df86a924067c4c0537f743458b8d7ba04c36d5d57624006d10c30a36"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/src/terminal.cpp",
+      "size": 3361,
+      "sha256": "2927fbe1dba85ae18f7d43d08ac662e18bfafe43bbb3426747ab4f10d1cf9840"
+    },
+    {
+      "path": "terminal/ansi_parser/solutions/tests/test_terminal.cpp",
+      "size": 902,
+      "sha256": "f27fdea9685194234aadde810dbdc6ccdc564c808f2c80fe967faae8dccef1c1"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/benchmarks/benchmark.cpp",
+      "size": 699,
+      "sha256": "cbd422c397226ced9bf0a4a33624cb3536c90bdc07a3951d102e03bf05dcd8a1"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/CMakeLists.txt",
+      "size": 846,
+      "sha256": "bb46f450eb70806567ad8360a32255b19499f57a2fb523ee6c9531a096c1ee0d"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/docs/architecture.md",
+      "size": 287,
+      "sha256": "03155cb37df22af37b03635566cf9f7ecb91b985cfcc48ea7061d257f657827b"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/EXERCISE_TODO.md",
+      "size": 350,
+      "sha256": "c6a9cdcdf1a02e11e08c2af2dab0caf6737249999b15b4ce7a87340386973d41"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/include/terminal.hpp",
+      "size": 747,
+      "sha256": "8ef1e49a073fc4ce315b9e55ac2a687ad0dde56f6241dfbea24ad6cf52e75763"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/MILESTONES.md",
+      "size": 226,
+      "sha256": "61ea870f2f50972986634c196433d8d755d841d34cc2d60e204eb2e0a9489d3f"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/README.md",
+      "size": 1149,
+      "sha256": "5884ea72df86a924067c4c0537f743458b8d7ba04c36d5d57624006d10c30a36"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/src/terminal.cpp",
+      "size": 1340,
+      "sha256": "8c2a541afc07afcf690a189bf0e1b6937738fe2f6f7e967344c83509a01f11bb"
+    },
+    {
+      "path": "terminal/ansi_parser/starter/tests/test_terminal.cpp",
+      "size": 902,
+      "sha256": "f27fdea9685194234aadde810dbdc6ccdc564c808f2c80fe967faae8dccef1c1"
+    },
+    {
+      "path": "terminal/ansi_parser/TEORIA_PASSO_A_PASSO.md",
+      "size": 5210,
+      "sha256": "0dbb0455a24d95954683ed5581e41aa87b17bf15b886c193c7f24d0c47a95588"
+    },
+    {
+      "path": "terminal/ansi_parser/TESTES_GUIADOS.md",
+      "size": 1289,
+      "sha256": "e578f73c3410c7b92ba3a839cf0207303d20d8b83d1dcfa398a8ec2c38af4bee"
+    },
+    {
+      "path": "TODO_MAP.md",
+      "size": 1988,
+      "sha256": "9afa479c3f2998d7f8738caa3366280dfd09d085eb3ace201648234ec3efa922"
+    },
+    {
+      "path": "tooling/miniobjdump/BENCHMARK_GUIADO.md",
+      "size": 765,
+      "sha256": "36149ea516ef45f11c528571414c7de179005826bfc248dd7c172cb08cde60c4"
+    },
+    {
+      "path": "tooling/miniobjdump/EXERCICIOS.md",
+      "size": 607,
+      "sha256": "2e28253b6aff382fa265c47bb6bc4b8595289333352a1a30aa7f96a6a22b0b87"
+    },
+    {
+      "path": "tooling/miniobjdump/GABARITO.md",
+      "size": 479,
+      "sha256": "0616f0ff77fdeda8c77356de1513b07717dc4d2327be4a3c82cd26a5583640c5"
+    },
+    {
+      "path": "tooling/miniobjdump/PESQUISA_GUIADA.md",
+      "size": 757,
+      "sha256": "411e16676e39756adaa7c3528a3b9372fec525654c47a63f9c7e0df3eb55cfcd"
+    },
+    {
+      "path": "tooling/miniobjdump/README.md",
+      "size": 1622,
+      "sha256": "a8133701917b8083dabf7640e19f31c3dc08918f1d1b5a5aeb00506c55791173"
+    },
+    {
+      "path": "tooling/miniobjdump/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 8069,
+      "sha256": "8fca0ff429315f404ec1e2b60f9aa801ef0fbb0f471e80b5284020df90effa04"
+    },
+    {
+      "path": "tooling/miniobjdump/solutions/CMakeLists.txt",
+      "size": 810,
+      "sha256": "1ec4a65b39aaa27fa7ec6dcc71546cead4d31cc47d64fe3b8966b4769ef9340b"
+    },
+    {
+      "path": "tooling/miniobjdump/solutions/src/main.cpp",
+      "size": 9028,
+      "sha256": "a5db5a428f543de49f110788cf3b0f72a8af197e0a65d86a4c500c7c2367dcf3"
+    },
+    {
+      "path": "tooling/miniobjdump/solutions/tests/integration_test.py",
+      "size": 1312,
+      "sha256": "596c8c36a204f3b2e4ed5f23c1f0ff112f27d30ad1c7a573b8e5f8e7dc97f96d"
+    },
+    {
+      "path": "tooling/miniobjdump/solutions/tests/test_target.c",
+      "size": 464,
+      "sha256": "4239ac9a028564adbe997e05645aa8ddd77043d514a0024c59f715fcb7dd7f22"
+    },
+    {
+      "path": "tooling/miniobjdump/starter/CMakeLists.txt",
+      "size": 810,
+      "sha256": "1ec4a65b39aaa27fa7ec6dcc71546cead4d31cc47d64fe3b8966b4769ef9340b"
+    },
+    {
+      "path": "tooling/miniobjdump/starter/src/main.cpp",
+      "size": 1866,
+      "sha256": "60bb19e7ef1916da4e79401d7e1f5d0c261794d21e3b2b623644c6dcf1daeceb"
+    },
+    {
+      "path": "tooling/miniobjdump/starter/tests/integration_test.py",
+      "size": 1312,
+      "sha256": "596c8c36a204f3b2e4ed5f23c1f0ff112f27d30ad1c7a573b8e5f8e7dc97f96d"
+    },
+    {
+      "path": "tooling/miniobjdump/starter/tests/test_target.c",
+      "size": 464,
+      "sha256": "4239ac9a028564adbe997e05645aa8ddd77043d514a0024c59f715fcb7dd7f22"
+    },
+    {
+      "path": "tooling/miniobjdump/TEORIA_PASSO_A_PASSO.md",
+      "size": 3776,
+      "sha256": "f29ec0e02892e09c7ff3abafcbc668bad8050470e574aa475ea2373dbfacc308"
+    },
+    {
+      "path": "tooling/miniobjdump/TESTES_GUIADOS.md",
+      "size": 1735,
+      "sha256": "572e2894876e02b96b9d9350d5ebf447bf32ab91231f9eb3d9a9657b9a61bb20"
+    },
+    {
+      "path": "Treino_LowLevel_Unificado_2026-09-03_CORRIGIDO_FINAL.docx",
+      "size": 113237,
+      "sha256": "8f685005006f4664c551f037f33340472ed88108b66fc660aec58581a8cf3889"
+    },
+    {
+      "path": "VALIDATION.md",
+      "size": 1408,
+      "sha256": "4443b1fd4f7c1c413f0d54305752b634b4e420760845831df62bfdb662012928"
+    }
+  ]
+}

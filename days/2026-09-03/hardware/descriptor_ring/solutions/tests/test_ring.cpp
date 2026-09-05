@@ -1,3 +1,6 @@
+// PEDAGOGY-TEST [RING-SUBMIT-01]: submit rejeita ring cheio e wrap-around
+// PEDAGOGY-TEST [RING-COMPLETE-01]: complete devolve descriptor ao host
+// PEDAGOGY-TEST [RING-RECLAIM-01]: reclaim em ordem FIFO do consumer
 #include "descriptor_ring.hpp"
 #include <cassert>
 #include <iostream>

@@ -1,3 +1,12 @@
+// PEDAGOGY-TEST [GFX-CAMERA-01]: yaw altera forward.x para +X
+// PEDAGOGY-TEST [GFX-CAMERA-02]: right perpendicular a forward e world_up
+// PEDAGOGY-TEST [GFX-CAMERA-03]: view_matrix posiciona origem em z=-6
+// PEDAGOGY-TEST [GFX-CAMERA-04]: movimento WASD altera posição da câmera
+// PEDAGOGY-TEST [GFX-CAMERA-05]: mouse delta atualiza yaw/pitch com clamp
+// PEDAGOGY-TEST [GFX-CULL-01]: screen_triangle_front_facing respeita winding
+// PEDAGOGY-TEST [GFX-CULL-02]: triângulos back-facing ignorados no raster
+// PEDAGOGY-TEST [GFX-CULL-03]: GL_CULL_FACE com back faces CCW
+// PEDAGOGY-TEST [GFX-LAMBERT-01]: iluminação difusa + ambiente no fragment shader
 #include <cassert>
 #include <cmath>
 #include <iostream>

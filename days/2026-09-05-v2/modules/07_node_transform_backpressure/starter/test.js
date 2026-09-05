@@ -1,0 +1,4 @@
+// TESTS [NODE-XFORM-01] [NODE-BACKPRESSURE-02]
+import assert from 'node:assert/strict';import {Writable} from 'node:stream';import {once} from 'node:events';import {LineTransform} from './line_transform.js';
+const t=new LineTransform();const lines=[];t.on('data',x=>lines.push(x));const euro=Buffer.from('€');t.write(Buffer.from('a\n\n'));t.write(Buffer.concat([Buffer.from('b'),euro.subarray(0,1)]));t.write(Buffer.concat([euro.subarray(1),Buffer.from('\nc')]));t.end();await once(t,'end');assert.deepEqual(lines,['a','','b€','c']);
+let falseWrites=0,drains=0;const w=new Writable({highWaterMark:8,write(c,e,cb){setTimeout(cb,2)}});for(let i=0;i<30;i++){if(!w.write(Buffer.alloc(8))){falseWrites++;await once(w,'drain');drains++;}}w.end();await once(w,'finish');assert.ok(falseWrites>0);assert.equal(drains,falseWrites);console.log('OK node streams',{falseWrites,drains});

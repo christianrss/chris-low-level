@@ -1,3 +1,4 @@
+// PEDAGOGY-TEST [CPU-STEP-01]: MOVI/ADD/STORE/LOAD/JNZ em programa de teste
 #include "cpu.hpp"
 #include <cassert>
 #include <cstdint>

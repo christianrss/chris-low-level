@@ -1,3 +1,9 @@
+# PEDAGOGY-TEST [CLVM-PY-FNV-01]: checksum FNV-1a no assemble.py
+# PEDAGOGY-TEST [CLVM-ASM-LABELS-01]: labels duas passagens e JMP/JZ
+# PEDAGOGY-TEST [CLVM-C-FNV-01]: FNV-1a idêntico ao Python no loader C
+# PEDAGOGY-TEST [CLVM-C-HEADER-01]: rejeita flags inválidas e checksum errado
+# PEDAGOGY-TEST [CLVM-VM-ARITH-01]: programa arithmetic imprime 38
+# PEDAGOGY-TEST [CLVM-VM-JUMP-01]: saltos relativos JMP/JZ no VM
 from __future__ import annotations
 import subprocess, sys, tempfile
 from pathlib import Path

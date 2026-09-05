@@ -8,20 +8,20 @@ Uma VM interpreta bytes que controlam fluxo de execução. Um erro de tamanho, s
 
 **Invariante:** `arithmetic.asm` deve montar, carregar e imprimir `38`.
 
-1. Compile `solutions/`.
-2. Use `tools/assemble.py` para gerar `arithmetic.clvm` dentro do diretório de build.
-3. Execute `clvm arithmetic.clvm`.
-4. Capture `stdout`.
-5. Falhe o teste se a saída, removendo espaços finais, não for `38`.
+### Caso 1: Compile `solutions/`.
+### Caso 2: Use `tools/assemble.py` para gerar `arithmetic.clvm` dentro do diretório de build.
+### Caso 3: Execute `clvm arithmetic.clvm`.
+### Caso 4: Capture `stdout`.
+### Caso 5: Falhe o teste se a saída, removendo espaços finais, não for `38`.
 
 Esse teste atravessa quatro componentes: parser de assembly, serializer, loader e interpretador.
 
 ## Teste 2 - checksum corrompido (negativo/regressão)
 
-1. Gere um arquivo válido.
-2. Inverta um bit do último byte sem recalcular o checksum.
-3. Execute a VM.
-4. O processo deve terminar com erro e mencionar `checksum mismatch`.
+### Caso 6: Gere um arquivo válido.
+### Caso 7: Inverta um bit do último byte sem recalcular o checksum.
+### Caso 8: Execute a VM.
+### Caso 9: O processo deve terminar com erro e mencionar `checksum mismatch`.
 
 Se no futuro alguém remover a validação de checksum, este teste falhará.
 

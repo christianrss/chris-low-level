@@ -13,3 +13,15 @@
 ## TODOs auditáveis
 - `SYS-PAGE-ALLOC-01`
 - `SYS-PAGE-FREE-02`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-pagealloc/day03` |
+| O que levar | bitmap page allocator |
+| Testes a replicar | page allocator tests |
+| Milestone | pagealloc milestone |
+| Commit sugerido | `feat(pagealloc): port bitmap allocator from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

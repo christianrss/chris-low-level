@@ -1,3 +1,16 @@
+// Test cases (TESTES_GUIADOS.md):
+// Caso 1: Importe `train()`.
+// Caso 2: Execute 1000 épocas com `lr=0.01`.
+// Caso 3: Use tolerâncias em vez de igualdade exata porque treinamento usa ponto flutuante
+// Caso 4: Verifique `abs(w-2) < 0.02` e `abs(b-1) < 0.05`.
+# PEDAGOGY-TEST: AI-PY-GRAD-01
+# PEDAGOGY-TEST: AI-PY-SGD-01
+# PEDAGOGY-TEST: AI-AUTOGRAD-BWD-01
+# PEDAGOGY-TEST: AI-AUTOGRAD-ADD-01
+# PEDAGOGY-TEST: AI-AUTOGRAD-MUL-01
+# PEDAGOGY-TEST: AI-C-GRAD-01
+# PEDAGOGY-TEST: AI-C-SGD-01
+# PEDAGOGY-TEST: AI-C-AVG-01
 from __future__ import annotations
 import math, sys
 from pathlib import Path

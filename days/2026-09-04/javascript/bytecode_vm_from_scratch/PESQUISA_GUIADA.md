@@ -13,3 +13,13 @@ Responda:
 3. O que o instruction pointer representa?
 4. Por que `Sub` precisa fazer `a-b`, não `b-a`, embora `b` seja retirado da stack primeiro?
 5. O que precisaremos adicionar antes de suportar closures?
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

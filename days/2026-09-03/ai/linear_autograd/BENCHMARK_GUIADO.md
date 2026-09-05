@@ -10,3 +10,13 @@
 6. Em um experimento futuro, exponha o kernel C por FFI ou execute múltiplos treinos por processo.
 
 O objetivo de hoje é aprender a identificar um benchmark imperfeito e documentar a limitação.
+
+## Resultados observados
+
+Ambiente de referência: Linux container, GCC 14.2, Python 3.13 (ver `benchmarks/results-2026-09-03.json`).
+
+| Métrica | Valor referência | Notas |
+|---------|------------------|-------|
+| Python train step | ~0.51 ms | 50 runs median |
+
+Valores são ordem de grandeza — **rerode na sua máquina** e registre mediana após warm-up.

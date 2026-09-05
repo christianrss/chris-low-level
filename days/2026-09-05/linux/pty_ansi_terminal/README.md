@@ -13,3 +13,15 @@
 ## TODOs auditáveis
 - `TERM-ANSI-SGR-01`
 - `TERM-CURSOR-02`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-linux-terminal/day03_ansi` |
+| O que levar | ANSI parser for terminal |
+| Testes a replicar | test_ansi.py |
+| Milestone | linux terminal milestone |
+| Commit sugerido | `feat(terminal): port ANSI parser from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

@@ -1,0 +1,25 @@
+# Mapa global de TODOs
+
+- `LINUX-PKG-PARSE-01` - `modules/01_linux_distro_pkg_rootfs`
+- `LINUX-PKG-INSTALL-02` - `modules/01_linux_distro_pkg_rootfs`
+- `LINUX-ROOTFS-BUILD-03` - `modules/01_linux_distro_pkg_rootfs`
+- `KMOD-MODEL-OPEN-01` - `modules/02_linux_kernel_driver_lifecycle`
+- `KMOD-MODEL-IO-02` - `modules/02_linux_kernel_driver_lifecycle`
+- `KMOD-SOURCE-REVIEW-03` - `modules/02_linux_kernel_driver_lifecycle`
+- `SYS-PAGE-ALLOC-01` - `modules/03_systems_bitmap_page_allocator`
+- `SYS-PAGE-FREE-02` - `modules/03_systems_bitmap_page_allocator`
+- `AI-MM-NAIVE-01` - `modules/04_ai_tiled_matmul`
+- `AI-MM-TILED-02` - `modules/04_ai_tiled_matmul`
+- `RT-ELF-HDR-01` - `modules/05_redteam_elf_entry_inspector`
+- `RT-ELF-ENTRY-02` - `modules/05_redteam_elf_entry_inspector`
+- `CLR-IL-OPCODE-01` - `modules/06_dotnet_cil_decoder`
+- `CLR-IL-OPERAND-02` - `modules/06_dotnet_cil_decoder`
+- `NODE-XFORM-01` - `modules/07_node_transform_backpressure`
+- `NODE-BACKPRESSURE-02` - `modules/07_node_transform_backpressure`
+- `JSVM-JZ-01` - `modules/08_javascript_bytecode_vm`
+- `JSVM-JMP-02` - `modules/08_javascript_bytecode_vm`
+- `GFX-STATE-TRANSITION-01` - `modules/09_graphics_resource_states`
+- `GFX-VK-MAP-02` - `modules/09_graphics_resource_states`
+- `GFX-D3D12-MAP-03` - `modules/09_graphics_resource_states`
+- `TERM-ANSI-SGR-01` - `modules/10_linux_terminal_ansi`
+- `TERM-CURSOR-02` - `modules/10_linux_terminal_ansi`

@@ -13,6 +13,16 @@ jobs:
           python-version: '3.12'
       - name: Quality
         run: python scripts/quality_check.py
+      - name: Pedagogy (Days 01-03)
+        run: |
+          python scripts/pedagogy_check_unified.py --day 2026-09-03
+          python scripts/pedagogy_check_unified.py --day 2026-09-04
+          python scripts/pedagogy_check_unified.py --day 2026-09-05
+      - name: Day module tests (solutions)
+        run: |
+          python scripts/run_day_tests.py --day 2026-09-03 --mode solutions
+          python scripts/run_day_tests.py --day 2026-09-04 --mode solutions
+          python scripts/run_day_tests.py --day 2026-09-05 --mode solutions
       - name: Build and test
         run: python scripts/run_all_tests.py
 

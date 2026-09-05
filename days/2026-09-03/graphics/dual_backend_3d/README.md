@@ -107,3 +107,15 @@ rasterizacao, coordenadas baricentricas, depth test, iluminacao e framebuffer.
 
 A trilha de drivers/kernel pode, mais adiante, descer outra camada e estudar framebuffer de
 hardware, WDDM, device drivers e interfaces de GPU em laboratorio apropriado.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-renderer` |
+| O que levar | shared 3D core + backend interface |
+| Testes a replicar | software vs GL parity tests |
+| Milestone | MILESTONES.md — dual backend |
+| Commit sugerido | `feat(renderer): port 3D core from day01 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

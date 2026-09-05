@@ -15,3 +15,13 @@
 5. Por que parsers de produção têm preocupações de request smuggling que este toy parser não resolve?
 
 Implemente somente o subset declarado no módulo e compare com as RFCs para entender limites e terminologia.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

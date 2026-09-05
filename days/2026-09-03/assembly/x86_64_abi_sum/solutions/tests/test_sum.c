@@ -1,3 +1,4 @@
+// PEDAGOGY-TEST [ASM-SUM-01]: soma {1,2,3,5,8,13}=32 e count=0 retorna 0
 #include <assert.h>
 #include <stddef.h>
 #include <stdint.h>

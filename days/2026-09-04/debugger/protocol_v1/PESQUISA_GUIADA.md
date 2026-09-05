@@ -18,3 +18,13 @@ Leia apenas para entender decisões de protocolo: framing, comandos, respostas, 
 3. Por que payload length precisa ser validado antes de acessar payload?
 4. Checksum aqui protege contra corrupção acidental ou é autenticação criptográfica? (Resposta: não é autenticação.)
 5. Como isso evoluirá para `chris-kd-stub` dentro do kernel?
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

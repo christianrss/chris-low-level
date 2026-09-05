@@ -7,3 +7,13 @@
 5. Registre CPU, OS, compilador/runtime, flags e tamanho da entrada.
 6. Compare uma mudanca por vez.
 7. O benchmark de referencia esta em `projects/chris-chain/benchmarks/` quando existe.
+
+## Resultados observados
+
+Ambiente de referência: Linux container, GCC 14.2, Python 3.13 (ver `benchmarks/results-2026-09-03.json`).
+
+| Métrica | Valor referência | Notas |
+|---------|------------------|-------|
+| PoW diff=2 median | ~0.82 ms | nonce ~192 |
+
+Valores são ordem de grandeza — **rerode na sua máquina** e registre mediana após warm-up.

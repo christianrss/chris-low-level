@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\javascript\bytecode_vm_from_scratch\solutions\src\chris_js.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\javascript\bytecode_vm_from_scratch\solutions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BF74BE1C-C09D-3317-A3EC-26E7C7656E95}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

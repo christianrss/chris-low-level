@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\systems\bitmap_page_allocator\solutions\build_bench\CMakeFiles\2e413c07f063df45d60a57253e879b6c\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5F3ABE87-5C3B-381E-A353-B46065C7E8AF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

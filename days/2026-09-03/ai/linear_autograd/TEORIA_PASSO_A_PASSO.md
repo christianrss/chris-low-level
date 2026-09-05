@@ -1,60 +1,48 @@
-# IA low-level - neurônio linear, gradientes, SGD e autograd
+# Teoria passo a passo — neurônio linear, gradientes, SGD e autograd escalar
 
-## O que você precisa entender antes de começar
+## 1. O que estamos construindo e por quê
 
-Treinar um modelo significa ajustar parâmetros para reduzir um erro mensurável. Hoje não usamos NumPy, PyTorch ou TensorFlow para que cada operação fique visível.
+Treinar um modelo significa ajustar parâmetros para reduzir um erro mensurável. Neste módulo não usamos NumPy, PyTorch ou TensorFlow de propósito: cada operação fica visível em Python e em C.
 
-### Modelo linear
-
-O modelo mais simples do laboratório é:
+O modelo mais simples é o neurônio linear:
 
 ```text
 prediction = weight * x + bias
 ```
 
-- `x`: entrada;
-- `weight`: peso treinável;
-- `bias`: deslocamento treinável;
-- `prediction`: saída do modelo;
-- `y`: resposta desejada.
+- `x`: entrada escalar;
+- `weight`, `bias`: parâmetros treináveis;
+- `y`: alvo desejado.
 
-### Loss
+A loss quadrática `L = (prediction - y)²` transforma o erro em um único número diferenciável. O gradiente aponta a direção de maior aumento da loss; o SGD anda na direção oposta.
 
-Usaremos erro quadrático:
+## 2. Como funciona internamente — forward e backward
 
-```text
-error = prediction - y
-loss = error * error
-```
+### Forward
 
-A loss é um único número. Treinar significa encontrar parâmetros que tornem esse número pequeno.
-
-### Derivada
-
-Uma derivada mede a sensibilidade da saída a uma pequena mudança na entrada. Para `loss = (w*x+b-y)^2`:
+Para cada amostra do batch:
 
 ```text
-dL/dw = 2 * (prediction - y) * x
-dL/db = 2 * (prediction - y)
+prediction = w*x + b
+error      = prediction - y
+loss       = error * error
 ```
 
-O sinal do gradiente indica para que lado a loss aumenta. O gradient descent move o parâmetro na direção oposta:
+### Backward (regra da cadeia manual)
 
 ```text
-parameter = parameter - learning_rate * gradient
+dL/dw = 2 * error * x
+dL/db = 2 * error
 ```
 
-### Batch e média
+### SGD com média de batch
 
-No dataset há várias amostras. Somamos os gradientes e dividimos pela quantidade de amostras para otimizar a loss média.
+```text
+w := w - lr * (1/N) * Σ dL/dw
+b := b - lr * (1/N) * Σ dL/db
+```
 
-### Memória em C
-
-`double xs[]` é uma região contígua. Cada `double` normalmente usa 8 bytes. O índice `xs[i]` é traduzido para um endereço baseado no início do array e no tamanho do elemento. Essa visão será importante quando criarmos tensores, strides, GEMM e kernels SIMD.
-
-### Grafo computacional e autograd
-
-Autograd guarda a história das operações. Cada `Value` conhece os nós que o produziram e uma função local de backward.
+### Grafo computacional (autograd)
 
 ```text
 w ----*----+
@@ -62,34 +50,97 @@ w ----*----+
 x ---------+              b ----+
 ```
 
-No backward, começamos com `dL/dL = 1` e percorremos o grafo na ordem inversa. Uma ordenação topológica garante que um nó receba as contribuições dos filhos antes de propagar seu gradiente.
+Cada nó `Value` guarda pais e uma closure `_backward`. A ordenação topológica garante que filhos propagam gradiente antes dos pais.
 
-## Passo a passo guiado
-
-1. Calcule manualmente `x=2, w=3, b=1, y=10`.
-2. Calcule `prediction`, `error` e `loss`.
-3. Derive `dL/dw` e `dL/db`.
-4. Aplique um passo de SGD com `lr=0.01`.
-5. Abra `starter/python/linear_train.py` e complete o loop.
-6. Repita a mesma lógica em C.
-7. Observe a diferença entre objetos Python e arrays escalares C.
-8. Corrija `starter/python/debug_bug.py` sem olhar o gabarito.
-9. Complete `starter/python/autograd_scalar.py` e use a solução apenas para conferir.
-10. Compare os gradientes do autograd com os valores calculados em papel.
-
-## Exercícios
-
-- Fácil: forward/loss manual.
-- Médio: treinar `y=2x+1` em Python e C.
-- Difícil: encontrar o backward incorreto.
-- Desafio principal: autograd escalar para `+`, `*`, subtração e quadrado.
-
-## Como saber se está correto
-
-Após 1000 épocas, a referência C chega aproximadamente a:
+## 3. Layout de memória em C
 
 ```text
-w=2.004861 b=0.985708 mse=0.000034114
+offset | campo   | tamanho
+-------|---------|--------
++0     | xs[0]   | 8 bytes (double)
++8     | xs[1]   | 8 bytes
+...    | ...     |
 ```
 
-O autograd da expressão do exercício deve produzir `dL/dw=-12` e `dL/db=-6`.
+`xs[i]` é traduzido para `base + i * sizeof(double)`. Essa visão prepara tensores, strides e GEMM.
+
+## 4. Exemplo numérico manual
+
+Dados: `x=2`, `w=3`, `b=1`, `y=10`, `lr=0.01`.
+
+```text
+prediction = 3*2 + 1 = 7
+error      = 7 - 10 = -3
+loss       = 9
+dL/dw      = 2*(-3)*2 = -12
+dL/db      = 2*(-3)   = -6
+w_new      = 3 - 0.01*(-12) = 3.12
+b_new      = 1 - 0.01*(-6)  = 1.06
+```
+
+O autograd do exercício deve reproduzir `dL/dw=-12` e `dL/db=-6`.
+
+## 5. Invariantes
+
+- Gradientes de um nó com múltiplos filhos somam contribuições (`+=`, nunca `=`).
+- `loss.backward()` inicia com `dL/dL = 1`.
+- Média do batch deve ser aplicada antes do passo SGD se a loss declarada é MSE média.
+- Em C, divisão de gradientes usa `double`; evite divisão inteira acidental.
+
+## 6. Complexidade
+
+- Forward por amostra: O(1).
+- Backward por nó do grafo: O(1) por aresta.
+- Treino com `E` épocas e `N` amostras: O(E·N).
+- Ordenação topológica: O(V + E) no tamanho do grafo (pequeno aqui).
+
+## 7. Bugs comuns
+
+- Trocar `dL/dw` com `dL/db` (esquecer o fator `x`).
+- Esquecer de zerar acumuladores `d_weight`/`d_bias` a cada época.
+- Usar `=` em vez de `+=` no backward com grafo ramificado.
+- Não normalizar pelo batch e depois culpar o learning rate.
+- Em C, esquecer cast para `double` na média.
+
+## 8. Comparação com sistemas de produção
+
+| Aspecto | Este laboratório | PyTorch / JAX |
+|---------|------------------|---------------|
+| Grafo | explícito em Python | gravado por tracing ou eager |
+| Tipos | escalar `float` | tensores N-D em GPU |
+| Autograd | manual por operação | regras registradas + fusion |
+| Otimizador | SGD manual | Adam, LAMB, schedulers |
+
+O princípio é o mesmo: forward grava dependências; backward aplica regras locais na ordem reversa.
+
+## 9. Passo a passo guiado
+
+1. Calcule o exemplo numérico em papel.
+2. Complete `starter/python/linear_train.py` (`AI-PY-GRAD-01`, `AI-PY-SGD-01`).
+3. Repita em `starter/src/linear_train.c`.
+4. Corrija `debug_bug.py` observando onde `x` deve aparecer.
+5. Implemente `autograd_scalar.py` e valide com gradient check.
+6. Compare com `solutions/python/reference_pytorch.py` se disponível.
+
+## 10. Como saber se está correto
+
+Após 1000 épocas na referência C:
+
+```text
+w ≈ 2.004861  b ≈ 0.985708  mse ≈ 0.000034
+```
+
+Testes: `python starter/tests/test_autograd.py`.
+
+---
+
+## Por quê — síntese pedagógica
+
+### Por quê este módulo existe?
+Conectar teoria de baixo nível a decisões de implementação verificáveis — não decorar API.
+
+### Por quê estas invariantes?
+Cada `TODO [ID]` protege uma propriedade que quebra silenciosamente em produção se ignorada (overflow, estado inválido, parsing parcial).
+
+### Por quê medir e portar para `projects/`?
+Lab isola o aprendizado; `projects/chris-*` consolida engenharia de portfólio com testes e benchmarks reproduzíveis.

@@ -1,5 +1,18 @@
 # Resolução guiada auditada — toy_chain
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `CHAIN-MERKLE-01` | `starter/toy_chain.py` | `merkle_root()` |
+| `CHAIN-DIGEST-01` | `starter/toy_chain.py` | `Block.digest()` |
+| `CHAIN-MINE-01` | `starter/toy_chain.py` | `Block.mine()` |
+| `CHAIN-VALID-01` | `starter/toy_chain.py` | `ToyChain.valid()` |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/blockchain/toy_chain/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## 0. Arquivo que você edita
 
 ```text
@@ -197,3 +210,18 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 - `CHAIN-DIGEST-01` — `starter/toy_chain.py` → `solutions/toy_chain.py`.
 - `CHAIN-MINE-01` — `starter/toy_chain.py` → `solutions/toy_chain.py`.
 - `CHAIN-VALID-01` — `starter/toy_chain.py` → `solutions/toy_chain.py`.
+
+## Relatório de resolução
+
+Checklist ao concluir:
+
+- [ ] Merkle, digest canônico, mine e valid implementados.
+- [ ] Genesis minerado; `append` chama `mine` antes de empilhar.
+- [ ] `python starter/tests/test_chain.py` passa; tampering invalida cadeia.
+- [ ] `sort_keys=True` e `separators=(",", ":")` confirmados no digest.
+
+**Saída esperada:** `toy chain tests passed`.
+
+**Depuração:** logue `nonce` e prefixo do digest com `difficulty=1` antes de escalar difficulty.
+
+**Arquivos starter editados:** `starter/toy_chain.py`.

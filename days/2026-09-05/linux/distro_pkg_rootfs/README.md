@@ -14,3 +14,15 @@
 - `LINUX-PKG-PARSE-01`
 - `LINUX-PKG-INSTALL-02`
 - `LINUX-ROOTFS-BUILD-03`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-linux-pkg/day03` |
+| O que levar | pkg parser + rootfs builder |
+| Testes a replicar | test_pkg.py + test_rootfs.sh |
+| Milestone | linux pkg milestone |
+| Commit sugerido | `feat(linux): port pkg/rootfs from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

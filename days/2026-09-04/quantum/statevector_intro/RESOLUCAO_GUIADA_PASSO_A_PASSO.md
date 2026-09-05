@@ -51,6 +51,9 @@ for (std::size_t base = 0; base < state_.size(); base += step) {
 
 Use cópias `a0/a1`; se sobrescrever `state_[zero]` antes de salvar `a0`, o cálculo de `state_[one]` usará dado já modificado.
 
+### Por que funciona?
+`bit` isola o qubit alvo; `step = 2*bit` agrupa pares `(|0⟩,|1⟩)` que compartilham todos os outros bits. O loop 2×2 aplica a matriz sem misturar pares de qubits diferentes. Cópias `a0/a1` evitam ler amplitude já atualizada.
+
 ## Médio — X, H e Z
 X:
 
@@ -72,6 +75,9 @@ apply_single(qubit, {1, 0}, {0, 0}, {0, 0}, {-1, 0});
 ```
 
 Depois de H em |0>, confira manualmente que probabilidades são 0.5/0.5 e norma 1.
+
+### Por que funciona?
+X troca amplitudes |0⟩↔|1⟩; H cria superposição com coeficientes `1/√2`; Z aplica fase −1 em |1⟩. Todos delegam ao mesmo `apply_single` — uma implementação, várias portas.
 
 ## Difícil — CNOT
 Comece:
@@ -103,6 +109,9 @@ for (std::size_t index = 0; index < state_.size(); ++index) {
     }
 }
 ```
+
+### Por que funciona?
+CNOT flipa target somente quando control está 1. `index | target_bit` é o parceiro com target invertido; trocar uma vez por par evita double-swap. Condição `target_off` garante processar cada par uma única vez.
 
 ## Teste Bell
 O teste executa:
@@ -139,3 +148,13 @@ Registre `qubits`, `amplitudes`, `bytes`, `gates/s` e `norm`. Verifique empirica
 
 ## Solução final comentada
 Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+
+## Relatório de resolução
+
+| ID | Gate | Critério |
+|----|------|----------|
+| D2-QSIM-SINGLE | kernel 2x2 | cópias `a0`/`a1` antes de escrever |
+| D2-QSIM-X/H/Z | Pauli/H | H usa `1/sqrt(2)` |
+| D2-QSIM-CNOT | entrelaçamento | swap único quando control=1, target=0 |
+
+Aceite: teste Bell com P(00)=P(11)=0.5 e norma 1. Se norma diverge após H, inspecione constante `s`. Benchmark deve mostrar crescimento ~2^n em memória e tempo por gate.

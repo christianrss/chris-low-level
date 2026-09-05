@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST: RE-STRINGS-01
 from __future__ import annotations
 import sys
 from pathlib import Path

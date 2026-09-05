@@ -1,0 +1,1277 @@
+{
+  "package": "Laboratorio_LowLevel_Unificado_2026-09-04",
+  "date": "2026-09-04",
+  "modules": 11,
+  "files": [
+    {
+      "path": "ai/tensor_strides/BENCHMARK_GUIADO.md",
+      "size": 1083,
+      "sha256": "a1ac347f9978e16cdf98994b3b7eae57b52efbbf98002dfbe0ea988db0365cbc"
+    },
+    {
+      "path": "ai/tensor_strides/EXERCICIOS.md",
+      "size": 917,
+      "sha256": "20407fe74d425691632bdb6c1335d659d332e3628ad197a36c326e25a8904a1f"
+    },
+    {
+      "path": "ai/tensor_strides/PESQUISA_GUIADA.md",
+      "size": 929,
+      "sha256": "ae180f1274a4eefb82cad36047b84e8a5247453a51b7ef45c77d7264eb8b31d9"
+    },
+    {
+      "path": "ai/tensor_strides/README.md",
+      "size": 508,
+      "sha256": "2b1544b44bfa30d3813cf4d6f75744f7f683a0e908751bf5468f15c7c0f55d6b"
+    },
+    {
+      "path": "ai/tensor_strides/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4563,
+      "sha256": "ca5c890d325b1dc25cc6aa1f82cab874e622b5a6a041137df8db5419e7264a32"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/benchmarks/tensor_benchmark.cpp",
+      "size": 1117,
+      "sha256": "0e280051dca8a4748ba767f5d7115e802f7fc30eebc801f746c849d070e6cb38"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/CMakeLists.txt",
+      "size": 828,
+      "sha256": "251558cb9ad68e743b1bb9b9ccb41e3133496b8a185aae246eac1713efabdd06"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/docs/architecture.md",
+      "size": 255,
+      "sha256": "92690cb4812fc85478b1968bbe9cd31801e722334b1d1331f4f82328db3c032d"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/include/tensor.hpp",
+      "size": 979,
+      "sha256": "d4262c1b10ad55f10c2da99278ddd07d80acfb27965e4f4f2c5af7cc5ac14370"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/MILESTONES.md",
+      "size": 221,
+      "sha256": "af71c27cfda902e18cef35ac6682cac651ae77d76700a7ef5d95d5b449725b23"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/README.md",
+      "size": 857,
+      "sha256": "7c2de7dc6feb7fd92dda0447a06955853a474a92e2cdf976c6126da5864022fd"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/src/tensor.cpp",
+      "size": 2135,
+      "sha256": "5a581f7d5a1727d5445ef900d17cec0707896ba373910b0e8c841d493fe644eb"
+    },
+    {
+      "path": "ai/tensor_strides/solutions/tests/tensor_tests.cpp",
+      "size": 1302,
+      "sha256": "951451d3333920629e515a05d7bb910f83c80a6f5ef5de6e2e364953554ec982"
+    },
+    {
+      "path": "ai/tensor_strides/starter/benchmarks/tensor_benchmark.cpp",
+      "size": 1117,
+      "sha256": "0e280051dca8a4748ba767f5d7115e802f7fc30eebc801f746c849d070e6cb38"
+    },
+    {
+      "path": "ai/tensor_strides/starter/CMakeLists.txt",
+      "size": 828,
+      "sha256": "251558cb9ad68e743b1bb9b9ccb41e3133496b8a185aae246eac1713efabdd06"
+    },
+    {
+      "path": "ai/tensor_strides/starter/include/tensor.hpp",
+      "size": 979,
+      "sha256": "d4262c1b10ad55f10c2da99278ddd07d80acfb27965e4f4f2c5af7cc5ac14370"
+    },
+    {
+      "path": "ai/tensor_strides/starter/README.md",
+      "size": 268,
+      "sha256": "c5cb3d8bd0a5b1d00bc49f8a47cdff403d72c941740cda45bd347bca09303e96"
+    },
+    {
+      "path": "ai/tensor_strides/starter/src/tensor.cpp",
+      "size": 1709,
+      "sha256": "f3cf1cfef3879e674988825b0f07bc3e233cfc49c02af1ef900df0b57796b765"
+    },
+    {
+      "path": "ai/tensor_strides/starter/tests/tensor_tests.cpp",
+      "size": 1302,
+      "sha256": "951451d3333920629e515a05d7bb910f83c80a6f5ef5de6e2e364953554ec982"
+    },
+    {
+      "path": "ai/tensor_strides/TEORIA_PASSO_A_PASSO.md",
+      "size": 4823,
+      "sha256": "ace92ca5e548bd715b0cf1d5fd1525d66671c5c8ac4144a234561dd1a9eb55b6"
+    },
+    {
+      "path": "ai/tensor_strides/TESTES_GUIADOS.md",
+      "size": 1610,
+      "sha256": "2f5eccdc1488f55101439dc4dace7295d3923e1c4e9b37ee5010590ed7e2cfc9"
+    },
+    {
+      "path": "algorithms/sorting_research/BENCHMARK_GUIADO.md",
+      "size": 1148,
+      "sha256": "6200f1b02e277d2ab89584e8a0c5e65e53f791f5e0957834fdbe856d07ccea44"
+    },
+    {
+      "path": "algorithms/sorting_research/EXERCICIOS.md",
+      "size": 863,
+      "sha256": "a81651fa9723f9bcd624f29f035519f182f6a281946e17aee6c18efefbae6720"
+    },
+    {
+      "path": "algorithms/sorting_research/PESQUISA_GUIADA.md",
+      "size": 834,
+      "sha256": "8ac906d1cfe7c1fe5bc594f10671d8a4160977d071d987e6684ce77b7d52db2e"
+    },
+    {
+      "path": "algorithms/sorting_research/README.md",
+      "size": 526,
+      "sha256": "9c087b67b51b43bfea848c794bec567f3fec554aa572d823e9c329033c6e606f"
+    },
+    {
+      "path": "algorithms/sorting_research/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5558,
+      "sha256": "401deb9dff48000003a6e6c0b218de82a076385081637b100eada34dbcfe4f0f"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/benchmarks/algorithm_benchmark.cpp",
+      "size": 1903,
+      "sha256": "798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/CMakeLists.txt",
+      "size": 878,
+      "sha256": "22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/docs/architecture.md",
+      "size": 195,
+      "sha256": "2ffc7fa14def94216180b893e321e42f32e617002fcd2a2996f192973ea38ff6"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/include/sort.hpp",
+      "size": 234,
+      "sha256": "4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/MILESTONES.md",
+      "size": 233,
+      "sha256": "5806083b4278fe651afb06baf22cd029215a68d5281341e735e15b0f8a89ff37"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/README.md",
+      "size": 796,
+      "sha256": "5a7aa1d913bd040ab813033b5a6a908c30ed072cda8781ac55adfa618c62ac74"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/src/sort.cpp",
+      "size": 3061,
+      "sha256": "852bf51b8ba2a70376e2609ce339709ab9ac510c4d74d87f001897c1ceff2a63"
+    },
+    {
+      "path": "algorithms/sorting_research/solutions/tests/algorithm_tests.cpp",
+      "size": 962,
+      "sha256": "547caae59b0b73c0d5d42dfa9805a4d0df694c400926cc92d3aec06159af9f2f"
+    },
+    {
+      "path": "algorithms/sorting_research/starter/benchmarks/algorithm_benchmark.cpp",
+      "size": 1903,
+      "sha256": "798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819"
+    },
+    {
+      "path": "algorithms/sorting_research/starter/CMakeLists.txt",
+      "size": 878,
+      "sha256": "22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b"
+    },
+    {
+      "path": "algorithms/sorting_research/starter/include/sort.hpp",
+      "size": 234,
+      "sha256": "4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2"
+    },
+    {
+      "path": "algorithms/sorting_research/starter/README.md",
+      "size": 266,
+      "sha256": "0bb4a18092e78d97ee7c308e022b4664caa515f331bbc62fe2e91fe08329333f"
+    },
+    {
+      "path": "algorithms/sorting_research/starter/src/sort.cpp",
+      "size": 1670,
+      "sha256": "e6004574eebbcaec31924f8ecc53f611126769ecfa059375a19390cdd3552da2"
+    },
+    {
+      "path": "algorithms/sorting_research/starter/tests/algorithm_tests.cpp",
+      "size": 962,
+      "sha256": "547caae59b0b73c0d5d42dfa9805a4d0df694c400926cc92d3aec06159af9f2f"
+    },
+    {
+      "path": "algorithms/sorting_research/TEORIA_PASSO_A_PASSO.md",
+      "size": 4792,
+      "sha256": "3ba861ec4f62b2a20a2acfbdf74fb073889983405959cae37d6798fc82dfdd9c"
+    },
+    {
+      "path": "algorithms/sorting_research/TESTES_GUIADOS.md",
+      "size": 1640,
+      "sha256": "9b8d4c2037c6024cb3349ca6f16475cb6d65a647817f6ac9c5d4c5b1c6c48b5c"
+    },
+    {
+      "path": "COMMIT_PLAN.md",
+      "size": 270,
+      "sha256": "6fbf89c10a2b9575ce059355435bba4db1f22639a084b2897654703d56fe5d8b"
+    },
+    {
+      "path": "debugger/protocol_v1/BENCHMARK_GUIADO.md",
+      "size": 1007,
+      "sha256": "be6a143c2e19d627f0a7b2b7881ddd4ad0e6096d4ec2db1cebda8f4c07ddfb63"
+    },
+    {
+      "path": "debugger/protocol_v1/EXERCICIOS.md",
+      "size": 730,
+      "sha256": "85ea5e7466012f004d9215ec403a62a07999c9074a4917c6a706009d30607a41"
+    },
+    {
+      "path": "debugger/protocol_v1/PESQUISA_GUIADA.md",
+      "size": 988,
+      "sha256": "04c0178d841f00e9b36cb0694b59d02a8d38c6755050c55d272bafbf9b364812"
+    },
+    {
+      "path": "debugger/protocol_v1/README.md",
+      "size": 487,
+      "sha256": "d6b24252315338ab6b86545417ccd02766c4709a5887d22d5b9ff69e24ec230a"
+    },
+    {
+      "path": "debugger/protocol_v1/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5442,
+      "sha256": "30a5faa6786b4e681757bd2f7181638132362a8f5dde8ec30a9c7897ce865b00"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/benchmarks/debugger_benchmark.cpp",
+      "size": 894,
+      "sha256": "5a70a7bca93d26ce2c1a8c49c5defae1346f14444f74e17f98d59ed39071cbef"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/CMakeLists.txt",
+      "size": 896,
+      "sha256": "13408ac5bf1d93326da591c9ae82ed73aaf7d8378c67893f3b829876a9f0ab21"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/docs/architecture.md",
+      "size": 376,
+      "sha256": "dbb13fafbd943a263cfff62a16d90873286abba771919bdf065a56c3956a8478"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/include/protocol.hpp",
+      "size": 497,
+      "sha256": "d51c7a711c113493638d94eafc4c1792fb30d3d9b553850500eef18f29ec2378"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/MILESTONES.md",
+      "size": 264,
+      "sha256": "6378b23ac6df2c3b66c073ff4e454f1cc678fb50abdc42f93ec39e427fb4de25"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/README.md",
+      "size": 707,
+      "sha256": "afd22f16f304dee3626cbbf445cbaee5ee613b85f13b36d28d21491b1733667a"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/src/protocol.cpp",
+      "size": 3499,
+      "sha256": "2c56f14495e34fb54461030cfeb56f34bb53ab8452dfb417b070afae17b6fd53"
+    },
+    {
+      "path": "debugger/protocol_v1/solutions/tests/debugger_tests.cpp",
+      "size": 1285,
+      "sha256": "474c7e3225b589b57cd09cf3344a1b876459ad31c59accdb20c774e279601c41"
+    },
+    {
+      "path": "debugger/protocol_v1/starter/benchmarks/debugger_benchmark.cpp",
+      "size": 894,
+      "sha256": "5a70a7bca93d26ce2c1a8c49c5defae1346f14444f74e17f98d59ed39071cbef"
+    },
+    {
+      "path": "debugger/protocol_v1/starter/CMakeLists.txt",
+      "size": 896,
+      "sha256": "13408ac5bf1d93326da591c9ae82ed73aaf7d8378c67893f3b829876a9f0ab21"
+    },
+    {
+      "path": "debugger/protocol_v1/starter/include/protocol.hpp",
+      "size": 497,
+      "sha256": "d51c7a711c113493638d94eafc4c1792fb30d3d9b553850500eef18f29ec2378"
+    },
+    {
+      "path": "debugger/protocol_v1/starter/README.md",
+      "size": 270,
+      "sha256": "750f9e5e47d16ba4d3fd79fc5ea037079624ebe5e6e046567813ab8635630c0a"
+    },
+    {
+      "path": "debugger/protocol_v1/starter/src/protocol.cpp",
+      "size": 1606,
+      "sha256": "f51d231a6ac16ca1987683ae939841552292740616aa7a2caa3514839c435bc9"
+    },
+    {
+      "path": "debugger/protocol_v1/starter/tests/debugger_tests.cpp",
+      "size": 1285,
+      "sha256": "474c7e3225b589b57cd09cf3344a1b876459ad31c59accdb20c774e279601c41"
+    },
+    {
+      "path": "debugger/protocol_v1/TEORIA_PASSO_A_PASSO.md",
+      "size": 4403,
+      "sha256": "34458eb1ff1190c0644623eeec5e2b765553ae87ce67ba76131d5d6a68aa77f8"
+    },
+    {
+      "path": "debugger/protocol_v1/TESTES_GUIADOS.md",
+      "size": 2141,
+      "sha256": "86a7a86b03916ec7f329e6ed6199e896db6f3aed33af395f9736a8a17535d60d"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/BENCHMARK_GUIADO.md",
+      "size": 828,
+      "sha256": "d2dc3524197216380f23a5f61c01efb5ee82d7d55a827e1563e6c3d312d80799"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/EXERCICIOS.md",
+      "size": 850,
+      "sha256": "adf18af79fcee3ab22ff36eb3595d33399269d8feccda0e481aff4ff59e93130"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/PESQUISA_GUIADA.md",
+      "size": 709,
+      "sha256": "15743dd153dcec556b3595c8714c2a5133d130302698ab8d2681aea761ad8dab"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/README.md",
+      "size": 309,
+      "sha256": "71d1c2d3d590aeb5ffa22a53b46177b58c5afadba1d63a21bac1e5ab05e6e84a"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5393,
+      "sha256": "ed2327822c9aedc032d823321ff6f749e1c907a64876937ce9c331b74ac9393f"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/docs/architecture.md",
+      "size": 324,
+      "sha256": "88d3740496274ed7bbedeff52aab25c8e4fd99f487fd7bea6ac0511ad151f62a"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/MILESTONES.md",
+      "size": 256,
+      "sha256": "404d8e95f62c1f3e36f0f0bc4d54f77f88744197e0086259b73b31ebdbd55fa2"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/README.md",
+      "size": 452,
+      "sha256": "8714ae7d812b8d4d94c18958754f0c9de627383d1e85b794b9e23b3a2914f3f1"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/src/Chris.DotNet.Pe/Chris.DotNet.Pe.csproj",
+      "size": 261,
+      "sha256": "9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/src/Chris.DotNet.Pe/CliPeInspector.cs",
+      "size": 3664,
+      "sha256": "ed3a11d994791b3d300f8c7e1a142fdabb4575804156f2e172df4e149be29947"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/tests/Chris.DotNet.Pe.Tests/Chris.DotNet.Pe.Tests.csproj",
+      "size": 407,
+      "sha256": "f7bca1cae411700bc453a9a73878c8543b6f88310519ad9ec9a56af84670b952"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/solutions/tests/Chris.DotNet.Pe.Tests/Program.cs",
+      "size": 1512,
+      "sha256": "344b70cc7d4f767bd3b5bc6b19a666835498840e62f3f5d5c45658d9d361c6a6"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/docs/architecture.md",
+      "size": 324,
+      "sha256": "88d3740496274ed7bbedeff52aab25c8e4fd99f487fd7bea6ac0511ad151f62a"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/MILESTONES.md",
+      "size": 256,
+      "sha256": "404d8e95f62c1f3e36f0f0bc4d54f77f88744197e0086259b73b31ebdbd55fa2"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/README.md",
+      "size": 452,
+      "sha256": "8714ae7d812b8d4d94c18958754f0c9de627383d1e85b794b9e23b3a2914f3f1"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/src/Chris.DotNet.Pe/Chris.DotNet.Pe.csproj",
+      "size": 261,
+      "sha256": "9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/src/Chris.DotNet.Pe/CliPeInspector.cs",
+      "size": 3622,
+      "sha256": "7d9d98195aa714e37a2464e146c85264bb29f7e5e136fbd3782ebf3d035178f7"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/tests/Chris.DotNet.Pe.Tests/Chris.DotNet.Pe.Tests.csproj",
+      "size": 407,
+      "sha256": "f7bca1cae411700bc453a9a73878c8543b6f88310519ad9ec9a56af84670b952"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/starter/tests/Chris.DotNet.Pe.Tests/Program.cs",
+      "size": 1512,
+      "sha256": "344b70cc7d4f767bd3b5bc6b19a666835498840e62f3f5d5c45658d9d361c6a6"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/TEORIA_PASSO_A_PASSO.md",
+      "size": 7542,
+      "sha256": "f7a3fb971a60795fcdca9cff9866e48ec7e6a0d00c7e5af0ac3e75452dbdf9e2"
+    },
+    {
+      "path": "dotnet/clr_pe_cli_metadata/TESTES_GUIADOS.md",
+      "size": 1282,
+      "sha256": "1fe8194fb33c539cf431d7f366aecefced13ba964b5402d8b98680b20dd8ac36"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/BENCHMARK_GUIADO.md",
+      "size": 968,
+      "sha256": "8eb3a82218b963853d503757df0867d398d6912f0ea7f16c3d8c76eba285a3a0"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/EXERCICIOS.md",
+      "size": 982,
+      "sha256": "60fc6937d911cbd3e98a5b00abdbd0703da0a8e01f2325450aadce260602a60d"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/PESQUISA_GUIADA.md",
+      "size": 797,
+      "sha256": "11c57bdb703eae0d7f0d5c409c808ad02a4bcc7ade312920f14e1ce0949dcca1"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/README.md",
+      "size": 316,
+      "sha256": "5108b3ba476b538f7dc9a3bfa919e46d0fd276b223287903d5e30d78c736e70a"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4440,
+      "sha256": "f71b7f6388e0bb40587b75097dddb8ec9093bc49c82a4206c88b4a1da6c2f057"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj",
+      "size": 460,
+      "sha256": "c5865be2cb55dc35a7a2c614a83bbad314dedd4a71f45e618f44c6e0470618c0"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/benchmarks/Chris.DotNet.Bench.Benchmarks/Program.cs",
+      "size": 790,
+      "sha256": "fa9692ec68880f056729fa81ce4bfa7d82d660d83eafb35ed885e826c0855aab"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/Chris.DotNet.Bench.slnx",
+      "size": 280,
+      "sha256": "a839d196ea89501fa2d17fc8376512796d49492732270ba5cdbc1e07f7055e0b"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/docs/architecture.md",
+      "size": 463,
+      "sha256": "2954476dcc2a39fc13015d3d9f0ca25b98da627df9b1128decb6522cf7fdb7f4"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/MILESTONES.md",
+      "size": 178,
+      "sha256": "1b3ba4b6328a668d7271bb0b2187b30437c2540de63ef36d310ec986e41230dd"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/README.md",
+      "size": 925,
+      "sha256": "38001d22b6b971aa86876bb05e4154379d5865dd29f41304149ec95b7f82763b"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/src/Chris.DotNet.Buffers/Chris.DotNet.Buffers.csproj",
+      "size": 261,
+      "sha256": "9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/src/Chris.DotNet.Buffers/FrameCodec.cs",
+      "size": 2512,
+      "sha256": "674ca8994e206fe6b75819f28dec1f52563e0ac0491ce94c21d1f5543cff372b"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/tests/Chris.DotNet.Bench.Tests/Chris.DotNet.Bench.Tests.csproj",
+      "size": 429,
+      "sha256": "ff3764518efe4992a2019f54e03fb0b7836f5686c2ac676f82e62bb66ccabd64"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/solutions/tests/Chris.DotNet.Bench.Tests/Program.cs",
+      "size": 1377,
+      "sha256": "fc19bc39051ec189aca524ea97071bba25136ed5e1caef4a65009180855fec30"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj",
+      "size": 460,
+      "sha256": "c5865be2cb55dc35a7a2c614a83bbad314dedd4a71f45e618f44c6e0470618c0"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/benchmarks/Chris.DotNet.Bench.Benchmarks/Program.cs",
+      "size": 790,
+      "sha256": "fa9692ec68880f056729fa81ce4bfa7d82d660d83eafb35ed885e826c0855aab"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/Chris.DotNet.Bench.slnx",
+      "size": 280,
+      "sha256": "a839d196ea89501fa2d17fc8376512796d49492732270ba5cdbc1e07f7055e0b"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/docs/architecture.md",
+      "size": 463,
+      "sha256": "2954476dcc2a39fc13015d3d9f0ca25b98da627df9b1128decb6522cf7fdb7f4"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/MILESTONES.md",
+      "size": 178,
+      "sha256": "1b3ba4b6328a668d7271bb0b2187b30437c2540de63ef36d310ec986e41230dd"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/README.md",
+      "size": 925,
+      "sha256": "38001d22b6b971aa86876bb05e4154379d5865dd29f41304149ec95b7f82763b"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/src/Chris.DotNet.Buffers/Chris.DotNet.Buffers.csproj",
+      "size": 261,
+      "sha256": "9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/src/Chris.DotNet.Buffers/FrameCodec.cs",
+      "size": 2228,
+      "sha256": "e6df302a796fd1fbc5d7be3948718cffb0c1d69e28e8ae9d67b303ba457b9a07"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/tests/Chris.DotNet.Bench.Tests/Chris.DotNet.Bench.Tests.csproj",
+      "size": 429,
+      "sha256": "ff3764518efe4992a2019f54e03fb0b7836f5686c2ac676f82e62bb66ccabd64"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/starter/tests/Chris.DotNet.Bench.Tests/Program.cs",
+      "size": 1377,
+      "sha256": "fc19bc39051ec189aca524ea97071bba25136ed5e1caef4a65009180855fec30"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/TEORIA_PASSO_A_PASSO.md",
+      "size": 4427,
+      "sha256": "07b336debd055638eb181de1b67cb98fd816b38c909d6041d7e30ac98e3b5456"
+    },
+    {
+      "path": "dotnet/csharp_span_arraypool/TESTES_GUIADOS.md",
+      "size": 1628,
+      "sha256": "da4c202de2f41eecd0a55bf04fbe484f1f3c49afd76c4c849f34f1718262251f"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/BENCHMARK_GUIADO.md",
+      "size": 865,
+      "sha256": "89069625a75cf920dc7a182b89501bc0f142a9246d7a6ceeaba547274532ca6e"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/EXERCICIOS.md",
+      "size": 865,
+      "sha256": "282b5abbd0b67240d53b697f858f21c40fa5768b823169739fb39e8465157c76"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/PESQUISA_GUIADA.md",
+      "size": 726,
+      "sha256": "f870bd8aa3672d80ba6f26726fb5366aa2ec69833752cd7eee360995532848a5"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/README.md",
+      "size": 313,
+      "sha256": "e197663da567d9deba32a9bbfa20f76e7d72aa19895e702bf37736e3840276dd"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5489,
+      "sha256": "b7340e7de0ba7be13a78a89de32d9b6e015a05da9ebabc4df0a95fb6afd0b889"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/CMakeLists.txt",
+      "size": 672,
+      "sha256": "ec5b8b9f2917248d16a5069c543478293b391809ddc6671482f936767cd4fce2"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/docs/architecture.md",
+      "size": 408,
+      "sha256": "64652d91a2bc739ec24ac13e11249e10bc54a3b9c54f513542378a6fa7467ffc"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/include/chris_js.hpp",
+      "size": 489,
+      "sha256": "e2ad461c6a68cf3228e1fad841fca83c57533b84ed8f36ab88bb9956de88a587"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/MILESTONES.md",
+      "size": 261,
+      "sha256": "980d22aca7514aadf4e830b1bdad667914d329fda5933acaccbe83bfef578b5d"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/src/chris_js.cpp",
+      "size": 6551,
+      "sha256": "91288d0d5d001fdac8bc8e13323571af22b87a8966639b485a7a0451bd3ef016"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/src/main.cpp",
+      "size": 279,
+      "sha256": "3785ae8051a0f8ab21316a8370fa84f9c29d653289cbe105723350ef93bf67d6"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/solutions/tests/tests.cpp",
+      "size": 993,
+      "sha256": "852ac8dca4d7dc59ddaaa5d8711223d8f19a50d0e4e4c5749b6a4b65fe55fbe8"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/CMakeLists.txt",
+      "size": 672,
+      "sha256": "ec5b8b9f2917248d16a5069c543478293b391809ddc6671482f936767cd4fce2"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/docs/architecture.md",
+      "size": 408,
+      "sha256": "64652d91a2bc739ec24ac13e11249e10bc54a3b9c54f513542378a6fa7467ffc"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/include/chris_js.hpp",
+      "size": 489,
+      "sha256": "e2ad461c6a68cf3228e1fad841fca83c57533b84ed8f36ab88bb9956de88a587"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/MILESTONES.md",
+      "size": 261,
+      "sha256": "980d22aca7514aadf4e830b1bdad667914d329fda5933acaccbe83bfef578b5d"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/src/chris_js.cpp",
+      "size": 6246,
+      "sha256": "98fecea621357d10c3dea523e925396dca1d8493da19f1fa60dc689f4c30cbc6"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/src/main.cpp",
+      "size": 279,
+      "sha256": "3785ae8051a0f8ab21316a8370fa84f9c29d653289cbe105723350ef93bf67d6"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/starter/tests/tests.cpp",
+      "size": 993,
+      "sha256": "852ac8dca4d7dc59ddaaa5d8711223d8f19a50d0e4e4c5749b6a4b65fe55fbe8"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/TEORIA_PASSO_A_PASSO.md",
+      "size": 6584,
+      "sha256": "9d141ac82d10dbb922c74b24057182cba56c25db2e4d80a76eb7c9b8c836c20c"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/TESTES_GUIADOS.md",
+      "size": 2068,
+      "sha256": "c7ceec451e72bfa8c98caf44e4ff16a97b3a52c3b8d43311d1e5d9ce9ba73c77"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 48372,
+      "sha256": "23acbe2ef0ac22144ce8d88bce1045bc9131bb947d46422b9517c141d9bd1fa8"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/BENCHMARK_GUIADO.md",
+      "size": 791,
+      "sha256": "1355bfaa2fd5d8adfda35e611ba1a197fd22d70404e9ab0bc7b930b70770f39a"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/EXERCICIOS.md",
+      "size": 840,
+      "sha256": "f254b8c455b230be8bb2fbeddf6b589c66e0225488026fa1416771d98b2c06ba"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/PESQUISA_GUIADA.md",
+      "size": 736,
+      "sha256": "ccd156f80f067b56fbee4d6d153d2ffae350a66f607d4d94980553777955484b"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/README.md",
+      "size": 337,
+      "sha256": "344ab4101453f51444dcd6890ba44e02fdf4478e96f3f1a5f995008610707b7b"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4194,
+      "sha256": "fd2e7a58007f373ed8e8a2f65b638a73bf2dcdfb8960c597db73448a577cf556"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/benchmarks/bench.ts",
+      "size": 867,
+      "sha256": "d104a7eb431bbc001f5296f5f5d9f788c09480e70df7a3b4b3a9f243ff9cdf41"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/docs/architecture.md",
+      "size": 385,
+      "sha256": "43a044485cfa0ce0ac59fcd51b59367923d9262d90995135b8d66922e94449e5"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/MILESTONES.md",
+      "size": 232,
+      "sha256": "afc32421c8ad37bb8eea5bb0b3d275a3f2a24413e6a032deb077261e15bb2964"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/package.json",
+      "size": 292,
+      "sha256": "84e34db4db27f1617be7dd4c632786946c383e9db5ee80e55919e14240e4a026"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/README.md",
+      "size": 405,
+      "sha256": "fc98af7eb6ed0fde876ddc0e7b9a48ae44c9a8712bf1331b9c392d5bf8807eeb"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/src/demo.ts",
+      "size": 559,
+      "sha256": "1d7918b970ba83fd16c5c3ebd22e2b074887f6e8d179e4fee250d233382c6a6d"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/src/line-framer.ts",
+      "size": 1717,
+      "sha256": "1a463dbfc87c685d228c52ae1d5bf3550a13b16a70e8c9922bbc16eb6e420b7a"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/solutions/tests/line-framer.test.ts",
+      "size": 1168,
+      "sha256": "e23346ab200edafbecb8cf629eb916986632befa37ff1e5ee06f6a2bbaa9e481"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/benchmarks/bench.ts",
+      "size": 867,
+      "sha256": "d104a7eb431bbc001f5296f5f5d9f788c09480e70df7a3b4b3a9f243ff9cdf41"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/docs/architecture.md",
+      "size": 385,
+      "sha256": "43a044485cfa0ce0ac59fcd51b59367923d9262d90995135b8d66922e94449e5"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/MILESTONES.md",
+      "size": 232,
+      "sha256": "afc32421c8ad37bb8eea5bb0b3d275a3f2a24413e6a032deb077261e15bb2964"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/package.json",
+      "size": 292,
+      "sha256": "84e34db4db27f1617be7dd4c632786946c383e9db5ee80e55919e14240e4a026"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/README.md",
+      "size": 405,
+      "sha256": "fc98af7eb6ed0fde876ddc0e7b9a48ae44c9a8712bf1331b9c392d5bf8807eeb"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/src/demo.ts",
+      "size": 559,
+      "sha256": "1d7918b970ba83fd16c5c3ebd22e2b074887f6e8d179e4fee250d233382c6a6d"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/src/line-framer.ts",
+      "size": 1454,
+      "sha256": "d330802dcf06e793f245f5fc30c9a78f0ba5f1662dfb946bfc42bb95f95957a5"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/starter/tests/line-framer.test.ts",
+      "size": 1168,
+      "sha256": "e23346ab200edafbecb8cf629eb916986632befa37ff1e5ee06f6a2bbaa9e481"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/TEORIA_PASSO_A_PASSO.md",
+      "size": 6684,
+      "sha256": "1be417166284e21289412149929d926276da92bf9e65a126040e734a2ceff82c"
+    },
+    {
+      "path": "nodejs/typescript_stream_backpressure/TESTES_GUIADOS.md",
+      "size": 1061,
+      "sha256": "60cc8962c6bcd42300c29c8fc285fd10d3345ef71e4e434ff6a36ab0ce27427b"
+    },
+    {
+      "path": "os/graphics_reference/BENCHMARK_GUIADO.md",
+      "size": 1045,
+      "sha256": "acba1c48f203d2c946a0519cdf3de7251043a929d59565f42c4f27cf9adc5d21"
+    },
+    {
+      "path": "os/graphics_reference/EXERCICIOS.md",
+      "size": 766,
+      "sha256": "2f9a0132b06f7b8522451414645d975b5a30130e7dd7e239b5c47eda9783e54a"
+    },
+    {
+      "path": "os/graphics_reference/PESQUISA_GUIADA.md",
+      "size": 961,
+      "sha256": "57c06b9c892641d707afeb1ad62f91cf69a5d60c3854f0a6efdedc48bded3d0c"
+    },
+    {
+      "path": "os/graphics_reference/README.md",
+      "size": 493,
+      "sha256": "b6dcb875e8e3acb68eade327fbcedcf6651d41c25d29ffebdb7080c5772f6813"
+    },
+    {
+      "path": "os/graphics_reference/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5002,
+      "sha256": "afedaa3c4c27b340c785fadfa26b03e48638b08f6fd2c3bd37ccac7035ca2a52"
+    },
+    {
+      "path": "os/graphics_reference/solutions/benchmarks/os_graphics_benchmark.cpp",
+      "size": 1210,
+      "sha256": "4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152"
+    },
+    {
+      "path": "os/graphics_reference/solutions/CMakeLists.txt",
+      "size": 896,
+      "sha256": "90a639c4740adf556b328d7b3daf060f0fc11b4be2e0988d5f4cd7fb08e0f5d9"
+    },
+    {
+      "path": "os/graphics_reference/solutions/docs/architecture.md",
+      "size": 390,
+      "sha256": "fbde38a3235836b9909e68249d41e15a874b7024e71b2ba07b3811119e806c2f"
+    },
+    {
+      "path": "os/graphics_reference/solutions/include/graphics.hpp",
+      "size": 1074,
+      "sha256": "d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c"
+    },
+    {
+      "path": "os/graphics_reference/solutions/MILESTONES.md",
+      "size": 305,
+      "sha256": "6405d08d0f5e9657add444060afa472b755375069ab52476e45de599843ac284"
+    },
+    {
+      "path": "os/graphics_reference/solutions/README.md",
+      "size": 901,
+      "sha256": "1f31ef6cf0808a10e6ab71518a07a093169823bf559293dc21d02efac0f1713b"
+    },
+    {
+      "path": "os/graphics_reference/solutions/src/graphics.cpp",
+      "size": 3053,
+      "sha256": "ce0e01a0bb7438478468b369c4cf01456f6a14dad5737917c3eafb3ac011aba9"
+    },
+    {
+      "path": "os/graphics_reference/solutions/tests/os_graphics_tests.cpp",
+      "size": 981,
+      "sha256": "5c4895398b26ca0aace3749273c4ee4824ea6866a7912794f9da46b51fd20f74"
+    },
+    {
+      "path": "os/graphics_reference/starter/benchmarks/os_graphics_benchmark.cpp",
+      "size": 1210,
+      "sha256": "4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152"
+    },
+    {
+      "path": "os/graphics_reference/starter/CMakeLists.txt",
+      "size": 896,
+      "sha256": "90a639c4740adf556b328d7b3daf060f0fc11b4be2e0988d5f4cd7fb08e0f5d9"
+    },
+    {
+      "path": "os/graphics_reference/starter/include/graphics.hpp",
+      "size": 1074,
+      "sha256": "d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c"
+    },
+    {
+      "path": "os/graphics_reference/starter/README.md",
+      "size": 270,
+      "sha256": "eb347b7af56ca840db9ca997608ee33779acc491357f6fb3e5fbe2885d466049"
+    },
+    {
+      "path": "os/graphics_reference/starter/src/graphics.cpp",
+      "size": 1516,
+      "sha256": "3d9ad8a9f680c8cbdc708c9f17281e574c080269393e85f0f914fbb21d2567f5"
+    },
+    {
+      "path": "os/graphics_reference/starter/tests/os_graphics_tests.cpp",
+      "size": 981,
+      "sha256": "5c4895398b26ca0aace3749273c4ee4824ea6866a7912794f9da46b51fd20f74"
+    },
+    {
+      "path": "os/graphics_reference/TEORIA_PASSO_A_PASSO.md",
+      "size": 4120,
+      "sha256": "0b65ab47870e9659d4820c0b02b28283668d2dd47c6baff9fb9c425eaba43764"
+    },
+    {
+      "path": "os/graphics_reference/TESTES_GUIADOS.md",
+      "size": 1613,
+      "sha256": "5996c071342c7434b785484275b2da03baaa110f149f70f1ab76ee0bd3e80c9c"
+    },
+    {
+      "path": "quantum/statevector_intro/BENCHMARK_GUIADO.md",
+      "size": 1054,
+      "sha256": "0cd6dbb26596a516ac96beef59defae32597f6ceb691790ef2ee3c86edf34e6e"
+    },
+    {
+      "path": "quantum/statevector_intro/EXERCICIOS.md",
+      "size": 736,
+      "sha256": "5f04751b22df78949d5b4e69944e8f73ff0b5c786f3cae9d344bfa271c03d6fd"
+    },
+    {
+      "path": "quantum/statevector_intro/PESQUISA_GUIADA.md",
+      "size": 816,
+      "sha256": "7351716c3bc97bf9723f558f2bd7deb5f8e03c63373d3dae11783b4438326147"
+    },
+    {
+      "path": "quantum/statevector_intro/README.md",
+      "size": 451,
+      "sha256": "4b7570c122f127916c16cb3df9902ff2171f41c46fed4921de5782975f14f2f4"
+    },
+    {
+      "path": "quantum/statevector_intro/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4345,
+      "sha256": "e7fe324b94af71d974514c730d13bcf561c3ce8694774d9e5678c47cf0f4a534"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/benchmarks/qsim_benchmark.cpp",
+      "size": 1032,
+      "sha256": "6e47ac94d2a4b7136ec1b5febb5a09b6681083bb363d1795ae366e51bd6dbfb6"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/CMakeLists.txt",
+      "size": 796,
+      "sha256": "8f7d2a40948a41710e4c07ddec5890f8c661753103e5915eb6a4dd6986e6987c"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/docs/architecture.md",
+      "size": 266,
+      "sha256": "0f7449ba2aaa707786ac86e4528890dda54ff8f24355f966a4b84c78a3c5ae7a"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/include/qsim.hpp",
+      "size": 952,
+      "sha256": "69e9ebed55598bc44c685cfff37960af98f4c3684ec10e7cfcb86beea1f7672b"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/MILESTONES.md",
+      "size": 230,
+      "sha256": "7a8cf283ceb9eadb9c21955b08fb64f0b0bfcd5376bcd5e41a44fc6a7f5161a6"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/README.md",
+      "size": 634,
+      "sha256": "0e02c4019a7675edb8e691b421e38b393d2e5c2584912346d3aa9b0b023273f9"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/src/qsim.cpp",
+      "size": 2961,
+      "sha256": "fea459a98dedf3a6502dcd0b629b00721daf69974d06697c50e8845a56d0c27e"
+    },
+    {
+      "path": "quantum/statevector_intro/solutions/tests/qsim_tests.cpp",
+      "size": 1270,
+      "sha256": "6a21e3bf13713a90b76dee97514086c35c062e346e89f16481a8eb3e19bb972a"
+    },
+    {
+      "path": "quantum/statevector_intro/starter/benchmarks/qsim_benchmark.cpp",
+      "size": 1032,
+      "sha256": "6e47ac94d2a4b7136ec1b5febb5a09b6681083bb363d1795ae366e51bd6dbfb6"
+    },
+    {
+      "path": "quantum/statevector_intro/starter/CMakeLists.txt",
+      "size": 796,
+      "sha256": "8f7d2a40948a41710e4c07ddec5890f8c661753103e5915eb6a4dd6986e6987c"
+    },
+    {
+      "path": "quantum/statevector_intro/starter/include/qsim.hpp",
+      "size": 952,
+      "sha256": "69e9ebed55598bc44c685cfff37960af98f4c3684ec10e7cfcb86beea1f7672b"
+    },
+    {
+      "path": "quantum/statevector_intro/starter/README.md",
+      "size": 266,
+      "sha256": "7fb0fb866cb312fe9f4e2a3a8883bb313cfeaaf5ebc06293641e3398d0760c82"
+    },
+    {
+      "path": "quantum/statevector_intro/starter/src/qsim.cpp",
+      "size": 1894,
+      "sha256": "9f25d758e872fc42bbcf67acc7f5aa0ae683df13959fb9d701e6d2385916ef25"
+    },
+    {
+      "path": "quantum/statevector_intro/starter/tests/qsim_tests.cpp",
+      "size": 1270,
+      "sha256": "6a21e3bf13713a90b76dee97514086c35c062e346e89f16481a8eb3e19bb972a"
+    },
+    {
+      "path": "quantum/statevector_intro/TEORIA_PASSO_A_PASSO.md",
+      "size": 4349,
+      "sha256": "2c1d0b44183ae8588941791f6e75b3f457b5c77621bd9c852c61378d829c91f6"
+    },
+    {
+      "path": "quantum/statevector_intro/TESTES_GUIADOS.md",
+      "size": 1606,
+      "sha256": "23d23b0fc328827a189f4b9d7a6d7c23a639b0d6310cf2121d89d641de784386"
+    },
+    {
+      "path": "README.md",
+      "size": 2301,
+      "sha256": "b7fe6ca032b32a766d5c8050524b6b1cb5c865632b5ee518c9a1b2f37befd144"
+    },
+    {
+      "path": "redteam/elf64_triage/BENCHMARK_GUIADO.md",
+      "size": 668,
+      "sha256": "f3ec80afeef622cf2a4c9533dbc6acaa85e21e297d4a83767a7f6b33cda7ec7a"
+    },
+    {
+      "path": "redteam/elf64_triage/EXERCICIOS.md",
+      "size": 761,
+      "sha256": "615fca8f0d7987ab9b64875fdeab07df8e87aeb903662df7c505747b81200eff"
+    },
+    {
+      "path": "redteam/elf64_triage/PESQUISA_GUIADA.md",
+      "size": 1015,
+      "sha256": "0727bf852194d05180c9d03b35ee45d7a9a4d339d6928ed290f04299cc9f6821"
+    },
+    {
+      "path": "redteam/elf64_triage/README.md",
+      "size": 513,
+      "sha256": "6b33b50ae2f28a3f35ca82975654ad42e4335de057916266d9fb15728fe818c4"
+    },
+    {
+      "path": "redteam/elf64_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4291,
+      "sha256": "fe619ba9229108aa6003d705f9890b20fc91033a1ef8f7f04246d9effc6159d1"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/benchmarks/benchmark.py",
+      "size": 907,
+      "sha256": "4f400c7d55a362c96ad34865914b60b7e1ce5d1d86180a76933d510feb569597"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/benchmarks/elf64_benchmark.py",
+      "size": 992,
+      "sha256": "3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/CMakeLists.txt",
+      "size": 621,
+      "sha256": "6a70c99b475a665e1dec7a778c91d5d709ada2c869f1c1ded764d450e6833a46"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/docs/architecture.md",
+      "size": 194,
+      "sha256": "27b3ad915d390d0938474e87be94427edaad3c2ade9251df1e9209e3a3585aea"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/MILESTONES.md",
+      "size": 237,
+      "sha256": "25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/README.md",
+      "size": 1457,
+      "sha256": "ecedfc78df534476842b08a7bc0268536eaa69ab215b9dd8f40bf18ed0e98fdc"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/rules/lab_target.yar",
+      "size": 351,
+      "sha256": "db374cb4c57106d259a032cdcdb57fb6e4e506fbff16a9815d10bf7402f7f214"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/src/lab_target.c",
+      "size": 1087,
+      "sha256": "4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/tests/test_ascii_strings.py",
+      "size": 633,
+      "sha256": "702bbab80829d20149605426aa313fb1529cd195e27e62263fda472407df73f9"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/tests/test_elf64.py",
+      "size": 1798,
+      "sha256": "01ebbc4e1391b9d700a842af2d1ffff1745807b30e6c467b5e2d266ecf4babc0"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/tools/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/tools/ascii_strings.py",
+      "size": 1116,
+      "sha256": "ad1847f60642fee6f3d9880e42ad7849c43f97e060ebe3ffe2f66651589dfa15"
+    },
+    {
+      "path": "redteam/elf64_triage/solutions/tools/elf64.py",
+      "size": 1239,
+      "sha256": "a022860aa5d1fe362bb61c4d283c1a19dbe295e5aa9883b16bcfcc84d442f0ec"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/benchmarks/elf64_benchmark.py",
+      "size": 992,
+      "sha256": "3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/README.md",
+      "size": 136,
+      "sha256": "00a5d1fb628b00cbfae220fcbc7f40b80172593a332707ada370a727cad68b11"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/rules/lab_target.yar",
+      "size": 351,
+      "sha256": "db374cb4c57106d259a032cdcdb57fb6e4e506fbff16a9815d10bf7402f7f214"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/src/lab_target.c",
+      "size": 1087,
+      "sha256": "4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/tests/test_ascii_strings.py",
+      "size": 633,
+      "sha256": "702bbab80829d20149605426aa313fb1529cd195e27e62263fda472407df73f9"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/tests/test_elf64.py",
+      "size": 1798,
+      "sha256": "01ebbc4e1391b9d700a842af2d1ffff1745807b30e6c467b5e2d266ecf4babc0"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/tools/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/tools/ascii_strings.py",
+      "size": 288,
+      "sha256": "01a25a96b373571b78bfc20e122616cc47d580c9225fd0103ec54317ca5e8140"
+    },
+    {
+      "path": "redteam/elf64_triage/starter/tools/elf64.py",
+      "size": 529,
+      "sha256": "9f103e6e9a807eff2009f7eda568e2e5c270de9431ab8d7dcb1e5f0b7fbe5df3"
+    },
+    {
+      "path": "redteam/elf64_triage/TEORIA_PASSO_A_PASSO.md",
+      "size": 3999,
+      "sha256": "256108fc4869d66855d560e61becbc28a53534d80627a4c5a9b16789b0ef71ff"
+    },
+    {
+      "path": "redteam/elf64_triage/TESTES_GUIADOS.md",
+      "size": 1182,
+      "sha256": "29bd4ed8bd37036d5082f116cfafbdbcc209880eb273ff900f73c22eb86c7b0a"
+    },
+    {
+      "path": "START_HERE.md",
+      "size": 1823,
+      "sha256": "7e6330ea7813fa8537de85f6f4584a3d70edbbb2e39605a0c3f92715582dcdef"
+    },
+    {
+      "path": "systems/arena_allocator/BENCHMARK_GUIADO.md",
+      "size": 1283,
+      "sha256": "00bd154783bd9449dea0e8935c8826cacf5b37372632da11b07850dc1e25c24d"
+    },
+    {
+      "path": "systems/arena_allocator/EXERCICIOS.md",
+      "size": 1148,
+      "sha256": "3dc7ac06ddd0ac474b6e6366c36d790eff65ec39a3bfd716fb2ca04d633408b0"
+    },
+    {
+      "path": "systems/arena_allocator/PESQUISA_GUIADA.md",
+      "size": 1007,
+      "sha256": "4cdf4e0b0df8242bfea2b2c4ba9fdbdbb4673c0207c683e91079d8f18c170d26"
+    },
+    {
+      "path": "systems/arena_allocator/README.md",
+      "size": 517,
+      "sha256": "339607228afc703a981e27bbbb86cbac5b13768d31bffd0bce97657cff4fc7ad"
+    },
+    {
+      "path": "systems/arena_allocator/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 5921,
+      "sha256": "18b595530ffcdbc09164ee51ecfa219bddd286da1d65c812a40aab12516b8e0f"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/benchmarks/arena_benchmark.cpp",
+      "size": 1817,
+      "sha256": "072771e91f5dee72ba59461a72909faa0d011e25e8eb38fba10849693c51214d"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/CMakeLists.txt",
+      "size": 812,
+      "sha256": "306e8cdc926901f751783f45168cd1c895dd4984fa3027af780e823c5a8d9a48"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/docs/architecture.md",
+      "size": 392,
+      "sha256": "74cba9d9bbd49537651ad7cb77a310299119036de65094fea980f9c8567c8321"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/include/arena.hpp",
+      "size": 568,
+      "sha256": "fd4979c57b9a8a31260fd48a501f2cc19b020849091b8166e866c3ee0abfd4e4"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/MILESTONES.md",
+      "size": 193,
+      "sha256": "31cc15d4641cbb694a6f541e6378ee69e0880319f4de49a44f0d96e197931697"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/README.md",
+      "size": 1035,
+      "sha256": "d8175c0fda357d50d096a0cf01b6f63605e80825de8c45091c21ce1226cf53a4"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/src/arena.cpp",
+      "size": 1425,
+      "sha256": "b57552c619a58c68cd6bc29d3b339ef0ebe5e81e412b742a68f36d67e14b35c5"
+    },
+    {
+      "path": "systems/arena_allocator/solutions/tests/arena_tests.cpp",
+      "size": 1064,
+      "sha256": "95ca518fc93c9d7192f1951a0f3b73fedeba50981d752aaae64a7836645411cd"
+    },
+    {
+      "path": "systems/arena_allocator/starter/benchmarks/arena_benchmark.cpp",
+      "size": 1817,
+      "sha256": "072771e91f5dee72ba59461a72909faa0d011e25e8eb38fba10849693c51214d"
+    },
+    {
+      "path": "systems/arena_allocator/starter/CMakeLists.txt",
+      "size": 812,
+      "sha256": "306e8cdc926901f751783f45168cd1c895dd4984fa3027af780e823c5a8d9a48"
+    },
+    {
+      "path": "systems/arena_allocator/starter/include/arena.hpp",
+      "size": 568,
+      "sha256": "fd4979c57b9a8a31260fd48a501f2cc19b020849091b8166e866c3ee0abfd4e4"
+    },
+    {
+      "path": "systems/arena_allocator/starter/README.md",
+      "size": 267,
+      "sha256": "7485d458ac23577ee8b01fec49331a0fdeb52a955a27edf08e3a9b0bca0c5d6c"
+    },
+    {
+      "path": "systems/arena_allocator/starter/src/arena.cpp",
+      "size": 1026,
+      "sha256": "42e0268278b9ad85e56ba875b71dad783ac79f7c6974c724d7b0eb043ead1e71"
+    },
+    {
+      "path": "systems/arena_allocator/starter/tests/arena_tests.cpp",
+      "size": 1064,
+      "sha256": "95ca518fc93c9d7192f1951a0f3b73fedeba50981d752aaae64a7836645411cd"
+    },
+    {
+      "path": "systems/arena_allocator/TEORIA_PASSO_A_PASSO.md",
+      "size": 6515,
+      "sha256": "322658046bf28a98aafa75e6464eb59bb534984efac5921f6558884914c09a36"
+    },
+    {
+      "path": "systems/arena_allocator/TESTES_GUIADOS.md",
+      "size": 1534,
+      "sha256": "f3232337d3e0d9ac96cce97f37e30ac829d722ed41106146bed31945a5d11802"
+    },
+    {
+      "path": "TODO_MAP.md",
+      "size": 2353,
+      "sha256": "fce66413002ccf4fda9097ee55ee6d868cdbd04b4a187d7d87fbf8ada5404626"
+    },
+    {
+      "path": "Treino_LowLevel_Unificado_2026-09-04_CORRIGIDO_FINAL.docx",
+      "size": 87778,
+      "sha256": "ceb7e64e2e25cd02f7ba82157825b182805e0a7f07098bf4f331945d5bb121ef"
+    },
+    {
+      "path": "VALIDATION.md",
+      "size": 2621,
+      "sha256": "9e52ef744ebd1534645c5b566b8bdd17b239c8e43047f9cb0689dfb236bea182"
+    }
+  ]
+}

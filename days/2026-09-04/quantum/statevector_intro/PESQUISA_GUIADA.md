@@ -19,3 +19,13 @@ https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/
 3. O que X faz com |0> e |1>?
 4. Por que H|0> gera amplitudes 1/sqrt(2)?
 5. Qual Bell state esperamos depois de H no qubit 0 seguido de CNOT(0,1) na convenção do nosso índice?
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

@@ -11,3 +11,15 @@ Você vai ligar números complexos e álgebra linear à representação de 2^n a
 3. Implemente antes de consultar `solutions/`.
 4. Rode os testes guiados.
 5. Execute o benchmark e registre ambiente/resultados.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-qsim` |
+| O que levar | statevector gates |
+| Testes a replicar | gate unit tests |
+| Milestone | MILESTONES.md — qsim intro |
+| Commit sugerido | `feat(qsim): port statevector from day02 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

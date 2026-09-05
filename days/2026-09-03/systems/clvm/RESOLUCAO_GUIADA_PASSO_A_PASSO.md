@@ -1,5 +1,20 @@
 # RESOLUÇÃO GUIADA - Systems / CLVM
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `CLVM-PY-FNV-01` | `starter/tools/assemble.py` | `fnv1a32()` |
+| `CLVM-ASM-LABELS-01` | `starter/tools/assemble.py` | `assemble()` — labels + JMP/JZ |
+| `CLVM-C-FNV-01` | `starter/src/clvm_loader.c` | `clvm_fnv1a32()` |
+| `CLVM-C-HEADER-01` | `starter/src/clvm_loader.c` | `clvm_parse()` — flags, entry, checksum |
+| `CLVM-VM-ARITH-01` | `starter/src/main.cpp` | `run()` — ADD/SUB/MUL/DIV/DUP/PRINT |
+| `CLVM-VM-JUMP-01` | `starter/src/main.cpp` | `run()` — JMP/JZ com offset i16 |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/systems/clvm/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 > Não comece copiando `solutions/`. Siga os passos abaixo e compile a cada etapa.
 
 ## Exercício Fácil A - implementar FNV-1a no assembler Python
@@ -348,143 +363,9 @@ output += struct.pack("<h", displacement)
 
 ---
 
-## Exercício Difícil B - executar JMP/JZ na VM
+## Exercício Difícil B — JMP/JZ na VM
 
-Você precisará ler um `i16` little-endian. Crie uma função parecida com `read_i32_le`, porém com dois bytes e conversão para `int16_t`.
-
-### 1. Crie o leitor de i16
-
-```cpp
-std::int16_t read_i16_le(const std::uint8_t* bytes) {
-    const std::uint16_t value =
-        static_cast<std::uint16_t>(bytes[0]) |
-        (static_cast<std::uint16_t>(bytes[1]) << 8U);
-
-    return static_cast<std::int16_t>(value);
-}
-```
-
-### 2. Crie um helper para salto validado
-
-O `pc` precisa já apontar para a próxima instrução quando somamos o deslocamento:
-
-```cpp
-const auto checked_jump = [&](std::int16_t relative) -> bool {
-    const std::int64_t base = static_cast<std::int64_t>(pc);
-    const std::int64_t target =
-        base + static_cast<std::int64_t>(relative);
-
-    if (target < 0 ||
-        target >= static_cast<std::int64_t>(image.code_size)) {
-        return false;
-    }
-
-    pc = static_cast<std::size_t>(target);
-    return true;
-};
-```
-
-### 3. JMP completo
-
-```cpp
-case Op::Jmp: {
-    if (!need(2)) {
-        std::cerr << "error: truncated JMP\n";
-        return 2;
-    }
-
-    const std::int16_t relative = read_i16_le(image.code + pc);
-    pc += 2;
-
-    if (!checked_jump(relative)) {
-        std::cerr << "error: jump outside code\n";
-        return 2;
-    }
-    break;
-}
-```
-
-### 4. JZ completo
-
-Na semântica deste laboratório, JZ consome o valor do topo:
-
-```cpp
-case Op::Jz: {
-    if (!need(2)) {
-        std::cerr << "error: truncated JZ\n";
-        return 2;
-    }
-
-    const std::int16_t relative = read_i16_le(image.code + pc);
-    pc += 2;
-
-    if (!pop_value(stack, lhs)) {
-        std::cerr << "error: stack underflow\n";
-        return 2;
-    }
-
-    if (lhs == 0 && !checked_jump(relative)) {
-        std::cerr << "error: jump outside code\n";
-        return 2;
-    }
-    break;
-}
-```
-
-A ordem é importante: primeiro consumimos os dois bytes do imediato, depois calculamos o destino relativo ao PC seguinte.
-
-### Teste
-
-Monte e execute `countdown.asm`. Saída:
-
-```text
-3
-2
-1
-0
-```
-
----
-
-## Prévia de próximo milestone — LOAD/STORE (não é TODO obrigatório do starter de hoje)
-
-Esta seção é uma **prévia de design**, não uma implementação exigida para concluir o Day 01. O starter/solution desta entrega terminam em `JMP/JZ`; LOAD/STORE entram em milestone posterior. O objetivo aqui é entender quais componentes precisam mudar juntos.
-
-### 1. Adicione memória linear à VM
-
-```cpp
-std::vector<std::int32_t> memory(256, 0);
-```
-
-### 2. Defina opcodes
-
-Por exemplo:
-
-```text
-0x0B LOAD  u8_index
-0x0C STORE u8_index
-```
-
-### 3. LOAD
-
-- lê o índice imediato;
-- valida `index < memory.size()`;
-- empilha `memory[index]`.
-
-### 4. STORE
-
-- lê o índice;
-- valida índice;
-- valida stack não vazia;
-- remove topo e grava em `memory[index]`.
-
-### 5. Atualize o assembler
-
-`instruction_size` deve retornar 2 para LOAD/STORE. Na emissão, use `struct.pack("<B", index)`.
-
-### 6. Atualize o validador
-
-O validador Rust precisa reconhecer que LOAD/STORE consomem um byte de imediato. Essa é a principal lição: **quando o formato muda, todos os produtores e consumidores precisam mudar juntos**.
+O passo a passo completo (leitor i16, `checked_jump`, casos `Op::Jmp`/`Op::Jz`, teste `countdown.asm` e prévia LOAD/STORE) está em **`RESOLUCAO_APENDICE.md`**.
 
 ## Mapa de consistência auditada
 
@@ -496,3 +377,25 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 - `CLVM-VM-JUMP-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
 - `CLVM-PY-FNV-01` — `starter/tools/assemble.py` → `solutions/tools/assemble.py`.
 - `CLVM-ASM-LABELS-01` — `starter/tools/assemble.py` → `solutions/tools/assemble.py`.
+## Relatório de resolução
+
+### O que foi validado
+
+- Todos os TODOs do `starter/` foram implementados na ordem sugerida.
+- Testes com marcadores `PEDAGOGY-TEST` passaram na solution.
+- O starter continua falhando nos pontos intencionais até o aluno completar cada ID.
+
+### Armadilhas encontradas
+
+- Leia mensagens de `assert` como contrato, não como bug do teste.
+- Compare sempre starter vs solution diff por arquivo.
+- Documente no benchmark o que *não* foi medido (I/O, rede, GPU, VM).
+
+### Depuração e saída esperada
+
+- **Depuração:** execute a VM com `--trace`; compare checksum FNV Python vs C byte a byte.
+- **Saída esperada:** `arithmetic.asm` imprime `38`; `countdown.asm` imprime `3 2 1 0`; checksum inválido rejeitado.
+
+### Próximo passo sugerido
+
+Repita o módulo sem consultar a resolução, cronometrando apenas a fase de implementação. Depois leia `BENCHMARK_GUIADO.md` e registre suas observações na seção **Resultados observados**.

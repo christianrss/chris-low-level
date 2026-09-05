@@ -16,3 +16,13 @@
 5. Por que assembler, loader, validator e VM precisam concordar sobre o mesmo formato?
 
 JVM/WASM são referências de engenharia; CLVM tem formato e opcodes próprios definidos no repositório.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

@@ -16,3 +16,13 @@
 3. Por que nosso `quick_sort_impl` recursa no lado menor e itera no maior?
 4. O que `comparisons` mede? O que **não** mede?
 5. Por que tempo real pode divergir do número de comparações?
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

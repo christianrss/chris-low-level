@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\linux\kernel_module_driver_lab\solutions\build_bench\CMakeFiles\4922d4d7df8e1b779bf09e94d46e19ad\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FCC99734-DD4B-32DC-A2CE-73E2FFB7A852}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

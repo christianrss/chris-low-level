@@ -1,3 +1,6 @@
+// PEDAGOGY-TEST: OBJDUMP-U16-01
+// PEDAGOGY-TEST: OBJDUMP-U32-01
+// PEDAGOGY-TEST: OBJDUMP-PARSE-01
 #include <stdio.h>
 
 static int add_then_double(int a, int b) {

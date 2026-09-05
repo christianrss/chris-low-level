@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\redteam\elf64_triage\solutions\build_bench\CMakeFiles\71ad64b94805580509eee6ee00752043\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B0D59161-B246-3B2E-8606-15A66FDCC08A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

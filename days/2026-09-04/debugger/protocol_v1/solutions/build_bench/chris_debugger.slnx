@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ad3ce2e4-d466-35fe-a1f9-01f59152d332" DefaultStartup="true">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="chris_debug_protocol.vcxproj"/>
+		<BuildDependency Project="debugger_benchmark.vcxproj"/>
+		<BuildDependency Project="debugger_tests.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="RUN_TESTS.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="1b38a389-a9ed-3540-8e93-753580de5ff0">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="c2813579-a54a-3264-bffe-ed0650169e90"/>
+	<Project Path="chris_debug_protocol.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="e0d24c5d-b9b9-3f4b-bdfa-c1b88a61d0a8">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="debugger_benchmark.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="24aac74e-e67f-3afa-afed-424567c9f7f9">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="chris_debug_protocol.vcxproj"/>
+	</Project>
+	<Project Path="debugger_tests.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="cce5a4dd-02f8-3679-9c4c-568b314c7450">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="chris_debug_protocol.vcxproj"/>
+	</Project>
+</Solution>

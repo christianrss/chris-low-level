@@ -1,9 +1,8 @@
 {
   "date": "2026-09-04",
   "environment": {
-    "os": "Linux 6.18.35 x86_64",
-    "compiler": "GCC/G++ 14.2.0",
-    "python": "3.13.5"
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.2"
   },
   "day02": {
     "chris-arena": {
@@ -94,5 +93,79 @@
     ],
     "median_ms": 4047.092413999999,
     "local_only": true
+  },
+  "generated_at": "2026-09-05T19:47:17.522471+00:00",
+  "modules": {
+    "ai/tensor_strides": {
+      "status": "ok",
+      "targets": [
+        {
+          "name": "tensor_benchmark.exe",
+          "median_ms": 30.5225,
+          "last_line": "n=128 repetitions=4 seconds=0.016746 gflops=1.00186 checksum=111.322"
+        }
+      ]
+    },
+    "algorithms/sorting_research": {
+      "status": "ok",
+      "targets": [
+        {
+          "name": "algorithm_benchmark.exe",
+          "median_ms": 329.6997,
+          "last_line": "duplicates n=12000 merge_us=934 merge_cmp=144778 quick_us=9956 quick_cmp=4561956"
+        }
+      ]
+    },
+    "debugger/protocol_v1": {
+      "status": "ok",
+      "targets": [
+        {
+          "name": "debugger_benchmark.exe",
+          "median_ms": 114.5509,
+          "last_line": "packets=300000 seconds=0.100511 packets_per_s=2.98476e+06 checksum=44999850000"
+        }
+      ]
+    },
+    "javascript/bytecode_vm_from_scratch": {
+      "status": "skip",
+      "reason": "no bench binary"
+    },
+    "os/graphics_reference": {
+      "status": "ok",
+      "targets": [
+        {
+          "name": "os_graphics_benchmark.exe",
+          "median_ms": 58.7517,
+          "last_line": "frames=40 seconds=0.0381529 fps=1048.41 checksum=2400"
+        }
+      ]
+    },
+    "quantum/statevector_intro": {
+      "status": "ok",
+      "targets": [
+        {
+          "name": "qsim_benchmark.exe",
+          "median_ms": 144.4349,
+          "last_line": "qubits=18 amplitudes=262144 bytes=4194304 gates=144 seconds=0.102286 gates_per_s=1407.82 norm=1"
+        }
+      ]
+    },
+    "redteam/elf64_triage": {
+      "status": "ok",
+      "median_ms": 9351.2631,
+      "runs": 5,
+      "last_line": "size_mib=8 strings=67650 median_s=0.803349 throughput_mib_s=9.96",
+      "metric_line": "size_mib=8 strings=67650 median_s=0.803349 throughput_mib_s=9.96"
+    },
+    "systems/arena_allocator": {
+      "status": "ok",
+      "targets": [
+        {
+          "name": "arena_benchmark.exe",
+          "median_ms": 328.6475,
+          "last_line": "allocations=2000000 arena_ns=12655300 heap_ns=294077000 checksum=509692800"
+        }
+      ]
+    }
   }
 }

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\ai\tiled_matmul_cache\solutions\build_bench\CMakeFiles\1bfcaba6d02d0528862f7bf7a26e36f1\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F7A7CF6F-FC83-30D3-A6A5-41172E702CF9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(device_model LANGUAGES C)
+set(CMAKE_C_STANDARD 11)
+add_executable(device_model device_model.c test_device_model.c)
+enable_testing()
+add_test(NAME device_model_test COMMAND device_model)

@@ -13,3 +13,15 @@
 ## TODOs auditáveis
 - `NODE-XFORM-01`
 - `NODE-BACKPRESSURE-02`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-node-streaming/day03_backpressure` |
+| O que levar | backpressure demo + transform |
+| Testes a replicar | test.js |
+| Milestone | backpressure milestone |
+| Commit sugerido | `feat(node): port backpressure from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

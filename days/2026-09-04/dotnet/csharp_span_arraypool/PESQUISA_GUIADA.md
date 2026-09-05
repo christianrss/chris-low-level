@@ -14,3 +14,13 @@ Responda antes de implementar:
 4. Por que medir apenas tempo sem medir allocations pode esconder um problema?
 
 Use a documentação para entender contratos e tradeoffs; não copie a implementação interna do runtime.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

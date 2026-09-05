@@ -11,3 +11,15 @@ Você vai construir um bump/arena allocator para entender alinhamento, lifetime 
 3. Implemente antes de consultar `solutions/`.
 4. Rode os testes guiados.
 5. Execute o benchmark e registre ambiente/resultados.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-arena` |
+| O que levar | Arena allocate/reset/align |
+| Testes a replicar | arena unit tests |
+| Milestone | MILESTONES.md — arena allocator |
+| Commit sugerido | `feat(arena): port allocator from day02 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

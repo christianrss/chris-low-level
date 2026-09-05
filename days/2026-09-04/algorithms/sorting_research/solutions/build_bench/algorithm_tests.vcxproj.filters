@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\algorithms\sorting_research\solutions\tests\algorithm_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\algorithms\sorting_research\solutions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3217E6CC-79E3-3547-8E7D-02E3A2036103}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

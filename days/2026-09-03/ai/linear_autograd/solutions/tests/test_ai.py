@@ -1,3 +1,11 @@
+# PEDAGOGY-TEST [AI-PY-GRAD-01]: convergência w≈2 b≈1 após treino Python
+# PEDAGOGY-TEST [AI-PY-SGD-01]: convergência w≈2 b≈1 após treino Python
+# PEDAGOGY-TEST [AI-AUTOGRAD-BWD-01]: gradient check numérico de dL/dw
+# PEDAGOGY-TEST [AI-AUTOGRAD-ADD-01]: acúmulo de gradiente em grafo ramificado
+# PEDAGOGY-TEST [AI-AUTOGRAD-MUL-01]: acúmulo de gradiente em grafo ramificado
+# PEDAGOGY-TEST [AI-C-GRAD-01]: convergência w≈2 b≈1 após treino Python
+# PEDAGOGY-TEST [AI-C-SGD-01]: convergência w≈2 b≈1 após treino Python
+# PEDAGOGY-TEST [AI-C-AVG-01]: convergência w≈2 b≈1 após treino Python
 from __future__ import annotations
 
 import importlib.util

@@ -15,3 +15,13 @@
 5. Por que este laboratório não deve ser tratado como blockchain de produção?
 
 Não reutilize código de criptomoedas reais. Este módulo é local, determinístico e educacional.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

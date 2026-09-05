@@ -1,3 +1,10 @@
+// Test cases (TESTES_GUIADOS.md):
+// Caso 1: Escreva um teste do comportamento mais simples antes de adicionar a feature.
+// Caso 2: Rode e observe a falha.
+// Caso 3: Implemente apenas o necessario para esse teste.
+// Caso 4: Adicione edge case/erro relevante.
+// Caso 5: Quando encontrar um bug durante o exercicio, transforme-o em regression test ant
+# PEDAGOGY-TEST: BOOT-IMAGE-01
 from pathlib import Path
 import sys
 ROOT = Path(__file__).resolve().parents[1]

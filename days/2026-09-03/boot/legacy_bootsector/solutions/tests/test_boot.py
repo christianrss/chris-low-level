@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST [BOOT-IMAGE-01]: imagem 512B com assinatura 0xAA55 e prefixo BIOS
 from pathlib import Path
 import sys
 ROOT = Path(__file__).resolve().parents[1]

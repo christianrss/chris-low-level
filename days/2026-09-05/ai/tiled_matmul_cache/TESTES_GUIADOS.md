@@ -1,6 +1,15 @@
-# Testes guiados — AI/ML Systems: matrix multiplication + tiling
+# Testes guiados
 
-`AI-MM-NAIVE-01`: produto 2x3 por 3x2. `AI-MM-TILED-02`: compara tiled vs naive em dimensões que não são múltiplas do tile (3x5x4), evitando um falso sucesso apenas em blocos perfeitos.
+### Caso 1: `test_matmul` valida naive 2×3·3×2 e equivalência tiled.
+### Caso 2: **Trace 4×4:** `trace_tile_4x4(5,7,4)` → tile (1,1).
+### Caso 3: **64×64:** matrizes 64×64 com tile=8 devem coincidir (tolerância 1e-3).
+### Caso 4: **Benchmark unificado:** `bench_matmul` imprime `naive_avg_ms` e `tiled_avg_ms` para N=64.
+### Caso 5: Valide solutions/ após implementar ambos os TODOs.
 
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.
+## AI-MM-NAIVE-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: AI-MM-NAIVE-01`.
+
+## AI-MM-TILED-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: AI-MM-TILED-02`.

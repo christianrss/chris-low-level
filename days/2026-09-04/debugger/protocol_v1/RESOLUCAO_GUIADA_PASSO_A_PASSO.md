@@ -53,6 +53,9 @@ for (int shift = 0; shift < 32; shift += 8) {
 return value;
 ```
 
+### Por que funciona?
+Little-endian coloca o byte menos significativo primeiro — padrão x86 e do protocolo deste lab. Loop de shifts em u32 evita repetir 4 linhas; decoder espelha com `|=` e `<< shift`.
+
 ## Médio — checksum FNV-1a
 
 ```cpp
@@ -64,7 +67,8 @@ for (std::size_t i = 0; i < size; ++i) {
 return hash;
 ```
 
-Explique: isso é checksum/hash simples para detectar corrupção, **não** MAC/assinatura.
+### Por que funciona?
+FNV-1a mistura cada byte com XOR antes da multiplicação por primo — barato e sensível a qualquer alteração. Detecta corrupção acidental, não substitui autenticação criptográfica.
 
 ## Difícil — encode
 Primeiro limite payload:
@@ -89,6 +93,9 @@ append_u32(out, fnv1a(packet.payload.data(), packet.payload.size()));
 out.insert(out.end(), packet.payload.begin(), packet.payload.end());
 return out;
 ```
+
+### Por que funciona?
+Layout fixo: magic, version, command, request_id, payload_size, hash, payload. Hash cobre só o payload — receiver recalcula e compara. Limite 1 MiB evita alocação descontrolada em pacote malicioso.
 
 ## Desafio — decode defensivo
 Implemente validações nesta ordem: `bytes.size() >= 20`; magic; version; leia command/id/size/hash; verifique tamanho exato; copie payload; calcule hash; compare; retorne packet.
@@ -131,6 +138,9 @@ if (actual_hash != expected_hash) {
 return {command, request_id, std::move(payload)};
 ```
 
+### Por que funciona?
+Validações em ordem: tamanho mínimo → magic → version → campos → tamanho exato total → hash. Falhar antes de copiar payload grande economiza trabalho e fecha vetores de truncamento/overflow de length.
+
 ## Testes/Debug
 O teste altera o último byte (`^=0xFF`) e espera checksum failure. Coloque breakpoint no `actual_hash != expected_hash` e compare ambos. O teste truncado `{1,2,3}` deve falhar antes de qualquer `read_u32`.
 
@@ -147,3 +157,14 @@ Esperado: `chris-debugger protocol tests passed` e `100% tests passed`.
 
 ## Solução final comentada
 Somente depois do starter verde, compare os sete marcadores `PEDAGOGY-SOLUTION` em `solutions/src/protocol.cpp`. Cada marcador corresponde a um TODO listado no mapa desta resolução.
+
+## Relatório de resolução
+
+| ID | Função | Falha esperada nos testes negativos |
+|----|--------|-------------------------------------|
+| D2-DBG-APPEND/READ U16/U32 | serialização LE | bytes invertidos se ordem errada |
+| D2-DBG-FNV1A | checksum | último byte XOR 0xFF invalida hash |
+| D2-DBG-ENCODE | montagem | payload > 1 MiB rejeitado |
+| D2-DBG-DECODE | validação | header truncado; length mismatch |
+
+Aceite: `chris-debugger protocol tests passed`. Decode deve falhar antes de ler payload quando tamanho mente. Benchmark: ~300k round-trips/s em payload 64 B é referência local — registre máquina e compilador.

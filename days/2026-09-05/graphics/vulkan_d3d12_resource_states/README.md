@@ -14,3 +14,15 @@
 - `GFX-STATE-TRANSITION-01`
 - `GFX-VK-MAP-02`
 - `GFX-D3D12-MAP-03`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-gpu-state/day03` |
+| O que levar | resource state machine |
+| Testes a replicar | state transition tests |
+| Milestone | GPU state sim milestone |
+| Commit sugerido | `feat(gpu): port resource states from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

@@ -1,5 +1,16 @@
 # Resolução guiada auditada — ANSI/CSI parser incremental
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `TERM-FEED-01` | `starter/src/terminal.cpp` | `Terminal::feed()` — máquina de estados ESC/CSI |
+| `TERM-CSI-01` | `starter/src/terminal.cpp` | `Terminal::handle_csi()` |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/terminal/ansi_parser/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## 0. Arquivo
 
 ```text
@@ -37,6 +48,9 @@ int Terminal::param_or(int fallback) const {
 ```
 
 Neste milestone há um único parâmetro textual; suporte completo a listas `1;2;3` fica para evolução posterior.
+
+### Por que funciona?
+CSI frequentemente omite o número (`ESC[C` = mover 1 coluna). `param_or(1)` devolve fallback quando `param_text_` está vazio. `stoi` com catch evita crash em sequência malformada — retorna fallback em vez de derrubar o terminal.
 
 ## 3. `handle_csi` — a versão antiga não mostrava o corpo
 
@@ -87,6 +101,9 @@ Adicione os includes:
 #include <algorithm>
 #include <cctype>
 ```
+
+### Por que funciona?
+`std::max(1, param_or(1))` garante movimento mínimo de uma célula. Clamps em `rows_-1`/`cols_-1` evitam cursor fora da grade. `J` com parâmetro 2 limpa toda a surface — padrão “erase display”.
 
 ## 4. Reescreva `feed` como máquina de estados
 
@@ -145,6 +162,9 @@ case State::Csi:
 
 Feche `switch` e `for`.
 
+### Por que funciona?
+`state_` persiste entre chamadas de `feed` — essencial para sequências fragmentadas (`A\x1b` + `[2C` + `B`). ESC sem `[` volta a Ground (sequência desconhecida descartada). Em CSI, dígitos acumulam em `param_text_` até byte final na faixa `@`–`~`.
+
 ## 5. Teste que prova estado persistente entre feeds
 
 ```cpp
@@ -190,3 +210,22 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 
 - `TERM-CSI-01` — `starter/src/terminal.cpp` → `solutions/src/terminal.cpp`.
 - `TERM-FEED-01` — `starter/src/terminal.cpp` → `solutions/src/terminal.cpp`.
+## Relatório de resolução
+
+### O que foi validado
+
+- Todos os TODOs do `starter/` foram implementados na ordem sugerida.
+- Testes com marcadores `PEDAGOGY-TEST` passaram na solution.
+- O starter continua falhando nos pontos intencionais até o aluno completar cada ID.
+
+### Armadilhas encontradas
+
+- Leia mensagens de `assert` como contrato, não como bug do teste.
+- Compare sempre starter vs solution diff por arquivo.
+- Documente no benchmark o que *não* foi medido (I/O, rede, GPU, VM).
+
+**Saída esperada:** `ctest` passa; feed fragmentado `A\x1b` + `[2C` + `B` posiciona cursor corretamente.
+
+### Próximo passo sugerido
+
+Repita o módulo sem consultar a resolução, cronometrando apenas a fase de implementação. Depois leia `BENCHMARK_GUIADO.md` e registre suas observações na seção **Resultados observados**.

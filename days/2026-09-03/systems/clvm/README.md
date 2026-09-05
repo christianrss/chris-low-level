@@ -88,3 +88,15 @@ xxd solutions/arithmetic.clvm
 
 O laboratório trabalha apenas com um formato e VM educacionais próprios. Não executa código nativo
 arbitrário nem interage com processos de terceiros.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-vm` |
+| O que levar | CLVM loader + stack VM |
+| Testes a replicar | integration tests |
+| Milestone | MILESTONES.md — CLVM VM |
+| Commit sugerido | `feat(vm): port CLVM from day01 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

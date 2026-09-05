@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\ai\tiled_matmul_cache\solutions\matmul.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\ai\tiled_matmul_cache\solutions\test_matmul.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\ai\tiled_matmul_cache\solutions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4F725852-B11F-3BE3-9268-99B36A178825}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

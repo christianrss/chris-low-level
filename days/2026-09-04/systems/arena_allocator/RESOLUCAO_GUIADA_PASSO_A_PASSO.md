@@ -187,3 +187,14 @@ Antes de executar, escreva a hipótese: "para muitas alocações temporárias de
 
 ## Solução final comentada
 Compare seu arquivo com `solutions/src/arena.cpp`. Você deve conseguir justificar cada linha: validação, alinhamento, checagem de capacidade, avanço do cursor e reset.
+
+## Relatório de resolução
+
+| ID | Arquivo | Resultado esperado |
+|----|---------|-------------------|
+| D2-ARENA-POWER2 | `arena.cpp` | potências de dois aceitas; 0 rejeitado |
+| D2-ARENA-ALIGN-UP | `arena.cpp` | arredondamento por máscara; alignment inválido lança |
+| D2-ARENA-ALLOCATE | `arena.cpp` | ponteiro alinhado; `bad_alloc` se não cabe |
+| D2-ARENA-RESET | `arena.cpp` | `offset_=0` em O(1) |
+
+Critério de aceite: `ctest` reporta `chris-arena tests passed` e 100% dos testes. Se `second % 32 != 0`, revise cálculo de endereço alinhado a partir de `base+offset_`, não só de `offset_` isolado. O benchmark só faz sentido após os testes verdes; registre hipótese antes de comparar com heap.

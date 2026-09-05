@@ -22,3 +22,13 @@ https://refspecs.linuxfoundation.org/
 
 ## Limite de segurança
 Use somente fixtures e o `lab_target` produzido por este laboratório ou outros binários que você tenha autorização para analisar. O objetivo é formato/triagem, não evasão ou comprometimento.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

@@ -4,10 +4,10 @@
 
 **Invariante:** o dataset `y=2x+1` deve produzir `w` próximo de `2` e `b` próximo de `1`.
 
-1. Importe `train()`.
-2. Execute 1000 épocas com `lr=0.01`.
-3. Use tolerâncias em vez de igualdade exata porque treinamento usa ponto flutuante.
-4. Verifique `abs(w-2) < 0.02` e `abs(b-1) < 0.05`.
+### Caso 1: Importe `train()`.
+### Caso 2: Execute 1000 épocas com `lr=0.01`.
+### Caso 3: Use tolerâncias em vez de igualdade exata porque treinamento usa ponto flutuante.
+### Caso 4: Verifique `abs(w-2) < 0.02` e `abs(b-1) < 0.05`.
 
 ## Teste 2 - gradiente analítico vs numérico
 

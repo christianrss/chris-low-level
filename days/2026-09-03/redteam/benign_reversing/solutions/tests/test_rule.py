@@ -1,3 +1,5 @@
+# PEDAGOGY-TEST [RE-STRINGS-01]: extração ASCII de runs >=4 bytes
+# PEDAGOGY-TEST [RE-YARA-01]: regra YARA identifica binário lab benigno
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]

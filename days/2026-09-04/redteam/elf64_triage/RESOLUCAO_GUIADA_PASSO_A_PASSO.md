@@ -57,6 +57,9 @@ Ao final:
 return results
 ```
 
+### Por que funciona?
+A sentinela `b"\x00"` força fechamento de run que termina no último byte do arquivo. Só bytes printable (0x20–0x7E) contam; runs curtas que `minimum` filtra reduzem ruído em binários.
+
 Rode `test_ascii_strings.py`; esperado `chris-binary-toolkit tests passed`.
 
 ## Médio — estrutura do ELF header
@@ -82,6 +85,9 @@ if data[5] != 1: raise ValueError("only little-endian ELF is supported")
 if data[6] != 1: raise ValueError("unsupported ELF identification version")
 ```
 
+### Por que funciona?
+Checagens em cascata falham cedo com mensagens distintas — mais útil em triage que um único “invalid ELF”. `len(data) < 64` precede qualquer indexação além de `e_ident`.
+
 ## Difícil — ler campos pelos offsets da especificação
 Use little-endian (`<`). Digite:
 
@@ -100,6 +106,9 @@ Retorne:
 ```python
 return Elf64Header(machine, entry, phoff, shoff, phnum, shnum, shstrndx)
 ```
+
+### Por que funciona?
+Offsets 18, 24, 32… são fixos no ELF64 header independente do alvo. `<H` e `<Q` com little-endian reproduzem o layout do fixture (`machine=62`, `entry=0x401000`). `unpack_from` lê in-place sem fatiar cópias extras.
 
 O fixture do teste espera `machine=62`, `entry=0x401000`, `phnum=3`, `shnum=12`, `shstrndx=11`.
 
@@ -126,3 +135,12 @@ Registre headers/s. Não interprete isso como velocidade de um analisador ELF co
 
 ## Solução final comentada
 Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+
+## Relatório de resolução
+
+| ID | Arquivo | Aceite |
+|----|---------|--------|
+| D2-ELF-STRINGS | `ascii_strings.py` | runs ≥ minimum; sentinela NUL fecha última run |
+| D2-ELF-HEADER | `elf64.py` | magic/class/endian; campos do fixture |
+
+Aceite: ambos testes Python reportam `chris-binary-toolkit tests passed`. Offsets ELF devem bater com tabela da especificação — use hex dump, não ajuste mágico. Compare binário compilado de `lab_target.c` com `readelf -h` como sanity check externo.

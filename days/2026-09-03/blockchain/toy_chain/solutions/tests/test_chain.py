@@ -1,3 +1,7 @@
+# PEDAGOGY-TEST [CHAIN-DIGEST-01]: serialização determinística do bloco
+# PEDAGOGY-TEST [CHAIN-MINE-01]: PoW com prefixo de zeros exigido
+# PEDAGOGY-TEST [CHAIN-MERKLE-01]: raiz Merkle estável para transações
+# PEDAGOGY-TEST [CHAIN-VALID-01]: cadeia válida rejeita link quebrado
 from pathlib import Path
 import sys
 ROOT = Path(__file__).resolve().parents[1]

@@ -13,3 +13,15 @@
 ## TODOs auditáveis
 - `CLR-IL-OPCODE-01`
 - `CLR-IL-OPERAND-02`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-dotnet-ilvm/day03` |
+| O que levar | CIL opcode decoder |
+| Testes a replicar | dotnet run on fixtures |
+| Milestone | IL decoder milestone |
+| Commit sugerido | `feat(ilvm): port CIL decoder from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

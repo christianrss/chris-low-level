@@ -1,5 +1,16 @@
 # RESOLUÇÃO GUIADA - Red Team / Reverse Engineering benigno
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `RE-STRINGS-01` | `starter/tools/ascii_strings.py` | `extract_ascii_strings()` |
+| `RE-YARA-01` | `starter/rules/lab_target.yar` | seção `strings` da regra YARA |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/redteam/benign_reversing/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 > Trabalhe somente com `lab_target` incluído neste pacote.
 
 ## Exercício Fácil - construir seu próprio extrator de strings ASCII
@@ -260,3 +271,22 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 
 - `RE-YARA-01` — `starter/rules/lab_target.yar` → `solutions/rules/lab_target.yar`.
 - `RE-STRINGS-01` — `starter/tools/ascii_strings.py` → `solutions/tools/ascii_strings.py`.
+## Relatório de resolução
+
+### O que foi validado
+
+- Todos os TODOs do `starter/` foram implementados na ordem sugerida.
+- Testes com marcadores `PEDAGOGY-TEST` passaram na solution.
+- O starter continua falhando nos pontos intencionais até o aluno completar cada ID.
+
+### Armadilhas encontradas
+
+- Leia mensagens de `assert` como contrato, não como bug do teste.
+- Compare sempre starter vs solution diff por arquivo.
+- Documente no benchmark o que *não* foi medido (I/O, rede, GPU, VM).
+
+**Saída esperada:** `YARA rule semantic check: PASS` e testes ASCII passam.
+
+### Próximo passo sugerido
+
+Repita o módulo sem consultar a resolução, cronometrando apenas a fase de implementação. Depois leia `BENCHMARK_GUIADO.md` e registre suas observações na seção **Resultados observados**.

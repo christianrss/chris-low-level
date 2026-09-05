@@ -21,3 +21,13 @@ Relacionar o simulador do exercício a conceitos reais de ISA sem transformar o 
 5. Que erro deve ocorrer para opcode ou registrador inválido?
 
 Não copie encodings de RISC-V/x86; use-os apenas para entender como uma ISA real especifica comportamento verificável.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

@@ -1,3 +1,5 @@
+// PEDAGOGY-TEST [TERM-FEED-01]: parser incremental ESC/CSI em feed parcial
+// PEDAGOGY-TEST [TERM-CSI-01]: movimentos A/B/C/D e CSI 2 J clear
 #include "terminal.hpp"
 #include <cassert>
 #include <iostream>

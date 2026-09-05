@@ -45,3 +45,15 @@ A regra em `solutions/rules/lab_target.yar` serve apenas para reconhecer o biná
 ## Segurança
 
 O alvo apenas valida um código local e imprime resultado. Ele não acessa rede, não persiste, não injeta processos, não evade ferramentas e não coleta dados.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-binary-toolkit` |
+| O que levar | strings/YARA-style scanning |
+| Testes a replicar | unit tests on fixtures |
+| Milestone | MILESTONES.md — binary toolkit |
+| Commit sugerido | `feat(toolkit): port reversing helpers from day01 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

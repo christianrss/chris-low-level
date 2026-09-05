@@ -1,66 +1,155 @@
-# Red Team / Reverse Engineering seguro - do C ao assembly
+# Teoria passo a passo — Red Team / reversing benigno
 
-## Limite de segurança do laboratório
+## 1. Limite de segurança
 
-Use somente `lab_target`, que é um programa benigno criado dentro deste pacote. O objetivo é compreender binários, assembly e debugging. Não há malware, persistência, evasão ou ataque a terceiros.
+Use somente `lab_target` deste pacote. Objetivo: entender binários, assembly e debugging — sem malware, persistência ou ataque a terceiros.
 
-## O que você precisa entender antes de começar
+## 2. O que estamos construindo
 
-### Código-fonte, compilador e executável
+- extrator ASCII de strings (`RE-STRINGS-01`);
+- regra YARA educacional (`RE-YARA-01`);
+- análise do alvo `verify_code` que transforma entrada byte a byte.
 
-O arquivo `.c` é texto para humanos. O compilador transforma esse texto em instruções de máquina e metadados de um executável PE no Windows ou ELF no Linux.
-
-### Análise estática e dinâmica
-
-- estática: examinar o arquivo sem executá-lo;
-- dinâmica: executar sob um debugger e observar estado em tempo real.
-
-As duas abordagens se complementam.
-
-### Registradores e calling convention
-
-Um processador x86-64 possui registradores como RAX, RBX, RCX, RDX, RSP, RBP e RIP. `RIP` aponta para a instrução atual/seguinte. `RSP` aponta para o topo da stack.
-
-A convenção de chamada define onde argumentos e retornos ficam. Em Windows x64, os quatro primeiros argumentos inteiros/ponteiros normalmente usam RCX, RDX, R8 e R9. Em System V AMD64 (Linux), usam RDI, RSI, RDX, RCX, R8 e R9. O retorno inteiro normalmente vem em RAX.
-
-### Stack frame
-
-Funções podem reservar espaço na stack para variáveis locais e salvar estado. Em builds sem otimização, é comum encontrar padrões com `push rbp`, `mov rbp, rsp` em ambientes que preservam frame pointer. Otimizações podem mudar completamente esse formato.
-
-### Strings
-
-Strings ASCII ficam como sequências de bytes imprimíveis terminadas por zero. Procurá-las é uma técnica inicial de triagem. Neste laboratório você constrói seu próprio extrator de strings em Python.
-
-### YARA
-
-YARA descreve padrões para identificar arquivos. Aqui a regra detecta somente o nosso binário educacional por strings controladas. Isso ensina o formato sem depender de malware real.
-
-### O alvo benigno
-
-`verify_code` transforma cada byte da entrada:
+## 3. Pipeline estático → dinâmico
 
 ```text
-transformed = (input[i] XOR 0x2A) + i
+fonte .c -> compilador -> PE/ELF
+                |
+                +--> strings ASCII (estático)
+                +--> disassembly (objdump)
+                +--> debugger (dinâmico)
+                +--> YARA (assinatura)
 ```
 
-Depois compara com uma tabela constante. A tarefa não é força bruta; é reconstruir a lógica ao ler o fonte, o assembly e o estado do debugger.
+## 4. Alvo benigno — lógica interna
 
-## Passo a passo guiado
+```text
+transformed[i] = (input[i] XOR 0x2A) + i
+comparar com tabela constante
+```
 
-1. Compile `solutions/src/lab_target.c` em Debug e Release e compare os binários.
-2. Rode com uma entrada errada para entender o comportamento externo.
-3. Use seu `ascii_strings.py` e localize `LOWLEVEL-REVERSING-LAB-V1`, `accepted` e `rejected`.
-4. No Linux, compare com `objdump -d`; no Windows, use `dumpbin /disasm` se disponível.
-5. Em x64dbg/Visual Studio Debugger/WinDbg, abra somente o `lab_target` do laboratório.
-6. Coloque breakpoint em `main` e, se os símbolos estiverem disponíveis, em `verify_code`.
-7. Observe os argumentos conforme a calling convention do seu sistema.
-8. Acompanhe o loop e identifique XOR, soma do índice e comparação.
-9. Escreva em pseudocódigo o que o assembly faz antes de olhar o fonte da solução.
-10. Complete a regra YARA educacional.
+Exemplo manual com entrada `"A"` (0x41):
 
-## Exercícios
+```text
+(0x41 XOR 0x2A) + 0 = 0x6B
+```
 
-- Fácil: construir o extrator ASCII.
-- Médio: identificar no assembly o loop de comparação e os registradores usados.
-- Difícil: reconstruir `verify_code` em pseudocódigo a partir do assembly.
-- Desafio: explicar por que Debug e Release produzem assembly diferente mesmo implementando a mesma lógica.
+Índice `i` desloca cada byte — não é XOR simples.
+
+## 5. Extrator ASCII — máquina de estados
+
+```text
+para cada byte b em data:
+  se 0x20 <= b <= 0x7E:
+    se start is None: start = index
+  senão:
+    se run >= min_len: salvar (start, run)
+    start = None
+```
+
+Runs curtos que terminam no fim do buffer também devem ser capturados.
+
+## 6. YARA educacional
+
+Strings únicas do lab:
+
+```text
+LOWLEVEL-REVERSING-LAB-V1
+accepted
+rejected
+```
+
+Condição típica: `$marker and $accepted and $rejected`.
+
+## 7. Calling conventions (referência)
+
+| SO | 1º arg int | 2º arg int | retorno |
+|----|------------|------------|---------|
+| Linux System V | RDI | RSI | RAX |
+| Windows x64 | RCX | RDX | RAX |
+
+Debug sem símbolos exige inferir por convenção e padrões de código.
+
+## 8. Invariantes
+
+- Extrator só reporta bytes imprimíveis consecutivos ≥ `min_len`.
+- YARA deve identificar exclusivamente o binário do lab (strings controladas).
+- Pseudocódigo derivado do assembly deve bater com o fonte antes de consultar solução.
+
+## 9. Complexidade
+
+- Scan de strings: O(n) no tamanho do binário.
+- `verify_code`: O(k) no tamanho da entrada.
+- YARA match: O(n * p) no pior caso (n bytes, p padrões simples).
+
+## 10. Bugs comuns
+
+- Extrator não fecha run no EOF.
+- Confundir offset de arquivo com RVA ao comparar com disassembly.
+- YARA com strings genéricas (`"main"`) — falso positivo.
+- Atribuir comportamento malicioso a strings inofensivas.
+- Ignorar que Release otimiza e muda assembly vs Debug.
+
+## 11. Comparação com produção
+
+| Lab | Triagem real (SOC / IR) |
+|-----|-------------------------|
+| um binário conhecido | milhares de amostras/dia |
+| strings manuais | YARA + sandbox + ML |
+| debugger local | telemetria EDR |
+| alvo benigno | malware isolado em VM air-gap |
+
+Técnicas são as mesmas; escala e risco exigem processo.
+
+## 12. Passo a passo guiado
+
+1. Compile `lab_target` Debug e Release.
+2. Rode `ascii_strings.py` no binário.
+3. Disassemble e localize o loop de `verify_code`.
+4. Debugger: breakpoint, argumentos, registradores.
+5. Complete `lab_target.yar`.
+6. Testes: `test_ascii_strings.py`, `test_rule.py`.
+
+## 13. Como saber se está correto
+
+Strings esperadas encontradas; regra YARA contém marcadores; testes Python passam.
+## 4. Pipeline de análise benigna
+
+```text
+binário -> strings ASCII -> regra YARA -> relatório
+```
+
+## 5. Runs de strings
+
+Byte imprimível (0x20-0x7E) estende run; <4 bytes descarta.
+
+## 6. YARA didático
+
+Strings `$a` únicas + condição `all of them` — sem shellcode real.
+
+## 7. Ética e escopo
+
+Somente binários do laboratório. Não distribuir regras contra software de terceiros.
+
+## 8. Invariantes
+
+- Offsets reportados em decimal ou hex consistente.
+- Runs não cruzam seções não mapeadas (aqui: arquivo inteiro).
+
+## 9. Bugs comuns
+
+- Confundir UTF-16 LE com ASCII.
+- Regra YARA ampla demais (falsos positivos).
+
+---
+
+## Por quê — síntese pedagógica
+
+### Por quê este módulo existe?
+Conectar teoria de baixo nível a decisões de implementação verificáveis — não decorar API.
+
+### Por quê estas invariantes?
+Cada `TODO [ID]` protege uma propriedade que quebra silenciosamente em produção se ignorada (overflow, estado inválido, parsing parcial).
+
+### Por quê medir e portar para `projects/`?
+Lab isola o aprendizado; `projects/chris-*` consolida engenharia de portfólio com testes e benchmarks reproduzíveis.

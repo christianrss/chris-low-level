@@ -1,104 +1,134 @@
-# Systems - CLVM: formato binário, assembler, loader e máquina virtual
+# Teoria passo a passo — CLVM: formato binário, assembler, loader e VM
 
-## O que você precisa entender antes de começar
+## 1. O que estamos construindo
 
-Este laboratório começa por uma máquina virtual pequena porque ela reúne várias ideias que reaparecem em sistemas operacionais, emuladores, compiladores, bancos de dados e debuggers.
+Uma máquina virtual educacional com arquivo `.clvm`, assembler Python, loader C e interpreter C++ — o mesmo ciclo fetch/decode/execute de ISAs reais, em escala reduzida.
 
-Um computador real executa **instruções de máquina** definidas por uma ISA (Instruction Set Architecture), como x86-64 ou RISC-V. Cada instrução é representada por bytes. Uma máquina virtual faz algo parecido em software: ela define seu próprio conjunto de opcodes e interpreta esses bytes.
+## 2. Por que VM antes de emulador completo
 
-### Bits, bytes e hexadecimal
+Reúne: endianness, checksum, validação de header, bytecode, stack machine, saltos relativos e testes de integração — sem a superfície de x86.
 
-- bit: um valor 0 ou 1;
-- byte: 8 bits;
-- hexadecimal: representação em base 16; cada dígito hexadecimal representa 4 bits;
-- `0x01` é um byte com valor decimal 1;
-- `0xFF` é um byte com valor decimal 255.
-
-### Little-endian
-
-Quando um inteiro ocupa vários bytes, precisamos definir a ordem dos bytes. Na CLVM, inteiros são little-endian. O inteiro de 32 bits `0x12345678` aparece no arquivo como `78 56 34 12`.
-
-### Header e payload
-
-O arquivo `.clvm` possui duas partes:
-
-1. header de 16 bytes: metadados usados para validar e localizar o código;
-2. bytecode: instruções que a VM executa.
-
-O header contém magic `CLVM`, version, flags, entry, code_size e checksum. Nunca confie em `code_size` antes de comparar com o tamanho real do buffer.
-
-### Assembler, loader e interpreter
-
-Fluxo do laboratório:
+## 3. Header de 16 bytes (tabela de offsets)
 
 ```text
-programa.asm
-    |
-    v
-assemble.py  ->  programa.clvm
-                    |
-                    v
-             clvm_loader.c
-                    |
-                    v
-                 main.cpp
-              fetch/decode/execute
+offset | tamanho | campo
+-------|---------|--------
+0x00   | 4       | magic "CLVM"
+0x04   | 1       | version
+0x05   | 1       | flags (deve ser 0)
+0x06   | 2       | entry (u16 LE)
+0x08   | 4       | code_size (u32 LE)
+0x0C   | 4       | checksum FNV-1a do bytecode
 ```
 
-O assembler converte mnemonics como `PUSH 7` em bytes. O loader valida o arquivo. O interpreter mantém um `PC` (program counter), lê o opcode, decodifica a operação e executa.
+Exemplo: `code_size=10`, checksum calculado sobre bytes `[0..9]` do payload.
 
-### Stack machine
-
-A CLVM é uma stack machine. Operandos ficam em uma pilha LIFO. Para calcular `7 + 5`:
+## 4. Fluxo interno
 
 ```text
-PUSH 7    stack = [7]
-PUSH 5    stack = [7, 5]
-ADD       stack = [12]
-PRINT     imprime 12 e remove o valor
-HALT      encerra
+.asm -> assemble.py -> .clvm
+                         |
+                    clvm_loader.c (valida header + checksum)
+                         |
+                    main.cpp VM (PC, stack, opcodes)
 ```
 
-Isso é diferente de RISC-V, que usa registradores explícitos, mas o ciclo fetch/decode/execute é a mesma ideia central.
+## 5. Stack machine — exemplo numérico
 
-### Checksum FNV-1a
-
-O checksum detecta corrupção acidental dos bytes. Ele não é criptografia. Para cada byte:
+Programa `7 + 5`:
 
 ```text
-hash = hash XOR byte
-hash = hash * 16777619 (mod 2^32)
+PUSH 7    stack [7]
+PUSH 5    stack [7, 5]
+ADD       stack [12]
+PRINT     stdout: 12
+HALT
 ```
 
-Se um byte do código mudar, o loader recalcula o checksum e deve rejeitar o arquivo.
+`countdown.asm` usa `JMP`/`JZ` com offset i16 relativo ao PC após o operando.
 
-### Saltos relativos
+## 6. FNV-1a 32-bit (CLVM-PY-FNV-01 / CLVM-C-FNV-01)
 
-`JMP` e `JZ` carregam um deslocamento assinado de 16 bits. O destino é calculado a partir do PC logo depois do operando. Isso torna o bytecode relocável dentro do arquivo.
+```text
+hash = 0x811C9DC5
+para cada byte b:
+  hash = (hash XOR b) * 16777619  (mod 2^32)
+```
 
-## Passo a passo guiado
+Alterar um byte do código → checksum mismatch → loader rejeita (`CLVM-C-HEADER-01`).
 
-1. Leia `docs/FORMAT.md` e desenhe o header de 16 bytes em papel.
-2. Abra `starter/tools/assemble.py` e encontre a função de checksum.
-3. Implemente FNV-1a no Python e em `starter/src/clvm_loader.c`.
-4. Gere `arithmetic.clvm`.
-5. Abra o arquivo com `starter/tools/inspect_clvm.py` ou um hex editor e localize `43 4C 56 4D`, que é `CLVM` em ASCII.
-6. Compile o loader/VM.
-7. Rode com `--trace` e observe `pc`, opcode e stack.
-8. Corrompa um byte e confirme que o loader recusa o arquivo antes da execução.
-9. Implemente/estude `JMP` e `JZ` e execute `countdown.asm`.
-10. Compare o loop da CLVM com o primeiro passo de um emulador RISC-V: buscar bytes, decodificar e atualizar PC.
+## 7. Saltos (CLVM-VM-JUMP-01)
 
-## Exercícios
+```text
+dest = PC_after_operand + signed_offset_i16
+```
 
-- Fácil: checksum + inspeção hexadecimal.
-- Médio: parser seguro + programa aritmético.
-- Difícil: labels, `JMP`, `JZ` e countdown.
-- Desafio: explique como você adicionaria um opcode `LOAD` sem quebrar a validação de limites.
+Destino fora de `[0, code_size)` deve falhar.
 
-## Como saber se está correto
+## 8. Aritmética (CLVM-VM-ARITH-01)
 
-- `arithmetic.asm` deve imprimir `38`;
-- `countdown.asm` deve imprimir `3 2 1 0`;
-- arquivo corrompido deve produzir `checksum mismatch`;
-- um salto para fora do código deve ser rejeitado.
+`ADD/SUB/MUL/DIV` consomem dois operandos da stack; `DIV` por zero é erro; `DUP` duplica topo; `PRINT` remove e imprime.
+
+## 9. Labels (CLVM-ASM-LABELS-01)
+
+Assembler em duas passagens:
+
+1. coletar endereços de labels;
+2. emitir bytecode resolvendo `JMP label` / `JZ label`.
+
+## 10. Invariantes
+
+- `flags == 0`, `entry < code_size`, checksum confere.
+- Stack não underflow em operações binárias.
+- PC sempre dentro do bytecode durante execução.
+- Mesmo FNV em Python e C (bit a bit).
+
+## 11. Complexidade
+
+- Assemble: O(n) linhas + O(n) bytes emitidos.
+- Load/validate: O(code_size).
+- Execute: O(instruções até HALT ou limite).
+
+## 12. Bugs comuns
+
+- FNV com overflow errado (usar `& 0xFFFFFFFF` em Python).
+- Confundir entry absoluto com offset de arquivo (entry é offset no bytecode).
+- JMP relativo calculado do PC errado.
+- `code_size` do header maior que buffer real.
+- Labels forward reference não resolvidas na passagem 1.
+
+## 13. Comparação com produção
+
+| CLVM | JVM / WASM / Lua VM |
+|------|---------------------|
+| header 16 B | tabelas extensas |
+| stack ops | stack ou register |
+| FNV toy | SHA/signatures |
+| inteiros i32 | tipos ricos, GC |
+
+O pipeline assembler→loader→interpreter é o mesmo padrão industrial.
+
+## 14. Passo a passo guiado
+
+1. FNV em `assemble.py` e `clvm_loader.c`.
+2. Header validation (`CLVM-C-HEADER-01`).
+3. VM aritmética + saltos em `main.cpp`.
+4. Labels em assembler.
+5. `integration_test.py` com `arithmetic.asm` → imprime `38`.
+
+## 15. Como saber se está correto
+
+`arithmetic` → `38`; `countdown` → `3 2 1 0`; checksum corrupto rejeitado; salto inválido rejeitado.
+
+---
+
+## Por quê — síntese pedagógica
+
+### Por quê este módulo existe?
+Conectar teoria de baixo nível a decisões de implementação verificáveis — não decorar API.
+
+### Por quê estas invariantes?
+Cada `TODO [ID]` protege uma propriedade que quebra silenciosamente em produção se ignorada (overflow, estado inválido, parsing parcial).
+
+### Por quê medir e portar para `projects/`?
+Lab isola o aprendizado; `projects/chris-*` consolida engenharia de portfólio com testes e benchmarks reproduzíveis.

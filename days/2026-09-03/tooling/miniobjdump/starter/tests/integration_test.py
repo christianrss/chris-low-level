@@ -1,3 +1,6 @@
+# PEDAGOGY-TEST: OBJDUMP-U16-01
+# PEDAGOGY-TEST: OBJDUMP-U32-01
+# PEDAGOGY-TEST: OBJDUMP-PARSE-01
 from __future__ import annotations
 import subprocess, sys, tempfile
 from pathlib import Path

@@ -132,3 +132,14 @@ Para `x + y * 2`, acompanhe `current_.kind`, `program_.code`, `ip`, `ins.op`, `s
 
 ## Solução final comentada
 Somente depois dos testes verdes, compare `starter/src/chris_js.cpp` com `solutions/src/chris_js.cpp`. Procure os sete marcadores `PEDAGOGY-SOLUTION`. Cada um deve corresponder exatamente a um TODO que você resolveu; o gabarito não contém etapas mágicas adicionais.
+
+## Relatório de resolução
+
+| ID | Camada | Saída esperada |
+|----|--------|----------------|
+| D2-JS-LEX-NUMBER / IDENT | lexer | tokens corretos; keywords reservadas |
+| D2-JS-STMT-LET / PRINT | compiler | bytecode com StoreGlobal/Print |
+| D2-JS-PREC-ADD / MUL | precedência | Mul antes de Add em `x+y*2` |
+| D2-JS-VM-ADD | VM | stack `50` para programa demo |
+
+Aceite: `chris-js tests passed` e CLI imprime `50`. Depure em ordem lexer → parser → VM; cada camada reduz o conjunto de falhas possíveis.

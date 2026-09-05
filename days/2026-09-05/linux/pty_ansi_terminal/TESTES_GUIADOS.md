@@ -1,6 +1,16 @@
-# Testes guiados — Linux terminal: ANSI parser como preparação para PTY/TTY
+# Testes guiados
 
-`TERM-ANSI-SGR-01`: `A ESC[31m B ESC[0m` preserva texto `AB` e termina com fg padrão. `TERM-CURSOR-02`: `ESC[3;5H` produz cursor `(2,4)` e defaults são testados. Execute `python starter/test_ansi.py`; solution imprime `OK ansi`.
+### Caso 1: `python starter/test_ansi.py` — importa `AnsiParser` (não `Terminal`).
+### Caso 2: **SGR:** `\x1b[31m` define vermelho; `\x1b[0m` restaura fg=7.
+### Caso 3: **Cursor:** `\x1b[10;20H` → row=9, col=19 (0-based).
+### Caso 4: **Home:** `\x1b[H` → (0,0).
+### Caso 5: **CSI incompleto:** `\x1b[` sem final → ValueError.
+### Caso 6: Valide solutions/ com os mesmos testes.
 
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.
+## TERM-CURSOR-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: TERM-CURSOR-02`.
+
+## TERM-ANSI-SGR-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: TERM-ANSI-SGR-01`.

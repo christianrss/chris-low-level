@@ -84,3 +84,11 @@ Se `beta` virar `be` e `ta`, você emitiu por chunk, não por delimitador. Se me
 
 ## Solução final comentada
 Depois dos quatro testes verdes, compare apenas o bloco `PEDAGOGY-SOLUTION: D2-NODE-FRAME-LINES` em `solutions/src/line-framer.ts`. Não há implementação escondida de `_flush` ou do demo para você copiar.
+
+## Relatório de resolução
+
+| ID | Arquivo | Aceite |
+|----|---------|--------|
+| D2-NODE-FRAME-LINES | `line-framer.ts` | 4 testes: chunks cruzados, limite, vazia, UTF-8 partido |
+
+Critério: `node --experimental-strip-types --test starter/tests/*.test.ts` com 0 falhas. Demo `completed writes=3` confirma backpressure observável — não é TODO de implementação. Se `beta` fragmentar, framing por chunk ainda está ativo.

@@ -13,3 +13,15 @@
 ## TODOs auditáveis
 - `JSVM-JZ-01`
 - `JSVM-JMP-02`
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-js/day03_branches` |
+| O que levar | branching bytecode VM |
+| Testes a replicar | vm branch tests |
+| Milestone | JS branch VM milestone |
+| Commit sugerido | `feat(js): port branch VM from day05 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

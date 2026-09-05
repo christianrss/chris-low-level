@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST [P2P-GOSSIP-01]: triângulo 3 entregas; linha TTL=1 só A e B
 from pathlib import Path
 import sys
 ROOT = Path(__file__).resolve().parents[1]

@@ -15,3 +15,13 @@
 5. Que invariantes impedem reutilizar um descriptor cedo demais?
 
 O simulador não faz DMA real; use specs para entender o modelo, não para fingir acesso a hardware.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(states LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(states resource_state.cpp test_states.cpp)
+enable_testing()
+add_test(NAME states_test COMMAND states)

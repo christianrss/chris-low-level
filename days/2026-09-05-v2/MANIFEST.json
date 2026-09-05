@@ -1,0 +1,951 @@
+{
+  "package": "Laboratorio_LowLevel_Unificado_2026-09-05",
+  "date": "2026-09-05",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 1577,
+      "sha256": "2b983a0801be6aee607fae6c01b2c2656aad96571b18dbb96372eb69d93be03d"
+    },
+    {
+      "path": "START_HERE.md",
+      "size": 481,
+      "sha256": "bb1571797922e06d57226e16158818885b8fc89aaa90c83279d6bb2bf1eb4969"
+    },
+    {
+      "path": "TODO_MAP_DAY03.md",
+      "size": 1421,
+      "sha256": "077f3c43f70de31eb1f037354042f2f01981aace41f94d18b6601455fddd8b69"
+    },
+    {
+      "path": "Treino_LowLevel_Unificado_2026-09-05.docx",
+      "size": 53785,
+      "sha256": "a2fc446c619c15730cf7ad9248953ca68924417085bf8594e91883ebfff010cf"
+    },
+    {
+      "path": "VALIDATION_DAY03.md",
+      "size": 1450,
+      "sha256": "b36ea6102cc27b00e3a8ca929f1313b6d980351f36cf5733d06a8dfe10acbc11"
+    },
+    {
+      "path": "benchmarks/results-2026-09-05.json",
+      "size": 923,
+      "sha256": "6152744db7b2d72f6950c1908ae6b20704a624f3333bed73ecd1ca10803a7340"
+    },
+    {
+      "path": "benchmarks/results-2026-09-05.md",
+      "size": 310,
+      "sha256": "b2a08da7270be59248ebc5c9c21a73a381edcd3e4ce7cf704bf942edd3732b7d"
+    },
+    {
+      "path": "benchmarks/run_benchmarks.py",
+      "size": 2795,
+      "sha256": "ec5bf67007fedbb9e63680ba1cf80c8c1bb5a74f9f6d25e4c1fdbec454ada834"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/BENCHMARK_GUIADO.md",
+      "size": 364,
+      "sha256": "6af0ce6436606fa7e0efa25d7bc35a76b937a254fac3278360a956b7538befa4"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/EXERCICIOS.md",
+      "size": 582,
+      "sha256": "5b02c33b7f9ef4e573e0b5944ea80d873e738e3b8bfcb64cac7f080b151941bd"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/GABARITO.md",
+      "size": 323,
+      "sha256": "92027ce7fa4746038007d75b259e9c40eeecaf6e72bbd443d4e3e324eda1de69"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/PESQUISA_GUIADA.md",
+      "size": 443,
+      "sha256": "b5d504f110b936f1864926cfa32e752fd2be9838ca1539676fbb203a74c96b62"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/README.md",
+      "size": 526,
+      "sha256": "9b314956e935ae3bd05d9775713d558eff1a96ee8672ee73a1540eb0d506ebcf"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 1924,
+      "sha256": "1b8fe1dd78592665baea849dbcbcd68ee203c165b95260a54ffe4b171379a007"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/TEORIA_PASSO_A_PASSO.md",
+      "size": 1901,
+      "sha256": "804275173a49e9dcfc47309d470cab95f0d43bad9aab55549e1525ae14ba6787"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/TESTES_GUIADOS.md",
+      "size": 447,
+      "sha256": "dc9682586b72de00c238570250155e3ddc3cf8d87dd008ac4055983c4bb2b42f"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/solutions/README.md",
+      "size": 216,
+      "sha256": "e580ac0ca448b861330a46a75276a1dcb7b67841ed9681802e1b6f28a31cd91b"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/solutions/build_rootfs.sh",
+      "size": 172,
+      "sha256": "2c3c90d8593a8e0a68f3e84c76e8935fc52aaaac86f922309608be30d411ae10"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/solutions/chris_pkg.py",
+      "size": 1477,
+      "sha256": "b6808402880ca1844ad1c3fa8e70c9908da714b5f55ac5cc20f056794fbd0600"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/solutions/test_pkg.py",
+      "size": 1035,
+      "sha256": "f540eabdd1f03c506ecb538fa091cb58963f60d0a365f31c0af60ecdac0b0f5f"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/solutions/test_rootfs.sh",
+      "size": 293,
+      "sha256": "e1f6808df40c48c086a8b20b77c4372d57a412eb82407ec4219097c92464b721"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/starter/README.md",
+      "size": 217,
+      "sha256": "4caa5be0afd6314b91b4bfe763f82ad51d328afc92aef69b9ebbf23ab3a4f1ce"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/starter/build_rootfs.sh",
+      "size": 145,
+      "sha256": "8cecbddc843b21bdcb12c0940559e6dd98540c810493c64290d587a6d72ed356"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/starter/chris_pkg.py",
+      "size": 317,
+      "sha256": "f086b74fd080165a599f0d6d74533de0a110d5cc5d631628987355590fd0e821"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/starter/test_pkg.py",
+      "size": 1035,
+      "sha256": "f540eabdd1f03c506ecb538fa091cb58963f60d0a365f31c0af60ecdac0b0f5f"
+    },
+    {
+      "path": "modules/01_linux_distro_pkg_rootfs/starter/test_rootfs.sh",
+      "size": 293,
+      "sha256": "e1f6808df40c48c086a8b20b77c4372d57a412eb82407ec4219097c92464b721"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/BENCHMARK_GUIADO.md",
+      "size": 264,
+      "sha256": "55410e19b0d882eb9ecdf2faf5d9e45b30aea806a9f6a1fc117071d249179aa2"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/EXERCICIOS.md",
+      "size": 436,
+      "sha256": "6d8bd2ad5c17a44814634b7d66eccec3373a131d79e28dfd1e52926069958b6b"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/GABARITO.md",
+      "size": 319,
+      "sha256": "3ca59933a4c6c0ec498676258784f3f904a18bc4669ea034d31306dd6795be20"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/PESQUISA_GUIADA.md",
+      "size": 350,
+      "sha256": "6ab1473f329122303c84fe1db963a2e55d85887d229fcf07b79ba379f7409322"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/README.md",
+      "size": 530,
+      "sha256": "0ca20fbf01419d4064e1340461fb209acefd7b68939693196267194fff6b2212"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 1308,
+      "sha256": "5b340def8d942713f6a5f2bffe660071c276aab85efa5dd407cfebe9ff93fce9"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/TEORIA_PASSO_A_PASSO.md",
+      "size": 1386,
+      "sha256": "2b22178d2e17bef16222a3cc248ee51567e2249b4a4c0f702768732832b8f51f"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/TESTES_GUIADOS.md",
+      "size": 341,
+      "sha256": "c84a0f0ac22211063cec6968657f1a09651cdf5f7623bbe53613d9e7381646f1"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/ANSWERS.md",
+      "size": 311,
+      "sha256": "dca0b2bed2b2ccae7a81141be3aec48234c23200819b71b4591dd91065463691"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/CMakeLists.txt",
+      "size": 231,
+      "sha256": "16e12e11e0a2e18ccdef354e4d02ece75687b1e6b92788bd309fd900ce5e8c3a"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/README.md",
+      "size": 220,
+      "sha256": "c266b3c96ddc86d13dbf57a3734b1f368c8105ea369a3b71a0c9d6ec5c00cc66"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/chris_char.c",
+      "size": 719,
+      "sha256": "b98de1f03c8f35e740eaa1174090bd1de929d2723c7f11b4f303a45dd4a7891c"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/device_model.c",
+      "size": 555,
+      "sha256": "a38e0b0ed8929dded2928c7a180a7e3a94aaaafd2967c969f5675fc479616879"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/device_model.h",
+      "size": 272,
+      "sha256": "ecca680f342f5ea778ef4c50c171364151194ffa596f77c5b1f587a3be5e5858"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/solutions/test_device_model.c",
+      "size": 438,
+      "sha256": "6bffac194b5dd1a755b034d5e38849ad528f7c06c16ed2926b1580c37cdd63c9"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/ANSWERS_TEMPLATE.md",
+      "size": 166,
+      "sha256": "ae637aadb47feb6468c19082303107ba48ff4a240cec4fdae512e23ec50a1672"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/CMakeLists.txt",
+      "size": 231,
+      "sha256": "16e12e11e0a2e18ccdef354e4d02ece75687b1e6b92788bd309fd900ce5e8c3a"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/README.md",
+      "size": 225,
+      "sha256": "7e52a243d0c1300b2df02696218f469cdaa598c0c638bc2877aa26ce3812ae7b"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/chris_char.c",
+      "size": 754,
+      "sha256": "0e57ea3cd13c1ded60584fc98fe3fb36c0b5f8bbe75ba39d687cae16938dac51"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/device_model.c",
+      "size": 364,
+      "sha256": "473e38c7a9b69ef40065eb0214fce6e0b9eca3ea700782ab3374e57abb2e5e66"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/device_model.h",
+      "size": 272,
+      "sha256": "ecca680f342f5ea778ef4c50c171364151194ffa596f77c5b1f587a3be5e5858"
+    },
+    {
+      "path": "modules/02_linux_kernel_driver_lifecycle/starter/test_device_model.c",
+      "size": 438,
+      "sha256": "6bffac194b5dd1a755b034d5e38849ad528f7c06c16ed2926b1580c37cdd63c9"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/BENCHMARK_GUIADO.md",
+      "size": 300,
+      "sha256": "61a387d8ab0f66437655b1338df70bb96ffccc6d3a8fc3e781373343d3836a62"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/EXERCICIOS.md",
+      "size": 341,
+      "sha256": "90bae1207b598ff3f43b175b1d64eac7e0684d43ff6c43d996622de752aba7ab"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/GABARITO.md",
+      "size": 295,
+      "sha256": "75b0fcbef3bfd1c027ca04ccc1cfdfa0625252dcd4869389516f70691c02d3f2"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/PESQUISA_GUIADA.md",
+      "size": 321,
+      "sha256": "24e51bbeb41f9e6c445e12b77a450db4ef3bbd99e3e9c1ec77072a739c9490d4"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/README.md",
+      "size": 476,
+      "sha256": "a5711eaab46392a28d3de7aafa39929eee44304f8968f164418548f52b387726"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 975,
+      "sha256": "2e0447ad75c11d44a8ea537402625a9fb2d6ba58f60d05fed6e6e5809460b35e"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/TEORIA_PASSO_A_PASSO.md",
+      "size": 1075,
+      "sha256": "0abb18965b2f6750930f367a1593911bf897f002343f345f034d1a19367e670d"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/TESTES_GUIADOS.md",
+      "size": 246,
+      "sha256": "e2500b84ecc2d5a1767d13c50e4347e52790a0be0aed8f7b6ca43b7492fac9be"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/solutions/CMakeLists.txt",
+      "size": 251,
+      "sha256": "68e8cb668e605a7192bc3490338d6ab338e39021af32a7baeca9f0d54f28ede4"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/solutions/README.md",
+      "size": 166,
+      "sha256": "456d542286662c1729bee8e76f603b468a45cd746ac6bb468b45fed04b55822b"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/solutions/page_allocator.cpp",
+      "size": 688,
+      "sha256": "2597a226bb1f6356eb1e28bc28a07c0f2d1f0c88815cf7d1082901f8ca8a3040"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/solutions/page_allocator.hpp",
+      "size": 297,
+      "sha256": "84cb55d877fa31c7c9a87dea4a6f6a506d94c1c972d08bf6a54de71793dc155d"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/solutions/test_page_allocator.cpp",
+      "size": 361,
+      "sha256": "83f03374697db24f64ff1a37f33d3940d6a21584422fec5cdd84d15ddf3f2e0e"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/starter/CMakeLists.txt",
+      "size": 251,
+      "sha256": "68e8cb668e605a7192bc3490338d6ab338e39021af32a7baeca9f0d54f28ede4"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/starter/README.md",
+      "size": 195,
+      "sha256": "6a1416eb573a06ea9ebe6db7039399bea11412518237e211a07ece976f47c8d0"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/starter/page_allocator.cpp",
+      "size": 538,
+      "sha256": "7565f7939d5c7549b29e088de7d4062069da977e7e1bdb6c91ae71220f30c471"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/starter/page_allocator.hpp",
+      "size": 297,
+      "sha256": "84cb55d877fa31c7c9a87dea4a6f6a506d94c1c972d08bf6a54de71793dc155d"
+    },
+    {
+      "path": "modules/03_systems_bitmap_page_allocator/starter/test_page_allocator.cpp",
+      "size": 361,
+      "sha256": "83f03374697db24f64ff1a37f33d3940d6a21584422fec5cdd84d15ddf3f2e0e"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/BENCHMARK_GUIADO.md",
+      "size": 322,
+      "sha256": "40ede783a111503253b18b37cd921aa773e50d4d2a4bb8d65813b2482a8e5fe0"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/EXERCICIOS.md",
+      "size": 350,
+      "sha256": "37dd0b90fe8c5bafc070d748d5ceba1ccabe78834346b614c8a87a5eb49922ec"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/GABARITO.md",
+      "size": 290,
+      "sha256": "61fc506a57694a9a0999944d3ea0759ef5d252d9359c1340a34017c5c445586c"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/PESQUISA_GUIADA.md",
+      "size": 303,
+      "sha256": "770b551c3f68f45bbbf5216301068228b2f90147dd2da3ff268915441d421020"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/README.md",
+      "size": 492,
+      "sha256": "0cac7fd43ded433ded7abdd9819183cb457304735229e8fd4ec03a7966f0d98a"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 1004,
+      "sha256": "0189803668cfe530c3749f8df648a322ea7f6d61cf635dd979b5b43178156917"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/TEORIA_PASSO_A_PASSO.md",
+      "size": 1049,
+      "sha256": "aee8db620e3305e1b3cb032dd2877e1c2690c8f2b9b3eb7f247001360cc0db1a"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/TESTES_GUIADOS.md",
+      "size": 240,
+      "sha256": "5f7dd692a609f8f2ff21ea369d9f5967387b719fb75db5b29145a327c8c694c3"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/solutions/CMakeLists.txt",
+      "size": 281,
+      "sha256": "2be6eece8a75447695e44815682792277b9eb9563f1addcdd9b0fd6d66a9be94"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/solutions/README.md",
+      "size": 182,
+      "sha256": "33c2a7f56049229744461c10c8451797599cc4a5dc0b10ba65a3cdd299764a55"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/solutions/bench_matmul.cpp",
+      "size": 517,
+      "sha256": "20be2f545070501028e464407b0e6bba8c7a7da27fcf4ae03c7d4c5997a3c335"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/solutions/matmul.cpp",
+      "size": 1149,
+      "sha256": "34947b61aa343c17f65c2edd5cb43ef1e7159280bded0687b9fdc98fe1999ce9"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/solutions/matmul.hpp",
+      "size": 306,
+      "sha256": "b2a52c94306c38f742c230fffcd13b088d9573ec2f7ae9e850693bc64a88966f"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/solutions/test_matmul.cpp",
+      "size": 383,
+      "sha256": "3c7115c869139de78a399d1423dfee5e1579513e7160425e7d05467796a46906"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/starter/CMakeLists.txt",
+      "size": 223,
+      "sha256": "527010f14399b8813cafc2e3b14c35336c0cfdc941ba8083a687c548012dc961"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/starter/README.md",
+      "size": 216,
+      "sha256": "71bdc7d8fe5fe2ef543e95a8b86a512d7f57a9259caf0555bf0b0aa4ad8f34cc"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/starter/matmul.cpp",
+      "size": 438,
+      "sha256": "b94e6d5060ba56ce9eb2cdcea428fcb172dca3b9c83d9279e9592651a1e7b4b6"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/starter/matmul.hpp",
+      "size": 306,
+      "sha256": "b2a52c94306c38f742c230fffcd13b088d9573ec2f7ae9e850693bc64a88966f"
+    },
+    {
+      "path": "modules/04_ai_tiled_matmul/starter/test_matmul.cpp",
+      "size": 383,
+      "sha256": "3c7115c869139de78a399d1423dfee5e1579513e7160425e7d05467796a46906"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/BENCHMARK_GUIADO.md",
+      "size": 228,
+      "sha256": "cda36e472a8a532c85efeafee0b80dc0334b3d37bfb057b11bb7a950497bc3e1"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/EXERCICIOS.md",
+      "size": 341,
+      "sha256": "49cb80531ddef82565a8f5dba421a9cd02ca2006e86cdcf967554708c1237daa"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/GABARITO.md",
+      "size": 290,
+      "sha256": "07ea1e8c3f35e1b475c4bf996fabdd92f4c16db7e5f0bd563ff2afda8f8a2684"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/PESQUISA_GUIADA.md",
+      "size": 302,
+      "sha256": "0c567cb4714dfee5084163fa81f521a47e99204daa7b4b344962d461002d6dd0"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/README.md",
+      "size": 485,
+      "sha256": "aaf68a3a490d6b93158b035dd134401ead00237571532d8ec00029293d5ae15d"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 805,
+      "sha256": "bf59c6990968825c9011c954b85e8912581b548e4136bca7a3fa47019e680ee6"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/TEORIA_PASSO_A_PASSO.md",
+      "size": 1005,
+      "sha256": "3f83f62f03dde9cb83194204b94488154273d6787161ca67190a97af3634e7ba"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/TESTES_GUIADOS.md",
+      "size": 227,
+      "sha256": "0d32aca1b97e8022d3745ae8d4d1d0ef00fea31fd3aaaee7e3a4a7adbe163c29"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/solutions/README.md",
+      "size": 175,
+      "sha256": "7217db8ba1053f0e03f23e81fee3526df2f5acecbb73bf1b055b80c4160c88dc"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/solutions/elf_entry.py",
+      "size": 634,
+      "sha256": "d433fff7d4fd3900004612980c537d709df83524d4c31cdc706c25f3691efc23"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/solutions/test_elf_entry.py",
+      "size": 502,
+      "sha256": "ba87fe82ba7ba03692f5a5466e4cd0437121887d98a3123af926b94b21a95944"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/starter/README.md",
+      "size": 209,
+      "sha256": "0058bdbf4daa0b3bec1d660d203d17e171a5ea53e0f220f913f94434572043bf"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/starter/elf_entry.py",
+      "size": 285,
+      "sha256": "e17f9e75b9e6eec9671141f1b262018a59003b69d8e81dd372d527924df3eec8"
+    },
+    {
+      "path": "modules/05_redteam_elf_entry_inspector/starter/test_elf_entry.py",
+      "size": 502,
+      "sha256": "ba87fe82ba7ba03692f5a5466e4cd0437121887d98a3123af926b94b21a95944"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/BENCHMARK_GUIADO.md",
+      "size": 230,
+      "sha256": "f78416df1e6a5c9ffaabdd3d289ceb4d76c22557d91082a868484a66b17da99e"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/EXERCICIOS.md",
+      "size": 431,
+      "sha256": "8b0de01773167ce93774ab97c32b806ba05edcd1480ee922fb40bf6fe3087715"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/GABARITO.md",
+      "size": 295,
+      "sha256": "c216877c8d528d823a97cc7467135617907dc5ac734a67148411923727d486c6"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/PESQUISA_GUIADA.md",
+      "size": 251,
+      "sha256": "079205a2fe747c252a34eececa7cc131343febc946f5a97185dcedd1c622530a"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/README.md",
+      "size": 472,
+      "sha256": "6284db827cf2f5f61209fe74290319740193a918f3c8a5df199ee70709de2779"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 948,
+      "sha256": "2de9a813d72eab68e8bd5ade8b6cf11e324ad77a88d79b5eaa868a7c75d5b6b7"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/TEORIA_PASSO_A_PASSO.md",
+      "size": 1018,
+      "sha256": "3708703e9b0de3a2dcb956d6e2e9d5ce50083dc78dcc9f2b3e0cac69a7029cd9"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/TESTES_GUIADOS.md",
+      "size": 294,
+      "sha256": "e4a31ce6a6bdc9fb13b0726d77185ed44540a54da19cebf19a7d9685678834fe"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/solutions/Chris.IlLab.csproj",
+      "size": 209,
+      "sha256": "f66a348a829a5caa4424bc6af070c4660d6d5a94c4be6597760ba3dca05509b9"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/solutions/Program.cs",
+      "size": 914,
+      "sha256": "f5213bb79a7e05865acb9e238223fa1a1a3665d20d46beaa53f5137924d3921e"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/solutions/README.md",
+      "size": 162,
+      "sha256": "44771681b1cd469699671e77d1f730f209879297ab9748caeee758c74395fd05"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/starter/Chris.IlLab.csproj",
+      "size": 209,
+      "sha256": "f66a348a829a5caa4424bc6af070c4660d6d5a94c4be6597760ba3dca05509b9"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/starter/Program.cs",
+      "size": 420,
+      "sha256": "a2fc14a793dfd500823f6872afa3ec17fbf4eabc1bbbd9dc1e5f7c80931603bc"
+    },
+    {
+      "path": "modules/06_dotnet_cil_decoder/starter/README.md",
+      "size": 191,
+      "sha256": "c0e0464ba6b8130dd104b72446d106fe4f8ba052232fb98f520fe410f4d04292"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/BENCHMARK_GUIADO.md",
+      "size": 247,
+      "sha256": "99f184caa6d578509c12391e104c0475cc6f243bef02608d2445d053a7b03b3b"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/EXERCICIOS.md",
+      "size": 401,
+      "sha256": "60807aa084dceddbdeeef060f5eccfa2546305c33dead707acd2bd4bdc31782a"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/GABARITO.md",
+      "size": 295,
+      "sha256": "b8e4d1223f6d1e3bea13b715f7abbe83cbf688baa8f4b8b1dcebd62c131da337"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/PESQUISA_GUIADA.md",
+      "size": 227,
+      "sha256": "9f50c8a92abad4c87f074584e0b181315fee07cdfe0b3afe63090fd94c618e6c"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/README.md",
+      "size": 486,
+      "sha256": "029b11e40503bfd3e1b603a373135cf31d6e0b07a11a6adc10910fff5aee2cf9"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 1009,
+      "sha256": "5eff2a9d1c7065386df9d1e90dd5fb12c689f65a04fc67294eeacc8f1e0492a8"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/TEORIA_PASSO_A_PASSO.md",
+      "size": 1257,
+      "sha256": "ca8867cf938d7ff86f600e81bd39ed4bd9950e1cc3248f7b7146ac8fdb717459"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/TESTES_GUIADOS.md",
+      "size": 293,
+      "sha256": "bb55d5c6404d60a5304e2b44402f4fc19bcb29d4e7c4bcadf5632aca9f58ab50"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/solutions/README.md",
+      "size": 176,
+      "sha256": "dfabee5995df0d891d1f4a43f8f58bd0a5cb731541745aefef6b080c32ca028c"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/solutions/backpressure_demo.js",
+      "size": 571,
+      "sha256": "dd4fca4bab62ce95e9c162cfae48f321ecddf9518e1b2df9cc65709db58ba61f"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/solutions/line_transform.js",
+      "size": 537,
+      "sha256": "e17ddab06159cb6a7f85904ff9081c80174e439352902a80318bf9741664e148"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/solutions/package.json",
+      "size": 51,
+      "sha256": "e853bce26f69b59f9c07dcd1c14a508ffaa45bf3fb78f9fc8e771a3088680021"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/solutions/test.js",
+      "size": 879,
+      "sha256": "f3c187eb98a304ce344495c1cdc85abbfa4d58f80686c8ebf38843031dd6b6a0"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/starter/README.md",
+      "size": 205,
+      "sha256": "c148fd432500ddb2c62e465bc13982d7001496324669894386ec8cf78a1341ad"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/starter/backpressure_demo.js",
+      "size": 491,
+      "sha256": "0601fa6717e6ca0f6417d0a3492aeec601b380f601946b6e8d9169aa5eacdfc1"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/starter/line_transform.js",
+      "size": 307,
+      "sha256": "5e2e82376dac12e81cd5b8cae5b2364a8e5bc5109917f6352ac417dd32c0d19d"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/starter/package.json",
+      "size": 51,
+      "sha256": "e853bce26f69b59f9c07dcd1c14a508ffaa45bf3fb78f9fc8e771a3088680021"
+    },
+    {
+      "path": "modules/07_node_transform_backpressure/starter/test.js",
+      "size": 879,
+      "sha256": "f3c187eb98a304ce344495c1cdc85abbfa4d58f80686c8ebf38843031dd6b6a0"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/BENCHMARK_GUIADO.md",
+      "size": 221,
+      "sha256": "55989e9352aad43542b2d1dbe5a08d8e9cd31d11a2d92465e3117c58b9fed145"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/EXERCICIOS.md",
+      "size": 273,
+      "sha256": "82ba2f4ec9ec32eb6e40e5300f5a44e09cced7458098fcc1e94098bcf808ae21"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/GABARITO.md",
+      "size": 283,
+      "sha256": "3614a8d2b410e534967f3ca2f758f588ecafce8f5a04b843b1a40e506251db79"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/PESQUISA_GUIADA.md",
+      "size": 240,
+      "sha256": "e5ce6976013864b932620e1412a8fa3582a60231e6ca8a270090c8d81cda3b8f"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/README.md",
+      "size": 475,
+      "sha256": "ae226671d2a41fcf083353fb5f180ecdc26b4ce42194ffd76941717cc4ea50b2"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 620,
+      "sha256": "1424160690b4098b725933036897e0aa706f0ee51ef8292d3a087a3602534e2d"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/TEORIA_PASSO_A_PASSO.md",
+      "size": 899,
+      "sha256": "6ade25014649a649ec9daa40383eb230f6658cd802ffc1c6b94a983da631426b"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/TESTES_GUIADOS.md",
+      "size": 272,
+      "sha256": "1c12683719d9a7cbb37d97fbc625d69c7eafb130bd909c48e22107535fb73b78"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/solutions/README.md",
+      "size": 165,
+      "sha256": "e89a160f2fbe86f323f8fc1dc3a6a9472a10d5d5e9cf0c9fa87e5b8e1a94eb65"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/solutions/package.json",
+      "size": 51,
+      "sha256": "e853bce26f69b59f9c07dcd1c14a508ffaa45bf3fb78f9fc8e771a3088680021"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/solutions/test.js",
+      "size": 337,
+      "sha256": "61f041479cb2221b369caee685128ea71eef672a6f0a893c4011fb054bcab555"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/solutions/vm.js",
+      "size": 646,
+      "sha256": "c49f509187c012ed8214d5433eb17eec66dfa93e7b599a9514e9296d7d4f0269"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/starter/README.md",
+      "size": 206,
+      "sha256": "caebd66d36e09f571b076bd4816ebe72ddfd83ed3d4e801a90bb686624d2b4b2"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/starter/package.json",
+      "size": 51,
+      "sha256": "e853bce26f69b59f9c07dcd1c14a508ffaa45bf3fb78f9fc8e771a3088680021"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/starter/test.js",
+      "size": 337,
+      "sha256": "61f041479cb2221b369caee685128ea71eef672a6f0a893c4011fb054bcab555"
+    },
+    {
+      "path": "modules/08_javascript_bytecode_vm/starter/vm.js",
+      "size": 413,
+      "sha256": "de85bc6dc60586e8310c3d0a494f2c4bb29070ab17d535304a0d612de96b2c86"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/BENCHMARK_GUIADO.md",
+      "size": 266,
+      "sha256": "e0e044c324aaf8f5a0fcf28e8a43e1c062a7d6f6dfaa1b03a98935af6a58c51e"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/EXERCICIOS.md",
+      "size": 384,
+      "sha256": "4de9ed849cafbc3375c6cc2d98fdf37beb945dab27c48c85c575a54dbdcf296a"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/GABARITO.md",
+      "size": 316,
+      "sha256": "efe5400704cc9e687f8631b511b832a9a4e6065219872fcd82e0e9f9b5b3e0d9"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/PESQUISA_GUIADA.md",
+      "size": 261,
+      "sha256": "79be985263823c85dcc26c51c5d8a0cbba2763e77fab2517e9de6627063c9a2a"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/README.md",
+      "size": 521,
+      "sha256": "b81ebc0919c71b725d31c666878e64c0c17205df0e496b0f9797dc4d0cf04211"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 1224,
+      "sha256": "7e85c452d45e8ac4da34d416c5bf24f6439dcfd209b86992ef5b42c79c32f9a7"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/TEORIA_PASSO_A_PASSO.md",
+      "size": 1425,
+      "sha256": "d162047dc6eacda588c90fbf74edea289da831b09c0b50e9d173fb6fab089903"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/TESTES_GUIADOS.md",
+      "size": 256,
+      "sha256": "ed043b6b6c2b27228131ba1643608a5b9a3a6900cc5d43330ae5b38b23d4d284"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/CMakeLists.txt",
+      "size": 211,
+      "sha256": "31f78a367fc59ea08c2057bcdd95f8760028f275dfb7c046a114008184951351"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/README.md",
+      "size": 211,
+      "sha256": "293ea58528cdf60ffc6e72201ab090a83b43dd8fe75cea43514240e66e364011"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/resource_state.cpp",
+      "size": 1093,
+      "sha256": "3805ac4f40b0124498d2c41f2ba56f92a309f8d3598fda4b729c48279bf91853"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/resource_state.hpp",
+      "size": 270,
+      "sha256": "c9e5caa72ef7e6c7b4582a1c77b329658f37d5c96830e5aef65311baae92fcb4"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/shaders/debug_uv.frag.glsl",
+      "size": 120,
+      "sha256": "22b6a77a238c92a8e590d22eeb55e5bd2e2fb5880457c0fa8ad533833cbbaf9a"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/shaders/debug_uv.hlsl",
+      "size": 113,
+      "sha256": "dae64618d2c0d3ff85e42e83f8de1c3695f4dffe117ff347c4c72f3855ac76c1"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/shaders/debug_uv.vert.glsl",
+      "size": 159,
+      "sha256": "6553f4dd5232d664492449e32177214662b687c12f0c7fff76ac7c587fa9ae66"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/solutions/test_states.cpp",
+      "size": 549,
+      "sha256": "d83a967fc281b278b61c1e24a77132c6564db9da54ed0a5c932d04d74b5a8365"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/CMakeLists.txt",
+      "size": 211,
+      "sha256": "31f78a367fc59ea08c2057bcdd95f8760028f275dfb7c046a114008184951351"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/README.md",
+      "size": 219,
+      "sha256": "86d26c17d30a28441e7915e228368f9afb3921152793b6b6a45f418ec12e70df"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/resource_state.cpp",
+      "size": 198,
+      "sha256": "2449b365afb4e9a21c0f7ab77da2990cc54a6c3ae0d914a7757eee4e2f73f10e"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/resource_state.hpp",
+      "size": 270,
+      "sha256": "c9e5caa72ef7e6c7b4582a1c77b329658f37d5c96830e5aef65311baae92fcb4"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/shaders/debug_uv.frag.glsl",
+      "size": 120,
+      "sha256": "22b6a77a238c92a8e590d22eeb55e5bd2e2fb5880457c0fa8ad533833cbbaf9a"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/shaders/debug_uv.hlsl",
+      "size": 113,
+      "sha256": "dae64618d2c0d3ff85e42e83f8de1c3695f4dffe117ff347c4c72f3855ac76c1"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/shaders/debug_uv.vert.glsl",
+      "size": 159,
+      "sha256": "6553f4dd5232d664492449e32177214662b687c12f0c7fff76ac7c587fa9ae66"
+    },
+    {
+      "path": "modules/09_graphics_resource_states/starter/test_states.cpp",
+      "size": 549,
+      "sha256": "d83a967fc281b278b61c1e24a77132c6564db9da54ed0a5c932d04d74b5a8365"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/BENCHMARK_GUIADO.md",
+      "size": 199,
+      "sha256": "ea116a0c6a6e68400b059c52e75490668734ebfcdba19b0220f3ee56149154cb"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/EXERCICIOS.md",
+      "size": 356,
+      "sha256": "58cbe7440967115d02e8e4397808370910d620c519290270ca5efddcd28b8085"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/GABARITO.md",
+      "size": 292,
+      "sha256": "c64e89b81590f376e3576a4dcebac93bd6ba25aebf0f39c6aff95bbf0d1408c0"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/PESQUISA_GUIADA.md",
+      "size": 223,
+      "sha256": "9a600306cd024af00df777504f76e3c728cc8b4679cf77744898b2b5e3c4740c"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/README.md",
+      "size": 493,
+      "sha256": "2729910d695de56900d6273e9f66d8309e30fd40b2f053af44b2975b11fd46da"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 861,
+      "sha256": "e8a997cef24f3042fd31927bd5e2a914c2b17c196ef71621263ccb18d62ac452"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/TEORIA_PASSO_A_PASSO.md",
+      "size": 1012,
+      "sha256": "69989c98f586de1d9c6692eb47dbd26baede004589b08943931317063e9aed28"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/TESTES_GUIADOS.md",
+      "size": 218,
+      "sha256": "897050a6045f130359b82060506f3957e3ba409b9c7f90cc1a3e384163de069a"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/solutions/README.md",
+      "size": 183,
+      "sha256": "8fc2f4a9ce3ac5d6defb7e9c60c475d4a0b4c0b0209247138f34140e6bc4c196"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/solutions/ansi.py",
+      "size": 923,
+      "sha256": "6b88561b9c4964611e0f90d3e2bc07a350d6baa608117f19792b012b56a375a1"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/solutions/test_ansi.py",
+      "size": 296,
+      "sha256": "69974252af17e278157fbb68d84c7c97497dece97417988f8abea087b3b7f029"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/starter/README.md",
+      "size": 215,
+      "sha256": "d195c2a6a7f106d6db6c17d4d7ebc4301889701a773ad6d055e9360187c7a227"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/starter/ansi.py",
+      "size": 565,
+      "sha256": "8faf48dd2006b4508c9e145a5bf7e0060e9733530cccaf71a768a3aafac350c2"
+    },
+    {
+      "path": "modules/10_linux_terminal_ansi/starter/test_ansi.py",
+      "size": 296,
+      "sha256": "69974252af17e278157fbb68d84c7c97497dece97417988f8abea087b3b7f029"
+    },
+    {
+      "path": "run_all_solution_tests.py",
+      "size": 2036,
+      "sha256": "52a8e341773976547853d47c27f3c27dd3e29e2a0f0c0983e3a287ec46c9f7bc"
+    },
+    {
+      "path": "run_all_starter_checks.py",
+      "size": 2130,
+      "sha256": "4c9c5307714ee7f076020daf05aba30253d3a8d1ccf8752c8cdfb2a834f0aaed"
+    },
+    {
+      "path": "scripts/pedagogy_check.py",
+      "size": 1864,
+      "sha256": "94b8aa8d2c07cc4cfb3d914583f131f0ce7185893d00a23b481f57a19347c1ab"
+    },
+    {
+      "path": "scripts/quality_check.py",
+      "size": 972,
+      "sha256": "3383eca4cbd80c4b47ea2f8426c09cfee7e015b6b1f328595f90f26c796b1b30"
+    }
+  ]
+}

@@ -11,3 +11,15 @@ Você vai representar uma matriz como armazenamento contíguo + shape + strides,
 3. Implemente antes de consultar `solutions/`.
 4. Rode os testes guiados.
 5. Execute o benchmark e registre ambiente/resultados.
+
+## Portar para projects/
+
+| Item | Detalhe |
+|------|---------|
+| Projeto | `projects/chris-tensor` |
+| O que levar | strided tensor views + matmul |
+| Testes a replicar | tensor shape tests |
+| Milestone | MILESTONES.md — tensor core |
+| Commit sugerido | `feat(tensor): port strides from day02 lab` |
+
+Após portar, marque no **Relatório de resolução**: *Portei para projects/? Sim/Não — evidência: comando de teste que passou*.

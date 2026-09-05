@@ -1,6 +1,19 @@
-# Testes guiados — Graphics black magic: resource states em Vulkan e D3D12
+# Testes guiados
 
-`GFX-STATE-TRANSITION-01`: sequência válida e transição inválida. `GFX-VK-MAP-02`: strings de layout para quatro estados. `GFX-D3D12-MAP-03`: strings de resource state para quatro estados. O teste é portátil e não faz claims de execução Vulkan/D3D12 real.
+### Caso 1: `test_states` valida pipeline CopyDst → ShaderRead → RenderTarget → Present.
+### Caso 2: **Transição inválida:** CopyDst → Present retorna false.
+### Caso 3: **Vulkan:** Present → `VK_IMAGE_LAYOUT_PRESENT_SRC_KHR`.
+### Caso 4: **D3D12:** RenderTarget → `D3D12_RESOURCE_STATE_RENDER_TARGET`.
+### Caso 5: Consulte diagrama de máquina de estados em TEORIA_PASSO_A_PASSO.md.
 
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.
+## GFX-STATE-TRANSITION-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: GFX-STATE-TRANSITION-01`.
+
+## GFX-D3D12-MAP-03
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: GFX-D3D12-MAP-03`.
+
+## GFX-VK-MAP-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: GFX-VK-MAP-02`.

@@ -1,21 +1,27 @@
-# Testes guiados — Linux distro: pacote próprio + rootfs reproduzível
+# Testes guiados
 
-Execute:
+### Caso 1: `python starter/test_pkg.py` — deve falhar com TODOs abertos; imprime `OK linux package` na solution.
+### Caso 2: `sh starter/test_rootfs.sh` — valida idempotência do builder (duas execuções).
+### Caso 3: **Regressão path traversal:** manifest com `../escape` → `ValueError`.
+### Caso 4: **Regressão arquivo ausente:** manifest lista `bin/missing` → `FileNotFoundError` e rollback (nenhum arquivo copiado, banco ausente).
+### Caso 5: **Rollback transacional:** se a segunda cópia falha, a primeira também é revertida.
+### Caso 6: Valide `solutions/` com os mesmos comandos após implementar.
+
+## LINUX-ROOTFS-BUILD-03
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: LINUX-ROOTFS-BUILD-03`.
+
+## LINUX-PKG-INSTALL-02
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: LINUX-PKG-INSTALL-02`.
+
+## LINUX-PKG-PARSE-01
+
+Invariante protegida pelo teste com `PEDAGOGY-TEST: LINUX-PKG-PARSE-01`.
+## Execução real (opcional)
+
+**Pré-requisitos:** Linux, `bash`, permissão para criar diretórios temporários.
+
 ```bash
-python starter/test_pkg.py
-bash starter/test_rootfs.sh
+python scripts/run_real_env_checklist.py --module linux/distro_pkg_rootfs --day 2026-09-05
 ```
-Cobertura:
-- `LINUX-PKG-PARSE-01`: manifest válido e rejeição de `../escape`.
-- `LINUX-PKG-INSTALL-02`: arquivo aparece em `root/bin/hello` e database registra versão.
-- `LINUX-ROOTFS-BUILD-03`: diretórios mínimos existem e duas execuções não quebram.
-
-Na solution:
-```bash
-python solutions/test_pkg.py
-bash solutions/test_rootfs.sh
-```
-Todos devem terminar em `OK`.
-
-## Regra de diagnóstico
-Se o starter falhar antes de chegar ao comportamento marcado por TODO, isso é defeito de scaffolding. Se compilar/executar e falhar no assert ligado ao TODO, o starter está se comportando como laboratório pedagógico.

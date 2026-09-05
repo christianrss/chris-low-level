@@ -1,5 +1,17 @@
 # RESOLUÇÃO GUIADA - Tooling / MiniObjdump
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `OBJDUMP-U16-01` | `starter/src/main.cpp` | `read_u16_le()` |
+| `OBJDUMP-U32-01` | `starter/src/main.cpp` | `read_u32_le()` |
+| `OBJDUMP-PARSE-01` | `starter/src/main.cpp` | `main()` — cabeçalhos ELF, seções e `.text` |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/tooling/miniobjdump/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## Exercício Fácil - ler inteiros little-endian com segurança
 
 Abra:
@@ -308,3 +320,22 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 - `OBJDUMP-U16-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
 - `OBJDUMP-U32-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
 - `OBJDUMP-PARSE-01` — `starter/src/main.cpp` → `solutions/src/main.cpp`.
+## Relatório de resolução
+
+### O que foi validado
+
+- Todos os TODOs do `starter/` foram implementados na ordem sugerida.
+- Testes com marcadores `PEDAGOGY-TEST` passaram na solution.
+- O starter continua falhando nos pontos intencionais até o aluno completar cada ID.
+
+### Armadilhas encontradas
+
+- Leia mensagens de `assert` como contrato, não como bug do teste.
+- Compare sempre starter vs solution diff por arquivo.
+- Documente no benchmark o que *não* foi medido (I/O, rede, GPU, VM).
+
+**Saída esperada:** `integration_test.py` reporta sucesso com `Format: ELF/PE` e section `.text`.
+
+### Próximo passo sugerido
+
+Repita o módulo sem consultar a resolução, cronometrando apenas a fase de implementação. Depois leia `BENCHMARK_GUIADO.md` e registre suas observações na seção **Resultados observados**.

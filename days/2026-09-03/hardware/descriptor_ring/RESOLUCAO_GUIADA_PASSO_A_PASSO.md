@@ -1,5 +1,17 @@
 # Resolução guiada auditada — descriptor_ring
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `RING-SUBMIT-01` | `starter/src/descriptor_ring.cpp` | `DescriptorRing::submit()` |
+| `RING-COMPLETE-01` | `starter/src/descriptor_ring.cpp` | `DescriptorRing::device_complete_one()` |
+| `RING-RECLAIM-01` | `starter/src/descriptor_ring.cpp` | `DescriptorRing::reclaim()` |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/hardware/descriptor_ring/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## 0. Edite
 
 ```text
@@ -46,6 +58,9 @@ return true;
 
 Invariante: descriptor submetido pertence ao device e ainda não está completed.
 
+### Por que funciona?
+`count_ == ring_.size()` detecta ring cheia sem ambiguidade. O produtor escreve no slot `producer_`, marca ownership no device e avança com módulo — reutilização circular. `device_pending_` separa “submetido ao hardware” de “ainda ocupando capacidade lógica” até o consumer reclamar.
+
 ## 3. `device_complete_one`
 
 ```cpp
@@ -67,6 +82,9 @@ return true;
 
 O device não decrementa `count_`: o slot ainda não foi reclamado pelo software.
 
+### Por que funciona?
+O device só marca `completed` e libera ownership — o slot continua “ocupado” na fila até o software consumir. A exceção em invariante quebrada força você a não chamar `complete` em descriptor já devolvido ou nunca submetido.
+
 ## 4. `reclaim` — código que faltava na versão antiga
 
 ```cpp
@@ -87,6 +105,9 @@ return length;
 ```
 
 A atribuição `Descriptor{}` limpa ownership/completion/length antes de reutilizar o slot.
+
+### Por que funciona?
+`reclaim` só avança se o head está `completed` — ordem FIFO do consumer. `Descriptor{}` evita vazar estado sujo no próximo `submit`. `--count_` aqui (e não em `complete`) é o que libera capacidade para novo submit.
 
 ## 5. Teste de wrap-around
 
@@ -130,3 +151,18 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 - `RING-SUBMIT-01` — `starter/src/descriptor_ring.cpp` → `solutions/src/descriptor_ring.cpp`.
 - `RING-COMPLETE-01` — `starter/src/descriptor_ring.cpp` → `solutions/src/descriptor_ring.cpp`.
 - `RING-RECLAIM-01` — `starter/src/descriptor_ring.cpp` → `solutions/src/descriptor_ring.cpp`.
+
+## Relatório de resolução
+
+Checklist ao concluir:
+
+- [ ] Submit/complete/reclaim respeitam ownership e ordem FIFO do consumer.
+- [ ] Teste de wrap-around (capacidade 2) passa em `starter/tests/test_ring.cpp`.
+- [ ] `count_` só decrementa em `reclaim`, não em `complete`.
+- [ ] Trace manual 64→128→256 documentado.
+
+**Saída esperada:** `ctest` 100% passed no teste de wrap-around.
+
+**Depuração:** logue os cinco contadores após cada operação (ver seção 6 da resolução).
+
+**Arquivos starter editados:** `starter/src/descriptor_ring.cpp`.

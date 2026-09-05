@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST: RE-YARA-01
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]

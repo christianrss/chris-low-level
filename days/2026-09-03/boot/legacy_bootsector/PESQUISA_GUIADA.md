@@ -15,3 +15,13 @@
 4. Qual a diferença entre bytes gerados pelo builder e o source NASM equivalente?
 
 Não assuma que BIOS legado representa UEFI moderno; o módulo é um primeiro degrau histórico/arquitetural.
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

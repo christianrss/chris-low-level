@@ -1,5 +1,15 @@
 # Resolução guiada auditada — Tiny CPU
 
+## Mapa exato starter → resolução
+
+| TODO ID | Starter | Função/área |
+|---------|---------|-------------|
+| `CPU-STEP-01` | `starter/src/cpu.cpp` | `TinyCpu::step()` — MOVI, ADD, STORE, LOAD, JNZ |
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
+> Trabalhe em `days/2026-09-03/architecture/toy_cpu/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
 ## 0. Arquivos exatos
 
 Edite somente:
@@ -242,3 +252,16 @@ Somente depois dos testes, compare com `solutions/src/cpu.cpp`. Todos os opcodes
 Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
 
 - `CPU-STEP-01` — `starter/src/cpu.cpp` → `solutions/src/cpu.cpp`.
+
+## Relatório de resolução
+
+Checklist ao concluir:
+
+- [ ] `CPU-STEP-01`: MOVI, ADD, STORE, LOAD, JNZ e HALT implementados.
+- [ ] `ctest --test-dir starter/build` → 100% tests passed.
+- [ ] Simulação manual de LOAD/STORE confere endianness `0x1234` → `34 12`.
+- [ ] Opcode desconhecido lança exceção (não retorna silenciosamente).
+
+**Depuração:** breakpoint em `TinyCpu::step`; trace `pc_` e registradores por instrução.
+
+**Arquivos starter editados:** `starter/src/cpu.cpp`.

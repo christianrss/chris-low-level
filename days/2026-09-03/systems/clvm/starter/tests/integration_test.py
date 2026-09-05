@@ -1,3 +1,19 @@
+// Test cases (TESTES_GUIADOS.md):
+// Caso 1: Compile `solutions/`.
+// Caso 2: Use `tools/assemble.py` para gerar `arithmetic.clvm` dentro do diretório de buil
+// Caso 3: Execute `clvm arithmetic.clvm`.
+// Caso 4: Capture `stdout`.
+// Caso 5: Falhe o teste se a saída, removendo espaços finais, não for `38`.
+// Caso 6: Gere um arquivo válido.
+// Caso 7: Inverta um bit do último byte sem recalcular o checksum.
+// Caso 8: Execute a VM.
+// Caso 9: O processo deve terminar com erro e mencionar `checksum mismatch`.
+# PEDAGOGY-TEST: CLVM-PY-FNV-01
+# PEDAGOGY-TEST: CLVM-ASM-LABELS-01
+# PEDAGOGY-TEST: CLVM-C-FNV-01
+# PEDAGOGY-TEST: CLVM-C-HEADER-01
+# PEDAGOGY-TEST: CLVM-VM-ARITH-01
+# PEDAGOGY-TEST: CLVM-VM-JUMP-01
 from __future__ import annotations
 import subprocess, sys, tempfile
 from pathlib import Path

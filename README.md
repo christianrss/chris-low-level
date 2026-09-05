@@ -74,14 +74,35 @@ Every mature project should eventually show:
 
 ## Start
 
-Read [`START_HERE.md`](START_HERE.md), then open the master Day 01 DOCX under `days/2026-09-03/`.
+Read [`START_HERE.md`](START_HERE.md), then open the day folder you are studying:
+
+| Day | Path | Modules |
+|-----|------|---------|
+| 2026-09-03 | [`days/2026-09-03/`](days/2026-09-03/) | 13 |
+| 2026-09-04 | [`days/2026-09-04/`](days/2026-09-04/) | 11 |
+| 2026-09-05 | [`days/2026-09-05/`](days/2026-09-05/) | 10 |
+
+Per module: `TEORIA_PASSO_A_PASSO.md` → `EXERCICIOS.md` → implement in `starter/` → `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` when stuck.
+
+Pedagogical standard: [`docs/PEDAGOGY_STANDARD.md`](docs/PEDAGOGY_STANDARD.md) + [`docs/PORTING_GUIDE.md`](docs/PORTING_GUIDE.md) + [`docs/LEARNING_PATHS.md`](docs/LEARNING_PATHS.md) + [`docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md`](docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md) + [`docs/PROMPT_MESTRE_EXTREME_QUALITY.md`](docs/PROMPT_MESTRE_EXTREME_QUALITY.md).
 
 Portable repository validation:
 
 ```bash
 python scripts/quality_check.py
+python scripts/pedagogy_check_unified.py --day 2026-09-03
+python scripts/pedagogy_check_unified.py --day 2026-09-04
+python scripts/pedagogy_check_unified.py --day 2026-09-05
 python scripts/run_all_tests.py
 python scripts/run_all_benchmarks.py
+```
+
+Generate or refresh DOCX from Markdown:
+
+```bash
+python scripts/build_day_docx.py --day 2026-09-03
+python scripts/build_day_docx.py --day 2026-09-04
+python scripts/build_day_docx.py --day 2026-09-05
 ```
 
 The lab is intentionally honest about what was and was not tested. Hardware-specific, Windows-specific, firmware and QEMU milestones are documented separately until the required environment is available.

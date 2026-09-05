@@ -17,3 +17,13 @@ Depois da sua implementação, compare conceitualmente com `Tensor.stride()` do 
 2. Por que trocar apenas `shape` e `strides` pode representar uma transposição sem copiar dados?
 3. Por que uma view transposta pode ser correta e ainda assim mais lenta?
 4. Qual condição de shapes precisa ser verdadeira para `A(MxK) * B(KxN)`?
+
+## Registro do aluno
+
+| Pergunta | Sua resposta (3–5 linhas) | Decisão no código |
+|----------|---------------------------|-------------------|
+| (preencha após ler as fontes acima) | | |
+
+## Checkpoint
+
+Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.

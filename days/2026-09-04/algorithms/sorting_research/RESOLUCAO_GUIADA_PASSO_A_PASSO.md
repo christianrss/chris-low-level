@@ -35,6 +35,9 @@ merge_range(values, scratch, begin, middle, end, stats);
 
 Use intervalo semiaberto `[begin,end)`. Para 6 elementos, `begin=0,end=6,middle=3`.
 
+### Por que funciona?
+Caso base `end - begin <= 1` para a recursão. Dividir em `[begin,middle)` e `[middle,end)` garante subproblemas menores; `merge_range` junta duas metades ordenadas — invariante clássico do merge sort.
+
 ### A2. Merge
 Em `merge_range`, comece com três cursores:
 
@@ -70,6 +73,9 @@ while (right < end) {
     ++stats.moves;
 }
 ```
+
+### Por que funciona?
+Dois cursores percorrem as metades ordenadas; o menor vai para `scratch`. Copiar sobras e depois de volta para `values` completa o merge — sem isso, metade ordenada permanece só no scratch.
 
 Copie scratch de volta:
 
@@ -116,6 +122,9 @@ if (store != end - 1) {
 return store;
 ```
 
+### Por que funciona?
+Último elemento é pivot (esquema de partição de Lomuto). Elementos `< pivot migram para a esquerda via `store`; swap final coloca pivot na fronteira entre menores e maiores. Índice retornado é posição final do pivot.
+
 ### B2. Controlar profundidade de stack
 Em `quick_sort_impl`, use loop:
 
@@ -139,7 +148,8 @@ Recursa no lado menor e continua iterando no maior:
 }
 ```
 
-Isso limita profundidade de recursão mesmo quando as partições são ruins; **não corrige** o número O(n²) de comparações.
+### Por que funciona?
+Recursar sempre no lado **menor** e iterar no maior limita profundidade de pilha a O(log n) mesmo com partições desbalanceadas. Não reduz comparações O(n²) em entrada ordenada — isso exigiria pivot melhor (mediana-de-três, aleatório).
 
 ## Testes
 
@@ -174,3 +184,14 @@ Registre distribuição, n, tempo e comparações. Depois proponha mediana-de-tr
 
 ## Solução final comentada
 Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+
+## Relatório de resolução
+
+| ID | Função | Observação |
+|----|--------|------------|
+| D2-SORT-MERGE-RANGE | `merge_range` | scratch intermediário; copiar de volta |
+| D2-SORT-MERGE-RECURSE | `merge_sort_impl` | semiaberto `[begin,end)` |
+| D2-SORT-PARTITION | `partition` | pivot = último elemento |
+| D2-SORT-QUICK-LOOP | `quick_sort_impl` | recursão no lado menor |
+
+Aceite: `chris-algorithms tests passed`. Merge deve passar antes de quicksort. No benchmark, registre comparisons — sorted/reversed devem mostrar degeneração do quicksort pedagógico enquanto merge permanece estável.
