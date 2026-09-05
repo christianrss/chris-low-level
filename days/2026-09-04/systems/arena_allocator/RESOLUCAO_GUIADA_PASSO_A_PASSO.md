@@ -1,5 +1,14 @@
 # Resolução guiada passo a passo — Arena allocator
 
+## Mapa exato starter → resolução
+
+- `D2-ARENA-POWER2` → `starter/src/arena.cpp`
+- `D2-ARENA-ALIGN-UP` → `starter/src/arena.cpp`
+- `D2-ARENA-ALLOCATE` → `starter/src/arena.cpp`
+- `D2-ARENA-RESET` → `starter/src/arena.cpp`
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
 > Trabalhe em `days/2026-09-04/systems/arena_allocator/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
 
 ## 0. Preparar o projeto

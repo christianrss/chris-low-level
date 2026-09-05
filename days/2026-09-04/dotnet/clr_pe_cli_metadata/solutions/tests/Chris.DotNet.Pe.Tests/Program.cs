@@ -1,3 +1,5 @@
+// PEDAGOGY-TEST: D2-CLR-CLI-RVA
+// PEDAGOGY-TEST: D2-CLR-METADATA-RVA
 using System.Buffers.Binary;
 using Chris.DotNet.Pe;
 

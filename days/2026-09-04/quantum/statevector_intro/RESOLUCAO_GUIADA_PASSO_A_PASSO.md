@@ -1,5 +1,15 @@
 # Resolução guiada passo a passo — State-vector simulator
 
+## Mapa exato starter → resolução
+
+- `D2-QSIM-SINGLE` → `starter/src/qsim.cpp`
+- `D2-QSIM-X` → `starter/src/qsim.cpp`
+- `D2-QSIM-H` → `starter/src/qsim.cpp`
+- `D2-QSIM-Z` → `starter/src/qsim.cpp`
+- `D2-QSIM-CNOT` → `starter/src/qsim.cpp`
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
 ## Baseline
 
 ```bash
@@ -125,3 +135,7 @@ cmake --build days/2026-09-04/quantum/statevector_intro/starter/build-bench
 ```
 
 Registre `qubits`, `amplitudes`, `bytes`, `gates/s` e `norm`. Verifique empiricamente que cada qubit adicional dobra amplitudes/memória.
+
+
+## Solução final comentada
+Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.

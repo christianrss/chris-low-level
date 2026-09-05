@@ -1,3 +1,7 @@
+// PEDAGOGY-TEST: D2-SORT-MERGE-RECURSE
+// PEDAGOGY-TEST: D2-SORT-MERGE-RANGE
+// PEDAGOGY-TEST: D2-SORT-PARTITION
+// PEDAGOGY-TEST: D2-SORT-QUICK-LOOP
 #include "sort.hpp"
 #include <algorithm>
 #include <cassert>

@@ -1,3 +1,6 @@
+// PEDAGOGY-TEST: D2-CSHARP-WRITE-HEADER
+// PEDAGOGY-TEST: D2-CSHARP-READ-HEADER
+// PEDAGOGY-TEST: D2-CSHARP-RENT-FRAME
 using Chris.DotNet.Buffers;
 
 static void Require(bool condition, string message)
@@ -17,6 +20,13 @@ using (var frame = FrameCodec.RentFrame(payload, 99))
     Require(FrameCodec.ReadHeader(memory[..8]) == new FrameHeader(4, 99), "rented header mismatch");
     Require(memory[8..12].SequenceEqual(payload), "payload mismatch");
 }
+
+var disposed = FrameCodec.RentFrame(payload, 77);
+disposed.Dispose();
+bool disposedAccessRejected = false;
+try { _ = disposed.Memory; }
+catch (ObjectDisposedException) { disposedAccessRejected = true; }
+Require(disposedAccessRejected, "Memory after Dispose must fail");
 
 bool shortBufferRejected = false;
 try { FrameCodec.WriteHeader(stackalloc byte[4], new FrameHeader(1, 1)); }

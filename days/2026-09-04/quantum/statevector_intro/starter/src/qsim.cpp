@@ -35,10 +35,23 @@ double StateVector::norm_squared() const noexcept {
 void StateVector::apply_single(std::size_t qubit,
     const std::complex<double>& m00, const std::complex<double>& m01,
     const std::complex<double>& m10, const std::complex<double>& m11) {
-    // TODO ETAPA 1
+    // TODO [D2-QSIM-SINGLE]: aplicar matriz 2x2 a todos os pares de amplitudes.
     (void)qubit; (void)m00; (void)m01; (void)m10; (void)m11;
 }
-void StateVector::apply_x(std::size_t qubit) { /* TODO ETAPA 2 */ (void)qubit; }
-void StateVector::apply_h(std::size_t qubit) { /* TODO ETAPA 3 */ (void)qubit; }
-void StateVector::apply_z(std::size_t qubit) { /* TODO ETAPA 4 */ (void)qubit; }
-void StateVector::apply_cnot(std::size_t control, std::size_t target) { /* TODO ETAPA 5 */ (void)control; (void)target; }
+void StateVector::apply_x(std::size_t qubit) {
+    /* TODO [D2-QSIM-X]: implementar X via apply_single. */
+    (void)qubit;
+}
+void StateVector::apply_h(std::size_t qubit) {
+    /* TODO [D2-QSIM-H]: implementar H normalizado via apply_single. */
+    (void)qubit;
+}
+void StateVector::apply_z(std::size_t qubit) {
+    /* TODO [D2-QSIM-Z]: implementar Z via apply_single. */
+    (void)qubit;
+}
+void StateVector::apply_cnot(std::size_t control, std::size_t target) {
+    /* TODO [D2-QSIM-CNOT]: trocar amplitudes quando control=1 e target=0. */
+    (void)control;
+    (void)target;
+}

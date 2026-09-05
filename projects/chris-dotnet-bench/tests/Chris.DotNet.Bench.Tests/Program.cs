@@ -18,6 +18,13 @@ using (var frame = FrameCodec.RentFrame(payload, 99))
     Require(memory[8..12].SequenceEqual(payload), "payload mismatch");
 }
 
+var disposed = FrameCodec.RentFrame(payload, 77);
+disposed.Dispose();
+bool disposedAccessRejected = false;
+try { _ = disposed.Memory; }
+catch (ObjectDisposedException) { disposedAccessRejected = true; }
+Require(disposedAccessRejected, "Memory after Dispose must fail");
+
 bool shortBufferRejected = false;
 try { FrameCodec.WriteHeader(stackalloc byte[4], new FrameHeader(1, 1)); }
 catch (ArgumentException) { shortBufferRejected = true; }

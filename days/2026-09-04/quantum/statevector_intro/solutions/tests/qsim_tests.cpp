@@ -1,3 +1,8 @@
+// PEDAGOGY-TEST: D2-QSIM-SINGLE
+// PEDAGOGY-TEST: D2-QSIM-X
+// PEDAGOGY-TEST: D2-QSIM-H
+// PEDAGOGY-TEST: D2-QSIM-Z
+// PEDAGOGY-TEST: D2-QSIM-CNOT
 #include "qsim.hpp"
 #include <cassert>
 #include <cmath>
@@ -21,6 +26,14 @@ int main() {
         q.apply_h(0);
         assert(near(q.probability(0), 0.5));
         assert(near(q.probability(1), 0.5));
+        assert(near(q.norm_squared(), 1.0));
+    }
+
+    {
+        StateVector q(1);
+        q.apply_x(0);
+        q.apply_z(0);
+        assert(near(q.probability(1), 1.0));
         assert(near(q.norm_squared(), 1.0));
     }
 

@@ -7,10 +7,12 @@ Arena::Arena(std::size_t capacity) : storage_(capacity) {
     }
 }
 
+// PEDAGOGY-SOLUTION: D2-ARENA-POWER2
 bool Arena::is_power_of_two(std::size_t value) noexcept {
     return value != 0 && (value & (value - 1)) == 0;
 }
 
+// PEDAGOGY-SOLUTION: D2-ARENA-ALIGN-UP
 std::size_t Arena::align_up(std::size_t value, std::size_t alignment) {
     if (!is_power_of_two(alignment)) {
         throw std::invalid_argument("alignment must be a power of two");
@@ -19,6 +21,7 @@ std::size_t Arena::align_up(std::size_t value, std::size_t alignment) {
     return (value + mask) & ~mask;
 }
 
+// PEDAGOGY-SOLUTION: D2-ARENA-ALLOCATE
 void* Arena::allocate(std::size_t size, std::size_t alignment) {
     if (size == 0) {
         throw std::invalid_argument("allocation size must be non-zero");
@@ -36,6 +39,7 @@ void* Arena::allocate(std::size_t size, std::size_t alignment) {
     return storage_.data() + static_cast<std::ptrdiff_t>(aligned_offset);
 }
 
+// PEDAGOGY-SOLUTION: D2-ARENA-RESET
 void Arena::reset() noexcept {
     offset_ = 0;
 }

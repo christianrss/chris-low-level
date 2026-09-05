@@ -1,445 +1,774 @@
-.gitattributes
-.github/workflows/ci.yml
-.gitignore
-LEIA_PRIMEIRO_CORRECAO_DAY01.md
-PROGRESS.md
-README.md
-ROADMAP.md
-START_HERE.md
-VALIDATION.md
-VALIDATION_DAY01.md
-benchmarks/README.md
-benchmarks/results-2026-09-03.json
-benchmarks/results-2026-09-03.md
-days/2026-09-03/COMMIT_PLAN.md
-days/2026-09-03/README.md
-days/2026-09-03/ai/linear_autograd/BENCHMARK_GUIADO.md
-days/2026-09-03/ai/linear_autograd/GABARITO.md
-days/2026-09-03/ai/linear_autograd/PESQUISA_GUIADA.md
-days/2026-09-03/ai/linear_autograd/README.md
-days/2026-09-03/ai/linear_autograd/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/ai/linear_autograd/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/ai/linear_autograd/TESTES_GUIADOS.md
-days/2026-09-03/ai/linear_autograd/solutions/CMakeLists.txt
-days/2026-09-03/ai/linear_autograd/solutions/python/autograd_scalar.py
-days/2026-09-03/ai/linear_autograd/solutions/python/debug_bug_fixed.py
-days/2026-09-03/ai/linear_autograd/solutions/python/linear_train.py
-days/2026-09-03/ai/linear_autograd/solutions/python/reference_pytorch.py
-days/2026-09-03/ai/linear_autograd/solutions/src/linear_train.c
-days/2026-09-03/ai/linear_autograd/solutions/tests/test_ai.py
-days/2026-09-03/ai/linear_autograd/solutions/tests/test_autograd.py
-days/2026-09-03/ai/linear_autograd/starter/CMakeLists.txt
-days/2026-09-03/ai/linear_autograd/starter/python/autograd_scalar.py
-days/2026-09-03/ai/linear_autograd/starter/python/debug_bug.py
-days/2026-09-03/ai/linear_autograd/starter/python/linear_train.py
-days/2026-09-03/ai/linear_autograd/starter/src/linear_train.c
-days/2026-09-03/ai/linear_autograd/starter/tests/test_autograd.py
-days/2026-09-03/architecture/toy_cpu/BENCHMARK_GUIADO.md
-days/2026-09-03/architecture/toy_cpu/PESQUISA_GUIADA.md
-days/2026-09-03/architecture/toy_cpu/README.md
-days/2026-09-03/architecture/toy_cpu/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/architecture/toy_cpu/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/architecture/toy_cpu/TESTES_GUIADOS.md
-days/2026-09-03/architecture/toy_cpu/solutions/CMakeLists.txt
-days/2026-09-03/architecture/toy_cpu/solutions/MILESTONES.md
-days/2026-09-03/architecture/toy_cpu/solutions/README.md
-days/2026-09-03/architecture/toy_cpu/solutions/benchmarks/benchmark.cpp
-days/2026-09-03/architecture/toy_cpu/solutions/docs/architecture.md
-days/2026-09-03/architecture/toy_cpu/solutions/include/cpu.hpp
-days/2026-09-03/architecture/toy_cpu/solutions/src/cpu.cpp
-days/2026-09-03/architecture/toy_cpu/solutions/tests/test_cpu.cpp
-days/2026-09-03/architecture/toy_cpu/starter/CMakeLists.txt
-days/2026-09-03/architecture/toy_cpu/starter/EXERCISE_TODO.md
-days/2026-09-03/architecture/toy_cpu/starter/MILESTONES.md
-days/2026-09-03/architecture/toy_cpu/starter/README.md
-days/2026-09-03/architecture/toy_cpu/starter/benchmarks/benchmark.cpp
-days/2026-09-03/architecture/toy_cpu/starter/docs/architecture.md
-days/2026-09-03/architecture/toy_cpu/starter/include/cpu.hpp
-days/2026-09-03/architecture/toy_cpu/starter/src/cpu.cpp
-days/2026-09-03/architecture/toy_cpu/starter/tests/test_cpu.cpp
-days/2026-09-03/assembly/x86_64_abi_sum/BENCHMARK_GUIADO.md
-days/2026-09-03/assembly/x86_64_abi_sum/PESQUISA_GUIADA.md
-days/2026-09-03/assembly/x86_64_abi_sum/README.md
-days/2026-09-03/assembly/x86_64_abi_sum/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/assembly/x86_64_abi_sum/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/assembly/x86_64_abi_sum/TESTES_GUIADOS.md
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/CMakeLists.txt
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/MILESTONES.md
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/README.md
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/benchmarks/benchmark.c
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/docs/architecture.md
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/src/sum_x86_64.S
-days/2026-09-03/assembly/x86_64_abi_sum/solutions/tests/test_sum.c
-days/2026-09-03/assembly/x86_64_abi_sum/starter/CMakeLists.txt
-days/2026-09-03/assembly/x86_64_abi_sum/starter/EXERCISE_TODO.md
-days/2026-09-03/assembly/x86_64_abi_sum/starter/MILESTONES.md
-days/2026-09-03/assembly/x86_64_abi_sum/starter/README.md
-days/2026-09-03/assembly/x86_64_abi_sum/starter/benchmarks/benchmark.c
-days/2026-09-03/assembly/x86_64_abi_sum/starter/docs/architecture.md
-days/2026-09-03/assembly/x86_64_abi_sum/starter/src/sum_x86_64.S
-days/2026-09-03/assembly/x86_64_abi_sum/starter/tests/test_sum.c
-days/2026-09-03/blockchain/toy_chain/BENCHMARK_GUIADO.md
-days/2026-09-03/blockchain/toy_chain/PESQUISA_GUIADA.md
-days/2026-09-03/blockchain/toy_chain/README.md
-days/2026-09-03/blockchain/toy_chain/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/blockchain/toy_chain/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/blockchain/toy_chain/TESTES_GUIADOS.md
-days/2026-09-03/blockchain/toy_chain/solutions/CMakeLists.txt
-days/2026-09-03/blockchain/toy_chain/solutions/MILESTONES.md
-days/2026-09-03/blockchain/toy_chain/solutions/README.md
-days/2026-09-03/blockchain/toy_chain/solutions/benchmarks/benchmark.py
-days/2026-09-03/blockchain/toy_chain/solutions/docs/architecture.md
-days/2026-09-03/blockchain/toy_chain/solutions/tests/test_chain.py
-days/2026-09-03/blockchain/toy_chain/solutions/toy_chain.py
-days/2026-09-03/blockchain/toy_chain/starter/CMakeLists.txt
-days/2026-09-03/blockchain/toy_chain/starter/EXERCISE_TODO.md
-days/2026-09-03/blockchain/toy_chain/starter/MILESTONES.md
-days/2026-09-03/blockchain/toy_chain/starter/README.md
-days/2026-09-03/blockchain/toy_chain/starter/benchmarks/benchmark.py
-days/2026-09-03/blockchain/toy_chain/starter/docs/architecture.md
-days/2026-09-03/blockchain/toy_chain/starter/tests/test_chain.py
-days/2026-09-03/blockchain/toy_chain/starter/toy_chain.py
-days/2026-09-03/boot/legacy_bootsector/BENCHMARK_GUIADO.md
-days/2026-09-03/boot/legacy_bootsector/PESQUISA_GUIADA.md
-days/2026-09-03/boot/legacy_bootsector/README.md
-days/2026-09-03/boot/legacy_bootsector/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/boot/legacy_bootsector/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/boot/legacy_bootsector/TESTES_GUIADOS.md
-days/2026-09-03/boot/legacy_bootsector/solutions/CMakeLists.txt
-days/2026-09-03/boot/legacy_bootsector/solutions/MILESTONES.md
-days/2026-09-03/boot/legacy_bootsector/solutions/README.md
-days/2026-09-03/boot/legacy_bootsector/solutions/docs/architecture.md
-days/2026-09-03/boot/legacy_bootsector/solutions/src/bootsector.asm
-days/2026-09-03/boot/legacy_bootsector/solutions/tests/test_boot.py
-days/2026-09-03/boot/legacy_bootsector/solutions/tools/build_minimal.py
-days/2026-09-03/boot/legacy_bootsector/starter/CMakeLists.txt
-days/2026-09-03/boot/legacy_bootsector/starter/EXERCISE_TODO.md
-days/2026-09-03/boot/legacy_bootsector/starter/MILESTONES.md
-days/2026-09-03/boot/legacy_bootsector/starter/README.md
-days/2026-09-03/boot/legacy_bootsector/starter/docs/architecture.md
-days/2026-09-03/boot/legacy_bootsector/starter/src/bootsector.asm
-days/2026-09-03/boot/legacy_bootsector/starter/tests/test_boot.py
-days/2026-09-03/boot/legacy_bootsector/starter/tools/build_minimal.py
-days/2026-09-03/graphics/dual_backend_3d/BENCHMARK_GUIADO.md
-days/2026-09-03/graphics/dual_backend_3d/PESQUISA_GUIADA.md
-days/2026-09-03/graphics/dual_backend_3d/README.md
-days/2026-09-03/graphics/dual_backend_3d/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/graphics/dual_backend_3d/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/graphics/dual_backend_3d/TESTES_GUIADOS.md
-days/2026-09-03/graphics/dual_backend_3d/docs/COMPARISON.md
-days/2026-09-03/graphics/dual_backend_3d/solutions/CMakeLists.txt
-days/2026-09-03/graphics/dual_backend_3d/solutions/common/engine.cpp
-days/2026-09-03/graphics/dual_backend_3d/solutions/common/engine.hpp
-days/2026-09-03/graphics/dual_backend_3d/solutions/opengl_win32/main.cpp
-days/2026-09-03/graphics/dual_backend_3d/solutions/software_win32/main.cpp
-days/2026-09-03/graphics/dual_backend_3d/solutions/tests/core_tests.cpp
-days/2026-09-03/graphics/dual_backend_3d/starter/CMakeLists.txt
-days/2026-09-03/graphics/dual_backend_3d/starter/common/engine.cpp
-days/2026-09-03/graphics/dual_backend_3d/starter/common/engine.hpp
-days/2026-09-03/graphics/dual_backend_3d/starter/opengl_win32/main.cpp
-days/2026-09-03/graphics/dual_backend_3d/starter/software_win32/main.cpp
-days/2026-09-03/graphics/dual_backend_3d/starter/tests/core_tests.cpp
-days/2026-09-03/hardware/descriptor_ring/BENCHMARK_GUIADO.md
-days/2026-09-03/hardware/descriptor_ring/PESQUISA_GUIADA.md
-days/2026-09-03/hardware/descriptor_ring/README.md
-days/2026-09-03/hardware/descriptor_ring/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/hardware/descriptor_ring/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/hardware/descriptor_ring/TESTES_GUIADOS.md
-days/2026-09-03/hardware/descriptor_ring/solutions/CMakeLists.txt
-days/2026-09-03/hardware/descriptor_ring/solutions/MILESTONES.md
-days/2026-09-03/hardware/descriptor_ring/solutions/README.md
-days/2026-09-03/hardware/descriptor_ring/solutions/benchmarks/benchmark.cpp
-days/2026-09-03/hardware/descriptor_ring/solutions/docs/architecture.md
-days/2026-09-03/hardware/descriptor_ring/solutions/include/descriptor_ring.hpp
-days/2026-09-03/hardware/descriptor_ring/solutions/src/descriptor_ring.cpp
-days/2026-09-03/hardware/descriptor_ring/solutions/tests/test_ring.cpp
-days/2026-09-03/hardware/descriptor_ring/starter/CMakeLists.txt
-days/2026-09-03/hardware/descriptor_ring/starter/EXERCISE_TODO.md
-days/2026-09-03/hardware/descriptor_ring/starter/MILESTONES.md
-days/2026-09-03/hardware/descriptor_ring/starter/README.md
-days/2026-09-03/hardware/descriptor_ring/starter/benchmarks/benchmark.cpp
-days/2026-09-03/hardware/descriptor_ring/starter/docs/architecture.md
-days/2026-09-03/hardware/descriptor_ring/starter/include/descriptor_ring.hpp
-days/2026-09-03/hardware/descriptor_ring/starter/src/descriptor_ring.cpp
-days/2026-09-03/hardware/descriptor_ring/starter/tests/test_ring.cpp
-days/2026-09-03/network/http_parser/BENCHMARK_GUIADO.md
-days/2026-09-03/network/http_parser/PESQUISA_GUIADA.md
-days/2026-09-03/network/http_parser/README.md
-days/2026-09-03/network/http_parser/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/network/http_parser/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/network/http_parser/TESTES_GUIADOS.md
-days/2026-09-03/network/http_parser/solutions/CMakeLists.txt
-days/2026-09-03/network/http_parser/solutions/MILESTONES.md
-days/2026-09-03/network/http_parser/solutions/README.md
-days/2026-09-03/network/http_parser/solutions/benchmarks/benchmark.cpp
-days/2026-09-03/network/http_parser/solutions/docs/architecture.md
-days/2026-09-03/network/http_parser/solutions/include/http_parser.hpp
-days/2026-09-03/network/http_parser/solutions/src/http_parser.cpp
-days/2026-09-03/network/http_parser/solutions/tests/test_http.cpp
-days/2026-09-03/network/http_parser/starter/CMakeLists.txt
-days/2026-09-03/network/http_parser/starter/EXERCISE_TODO.md
-days/2026-09-03/network/http_parser/starter/MILESTONES.md
-days/2026-09-03/network/http_parser/starter/README.md
-days/2026-09-03/network/http_parser/starter/benchmarks/benchmark.cpp
-days/2026-09-03/network/http_parser/starter/docs/architecture.md
-days/2026-09-03/network/http_parser/starter/include/http_parser.hpp
-days/2026-09-03/network/http_parser/starter/src/http_parser.cpp
-days/2026-09-03/network/http_parser/starter/tests/test_http.cpp
-days/2026-09-03/p2p/gossip/BENCHMARK_GUIADO.md
-days/2026-09-03/p2p/gossip/PESQUISA_GUIADA.md
-days/2026-09-03/p2p/gossip/README.md
-days/2026-09-03/p2p/gossip/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/p2p/gossip/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/p2p/gossip/TESTES_GUIADOS.md
-days/2026-09-03/p2p/gossip/solutions/CMakeLists.txt
-days/2026-09-03/p2p/gossip/solutions/MILESTONES.md
-days/2026-09-03/p2p/gossip/solutions/README.md
-days/2026-09-03/p2p/gossip/solutions/benchmarks/benchmark.py
-days/2026-09-03/p2p/gossip/solutions/docs/architecture.md
-days/2026-09-03/p2p/gossip/solutions/gossip.py
-days/2026-09-03/p2p/gossip/solutions/tests/test_gossip.py
-days/2026-09-03/p2p/gossip/starter/CMakeLists.txt
-days/2026-09-03/p2p/gossip/starter/EXERCISE_TODO.md
-days/2026-09-03/p2p/gossip/starter/MILESTONES.md
-days/2026-09-03/p2p/gossip/starter/README.md
-days/2026-09-03/p2p/gossip/starter/benchmarks/benchmark.py
-days/2026-09-03/p2p/gossip/starter/docs/architecture.md
-days/2026-09-03/p2p/gossip/starter/gossip.py
-days/2026-09-03/p2p/gossip/starter/tests/test_gossip.py
-days/2026-09-03/redteam/benign_reversing/BENCHMARK_GUIADO.md
-days/2026-09-03/redteam/benign_reversing/GABARITO.md
-days/2026-09-03/redteam/benign_reversing/PESQUISA_GUIADA.md
-days/2026-09-03/redteam/benign_reversing/README.md
-days/2026-09-03/redteam/benign_reversing/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/redteam/benign_reversing/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/redteam/benign_reversing/TESTES_GUIADOS.md
-days/2026-09-03/redteam/benign_reversing/solutions/CMakeLists.txt
-days/2026-09-03/redteam/benign_reversing/solutions/rules/lab_target.yar
-days/2026-09-03/redteam/benign_reversing/solutions/src/lab_target.c
-days/2026-09-03/redteam/benign_reversing/solutions/tests/test_ascii_strings.py
-days/2026-09-03/redteam/benign_reversing/solutions/tests/test_rule.py
-days/2026-09-03/redteam/benign_reversing/solutions/tools/ascii_strings.py
-days/2026-09-03/redteam/benign_reversing/starter/CMakeLists.txt
-days/2026-09-03/redteam/benign_reversing/starter/rules/lab_target.yar
-days/2026-09-03/redteam/benign_reversing/starter/src/lab_target.c
-days/2026-09-03/redteam/benign_reversing/starter/tests/test_ascii_strings.py
-days/2026-09-03/redteam/benign_reversing/starter/tests/test_rule.py
-days/2026-09-03/redteam/benign_reversing/starter/tools/ascii_strings.py
-days/2026-09-03/systems/clvm/BENCHMARK_GUIADO.md
-days/2026-09-03/systems/clvm/PESQUISA_GUIADA.md
-days/2026-09-03/systems/clvm/README.md
-days/2026-09-03/systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/systems/clvm/ROADMAP.md
-days/2026-09-03/systems/clvm/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/systems/clvm/TESTES_GUIADOS.md
-days/2026-09-03/systems/clvm/docs/FORMAT.md
-days/2026-09-03/systems/clvm/solutions/CMakeLists.txt
-days/2026-09-03/systems/clvm/solutions/FORMAT.md
-days/2026-09-03/systems/clvm/solutions/include/clvm_format.h
-days/2026-09-03/systems/clvm/solutions/programs/arithmetic.asm
-days/2026-09-03/systems/clvm/solutions/programs/countdown.asm
-days/2026-09-03/systems/clvm/solutions/rust-validator/Cargo.toml
-days/2026-09-03/systems/clvm/solutions/rust-validator/src/main.rs
-days/2026-09-03/systems/clvm/solutions/src/clvm_loader.c
-days/2026-09-03/systems/clvm/solutions/src/main.cpp
-days/2026-09-03/systems/clvm/solutions/tests/integration_test.py
-days/2026-09-03/systems/clvm/solutions/tools/assemble.py
-days/2026-09-03/systems/clvm/solutions/tools/inspect_clvm.py
-days/2026-09-03/systems/clvm/starter/CMakeLists.txt
-days/2026-09-03/systems/clvm/starter/FORMAT.md
-days/2026-09-03/systems/clvm/starter/include/clvm_format.h
-days/2026-09-03/systems/clvm/starter/programs/arithmetic.asm
-days/2026-09-03/systems/clvm/starter/programs/countdown.asm
-days/2026-09-03/systems/clvm/starter/rust-validator/Cargo.toml
-days/2026-09-03/systems/clvm/starter/rust-validator/src/main.rs
-days/2026-09-03/systems/clvm/starter/src/clvm_loader.c
-days/2026-09-03/systems/clvm/starter/src/main.cpp
-days/2026-09-03/systems/clvm/starter/tests/integration_test.py
-days/2026-09-03/systems/clvm/starter/tools/assemble.py
-days/2026-09-03/systems/clvm/starter/tools/inspect_clvm.py
-days/2026-09-03/systems/clvm/tests/smoke_test.sh
-days/2026-09-03/terminal/ansi_parser/BENCHMARK_GUIADO.md
-days/2026-09-03/terminal/ansi_parser/PESQUISA_GUIADA.md
-days/2026-09-03/terminal/ansi_parser/README.md
-days/2026-09-03/terminal/ansi_parser/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/terminal/ansi_parser/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/terminal/ansi_parser/TESTES_GUIADOS.md
-days/2026-09-03/terminal/ansi_parser/solutions/CMakeLists.txt
-days/2026-09-03/terminal/ansi_parser/solutions/MILESTONES.md
-days/2026-09-03/terminal/ansi_parser/solutions/README.md
-days/2026-09-03/terminal/ansi_parser/solutions/benchmarks/benchmark.cpp
-days/2026-09-03/terminal/ansi_parser/solutions/docs/architecture.md
-days/2026-09-03/terminal/ansi_parser/solutions/include/terminal.hpp
-days/2026-09-03/terminal/ansi_parser/solutions/src/terminal.cpp
-days/2026-09-03/terminal/ansi_parser/solutions/tests/test_terminal.cpp
-days/2026-09-03/terminal/ansi_parser/starter/CMakeLists.txt
-days/2026-09-03/terminal/ansi_parser/starter/EXERCISE_TODO.md
-days/2026-09-03/terminal/ansi_parser/starter/MILESTONES.md
-days/2026-09-03/terminal/ansi_parser/starter/README.md
-days/2026-09-03/terminal/ansi_parser/starter/benchmarks/benchmark.cpp
-days/2026-09-03/terminal/ansi_parser/starter/docs/architecture.md
-days/2026-09-03/terminal/ansi_parser/starter/include/terminal.hpp
-days/2026-09-03/terminal/ansi_parser/starter/src/terminal.cpp
-days/2026-09-03/terminal/ansi_parser/starter/tests/test_terminal.cpp
-days/2026-09-03/tooling/miniobjdump/BENCHMARK_GUIADO.md
-days/2026-09-03/tooling/miniobjdump/GABARITO.md
-days/2026-09-03/tooling/miniobjdump/PESQUISA_GUIADA.md
-days/2026-09-03/tooling/miniobjdump/README.md
-days/2026-09-03/tooling/miniobjdump/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
-days/2026-09-03/tooling/miniobjdump/TEORIA_PASSO_A_PASSO.md
-days/2026-09-03/tooling/miniobjdump/TESTES_GUIADOS.md
-days/2026-09-03/tooling/miniobjdump/solutions/CMakeLists.txt
-days/2026-09-03/tooling/miniobjdump/solutions/src/main.cpp
-days/2026-09-03/tooling/miniobjdump/solutions/tests/integration_test.py
-days/2026-09-03/tooling/miniobjdump/solutions/tests/test_target.c
-days/2026-09-03/tooling/miniobjdump/starter/CMakeLists.txt
-days/2026-09-03/tooling/miniobjdump/starter/src/main.cpp
-days/2026-09-03/tooling/miniobjdump/starter/tests/integration_test.py
-days/2026-09-03/tooling/miniobjdump/starter/tests/test_target.c
-docs/BENCHMARKING_GUIDE.md
-docs/DIRECTIVES_COVERAGE.md
-docs/EXPERT_ENGINEERING_PATH.md
-docs/PORTFOLIO_GUIDE.md
-docs/PORTFOLIO_SCORECARD.md
-docs/RESEARCH_METHOD.md
-docs/SAFETY_BOUNDARIES.md
-docs/SPECIFICATION_READING_MAP.md
-docs/TESTING_GUIDE.md
-docs/TRACKS.md
-docs/adr/0001-days-vs-projects.md
-docs/architecture/README.md
-projects/INCUBATOR.md
-projects/chris-assembly-lab/CMakeLists.txt
-projects/chris-assembly-lab/MILESTONES.md
-projects/chris-assembly-lab/README.md
-projects/chris-assembly-lab/benchmarks/benchmark.c
-projects/chris-assembly-lab/docs/architecture.md
-projects/chris-assembly-lab/src/sum_x86_64.S
-projects/chris-assembly-lab/tests/test_sum.c
-projects/chris-autograd/CMakeLists.txt
-projects/chris-autograd/MILESTONES.md
-projects/chris-autograd/README.md
-projects/chris-autograd/benchmarks/benchmark.py
-projects/chris-autograd/docs/architecture.md
-projects/chris-autograd/python/__init__.py
-projects/chris-autograd/python/autograd_scalar.py
-projects/chris-autograd/python/debug_bug_fixed.py
-projects/chris-autograd/python/linear_train.py
-projects/chris-autograd/python/reference_pytorch.py
-projects/chris-autograd/research/gradient_check.md
-projects/chris-autograd/src/linear_train.c
-projects/chris-autograd/tests/test_ai.py
-projects/chris-autograd/tests/test_autograd.py
-projects/chris-binary-toolkit/CMakeLists.txt
-projects/chris-binary-toolkit/MILESTONES.md
-projects/chris-binary-toolkit/README.md
-projects/chris-binary-toolkit/benchmarks/benchmark.py
-projects/chris-binary-toolkit/docs/architecture.md
-projects/chris-binary-toolkit/rules/lab_target.yar
-projects/chris-binary-toolkit/src/lab_target.c
-projects/chris-binary-toolkit/tests/test_ascii_strings.py
-projects/chris-binary-toolkit/tools/__init__.py
-projects/chris-binary-toolkit/tools/ascii_strings.py
-projects/chris-boot/CMakeLists.txt
-projects/chris-boot/MILESTONES.md
-projects/chris-boot/README.md
-projects/chris-boot/docs/architecture.md
-projects/chris-boot/src/bootsector.asm
-projects/chris-boot/tests/test_boot.py
-projects/chris-boot/tools/build_minimal.py
-projects/chris-chain/CMakeLists.txt
-projects/chris-chain/MILESTONES.md
-projects/chris-chain/README.md
-projects/chris-chain/benchmarks/benchmark.py
-projects/chris-chain/docs/architecture.md
-projects/chris-chain/tests/test_chain.py
-projects/chris-chain/toy_chain.py
-projects/chris-cpu/CMakeLists.txt
-projects/chris-cpu/MILESTONES.md
-projects/chris-cpu/README.md
-projects/chris-cpu/benchmarks/benchmark.cpp
-projects/chris-cpu/docs/architecture.md
-projects/chris-cpu/include/cpu.hpp
-projects/chris-cpu/src/cpu.cpp
-projects/chris-cpu/tests/test_cpu.cpp
-projects/chris-disassembler/CMakeLists.txt
-projects/chris-disassembler/MILESTONES.md
-projects/chris-disassembler/README.md
-projects/chris-disassembler/benchmarks/benchmark.py
-projects/chris-disassembler/docs/architecture.md
-projects/chris-disassembler/research/decoder_validation.md
-projects/chris-disassembler/src/main.cpp
-projects/chris-disassembler/tests/integration_test.py
-projects/chris-disassembler/tests/test_target.c
-projects/chris-driver-lab/CMakeLists.txt
-projects/chris-driver-lab/MILESTONES.md
-projects/chris-driver-lab/README.md
-projects/chris-driver-lab/benchmarks/benchmark.cpp
-projects/chris-driver-lab/docs/architecture.md
-projects/chris-driver-lab/include/descriptor_ring.hpp
-projects/chris-driver-lab/src/descriptor_ring.cpp
-projects/chris-driver-lab/tests/test_ring.cpp
-projects/chris-http/CMakeLists.txt
-projects/chris-http/MILESTONES.md
-projects/chris-http/README.md
-projects/chris-http/benchmarks/benchmark.cpp
-projects/chris-http/docs/architecture.md
-projects/chris-http/include/http_parser.hpp
-projects/chris-http/src/http_parser.cpp
-projects/chris-http/tests/test_http.cpp
-projects/chris-nasm/CMakeLists.txt
-projects/chris-nasm/MILESTONES.md
-projects/chris-nasm/README.md
-projects/chris-nasm/benchmarks/benchmark.py
-projects/chris-nasm/chris_nasm.py
-projects/chris-nasm/docs/architecture.md
-projects/chris-nasm/tests/test_assembler.py
-projects/chris-p2p/CMakeLists.txt
-projects/chris-p2p/MILESTONES.md
-projects/chris-p2p/README.md
-projects/chris-p2p/benchmarks/benchmark.py
-projects/chris-p2p/docs/architecture.md
-projects/chris-p2p/gossip.py
-projects/chris-p2p/tests/test_gossip.py
-projects/chris-renderer/CMakeLists.txt
-projects/chris-renderer/MILESTONES.md
-projects/chris-renderer/README.md
-projects/chris-renderer/benchmarks/core_benchmark.cpp
-projects/chris-renderer/common/engine.cpp
-projects/chris-renderer/common/engine.hpp
-projects/chris-renderer/docs/architecture.md
-projects/chris-renderer/opengl_win32/main.cpp
-projects/chris-renderer/research/software_vs_gpu.md
-projects/chris-renderer/software_win32/main.cpp
-projects/chris-renderer/tests/core_tests.cpp
-projects/chris-terminal/CMakeLists.txt
-projects/chris-terminal/MILESTONES.md
-projects/chris-terminal/README.md
-projects/chris-terminal/benchmarks/benchmark.cpp
-projects/chris-terminal/docs/architecture.md
-projects/chris-terminal/include/terminal.hpp
-projects/chris-terminal/src/terminal.cpp
-projects/chris-terminal/tests/test_terminal.cpp
-projects/chris-vm/CMakeLists.txt
-projects/chris-vm/FORMAT.md
-projects/chris-vm/MILESTONES.md
-projects/chris-vm/README.md
-projects/chris-vm/benchmarks/benchmark.py
-projects/chris-vm/docs/architecture.md
-projects/chris-vm/include/clvm_format.h
-projects/chris-vm/programs/arithmetic.asm
-projects/chris-vm/programs/countdown.asm
-projects/chris-vm/rust-validator/Cargo.toml
-projects/chris-vm/rust-validator/src/main.rs
-projects/chris-vm/src/clvm_loader.c
-projects/chris-vm/src/main.cpp
-projects/chris-vm/tests/integration_test.py
-projects/chris-vm/tools/assemble.py
-projects/chris-vm/tools/inspect_clvm.py
-research/README.md
-scripts/pedagogy_check.py
-scripts/quality_check.py
-scripts/run_all_benchmarks.py
-scripts/run_all_tests.py
-tests/README.md
-tools/README.md
+PACKAGE MANIFEST — Day 02 corrected final audit
+SHA256  SIZE  PATH
+42b30c75dd530912fcc8372726f0204d70cdfb0c28cf4130bb98a3d52e36ed54         183  .gitattributes
+b37872289a07faa182547850ff197527ef7f5a981864dde90157f78db32e6330        1174  .github/workflows/ci.yml
+5922562c33af19feb69e770d4e32898a17e095e016aded27dc0cddaa21401f51         644  .gitignore
+ac32e7a0cb1e8734ddecca457bd633ac7a654c455c34a5a369deae7d6c9c8d2c        1758  PROGRESS.md
+198bc5f2168bb309357dd6365d36a1ae89b4ae58808f0f26006446851db1fa79        5082  README.md
+cfaab23c3499577175a7d574cb44605f18ccb1abd368a7cadac93d4d78f04814        7680  ROADMAP.md
+93baa831a65699a4369adae17efc7118c9fd9d155a7f5d4d97a33da8a0e170cc        1276  START_HERE.md
+9ceb71598b62e7a823a3b3079af2e86e59dc3cbbf1fb4ac3918046b9f69b3a25        3143  VALIDATION.md
+27ac82dc4bfcb268fa3fc331699e42f8d36805361c3d90ce835696fc80826e92        3271  VALIDATION_DAY01.md
+1a179f7a872922a184e6beeae35c3a35dd547968334a7434ceb1c1254c92daca        4864  VALIDATION_DAY02.md
+e744b3449dd98aa5bd0de10057f2c0daf837fae2c9b3ee81442ac0195fad2f4b         526  benchmarks/README.md
+e2c19a7c86b051c6b1c177843a4c4612aee4d330874c163635868b767c506398        2246  benchmarks/results-2026-09-03.json
+b19f30cd6efad3c3c97205ea5f88b4f0ac91aba2deeee6c9aef04d02fee85643        3023  benchmarks/results-2026-09-03.md
+7674462fee53543f8af7452183ffb58f2d5e29b9544e2d4daf6f5b5612720ee9        2123  benchmarks/results-2026-09-04.json
+eb8a32e3108af7226ab332a1463ed1eadf3aab3c5ff45efb012ab0ed171fb5d3        2823  benchmarks/results-2026-09-04.md
+ebc397b8cf9de07482de7027d540e1fb6f28d34b2115f3f0c063ee524286bd5f        1406  days/2026-09-03/COMMIT_PLAN.md
+224c2dc443bec31927a3329b30f61d7c76cd8b5d4ffded9e0a123dabf0b1fd48        1203  days/2026-09-03/README.md
+f1d802a0ef9628ec12e95f7a55a7202ee7874aff1971c66e9f300bad15739266         605  days/2026-09-03/ai/linear_autograd/BENCHMARK_GUIADO.md
+4f1f6c2e2ab07edb59adff70f3803a108932f478566226441692444008d81004         435  days/2026-09-03/ai/linear_autograd/GABARITO.md
+e455093c2d8637cd3886807c8180fc739b96f41c466758f02ae1912480f9af7b        1148  days/2026-09-03/ai/linear_autograd/PESQUISA_GUIADA.md
+142913437b849125799628f1bbb2ad5d2e907cbb384ed9645c3c8c9e3ac25cb9        1909  days/2026-09-03/ai/linear_autograd/README.md
+eddaca5585fff59c7af405817048978315b504ece59bd25215fdcd13683115a0        8051  days/2026-09-03/ai/linear_autograd/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+df9a97f176ce9962466c30a9c8ff0e9f4153ece75466377c5492570ce666c4d0        3025  days/2026-09-03/ai/linear_autograd/TEORIA_PASSO_A_PASSO.md
+b46adf44838eb2927c57d031be57a8624303ef8af944a95db794a2e8678d58e4        2800  days/2026-09-03/ai/linear_autograd/TESTES_GUIADOS.md
+f5c5953141d63a38ad81cc157effb626081bc2a4c68bba6c7878b20d41ad2bd2         582  days/2026-09-03/ai/linear_autograd/solutions/CMakeLists.txt
+07bf709df3bff56287f83357b8ea54392211e6c202bf825bc9676f22e7aed7c6        2697  days/2026-09-03/ai/linear_autograd/solutions/python/autograd_scalar.py
+e5485df56cfcadc5e0fedda0584ff856487bce034a9e4415049c4e9699e7c386         654  days/2026-09-03/ai/linear_autograd/solutions/python/debug_bug_fixed.py
+c1b63bc69ffd7f6bdbb229e6ccc7d3776d29338acfc4d7d47ba2631927ec6de6         878  days/2026-09-03/ai/linear_autograd/solutions/python/linear_train.py
+916f596dc361915e9c65ee285790b052cdcfa5e6985c719c8ce0517c00071fb0         942  days/2026-09-03/ai/linear_autograd/solutions/python/reference_pytorch.py
+3fc739b7c5fbc7864bdccbaa297c82e0c402c996870bc9123eab25350ba9f9cc        1830  days/2026-09-03/ai/linear_autograd/solutions/src/linear_train.c
+7a83d08e74777e7d7d82ae34dd8962db239da33482e0c50ec411e00d0c9d67e2         490  days/2026-09-03/ai/linear_autograd/solutions/tests/test_ai.py
+74b4f436e56758b65f6813cea1b7d2cb3a8950cc647b0e8f98749bc14e5c3af4        1270  days/2026-09-03/ai/linear_autograd/solutions/tests/test_autograd.py
+f5c5953141d63a38ad81cc157effb626081bc2a4c68bba6c7878b20d41ad2bd2         582  days/2026-09-03/ai/linear_autograd/starter/CMakeLists.txt
+7fc0e590727aa1d8a486f44d788757bc9b9abf2869a0a8ce1f9a9f46c1457ddf         581  days/2026-09-03/ai/linear_autograd/starter/python/autograd_scalar.py
+a52fb652fba8631f1a5953a14bd7615de9cf3de309fb2e5cfb494438a02f892a         575  days/2026-09-03/ai/linear_autograd/starter/python/debug_bug.py
+942c5b5944d170889b356366271363ad2cea6356a943c502613723b29f42aaf5         753  days/2026-09-03/ai/linear_autograd/starter/python/linear_train.py
+2676ba79e1e1ac9e2262bbf8ef61e0860452dce9aea5ec3dab8f451c0647a53b         888  days/2026-09-03/ai/linear_autograd/starter/src/linear_train.c
+74b4f436e56758b65f6813cea1b7d2cb3a8950cc647b0e8f98749bc14e5c3af4        1270  days/2026-09-03/ai/linear_autograd/starter/tests/test_autograd.py
+22ca541161efcde4dd89d795a6dd225ada35972fe571e6c7fd13413f52fa3409         502  days/2026-09-03/architecture/toy_cpu/BENCHMARK_GUIADO.md
+1804aa1d4442c9f28ea564d52410f18f867eabfa8e8705d4ba5a190a1599077a        1079  days/2026-09-03/architecture/toy_cpu/PESQUISA_GUIADA.md
+1b1aec26e0311cae0c5269c791ce65bc121b2f7d1735a136adb4907c5c3468c0         319  days/2026-09-03/architecture/toy_cpu/README.md
+295eba3a84aa83890337570cb055ca1f9643596f022fe1b52f9b76197dac6585        5482  days/2026-09-03/architecture/toy_cpu/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+778234bfb4c29056a6dca4dcf9bfcbb85fd3db57bfea32a399e984c42da6c8d7         580  days/2026-09-03/architecture/toy_cpu/TEORIA_PASSO_A_PASSO.md
+b7dfa57f03033a43ab44dff2fd6a41aff8cb252dc1f8634c4593377e365ee3b0        1117  days/2026-09-03/architecture/toy_cpu/TESTES_GUIADOS.md
+cb5358d9e86f11f034b4442567427302154830c137bf6328ec6236b49c54b62a         771  days/2026-09-03/architecture/toy_cpu/solutions/CMakeLists.txt
+771310737c8dd06d1a27d3faceb2de4226955f4ad3a2efd939030a5a535551c7         151  days/2026-09-03/architecture/toy_cpu/solutions/MILESTONES.md
+c1004ad00b2f657757ed028767d9e3e4864602b4f8ef338b4ed131b79f6c929b        1099  days/2026-09-03/architecture/toy_cpu/solutions/README.md
+c674dfa4e42a5cf211efa6a091a6ef5de00eb6a969b145422079254dbc5fc592        1188  days/2026-09-03/architecture/toy_cpu/solutions/benchmarks/benchmark.cpp
+8003ed14aec7066727d5331cae8e3ebcebc15815b3ed038ecf83ebd0f53abc66         351  days/2026-09-03/architecture/toy_cpu/solutions/docs/architecture.md
+4f47fb9eadf2d244d14a19ec5941ad967b318f71beab2ab198f2f0939b3ad098         975  days/2026-09-03/architecture/toy_cpu/solutions/include/cpu.hpp
+6009b6a4298181faa26c388b83f428cb19ce1de027f8b2be9d3d944af50a7e20        3650  days/2026-09-03/architecture/toy_cpu/solutions/src/cpu.cpp
+38dd03b78b6d89c0cb205e0111d116a1a1023ac8b93e5dc63d468bca3823c7cc        1793  days/2026-09-03/architecture/toy_cpu/solutions/tests/test_cpu.cpp
+cb5358d9e86f11f034b4442567427302154830c137bf6328ec6236b49c54b62a         771  days/2026-09-03/architecture/toy_cpu/starter/CMakeLists.txt
+ac9048ea7ee92d4aea8f0ea4b775847b4618abbffbc23c3970f13fae21f33e96         351  days/2026-09-03/architecture/toy_cpu/starter/EXERCISE_TODO.md
+771310737c8dd06d1a27d3faceb2de4226955f4ad3a2efd939030a5a535551c7         151  days/2026-09-03/architecture/toy_cpu/starter/MILESTONES.md
+c1004ad00b2f657757ed028767d9e3e4864602b4f8ef338b4ed131b79f6c929b        1099  days/2026-09-03/architecture/toy_cpu/starter/README.md
+c674dfa4e42a5cf211efa6a091a6ef5de00eb6a969b145422079254dbc5fc592        1188  days/2026-09-03/architecture/toy_cpu/starter/benchmarks/benchmark.cpp
+8003ed14aec7066727d5331cae8e3ebcebc15815b3ed038ecf83ebd0f53abc66         351  days/2026-09-03/architecture/toy_cpu/starter/docs/architecture.md
+4f47fb9eadf2d244d14a19ec5941ad967b318f71beab2ab198f2f0939b3ad098         975  days/2026-09-03/architecture/toy_cpu/starter/include/cpu.hpp
+0c57dbce9dbe5300207758468feeae767863dc6aa93438f7dd2381811bf937d6        2303  days/2026-09-03/architecture/toy_cpu/starter/src/cpu.cpp
+38dd03b78b6d89c0cb205e0111d116a1a1023ac8b93e5dc63d468bca3823c7cc        1793  days/2026-09-03/architecture/toy_cpu/starter/tests/test_cpu.cpp
+c867331248b7fff69ebb847bc6c1b0bc8c64b0b21a84dfdfa70a74a5d17b1493         507  days/2026-09-03/assembly/x86_64_abi_sum/BENCHMARK_GUIADO.md
+394f64f17ac26fc9554cc704e9b8fd7ede4c8974eccc08389e6f9a33060a28d6         684  days/2026-09-03/assembly/x86_64_abi_sum/PESQUISA_GUIADA.md
+d4396a431ac1ebc533f04a85934c5a8de0025cc0ca09a9ae34697deadc7d415e         324  days/2026-09-03/assembly/x86_64_abi_sum/README.md
+223d2c92108ed078bb01288e91df2ce4426e5b2c9ea40d7d6795f028a920d152        2143  days/2026-09-03/assembly/x86_64_abi_sum/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+8d845d35d76afe4f4dbf68fcdcd3202011c74cb2ec68cf50fa282267ac2d0a62         923  days/2026-09-03/assembly/x86_64_abi_sum/TEORIA_PASSO_A_PASSO.md
+b23762d6406719bc2ab1fc241c74f6731ef18aa5dc258290895ad59f1a239503        1119  days/2026-09-03/assembly/x86_64_abi_sum/TESTES_GUIADOS.md
+16802b83ad9810cfca4cf9dcb7aa0f676dce27b64a6449b378575d16f941e872         807  days/2026-09-03/assembly/x86_64_abi_sum/solutions/CMakeLists.txt
+67e39132bd7b77fe688fb23dd581ca46e929709728218a3b664d51903b0683ea         181  days/2026-09-03/assembly/x86_64_abi_sum/solutions/MILESTONES.md
+2e6730152ac769a18420ac8617e079f20cb2d34d3b639e45f487b9ab159cce84        1235  days/2026-09-03/assembly/x86_64_abi_sum/solutions/README.md
+ac815785f627a572222face523319a25c49b37e301976a4156f57be06832de6f         952  days/2026-09-03/assembly/x86_64_abi_sum/solutions/benchmarks/benchmark.c
+2064c8e3acde2f08dac324bc517db01c2aba527cbbf2908f62735ca5e1776dc5         224  days/2026-09-03/assembly/x86_64_abi_sum/solutions/docs/architecture.md
+747f5064637a9c572c0496eb4a2a17945215f6063b17c22f1c7a80e231bf0dbb         272  days/2026-09-03/assembly/x86_64_abi_sum/solutions/src/sum_x86_64.S
+257bbb81502649fad7f906939f883d58c7a83d2e08663e6a156ee27408f3b21e         478  days/2026-09-03/assembly/x86_64_abi_sum/solutions/tests/test_sum.c
+16802b83ad9810cfca4cf9dcb7aa0f676dce27b64a6449b378575d16f941e872         807  days/2026-09-03/assembly/x86_64_abi_sum/starter/CMakeLists.txt
+576fb96476eec2065ed0dc2bd9ed4e94cb2912c12acdc52ebf4a6313e58a2013         347  days/2026-09-03/assembly/x86_64_abi_sum/starter/EXERCISE_TODO.md
+67e39132bd7b77fe688fb23dd581ca46e929709728218a3b664d51903b0683ea         181  days/2026-09-03/assembly/x86_64_abi_sum/starter/MILESTONES.md
+2e6730152ac769a18420ac8617e079f20cb2d34d3b639e45f487b9ab159cce84        1235  days/2026-09-03/assembly/x86_64_abi_sum/starter/README.md
+ac815785f627a572222face523319a25c49b37e301976a4156f57be06832de6f         952  days/2026-09-03/assembly/x86_64_abi_sum/starter/benchmarks/benchmark.c
+2064c8e3acde2f08dac324bc517db01c2aba527cbbf2908f62735ca5e1776dc5         224  days/2026-09-03/assembly/x86_64_abi_sum/starter/docs/architecture.md
+404ebae54ba395a5ded920fdbec21bd9f37afeca1985b98110046807c67b2a7e         202  days/2026-09-03/assembly/x86_64_abi_sum/starter/src/sum_x86_64.S
+257bbb81502649fad7f906939f883d58c7a83d2e08663e6a156ee27408f3b21e         478  days/2026-09-03/assembly/x86_64_abi_sum/starter/tests/test_sum.c
+c7d0e80b952042b343965a6906e302d66eec8d9489368f3e9e45b1d62e04239d         504  days/2026-09-03/blockchain/toy_chain/BENCHMARK_GUIADO.md
+b3b2e4863ee7709288bbf799a2abc3b8b050249a163cd687ec01f718df3adf7d         825  days/2026-09-03/blockchain/toy_chain/PESQUISA_GUIADA.md
+53bf5077269e8d4111b899df971aceb7fbfdfd7ee5a1a719138545864fe47d79         321  days/2026-09-03/blockchain/toy_chain/README.md
+206a74e1082c86d0cd805b089a24418a7e2b3584554c3b986eab88fb34d1a593        4758  days/2026-09-03/blockchain/toy_chain/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+acdc0905d3d348c32b8cd8cd6a58ff9b843bf9267a56311af388c3aefaacab65         519  days/2026-09-03/blockchain/toy_chain/TEORIA_PASSO_A_PASSO.md
+d2e7bbfb6e581ecf95942caa31f6af1f20163baca00d48b847016a70c34d3b40        1619  days/2026-09-03/blockchain/toy_chain/TESTES_GUIADOS.md
+dc7301889cc0f868f455ba1338890bd70bad338ced68b1c250bb9f01eb47d0f0         243  days/2026-09-03/blockchain/toy_chain/solutions/CMakeLists.txt
+0c3d6d82f4e239e38821de2b97aee9f5230bfa948c9f85f7de81e00dc5e9435c         260  days/2026-09-03/blockchain/toy_chain/solutions/MILESTONES.md
+6297e8b5db94853b98ce4973734d03fdbbcb32924ac91e6511dc702d26313427        1222  days/2026-09-03/blockchain/toy_chain/solutions/README.md
+e86a51b9a5370db6c2e7984115e06f594288be70da69ae894aa8f33115711906         526  days/2026-09-03/blockchain/toy_chain/solutions/benchmarks/benchmark.py
+b49d17bda65815d6eeb94d01fa8571f60944457ae3ff3625f5cd5025c9103748         281  days/2026-09-03/blockchain/toy_chain/solutions/docs/architecture.md
+5aab635275d0cc692ce350d2767e9e8b0161628a076bcc7044c7e1ccdccb2a74         599  days/2026-09-03/blockchain/toy_chain/solutions/tests/test_chain.py
+8ff0fbc7d05d6a104594452885621904bcc01d592b3957b81722a3eff71ba511        2274  days/2026-09-03/blockchain/toy_chain/solutions/toy_chain.py
+dc7301889cc0f868f455ba1338890bd70bad338ced68b1c250bb9f01eb47d0f0         243  days/2026-09-03/blockchain/toy_chain/starter/CMakeLists.txt
+7dd32e4b05164945a59e85ec5701428d741235974f25f2aeaa46e1ecc7d3f131         351  days/2026-09-03/blockchain/toy_chain/starter/EXERCISE_TODO.md
+0c3d6d82f4e239e38821de2b97aee9f5230bfa948c9f85f7de81e00dc5e9435c         260  days/2026-09-03/blockchain/toy_chain/starter/MILESTONES.md
+6297e8b5db94853b98ce4973734d03fdbbcb32924ac91e6511dc702d26313427        1222  days/2026-09-03/blockchain/toy_chain/starter/README.md
+e86a51b9a5370db6c2e7984115e06f594288be70da69ae894aa8f33115711906         526  days/2026-09-03/blockchain/toy_chain/starter/benchmarks/benchmark.py
+b49d17bda65815d6eeb94d01fa8571f60944457ae3ff3625f5cd5025c9103748         281  days/2026-09-03/blockchain/toy_chain/starter/docs/architecture.md
+5aab635275d0cc692ce350d2767e9e8b0161628a076bcc7044c7e1ccdccb2a74         599  days/2026-09-03/blockchain/toy_chain/starter/tests/test_chain.py
+bdb8dcee8762f7f105a9c4882dfc24e1032365afb34d94f0c60f8f330d007fe2        1238  days/2026-09-03/blockchain/toy_chain/starter/toy_chain.py
+d50182eb37d70e40dd24de77c43fe372cdd1889a23278f6435c0dcef2be41e57         507  days/2026-09-03/boot/legacy_bootsector/BENCHMARK_GUIADO.md
+c383d414bb50f7676feca1cbca5548472a66776b9165fdc58186a54f6e7498bf         742  days/2026-09-03/boot/legacy_bootsector/PESQUISA_GUIADA.md
+0fbe0c1e6b928dd1ac9b7d3fe8b62b36bf53938eefd36bc70df3a255be7de734         324  days/2026-09-03/boot/legacy_bootsector/README.md
+1b5f77bda193df86583dc46b49714eeb81b95863654f40dc2ee796aadea98978        1797  days/2026-09-03/boot/legacy_bootsector/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+a3f0857e0a05a37b026237e01b963d0eda9b4f4643f68beb50bc5020d967c85a         516  days/2026-09-03/boot/legacy_bootsector/TEORIA_PASSO_A_PASSO.md
+c95a9d9c63e1311d031365ad23c472c89563268e22e8107c8bfe0552b54ea3b1        1124  days/2026-09-03/boot/legacy_bootsector/TESTES_GUIADOS.md
+56c96c811073bdbbcdc7755525fe2a44430f183c6ad6fa2b362de08394780043         243  days/2026-09-03/boot/legacy_bootsector/solutions/CMakeLists.txt
+6de4772733331c353642d2ff7336ad86d47db4430ee5227c0a903b1cb4c9e6e2         255  days/2026-09-03/boot/legacy_bootsector/solutions/MILESTONES.md
+b0dee131a24bad6ddbbd676e120297bf1c4049abb376de648c7f4f97d83013fd        1370  days/2026-09-03/boot/legacy_bootsector/solutions/README.md
+71ea1b0b16182ffba8ebcac9dab0c62c76520b34a955d3331d2e4ab7c0909580         268  days/2026-09-03/boot/legacy_bootsector/solutions/docs/architecture.md
+c1e04aaea26e0f4cecded2bbd64bfd387f95faa14e51b09b3e22b94a17c2e517         200  days/2026-09-03/boot/legacy_bootsector/solutions/src/bootsector.asm
+ecab3217c518480662ae6e874415089270b95e54b5994d888eb6a94c6c7b2674         651  days/2026-09-03/boot/legacy_bootsector/solutions/tests/test_boot.py
+fd7765c69fa0e3e6f9ac9d567eac925d63bb674137f1fd2f69cef5524ae7b043         622  days/2026-09-03/boot/legacy_bootsector/solutions/tools/build_minimal.py
+56c96c811073bdbbcdc7755525fe2a44430f183c6ad6fa2b362de08394780043         243  days/2026-09-03/boot/legacy_bootsector/starter/CMakeLists.txt
+c59615ef2f51d39c2a6f6dbd78ebdd0a6f72e90c490bdcd27d55b338cac0a473         355  days/2026-09-03/boot/legacy_bootsector/starter/EXERCISE_TODO.md
+6de4772733331c353642d2ff7336ad86d47db4430ee5227c0a903b1cb4c9e6e2         255  days/2026-09-03/boot/legacy_bootsector/starter/MILESTONES.md
+b0dee131a24bad6ddbbd676e120297bf1c4049abb376de648c7f4f97d83013fd        1370  days/2026-09-03/boot/legacy_bootsector/starter/README.md
+71ea1b0b16182ffba8ebcac9dab0c62c76520b34a955d3331d2e4ab7c0909580         268  days/2026-09-03/boot/legacy_bootsector/starter/docs/architecture.md
+c1e04aaea26e0f4cecded2bbd64bfd387f95faa14e51b09b3e22b94a17c2e517         200  days/2026-09-03/boot/legacy_bootsector/starter/src/bootsector.asm
+ecab3217c518480662ae6e874415089270b95e54b5994d888eb6a94c6c7b2674         651  days/2026-09-03/boot/legacy_bootsector/starter/tests/test_boot.py
+f95a30dae50bcc4a8b3be9d5ae08b410ae5013f1f4c840a2adc04bd6eff0716b         504  days/2026-09-03/boot/legacy_bootsector/starter/tools/build_minimal.py
+765cfb60d491cdae8cb11501498b95770316d8161340525a0f1f7be3d15b52ca         579  days/2026-09-03/graphics/dual_backend_3d/BENCHMARK_GUIADO.md
+9ec4dbfba82a4b0856888a80064b84970021a3246b32f5b8fe87eb2642d6daf2        1460  days/2026-09-03/graphics/dual_backend_3d/PESQUISA_GUIADA.md
+b33a3c0a9fe875878586bf9fd9970bfcddedccaf57d555836f047c4d81a5f82b        3890  days/2026-09-03/graphics/dual_backend_3d/README.md
+e205d6088ec2cfc00376b767c29dbdb967a0ddbc6f92df864bf08f4bf9e13663       16541  days/2026-09-03/graphics/dual_backend_3d/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+e5a6a06ced0ede0ee65babf049fe3a5af8ee34c056a5c867b4c0861df4bd5f6b        4752  days/2026-09-03/graphics/dual_backend_3d/TEORIA_PASSO_A_PASSO.md
+8dc27de791e26082fab429c8202539bdc1c5083a671f63452fdbe4d889cc6b2a        3448  days/2026-09-03/graphics/dual_backend_3d/TESTES_GUIADOS.md
+0d97f6f03d4559207ba5fdec4cd5282e13827e54257ddb4250692b5a08c823f6        1010  days/2026-09-03/graphics/dual_backend_3d/docs/COMPARISON.md
+d0f1970c5d1990248186ec5b3da7aa00feb7cf44f6486f6ba9095929dc0016e9        1060  days/2026-09-03/graphics/dual_backend_3d/solutions/CMakeLists.txt
+291601438cce75c0dc24ae91395ba9db538bbe14929bcecb8dc8ab3abb2b1f38        6979  days/2026-09-03/graphics/dual_backend_3d/solutions/common/engine.cpp
+1c722248afe349f00d3925b288b8bbf641bc0d31fdf889d4817b0342f30a1ae0        2536  days/2026-09-03/graphics/dual_backend_3d/solutions/common/engine.hpp
+2e876a67c174988b05b5633d0bd4a829f3f6e7398fdedb53beeb3f834612df7a       17289  days/2026-09-03/graphics/dual_backend_3d/solutions/opengl_win32/main.cpp
+f912d2c860821183cf78ea098de6b5c198650aaed5ae8fe45598b34849423dde       12899  days/2026-09-03/graphics/dual_backend_3d/solutions/software_win32/main.cpp
+108acc308ec8c45b65a07dabdb364439dc5d73e4b0bd6a19754de66887f54b04        2187  days/2026-09-03/graphics/dual_backend_3d/solutions/tests/core_tests.cpp
+d0f1970c5d1990248186ec5b3da7aa00feb7cf44f6486f6ba9095929dc0016e9        1060  days/2026-09-03/graphics/dual_backend_3d/starter/CMakeLists.txt
+ce09f154670c7c67254f403159f0f26feacb695628dc46196203165828049cac        6484  days/2026-09-03/graphics/dual_backend_3d/starter/common/engine.cpp
+1c722248afe349f00d3925b288b8bbf641bc0d31fdf889d4817b0342f30a1ae0        2536  days/2026-09-03/graphics/dual_backend_3d/starter/common/engine.hpp
+33a2895661e8e1b1bbaa9425cfc2dab7ad8a3baae2bb911841c62d96f47c8f96       15758  days/2026-09-03/graphics/dual_backend_3d/starter/opengl_win32/main.cpp
+fb2f36d1ab599cf3305af1f2dd6fabcd8d4b134450035c8639f5361ef3e973e9        9380  days/2026-09-03/graphics/dual_backend_3d/starter/software_win32/main.cpp
+108acc308ec8c45b65a07dabdb364439dc5d73e4b0bd6a19754de66887f54b04        2187  days/2026-09-03/graphics/dual_backend_3d/starter/tests/core_tests.cpp
+3648d8fbd7a534f43501418d7e293c70ea884243834cab282543f3b2e469d8bc         509  days/2026-09-03/hardware/descriptor_ring/BENCHMARK_GUIADO.md
+803e7dc5525c3843992aa08af3a4d0bbd68f000ecbbbf529a33c82c08f49fe08         736  days/2026-09-03/hardware/descriptor_ring/PESQUISA_GUIADA.md
+0831485c8f4d14dfeb2158552d6da634dbced578a4d3814a4d37800d6009bbfe         326  days/2026-09-03/hardware/descriptor_ring/README.md
+db3dbb549ae430144fd903f2e958bafba45a71f27dab8d0c5fe5c3d5068bcc4e        3182  days/2026-09-03/hardware/descriptor_ring/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+eb648049d1b6351d92e227b4f1c4549559703d5e7cb9c40abd9d35c4c8e10973         543  days/2026-09-03/hardware/descriptor_ring/TEORIA_PASSO_A_PASSO.md
+eef514af9322e2af29a7534fa40f5f77c4fd988b7bd841bf1c615157a7130d7e        1461  days/2026-09-03/hardware/descriptor_ring/TESTES_GUIADOS.md
+dac330725771becb08db287b5a2098648f26815e7a458f98d3d88c764d9bf084         875  days/2026-09-03/hardware/descriptor_ring/solutions/CMakeLists.txt
+b9705afb35e014b2fc2df37223b67131e67af7784ff02370b76f95e5e367cdd6         206  days/2026-09-03/hardware/descriptor_ring/solutions/MILESTONES.md
+64965223b4d5727e93c512594c145afaf419ed47c856c26a2d9aac44cb1b5a0f        1222  days/2026-09-03/hardware/descriptor_ring/solutions/README.md
+fbbd8d3e7216d4e0ce84bb51a206c3a36ee887d7d072cc2e544a96ef2db9f58d         809  days/2026-09-03/hardware/descriptor_ring/solutions/benchmarks/benchmark.cpp
+919f26fb422bce063d6e3698267eebf6d6dac65465313d56039e5a043ead7a39         227  days/2026-09-03/hardware/descriptor_ring/solutions/docs/architecture.md
+fe8c44cb3f43efcabc3ccd69db455722f8d078c5148c5cdad4f62b6ed342e016         720  days/2026-09-03/hardware/descriptor_ring/solutions/include/descriptor_ring.hpp
+87b9668b03bd79a37bb5ce2926783029f9a0c18e9c7d5a188a1f44d2eb2a836c        1454  days/2026-09-03/hardware/descriptor_ring/solutions/src/descriptor_ring.cpp
+05f0a859d88cb086ef18be9a601579b7f8af5b378ba6ef4fc142ce4c75989073         731  days/2026-09-03/hardware/descriptor_ring/solutions/tests/test_ring.cpp
+dac330725771becb08db287b5a2098648f26815e7a458f98d3d88c764d9bf084         875  days/2026-09-03/hardware/descriptor_ring/starter/CMakeLists.txt
+f80f047c94ceb828e0e6257565c0e7df3d27034a54034763fb4e3f39b49377ef         351  days/2026-09-03/hardware/descriptor_ring/starter/EXERCISE_TODO.md
+b9705afb35e014b2fc2df37223b67131e67af7784ff02370b76f95e5e367cdd6         206  days/2026-09-03/hardware/descriptor_ring/starter/MILESTONES.md
+64965223b4d5727e93c512594c145afaf419ed47c856c26a2d9aac44cb1b5a0f        1222  days/2026-09-03/hardware/descriptor_ring/starter/README.md
+fbbd8d3e7216d4e0ce84bb51a206c3a36ee887d7d072cc2e544a96ef2db9f58d         809  days/2026-09-03/hardware/descriptor_ring/starter/benchmarks/benchmark.cpp
+919f26fb422bce063d6e3698267eebf6d6dac65465313d56039e5a043ead7a39         227  days/2026-09-03/hardware/descriptor_ring/starter/docs/architecture.md
+fe8c44cb3f43efcabc3ccd69db455722f8d078c5148c5cdad4f62b6ed342e016         720  days/2026-09-03/hardware/descriptor_ring/starter/include/descriptor_ring.hpp
+ee3bac1a83a22e1279f9d331a8ba5138fd2dd038a10114cc6d960b6d59b17ae8         674  days/2026-09-03/hardware/descriptor_ring/starter/src/descriptor_ring.cpp
+05f0a859d88cb086ef18be9a601579b7f8af5b378ba6ef4fc142ce4c75989073         731  days/2026-09-03/hardware/descriptor_ring/starter/tests/test_ring.cpp
+4d3a2c109db3d558a8b676b724e862405960214e6f0b460d1e4fb3e9ec362224         502  days/2026-09-03/network/http_parser/BENCHMARK_GUIADO.md
+76e1dba90745c698fce0ea541b8698c98631820b32e9f6c6f3ab5979801c500c         776  days/2026-09-03/network/http_parser/PESQUISA_GUIADA.md
+9b922cefd8904b5ef2249d51469e489fd2db4c3643cd07336a4e922e89cadfb3         319  days/2026-09-03/network/http_parser/README.md
+993b676ddfff81d418b5a3a5f00b073fe31f39a344026788e284411f7522f3ea        4533  days/2026-09-03/network/http_parser/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+5f66086bb27524d843d3ea286e48a7cc2b884e1340aaaa78e21cd08e62badb06         451  days/2026-09-03/network/http_parser/TEORIA_PASSO_A_PASSO.md
+b612338a446bf6dddbc43b1137e6ec29499ad93b4a4cc89c1b4b77063b084a69        1120  days/2026-09-03/network/http_parser/TESTES_GUIADOS.md
+39d42d97d643e2ae7721c7349659e6c2d8ce696d5b276a6f9e2864d40610be83         793  days/2026-09-03/network/http_parser/solutions/CMakeLists.txt
+d5f4be066774835d0f097e3d5970d910b5a853d98e45983ebb9a32a3abc06365         232  days/2026-09-03/network/http_parser/solutions/MILESTONES.md
+85bf4b679e829033060395eb1f5c7a1903425472822ac7078962c156af6733d2        1146  days/2026-09-03/network/http_parser/solutions/README.md
+63bdabf4a25fce9fac64de2eef5a921f5a42b220214d11cb57d7cd29855703a8         806  days/2026-09-03/network/http_parser/solutions/benchmarks/benchmark.cpp
+eaabb7dcc0ad0403e6d208b5428cdafcde9d17353894de08599734c56314a668         275  days/2026-09-03/network/http_parser/solutions/docs/architecture.md
+d77a556f6c031449aa78499d79ea2affe984000403e8abf5a961d2f8765a8e6a         529  days/2026-09-03/network/http_parser/solutions/include/http_parser.hpp
+2d47b14993e9e3c6a1b792f398f02b9cc8963ee68d5b6fc656617a70c567e1e4        2550  days/2026-09-03/network/http_parser/solutions/src/http_parser.cpp
+8bb1105256a9f5020e450891853039a6f7a31b1ff946a38b18f6c3d28a1d63a7         818  days/2026-09-03/network/http_parser/solutions/tests/test_http.cpp
+39d42d97d643e2ae7721c7349659e6c2d8ce696d5b276a6f9e2864d40610be83         793  days/2026-09-03/network/http_parser/starter/CMakeLists.txt
+b4f1148a22ac28c8013b5eb33b47d45f34abdf340d72e7ddb97f30cc4df1c2c3         350  days/2026-09-03/network/http_parser/starter/EXERCISE_TODO.md
+d5f4be066774835d0f097e3d5970d910b5a853d98e45983ebb9a32a3abc06365         232  days/2026-09-03/network/http_parser/starter/MILESTONES.md
+85bf4b679e829033060395eb1f5c7a1903425472822ac7078962c156af6733d2        1146  days/2026-09-03/network/http_parser/starter/README.md
+63bdabf4a25fce9fac64de2eef5a921f5a42b220214d11cb57d7cd29855703a8         806  days/2026-09-03/network/http_parser/starter/benchmarks/benchmark.cpp
+eaabb7dcc0ad0403e6d208b5428cdafcde9d17353894de08599734c56314a668         275  days/2026-09-03/network/http_parser/starter/docs/architecture.md
+d77a556f6c031449aa78499d79ea2affe984000403e8abf5a961d2f8765a8e6a         529  days/2026-09-03/network/http_parser/starter/include/http_parser.hpp
+ebc0613624d06312a0e53544e565c1e0d0247997b656135a8ba71cb0c3b8b135         579  days/2026-09-03/network/http_parser/starter/src/http_parser.cpp
+8bb1105256a9f5020e450891853039a6f7a31b1ff946a38b18f6c3d28a1d63a7         818  days/2026-09-03/network/http_parser/starter/tests/test_http.cpp
+53e7301db3b8bee6a855b8ee0d7435c3c2b6425a5598aa312ecf48f47983e5e9         503  days/2026-09-03/p2p/gossip/BENCHMARK_GUIADO.md
+d7f42f2ca744142126fd2cfaf334f3e20abb1ebf090d85a0c17b35d4e1ad0a0c         613  days/2026-09-03/p2p/gossip/PESQUISA_GUIADA.md
+b29cd818b949227fe83a9bc189d856b8f4b8ad18499e84706679f7646dba5576         320  days/2026-09-03/p2p/gossip/README.md
+07904cf9b8eaf85f6e90bd08c11de864142288b6aeb9c2cf6e259bb6b2b21647        1758  days/2026-09-03/p2p/gossip/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+a986aade535ac0700a40a92309fd049c22a0b43ce1e7e544fd97c6d4ac6f9381         415  days/2026-09-03/p2p/gossip/TEORIA_PASSO_A_PASSO.md
+abd33f7f7c72d16f5cdef98e03f1b71a3762f12f302d1f6850d1f437bbdb8fd3        1122  days/2026-09-03/p2p/gossip/TESTES_GUIADOS.md
+a18d508bd3e09a6205a81bdba305147cb659b724fbcc54505f22b1d3a7aa4fad         239  days/2026-09-03/p2p/gossip/solutions/CMakeLists.txt
+78b09117cb5d6e35139b00fa451a448d72e88f625a924dedce58859e6ce918a3         252  days/2026-09-03/p2p/gossip/solutions/MILESTONES.md
+aaba9dbfaad17801209e345015792aeec4fdc603d5ff1e368d60975b508161e3        1132  days/2026-09-03/p2p/gossip/solutions/README.md
+19a861491d88805e47e46b7879ac6cb442a3dded357bc9512058f9176fa45184         521  days/2026-09-03/p2p/gossip/solutions/benchmarks/benchmark.py
+24ec5e6a450c7b21d54f3a0796801fd7e355990002b7a7e7d5b04a7ba645dc71         236  days/2026-09-03/p2p/gossip/solutions/docs/architecture.md
+457523f5b7d6fb63b3b5f8835e43eee88dfaf25ed8411f1906ae6fe12098f543        1550  days/2026-09-03/p2p/gossip/solutions/gossip.py
+674f0d67f8dcf0c6d50af9139ed2b7fda69c8ebc25cd0fcac3d7bce08e12353d         673  days/2026-09-03/p2p/gossip/solutions/tests/test_gossip.py
+a18d508bd3e09a6205a81bdba305147cb659b724fbcc54505f22b1d3a7aa4fad         239  days/2026-09-03/p2p/gossip/starter/CMakeLists.txt
+e948ebfa477dd5a177bb27473e504c1582ecfb0000c4e3f0d19fe6c3a9a7adbe         352  days/2026-09-03/p2p/gossip/starter/EXERCISE_TODO.md
+78b09117cb5d6e35139b00fa451a448d72e88f625a924dedce58859e6ce918a3         252  days/2026-09-03/p2p/gossip/starter/MILESTONES.md
+aaba9dbfaad17801209e345015792aeec4fdc603d5ff1e368d60975b508161e3        1132  days/2026-09-03/p2p/gossip/starter/README.md
+19a861491d88805e47e46b7879ac6cb442a3dded357bc9512058f9176fa45184         521  days/2026-09-03/p2p/gossip/starter/benchmarks/benchmark.py
+24ec5e6a450c7b21d54f3a0796801fd7e355990002b7a7e7d5b04a7ba645dc71         236  days/2026-09-03/p2p/gossip/starter/docs/architecture.md
+ac269d93aa92ee20cec45a17951cea1629baf970187525d72c5a274fc100c0c5         991  days/2026-09-03/p2p/gossip/starter/gossip.py
+674f0d67f8dcf0c6d50af9139ed2b7fda69c8ebc25cd0fcac3d7bce08e12353d         673  days/2026-09-03/p2p/gossip/starter/tests/test_gossip.py
+29c5bb1e3fda534026a38ebf8560e89f251972bc32d34bcd3d659928f26fae92         448  days/2026-09-03/redteam/benign_reversing/BENCHMARK_GUIADO.md
+db94b3b0d2ea6e5a891d3378fceddd9ac5b67e17e98870ced4712fcb4d55f542         342  days/2026-09-03/redteam/benign_reversing/GABARITO.md
+b0c04b0681b39b0ed2eb7bbd1853908f5adcdc8cc20f0f579b31c89cd1af5b47         841  days/2026-09-03/redteam/benign_reversing/PESQUISA_GUIADA.md
+440d6477aa60c28dc71a1c7cc7520a8ecb64daff515f0a75957a8ea3f0e5b0ab        1712  days/2026-09-03/redteam/benign_reversing/README.md
+dcaa392aefb61100036d59eb6e39a290d353f0c4b6449e8b99e3881a9166c3ef        6217  days/2026-09-03/redteam/benign_reversing/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+db16f735625a5a440dd54d92fe0a965f0cb0fc8853c29df542303c761877630f        3344  days/2026-09-03/redteam/benign_reversing/TEORIA_PASSO_A_PASSO.md
+f0109a4ee65611019c765217662836cb8b6eeada4d9b32512f4eec310e0aacda        1352  days/2026-09-03/redteam/benign_reversing/TESTES_GUIADOS.md
+061eb4e137249b21c504ea78623119165154e320c9d5f7b904b2dc00be89fa9d         625  days/2026-09-03/redteam/benign_reversing/solutions/CMakeLists.txt
+f4600ae434f58f0282a6ac2c98ded017fc4c680c7b825830cb2266ce95d95dbc         385  days/2026-09-03/redteam/benign_reversing/solutions/rules/lab_target.yar
+4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61        1087  days/2026-09-03/redteam/benign_reversing/solutions/src/lab_target.c
+0fcf96c5861e1cef86602be0888844ebaf5ce0185f666058c4d2a96f437002fd         601  days/2026-09-03/redteam/benign_reversing/solutions/tests/test_ascii_strings.py
+3dffeda3b7c4114c2338f8ae6701becc593c7485172733620a43a7392da09c3c         456  days/2026-09-03/redteam/benign_reversing/solutions/tests/test_rule.py
+c0f7bc6cec876a095ca8c7467a2e554047b52c46e5bde8405a31219b15166b36        1116  days/2026-09-03/redteam/benign_reversing/solutions/tools/ascii_strings.py
+061eb4e137249b21c504ea78623119165154e320c9d5f7b904b2dc00be89fa9d         625  days/2026-09-03/redteam/benign_reversing/starter/CMakeLists.txt
+de48091fc271a8524a30e79e07a1928904ef30f86fea4767fca91e07b3264e01         220  days/2026-09-03/redteam/benign_reversing/starter/rules/lab_target.yar
+4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61        1087  days/2026-09-03/redteam/benign_reversing/starter/src/lab_target.c
+0fcf96c5861e1cef86602be0888844ebaf5ce0185f666058c4d2a96f437002fd         601  days/2026-09-03/redteam/benign_reversing/starter/tests/test_ascii_strings.py
+3dffeda3b7c4114c2338f8ae6701becc593c7485172733620a43a7392da09c3c         456  days/2026-09-03/redteam/benign_reversing/starter/tests/test_rule.py
+fa8d169a022c86f522aee858589a32904e5971ecc71c089fdf445a3a8f2d1409         740  days/2026-09-03/redteam/benign_reversing/starter/tools/ascii_strings.py
+487fb70774347e7fc096fe7a1c6f0a90b4e02bd035876c56bdd37745839c3b2b         659  days/2026-09-03/systems/clvm/BENCHMARK_GUIADO.md
+ebd590dee06b380fa1b166e9581fd4e5bd3d696d8156504bc1afedcde4e7648e         852  days/2026-09-03/systems/clvm/PESQUISA_GUIADA.md
+0ee09c7458f367263aeab24d5fe229de66ae14e0ebbe82b7e9628f8476553795        2229  days/2026-09-03/systems/clvm/README.md
+867e2fabb77cd529ff3a18660091e763ba19bd449a8a3a08e17018bd0acf4e77       11003  days/2026-09-03/systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+971127579f424b08f14ab0c5f3e318629761a7ddf8f53c04790b04f972df48e5        1377  days/2026-09-03/systems/clvm/ROADMAP.md
+6fbdbde71002d9b6d21f61c68f62db66e9fe98534b8188710a2a4009f7bb6964        3910  days/2026-09-03/systems/clvm/TEORIA_PASSO_A_PASSO.md
+dd100c424a5eba99e2412d4909f4477d935d953706b6e7183039ae5940b08089        2775  days/2026-09-03/systems/clvm/TESTES_GUIADOS.md
+e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf        1096  days/2026-09-03/systems/clvm/docs/FORMAT.md
+2d967e3d4e65e02a6ce0d960170720aa15328098e464a2b96e8a5da1d2f165d5         792  days/2026-09-03/systems/clvm/solutions/CMakeLists.txt
+e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf        1096  days/2026-09-03/systems/clvm/solutions/FORMAT.md
+39527454e21b6078bb2c86224f9804dee1bae118447e47867fbcb733aaf698f3         844  days/2026-09-03/systems/clvm/solutions/include/clvm_format.h
+2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290          59  days/2026-09-03/systems/clvm/solutions/programs/arithmetic.asm
+f813ee1e5ffafde7ebee880b6c99211111c68e1fa2982d9d3d859ee07351402c         115  days/2026-09-03/systems/clvm/solutions/programs/countdown.asm
+219164ac6fa7b6b8dd118719bb291873531cb0891091bae7010f3188733a0a2c          84  days/2026-09-03/systems/clvm/solutions/rust-validator/Cargo.toml
+f44f25d890c27956fd4fde2cd9a77e654681f9319165e38435688a1316354431        1861  days/2026-09-03/systems/clvm/solutions/rust-validator/src/main.rs
+a3e42461b6986ab3ed87059df4e855dbbe21d13c91f4b8f2c5980261f89d654d        2304  days/2026-09-03/systems/clvm/solutions/src/clvm_loader.c
+38016acfa77f6330d7d50e1ab337f6907d2601e741bfa3bed7a06131684ad05b        7725  days/2026-09-03/systems/clvm/solutions/src/main.cpp
+fd3818bc981833a21be7b54cddf1feb210a344af1cffa91663e56c0b08099230        1312  days/2026-09-03/systems/clvm/solutions/tests/integration_test.py
+f097ea09f8ac3dc21490330623b0d9263f9c28a5edca63e75182f86a15bb8b02        3801  days/2026-09-03/systems/clvm/solutions/tools/assemble.py
+5f151d2e29d24928c748a29fddf4a910c9c32068609ad1a218890529f814dc2f         873  days/2026-09-03/systems/clvm/solutions/tools/inspect_clvm.py
+2d967e3d4e65e02a6ce0d960170720aa15328098e464a2b96e8a5da1d2f165d5         792  days/2026-09-03/systems/clvm/starter/CMakeLists.txt
+e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf        1096  days/2026-09-03/systems/clvm/starter/FORMAT.md
+39527454e21b6078bb2c86224f9804dee1bae118447e47867fbcb733aaf698f3         844  days/2026-09-03/systems/clvm/starter/include/clvm_format.h
+2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290          59  days/2026-09-03/systems/clvm/starter/programs/arithmetic.asm
+f813ee1e5ffafde7ebee880b6c99211111c68e1fa2982d9d3d859ee07351402c         115  days/2026-09-03/systems/clvm/starter/programs/countdown.asm
+219164ac6fa7b6b8dd118719bb291873531cb0891091bae7010f3188733a0a2c          84  days/2026-09-03/systems/clvm/starter/rust-validator/Cargo.toml
+f16a5e209a46941b95dce9e1f73417611c23215c61652ee0ed22ac8e11a1d9eb        1847  days/2026-09-03/systems/clvm/starter/rust-validator/src/main.rs
+74331fe500ae2f4d4992ed2e8957e71b3626594518331d51ce6a2544f990471d        1379  days/2026-09-03/systems/clvm/starter/src/clvm_loader.c
+c1e49b6c3b8a7042e5793b69eb80601d7a9fa3d03bfe4697cb9143a29a9e6f29        2784  days/2026-09-03/systems/clvm/starter/src/main.cpp
+fd3818bc981833a21be7b54cddf1feb210a344af1cffa91663e56c0b08099230        1312  days/2026-09-03/systems/clvm/starter/tests/integration_test.py
+dec80ed2517321eb41ba7336d589fa227236120971551caf457336ca733acd2c        2164  days/2026-09-03/systems/clvm/starter/tools/assemble.py
+5f151d2e29d24928c748a29fddf4a910c9c32068609ad1a218890529f814dc2f         873  days/2026-09-03/systems/clvm/starter/tools/inspect_clvm.py
+f42d854cc252407b6bfab25f0d316a7b000804dd5448336d1f2c0c62d5fa95eb         867  days/2026-09-03/systems/clvm/tests/smoke_test.sh
+7f989b287dcbfa933703e935d74d4dc97c4e3102046a2d2e7847c436ffbfc283         506  days/2026-09-03/terminal/ansi_parser/BENCHMARK_GUIADO.md
+f7384324c435d860503eaf3c9aca426b91668bdbbe3c2d6ece91a10325b9ea25         741  days/2026-09-03/terminal/ansi_parser/PESQUISA_GUIADA.md
+19873eed45d3b7d837977289076d42816b45667461e52543f7131045eb52db39         323  days/2026-09-03/terminal/ansi_parser/README.md
+f20c993618fc6a7bb6cab45915e64b4ffaaab6b31ffbe4e8d9285dc068768aed        4340  days/2026-09-03/terminal/ansi_parser/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+76259012fe6ec998a35bb371a900240971ec7e8b97d043344ec25ebbfb051972         530  days/2026-09-03/terminal/ansi_parser/TEORIA_PASSO_A_PASSO.md
+e578f73c3410c7b92ba3a839cf0207303d20d8b83d1dcfa398a8ec2c38af4bee        1289  days/2026-09-03/terminal/ansi_parser/TESTES_GUIADOS.md
+bb46f450eb70806567ad8360a32255b19499f57a2fb523ee6c9531a096c1ee0d         846  days/2026-09-03/terminal/ansi_parser/solutions/CMakeLists.txt
+61ea870f2f50972986634c196433d8d755d841d34cc2d60e204eb2e0a9489d3f         226  days/2026-09-03/terminal/ansi_parser/solutions/MILESTONES.md
+5884ea72df86a924067c4c0537f743458b8d7ba04c36d5d57624006d10c30a36        1149  days/2026-09-03/terminal/ansi_parser/solutions/README.md
+cbd422c397226ced9bf0a4a33624cb3536c90bdc07a3951d102e03bf05dcd8a1         699  days/2026-09-03/terminal/ansi_parser/solutions/benchmarks/benchmark.cpp
+03155cb37df22af37b03635566cf9f7ecb91b985cfcc48ea7061d257f657827b         287  days/2026-09-03/terminal/ansi_parser/solutions/docs/architecture.md
+8ef1e49a073fc4ce315b9e55ac2a687ad0dde56f6241dfbea24ad6cf52e75763         747  days/2026-09-03/terminal/ansi_parser/solutions/include/terminal.hpp
+2927fbe1dba85ae18f7d43d08ac662e18bfafe43bbb3426747ab4f10d1cf9840        3361  days/2026-09-03/terminal/ansi_parser/solutions/src/terminal.cpp
+a2ff7c52ff3b519f477070ba6172c24d639ccaca53325a72ae3910c2dd699600         726  days/2026-09-03/terminal/ansi_parser/solutions/tests/test_terminal.cpp
+bb46f450eb70806567ad8360a32255b19499f57a2fb523ee6c9531a096c1ee0d         846  days/2026-09-03/terminal/ansi_parser/starter/CMakeLists.txt
+c6a9cdcdf1a02e11e08c2af2dab0caf6737249999b15b4ce7a87340386973d41         350  days/2026-09-03/terminal/ansi_parser/starter/EXERCISE_TODO.md
+61ea870f2f50972986634c196433d8d755d841d34cc2d60e204eb2e0a9489d3f         226  days/2026-09-03/terminal/ansi_parser/starter/MILESTONES.md
+5884ea72df86a924067c4c0537f743458b8d7ba04c36d5d57624006d10c30a36        1149  days/2026-09-03/terminal/ansi_parser/starter/README.md
+cbd422c397226ced9bf0a4a33624cb3536c90bdc07a3951d102e03bf05dcd8a1         699  days/2026-09-03/terminal/ansi_parser/starter/benchmarks/benchmark.cpp
+03155cb37df22af37b03635566cf9f7ecb91b985cfcc48ea7061d257f657827b         287  days/2026-09-03/terminal/ansi_parser/starter/docs/architecture.md
+8ef1e49a073fc4ce315b9e55ac2a687ad0dde56f6241dfbea24ad6cf52e75763         747  days/2026-09-03/terminal/ansi_parser/starter/include/terminal.hpp
+8c2a541afc07afcf690a189bf0e1b6937738fe2f6f7e967344c83509a01f11bb        1340  days/2026-09-03/terminal/ansi_parser/starter/src/terminal.cpp
+a2ff7c52ff3b519f477070ba6172c24d639ccaca53325a72ae3910c2dd699600         726  days/2026-09-03/terminal/ansi_parser/starter/tests/test_terminal.cpp
+95d83d4007c1e8cdb00ea8203786988d03cb8620b6b5bb7ebf14b185a777c298         373  days/2026-09-03/tooling/miniobjdump/BENCHMARK_GUIADO.md
+0616f0ff77fdeda8c77356de1513b07717dc4d2327be4a3c82cd26a5583640c5         479  days/2026-09-03/tooling/miniobjdump/GABARITO.md
+411e16676e39756adaa7c3528a3b9372fec525654c47a63f9c7e0df3eb55cfcd         757  days/2026-09-03/tooling/miniobjdump/PESQUISA_GUIADA.md
+a8133701917b8083dabf7640e19f31c3dc08918f1d1b5a5aeb00506c55791173        1622  days/2026-09-03/tooling/miniobjdump/README.md
+098c35418f543c53d438b7ba23ff4b8050b50cf59f6f0dc76fbbbd10d81dd272        7021  days/2026-09-03/tooling/miniobjdump/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+097caf2ba54e39c740e5e49e5c9186ad96750d86e969f91ace47e500f0543124        2674  days/2026-09-03/tooling/miniobjdump/TEORIA_PASSO_A_PASSO.md
+572e2894876e02b96b9d9350d5ebf447bf32ab91231f9eb3d9a9657b9a61bb20        1735  days/2026-09-03/tooling/miniobjdump/TESTES_GUIADOS.md
+1ec4a65b39aaa27fa7ec6dcc71546cead4d31cc47d64fe3b8966b4769ef9340b         810  days/2026-09-03/tooling/miniobjdump/solutions/CMakeLists.txt
+a5db5a428f543de49f110788cf3b0f72a8af197e0a65d86a4c500c7c2367dcf3        9028  days/2026-09-03/tooling/miniobjdump/solutions/src/main.cpp
+7f2b4d9b4a27bb588c3bcddb334c4790432edd98cd3ac1c3e6742e9316d71347        1084  days/2026-09-03/tooling/miniobjdump/solutions/tests/integration_test.py
+bbe2dd892b3b6591646034972635d0f469f1956e0c5cf202f9cd68f9bef2a633         243  days/2026-09-03/tooling/miniobjdump/solutions/tests/test_target.c
+1ec4a65b39aaa27fa7ec6dcc71546cead4d31cc47d64fe3b8966b4769ef9340b         810  days/2026-09-03/tooling/miniobjdump/starter/CMakeLists.txt
+60bb19e7ef1916da4e79401d7e1f5d0c261794d21e3b2b623644c6dcf1daeceb        1866  days/2026-09-03/tooling/miniobjdump/starter/src/main.cpp
+7f2b4d9b4a27bb588c3bcddb334c4790432edd98cd3ac1c3e6742e9316d71347        1084  days/2026-09-03/tooling/miniobjdump/starter/tests/integration_test.py
+bbe2dd892b3b6591646034972635d0f469f1956e0c5cf202f9cd68f9bef2a633         243  days/2026-09-03/tooling/miniobjdump/starter/tests/test_target.c
+6fbf89c10a2b9575ce059355435bba4db1f22639a084b2897654703d56fe5d8b         270  days/2026-09-04/COMMIT_PLAN.md
+b7fe6ca032b32a766d5c8050524b6b1cb5c865632b5ee518c9a1b2f37befd144        2301  days/2026-09-04/README.md
+79e2fb7dd7cbe395e2fdde18eaf979098ae70842621f94151b2035f80c913f90         592  days/2026-09-04/ai/tensor_strides/BENCHMARK_GUIADO.md
+ae180f1274a4eefb82cad36047b84e8a5247453a51b7ef45c77d7264eb8b31d9         929  days/2026-09-04/ai/tensor_strides/PESQUISA_GUIADA.md
+2b1544b44bfa30d3813cf4d6f75744f7f683a0e908751bf5468f15c7c0f55d6b         508  days/2026-09-04/ai/tensor_strides/README.md
+e0d9911d79bdd1938bc174a707e870c16e198d9cec3d0b28b6489cf112b6da93        3904  days/2026-09-04/ai/tensor_strides/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+93cc82edc7b615c6ec35d48f1b28ab4d15fe8ccd8dc714d10e1c33cabb5957a0        1213  days/2026-09-04/ai/tensor_strides/TEORIA_PASSO_A_PASSO.md
+2f5eccdc1488f55101439dc4dace7295d3923e1c4e9b37ee5010590ed7e2cfc9        1610  days/2026-09-04/ai/tensor_strides/TESTES_GUIADOS.md
+251558cb9ad68e743b1bb9b9ccb41e3133496b8a185aae246eac1713efabdd06         828  days/2026-09-04/ai/tensor_strides/solutions/CMakeLists.txt
+af71c27cfda902e18cef35ac6682cac651ae77d76700a7ef5d95d5b449725b23         221  days/2026-09-04/ai/tensor_strides/solutions/MILESTONES.md
+7c2de7dc6feb7fd92dda0447a06955853a474a92e2cdf976c6126da5864022fd         857  days/2026-09-04/ai/tensor_strides/solutions/README.md
+0e280051dca8a4748ba767f5d7115e802f7fc30eebc801f746c849d070e6cb38        1117  days/2026-09-04/ai/tensor_strides/solutions/benchmarks/tensor_benchmark.cpp
+92690cb4812fc85478b1968bbe9cd31801e722334b1d1331f4f82328db3c032d         255  days/2026-09-04/ai/tensor_strides/solutions/docs/architecture.md
+d4262c1b10ad55f10c2da99278ddd07d80acfb27965e4f4f2c5af7cc5ac14370         979  days/2026-09-04/ai/tensor_strides/solutions/include/tensor.hpp
+5a581f7d5a1727d5445ef900d17cec0707896ba373910b0e8c841d493fe644eb        2135  days/2026-09-04/ai/tensor_strides/solutions/src/tensor.cpp
+951451d3333920629e515a05d7bb910f83c80a6f5ef5de6e2e364953554ec982        1302  days/2026-09-04/ai/tensor_strides/solutions/tests/tensor_tests.cpp
+251558cb9ad68e743b1bb9b9ccb41e3133496b8a185aae246eac1713efabdd06         828  days/2026-09-04/ai/tensor_strides/starter/CMakeLists.txt
+c5cb3d8bd0a5b1d00bc49f8a47cdff403d72c941740cda45bd347bca09303e96         268  days/2026-09-04/ai/tensor_strides/starter/README.md
+0e280051dca8a4748ba767f5d7115e802f7fc30eebc801f746c849d070e6cb38        1117  days/2026-09-04/ai/tensor_strides/starter/benchmarks/tensor_benchmark.cpp
+d4262c1b10ad55f10c2da99278ddd07d80acfb27965e4f4f2c5af7cc5ac14370         979  days/2026-09-04/ai/tensor_strides/starter/include/tensor.hpp
+f3cf1cfef3879e674988825b0f07bc3e233cfc49c02af1ef900df0b57796b765        1709  days/2026-09-04/ai/tensor_strides/starter/src/tensor.cpp
+951451d3333920629e515a05d7bb910f83c80a6f5ef5de6e2e364953554ec982        1302  days/2026-09-04/ai/tensor_strides/starter/tests/tensor_tests.cpp
+00beb3d5d81668435e45f18e8edf84fb1939ef2111b8e302acaad8c92388d2f2         594  days/2026-09-04/algorithms/sorting_research/BENCHMARK_GUIADO.md
+8ac906d1cfe7c1fe5bc594f10671d8a4160977d071d987e6684ce77b7d52db2e         834  days/2026-09-04/algorithms/sorting_research/PESQUISA_GUIADA.md
+9c087b67b51b43bfea848c794bec567f3fec554aa572d823e9c329033c6e606f         526  days/2026-09-04/algorithms/sorting_research/README.md
+2842ed9832518992bfbcbde37121d88ac796fe317e018a7e1f7b9b4db04e3566        4955  days/2026-09-04/algorithms/sorting_research/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+c13e06bcb5552125695c4056b9c9c28cb4985d8effb2077d5705acc4e2e15c11        1046  days/2026-09-04/algorithms/sorting_research/TEORIA_PASSO_A_PASSO.md
+9b8d4c2037c6024cb3349ca6f16475cb6d65a647817f6ac9c5d4c5b1c6c48b5c        1640  days/2026-09-04/algorithms/sorting_research/TESTES_GUIADOS.md
+22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b         878  days/2026-09-04/algorithms/sorting_research/solutions/CMakeLists.txt
+5806083b4278fe651afb06baf22cd029215a68d5281341e735e15b0f8a89ff37         233  days/2026-09-04/algorithms/sorting_research/solutions/MILESTONES.md
+5a7aa1d913bd040ab813033b5a6a908c30ed072cda8781ac55adfa618c62ac74         796  days/2026-09-04/algorithms/sorting_research/solutions/README.md
+798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819        1903  days/2026-09-04/algorithms/sorting_research/solutions/benchmarks/algorithm_benchmark.cpp
+2ffc7fa14def94216180b893e321e42f32e617002fcd2a2996f192973ea38ff6         195  days/2026-09-04/algorithms/sorting_research/solutions/docs/architecture.md
+4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2         234  days/2026-09-04/algorithms/sorting_research/solutions/include/sort.hpp
+852bf51b8ba2a70376e2609ce339709ab9ac510c4d74d87f001897c1ceff2a63        3061  days/2026-09-04/algorithms/sorting_research/solutions/src/sort.cpp
+547caae59b0b73c0d5d42dfa9805a4d0df694c400926cc92d3aec06159af9f2f         962  days/2026-09-04/algorithms/sorting_research/solutions/tests/algorithm_tests.cpp
+22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b         878  days/2026-09-04/algorithms/sorting_research/starter/CMakeLists.txt
+0bb4a18092e78d97ee7c308e022b4664caa515f331bbc62fe2e91fe08329333f         266  days/2026-09-04/algorithms/sorting_research/starter/README.md
+798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819        1903  days/2026-09-04/algorithms/sorting_research/starter/benchmarks/algorithm_benchmark.cpp
+4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2         234  days/2026-09-04/algorithms/sorting_research/starter/include/sort.hpp
+e6004574eebbcaec31924f8ecc53f611126769ecfa059375a19390cdd3552da2        1670  days/2026-09-04/algorithms/sorting_research/starter/src/sort.cpp
+547caae59b0b73c0d5d42dfa9805a4d0df694c400926cc92d3aec06159af9f2f         962  days/2026-09-04/algorithms/sorting_research/starter/tests/algorithm_tests.cpp
+da7c8b908b98bc3400731d68d7db124f5f157b9b77251491ab74a36cf8b5aae3         589  days/2026-09-04/debugger/protocol_v1/BENCHMARK_GUIADO.md
+04c0178d841f00e9b36cb0694b59d02a8d38c6755050c55d272bafbf9b364812         988  days/2026-09-04/debugger/protocol_v1/PESQUISA_GUIADA.md
+d6b24252315338ab6b86545417ccd02766c4709a5887d22d5b9ff69e24ec230a         487  days/2026-09-04/debugger/protocol_v1/README.md
+a36b60cb71b002c33c6a961e174dee2c2f2aae1565afa4c42438528641852db5        4810  days/2026-09-04/debugger/protocol_v1/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+8a8c34ba5ea929e8805fcb8555ab011e2d961bfcc784ff44779fea8a5b7bfa53         662  days/2026-09-04/debugger/protocol_v1/TEORIA_PASSO_A_PASSO.md
+86a7a86b03916ec7f329e6ed6199e896db6f3aed33af395f9736a8a17535d60d        2141  days/2026-09-04/debugger/protocol_v1/TESTES_GUIADOS.md
+13408ac5bf1d93326da591c9ae82ed73aaf7d8378c67893f3b829876a9f0ab21         896  days/2026-09-04/debugger/protocol_v1/solutions/CMakeLists.txt
+6378b23ac6df2c3b66c073ff4e454f1cc678fb50abdc42f93ec39e427fb4de25         264  days/2026-09-04/debugger/protocol_v1/solutions/MILESTONES.md
+afd22f16f304dee3626cbbf445cbaee5ee613b85f13b36d28d21491b1733667a         707  days/2026-09-04/debugger/protocol_v1/solutions/README.md
+5a70a7bca93d26ce2c1a8c49c5defae1346f14444f74e17f98d59ed39071cbef         894  days/2026-09-04/debugger/protocol_v1/solutions/benchmarks/debugger_benchmark.cpp
+dbb13fafbd943a263cfff62a16d90873286abba771919bdf065a56c3956a8478         376  days/2026-09-04/debugger/protocol_v1/solutions/docs/architecture.md
+d51c7a711c113493638d94eafc4c1792fb30d3d9b553850500eef18f29ec2378         497  days/2026-09-04/debugger/protocol_v1/solutions/include/protocol.hpp
+2c56f14495e34fb54461030cfeb56f34bb53ab8452dfb417b070afae17b6fd53        3499  days/2026-09-04/debugger/protocol_v1/solutions/src/protocol.cpp
+474c7e3225b589b57cd09cf3344a1b876459ad31c59accdb20c774e279601c41        1285  days/2026-09-04/debugger/protocol_v1/solutions/tests/debugger_tests.cpp
+13408ac5bf1d93326da591c9ae82ed73aaf7d8378c67893f3b829876a9f0ab21         896  days/2026-09-04/debugger/protocol_v1/starter/CMakeLists.txt
+750f9e5e47d16ba4d3fd79fc5ea037079624ebe5e6e046567813ab8635630c0a         270  days/2026-09-04/debugger/protocol_v1/starter/README.md
+5a70a7bca93d26ce2c1a8c49c5defae1346f14444f74e17f98d59ed39071cbef         894  days/2026-09-04/debugger/protocol_v1/starter/benchmarks/debugger_benchmark.cpp
+d51c7a711c113493638d94eafc4c1792fb30d3d9b553850500eef18f29ec2378         497  days/2026-09-04/debugger/protocol_v1/starter/include/protocol.hpp
+f51d231a6ac16ca1987683ae939841552292740616aa7a2caa3514839c435bc9        1606  days/2026-09-04/debugger/protocol_v1/starter/src/protocol.cpp
+474c7e3225b589b57cd09cf3344a1b876459ad31c59accdb20c774e279601c41        1285  days/2026-09-04/debugger/protocol_v1/starter/tests/debugger_tests.cpp
+53f34f17f41dae648c57cbf166471dd3e5fff0139662993890cab12bd24526a1         354  days/2026-09-04/dotnet/clr_pe_cli_metadata/BENCHMARK_GUIADO.md
+15743dd153dcec556b3595c8714c2a5133d130302698ab8d2681aea761ad8dab         709  days/2026-09-04/dotnet/clr_pe_cli_metadata/PESQUISA_GUIADA.md
+71d1c2d3d590aeb5ffa22a53b46177b58c5afadba1d63a21bac1e5ab05e6e84a         309  days/2026-09-04/dotnet/clr_pe_cli_metadata/README.md
+e779840563469aceb61f1fd3381ed3acc734894f62e8c15b1120f59ca9e82b49        2821  days/2026-09-04/dotnet/clr_pe_cli_metadata/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+bc242a460c7425659c496e7e091667b1f2ee2bc0d0580837d1e561d2622f2633         844  days/2026-09-04/dotnet/clr_pe_cli_metadata/TEORIA_PASSO_A_PASSO.md
+1fe8194fb33c539cf431d7f366aecefced13ba964b5402d8b98680b20dd8ac36        1282  days/2026-09-04/dotnet/clr_pe_cli_metadata/TESTES_GUIADOS.md
+404d8e95f62c1f3e36f0f0bc4d54f77f88744197e0086259b73b31ebdbd55fa2         256  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/MILESTONES.md
+8714ae7d812b8d4d94c18958754f0c9de627383d1e85b794b9e23b3a2914f3f1         452  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/README.md
+88d3740496274ed7bbedeff52aab25c8e4fd99f487fd7bea6ac0511ad151f62a         324  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/docs/architecture.md
+32d8bca01eca74ff14fc01efd84cd620d38f1ff6e27e262159fce7c698bf54a7         234  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/src/Chris.DotNet.Pe/Chris.DotNet.Pe.csproj
+ed3a11d994791b3d300f8c7e1a142fdabb4575804156f2e172df4e149be29947        3664  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/src/Chris.DotNet.Pe/CliPeInspector.cs
+8b0a25e9790a5bb042521923a5183747b6fe9e5b00ac9d8354a70b67a5a167bf         364  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/tests/Chris.DotNet.Pe.Tests/Chris.DotNet.Pe.Tests.csproj
+344b70cc7d4f767bd3b5bc6b19a666835498840e62f3f5d5c45658d9d361c6a6        1512  days/2026-09-04/dotnet/clr_pe_cli_metadata/solutions/tests/Chris.DotNet.Pe.Tests/Program.cs
+404d8e95f62c1f3e36f0f0bc4d54f77f88744197e0086259b73b31ebdbd55fa2         256  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/MILESTONES.md
+8714ae7d812b8d4d94c18958754f0c9de627383d1e85b794b9e23b3a2914f3f1         452  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/README.md
+88d3740496274ed7bbedeff52aab25c8e4fd99f487fd7bea6ac0511ad151f62a         324  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/docs/architecture.md
+32d8bca01eca74ff14fc01efd84cd620d38f1ff6e27e262159fce7c698bf54a7         234  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/src/Chris.DotNet.Pe/Chris.DotNet.Pe.csproj
+7d9d98195aa714e37a2464e146c85264bb29f7e5e136fbd3782ebf3d035178f7        3622  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/src/Chris.DotNet.Pe/CliPeInspector.cs
+8b0a25e9790a5bb042521923a5183747b6fe9e5b00ac9d8354a70b67a5a167bf         364  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/tests/Chris.DotNet.Pe.Tests/Chris.DotNet.Pe.Tests.csproj
+344b70cc7d4f767bd3b5bc6b19a666835498840e62f3f5d5c45658d9d361c6a6        1512  days/2026-09-04/dotnet/clr_pe_cli_metadata/starter/tests/Chris.DotNet.Pe.Tests/Program.cs
+f231fc46a7f71b74148c9c1cff8d923fd4aebb8230eacbc74afa7a93767be928         490  days/2026-09-04/dotnet/csharp_span_arraypool/BENCHMARK_GUIADO.md
+11c57bdb703eae0d7f0d5c409c808ad02a4bcc7ade312920f14e1ce0949dcca1         797  days/2026-09-04/dotnet/csharp_span_arraypool/PESQUISA_GUIADA.md
+5108b3ba476b538f7dc9a3bfa919e46d0fd276b223287903d5e30d78c736e70a         316  days/2026-09-04/dotnet/csharp_span_arraypool/README.md
+405659c042fbbb053314c8ea48c900ab56ada093a25b99f54a5152efb5399d4a        3865  days/2026-09-04/dotnet/csharp_span_arraypool/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+7c6569f0a554692f7c1753f3caaaab399e473d6811b86864ca150004ae189431        1252  days/2026-09-04/dotnet/csharp_span_arraypool/TEORIA_PASSO_A_PASSO.md
+da4c202de2f41eecd0a55bf04fbe484f1f3c49afd76c4c849f34f1718262251f        1628  days/2026-09-04/dotnet/csharp_span_arraypool/TESTES_GUIADOS.md
+a839d196ea89501fa2d17fc8376512796d49492732270ba5cdbc1e07f7055e0b         280  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/Chris.DotNet.Bench.slnx
+1b3ba4b6328a668d7271bb0b2187b30437c2540de63ef36d310ec986e41230dd         178  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/MILESTONES.md
+38001d22b6b971aa86876bb05e4154379d5865dd29f41304149ec95b7f82763b         925  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/README.md
+205c843e12c2278e800dd8d0a2f76eadf123f1c6d4c3a034736e1e808f651989         406  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj
+fa9692ec68880f056729fa81ce4bfa7d82d660d83eafb35ed885e826c0855aab         790  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/benchmarks/Chris.DotNet.Bench.Benchmarks/Program.cs
+2954476dcc2a39fc13015d3d9f0ca25b98da627df9b1128decb6522cf7fdb7f4         463  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/docs/architecture.md
+9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544         261  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/src/Chris.DotNet.Buffers/Chris.DotNet.Buffers.csproj
+674ca8994e206fe6b75819f28dec1f52563e0ac0491ce94c21d1f5543cff372b        2512  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/src/Chris.DotNet.Buffers/FrameCodec.cs
+fbf7777195f46e4337f449f05c8d6e29837371f5ac1ae1fc614bb60ab667119b         381  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/tests/Chris.DotNet.Bench.Tests/Chris.DotNet.Bench.Tests.csproj
+fc19bc39051ec189aca524ea97071bba25136ed5e1caef4a65009180855fec30        1377  days/2026-09-04/dotnet/csharp_span_arraypool/solutions/tests/Chris.DotNet.Bench.Tests/Program.cs
+a839d196ea89501fa2d17fc8376512796d49492732270ba5cdbc1e07f7055e0b         280  days/2026-09-04/dotnet/csharp_span_arraypool/starter/Chris.DotNet.Bench.slnx
+1b3ba4b6328a668d7271bb0b2187b30437c2540de63ef36d310ec986e41230dd         178  days/2026-09-04/dotnet/csharp_span_arraypool/starter/MILESTONES.md
+38001d22b6b971aa86876bb05e4154379d5865dd29f41304149ec95b7f82763b         925  days/2026-09-04/dotnet/csharp_span_arraypool/starter/README.md
+205c843e12c2278e800dd8d0a2f76eadf123f1c6d4c3a034736e1e808f651989         406  days/2026-09-04/dotnet/csharp_span_arraypool/starter/benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj
+fa9692ec68880f056729fa81ce4bfa7d82d660d83eafb35ed885e826c0855aab         790  days/2026-09-04/dotnet/csharp_span_arraypool/starter/benchmarks/Chris.DotNet.Bench.Benchmarks/Program.cs
+2954476dcc2a39fc13015d3d9f0ca25b98da627df9b1128decb6522cf7fdb7f4         463  days/2026-09-04/dotnet/csharp_span_arraypool/starter/docs/architecture.md
+9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544         261  days/2026-09-04/dotnet/csharp_span_arraypool/starter/src/Chris.DotNet.Buffers/Chris.DotNet.Buffers.csproj
+e6df302a796fd1fbc5d7be3948718cffb0c1d69e28e8ae9d67b303ba457b9a07        2228  days/2026-09-04/dotnet/csharp_span_arraypool/starter/src/Chris.DotNet.Buffers/FrameCodec.cs
+fbf7777195f46e4337f449f05c8d6e29837371f5ac1ae1fc614bb60ab667119b         381  days/2026-09-04/dotnet/csharp_span_arraypool/starter/tests/Chris.DotNet.Bench.Tests/Chris.DotNet.Bench.Tests.csproj
+fc19bc39051ec189aca524ea97071bba25136ed5e1caef4a65009180855fec30        1377  days/2026-09-04/dotnet/csharp_span_arraypool/starter/tests/Chris.DotNet.Bench.Tests/Program.cs
+8ee6427ed8ce1ed89571f3c1de453eded03b74e464ac0a28dc64a0cde2e6a205         418  days/2026-09-04/javascript/bytecode_vm_from_scratch/BENCHMARK_GUIADO.md
+f870bd8aa3672d80ba6f26726fb5366aa2ec69833752cd7eee360995532848a5         726  days/2026-09-04/javascript/bytecode_vm_from_scratch/PESQUISA_GUIADA.md
+e197663da567d9deba32a9bbfa20f76e7d72aa19895e702bf37736e3840276dd         313  days/2026-09-04/javascript/bytecode_vm_from_scratch/README.md
+1e7bfeeb26b0cf012225e4497a8f940f25702cf2162abe3b2aaaa2a75b2a495a        4975  days/2026-09-04/javascript/bytecode_vm_from_scratch/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+c926241dd2b90d7043c7e6adadafd8df428a56dc2d97267ef23c64c98a9db1f7         693  days/2026-09-04/javascript/bytecode_vm_from_scratch/TEORIA_PASSO_A_PASSO.md
+c7ceec451e72bfa8c98caf44e4ff16a97b3a52c3b8d43311d1e5d9ce9ba73c77        2068  days/2026-09-04/javascript/bytecode_vm_from_scratch/TESTES_GUIADOS.md
+ec5b8b9f2917248d16a5069c543478293b391809ddc6671482f936767cd4fce2         672  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/CMakeLists.txt
+980d22aca7514aadf4e830b1bdad667914d329fda5933acaccbe83bfef578b5d         261  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/MILESTONES.md
+64652d91a2bc739ec24ac13e11249e10bc54a3b9c54f513542378a6fa7467ffc         408  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/docs/architecture.md
+e2ad461c6a68cf3228e1fad841fca83c57533b84ed8f36ab88bb9956de88a587         489  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/include/chris_js.hpp
+91288d0d5d001fdac8bc8e13323571af22b87a8966639b485a7a0451bd3ef016        6551  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/src/chris_js.cpp
+3785ae8051a0f8ab21316a8370fa84f9c29d653289cbe105723350ef93bf67d6         279  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/src/main.cpp
+852ac8dca4d7dc59ddaaa5d8711223d8f19a50d0e4e4c5749b6a4b65fe55fbe8         993  days/2026-09-04/javascript/bytecode_vm_from_scratch/solutions/tests/tests.cpp
+ec5b8b9f2917248d16a5069c543478293b391809ddc6671482f936767cd4fce2         672  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/CMakeLists.txt
+980d22aca7514aadf4e830b1bdad667914d329fda5933acaccbe83bfef578b5d         261  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/MILESTONES.md
+64652d91a2bc739ec24ac13e11249e10bc54a3b9c54f513542378a6fa7467ffc         408  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/docs/architecture.md
+e2ad461c6a68cf3228e1fad841fca83c57533b84ed8f36ab88bb9956de88a587         489  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/include/chris_js.hpp
+98fecea621357d10c3dea523e925396dca1d8493da19f1fa60dc689f4c30cbc6        6246  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/src/chris_js.cpp
+3785ae8051a0f8ab21316a8370fa84f9c29d653289cbe105723350ef93bf67d6         279  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/src/main.cpp
+852ac8dca4d7dc59ddaaa5d8711223d8f19a50d0e4e4c5749b6a4b65fe55fbe8         993  days/2026-09-04/javascript/bytecode_vm_from_scratch/starter/tests/tests.cpp
+2b7fbd3fb861e46aaa43b2aee3e3c09cade736430347e0c4a09877902927c7c2         381  days/2026-09-04/nodejs/typescript_stream_backpressure/BENCHMARK_GUIADO.md
+ccd156f80f067b56fbee4d6d153d2ffae350a66f607d4d94980553777955484b         736  days/2026-09-04/nodejs/typescript_stream_backpressure/PESQUISA_GUIADA.md
+344ab4101453f51444dcd6890ba44e02fdf4478e96f3f1a5f995008610707b7b         337  days/2026-09-04/nodejs/typescript_stream_backpressure/README.md
+6c1c77ba27239dc541c8c6c9114b364d31895cd29ec4cd9e2df74f49dbeecbaa        3763  days/2026-09-04/nodejs/typescript_stream_backpressure/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+09729cde3783969fede1fe7673cb2f222f05142604102bf1c18b0bc8f9772264         714  days/2026-09-04/nodejs/typescript_stream_backpressure/TEORIA_PASSO_A_PASSO.md
+60cc8962c6bcd42300c29c8fc285fd10d3345ef71e4e434ff6a36ab0ce27427b        1061  days/2026-09-04/nodejs/typescript_stream_backpressure/TESTES_GUIADOS.md
+afc32421c8ad37bb8eea5bb0b3d275a3f2a24413e6a032deb077261e15bb2964         232  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/MILESTONES.md
+fc98af7eb6ed0fde876ddc0e7b9a48ae44c9a8712bf1331b9c392d5bf8807eeb         405  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/README.md
+d104a7eb431bbc001f5296f5f5d9f788c09480e70df7a3b4b3a9f243ff9cdf41         867  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/benchmarks/bench.ts
+43a044485cfa0ce0ac59fcd51b59367923d9262d90995135b8d66922e94449e5         385  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/docs/architecture.md
+84e34db4db27f1617be7dd4c632786946c383e9db5ee80e55919e14240e4a026         292  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/package.json
+1d7918b970ba83fd16c5c3ebd22e2b074887f6e8d179e4fee250d233382c6a6d         559  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/src/demo.ts
+1a463dbfc87c685d228c52ae1d5bf3550a13b16a70e8c9922bbc16eb6e420b7a        1717  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/src/line-framer.ts
+e23346ab200edafbecb8cf629eb916986632befa37ff1e5ee06f6a2bbaa9e481        1168  days/2026-09-04/nodejs/typescript_stream_backpressure/solutions/tests/line-framer.test.ts
+afc32421c8ad37bb8eea5bb0b3d275a3f2a24413e6a032deb077261e15bb2964         232  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/MILESTONES.md
+fc98af7eb6ed0fde876ddc0e7b9a48ae44c9a8712bf1331b9c392d5bf8807eeb         405  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/README.md
+d104a7eb431bbc001f5296f5f5d9f788c09480e70df7a3b4b3a9f243ff9cdf41         867  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/benchmarks/bench.ts
+43a044485cfa0ce0ac59fcd51b59367923d9262d90995135b8d66922e94449e5         385  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/docs/architecture.md
+84e34db4db27f1617be7dd4c632786946c383e9db5ee80e55919e14240e4a026         292  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/package.json
+1d7918b970ba83fd16c5c3ebd22e2b074887f6e8d179e4fee250d233382c6a6d         559  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/src/demo.ts
+d330802dcf06e793f245f5fc30c9a78f0ba5f1662dfb946bfc42bb95f95957a5        1454  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/src/line-framer.ts
+e23346ab200edafbecb8cf629eb916986632befa37ff1e5ee06f6a2bbaa9e481        1168  days/2026-09-04/nodejs/typescript_stream_backpressure/starter/tests/line-framer.test.ts
+727453dff1e87f6596f74796cdc144d571f6de26c66d24e9e2b4cdd457dd92c9         596  days/2026-09-04/os/graphics_reference/BENCHMARK_GUIADO.md
+57c06b9c892641d707afeb1ad62f91cf69a5d60c3854f0a6efdedc48bded3d0c         961  days/2026-09-04/os/graphics_reference/PESQUISA_GUIADA.md
+b6dcb875e8e3acb68eade327fbcedcf6651d41c25d29ffebdb7080c5772f6813         493  days/2026-09-04/os/graphics_reference/README.md
+8bcab817ed449cf2ff064c0cf5bcd61766b66c47f615b8b441a1921a77cf5ee0        4416  days/2026-09-04/os/graphics_reference/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+775a5303122fd312071478766b9281c928fa64425e26023095795495e937eaf4         875  days/2026-09-04/os/graphics_reference/TEORIA_PASSO_A_PASSO.md
+5996c071342c7434b785484275b2da03baaa110f149f70f1ab76ee0bd3e80c9c        1613  days/2026-09-04/os/graphics_reference/TESTES_GUIADOS.md
+90a639c4740adf556b328d7b3daf060f0fc11b4be2e0988d5f4cd7fb08e0f5d9         896  days/2026-09-04/os/graphics_reference/solutions/CMakeLists.txt
+6405d08d0f5e9657add444060afa472b755375069ab52476e45de599843ac284         305  days/2026-09-04/os/graphics_reference/solutions/MILESTONES.md
+1f31ef6cf0808a10e6ab71518a07a093169823bf559293dc21d02efac0f1713b         901  days/2026-09-04/os/graphics_reference/solutions/README.md
+4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152        1210  days/2026-09-04/os/graphics_reference/solutions/benchmarks/os_graphics_benchmark.cpp
+fbde38a3235836b9909e68249d41e15a874b7024e71b2ba07b3811119e806c2f         390  days/2026-09-04/os/graphics_reference/solutions/docs/architecture.md
+d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c        1074  days/2026-09-04/os/graphics_reference/solutions/include/graphics.hpp
+ce0e01a0bb7438478468b369c4cf01456f6a14dad5737917c3eafb3ac011aba9        3053  days/2026-09-04/os/graphics_reference/solutions/src/graphics.cpp
+5c4895398b26ca0aace3749273c4ee4824ea6866a7912794f9da46b51fd20f74         981  days/2026-09-04/os/graphics_reference/solutions/tests/os_graphics_tests.cpp
+90a639c4740adf556b328d7b3daf060f0fc11b4be2e0988d5f4cd7fb08e0f5d9         896  days/2026-09-04/os/graphics_reference/starter/CMakeLists.txt
+eb347b7af56ca840db9ca997608ee33779acc491357f6fb3e5fbe2885d466049         270  days/2026-09-04/os/graphics_reference/starter/README.md
+4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152        1210  days/2026-09-04/os/graphics_reference/starter/benchmarks/os_graphics_benchmark.cpp
+d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c        1074  days/2026-09-04/os/graphics_reference/starter/include/graphics.hpp
+3d9ad8a9f680c8cbdc708c9f17281e574c080269393e85f0f914fbb21d2567f5        1516  days/2026-09-04/os/graphics_reference/starter/src/graphics.cpp
+5c4895398b26ca0aace3749273c4ee4824ea6866a7912794f9da46b51fd20f74         981  days/2026-09-04/os/graphics_reference/starter/tests/os_graphics_tests.cpp
+20f1d65dcda8ac0589f0d3c1d7f6bad3020f800a5e6cb5aaaace135aa1f67bb4         595  days/2026-09-04/quantum/statevector_intro/BENCHMARK_GUIADO.md
+7351716c3bc97bf9723f558f2bd7deb5f8e03c63373d3dae11783b4438326147         816  days/2026-09-04/quantum/statevector_intro/PESQUISA_GUIADA.md
+4b7570c122f127916c16cb3df9902ff2171f41c46fed4921de5782975f14f2f4         451  days/2026-09-04/quantum/statevector_intro/README.md
+b2e8061803719076ab59641b1c602421a19643d63d776f20105be660c88a35bb        3896  days/2026-09-04/quantum/statevector_intro/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+f446411610e6f4c30bb2acd42f604244e2cc487e964ebc2808fccb5822eecae6         990  days/2026-09-04/quantum/statevector_intro/TEORIA_PASSO_A_PASSO.md
+23d23b0fc328827a189f4b9d7a6d7c23a639b0d6310cf2121d89d641de784386        1606  days/2026-09-04/quantum/statevector_intro/TESTES_GUIADOS.md
+8f7d2a40948a41710e4c07ddec5890f8c661753103e5915eb6a4dd6986e6987c         796  days/2026-09-04/quantum/statevector_intro/solutions/CMakeLists.txt
+7a8cf283ceb9eadb9c21955b08fb64f0b0bfcd5376bcd5e41a44fc6a7f5161a6         230  days/2026-09-04/quantum/statevector_intro/solutions/MILESTONES.md
+0e02c4019a7675edb8e691b421e38b393d2e5c2584912346d3aa9b0b023273f9         634  days/2026-09-04/quantum/statevector_intro/solutions/README.md
+6e47ac94d2a4b7136ec1b5febb5a09b6681083bb363d1795ae366e51bd6dbfb6        1032  days/2026-09-04/quantum/statevector_intro/solutions/benchmarks/qsim_benchmark.cpp
+0f7449ba2aaa707786ac86e4528890dda54ff8f24355f966a4b84c78a3c5ae7a         266  days/2026-09-04/quantum/statevector_intro/solutions/docs/architecture.md
+69e9ebed55598bc44c685cfff37960af98f4c3684ec10e7cfcb86beea1f7672b         952  days/2026-09-04/quantum/statevector_intro/solutions/include/qsim.hpp
+fea459a98dedf3a6502dcd0b629b00721daf69974d06697c50e8845a56d0c27e        2961  days/2026-09-04/quantum/statevector_intro/solutions/src/qsim.cpp
+6a21e3bf13713a90b76dee97514086c35c062e346e89f16481a8eb3e19bb972a        1270  days/2026-09-04/quantum/statevector_intro/solutions/tests/qsim_tests.cpp
+8f7d2a40948a41710e4c07ddec5890f8c661753103e5915eb6a4dd6986e6987c         796  days/2026-09-04/quantum/statevector_intro/starter/CMakeLists.txt
+7fb0fb866cb312fe9f4e2a3a8883bb313cfeaaf5ebc06293641e3398d0760c82         266  days/2026-09-04/quantum/statevector_intro/starter/README.md
+6e47ac94d2a4b7136ec1b5febb5a09b6681083bb363d1795ae366e51bd6dbfb6        1032  days/2026-09-04/quantum/statevector_intro/starter/benchmarks/qsim_benchmark.cpp
+69e9ebed55598bc44c685cfff37960af98f4c3684ec10e7cfcb86beea1f7672b         952  days/2026-09-04/quantum/statevector_intro/starter/include/qsim.hpp
+9f25d758e872fc42bbcf67acc7f5aa0ae683df13959fb9d701e6d2385916ef25        1894  days/2026-09-04/quantum/statevector_intro/starter/src/qsim.cpp
+6a21e3bf13713a90b76dee97514086c35c062e346e89f16481a8eb3e19bb972a        1270  days/2026-09-04/quantum/statevector_intro/starter/tests/qsim_tests.cpp
+5c78ddea7e200fe61f886253efe26a4ca15082ba1a728ee69deb1f00c6baca5a         319  days/2026-09-04/redteam/elf64_triage/BENCHMARK_GUIADO.md
+0727bf852194d05180c9d03b35ee45d7a9a4d339d6928ed290f04299cc9f6821        1015  days/2026-09-04/redteam/elf64_triage/PESQUISA_GUIADA.md
+6b33b50ae2f28a3f35ca82975654ad42e4335de057916266d9fb15728fe818c4         513  days/2026-09-04/redteam/elf64_triage/README.md
+a00202f5c1203af762f4178a629c571759d1d1bcef217ac5808f51626a993cee        3788  days/2026-09-04/redteam/elf64_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+288a3fe938aa6a6bd823f8d42a52c406f283615ddaaa517174262905bfe3d2e0         805  days/2026-09-04/redteam/elf64_triage/TEORIA_PASSO_A_PASSO.md
+29bd4ed8bd37036d5082f116cfafbdbcc209880eb273ff900f73c22eb86c7b0a        1182  days/2026-09-04/redteam/elf64_triage/TESTES_GUIADOS.md
+6a70c99b475a665e1dec7a778c91d5d709ada2c869f1c1ded764d450e6833a46         621  days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt
+25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f         237  days/2026-09-04/redteam/elf64_triage/solutions/MILESTONES.md
+ecedfc78df534476842b08a7bc0268536eaa69ab215b9dd8f40bf18ed0e98fdc        1457  days/2026-09-04/redteam/elf64_triage/solutions/README.md
+4f400c7d55a362c96ad34865914b60b7e1ce5d1d86180a76933d510feb569597         907  days/2026-09-04/redteam/elf64_triage/solutions/benchmarks/benchmark.py
+3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95         992  days/2026-09-04/redteam/elf64_triage/solutions/benchmarks/elf64_benchmark.py
+27b3ad915d390d0938474e87be94427edaad3c2ade9251df1e9209e3a3585aea         194  days/2026-09-04/redteam/elf64_triage/solutions/docs/architecture.md
+db374cb4c57106d259a032cdcdb57fb6e4e506fbff16a9815d10bf7402f7f214         351  days/2026-09-04/redteam/elf64_triage/solutions/rules/lab_target.yar
+4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61        1087  days/2026-09-04/redteam/elf64_triage/solutions/src/lab_target.c
+702bbab80829d20149605426aa313fb1529cd195e27e62263fda472407df73f9         633  days/2026-09-04/redteam/elf64_triage/solutions/tests/test_ascii_strings.py
+01ebbc4e1391b9d700a842af2d1ffff1745807b30e6c467b5e2d266ecf4babc0        1798  days/2026-09-04/redteam/elf64_triage/solutions/tests/test_elf64.py
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855           0  days/2026-09-04/redteam/elf64_triage/solutions/tools/__init__.py
+ad1847f60642fee6f3d9880e42ad7849c43f97e060ebe3ffe2f66651589dfa15        1116  days/2026-09-04/redteam/elf64_triage/solutions/tools/ascii_strings.py
+a022860aa5d1fe362bb61c4d283c1a19dbe295e5aa9883b16bcfcc84d442f0ec        1239  days/2026-09-04/redteam/elf64_triage/solutions/tools/elf64.py
+00a5d1fb628b00cbfae220fcbc7f40b80172593a332707ada370a727cad68b11         136  days/2026-09-04/redteam/elf64_triage/starter/README.md
+3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95         992  days/2026-09-04/redteam/elf64_triage/starter/benchmarks/elf64_benchmark.py
+db374cb4c57106d259a032cdcdb57fb6e4e506fbff16a9815d10bf7402f7f214         351  days/2026-09-04/redteam/elf64_triage/starter/rules/lab_target.yar
+4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61        1087  days/2026-09-04/redteam/elf64_triage/starter/src/lab_target.c
+702bbab80829d20149605426aa313fb1529cd195e27e62263fda472407df73f9         633  days/2026-09-04/redteam/elf64_triage/starter/tests/test_ascii_strings.py
+01ebbc4e1391b9d700a842af2d1ffff1745807b30e6c467b5e2d266ecf4babc0        1798  days/2026-09-04/redteam/elf64_triage/starter/tests/test_elf64.py
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855           0  days/2026-09-04/redteam/elf64_triage/starter/tools/__init__.py
+01a25a96b373571b78bfc20e122616cc47d580c9225fd0103ec54317ca5e8140         288  days/2026-09-04/redteam/elf64_triage/starter/tools/ascii_strings.py
+9f103e6e9a807eff2009f7eda568e2e5c270de9431ab8d7dcb1e5f0b7fbe5df3         529  days/2026-09-04/redteam/elf64_triage/starter/tools/elf64.py
+4f62cb37b724045ed3af0382217009c347471ed1540ff1ffaaf88b44b6016ab1         593  days/2026-09-04/systems/arena_allocator/BENCHMARK_GUIADO.md
+4cdf4e0b0df8242bfea2b2c4ba9fdbdbb4673c0207c683e91079d8f18c170d26        1007  days/2026-09-04/systems/arena_allocator/PESQUISA_GUIADA.md
+339607228afc703a981e27bbbb86cbac5b13768d31bffd0bce97657cff4fc7ad         517  days/2026-09-04/systems/arena_allocator/README.md
+8d3089c1f5074b7f01bde55c443efb214e99d67238b9c41a01b5fa6c27d652af        5205  days/2026-09-04/systems/arena_allocator/RESOLUCAO_GUIADA_PASSO_A_PASSO.md
+2b8124a3f609510b0c7dbc56d731014fbb125589d53b8d1db3eabe2e81557c96        2550  days/2026-09-04/systems/arena_allocator/TEORIA_PASSO_A_PASSO.md
+f3232337d3e0d9ac96cce97f37e30ac829d722ed41106146bed31945a5d11802        1534  days/2026-09-04/systems/arena_allocator/TESTES_GUIADOS.md
+306e8cdc926901f751783f45168cd1c895dd4984fa3027af780e823c5a8d9a48         812  days/2026-09-04/systems/arena_allocator/solutions/CMakeLists.txt
+31cc15d4641cbb694a6f541e6378ee69e0880319f4de49a44f0d96e197931697         193  days/2026-09-04/systems/arena_allocator/solutions/MILESTONES.md
+d8175c0fda357d50d096a0cf01b6f63605e80825de8c45091c21ce1226cf53a4        1035  days/2026-09-04/systems/arena_allocator/solutions/README.md
+072771e91f5dee72ba59461a72909faa0d011e25e8eb38fba10849693c51214d        1817  days/2026-09-04/systems/arena_allocator/solutions/benchmarks/arena_benchmark.cpp
+74cba9d9bbd49537651ad7cb77a310299119036de65094fea980f9c8567c8321         392  days/2026-09-04/systems/arena_allocator/solutions/docs/architecture.md
+fd4979c57b9a8a31260fd48a501f2cc19b020849091b8166e866c3ee0abfd4e4         568  days/2026-09-04/systems/arena_allocator/solutions/include/arena.hpp
+b57552c619a58c68cd6bc29d3b339ef0ebe5e81e412b742a68f36d67e14b35c5        1425  days/2026-09-04/systems/arena_allocator/solutions/src/arena.cpp
+95ca518fc93c9d7192f1951a0f3b73fedeba50981d752aaae64a7836645411cd        1064  days/2026-09-04/systems/arena_allocator/solutions/tests/arena_tests.cpp
+306e8cdc926901f751783f45168cd1c895dd4984fa3027af780e823c5a8d9a48         812  days/2026-09-04/systems/arena_allocator/starter/CMakeLists.txt
+7485d458ac23577ee8b01fec49331a0fdeb52a955a27edf08e3a9b0bca0c5d6c         267  days/2026-09-04/systems/arena_allocator/starter/README.md
+072771e91f5dee72ba59461a72909faa0d011e25e8eb38fba10849693c51214d        1817  days/2026-09-04/systems/arena_allocator/starter/benchmarks/arena_benchmark.cpp
+fd4979c57b9a8a31260fd48a501f2cc19b020849091b8166e866c3ee0abfd4e4         568  days/2026-09-04/systems/arena_allocator/starter/include/arena.hpp
+42e0268278b9ad85e56ba875b71dad783ac79f7c6974c724d7b0eb043ead1e71        1026  days/2026-09-04/systems/arena_allocator/starter/src/arena.cpp
+95ca518fc93c9d7192f1951a0f3b73fedeba50981d752aaae64a7836645411cd        1064  days/2026-09-04/systems/arena_allocator/starter/tests/arena_tests.cpp
+2b3416644822656fb87fb350c2944586b72ff935de833aaafd33dde5c0affd7d         639  docs/BENCHMARKING_GUIDE.md
+24c219d2d4b94b676dfa1ed26ce7a4cd8a934d029e15864b52707e9c16ce2685        5230  docs/DIRECTIVES_COVERAGE.md
+270ed558eaf1e44f4450d91454f20c0a587fc434afe2ff2deb6f9b1222699951         939  docs/EXPERT_ENGINEERING_PATH.md
+8b397b003a06c7d18679198cee6b735f848f50c611cf90e9d1576e95488ef1e3         699  docs/GAP_AUDIT.md
+2b51b12bcdfb7bd769798eead3fdc923e6979264cc115868c0270fc9bdf496c5         596  docs/PORTFOLIO_GUIDE.md
+2a777f75de57f884cceefe75ac41a2a845afffa407eaa5378d0055eaf4720d70        1062  docs/PORTFOLIO_SCORECARD.md
+682cc779ee5e95c77aa41b1b0e755fff6f6393d2487aabbc31e144da51864d45         405  docs/RESEARCH_METHOD.md
+2b8f4ce094aad99d9ef2c09810eb358204350699f58374299c95db639f101d31        1691  docs/RUNTIME_STACKS_DOTNET_NODE.md
+d48697afe4cea26d8592c9e1fa3dd861837e53b7e48f0dd57022e3b3c3e28044        1070  docs/SAFETY_BOUNDARIES.md
+e1080a624802397413cbe7c2225723a8752c04863b2f5ddc327c5323af8e5312        1089  docs/SPECIFICATION_READING_MAP.md
+4a4a83e0ee573e8786700465c8f314d4b1a1d9329bdbba266893d492ceed42c5        1007  docs/TESTING_GUIDE.md
+eaca1162f4e6e53cb07b84cd1f246b4239a26aeb43f523be34f39b29b29e636c        2215  docs/TRACKS.md
+b0a0156204fdd0a82d127ad160f2741cf479cfce0b1f8b64a4b17ae12267e7cb         687  docs/adr/0001-days-vs-projects.md
+31a19f2b429e4ae3edb25b481c4859dda2539d0b94cb97ff1f0b1f67a0ebdb65         172  docs/architecture/README.md
+45ccb3b40247c8b28c18e098b49f437d8230726698c6e2312af784a34827c8ab         517  docs/architecture/os-debugger-stack.md
+305c7d3ffc5bcfa62174df829e2ec016151dbf6b6b9cad270f0ea86e6f3f782b         808  projects/INCUBATOR.md
+22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b         878  projects/chris-algorithms/CMakeLists.txt
+5806083b4278fe651afb06baf22cd029215a68d5281341e735e15b0f8a89ff37         233  projects/chris-algorithms/MILESTONES.md
+5a7aa1d913bd040ab813033b5a6a908c30ed072cda8781ac55adfa618c62ac74         796  projects/chris-algorithms/README.md
+798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819        1903  projects/chris-algorithms/benchmarks/algorithm_benchmark.cpp
+2ffc7fa14def94216180b893e321e42f32e617002fcd2a2996f192973ea38ff6         195  projects/chris-algorithms/docs/architecture.md
+4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2         234  projects/chris-algorithms/include/sort.hpp
+a4d3fa6f94f177a26d7cac082511fbcb76d1846b66df840e65eded817d7b86a0        2894  projects/chris-algorithms/src/sort.cpp
+f0320e2818488f9e665d065b4094b2b460c410e872534c6edbef7d39d85ffa48         811  projects/chris-algorithms/tests/algorithm_tests.cpp
+306e8cdc926901f751783f45168cd1c895dd4984fa3027af780e823c5a8d9a48         812  projects/chris-arena/CMakeLists.txt
+31cc15d4641cbb694a6f541e6378ee69e0880319f4de49a44f0d96e197931697         193  projects/chris-arena/MILESTONES.md
+d8175c0fda357d50d096a0cf01b6f63605e80825de8c45091c21ce1226cf53a4        1035  projects/chris-arena/README.md
+072771e91f5dee72ba59461a72909faa0d011e25e8eb38fba10849693c51214d        1817  projects/chris-arena/benchmarks/arena_benchmark.cpp
+74cba9d9bbd49537651ad7cb77a310299119036de65094fea980f9c8567c8321         392  projects/chris-arena/docs/architecture.md
+fd4979c57b9a8a31260fd48a501f2cc19b020849091b8166e866c3ee0abfd4e4         568  projects/chris-arena/include/arena.hpp
+9d124aecef26dc35bc9b24299633528872224230bfc5b404465c2fef17ac9901        1270  projects/chris-arena/src/arena.cpp
+961f97972a8255c72437622abea612b5c2d1ce166a596c55fb5c0047edaced6d         925  projects/chris-arena/tests/arena_tests.cpp
+16802b83ad9810cfca4cf9dcb7aa0f676dce27b64a6449b378575d16f941e872         807  projects/chris-assembly-lab/CMakeLists.txt
+67e39132bd7b77fe688fb23dd581ca46e929709728218a3b664d51903b0683ea         181  projects/chris-assembly-lab/MILESTONES.md
+2e6730152ac769a18420ac8617e079f20cb2d34d3b639e45f487b9ab159cce84        1235  projects/chris-assembly-lab/README.md
+ac815785f627a572222face523319a25c49b37e301976a4156f57be06832de6f         952  projects/chris-assembly-lab/benchmarks/benchmark.c
+2064c8e3acde2f08dac324bc517db01c2aba527cbbf2908f62735ca5e1776dc5         224  projects/chris-assembly-lab/docs/architecture.md
+fd010056b187b2134ef157ab5c7da41d8b03721577bec36960fe020a6255f97a         239  projects/chris-assembly-lab/src/sum_x86_64.S
+257bbb81502649fad7f906939f883d58c7a83d2e08663e6a156ee27408f3b21e         478  projects/chris-assembly-lab/tests/test_sum.c
+f5c5953141d63a38ad81cc157effb626081bc2a4c68bba6c7878b20d41ad2bd2         582  projects/chris-autograd/CMakeLists.txt
+25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f         237  projects/chris-autograd/MILESTONES.md
+fd01edcc2e262a08495b0ba16782e1b0a333e5135ead72b3b0192e7b1fd20424        1451  projects/chris-autograd/README.md
+744eb1a898cf01f0325ac47524dae89f0e51b72073fa259db87ec3008bf1d37e         491  projects/chris-autograd/benchmarks/benchmark.py
+c43651919582c576d15758bdbfd96e7c2a1971b268b6d7b015bd0850729e272c         188  projects/chris-autograd/docs/architecture.md
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855           0  projects/chris-autograd/python/__init__.py
+156a49606a297aced3bdddee43994f2a7f3f0e36482567d9f5a5a377e81fab09        2576  projects/chris-autograd/python/autograd_scalar.py
+e5485df56cfcadc5e0fedda0584ff856487bce034a9e4415049c4e9699e7c386         654  projects/chris-autograd/python/debug_bug_fixed.py
+fd4587e22e83ba9b23c92fea163915c4cadc5387e5c289313338c2ad0b7968b6         808  projects/chris-autograd/python/linear_train.py
+916f596dc361915e9c65ee285790b052cdcfa5e6985c719c8ce0517c00071fb0         942  projects/chris-autograd/python/reference_pytorch.py
+b14e1c68a4e3b27ea1375f7b548284143775dbccdc84b481b2f9918210f471c6         422  projects/chris-autograd/research/gradient_check.md
+5bd700d87c306e7424c3f5baf08f46c2125bb18718417ac285d1138b18aa59bc        1726  projects/chris-autograd/src/linear_train.c
+7a83d08e74777e7d7d82ae34dd8962db239da33482e0c50ec411e00d0c9d67e2         490  projects/chris-autograd/tests/test_ai.py
+74b4f436e56758b65f6813cea1b7d2cb3a8950cc647b0e8f98749bc14e5c3af4        1270  projects/chris-autograd/tests/test_autograd.py
+6a70c99b475a665e1dec7a778c91d5d709ada2c869f1c1ded764d450e6833a46         621  projects/chris-binary-toolkit/CMakeLists.txt
+25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f         237  projects/chris-binary-toolkit/MILESTONES.md
+ecedfc78df534476842b08a7bc0268536eaa69ab215b9dd8f40bf18ed0e98fdc        1457  projects/chris-binary-toolkit/README.md
+4f400c7d55a362c96ad34865914b60b7e1ce5d1d86180a76933d510feb569597         907  projects/chris-binary-toolkit/benchmarks/benchmark.py
+3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95         992  projects/chris-binary-toolkit/benchmarks/elf64_benchmark.py
+27b3ad915d390d0938474e87be94427edaad3c2ade9251df1e9209e3a3585aea         194  projects/chris-binary-toolkit/docs/architecture.md
+db374cb4c57106d259a032cdcdb57fb6e4e506fbff16a9815d10bf7402f7f214         351  projects/chris-binary-toolkit/rules/lab_target.yar
+4219361d3be837e4c625c26a25fab8df48ef0da53a861cff49f9372ef7657b61        1087  projects/chris-binary-toolkit/src/lab_target.c
+0fcf96c5861e1cef86602be0888844ebaf5ce0185f666058c4d2a96f437002fd         601  projects/chris-binary-toolkit/tests/test_ascii_strings.py
+0644cc2ff13de9dd7affa68a9cf6a934c9cbf856eb6b16735b3227d8b3f99d59        1767  projects/chris-binary-toolkit/tests/test_elf64.py
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855           0  projects/chris-binary-toolkit/tools/__init__.py
+3518c6611dc9a99ece75e70cb2c253665dc213fcb46e29d9c7662a14b22bbbec        1080  projects/chris-binary-toolkit/tools/ascii_strings.py
+4abea1f9681e242ef4be97fe3d76b89d54e00ff8e8d5dffc5c9b45480cdf7926        1204  projects/chris-binary-toolkit/tools/elf64.py
+56c96c811073bdbbcdc7755525fe2a44430f183c6ad6fa2b362de08394780043         243  projects/chris-boot/CMakeLists.txt
+6de4772733331c353642d2ff7336ad86d47db4430ee5227c0a903b1cb4c9e6e2         255  projects/chris-boot/MILESTONES.md
+b0dee131a24bad6ddbbd676e120297bf1c4049abb376de648c7f4f97d83013fd        1370  projects/chris-boot/README.md
+71ea1b0b16182ffba8ebcac9dab0c62c76520b34a955d3331d2e4ab7c0909580         268  projects/chris-boot/docs/architecture.md
+c1e04aaea26e0f4cecded2bbd64bfd387f95faa14e51b09b3e22b94a17c2e517         200  projects/chris-boot/src/bootsector.asm
+ecab3217c518480662ae6e874415089270b95e54b5994d888eb6a94c6c7b2674         651  projects/chris-boot/tests/test_boot.py
+0a5c8d32f0aae9b67afed71e94eaa425ef5610ea10b11442111506de6638faff         586  projects/chris-boot/tools/build_minimal.py
+dc7301889cc0f868f455ba1338890bd70bad338ced68b1c250bb9f01eb47d0f0         243  projects/chris-chain/CMakeLists.txt
+0c3d6d82f4e239e38821de2b97aee9f5230bfa948c9f85f7de81e00dc5e9435c         260  projects/chris-chain/MILESTONES.md
+6297e8b5db94853b98ce4973734d03fdbbcb32924ac91e6511dc702d26313427        1222  projects/chris-chain/README.md
+e86a51b9a5370db6c2e7984115e06f594288be70da69ae894aa8f33115711906         526  projects/chris-chain/benchmarks/benchmark.py
+b49d17bda65815d6eeb94d01fa8571f60944457ae3ff3625f5cd5025c9103748         281  projects/chris-chain/docs/architecture.md
+5aab635275d0cc692ce350d2767e9e8b0161628a076bcc7044c7e1ccdccb2a74         599  projects/chris-chain/tests/test_chain.py
+2c46b4d69597acaf9f13950024afb1a64b1c23ab9a7bfd24896d8bf2ea85f6f3        2128  projects/chris-chain/toy_chain.py
+cb5358d9e86f11f034b4442567427302154830c137bf6328ec6236b49c54b62a         771  projects/chris-cpu/CMakeLists.txt
+771310737c8dd06d1a27d3faceb2de4226955f4ad3a2efd939030a5a535551c7         151  projects/chris-cpu/MILESTONES.md
+c1004ad00b2f657757ed028767d9e3e4864602b4f8ef338b4ed131b79f6c929b        1099  projects/chris-cpu/README.md
+c674dfa4e42a5cf211efa6a091a6ef5de00eb6a969b145422079254dbc5fc592        1188  projects/chris-cpu/benchmarks/benchmark.cpp
+8003ed14aec7066727d5331cae8e3ebcebc15815b3ed038ecf83ebd0f53abc66         351  projects/chris-cpu/docs/architecture.md
+4f47fb9eadf2d244d14a19ec5941ad967b318f71beab2ab198f2f0939b3ad098         975  projects/chris-cpu/include/cpu.hpp
+b6eb8f60723b2e6700c267261fd8a9cc7f32de0d8464f1e1074f91ba96f6c3ec        3615  projects/chris-cpu/src/cpu.cpp
+2abff80b35e2dac9c23602ca4c6582facdbda3c9d27df53d14e5b16dba24b1aa        1311  projects/chris-cpu/tests/test_cpu.cpp
+13408ac5bf1d93326da591c9ae82ed73aaf7d8378c67893f3b829876a9f0ab21         896  projects/chris-debugger/CMakeLists.txt
+6378b23ac6df2c3b66c073ff4e454f1cc678fb50abdc42f93ec39e427fb4de25         264  projects/chris-debugger/MILESTONES.md
+afd22f16f304dee3626cbbf445cbaee5ee613b85f13b36d28d21491b1733667a         707  projects/chris-debugger/README.md
+5a70a7bca93d26ce2c1a8c49c5defae1346f14444f74e17f98d59ed39071cbef         894  projects/chris-debugger/benchmarks/debugger_benchmark.cpp
+dbb13fafbd943a263cfff62a16d90873286abba771919bdf065a56c3956a8478         376  projects/chris-debugger/docs/architecture.md
+d51c7a711c113493638d94eafc4c1792fb30d3d9b553850500eef18f29ec2378         497  projects/chris-debugger/include/protocol.hpp
+675741b32929800c72d0d46f4cdb2dc74d1b868f553356f7fa3a4e8551f8b57c        3236  projects/chris-debugger/src/protocol.cpp
+100f3b74802bda7a4ffb56b94852260356acae4d1f3e105cfe3a36754e75674c        1050  projects/chris-debugger/tests/debugger_tests.cpp
+1ec4a65b39aaa27fa7ec6dcc71546cead4d31cc47d64fe3b8966b4769ef9340b         810  projects/chris-disassembler/CMakeLists.txt
+25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f         237  projects/chris-disassembler/MILESTONES.md
+5c77d0fc54896ac20dbaf5313d8d955d915c008f293cd0e148b816ae4117aa5b        1517  projects/chris-disassembler/README.md
+bfe6ab3cdda0828896cca72c247407dfbc7135e810709d1bcbf4609caa9149e7        1081  projects/chris-disassembler/benchmarks/benchmark.py
+ee76f2c908584e5f19c1c68c825a0f701944a2d8f11843634754b8f78688d5c9         192  projects/chris-disassembler/docs/architecture.md
+915b4dddeba2acb45ae9bb55b24fb13cd0c50a628d0110040c8ccc286a702b97         349  projects/chris-disassembler/research/decoder_validation.md
+9f1431043088daecc9d74f41c8ec3646da35bd9bcde083dbfd8e691d96bcfddf        8771  projects/chris-disassembler/src/main.cpp
+7f2b4d9b4a27bb588c3bcddb334c4790432edd98cd3ac1c3e6742e9316d71347        1084  projects/chris-disassembler/tests/integration_test.py
+bbe2dd892b3b6591646034972635d0f469f1956e0c5cf202f9cd68f9bef2a633         243  projects/chris-disassembler/tests/test_target.c
+a839d196ea89501fa2d17fc8376512796d49492732270ba5cdbc1e07f7055e0b         280  projects/chris-dotnet-bench/Chris.DotNet.Bench.slnx
+1b3ba4b6328a668d7271bb0b2187b30437c2540de63ef36d310ec986e41230dd         178  projects/chris-dotnet-bench/MILESTONES.md
+38001d22b6b971aa86876bb05e4154379d5865dd29f41304149ec95b7f82763b         925  projects/chris-dotnet-bench/README.md
+205c843e12c2278e800dd8d0a2f76eadf123f1c6d4c3a034736e1e808f651989         406  projects/chris-dotnet-bench/benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj
+fa9692ec68880f056729fa81ce4bfa7d82d660d83eafb35ed885e826c0855aab         790  projects/chris-dotnet-bench/benchmarks/Chris.DotNet.Bench.Benchmarks/Program.cs
+2954476dcc2a39fc13015d3d9f0ca25b98da627df9b1128decb6522cf7fdb7f4         463  projects/chris-dotnet-bench/docs/architecture.md
+9b8458580be4e786dd73ed606f80627ab81a4545fbe8834e205dc430a56e7544         261  projects/chris-dotnet-bench/src/Chris.DotNet.Buffers/Chris.DotNet.Buffers.csproj
+03d9b3139eb999712645119bd8517f74c72d0a5022cbf61df5e9cc343cfad861        2380  projects/chris-dotnet-bench/src/Chris.DotNet.Buffers/FrameCodec.cs
+fbf7777195f46e4337f449f05c8d6e29837371f5ac1ae1fc614bb60ab667119b         381  projects/chris-dotnet-bench/tests/Chris.DotNet.Bench.Tests/Chris.DotNet.Bench.Tests.csproj
+854e08120d62315ecd61db9e96254e1695996c875ab4d924952de2b1addc3705        1257  projects/chris-dotnet-bench/tests/Chris.DotNet.Bench.Tests/Program.cs
+404d8e95f62c1f3e36f0f0bc4d54f77f88744197e0086259b73b31ebdbd55fa2         256  projects/chris-dotnet-pe/MILESTONES.md
+8714ae7d812b8d4d94c18958754f0c9de627383d1e85b794b9e23b3a2914f3f1         452  projects/chris-dotnet-pe/README.md
+88d3740496274ed7bbedeff52aab25c8e4fd99f487fd7bea6ac0511ad151f62a         324  projects/chris-dotnet-pe/docs/architecture.md
+32d8bca01eca74ff14fc01efd84cd620d38f1ff6e27e262159fce7c698bf54a7         234  projects/chris-dotnet-pe/src/Chris.DotNet.Pe/Chris.DotNet.Pe.csproj
+6b6e3ff0c3e29a58da7af9dba62ccb1a6288712628806eb337895f45f87a172c        3569  projects/chris-dotnet-pe/src/Chris.DotNet.Pe/CliPeInspector.cs
+8b0a25e9790a5bb042521923a5183747b6fe9e5b00ac9d8354a70b67a5a167bf         364  projects/chris-dotnet-pe/tests/Chris.DotNet.Pe.Tests/Chris.DotNet.Pe.Tests.csproj
+b0b389021f3907e9a235d3c73d95b0d994383513dba47366c6bb46e7fa4f628f        1441  projects/chris-dotnet-pe/tests/Chris.DotNet.Pe.Tests/Program.cs
+dac330725771becb08db287b5a2098648f26815e7a458f98d3d88c764d9bf084         875  projects/chris-driver-lab/CMakeLists.txt
+b9705afb35e014b2fc2df37223b67131e67af7784ff02370b76f95e5e367cdd6         206  projects/chris-driver-lab/MILESTONES.md
+64965223b4d5727e93c512594c145afaf419ed47c856c26a2d9aac44cb1b5a0f        1222  projects/chris-driver-lab/README.md
+fbbd8d3e7216d4e0ce84bb51a206c3a36ee887d7d072cc2e544a96ef2db9f58d         809  projects/chris-driver-lab/benchmarks/benchmark.cpp
+919f26fb422bce063d6e3698267eebf6d6dac65465313d56039e5a043ead7a39         227  projects/chris-driver-lab/docs/architecture.md
+fe8c44cb3f43efcabc3ccd69db455722f8d078c5148c5cdad4f62b6ed342e016         720  projects/chris-driver-lab/include/descriptor_ring.hpp
+cfac8227067da3a03467b16641b39105c3aeff26c631591a06a7d86bee240609        1339  projects/chris-driver-lab/src/descriptor_ring.cpp
+05f0a859d88cb086ef18be9a601579b7f8af5b378ba6ef4fc142ce4c75989073         731  projects/chris-driver-lab/tests/test_ring.cpp
+39d42d97d643e2ae7721c7349659e6c2d8ce696d5b276a6f9e2864d40610be83         793  projects/chris-http/CMakeLists.txt
+d5f4be066774835d0f097e3d5970d910b5a853d98e45983ebb9a32a3abc06365         232  projects/chris-http/MILESTONES.md
+85bf4b679e829033060395eb1f5c7a1903425472822ac7078962c156af6733d2        1146  projects/chris-http/README.md
+63bdabf4a25fce9fac64de2eef5a921f5a42b220214d11cb57d7cd29855703a8         806  projects/chris-http/benchmarks/benchmark.cpp
+eaabb7dcc0ad0403e6d208b5428cdafcde9d17353894de08599734c56314a668         275  projects/chris-http/docs/architecture.md
+d77a556f6c031449aa78499d79ea2affe984000403e8abf5a961d2f8765a8e6a         529  projects/chris-http/include/http_parser.hpp
+7269dd11d36d4ceb2635786b5c7fd2441be5ef2cb8845f498f9d5011641d9592        2513  projects/chris-http/src/http_parser.cpp
+8bb1105256a9f5020e450891853039a6f7a31b1ff946a38b18f6c3d28a1d63a7         818  projects/chris-http/tests/test_http.cpp
+ec5b8b9f2917248d16a5069c543478293b391809ddc6671482f936767cd4fce2         672  projects/chris-js/CMakeLists.txt
+980d22aca7514aadf4e830b1bdad667914d329fda5933acaccbe83bfef578b5d         261  projects/chris-js/MILESTONES.md
+64652d91a2bc739ec24ac13e11249e10bc54a3b9c54f513542378a6fa7467ffc         408  projects/chris-js/docs/architecture.md
+e2ad461c6a68cf3228e1fad841fca83c57533b84ed8f36ab88bb9956de88a587         489  projects/chris-js/include/chris_js.hpp
+473037c5f65c903d684ce2cadef71e671f3d698398eea8f9438df081bc221faf        6289  projects/chris-js/src/chris_js.cpp
+3785ae8051a0f8ab21316a8370fa84f9c29d653289cbe105723350ef93bf67d6         279  projects/chris-js/src/main.cpp
+e70bee2991f5f1ece9d0902805511c856b596cd6f77c2c1ff431c353acd391f6         759  projects/chris-js/tests/tests.cpp
+f032ce05039ca1138e367e5fad2342e4cd434f3df7eb83d78466283fcb94390c         247  projects/chris-nasm/CMakeLists.txt
+3fb41da391d250c2e0536b9efc240984cb88431ad25180bd168ff385de0b37a9         272  projects/chris-nasm/MILESTONES.md
+dc9ebf4004a03b4354ec3fe4395ffd0309fe8fccfd00bc3f0e45099fef6da816        1234  projects/chris-nasm/README.md
+eca5f5ef84494cd884ac6e3ebc78f822c4706fca1eb14df3b2f22d204e95624e         506  projects/chris-nasm/benchmarks/benchmark.py
+19a36371ec17c485bb716c666432929f0666e1ab9276d66256b81ec68929d26d        1994  projects/chris-nasm/chris_nasm.py
+e1cc6caadabf54f3c227600937cdfa8f32f3e641a5613fa7ad5516005b25d6e3         280  projects/chris-nasm/docs/architecture.md
+4d4123e89629cb45e3a30f318b1cf87694faabe6323199524693883838acbfee         772  projects/chris-nasm/tests/test_assembler.py
+afc32421c8ad37bb8eea5bb0b3d275a3f2a24413e6a032deb077261e15bb2964         232  projects/chris-node-streaming/MILESTONES.md
+fc98af7eb6ed0fde876ddc0e7b9a48ae44c9a8712bf1331b9c392d5bf8807eeb         405  projects/chris-node-streaming/README.md
+d104a7eb431bbc001f5296f5f5d9f788c09480e70df7a3b4b3a9f243ff9cdf41         867  projects/chris-node-streaming/benchmarks/bench.ts
+43a044485cfa0ce0ac59fcd51b59367923d9262d90995135b8d66922e94449e5         385  projects/chris-node-streaming/docs/architecture.md
+84e34db4db27f1617be7dd4c632786946c383e9db5ee80e55919e14240e4a026         292  projects/chris-node-streaming/package.json
+1d7918b970ba83fd16c5c3ebd22e2b074887f6e8d179e4fee250d233382c6a6d         559  projects/chris-node-streaming/src/demo.ts
+fdb9fec5ccb549958ead816209ac0c9e8b80e55c069964caf67a8ca23ca36fef        1675  projects/chris-node-streaming/src/line-framer.ts
+234b1f246946df16d7023bb81f8fe5b34075c84befd898c3f1b9f1290446f096        1130  projects/chris-node-streaming/tests/line-framer.test.ts
+90a639c4740adf556b328d7b3daf060f0fc11b4be2e0988d5f4cd7fb08e0f5d9         896  projects/chris-os/CMakeLists.txt
+6405d08d0f5e9657add444060afa472b755375069ab52476e45de599843ac284         305  projects/chris-os/MILESTONES.md
+1f31ef6cf0808a10e6ab71518a07a093169823bf559293dc21d02efac0f1713b         901  projects/chris-os/README.md
+4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152        1210  projects/chris-os/benchmarks/os_graphics_benchmark.cpp
+fbde38a3235836b9909e68249d41e15a874b7024e71b2ba07b3811119e806c2f         390  projects/chris-os/docs/architecture.md
+d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c        1074  projects/chris-os/include/graphics.hpp
+432d92870c3ced66a94b46b07ed24b62974825bb8e3a31c8bff71a340398e98e        2902  projects/chris-os/src/graphics.cpp
+f6fd60c99fa6971d995b23b853417c72bc4a290ed8af637a3d7edfa9e900eec8         846  projects/chris-os/tests/os_graphics_tests.cpp
+a18d508bd3e09a6205a81bdba305147cb659b724fbcc54505f22b1d3a7aa4fad         239  projects/chris-p2p/CMakeLists.txt
+78b09117cb5d6e35139b00fa451a448d72e88f625a924dedce58859e6ce918a3         252  projects/chris-p2p/MILESTONES.md
+aaba9dbfaad17801209e345015792aeec4fdc603d5ff1e368d60975b508161e3        1132  projects/chris-p2p/README.md
+19a861491d88805e47e46b7879ac6cb442a3dded357bc9512058f9176fa45184         521  projects/chris-p2p/benchmarks/benchmark.py
+24ec5e6a450c7b21d54f3a0796801fd7e355990002b7a7e7d5b04a7ba645dc71         236  projects/chris-p2p/docs/architecture.md
+785d837948695d464f42c914f7561d23ec162d4d1db6e82d08ab3a25f3cd474f        1514  projects/chris-p2p/gossip.py
+674f0d67f8dcf0c6d50af9139ed2b7fda69c8ebc25cd0fcac3d7bce08e12353d         673  projects/chris-p2p/tests/test_gossip.py
+8f7d2a40948a41710e4c07ddec5890f8c661753103e5915eb6a4dd6986e6987c         796  projects/chris-qsim/CMakeLists.txt
+7a8cf283ceb9eadb9c21955b08fb64f0b0bfcd5376bcd5e41a44fc6a7f5161a6         230  projects/chris-qsim/MILESTONES.md
+0e02c4019a7675edb8e691b421e38b393d2e5c2584912346d3aa9b0b023273f9         634  projects/chris-qsim/README.md
+6e47ac94d2a4b7136ec1b5febb5a09b6681083bb363d1795ae366e51bd6dbfb6        1032  projects/chris-qsim/benchmarks/qsim_benchmark.cpp
+0f7449ba2aaa707786ac86e4528890dda54ff8f24355f966a4b84c78a3c5ae7a         266  projects/chris-qsim/docs/architecture.md
+69e9ebed55598bc44c685cfff37960af98f4c3684ec10e7cfcb86beea1f7672b         952  projects/chris-qsim/include/qsim.hpp
+3fd1111fc9bb0a4744ad584a81a5029b32654997b20040ca189469eac5778868        2793  projects/chris-qsim/src/qsim.cpp
+79fa2c79fcd9fe5080e614cf36703f33f2124aac9c25a907de5331f524b90367        1122  projects/chris-qsim/tests/qsim_tests.cpp
+c466ebca3d99a1a89e73ec53de107bac5e7131a85af9c77d57f9c86692169ad0        1178  projects/chris-renderer/CMakeLists.txt
+25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f         237  projects/chris-renderer/MILESTONES.md
+64ec4f4faa5e3ee94a61027cd7a05f00f9286c96a5d7203ccd66e19ef014f1ef        1728  projects/chris-renderer/README.md
+2a3bed470f834e52029b3686aaa5308b280d8075a3fd8902efae1cbaec191648         858  projects/chris-renderer/benchmarks/core_benchmark.cpp
+dbd7fda30c60deb64af29a0a09a2c02d6b8eae919498f5df091b120dbc8d2199        5497  projects/chris-renderer/common/engine.cpp
+efc92c88c3f208416189203a21fd2fe2e3cf0a304b8455dd4d8b8d63165fdefb        2031  projects/chris-renderer/common/engine.hpp
+1ebb3818b26da1a02557907578393b59a8e3f9a54c6dc49ebeda05f4b17c39dc         188  projects/chris-renderer/docs/architecture.md
+6fc3ce7e65768044c49185bcf91dc9489e279dab25657a411f08dce636b5fda6       15280  projects/chris-renderer/opengl_win32/main.cpp
+b560019fb101b7836a269ed2d0b8f46e90181f5cd53858c4a1326e1008d1c687         480  projects/chris-renderer/research/software_vs_gpu.md
+c9cc1223a79eecdfcdd7f02e0804e7a44084f08d8b674b477a8a0b95308b177d       10677  projects/chris-renderer/software_win32/main.cpp
+36c5c479598b4a53b833b39965d97c1c7f51e686f0080096270ff44f52c0c2e2        1234  projects/chris-renderer/tests/core_tests.cpp
+251558cb9ad68e743b1bb9b9ccb41e3133496b8a185aae246eac1713efabdd06         828  projects/chris-tensor/CMakeLists.txt
+af71c27cfda902e18cef35ac6682cac651ae77d76700a7ef5d95d5b449725b23         221  projects/chris-tensor/MILESTONES.md
+7c2de7dc6feb7fd92dda0447a06955853a474a92e2cdf976c6126da5864022fd         857  projects/chris-tensor/README.md
+0e280051dca8a4748ba767f5d7115e802f7fc30eebc801f746c849d070e6cb38        1117  projects/chris-tensor/benchmarks/tensor_benchmark.cpp
+92690cb4812fc85478b1968bbe9cd31801e722334b1d1331f4f82328db3c032d         255  projects/chris-tensor/docs/architecture.md
+d4262c1b10ad55f10c2da99278ddd07d80acfb27965e4f4f2c5af7cc5ac14370         979  projects/chris-tensor/include/tensor.hpp
+332172508e3ca65e1c55862a97196193f94d200cfaf975381bd240595a8652d3        2014  projects/chris-tensor/src/tensor.cpp
+d76f204ac62b10745beecce7d5a628af33d7763e38dd8079bc653056f3c47f98        1160  projects/chris-tensor/tests/tensor_tests.cpp
+bb46f450eb70806567ad8360a32255b19499f57a2fb523ee6c9531a096c1ee0d         846  projects/chris-terminal/CMakeLists.txt
+61ea870f2f50972986634c196433d8d755d841d34cc2d60e204eb2e0a9489d3f         226  projects/chris-terminal/MILESTONES.md
+5884ea72df86a924067c4c0537f743458b8d7ba04c36d5d57624006d10c30a36        1149  projects/chris-terminal/README.md
+cbd422c397226ced9bf0a4a33624cb3536c90bdc07a3951d102e03bf05dcd8a1         699  projects/chris-terminal/benchmarks/benchmark.cpp
+03155cb37df22af37b03635566cf9f7ecb91b985cfcc48ea7061d257f657827b         287  projects/chris-terminal/docs/architecture.md
+8ef1e49a073fc4ce315b9e55ac2a687ad0dde56f6241dfbea24ad6cf52e75763         747  projects/chris-terminal/include/terminal.hpp
+9ee082ba6a1cf3c5fffb13ee4e2b43c18162bfc63a0c920445ef794cf24dbcf5        3291  projects/chris-terminal/src/terminal.cpp
+a2ff7c52ff3b519f477070ba6172c24d639ccaca53325a72ae3910c2dd699600         726  projects/chris-terminal/tests/test_terminal.cpp
+2d967e3d4e65e02a6ce0d960170720aa15328098e464a2b96e8a5da1d2f165d5         792  projects/chris-vm/CMakeLists.txt
+e0f84744c6f5e9b186caad35baefa7e4d9328c60d8faed3d803279aaf98ccedf        1096  projects/chris-vm/FORMAT.md
+25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f         237  projects/chris-vm/MILESTONES.md
+e1009c6ad5969958754445dd8e139d113cfe8a1a75a23d2756ebf1d981908655        1396  projects/chris-vm/README.md
+6eccd32b7305915966fbc5accda618a001432f49aa4f1c1b5d26054f3a134959        1505  projects/chris-vm/benchmarks/benchmark.py
+cfd56d5bd7bcee54ebb31b45ab3f3d8bff1bdc48b00e5e10a34b5e90b0759b64         182  projects/chris-vm/docs/architecture.md
+39527454e21b6078bb2c86224f9804dee1bae118447e47867fbcb733aaf698f3         844  projects/chris-vm/include/clvm_format.h
+2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290          59  projects/chris-vm/programs/arithmetic.asm
+f813ee1e5ffafde7ebee880b6c99211111c68e1fa2982d9d3d859ee07351402c         115  projects/chris-vm/programs/countdown.asm
+219164ac6fa7b6b8dd118719bb291873531cb0891091bae7010f3188733a0a2c          84  projects/chris-vm/rust-validator/Cargo.toml
+f44f25d890c27956fd4fde2cd9a77e654681f9319165e38435688a1316354431        1861  projects/chris-vm/rust-validator/src/main.rs
+6fe5dc9d91cfdef04e507ee81657094b04438c7b34d2377968fde9bbe0991958        2228  projects/chris-vm/src/clvm_loader.c
+73aa4ffdcffa075ca68a76e5350ed78cb0bb4cadbee47e30e14d404bdd8524eb        7647  projects/chris-vm/src/main.cpp
+fd3818bc981833a21be7b54cddf1feb210a344af1cffa91663e56c0b08099230        1312  projects/chris-vm/tests/integration_test.py
+7a6da16f138cdbff25532d5271366062d969031319da46ba5227cd02e604fdbd        3724  projects/chris-vm/tools/assemble.py
+5f151d2e29d24928c748a29fddf4a910c9c32068609ad1a218890529f814dc2f         873  projects/chris-vm/tools/inspect_clvm.py
+d5fb5559a03fb0252dad881f7abe60cc29b69ff6c8ed9b71cc7ca5953f32b4e7        1252  research/README.md
+18b03bb19eb2642586f77c4205153de4492d2b7b6e8eef94c06c6898b82771cf        5222  scripts/pedagogy_check_day01.py
+d717f82563e1fceeb9616ea4f704a55f431bb4a18622cab541a04fe85029cb66        3739  scripts/pedagogy_check_day02.py
+be8f036399a8b2edf743dd1261f3859169a081df2a19fe40853a8caf244a05eb        1374  scripts/quality_check.py
+2a5c37b6f0eb90769066c1315162b4612553ce7afbc6d00f3dd03155cf35dfc5        1787  scripts/run_all_benchmarks.py
+c9ea8f56141faa8bdfcee6b7e7597cd6181e9ee20c496262e3c83613118346dc        1171  scripts/run_all_tests.py
+2b6d3cff76aac577967bff2f2cfdfeebc4d4cabf3d1f1fdf6ac1bcddbb411ffe         174  tests/README.md
+cad8ada9f7dca268b4df3a0c856273947199b75b5b451e2600f96aab5b9281d4         186  tools/README.md

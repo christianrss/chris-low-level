@@ -45,13 +45,12 @@ class Lexer {
     const char c = source_[pos_];
     if (std::isdigit(static_cast<unsigned char>(c))) {
       const auto start = pos_;
-      std::int64_t value = 0;
+      // TODO [D2-JS-LEX-NUMBER]: consume all digits and accumulate the Int64 value.
       while (pos_ < source_.size() &&
              std::isdigit(static_cast<unsigned char>(source_[pos_]))) {
-        value = value * 10 + (source_[pos_] - '0');
         ++pos_;
       }
-      return {Kind::Number, source_.substr(start, pos_ - start), value};
+      return {Kind::Number, source_.substr(start, pos_ - start), 0};
     }
 
     if (std::isalpha(static_cast<unsigned char>(c)) || c == '_') {
@@ -63,12 +62,7 @@ class Lexer {
       }
 
       auto text = source_.substr(start, pos_ - start);
-      if (text == "let") {
-        return {Kind::Let, text};
-      }
-      if (text == "print") {
-        return {Kind::Print, text};
-      }
+      // TODO [D2-JS-LEX-IDENT]: map "let" and "print" to keywords; others stay Identifier.
       return {Kind::Identifier, text};
     }
 
@@ -143,42 +137,29 @@ class Compiler {
       const auto idx = name_index(current_.text);
       advance();
       expect(Kind::Equal);
-      expression();
-      expect(Kind::Semicolon);
-      emit(Op::StoreGlobal, idx);
-      return;
+      // TODO [D2-JS-STMT-LET]: compile expression, consume ';' and emit StoreGlobal(idx).
+      (void)idx;
+      throw std::runtime_error("TODO let statement");
     }
 
     if (current_.kind == Kind::Print) {
       advance();
       expect(Kind::LParen);
-      expression();
-      expect(Kind::RParen);
-      expect(Kind::Semicolon);
-      emit(Op::Print);
-      return;
+      // TODO [D2-JS-STMT-PRINT]: compile expression, consume ')' ';' and emit Print.
+      throw std::runtime_error("TODO print statement");
     }
 
     throw std::runtime_error("expected statement");
   }
 
   void expression() {
+    // TODO [D2-JS-PREC-ADD]: parse term (('+'|'-') term)* and emit Add/Sub.
     term();
-    while (current_.kind == Kind::Plus || current_.kind == Kind::Minus) {
-      const auto kind = current_.kind;
-      advance();
-      term();
-      emit(kind == Kind::Plus ? Op::Add : Op::Sub);
-    }
   }
 
   void term() {
+    // TODO [D2-JS-PREC-MUL]: parse factor ('*' factor)* and emit Mul.
     factor();
-    while (current_.kind == Kind::Star) {
-      advance();
-      factor();
-      emit(Op::Mul);
-    }
   }
 
   void factor() {
@@ -247,7 +228,7 @@ std::vector<std::int64_t> run(const Program& program) {
       case Op::Add: {
         const auto b = pop();
         const auto a = pop();
-        // TODO DAY02: push a + b instead of only a.
+        // TODO [D2-JS-VM-ADD]: push a + b instead of only a.
         stack.push_back(a);
         (void)b;
         break;

@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cstddef>
 
+// PEDAGOGY-SOLUTION: D2-SORT-MERGE-RANGE
 static void merge_range(
     std::vector<int>& values,
     std::vector<int>& scratch,
@@ -36,6 +37,7 @@ static void merge_range(
     }
 }
 
+// PEDAGOGY-SOLUTION: D2-SORT-MERGE-RECURSE
 static void merge_sort_impl(
     std::vector<int>& values,
     std::vector<int>& scratch,
@@ -58,6 +60,7 @@ SortStats merge_sort(std::vector<int>& values) {
     return stats;
 }
 
+// PEDAGOGY-SOLUTION: D2-SORT-PARTITION
 static std::size_t partition(
     std::vector<int>& values,
     std::size_t begin,
@@ -82,6 +85,7 @@ static std::size_t partition(
     return store;
 }
 
+// PEDAGOGY-SOLUTION: D2-SORT-QUICK-LOOP
 static void quick_sort_impl(
     std::vector<int>& values,
     std::size_t begin,

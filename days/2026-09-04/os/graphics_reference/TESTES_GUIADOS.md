@@ -1,10 +1,46 @@
 # Testes guiados — graphics_reference
 
-1. Configure e compile `starter/` antes de editar; confirme que o executável de testes existe.
-2. Leia `starter/tests/` linha por linha e transforme cada `assert` em uma frase de invariante.
-3. Implemente uma etapa por vez e rode o teste novamente.
-4. Não remova asserts para “fazer passar”. Corrija a implementação.
-5. Depois que passar, crie pelo menos um edge case adicional e explique por que ele protege contra regressão.
-6. Compare `starter/tests/` com `solutions/tests/`; os testes fornecidos devem permanecer equivalentes.
+Este arquivo é a ponte entre cada TODO real do `starter/` e a evidência que deve ficar verde. Não pule diretamente para `solutions/`.
 
-Use `ctest --test-dir starter/build --output-on-failure` a partir deste módulo ou os comandos absolutos mostrados na resolução guiada.
+## Baseline
+
+A partir da pasta deste módulo:
+
+```bash
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Antes de implementar:** build passa; `Surface::index`/compositor incompletos fazem o teste falhar.
+
+## Mapa TODO → teste
+
+### `D2-GFX-INDEX`
+- Arquivo: `starter/src/graphics.cpp`
+- Validação: pixel `(x,y)` deve mapear corretamente e rejeitar fora da surface.
+- Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-INDEX`
+
+### `D2-GFX-FILL-RECT`
+- Arquivo: `starter/src/graphics.cpp`
+- Validação: `fill_rect(-1,-1,3,3)` altera apenas a área visível.
+- Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-FILL-RECT`
+
+### `D2-GFX-ALPHA-OVER`
+- Arquivo: `starter/src/graphics.cpp`
+- Validação: azul 50% sobre vermelho produz aproximadamente `(127,0,128)`.
+- Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-ALPHA-OVER`
+
+### `D2-GFX-COMPOSE`
+- Arquivo: `starter/src/graphics.cpp`
+- Validação: layers são aplicadas em ordem, com offsets e clipping.
+- Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-COMPOSE`
+
+## Depois de concluir
+
+Rode novamente o mesmo comando. Resultado esperado:
+
+- `chris-os graphics reference tests passed`.
+- Não remova/afrouxe asserts para “fazer passar”.
+- Compare com `solutions/` somente depois de seu starter ficar verde.
+- Acrescente pelo menos um edge case próprio e anote qual regressão ele detectaria.

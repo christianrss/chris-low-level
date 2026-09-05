@@ -1,5 +1,17 @@
 # Resolução guiada passo a passo — chris-debugger protocol v1
 
+## Mapa exato starter → resolução
+
+- `D2-DBG-APPEND-U16` → `starter/src/protocol.cpp`
+- `D2-DBG-APPEND-U32` → `starter/src/protocol.cpp`
+- `D2-DBG-READ-U16` → `starter/src/protocol.cpp`
+- `D2-DBG-READ-U32` → `starter/src/protocol.cpp`
+- `D2-DBG-FNV1A` → `starter/src/protocol.cpp`
+- `D2-DBG-ENCODE` → `starter/src/protocol.cpp`
+- `D2-DBG-DECODE` → `starter/src/protocol.cpp`
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
 ## Baseline
 
 ```bash
@@ -106,10 +118,32 @@ if (bytes.size() != kHeaderSize + payload_size) {
 }
 ```
 
-Crie payload, valide hash e retorne `{command, request_id, std::move(payload)}`.
+Digite então o restante exato:
+
+```cpp
+std::vector<std::uint8_t> payload(
+    bytes.begin() + static_cast<std::ptrdiff_t>(kHeaderSize),
+    bytes.end());
+const std::uint32_t actual_hash = fnv1a(payload.data(), payload.size());
+if (actual_hash != expected_hash) {
+    throw std::runtime_error("debug packet checksum mismatch");
+}
+return {command, request_id, std::move(payload)};
+```
 
 ## Testes/Debug
 O teste altera o último byte (`^=0xFF`) e espera checksum failure. Coloque breakpoint no `actual_hash != expected_hash` e compare ambos. O teste truncado `{1,2,3}` deve falhar antes de qualquer `read_u32`.
 
 ## Benchmark
 O benchmark faz 300 mil encode+decode de payload de 64 bytes. Registre packets/s; depois compare quando adicionar CRC32C/SIMD ou transporte real, mantendo o mesmo payload.
+
+
+## Rodar testes finais
+```bash
+cmake --build days/2026-09-04/debugger/protocol_v1/starter/build
+ctest --test-dir days/2026-09-04/debugger/protocol_v1/starter/build --output-on-failure
+```
+Esperado: `chris-debugger protocol tests passed` e `100% tests passed`.
+
+## Solução final comentada
+Somente depois do starter verde, compare os sete marcadores `PEDAGOGY-SOLUTION` em `solutions/src/protocol.cpp`. Cada marcador corresponde a um TODO listado no mapa desta resolução.

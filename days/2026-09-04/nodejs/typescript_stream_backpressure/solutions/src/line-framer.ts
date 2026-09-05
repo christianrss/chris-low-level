@@ -14,6 +14,7 @@ export class LineFramer extends Transform {
     try {
       const incoming = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk, encoding);
       this.#pending = this.#pending.length === 0 ? Buffer.from(incoming) : Buffer.concat([this.#pending, incoming]);
+// PEDAGOGY-SOLUTION: D2-NODE-FRAME-LINES
       let newline: number;
       while ((newline = this.#pending.indexOf(0x0A)) !== -1) {
         const line = this.#pending.subarray(0, newline);

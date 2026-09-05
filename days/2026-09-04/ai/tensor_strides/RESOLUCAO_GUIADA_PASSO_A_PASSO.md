@@ -1,5 +1,14 @@
 # Resolução guiada passo a passo — Tensor, strides e matmul
 
+## Mapa exato starter → resolução
+
+- `D2-TENSOR-VIEW-AT` → `starter/src/tensor.cpp`
+- `D2-TENSOR-VIEW` → `starter/src/tensor.cpp`
+- `D2-TENSOR-TRANSPOSE` → `starter/src/tensor.cpp`
+- `D2-TENSOR-MATMUL` → `starter/src/tensor.cpp`
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
 ## 0. Baseline
 
 ```bash
@@ -123,3 +132,7 @@ cmake --build days/2026-09-04/ai/tensor_strides/starter/build-bench
 ```
 
 Depois, como extensão, implemente versões `ijk` e `ikj`, use a mesma matriz/seed/repetições e compare. Explique cache locality antes de concluir que uma ordem é “sempre melhor”.
+
+
+## Solução final comentada
+Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.

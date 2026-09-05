@@ -1,3 +1,7 @@
+// PEDAGOGY-TEST: D2-ARENA-POWER2
+// PEDAGOGY-TEST: D2-ARENA-ALIGN-UP
+// PEDAGOGY-TEST: D2-ARENA-ALLOCATE
+// PEDAGOGY-TEST: D2-ARENA-RESET
 #include "arena.hpp"
 #include <cassert>
 #include <cstdint>

@@ -153,3 +153,19 @@ Milestones: `chris-autograd`, `chris-tensor`, `chris-inference`.
 - maintain releases and compatibility;
 - write technical reports/posts with measured claims;
 - eventually target contributions to Linux, coreboot, QEMU, NASM, LLVM/Clang, FFmpeg or comparable projects.
+
+## Expanded long-term tracks (2026-09-04)
+
+- Algorithms & empirical algorithmics: sorting, graphs, strings, randomized/streaming/parallel algorithms and research harnesses.
+- Quantum systems: state-vector, QASM/compiler, stabilizer, tensor-network, QEC/QML/quantum networking.
+- Complete OS: `chris-os` from boot/kernel/user mode to drivers, window server, compositor, GUI, desktop, apps, SDK/DDK.
+- First-party debugging: `chris-debugger`, kernel stub/protocol, symbols, unwinding, crash dumps, tracing and GUI.
+- Multimedia/creative stack: FFmpeg-like toolkit, codecs, players/visualizers, DAW, NLE, compositor, raster/vector editors.
+- Real-time/game engine: runtime, editor, renderer, ECS, physics, animation, assets, UI, scripting, networking.
+- Formal verification, HDL/FPGA/ASIC/EDA, embedded/RTOS, HPC/numerics, accelerator compilers, distributed ML, DB/storage, high-performance networking, observability and PQC.
+
+Implementation rule: no empty project directories; a project enters `projects/` only with meaningful code, tests and documentation.
+
+
+## .NET/C# + Node.js/JavaScript runtime expansion
+Permanent parallel tracks now include production-grade .NET/C# and Node.js/TypeScript plus CLR/CIL/JIT/GC and JavaScript VM/JIT/event-loop/libuv built from first principles. Black-magic goals include mixed debugging, deterministic replay, time-travel debugging and runtime visualization. See `docs/RUNTIME_STACKS_DOTNET_NODE.md`.

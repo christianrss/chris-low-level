@@ -87,3 +87,7 @@ python scripts/run_all_benchmarks.py
 The lab is intentionally honest about what was and was not tested. Hardware-specific, Windows-specific, firmware and QEMU milestones are documented separately until the required environment is available.
 
 For the complete mapping from the user-defined curriculum directives to Day 01 evidence and future milestones, see [`docs/DIRECTIVES_COVERAGE.md`](docs/DIRECTIVES_COVERAGE.md).
+
+## Day 02 — 2026-09-04
+
+Adds `chris-arena`, `chris-tensor`, `chris-algorithms`, `chris-qsim`, the first host-reference milestone of `chris-os`, the first protocol milestone of `chris-debugger`, ELF64 parsing in `chris-binary-toolkit`, plus the parallel managed/runtime tracks `chris-dotnet-bench`, `chris-dotnet-pe`, `chris-node-streaming` and `chris-js`. See `days/2026-09-04/README.md` and `docs/RUNTIME_STACKS_DOTNET_NODE.md`.

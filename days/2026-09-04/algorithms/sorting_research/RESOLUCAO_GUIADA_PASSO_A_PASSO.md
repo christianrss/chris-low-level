@@ -1,5 +1,14 @@
 # Resolução guiada passo a passo — Merge sort vs quicksort
 
+## Mapa exato starter → resolução
+
+- `D2-SORT-MERGE-RECURSE` → `starter/src/sort.cpp`
+- `D2-SORT-MERGE-RANGE` → `starter/src/sort.cpp`
+- `D2-SORT-PARTITION` → `starter/src/sort.cpp`
+- `D2-SORT-QUICK-LOOP` → `starter/src/sort.cpp`
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
 ## Baseline
 
 ```bash
@@ -161,3 +170,7 @@ cmake --build days/2026-09-04/algorithms/sorting_research/starter/build-bench
 ```
 
 Registre distribuição, n, tempo e comparações. Depois proponha mediana-de-três ou pivot aleatório como **nova hipótese**; não mude duas coisas ao mesmo tempo.
+
+
+## Solução final comentada
+Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.

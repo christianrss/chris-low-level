@@ -29,10 +29,12 @@ public static class CliPeInspector
         if (cliRva == 0 || cliSize < 16) throw new InvalidDataException("CLI header directory is missing");
 
         var sectionTable = optional + optionalSize;
+        // PEDAGOGY-SOLUTION: D2-CLR-CLI-RVA
         var cliOffset = RvaToOffset(image, cliRva, sectionTable, sectionCount);
         RequireRange(image, cliOffset, 16);
         var metadataRva = ReadU32(image, cliOffset + 8);
         var metadataSize = ReadU32(image, cliOffset + 12);
+        // PEDAGOGY-SOLUTION: D2-CLR-METADATA-RVA
         var metadataOffset = RvaToOffset(image, metadataRva, sectionTable, sectionCount);
         RequireRange(image, metadataOffset, 4);
         if (ReadU32(image, metadataOffset) != 0x424A5342) throw new InvalidDataException("metadata root does not start with BSJB");

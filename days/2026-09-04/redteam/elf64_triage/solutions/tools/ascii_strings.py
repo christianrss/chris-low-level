@@ -5,6 +5,7 @@ import argparse
 from pathlib import Path
 
 
+# PEDAGOGY-SOLUTION: D2-ELF-STRINGS
 def extract_ascii_strings(data: bytes, minimum: int = 5) -> list[tuple[int, str]]:
     results: list[tuple[int, str]] = []
     start: int | None = None

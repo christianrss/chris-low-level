@@ -16,7 +16,7 @@ public static class FrameCodec
         if (header.PayloadLength < 0)
             throw new ArgumentOutOfRangeException(nameof(header), "payload length cannot be negative");
 
-        // TODO DAY02: write both Int32 fields in little-endian order.
+        // TODO [D2-CSHARP-WRITE-HEADER]: write both Int32 fields in little-endian order.
         destination[..HeaderSize].Clear();
     }
 
@@ -25,7 +25,7 @@ public static class FrameCodec
         if (source.Length < HeaderSize)
             throw new ArgumentException("source is smaller than frame header", nameof(source));
 
-        // TODO DAY02: decode the two fields without allocating.
+        // TODO [D2-CSHARP-READ-HEADER]: decode the two fields without allocating.
         var payloadLength = 0;
         var messageType = 0;
         if (payloadLength < 0)
@@ -35,7 +35,7 @@ public static class FrameCodec
 
     public static PooledFrame RentFrame(ReadOnlySpan<byte> payload, int messageType)
     {
-        // TODO DAY02: rent, encode header, copy payload, transfer ownership.
+        // TODO [D2-CSHARP-RENT-FRAME]: rent, encode header, copy payload, transfer ownership.
         var required = checked(HeaderSize + payload.Length);
         var buffer = new byte[required];
         return new PooledFrame(buffer, required);

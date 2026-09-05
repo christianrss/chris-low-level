@@ -14,7 +14,7 @@ export class LineFramer extends Transform {
     try {
       const incoming = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk, encoding);
       this.#pending = this.#pending.length === 0 ? Buffer.from(incoming) : Buffer.concat([this.#pending, incoming]);
-      // TODO DAY02: find newlines, emit complete lines, retain only the remainder.
+      // TODO [D2-NODE-FRAME-LINES]: find newlines, emit complete lines, retain only the remainder.
       const newline = -1;
       void newline;
       if (this.#pending.length > this.maxLineBytes) throw new RangeError('unterminated line exceeds maxLineBytes');

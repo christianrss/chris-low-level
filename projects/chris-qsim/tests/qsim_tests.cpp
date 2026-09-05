@@ -25,6 +25,14 @@ int main() {
     }
 
     {
+        StateVector q(1);
+        q.apply_x(0);
+        q.apply_z(0);
+        assert(near(q.probability(1), 1.0));
+        assert(near(q.norm_squared(), 1.0));
+    }
+
+    {
         StateVector bell(2);
         bell.apply_h(0);
         bell.apply_cnot(0, 1);

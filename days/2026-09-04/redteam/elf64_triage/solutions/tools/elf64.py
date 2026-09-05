@@ -15,6 +15,7 @@ class Elf64Header:
     section_name_index: int
 
 
+# PEDAGOGY-SOLUTION: D2-ELF-HEADER
 def parse_elf64_header(data: bytes) -> Elf64Header:
     if len(data) < 64:
         raise ValueError("ELF64 header is truncated")

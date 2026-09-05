@@ -3,7 +3,7 @@
 #include <utility>
 
 float TensorView2D::at(std::size_t row, std::size_t col) const {
-    // TODO ETAPA 1: validar limites e calcular row*row_stride + col*col_stride.
+    // TODO [D2-TENSOR-VIEW-AT]: validar limites e calcular row*row_stride + col*col_stride.
     (void)row; (void)col;
     throw std::logic_error("TODO TensorView2D::at");
 }
@@ -27,17 +27,17 @@ float& Tensor2D::at(std::size_t row, std::size_t col) { return data_[checked_ind
 float Tensor2D::at(std::size_t row, std::size_t col) const { return data_[checked_index(row, col)]; }
 
 TensorView2D Tensor2D::view() const noexcept {
-    // TODO ETAPA 2
+    // TODO [D2-TENSOR-VIEW]: construir a view contigua com strides corretos.
     return {};
 }
 
 TensorView2D Tensor2D::transpose_view() const noexcept {
-    // TODO ETAPA 3
+    // TODO [D2-TENSOR-TRANSPOSE]: trocar shape/strides sem copiar dados.
     return {};
 }
 
 Tensor2D matmul(const TensorView2D& left, const TensorView2D& right) {
-    // TODO ETAPA 4
+    // TODO [D2-TENSOR-MATMUL]: validar shapes e implementar os loops i-k-j.
     (void)left; (void)right;
     throw std::logic_error("TODO matmul");
 }

@@ -9,7 +9,8 @@ public static class FrameCodec
 {
     public const int HeaderSize = 8;
 
-    public static void WriteHeader(Span<byte> destination, FrameHeader header)
+    // PEDAGOGY-SOLUTION: D2-CSHARP-WRITE-HEADER
+public static void WriteHeader(Span<byte> destination, FrameHeader header)
     {
         if (destination.Length < HeaderSize)
             throw new ArgumentException("destination is smaller than frame header", nameof(destination));
@@ -20,7 +21,8 @@ public static class FrameCodec
         BinaryPrimitives.WriteInt32LittleEndian(destination[4..8], header.MessageType);
     }
 
-    public static FrameHeader ReadHeader(ReadOnlySpan<byte> source)
+    // PEDAGOGY-SOLUTION: D2-CSHARP-READ-HEADER
+public static FrameHeader ReadHeader(ReadOnlySpan<byte> source)
     {
         if (source.Length < HeaderSize)
             throw new ArgumentException("source is smaller than frame header", nameof(source));
@@ -32,7 +34,8 @@ public static class FrameCodec
         return new FrameHeader(payloadLength, messageType);
     }
 
-    public static PooledFrame RentFrame(ReadOnlySpan<byte> payload, int messageType)
+    // PEDAGOGY-SOLUTION: D2-CSHARP-RENT-FRAME
+public static PooledFrame RentFrame(ReadOnlySpan<byte> payload, int messageType)
     {
         var required = checked(HeaderSize + payload.Length);
         var buffer = ArrayPool<byte>.Shared.Rent(required);

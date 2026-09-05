@@ -6,22 +6,26 @@ static constexpr std::uint32_t kMagic = 0x31444B43U; // "CKD1" little-endian
 static constexpr std::uint16_t kVersion = 1;
 static constexpr std::size_t kHeaderSize = 20;
 
+// PEDAGOGY-SOLUTION: D2-DBG-APPEND-U16
 static void append_u16(std::vector<std::uint8_t>& out, std::uint16_t value) {
     out.push_back(static_cast<std::uint8_t>(value & 0xFFu));
     out.push_back(static_cast<std::uint8_t>((value >> 8) & 0xFFu));
 }
 
+// PEDAGOGY-SOLUTION: D2-DBG-APPEND-U32
 static void append_u32(std::vector<std::uint8_t>& out, std::uint32_t value) {
     for (int shift = 0; shift < 32; shift += 8) {
         out.push_back(static_cast<std::uint8_t>((value >> shift) & 0xFFu));
     }
 }
 
+// PEDAGOGY-SOLUTION: D2-DBG-READ-U16
 static std::uint16_t read_u16(const std::vector<std::uint8_t>& bytes, std::size_t offset) {
     return static_cast<std::uint16_t>(
         bytes[offset] | (static_cast<std::uint16_t>(bytes[offset + 1]) << 8));
 }
 
+// PEDAGOGY-SOLUTION: D2-DBG-READ-U32
 static std::uint32_t read_u32(const std::vector<std::uint8_t>& bytes, std::size_t offset) {
     std::uint32_t value = 0;
     for (int shift = 0; shift < 32; shift += 8) {
@@ -30,6 +34,7 @@ static std::uint32_t read_u32(const std::vector<std::uint8_t>& bytes, std::size_
     return value;
 }
 
+// PEDAGOGY-SOLUTION: D2-DBG-FNV1A
 static std::uint32_t fnv1a(const std::uint8_t* data, std::size_t size) {
     std::uint32_t hash = 2166136261U;
     for (std::size_t i = 0; i < size; ++i) {
@@ -39,6 +44,7 @@ static std::uint32_t fnv1a(const std::uint8_t* data, std::size_t size) {
     return hash;
 }
 
+// PEDAGOGY-SOLUTION: D2-DBG-ENCODE
 std::vector<std::uint8_t> encode_debug_packet(const DebugPacket& packet) {
     if (packet.payload.size() > 1024 * 1024) {
         throw std::invalid_argument("debug packet payload too large");
@@ -56,6 +62,7 @@ std::vector<std::uint8_t> encode_debug_packet(const DebugPacket& packet) {
     return out;
 }
 
+// PEDAGOGY-SOLUTION: D2-DBG-DECODE
 DebugPacket decode_debug_packet(const std::vector<std::uint8_t>& bytes) {
     if (bytes.size() < kHeaderSize) {
         throw std::runtime_error("debug packet header truncated");

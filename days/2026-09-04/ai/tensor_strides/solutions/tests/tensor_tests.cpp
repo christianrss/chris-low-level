@@ -1,3 +1,7 @@
+// PEDAGOGY-TEST: D2-TENSOR-VIEW-AT
+// PEDAGOGY-TEST: D2-TENSOR-VIEW
+// PEDAGOGY-TEST: D2-TENSOR-TRANSPOSE
+// PEDAGOGY-TEST: D2-TENSOR-MATMUL
 #include "tensor.hpp"
 #include <cassert>
 #include <cmath>
@@ -11,6 +15,10 @@ static bool near(float a, float b) {
 
 int main() {
     Tensor2D matrix(2, 3, {1, 2, 3, 4, 5, 6});
+    const auto plain = matrix.view();
+    assert(plain.rows == 2 && plain.cols == 3);
+    assert(plain.row_stride == 3 && plain.col_stride == 1);
+
     const auto transposed = matrix.transpose_view();
     assert(transposed.rows == 3);
     assert(transposed.cols == 2);

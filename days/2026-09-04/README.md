@@ -25,3 +25,14 @@ Novas faixas paralelas adicionadas sem substituir os módulos existentes:
 - `javascript/bytecode_vm_from_scratch`: JavaScript-like lexer/parser/bytecode/VM do zero.
 
 Essas quatro faixas passam a evoluir em paralelo com Systems, AI/ML, Red Team, OS e demais trilhas.
+
+## Nota da auditoria final
+
+A versão corrigida do Day 02 usa os arquivos Markdown de cada módulo como fonte pedagógica autoritativa. O DOCX anterior foi removido deste pacote porque havia sido gerado antes da auditoria `starter ↔ resolução ↔ testes ↔ solution` e poderia conter instruções desatualizadas.
+
+Valide a entrega com:
+
+```bash
+python scripts/pedagogy_check_day02.py
+python scripts/quality_check.py
+```

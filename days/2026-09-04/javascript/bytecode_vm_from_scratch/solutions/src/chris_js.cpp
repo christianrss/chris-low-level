@@ -45,7 +45,8 @@ class Lexer {
     const char c = source_[pos_];
     if (std::isdigit(static_cast<unsigned char>(c))) {
       const auto start = pos_;
-      std::int64_t value = 0;
+      // PEDAGOGY-SOLUTION: D2-JS-LEX-NUMBER
+std::int64_t value = 0;
       while (pos_ < source_.size() &&
              std::isdigit(static_cast<unsigned char>(source_[pos_]))) {
         value = value * 10 + (source_[pos_] - '0');
@@ -63,7 +64,8 @@ class Lexer {
       }
 
       auto text = source_.substr(start, pos_ - start);
-      if (text == "let") {
+      // PEDAGOGY-SOLUTION: D2-JS-LEX-IDENT
+if (text == "let") {
         return {Kind::Let, text};
       }
       if (text == "print") {
@@ -145,7 +147,8 @@ class Compiler {
       expect(Kind::Equal);
       expression();
       expect(Kind::Semicolon);
-      emit(Op::StoreGlobal, idx);
+      // PEDAGOGY-SOLUTION: D2-JS-STMT-LET
+emit(Op::StoreGlobal, idx);
       return;
     }
 
@@ -155,13 +158,15 @@ class Compiler {
       expression();
       expect(Kind::RParen);
       expect(Kind::Semicolon);
-      emit(Op::Print);
+      // PEDAGOGY-SOLUTION: D2-JS-STMT-PRINT
+emit(Op::Print);
       return;
     }
 
     throw std::runtime_error("expected statement");
   }
 
+// PEDAGOGY-SOLUTION: D2-JS-PREC-ADD
   void expression() {
     term();
     while (current_.kind == Kind::Plus || current_.kind == Kind::Minus) {
@@ -172,6 +177,7 @@ class Compiler {
     }
   }
 
+// PEDAGOGY-SOLUTION: D2-JS-PREC-MUL
   void term() {
     factor();
     while (current_.kind == Kind::Star) {
@@ -247,6 +253,7 @@ std::vector<std::int64_t> run(const Program& program) {
       case Op::Add: {
         const auto b = pop();
         const auto a = pop();
+// PEDAGOGY-SOLUTION: D2-JS-VM-ADD
         stack.push_back(a + b);
         break;
       }

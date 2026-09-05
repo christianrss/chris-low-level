@@ -1,3 +1,7 @@
+// PEDAGOGY-TEST: D2-GFX-INDEX
+// PEDAGOGY-TEST: D2-GFX-FILL-RECT
+// PEDAGOGY-TEST: D2-GFX-ALPHA-OVER
+// PEDAGOGY-TEST: D2-GFX-COMPOSE
 #include "graphics.hpp"
 #include <cassert>
 #include <iostream>

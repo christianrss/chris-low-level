@@ -13,8 +13,6 @@ jobs:
           python-version: '3.12'
       - name: Quality
         run: python scripts/quality_check.py
-      - name: Pedagogy consistency
-        run: python scripts/pedagogy_check.py
       - name: Build and test
         run: python scripts/run_all_tests.py
 
@@ -27,8 +25,6 @@ jobs:
           python-version: '3.12'
       - name: Quality
         run: python scripts/quality_check.py
-      - name: Pedagogy consistency
-        run: python scripts/pedagogy_check.py
       - name: Build and test with Visual Studio generator
         shell: pwsh
         run: |

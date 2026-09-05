@@ -1,5 +1,12 @@
 # Resolução guiada passo a passo — ELF64 triage defensivo
 
+## Mapa exato starter → resolução
+
+- `D2-ELF-STRINGS` → `starter/tools/ascii_strings.py`
+- `D2-ELF-HEADER` → `starter/tools/elf64.py`
+
+Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+
 ## Baseline
 Na raiz do repositório:
 
@@ -115,3 +122,7 @@ python days/2026-09-04/redteam/elf64_triage/starter/benchmarks/elf64_benchmark.p
 ```
 
 Registre headers/s. Não interprete isso como velocidade de um analisador ELF completo; é apenas header parsing em memória.
+
+
+## Solução final comentada
+Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.

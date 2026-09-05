@@ -1,3 +1,4 @@
+// PEDAGOGY-TEST: D2-NODE-FRAME-LINES
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Readable } from 'node:stream';
@@ -19,4 +20,14 @@ test('frames across arbitrary chunk boundaries', async () => {
 
 test('rejects oversized unterminated line', async () => {
   await assert.rejects(() => collect(['12345'], 4), /maxLineBytes/);
+});
+
+
+test('handles empty lines', async () => {
+  assert.deepEqual(await collect(['a\n\nb\n']), ['a', '', 'b']);
+});
+
+test('preserves utf8 split across chunks', async () => {
+  const euro = Buffer.from('€\n', 'utf8');
+  assert.deepEqual(await collect([euro.subarray(0, 1), euro.subarray(1)]), ['€']);
 });

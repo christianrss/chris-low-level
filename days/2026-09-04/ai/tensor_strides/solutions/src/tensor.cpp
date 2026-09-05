@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <utility>
 
+// PEDAGOGY-SOLUTION: D2-TENSOR-VIEW-AT
 float TensorView2D::at(std::size_t row, std::size_t col) const {
     if (row >= rows || col >= cols || data == nullptr) {
         throw std::out_of_range("tensor view index outside range");
@@ -42,10 +43,12 @@ TensorView2D Tensor2D::view() const noexcept {
     return {data_.data(), rows_, cols_, cols_, 1};
 }
 
+// PEDAGOGY-SOLUTION: D2-TENSOR-TRANSPOSE
 TensorView2D Tensor2D::transpose_view() const noexcept {
     return {data_.data(), cols_, rows_, 1, cols_};
 }
 
+// PEDAGOGY-SOLUTION: D2-TENSOR-MATMUL
 Tensor2D matmul(const TensorView2D& left, const TensorView2D& right) {
     if (left.cols != right.rows) {
         throw std::invalid_argument("matmul inner dimensions do not match");

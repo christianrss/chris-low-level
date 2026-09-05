@@ -13,6 +13,7 @@ Surface::Surface(std::size_t width, std::size_t height, Pixel clear)
     }
 }
 
+// PEDAGOGY-SOLUTION: D2-GFX-INDEX
 std::size_t Surface::index(std::size_t x, std::size_t y) const {
     if (x >= width_ || y >= height_) {
         throw std::out_of_range("pixel outside surface");
@@ -28,6 +29,7 @@ void Surface::set_pixel(std::size_t x, std::size_t y, Pixel value) {
     pixels_[index(x, y)] = value;
 }
 
+// PEDAGOGY-SOLUTION: D2-GFX-FILL-RECT
 void Surface::fill_rect(int x, int y, int width, int height, Pixel value) {
     if (width <= 0 || height <= 0) {
         return;
@@ -43,7 +45,8 @@ void Surface::fill_rect(int x, int y, int width, int height, Pixel value) {
     }
 }
 
-static Pixel alpha_over(Pixel src, Pixel dst) {
+static // PEDAGOGY-SOLUTION: D2-GFX-ALPHA-OVER
+Pixel alpha_over(Pixel src, Pixel dst) {
     const unsigned alpha = src.a;
     const unsigned inv = 255u - alpha;
     Pixel out;
@@ -54,6 +57,7 @@ static Pixel alpha_over(Pixel src, Pixel dst) {
     return out;
 }
 
+// PEDAGOGY-SOLUTION: D2-GFX-COMPOSE
 Surface Compositor::compose(
     std::size_t width,
     std::size_t height,

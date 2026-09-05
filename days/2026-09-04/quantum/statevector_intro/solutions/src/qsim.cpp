@@ -35,6 +35,7 @@ double StateVector::norm_squared() const noexcept {
     return total;
 }
 
+// PEDAGOGY-SOLUTION: D2-QSIM-SINGLE
 void StateVector::apply_single(
     std::size_t qubit,
     const std::complex<double>& m00,
@@ -57,19 +58,23 @@ void StateVector::apply_single(
     }
 }
 
+// PEDAGOGY-SOLUTION: D2-QSIM-X
 void StateVector::apply_x(std::size_t qubit) {
     apply_single(qubit, {0, 0}, {1, 0}, {1, 0}, {0, 0});
 }
 
+// PEDAGOGY-SOLUTION: D2-QSIM-H
 void StateVector::apply_h(std::size_t qubit) {
     const double s = 1.0 / std::sqrt(2.0);
     apply_single(qubit, {s, 0}, {s, 0}, {s, 0}, {-s, 0});
 }
 
+// PEDAGOGY-SOLUTION: D2-QSIM-Z
 void StateVector::apply_z(std::size_t qubit) {
     apply_single(qubit, {1, 0}, {0, 0}, {0, 0}, {-1, 0});
 }
 
+// PEDAGOGY-SOLUTION: D2-QSIM-CNOT
 void StateVector::apply_cnot(std::size_t control, std::size_t target) {
     check_qubit(control);
     check_qubit(target);

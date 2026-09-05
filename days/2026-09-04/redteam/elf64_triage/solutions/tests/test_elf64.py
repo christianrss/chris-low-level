@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST: D2-ELF-HEADER
 from __future__ import annotations
 
 import struct
@@ -38,7 +39,11 @@ def main() -> int:
     assert header.section_header_count == 12
     assert header.section_name_index == 11
 
-    for bad in (b"", b"not elf" + bytes(100)):
+    invalid = [b"", b"not elf" + bytes(100)]
+    bad_class = bytearray(make_fixture()); bad_class[4] = 1; invalid.append(bytes(bad_class))
+    bad_endian = bytearray(make_fixture()); bad_endian[5] = 2; invalid.append(bytes(bad_endian))
+    bad_version = bytearray(make_fixture()); bad_version[6] = 0; invalid.append(bytes(bad_version))
+    for bad in invalid:
         try:
             parse_elf64_header(bad)
         except ValueError:
