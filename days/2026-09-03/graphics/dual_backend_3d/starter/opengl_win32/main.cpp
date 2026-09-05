@@ -13,6 +13,7 @@
 #include <chrono>
 #include <cstddef>
 #include <cstdint>
+#include <cmath>
 
 #include "../common/engine.hpp"
 
@@ -57,6 +58,7 @@ DECLARE_GL_FUNCTION(
     (GLuint, GLint, GLenum, GLboolean, GLsizei, const void*));
 DECLARE_GL_FUNCTION(void, glUniformMatrix4fv, (GLint, GLsizei, GLboolean, const GLfloat*));
 DECLARE_GL_FUNCTION(void, glUniform3f, (GLint, GLfloat, GLfloat, GLfloat));
+DECLARE_GL_FUNCTION(void, glUniform1f, (GLint, GLfloat));
 
 #undef DECLARE_GL_FUNCTION
 
@@ -139,7 +141,10 @@ GLint g_normal_attribute = -1;
 GLint g_mvp_uniform = -1;
 GLint g_model_uniform = -1;
 GLint g_color_uniform = -1;
+GLint g_light_position_uniform = -1;
 GLint g_light_direction_uniform = -1;
+GLint g_inner_cutoff_uniform = -1;
+GLint g_outer_cutoff_uniform = -1;
 
 void* get_gl_symbol(const char* name) {
     void* symbol = reinterpret_cast<void*>(wglGetProcAddress(name));
@@ -187,11 +192,207 @@ bool load_gl_functions() {
     LOAD_GL_FUNCTION(glVertexAttribPointer);
     LOAD_GL_FUNCTION(glUniformMatrix4fv);
     LOAD_GL_FUNCTION(glUniform3f);
+    LOAD_GL_FUNCTION(glUniform1f);
 
     return true;
 }
 
 #undef LOAD_GL_FUNCTION
+
+struct Vec4f {
+    float x;
+    float y;
+    float z;
+    float w;
+};
+
+struct MouseRay {
+    Vec3 origin{};
+    Vec3 direction{};
+    bool valid = false;
+};
+
+Vec4f multiply_mat4_vec4(const Mat4& matrix, const Vec4f& v) {
+    return {
+        matrix.m[0]  * v.x + matrix.m[4]  * v.y +
+        matrix.m[8]  * v.z + matrix.m[12] * v.w,
+
+        matrix.m[1]  * v.x + matrix.m[5]  * v.y +
+        matrix.m[9]  * v.z + matrix.m[13] * v.w,
+
+        matrix.m[2]  * v.x + matrix.m[6]  * v.y +
+        matrix.m[10] * v.z + matrix.m[14] * v.w,
+
+        matrix.m[3]  * v.x + matrix.m[7]  * v.y +
+        matrix.m[11] * v.z + matrix.m[15] * v.w
+    };
+}
+
+Vec3 normalize_vec3(const Vec3& v) {
+    const float length_sq =
+        v.x * v.x + v.y * v.y + v.z * v.z;
+
+    if (length_sq <= 1.0e-12f) {
+        return {0.0f, 0.0f, -1.0f};
+    }
+
+    const float inv_length =
+        1.0f / std::sqrt(length_sq);
+
+    return {
+        v.x * inv_length,
+        v.y * inv_length,
+        v.z * inv_length
+    };
+}
+
+bool invert_mat4(const Mat4& input, Mat4& output) {
+    // Gauss-Jordan aplicado a [M | I].
+    float a[4][8]{};
+
+    // Mat4::m -> matriz convencional [row][col].
+    for (int row = 0; row < 4; ++row) {
+        for (int col = 0; col < 4; ++col) {
+            a[row][col] = input.m[col * 4 + row];
+            a[row][4 + col] =
+                (row == col) ? 1.0f : 0.0f;
+        }
+    }
+
+    for (int col = 0; col < 4; ++col) {
+        int pivot_row = col;
+        float pivot_abs = std::fabs(a[pivot_row][col]);
+
+        for (int row = col + 1; row < 4; ++row) {
+            const float candidate =
+                std::fabs(a[row][col]);
+
+            if (candidate > pivot_abs) {
+                pivot_abs = candidate;
+                pivot_row = row;
+            }
+        }
+
+        if (pivot_abs <= 1.0e-8f) {
+            return false;
+        }
+
+        if (pivot_row != col) {
+            for (int k = 0; k < 8; ++k) {
+                std::swap(a[col][k], a[pivot_row][k]);
+            }
+        }
+
+        const float pivot = a[col][col];
+        for (int k = 0; k < 8; ++k) {
+            a[col][k] /= pivot;
+        }
+
+        for (int row = 0; row < 4; ++row) {
+            if (row == col) {
+                continue;
+            }
+
+            const float factor = a[row][col];
+            for (int k = 0; k < 8; ++k) {
+                a[row][k] -= factor * a[col][k];
+            }
+        }
+    }
+
+    // Parte direita da matriz aumentada -> output.
+    for (int row = 0; row < 4; ++row) {
+        for (int col = 0; col < 4; ++col) {
+            output.m[col * 4 + row] =
+                a[row][4 + col];
+        }
+    }
+
+    return true;
+}
+
+MouseRay build_mouse_ray(
+    float mouse_x,
+    float mouse_y,
+    int width,
+    int height,
+    const Mat4& projection,
+    const Mat4& view) {
+
+    MouseRay result{};
+
+    const float safe_width =
+        static_cast<float>(std::max(1, width));
+    const float safe_height =
+        static_cast<float>(std::max(1, height));
+
+    // PASSO 1: pixels -> NDC.
+    const float ndc_x =
+        (2.0f * mouse_x / safe_width) - 1.0f;
+
+    // Windows: Y cresce para baixo.
+    // NDC: Y cresce para cima.
+    const float ndc_y =
+        1.0f - (2.0f * mouse_y / safe_height);
+
+    Mat4 inverse_projection{};
+    Mat4 inverse_view{};
+
+    if (!invert_mat4(projection, inverse_projection) ||
+        !invert_mat4(view, inverse_view)) {
+        return result;
+    }
+
+    // PASSO 2: ponto correspondente ao cursor em clip space.
+    const Vec4f ray_clip{
+        ndc_x,
+        ndc_y,
+        -1.0f,
+        1.0f
+    };
+
+    // PASSO 3: desfaz a projeção.
+    Vec4f ray_eye = multiply_mat4_vec4(
+        inverse_projection,
+        ray_clip);
+
+    // Queremos uma DIREÇÃO, não uma posição.
+    // w = 0 significa vetor/direção em coordenadas homogêneas.
+    ray_eye.z = -1.0f;
+    ray_eye.w = 0.0f;
+
+    // PASSO 4: direção do view space para world space.
+    const Vec4f ray_world4 = multiply_mat4_vec4(
+        inverse_view,
+        ray_eye);
+
+    result.direction = normalize_vec3({
+        ray_world4.x,
+        ray_world4.y,
+        ray_world4.z
+    });
+
+    // PASSO 5: origem do ray = câmera.
+    // Em view space a câmera está em (0,0,0,1).
+    Vec4f camera_world = multiply_mat4_vec4(
+        inverse_view,
+        {0.0f, 0.0f, 0.0f, 1.0f});
+
+    if (std::fabs(camera_world.w) > 1.0e-8f) {
+        camera_world.x /= camera_world.w;
+        camera_world.y /= camera_world.w;
+        camera_world.z /= camera_world.w;
+    }
+
+    result.origin = {
+        camera_world.x,
+        camera_world.y,
+        camera_world.z
+    };
+
+    result.valid = true;
+    return result;
+}
 
 GLuint compile_shader(GLenum type, const char* source) {
     const GLuint shader = pglCreateShader(type);
@@ -219,9 +420,15 @@ attribute vec3 a_normal;
 uniform mat4 u_mvp;
 uniform mat4 u_model;
 varying vec3 v_normal;
+varying vec3 v_world_position;
 
 void main() {
+    vec4 world_position = 
+        u_model * vec4(a_pos, 1.0);
+
     gl_Position = u_mvp * vec4(a_pos, 1.0);
+
+    v_world_position = world_position.xyz;
     v_normal = mat3(u_model) * a_normal;
 }
 )GLSL";
@@ -229,16 +436,46 @@ void main() {
     const char* fragment_shader_source = R"GLSL(
 #version 120
 uniform vec3 u_color;
+uniform vec3 u_light_position;
 uniform vec3 u_light_direction;
+uniform float u_inner_cutoff;
+uniform float u_outer_cutoff;
+
 varying vec3 v_normal;
+varying vec3 v_world_position;
 
 void main() {
     // TODO [GFX-LAMBERT-01]: normalize normal, compute diffuse, add ambient.
     vec3 normal = normalize(v_normal);
-    vec3 light_direction = normalize(u_light_direction);
-    float diffuse = max(dot(normal, light_direction), 0.0);
-    float lighting = 0.2 + 0.8 * diffuse;
-    gl_FragColor = vec4(u_color * lighting, 1.0);
+    
+    // Superficie -> luz: usado no Lambert.
+    vec3 to_light =
+        u_light_position - v_world_position;
+    vec3 surface_to_light = normalize(to_light);
+    float diffuse = max(
+        dot(normal, surface_to_light),
+        0.0f);
+    // Luz -> fragmento: usado para saber se o fragmento
+    // esta dentro do cone da lanterna
+    vec3 light_to_fragment =
+        normalize(v_world_position - u_light_position);
+    float theta = dot(
+        light_to_fragment,
+        normalize(u_light_direction));
+
+    float epsilon =
+        u_inner_cutoff - u_outer_cutoff;
+    float spot = clamp(
+        (theta - u_outer_cutoff) / epsilon,
+        0.0,
+        1.0);
+
+    float ambient = 0.08;
+    float lighting = ambient + diffuse * spot;
+
+    gl_FragColor = vec4(
+        u_color * lighting,
+        1.0);
 }
 )GLSL";
 
@@ -269,7 +506,10 @@ void main() {
     g_mvp_uniform = pglGetUniformLocation(g_program, "u_mvp");
     g_model_uniform = pglGetUniformLocation(g_program, "u_model");
     g_color_uniform = pglGetUniformLocation(g_program, "u_color");
+    g_light_position_uniform = pglGetUniformLocation(g_program, "u_light_position");
     g_light_direction_uniform = pglGetUniformLocation(g_program, "u_light_direction");
+    g_inner_cutoff_uniform = pglGetUniformLocation(g_program, "u_inner_cutoff");
+    g_outer_cutoff_uniform = pglGetUniformLocation(g_program, "u_outer_cutoff");
 
     pglGenBuffers(1, &g_vertex_buffer);
     pglBindBuffer(GL_ARRAY_BUFFER, g_vertex_buffer);
@@ -325,17 +565,6 @@ void render_scene() {
     pglUseProgram(g_program);
     pglBindBuffer(GL_ARRAY_BUFFER, g_vertex_buffer);
 
-    float x =
-        (g_mouse_x / static_cast<float>(g_width) * 2.0f - 1.0f);
-    float y =
-        1.0f - (g_mouse_y / static_cast<float>(g_height)) * 2.0f;
-
-    pglUniform3f(
-        g_light_direction_uniform,
-        x,
-        y,
-        1.0f);
-
     pglEnableVertexAttribArray(static_cast<GLuint>(g_position_attribute));
     pglEnableVertexAttribArray(static_cast<GLuint>(g_normal_attribute));
 
@@ -358,7 +587,38 @@ void render_scene() {
     const float aspect =
         static_cast<float>(g_width) /
         static_cast<float>(std::max(1, g_height));
-    const Mat4 view_projection = projection_matrix(aspect) * view_matrix(g_camera);
+    const Mat4 projection = projection_matrix(aspect);
+    const Mat4 view = view_matrix(g_camera);
+    const Mat4 view_projection = projection * view;
+
+    const MouseRay mouse_ray = build_mouse_ray(
+        g_mouse_x,
+        g_mouse_y,
+        g_width,
+        g_height,
+        projection,
+        view);
+
+    if (mouse_ray.valid) {
+        pglUniform3f(
+            g_light_direction_uniform,
+            mouse_ray.direction.x,
+            mouse_ray.direction.y,
+            mouse_ray.direction.z);
+
+        pglUniform3f(
+            g_light_position_uniform,
+            mouse_ray.origin.x,
+            mouse_ray.origin.y,
+            mouse_ray.origin.z);
+
+        pglUniform1f(
+            g_inner_cutoff_uniform,
+            0.9781476f);
+        pglUniform1f(
+            g_outer_cutoff_uniform,
+            0.9510565f);
+    }
 
     for (const DrawItem& item : build_draw_list(g_scene)) {
         const Mat4 model_view_projection = view_projection * item.model;
@@ -414,11 +674,19 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
             break;
 
         case WM_MOUSEMOVE:
+        {
             // TODO [GFX-CAMERA-05]: same yaw/pitch update as software backend.
-            g_mouse_x = static_cast<float>(LOWORD(lparam));
-            g_mouse_y = static_cast<float>(HIWORD(lparam));
-            return 0;
+            const int mouse_x = static_cast<short>(LOWORD(lparam));
+            const int mouse_y = static_cast<short>(HIWORD(lparam));
 
+            g_mouse_x = static_cast<float>(std::clamp(
+                mouse_x, 0, std::max(0, g_width - 1)));
+
+            g_mouse_y = static_cast<float>(std::clamp(
+                mouse_y, 0, std::max(0, g_height - 1)));
+
+            return 0;
+        }
         case WM_DESTROY:
             PostQuitMessage(0);
             return 0;
