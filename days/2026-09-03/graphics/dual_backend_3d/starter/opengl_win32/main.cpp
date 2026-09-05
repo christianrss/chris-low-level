@@ -230,7 +230,11 @@ varying vec3 v_normal;
 
 void main() {
     // TODO [GFX-LAMBERT-01]: normalize normal, compute diffuse, add ambient.
-    gl_FragColor = vec4(u_color, 1.0);
+    vec3 normal = normalize(v_normal);
+    vec3 light_direction = normalize(vec3(-0.4, 0.8, 0.6));
+    float diffuse = max(dot(normal, light_direction), 0.0);
+    float lighting = 0.2 + 0.8 * diffuse;
+    gl_FragColor = vec4(u_color * lighting, 1.0);
 }
 )GLSL";
 
