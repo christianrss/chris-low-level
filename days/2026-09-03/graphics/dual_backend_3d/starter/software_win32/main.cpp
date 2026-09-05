@@ -132,13 +132,64 @@ void rasterize_triangle(
     const ScreenVertex& b,
     const ScreenVertex& c,
     Vec3 base_color) {
+    
+    // Área orientada e degeneração
+    const float area = edge(a.x, a.y, b.x, b.y, c.x, c.y);
+    if (std::fabs(area) < 1.0e-6f) {
+        return;
+    }
 
-    // TODO [GFX-RASTER-01]: area + bounding box + Lambert + barycentrics + depth test.
-    (void)framebuffer;
-    (void)a;
-    (void)b;
-    (void)c;
-    (void)base_color;
+    // Bouding box
+    const float min_x_f = std::min({a.x, b.x, c.x});
+    const float max_x_f = std::max({a.x, b.x, c.x});
+    const float min_y_f = std::min({a.y, b.y, c.y});
+    const float max_y_f = std::max({a.y, b.y, c.y});
+
+    const int min_x = std::max(0, static_cast<int>(std::floor(min_x_f)));
+    const int max_x = std::min(
+        framebuffer.width - 1,
+        static_cast<int>(std::ceil(max_x_f)));
+    const int min_y = std::max(0, static_cast<int>(std::floor(min_y_f)));
+    const int max_y = std::min(
+        framebuffer.height - 1,
+        static_cast<int>(std::ceil(max_y_f)));
+
+    // Normal e Lambert por face
+    const Vec3 normal = normalize(cross(b.world - a.world, c.world - a.world));
+    const Vec3 light_direction = normalize(Vec3{-0.4f, 0.8f, 0.6f});
+    const float diffuse = std::max(0.0f, dot(normal, light_direction));
+    const float light = 0.20f + 0.80f * diffuse;
+    const std::uint32_t packed_color = rgb(base_color, light);
+
+    // Varredura de pixels
+    for (int y = min_y; y <= max_y; ++y) {
+        for (int x = min_x; x <= max_x; ++x) {
+            const float sample_x = static_cast<float>(x) + 0.5f;
+            const float sample_y = static_cast<float>(y) + 0.5f;
+            // Barycentrics
+            const float w0 = edge(b.x, b.y, c.x, c.y, sample_x, sample_y) / area;
+            const float w1 = edge(c.x, c.y, a.x, a.y, sample_x, sample_y) / area;
+            const float w2 = 1.0f - w0 - w1;
+
+            if (w0 < 0.0f || w1 < 0.0f || w2 < 0.0f) {
+                continue;
+            }
+
+            // Profundidade e depth test
+            const float depth = w0 * a.z + w1 * b.z + w2 * c.z;
+            if (depth < 0.0f || depth > 1.0f) {
+                continue;
+            }
+
+            const std::size_t index =
+                static_cast<std::size_t>(y) * framebuffer.width + x;
+
+            if (depth < framebuffer.depth[index]) {
+                framebuffer.depth[index] = depth;
+                framebuffer.pixels[index] = packed_color;
+            }
+        }
+    }
 }
 
 void draw_cube(Framebuffer& framebuffer, const DrawItem& item, const Mat4& view_projection) {
