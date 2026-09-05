@@ -129,6 +129,8 @@ HDC g_device_context = nullptr;
 HGLRC g_render_context = nullptr;
 int g_width = 1100;
 int g_height = 720;
+float g_mouse_x = 550.0f;
+float g_mouse_y = 360.0f;
 
 GLuint g_program = 0;
 GLuint g_vertex_buffer = 0;
@@ -137,6 +139,7 @@ GLint g_normal_attribute = -1;
 GLint g_mvp_uniform = -1;
 GLint g_model_uniform = -1;
 GLint g_color_uniform = -1;
+GLint g_light_direction_uniform = -1;
 
 void* get_gl_symbol(const char* name) {
     void* symbol = reinterpret_cast<void*>(wglGetProcAddress(name));
@@ -226,12 +229,13 @@ void main() {
     const char* fragment_shader_source = R"GLSL(
 #version 120
 uniform vec3 u_color;
+uniform vec3 u_light_direction;
 varying vec3 v_normal;
 
 void main() {
     // TODO [GFX-LAMBERT-01]: normalize normal, compute diffuse, add ambient.
     vec3 normal = normalize(v_normal);
-    vec3 light_direction = normalize(vec3(-0.4, 0.8, 0.6));
+    vec3 light_direction = normalize(u_light_direction);
     float diffuse = max(dot(normal, light_direction), 0.0);
     float lighting = 0.2 + 0.8 * diffuse;
     gl_FragColor = vec4(u_color * lighting, 1.0);
@@ -265,6 +269,7 @@ void main() {
     g_mvp_uniform = pglGetUniformLocation(g_program, "u_mvp");
     g_model_uniform = pglGetUniformLocation(g_program, "u_model");
     g_color_uniform = pglGetUniformLocation(g_program, "u_color");
+    g_light_direction_uniform = pglGetUniformLocation(g_program, "u_light_direction");
 
     pglGenBuffers(1, &g_vertex_buffer);
     pglBindBuffer(GL_ARRAY_BUFFER, g_vertex_buffer);
@@ -319,6 +324,17 @@ void render_scene() {
 
     pglUseProgram(g_program);
     pglBindBuffer(GL_ARRAY_BUFFER, g_vertex_buffer);
+
+    float x =
+        (g_mouse_x / static_cast<float>(g_width) * 2.0f - 1.0f);
+    float y =
+        1.0f - (g_mouse_y / static_cast<float>(g_height)) * 2.0f;
+
+    pglUniform3f(
+        g_light_direction_uniform,
+        x,
+        y,
+        1.0f);
 
     pglEnableVertexAttribArray(static_cast<GLuint>(g_position_attribute));
     pglEnableVertexAttribArray(static_cast<GLuint>(g_normal_attribute));
@@ -399,6 +415,8 @@ LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM wparam, LPARAM lp
 
         case WM_MOUSEMOVE:
             // TODO [GFX-CAMERA-05]: same yaw/pitch update as software backend.
+            g_mouse_x = static_cast<float>(LOWORD(lparam));
+            g_mouse_y = static_cast<float>(HIWORD(lparam));
             return 0;
 
         case WM_DESTROY:
