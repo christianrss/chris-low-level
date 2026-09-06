@@ -12,7 +12,8 @@ python scripts/run_day_tests.py --day 2026-09-06 --mode starter --expect-fail
 
 | Gate | Esperado |
 |------|----------|
-| pedagogy_check | PASS — 11 módulos, ~42 TODOs |
+| pedagogy_check | PASS — 13 módulos, ~48 TODOs |
+| cargo (Rust) | solutions PASS; starter FAIL até TODOs (skip se sem `cargo`) |
 | solutions | PASS |
 | starter | FAIL até TODOs |
 | Anti-padding | zero `Nota pedagógica` gerada |

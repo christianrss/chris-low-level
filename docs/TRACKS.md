@@ -3,6 +3,8 @@
 ## Core systems
 C, C++, Rust, Python, x86-64/ARM64/RISC-V Assembly, ABI, memory, ELF/PE/COFF, loaders/linkers, compilers, VM/JIT, OS, drivers, storage, networking, concurrency, SIMD and profiling.
 
+**Rust labs (Dia 2026-09-06):** `rust/rle_byte_codec` (CHRLE com `Result`/slices) e `rust/gzip_member_parse` (parser estrutural RFC 1952). Intro opcional no Dia 01: `systems/clvm/.../rust-validator`.
+
 ## Architecture and hardware
 Digital logic, datapath, pipelines, branch prediction, OoO concepts, cache/TLB/coherence, MMIO/DMA, PCIe, USB, I2C/SPI/UART/GPIO, ACPI, SMBIOS, virtio and device protocols.
 

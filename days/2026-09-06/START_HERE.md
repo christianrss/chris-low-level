@@ -25,9 +25,28 @@ Laboratório unificado. Cada pasta `<trilha>/<modulo>/` contém teoria, exercíc
 9. `redteam/compressed_blob_triage`
 10. `dotnet/span_deflate_buffers`
 11. `nodejs/gunzip_transform`
+12. `rust/rle_byte_codec` — mesmo wire CHRLE, superfície `Result`
+13. `rust/gzip_member_parse` — offsets de member gzip (RFC 1952)
 
 **Capstone:** `projects/chris-compress/` após 1–6.  
 **Extra:** `projects/chris-lantern-hunt/` (fora deste dia).
+
+## Como rodar Rust
+
+```powershell
+cd days/2026-09-06/rust/rle_byte_codec/starter
+cargo test          # esperado FAIL até completar TODOs
+
+cd ../solutions
+cargo test          # esperado PASS
+
+cd ../../gzip_member_parse/starter
+cargo test
+cd ../solutions
+cargo test
+```
+
+Requer Rust/Cargo no PATH (`rustup`). Sem `cargo`, o runner do dia **pula** o módulo (mesmo padrão de `dotnet`/`npm`).
 
 ## Gates
 

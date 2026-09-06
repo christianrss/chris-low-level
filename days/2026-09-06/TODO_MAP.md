@@ -511,3 +511,51 @@
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: COMP-ZLIB-03`
 - **Solution:** `solutions/zlib_wrap.cpp` + `PEDAGOGY-SOLUTION: COMP-ZLIB-03`
+
+## `RS-RLE-01`
+
+- **Módulo:** `rust/rle_byte_codec`
+- **Starter:** `starter/src/lib.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: RS-RLE-01`
+- **Solution:** `solutions/src/lib.rs` + `PEDAGOGY-SOLUTION: RS-RLE-01`
+
+## `RS-RLE-02`
+
+- **Módulo:** `rust/rle_byte_codec`
+- **Starter:** `starter/src/lib.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: RS-RLE-02`
+- **Solution:** `solutions/src/lib.rs` + `PEDAGOGY-SOLUTION: RS-RLE-02`
+
+## `RS-RLE-03`
+
+- **Módulo:** `rust/rle_byte_codec`
+- **Starter:** `starter/src/lib.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: RS-RLE-03`
+- **Solution:** `solutions/src/lib.rs` + `PEDAGOGY-SOLUTION: RS-RLE-03`
+
+## `RS-GZ-01`
+
+- **Módulo:** `rust/gzip_member_parse`
+- **Starter:** `starter/src/lib.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: RS-GZ-01`
+- **Solution:** `solutions/src/lib.rs` + `PEDAGOGY-SOLUTION: RS-GZ-01`
+
+## `RS-GZ-02`
+
+- **Módulo:** `rust/gzip_member_parse`
+- **Starter:** `starter/src/lib.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: RS-GZ-02`
+- **Solution:** `solutions/src/lib.rs` + `PEDAGOGY-SOLUTION: RS-GZ-02`
+
+## `RS-GZ-03`
+
+- **Módulo:** `rust/gzip_member_parse`
+- **Starter:** `starter/src/lib.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: RS-GZ-03`
+- **Solution:** `solutions/src/lib.rs` + `PEDAGOGY-SOLUTION: RS-GZ-03`

@@ -92,7 +92,28 @@ def build_manifest(day_dir: Path) -> dict:
     for p in sorted(day_dir.rglob("*")):
         if not p.is_file():
             continue
-        if any(part in p.parts for part in ("build", "node_modules", "__pycache__", ".git")):
+        skip = {
+            "build",
+            "build_ci",
+            "build_bench",
+            "node_modules",
+            "__pycache__",
+            ".git",
+            "bin",
+            "obj",
+            "CMakeFiles",
+            "target",
+            ".vs",
+            ".cache",
+            "TestResults",
+            "BenchmarkDotNet.Artifacts",
+            "dist",
+            "out",
+        }
+        if any(
+            part in skip or part.startswith("build-") or part.startswith("build_")
+            for part in p.parts
+        ):
             continue
         rel = p.relative_to(day_dir).as_posix()
         files.append({"path": rel, "size": p.stat().st_size, "sha256": sha256_file(p)})

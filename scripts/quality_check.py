@@ -11,9 +11,37 @@ checked = 0
 for path in ROOT.rglob("*"):
     if not path.is_file() or path.suffix.lower() not in TEXT_EXT:
         continue
+    skip_dirs = {
+        "build",
+        "build_ci",
+        "build_bench",
+        "target",
+        ".git",
+        ".local-build",
+        ".local-build-bench",
+        "node_modules",
+        "CMakeFiles",
+        "bin",
+        "obj",
+        "__pycache__",
+        ".pytest_cache",
+        ".venv",
+        "venv",
+        "TestResults",
+        "BenchmarkDotNet.Artifacts",
+        ".vs",
+        ".idea",
+        ".cache",
+        "dist",
+        "out",
+        "coverage",
+        "htmlcov",
+    }
     if any(
-        part in {"build", "target", ".git", ".local-build", ".local-build-bench"}
+        part in skip_dirs
         or part.startswith("build-")
+        or part.startswith("build_")
+        or part.startswith(".local-build")
         for part in path.parts
     ):
         continue

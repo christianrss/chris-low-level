@@ -70,13 +70,18 @@ python tools/assemble.py programs/arithmetic.asm arithmetic.clvm
 .\build\Release\clvm.exe arithmetic.clvm --trace
 ```
 
-## Rust validator (opcional)
+## Rust validator (opcional — intro)
+
+O `solutions/rust-validator` (e o espelho em `starter/`) é um **validador estrutural** de CLVM: magic, bounds, FNV-1a e walk de opcodes — **não executa** bytecode.
 
 ```bash
 cd solutions/rust-validator
 cargo run -- ../arithmetic.clvm
 ```
 
+Esperado: `VALID: ...` (exit 0) ou `INVALID: ...` (exit 1).
+
+**Trilha Rust completa:** no Dia 2026-09-06 (`rust/rle_byte_codec`, `rust/gzip_member_parse`) você pratica o mesmo ethos (bytes não confiáveis + `Result`) com pedagogia full (`TODO [RS-…]`, `cargo test`, TEORIA/RESOLUCAO). Use este validator só como aperitivo.
 ## Inspeção binária
 
 ```bash

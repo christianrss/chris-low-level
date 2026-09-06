@@ -11,8 +11,39 @@ CODE_EXT = {
     ".c", ".cc", ".cpp", ".cxx", ".h", ".hpp", ".py", ".ts", ".js", ".cs",
     ".rs", ".asm", ".s", ".yar", ".sh", ".glsl", ".hlsl",
 }
-SKIP_DIR_NAMES = {"build", "build_ci", "build-starter", "build-solution", "node_modules", "CMakeFiles"}
-SKIP_FILE_SUFFIXES = {".bin", ".png", ".wav", ".exe", ".obj", ".lib", ".gz", ".o", ".a"}
+SKIP_DIR_NAMES = {
+    "build",
+    "build_ci",
+    "build_bench",
+    "build-starter",
+    "build-solution",
+    "build-demo",
+    "node_modules",
+    "CMakeFiles",
+    "bin",
+    "obj",
+    "__pycache__",
+    ".pytest_cache",
+    ".venv",
+    "venv",
+    "target",
+    "TestResults",
+    "BenchmarkDotNet.Artifacts",
+    ".vs",
+    ".idea",
+    ".cache",
+    "dist",
+    "out",
+    "coverage",
+    "htmlcov",
+    ".local-build",
+    ".local-build-bench",
+}
+SKIP_FILE_SUFFIXES = {
+    ".bin", ".png", ".wav", ".exe", ".dll", ".obj", ".lib", ".a", ".o", ".so",
+    ".dylib", ".gz", ".pdb", ".ilk", ".recipe", ".ko", ".spv", ".cso", ".pyc",
+    ".nupkg",
+}
 TODO_RE = re.compile(r"TODO\s*\[([A-Z0-9-]+)\]")
 UNTAGGED_RE = re.compile(r"(?:^|\s)(?://|#|/\*)\s*TODO\b(?!\s*\[[A-Z0-9-]+\])")
 DIAGRAM_RE = re.compile(

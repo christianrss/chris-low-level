@@ -103,6 +103,27 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
             return False, f"{name}: npm test failed\n{out}"
         return True, f"{name}: npm test OK"
 
+    if (base / "Cargo.toml").exists():
+        if not shutil.which("cargo"):
+            return True, f"{name}: cargo not in PATH (skipped)"
+        target_dir = base / "target"
+        code, out = run_cmd(
+            [
+                "cargo",
+                "test",
+                "--manifest-path",
+                str(base / "Cargo.toml"),
+                "--target-dir",
+                str(target_dir),
+            ],
+            base,
+        )
+        if code != 0:
+            if code == 127 or "not found" in out.lower():
+                return True, f"{name}: cargo not available (skipped)\n{out}"
+            return False, f"{name}: cargo test failed\n{out}"
+        return True, f"{name}: cargo test OK"
+
     csproj = list(base.glob("*.csproj"))
     if csproj:
         if not shutil.which("dotnet"):

@@ -26,7 +26,13 @@ OPS = {
 
 def fnv1a32(data: bytes) -> int:
     """TODO [CLVM-PY-FNV-01]: implemente FNV-1a 32-bit."""
-    return 0
+    hash_value = 0x811C9DC5
+
+    for byte in data:
+        hash_value ^= byte
+        hash_value = (hash_value * 0x01000193) & 0xFFFFFFFF
+
+    return hash_value
 
 
 def parse_lines(text: str) -> list[str]:

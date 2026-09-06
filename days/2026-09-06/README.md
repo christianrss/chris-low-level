@@ -1,8 +1,10 @@
 # Day 06 — 2026-09-06
 
-Dia multi-módulo: **fundamentos de compressão** (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG) + **portais Verlet** (gráficos/física) + trilhas AI / Red Team / .NET / Node.
+Dia multi-módulo: **fundamentos de compressão** (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG) + **portais Verlet** (gráficos/física) + trilhas AI / Red Team / .NET / Node / **Rust**.
 
-## Módulos (11) — ordem cognitiva
+Rust neste dia = **ownership + parsing de bytes não confiáveis** (mesmo formato CHRLE do lab C++, e member gzip estrutural sem inflate).
+
+## Módulos (13) — ordem cognitiva
 
 | # | Módulo | Fundamento a internalizar | Horas |
 |---|--------|---------------------------|-------|
@@ -17,8 +19,10 @@ Dia multi-módulo: **fundamentos de compressão** (RLE → Huffman → LZ77 → 
 | 9 | `redteam/compressed_blob_triage` | Magic bytes, limites, strings | 2 |
 | 10 | `dotnet/span_deflate_buffers` | Span + inflate stored | 2 |
 | 11 | `nodejs/gunzip_transform` | Transform + backpressure | 2 |
+| 12 | `rust/rle_byte_codec` | CHRLE em Rust: `Result` + slices | 2 |
+| 13 | `rust/gzip_member_parse` | Header/flags/trailer gzip sem panic | 2 |
 
-**Total:** ~20–28 h.
+**Total:** ~24–32 h.
 
 ## Projeto extra (fora do dia)
 

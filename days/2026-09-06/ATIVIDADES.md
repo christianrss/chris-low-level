@@ -1,7 +1,7 @@
-# ATIVIDADES — 2026-09-06 (fundamentos de compressão + portal)
+# ATIVIDADES — 2026-09-06 (fundamentos de compressão + portal + Rust)
 
-**Dia:** 11 módulos | **~20–28 h**  
-**Regra:** não avance de bloco sem o **checkpoint conceitual** (papel). `ctest PASS` sozinho não basta.
+**Dia:** 13 módulos | **~24–32 h**  
+**Regra:** não avance de bloco sem o **checkpoint conceitual** (papel). `ctest`/`cargo test` PASS sozinho não basta.
 
 ---
 
@@ -121,7 +121,33 @@ python scripts/run_day_tests.py --day 2026-09-06 --mode solutions
 
 ---
 
-## Bloco 6 — Capstone (2 h)
+## Bloco 6 — Rust seguro (3–4 h)
+
+### Objetivo conceitual
+
+Mesmo wire format / RFC, mas com **`Result` + bounds antes de indexar** — ownership como disciplina de trust-boundary.
+
+| Módulo | TODOs | Paper-trace obrigatório |
+|--------|-------|-------------------------|
+| `rust/rle_byte_codec` | RS-RLE-01..03 | Hexdump de `AAAAB` → frame CHRLE (igual Bloco 1, agora em Rust) |
+| `rust/gzip_member_parse` | RS-GZ-01..03 | Layout member: 10 bytes fixos + FNAME opcional + trailer 8 |
+
+**Checkpoint conceitual:**
+
+- [ ] Desenhei no papel `AAAAB` em CHRLE e sei onde está o LE32
+- [ ] Listei a ordem RFC dos campos opcionais gzip (FEXTRA → FNAME → FCOMMENT → FHCRC)
+- [ ] Explico em uma frase: panic OOB vs `Err(Truncated)`
+
+**Depois:**
+
+```powershell
+cargo test --manifest-path days/2026-09-06/rust/rle_byte_codec/solutions/Cargo.toml
+cargo test --manifest-path days/2026-09-06/rust/gzip_member_parse/solutions/Cargo.toml
+```
+
+---
+
+## Bloco 7 — Capstone (2 h)
 
 - [ ] Portar para `projects/chris-compress/`
 - [ ] Preencher Relatório de resolução em cada módulo feito
@@ -130,10 +156,11 @@ python scripts/run_day_tests.py --day 2026-09-06 --mode solutions
 
 ## Checklist final
 
-- [ ] Paper-traces dos blocos 1–4 feitos
+- [ ] Paper-traces dos blocos 1–4 e 6 feitos
 - [ ] pedagogy_check PASS
 - [ ] run_day_tests solutions PASS
 - [ ] `portal_demo` visto manualmente
+- [ ] Rust: `cargo test` solutions PASS nos dois módulos
 - [ ] BENCHMARK com Resultados observados
 
 ## Extra
