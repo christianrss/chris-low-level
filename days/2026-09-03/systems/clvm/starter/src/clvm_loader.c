@@ -8,7 +8,14 @@ static int fail(char *err,size_t cap,const char *msg){ if(err&&cap) snprintf(err
 
 uint32_t clvm_fnv1a32(const uint8_t *data, size_t size) {
     /* TODO [CLVM-C-FNV-01]: implement the same FNV-1a used by tools/assemble.py. */
-    (void)data; (void)size; return 0;
+    uint32_t hash = 2166136261u;
+
+    for (size_t i = 0; i < size; ++i) {
+        hash ^= data[i];
+        hash *= 16777619u;
+    }
+
+    return hash;
 }
 
 int clvm_parse(const uint8_t *file,size_t file_size,clvm_image *out,char *err,size_t err_cap){
