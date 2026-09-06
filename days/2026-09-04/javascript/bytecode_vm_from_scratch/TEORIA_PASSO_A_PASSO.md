@@ -1,12 +1,22 @@
 # Teoria passo a passo — Lexer, parser, bytecode e VM JavaScript-like
 
-## 1. Por que construir um runtime mínimo
+## 1. O problema de produção
 
-Node e browsers escondem um pipeline enorme: parse → AST → bytecode/IR → JIT → GC. Este laboratório **encolhe** esse pipeline até caber em centenas de linhas C++, para você ver invariantes que V8 documenta apenas indiretamente.
+Engines reais escondem parse → AST → bytecode → JIT → GC. Este lab encolhe o pipeline a um subset C++ (`let`, `print`, inteiros, `+ - *`) para tornar invariantes de lexer, precedência e stack **operacionais**.
 
-Não imitamos ECMAScript completo — apenas um subconjunto com `let`, `print`, inteiros, `+ - *` e precedência.
+### O quê
 
-## 2. Programa de entrada
+Sete TODOs: lex number/ident+keywords; statements `let`/`print`; precedência `expression`/`term`; opcode `Add` na stack VM.
+
+### Como
+
+Lexer consome dígitos/idents; compiler recursive-descent emite `Op` sem AST; VM interpreta pilha (`pop b`, `pop a`, `push a+b`).
+
+### Por quê
+
+Keyword como Ident quebra statements. Precedência invertida gera `(x+y)*2`. `Add` que só empilha `a` imprime 10 em vez de 50 — bug silencioso se o teste não cobrir aritmética.
+
+## 2. Programa-alvo
 
 ```js
 let x = 10;
@@ -14,90 +24,39 @@ let y = 20;
 print(x + y * 2);
 ```
 
-Saída esperada: `60` (porque `*` tem precedência sobre `+`).
+Saída: **50** (`*` antes de `+`).
 
-## 3. Pipeline completo
+## 3. Pipeline
 
 ```text
-  source text
-       |
-       v
-    [ Lexer ]  --> stream de Token { Number, Ident, Let, Print, +, -, *, ;, (, ) }
-       |
-       v
-    [ Parser ] --> emite OpCode + operandos (sem AST explícito neste milestone)
-       |
-       v
-    [ Bytecode buffer ]
-       |
-       v
-    [ Stack VM ] --> stdout
+source → Lexer → Tokens → Compiler (RD) → Bytecode → Stack VM → stdout
 ```
 
-### Diagrama mermaid
-
-```mermaid
-flowchart TD
-  SRC[characters] --> LEX[Lexer]
-  LEX --> TOK[Token stream]
-  TOK --> PAR[Recursive-descent parser]
-  PAR --> BC[Bytecode vector]
-  BC --> VM[Stack machine]
-  VM --> OUT[print output]
-```
-
-## 4. Lexer — consumir caracteres
-
-Responsabilidades deste lab:
+## 4. Lexer
 
 | Token | Regra |
 |-------|-------|
-| Number | sequência de dígitos `0-9` → valor Int64 |
-| Ident | letra/dígito/`_`; palavras reservadas `let`, `print` |
-| Símbolos | `+ - * ( ) ;` single-char |
-| EOF | fim do buffer |
+| Number | dígitos → Int64 acumulado |
+| Ident | alnum/`_`; `let`/`print` → keywords |
+| Símbolos | `= + - * ( ) ;` |
+| EOF | fim |
 
-Whitespace separa tokens e é ignorado.
+Whitespace ignorado. `=` é token (`Kind::Equal`).
 
-### Exemplo tokenização
-
-```text
-"let x = 10;"
-  Let, Ident(x), = nao implementado como token separado no subset,
-  Number(10), Semicolon
-```
-
-Neste subset, `=` faz parte da gramática de statement, não do lexer.
-
-## 5. Parser recursive-descent e precedência
-
-Gramática simplificada:
+## 5. Gramática e precedência
 
 ```text
-program   := statement*
 statement := letStmt | printStmt
 letStmt   := 'let' ident '=' expression ';'
 printStmt := 'print' '(' expression ')' ';'
 expression:= term (('+'|'-') term)*
-term      := factor (('*') factor)*
+term      := factor ('*' factor)*
 factor    := number | ident | '(' expression ')'
 ```
 
-Precedência sobe descendo na árvore de funções: `expression` chama `term`, `term` chama `factor`. Multiplicação fica **mais profunda**, portanto amarrada primeiro.
+`term` mais profundo → `*` amarra primeiro.
 
-### Árvore conceitual para `x + y * 2`
-
-```text
-        +
-       / \
-      x   *
-         / \
-        y   2
-```
-
-## 6. Bytecode emitido (ordem típica)
-
-Para `print(x + y * 2)`:
+## 6. Bytecode típico de `print(x + y * 2)`
 
 ```text
 LoadGlobal x
@@ -108,124 +67,100 @@ Add
 Print
 ```
 
-Cada operação aritmética consome operandos da **pilha** e empilha resultado.
-
-## 7. Stack VM — modelo de execução
+## 7. Stack (topo à direita)
 
 ```text
-Stack (topo à direita):
-
-PushConst 10     -->  [ 10 ]
-LoadGlobal y     -->  [ 10, 20 ]
-PushConst 2      -->  [ 10, 20, 2 ]
-Mul              -->  [ 10, 40 ]
-Add              -->  [ 50 ]   // bug se Add só empilhar primeiro operando!
-Print            -->  stdout: 50
+… Mul → [10, 40]
+… Add → [50]
+… Print → stdout 50
 ```
 
-Invariante: **cada opcode binário remove dois valores e empilha um**.
+Invariante: binário remove 2, empilha 1.
 
-## 8. Tabela de opcodes deste milestone
+## 8. Opcodes
 
-| Opcode | Efeito na pilha |
-|--------|-----------------|
-| PushConst n | push n |
-| LoadGlobal i | push globals[i] |
-| StoreGlobal i | pop → globals[i] |
-| Add | pop b, pop a, push a+b |
-| Sub | pop b, pop a, push a-b |
-| Mul | pop b, pop a, push a*b |
-| Print | pop, imprime |
+| Op | Efeito |
+|----|--------|
+| PushConst / LoadGlobal / StoreGlobal | push / push / pop→global |
+| Add/Sub/Mul | pop b, pop a, push a⊕b |
+| Print | pop → output |
+| Halt | fim |
 
-## 9. Globals e índices
+## 9. Bugs clássicos
 
-Identificadores mapeiam para slots em `std::vector<int64_t>`. Primeiro `let x` aloca slot; usos posteriores referenciam o mesmo índice. Este lab não implementa escopos aninhados — extensão futura.
+1. Number com valor 0 (não acumular dígitos).
+2. `let` como Identifier.
+3. Emitir Print antes da expressão.
+4. `expression` tratar `*` (precedência invertida).
+5. Add empilhar só `a`.
 
-## 10. Erros de lexer/parser comuns
+## 10. Globals e índices
 
-1. **Number sem dígitos** — consumir loop vazio e falhar depois.
-2. **Ident vs keyword** — comparar string antes de classificar como Ident.
-3. **Esquecer consumir `;` ou `)`** — parser desincroniza.
-4. **Precedência invertida** — parse `+` antes de `*` gera bytecode errado.
+`name_index` linear em `program_.names`: primeiro `let x` aloca slot; usos posteriores reutilizam. Sem escopos aninhados neste milestone.
 
-## 11. Erros de VM
+## 11. Vs V8 (qualitativo)
 
-1. **Add pop order** — `a+b` vs `b+a` (commutativo em inteiros, não em floats/strings futuros).
-2. **Stack underflow** — opcode sem operandos suficientes.
-3. **Print sem pop** — vazamento de valores na pilha.
+| Lab | Engine real |
+|-----|-------------|
+| bytecode interpretado | Ignition → TurboFan |
+| int64 only | tagged / heap numbers |
+| globals flat | lexical envs, closures |
+| sem GC | GC geracional |
 
-## 12. Diagrama de estados do interpretador
+## 12. Debugging guiado
 
-```text
-  INIT globals
-     |
-     v
-  FETCH opcode @ PC
-     |
-     v
-  EXEC --> atualiza PC e stack
-     |
-     v
-  PC < end? --yes--+
-     |             |
-    no             |
-     v             |
-    HALT <---------+
-```
+1. Dump tokens antes do parse.
+2. Dump bytecode com índices.
+3. Trace VM: após cada op, stack + IP.
+4. Compare `1+2*3` vs `(1+2)*3` no papel.
 
-## 13. Comparação com V8 / SpiderMonkey (qualitativo)
+## 13. Benchmark
 
-| Este lab | Engine real |
-|----------|-------------|
-| bytecode interpretado | tiered: Ignition → TurboFan |
-| int64 only | tagged pointers, doubles, heap numbers |
-| globals flat | lexical environments, closures |
-| sem GC | generational GC complexo |
+Release: tempo compile+exec vs linhas. Hipótese: lexer/parser dominam inputs pequenos; VM se bytecode crescer. Sem JIT — resultados estáveis. Registre mediana.
 
-O **formato** muda; a **disciplina** (lexer limpo, precedência correta, invariantes de stack) é a mesma.
+## 14. Segurança
 
-## 14. Debugging guiado
+Não é sandbox. Não exponha a rede. Extensões: limite tamanho de source, profundidade de parse, altura da pilha.
 
-1. Imprima tokens gerados antes do parse.
-2. Dump bytecode com índices antes de executar.
-3. Trace VM: após cada opcode, mostre stack e PC.
-4. Compare bytecode manual com o gerado para expressão mínima `1+2*3`.
+## 15. Perguntas
 
-## 15. Testes pedagógicos (`PEDAGOGY-TEST`)
+1. Por que `term` chama `factor`?
+2. Bytecode de `2+3*4` vs `(2+3)*4`?
+3. Stack se Add não remover dois?
+4. Keywords no lexer ou no parser?
 
-| ID | Foco |
-|----|------|
-| D2-JS-LEX-NUMBER | acumular dígitos |
-| D2-JS-LEX-IDENT | keywords vs idents |
-| D2-JS-STMT-LET | StoreGlobal |
-| D2-JS-STMT-PRINT | chamada print |
-| D2-JS-PREC-ADD | nível expression |
-| D2-JS-PREC-MUL | nível term |
-| D2-JS-VM-ADD | opcode Add correto |
+## Fundamentos adicionais (reforço Dia 01)
 
-## 16. Benchmark — o que esperar
+### O quê
 
-Compile Release e meça tempo de compilar+executar programa fixo vs. número de linhas. Hipótese: lexer+parser dominam para inputs pequenos; VM domina se bytecode crescer. Registre mediana — JIT não existe aqui, então resultados são estáveis entre runs.
+A VM interpreta bytecode gerado pelo frontend: lexer, parser, codegen e loop de dispatch.
 
-## 17. Segurança e sandbox
+### Como
 
-Este runtime **não** é sandbox. Não exponha a input de rede. Em extensões futuras, limite tamanho de source, profundidade de parse e altura da pilha para evitar DoS.
+Trabalhe com um exemplo numérico no papel antes de editar o starter: anote entradas, estado intermediário e saída esperada.
 
-## 18. Extensões futuras
+### Por quê
 
-- AST explícito antes de codegen;
-- `if/while`, comparadores, booleanos;
-- Funções e call stack separada de operand stack;
-- Peephole optimization no bytecode;
-- Disassembler human-readable.
+Sem o modelo mental no papel, o código vira tentativa-e-erro e os testes não ensinam o invariante.
 
-## 19. Perguntas de verificação
+### Por quê comparar com produção
 
-1. Por que `term` chama `factor` e não o contrário?
-2. Qual bytecode distingue `2+3*4` de `(2+3)*4`?
-3. O que acontece na pilha se `Add` não remover dois elementos?
-4. Por que keywords são reconhecidas no lexer e não no parser?
+Implementações reais (libc, kernels, VMs, GPUs) usam as mesmas ideias com mais camadas; este lab isola o núcleo.
 
-## 20. Objetivo do dia
+### Por quê falhar de propósito no starter
 
-Sair com modelo mental **operacional** de linguagem: texto → tokens → regras → bytecode → máquina. Tudo que você debugar aqui reaparece quando ler dumps de Ignition ou escrever DSLs internas.
+O starter compila e o teste falha até o TODO existir — isso prova que o harness mede o comportamento certo.
+
+### Trace manual
+
+`	ext
+entrada -> transformação -> invariante -> saída
+` 
+
+### Bugs comuns (módulo)
+
+| Sintoma | Causa | Depuração |
+|---------|-------|-----------|
+| Teste falha após 'implementar' | Off-by-one / endian | Trace byte a byte |
+| PASS sem entender | Copiou gabarito | Refaça o paper-trace |
+

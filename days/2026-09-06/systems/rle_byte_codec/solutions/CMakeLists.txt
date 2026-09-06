@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(rle CXX)
+set(CMAKE_CXX_STANDARD 20)
+enable_testing()
+add_executable(test_rle rle.cpp test_rle.cpp)
+add_test(NAME test_rle COMMAND test_rle)

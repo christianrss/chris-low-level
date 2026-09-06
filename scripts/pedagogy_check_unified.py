@@ -11,6 +11,8 @@ CODE_EXT = {
     ".c", ".cc", ".cpp", ".cxx", ".h", ".hpp", ".py", ".ts", ".js", ".cs",
     ".rs", ".asm", ".s", ".yar", ".sh", ".glsl", ".hlsl",
 }
+SKIP_DIR_NAMES = {"build", "build_ci", "build-starter", "build-solution", "node_modules", "CMakeFiles"}
+SKIP_FILE_SUFFIXES = {".bin", ".png", ".wav", ".exe", ".obj", ".lib", ".gz", ".o", ".a"}
 TODO_RE = re.compile(r"TODO\s*\[([A-Z0-9-]+)\]")
 UNTAGGED_RE = re.compile(r"(?:^|\s)(?://|#|/\*)\s*TODO\b(?!\s*\[[A-Z0-9-]+\])")
 DIAGRAM_RE = re.compile(
@@ -21,6 +23,7 @@ COMPLEX_MODULES = {
     "dual_backend_3d", "clvm", "http_parser", "bytecode_vm_from_scratch",
     "bytecode_branch_vm", "miniobjdump", "linear_autograd", "tiled_matmul_cache",
     "distro_pkg_rootfs", "kernel_module_driver_lab", "vulkan_d3d12_resource_states",
+    "portal_verlet_physics",
 }
 
 MIN_TEORIA = 120
@@ -59,13 +62,20 @@ def collect_test_text(starter: Path) -> str:
         if not candidate.exists():
             continue
         for p in candidate.rglob("*"):
+            if any(part in SKIP_DIR_NAMES for part in p.parts):
+                continue
+            if p.suffix.lower() in SKIP_FILE_SUFFIXES:
+                continue
             if p.is_file() and (
                 p.suffix.lower() in CODE_EXT
                 or p.name.startswith("test_")
                 or p.name == "test.js"
                 or p.name.endswith("_test.py")
             ):
-                parts.append(text(p))
+                try:
+                    parts.append(text(p))
+                except UnicodeDecodeError:
+                    continue
     return "\n".join(parts)
 
 
@@ -173,9 +183,16 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
             errors.append(f"{rel}: TESTES_GUIADOS Caso {num} not referenced in starter test code")
 
     for p in starter.rglob("*"):
+        if any(part in SKIP_DIR_NAMES for part in p.parts):
+            continue
         if not p.is_file() or p.suffix.lower() not in CODE_EXT:
             continue
-        st = text(p)
+        if p.suffix.lower() in SKIP_FILE_SUFFIXES:
+            continue
+        try:
+            st = text(p)
+        except UnicodeDecodeError:
+            continue
         for line in st.splitlines():
             if len(line) > MAX_LINE_CHARS and "http" not in line.lower():
                 if "PEDAGOGY-TEST" in line and line.strip().startswith("//"):

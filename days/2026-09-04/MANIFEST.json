@@ -1,7 +1,8 @@
 {
-  "package": "Laboratorio_LowLevel_Unificado_2026-09-04",
-  "date": "2026-09-04",
+  "day": "2026-09-04",
   "modules": 11,
+  "todo_mappings": 48,
+  "file_count": 257,
   "files": [
     {
       "path": "ai/tensor_strides/BENCHMARK_GUIADO.md",
@@ -15,18 +16,18 @@
     },
     {
       "path": "ai/tensor_strides/PESQUISA_GUIADA.md",
-      "size": 929,
-      "sha256": "ae180f1274a4eefb82cad36047b84e8a5247453a51b7ef45c77d7264eb8b31d9"
+      "size": 1357,
+      "sha256": "aab3510c232c66540a213b892d717bacd7ba6e7ab6d122fe79b736c653545e27"
     },
     {
       "path": "ai/tensor_strides/README.md",
-      "size": 508,
-      "sha256": "2b1544b44bfa30d3813cf4d6f75744f7f683a0e908751bf5468f15c7c0f55d6b"
+      "size": 974,
+      "sha256": "f90187ffa21bb0addede2ebdd2527f617adff94c0a3483bc4b8cd3da9dece237"
     },
     {
       "path": "ai/tensor_strides/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4563,
-      "sha256": "ca5c890d325b1dc25cc6aa1f82cab874e622b5a6a041137df8db5419e7264a32"
+      "size": 7241,
+      "sha256": "aa0e6a8b44e61b565acde2a094a0234f1476a5e8d3e8527845312f5e09e980a2"
     },
     {
       "path": "ai/tensor_strides/solutions/benchmarks/tensor_benchmark.cpp",
@@ -100,8 +101,8 @@
     },
     {
       "path": "ai/tensor_strides/TEORIA_PASSO_A_PASSO.md",
-      "size": 4823,
-      "sha256": "ace92ca5e548bd715b0cf1d5fd1525d66671c5c8ac4144a234561dd1a9eb55b6"
+      "size": 5953,
+      "sha256": "4c17852c1799c5ca43214d15a1f78ad7ddd9c080da77b81b5031bf530ba28502"
     },
     {
       "path": "ai/tensor_strides/TESTES_GUIADOS.md",
@@ -109,109 +110,109 @@
       "sha256": "2f5eccdc1488f55101439dc4dace7295d3923e1c4e9b37ee5010590ed7e2cfc9"
     },
     {
-      "path": "algorithms/sorting_research/BENCHMARK_GUIADO.md",
-      "size": 1148,
-      "sha256": "6200f1b02e277d2ab89584e8a0c5e65e53f791f5e0957834fdbe856d07ccea44"
+      "path": "algorithms/blocked_merge_sort/BENCHMARK_GUIADO.md",
+      "size": 1237,
+      "sha256": "885b7e209c4303274ece4ea405b5204e76fb85d4df9e9101f3d8f269854e3b5e"
     },
     {
-      "path": "algorithms/sorting_research/EXERCICIOS.md",
-      "size": 863,
-      "sha256": "a81651fa9723f9bcd624f29f035519f182f6a281946e17aee6c18efefbae6720"
+      "path": "algorithms/blocked_merge_sort/EXERCICIOS.md",
+      "size": 929,
+      "sha256": "d3b1ef70e85f7186871c24887e0fcef33aac6d0b89999071970ae9106a410d8d"
     },
     {
-      "path": "algorithms/sorting_research/PESQUISA_GUIADA.md",
-      "size": 834,
-      "sha256": "8ac906d1cfe7c1fe5bc594f10671d8a4160977d071d987e6684ce77b7d52db2e"
+      "path": "algorithms/blocked_merge_sort/PESQUISA_GUIADA.md",
+      "size": 1283,
+      "sha256": "465bfb77d39d5d8daa373d24c3683f1d2f9af9fe101d400f5a4c35eb5ea3e1f3"
     },
     {
-      "path": "algorithms/sorting_research/README.md",
-      "size": 526,
-      "sha256": "9c087b67b51b43bfea848c794bec567f3fec554aa572d823e9c329033c6e606f"
+      "path": "algorithms/blocked_merge_sort/README.md",
+      "size": 1112,
+      "sha256": "adf2da1abce9d12b07ee53f886fa0c6a3ce07c6685df953e49571d5217be6a94"
     },
     {
-      "path": "algorithms/sorting_research/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5558,
-      "sha256": "401deb9dff48000003a6e6c0b218de82a076385081637b100eada34dbcfe4f0f"
+      "path": "algorithms/blocked_merge_sort/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 8598,
+      "sha256": "4b2d01163e7dbbc79954b0517feb34179eacc810b287c4d9e2ca4a9ad7c600b5"
     },
     {
-      "path": "algorithms/sorting_research/solutions/benchmarks/algorithm_benchmark.cpp",
-      "size": 1903,
-      "sha256": "798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819"
+      "path": "algorithms/blocked_merge_sort/solutions/benchmarks/algorithm_benchmark.cpp",
+      "size": 1622,
+      "sha256": "7042eb16db18a2b3e3ce6a1797621484504ee77dc778b6e89d16d0f25e3573dd"
     },
     {
-      "path": "algorithms/sorting_research/solutions/CMakeLists.txt",
-      "size": 878,
-      "sha256": "22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b"
+      "path": "algorithms/blocked_merge_sort/solutions/CMakeLists.txt",
+      "size": 886,
+      "sha256": "1544d33ee2e293b10d544cdd835c8e12a066e2e94309fc26fde6ebb9129e7a4a"
     },
     {
-      "path": "algorithms/sorting_research/solutions/docs/architecture.md",
-      "size": 195,
-      "sha256": "2ffc7fa14def94216180b893e321e42f32e617002fcd2a2996f192973ea38ff6"
+      "path": "algorithms/blocked_merge_sort/solutions/docs/architecture.md",
+      "size": 261,
+      "sha256": "50bf2739411e40c4e75c742da2d4484e558a3169de33671485767b8ed08dd162"
     },
     {
-      "path": "algorithms/sorting_research/solutions/include/sort.hpp",
-      "size": 234,
-      "sha256": "4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2"
+      "path": "algorithms/blocked_merge_sort/solutions/include/blocked_sort.hpp",
+      "size": 274,
+      "sha256": "92f2071c38a72ae4ebd9dab9200e5042e5567de411080b522b6b06c8272d255e"
     },
     {
-      "path": "algorithms/sorting_research/solutions/MILESTONES.md",
-      "size": 233,
-      "sha256": "5806083b4278fe651afb06baf22cd029215a68d5281341e735e15b0f8a89ff37"
+      "path": "algorithms/blocked_merge_sort/solutions/MILESTONES.md",
+      "size": 313,
+      "sha256": "35b73d084daa3c48ab1f52089ca8baf14c12599582a98da44b75878768cdb698"
     },
     {
-      "path": "algorithms/sorting_research/solutions/README.md",
-      "size": 796,
-      "sha256": "5a7aa1d913bd040ab813033b5a6a908c30ed072cda8781ac55adfa618c62ac74"
+      "path": "algorithms/blocked_merge_sort/solutions/README.md",
+      "size": 886,
+      "sha256": "1ed59d5c550473ef8fac415ee6c29b2406cb6d59b496e921b90f917d2d598eba"
     },
     {
-      "path": "algorithms/sorting_research/solutions/src/sort.cpp",
-      "size": 3061,
-      "sha256": "852bf51b8ba2a70376e2609ce339709ab9ac510c4d74d87f001897c1ceff2a63"
+      "path": "algorithms/blocked_merge_sort/solutions/src/blocked_sort.cpp",
+      "size": 3562,
+      "sha256": "43822c96ffc8abe754247ad94d5c51760bcd69dec817e2250c6d6b2e0060de25"
     },
     {
-      "path": "algorithms/sorting_research/solutions/tests/algorithm_tests.cpp",
-      "size": 962,
-      "sha256": "547caae59b0b73c0d5d42dfa9805a4d0df694c400926cc92d3aec06159af9f2f"
+      "path": "algorithms/blocked_merge_sort/solutions/tests/algorithm_tests.cpp",
+      "size": 2636,
+      "sha256": "5dcc361935b56a5338db00261bbfb6066efaeabd33a748fbd1c5eb92df478713"
     },
     {
-      "path": "algorithms/sorting_research/starter/benchmarks/algorithm_benchmark.cpp",
-      "size": 1903,
-      "sha256": "798c923ba82f348200ab5e9323c653808804ffa893f55a50120133ada9dd5819"
+      "path": "algorithms/blocked_merge_sort/starter/benchmarks/algorithm_benchmark.cpp",
+      "size": 1622,
+      "sha256": "7042eb16db18a2b3e3ce6a1797621484504ee77dc778b6e89d16d0f25e3573dd"
     },
     {
-      "path": "algorithms/sorting_research/starter/CMakeLists.txt",
-      "size": 878,
-      "sha256": "22b608d048f4cbfa1e1f5abf2680df8343486b81238173b8c3006d7cf5d11f3b"
+      "path": "algorithms/blocked_merge_sort/starter/CMakeLists.txt",
+      "size": 886,
+      "sha256": "1544d33ee2e293b10d544cdd835c8e12a066e2e94309fc26fde6ebb9129e7a4a"
     },
     {
-      "path": "algorithms/sorting_research/starter/include/sort.hpp",
-      "size": 234,
-      "sha256": "4c36b4c66a4af1493af3488ee4a46ad38dd80c329e5b4c7083410ad98d4e3ea2"
+      "path": "algorithms/blocked_merge_sort/starter/include/blocked_sort.hpp",
+      "size": 274,
+      "sha256": "92f2071c38a72ae4ebd9dab9200e5042e5567de411080b522b6b06c8272d255e"
     },
     {
-      "path": "algorithms/sorting_research/starter/README.md",
-      "size": 266,
-      "sha256": "0bb4a18092e78d97ee7c308e022b4664caa515f331bbc62fe2e91fe08329333f"
+      "path": "algorithms/blocked_merge_sort/starter/README.md",
+      "size": 274,
+      "sha256": "4b9d05b23c61eb85cf40a027b84640c69ef893f47fc1c09f7f67bd0f7757e4ae"
     },
     {
-      "path": "algorithms/sorting_research/starter/src/sort.cpp",
-      "size": 1670,
-      "sha256": "e6004574eebbcaec31924f8ecc53f611126769ecfa059375a19390cdd3552da2"
+      "path": "algorithms/blocked_merge_sort/starter/src/blocked_sort.cpp",
+      "size": 1674,
+      "sha256": "67a11afea53d3cfe436ec4a2ec9aea3f5edf9b0ea387b9c83bee4cfab7807532"
     },
     {
-      "path": "algorithms/sorting_research/starter/tests/algorithm_tests.cpp",
-      "size": 962,
-      "sha256": "547caae59b0b73c0d5d42dfa9805a4d0df694c400926cc92d3aec06159af9f2f"
+      "path": "algorithms/blocked_merge_sort/starter/tests/algorithm_tests.cpp",
+      "size": 2636,
+      "sha256": "5dcc361935b56a5338db00261bbfb6066efaeabd33a748fbd1c5eb92df478713"
     },
     {
-      "path": "algorithms/sorting_research/TEORIA_PASSO_A_PASSO.md",
-      "size": 4792,
-      "sha256": "3ba861ec4f62b2a20a2acfbdf74fb073889983405959cae37d6798fc82dfdd9c"
+      "path": "algorithms/blocked_merge_sort/TEORIA_PASSO_A_PASSO.md",
+      "size": 7339,
+      "sha256": "9e6f19680418c9c70a6ae99c33c80c2a492fc557c1b61cf6d29127fb48428149"
     },
     {
-      "path": "algorithms/sorting_research/TESTES_GUIADOS.md",
-      "size": 1640,
-      "sha256": "9b8d4c2037c6024cb3349ca6f16475cb6d65a647817f6ac9c5d4c5b1c6c48b5c"
+      "path": "algorithms/blocked_merge_sort/TESTES_GUIADOS.md",
+      "size": 1756,
+      "sha256": "a385e35e668ad870de218170b3785576f1f2fd9a64675dea07a58fb2f84b45df"
     },
     {
       "path": "COMMIT_PLAN.md",
@@ -230,18 +231,18 @@
     },
     {
       "path": "debugger/protocol_v1/PESQUISA_GUIADA.md",
-      "size": 988,
-      "sha256": "04c0178d841f00e9b36cb0694b59d02a8d38c6755050c55d272bafbf9b364812"
+      "size": 1417,
+      "sha256": "db1107dbed1f52d539d95c4b812ca8f9da7c70911b43362dd83fde8025899749"
     },
     {
       "path": "debugger/protocol_v1/README.md",
-      "size": 487,
-      "sha256": "d6b24252315338ab6b86545417ccd02766c4709a5887d22d5b9ff69e24ec230a"
+      "size": 959,
+      "sha256": "75060c8c83f1ee21a2b19ab2ff1606f5380eb57b1a5c9acbc505c0a150a4cb0e"
     },
     {
       "path": "debugger/protocol_v1/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5442,
-      "sha256": "30a5faa6786b4e681757bd2f7181638132362a8f5dde8ec30a9c7897ce865b00"
+      "size": 8129,
+      "sha256": "423a871639023561e928134a784f93d97f6bda838764335ae54a058282861ba2"
     },
     {
       "path": "debugger/protocol_v1/solutions/benchmarks/debugger_benchmark.cpp",
@@ -315,8 +316,8 @@
     },
     {
       "path": "debugger/protocol_v1/TEORIA_PASSO_A_PASSO.md",
-      "size": 4403,
-      "sha256": "34458eb1ff1190c0644623eeec5e2b765553ae87ce67ba76131d5d6a68aa77f8"
+      "size": 3756,
+      "sha256": "7ae8c6e0f41fdad4d960129ebf721d54c33cf11fdbcae4cdddcd3342c3d2af4a"
     },
     {
       "path": "debugger/protocol_v1/TESTES_GUIADOS.md",
@@ -335,18 +336,18 @@
     },
     {
       "path": "dotnet/clr_pe_cli_metadata/PESQUISA_GUIADA.md",
-      "size": 709,
-      "sha256": "15743dd153dcec556b3595c8714c2a5133d130302698ab8d2681aea761ad8dab"
+      "size": 1134,
+      "sha256": "40dac0f93bf8c344ff6539282f3f98ea4b15f49d16f15a9ec4069a3097a1cde1"
     },
     {
       "path": "dotnet/clr_pe_cli_metadata/README.md",
-      "size": 309,
-      "sha256": "71d1c2d3d590aeb5ffa22a53b46177b58c5afadba1d63a21bac1e5ab05e6e84a"
+      "size": 760,
+      "sha256": "e04a9b5b8ffa2a8f1442e65c3654d75c59dcde175449cb86996447ff91733b41"
     },
     {
       "path": "dotnet/clr_pe_cli_metadata/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5393,
-      "sha256": "ed2327822c9aedc032d823321ff6f749e1c907a64876937ce9c331b74ac9393f"
+      "size": 7073,
+      "sha256": "8cb7891a16bb7e2ebccfbe56f8a7888d80e79466f9c1dadb4300627bae76323d"
     },
     {
       "path": "dotnet/clr_pe_cli_metadata/solutions/docs/architecture.md",
@@ -420,8 +421,8 @@
     },
     {
       "path": "dotnet/clr_pe_cli_metadata/TEORIA_PASSO_A_PASSO.md",
-      "size": 7542,
-      "sha256": "f7a3fb971a60795fcdca9cff9866e48ec7e6a0d00c7e5af0ac3e75452dbdf9e2"
+      "size": 7946,
+      "sha256": "76833eccbed530291f870f9a42d38a821b99b99b335311c551577b84bc62fbaa"
     },
     {
       "path": "dotnet/clr_pe_cli_metadata/TESTES_GUIADOS.md",
@@ -440,18 +441,18 @@
     },
     {
       "path": "dotnet/csharp_span_arraypool/PESQUISA_GUIADA.md",
-      "size": 797,
-      "sha256": "11c57bdb703eae0d7f0d5c409c808ad02a4bcc7ade312920f14e1ce0949dcca1"
+      "size": 1222,
+      "sha256": "468724f6819c005634389950dde495487deb55f6fc5ce95a960c98ef05166221"
     },
     {
       "path": "dotnet/csharp_span_arraypool/README.md",
-      "size": 316,
-      "sha256": "5108b3ba476b538f7dc9a3bfa919e46d0fd276b223287903d5e30d78c736e70a"
+      "size": 771,
+      "sha256": "0f804a85d9bf04294e178915631fec1dfc59044f1eddccb602949d67ae55449f"
     },
     {
       "path": "dotnet/csharp_span_arraypool/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4440,
-      "sha256": "f71b7f6388e0bb40587b75097dddb8ec9093bc49c82a4206c88b4a1da6c2f057"
+      "size": 8263,
+      "sha256": "924ce9a4fa9f9dd652be6a44593917bfc31d0d2ea5e65c619403c5601e715347"
     },
     {
       "path": "dotnet/csharp_span_arraypool/solutions/benchmarks/Chris.DotNet.Bench.Benchmarks/Chris.DotNet.Bench.Benchmarks.csproj",
@@ -555,8 +556,8 @@
     },
     {
       "path": "dotnet/csharp_span_arraypool/TEORIA_PASSO_A_PASSO.md",
-      "size": 4427,
-      "sha256": "07b336debd055638eb181de1b67cb98fd816b38c909d6041d7e30ac98e3b5456"
+      "size": 5551,
+      "sha256": "7a44e2932adbfb0fa7ab893fb3135d918e6b946a3e74d808787eeee16643cb08"
     },
     {
       "path": "dotnet/csharp_span_arraypool/TESTES_GUIADOS.md",
@@ -575,18 +576,23 @@
     },
     {
       "path": "javascript/bytecode_vm_from_scratch/PESQUISA_GUIADA.md",
-      "size": 726,
-      "sha256": "f870bd8aa3672d80ba6f26726fb5366aa2ec69833752cd7eee360995532848a5"
+      "size": 1150,
+      "sha256": "719586fb1a0a16ed68cf81a90047c5dbb963086980fa9590324bfab3b835e8fe"
     },
     {
       "path": "javascript/bytecode_vm_from_scratch/README.md",
-      "size": 313,
-      "sha256": "e197663da567d9deba32a9bbfa20f76e7d72aa19895e702bf37736e3840276dd"
+      "size": 740,
+      "sha256": "682b702ab0d77b0e02abdf42c2935386e91a486509d8560ce4065031f259f787"
+    },
+    {
+      "path": "javascript/bytecode_vm_from_scratch/RESOLUCAO_APENDICE.md",
+      "size": 2537,
+      "sha256": "039a9549886167105ab20027e606a1df826e503908b6293e9068e766a77271ae"
     },
     {
       "path": "javascript/bytecode_vm_from_scratch/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5489,
-      "sha256": "b7340e7de0ba7be13a78a89de32d9b6e015a05da9ebabc4df0a95fb6afd0b889"
+      "size": 8604,
+      "sha256": "0d6bad87af6da3852e497af60f620e718b46f840c4da168fefb1a67b6fbf9d4e"
     },
     {
       "path": "javascript/bytecode_vm_from_scratch/solutions/CMakeLists.txt",
@@ -660,8 +666,8 @@
     },
     {
       "path": "javascript/bytecode_vm_from_scratch/TEORIA_PASSO_A_PASSO.md",
-      "size": 6584,
-      "sha256": "9d141ac82d10dbb922c74b24057182cba56c25db2e4d80a76eb7c9b8c836c20c"
+      "size": 4348,
+      "sha256": "f250e82bb069cf8f9e8f23645ff1a04561416094e27d70ab26122991dcabeaa9"
     },
     {
       "path": "javascript/bytecode_vm_from_scratch/TESTES_GUIADOS.md",
@@ -670,8 +676,8 @@
     },
     {
       "path": "MANIFEST.json",
-      "size": 48372,
-      "sha256": "23acbe2ef0ac22144ce8d88bce1045bc9131bb947d46422b9517c141d9bd1fa8"
+      "size": 49123,
+      "sha256": "67087604059d51334395a8624a833e4bb1261e7e2e15583abcfa000f6b320fe7"
     },
     {
       "path": "nodejs/typescript_stream_backpressure/BENCHMARK_GUIADO.md",
@@ -685,18 +691,18 @@
     },
     {
       "path": "nodejs/typescript_stream_backpressure/PESQUISA_GUIADA.md",
-      "size": 736,
-      "sha256": "ccd156f80f067b56fbee4d6d153d2ffae350a66f607d4d94980553777955484b"
+      "size": 1156,
+      "sha256": "3b5f0319cd896793e025b83d838a90959a58d844effabf46b33a858b3530a2b6"
     },
     {
       "path": "nodejs/typescript_stream_backpressure/README.md",
-      "size": 337,
-      "sha256": "344ab4101453f51444dcd6890ba44e02fdf4478e96f3f1a5f995008610707b7b"
+      "size": 806,
+      "sha256": "499bfd53b7dae98c47a5a3ff095e97ef7079a6ae65e33b1b31d5b649e8cde81f"
     },
     {
       "path": "nodejs/typescript_stream_backpressure/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4194,
-      "sha256": "fd2e7a58007f373ed8e8a2f65b638a73bf2dcdfb8960c597db73448a577cf556"
+      "size": 6951,
+      "sha256": "7721f5407e38ee85950172c27c2ad632cfa59238d5225df06cd9da0427a5041a"
     },
     {
       "path": "nodejs/typescript_stream_backpressure/solutions/benchmarks/bench.ts",
@@ -780,8 +786,8 @@
     },
     {
       "path": "nodejs/typescript_stream_backpressure/TEORIA_PASSO_A_PASSO.md",
-      "size": 6684,
-      "sha256": "1be417166284e21289412149929d926276da92bf9e65a126040e734a2ceff82c"
+      "size": 7124,
+      "sha256": "fb425db6f4a2638194fc509afe5a7acfb897236b311357967397c69d8ac0e483"
     },
     {
       "path": "nodejs/typescript_stream_backpressure/TESTES_GUIADOS.md",
@@ -790,33 +796,38 @@
     },
     {
       "path": "os/graphics_reference/BENCHMARK_GUIADO.md",
-      "size": 1045,
-      "sha256": "acba1c48f203d2c946a0519cdf3de7251043a929d59565f42c4f27cf9adc5d21"
+      "size": 1556,
+      "sha256": "b18c1cd84d938d5e675577c97179c60342baa8142247d867be633c58dd09b148"
     },
     {
       "path": "os/graphics_reference/EXERCICIOS.md",
-      "size": 766,
-      "sha256": "2f9a0132b06f7b8522451414645d975b5a30130e7dd7e239b5c47eda9783e54a"
+      "size": 1191,
+      "sha256": "b6e4147649cf0981637f9397469c981128da187eb1ed9f9aaaa3c730a4c01f32"
     },
     {
       "path": "os/graphics_reference/PESQUISA_GUIADA.md",
-      "size": 961,
-      "sha256": "57c06b9c892641d707afeb1ad62f91cf69a5d60c3854f0a6efdedc48bded3d0c"
+      "size": 1390,
+      "sha256": "6caad57a43e7b56804c39ec23b0d1d39a9cb785d7b048100c8b0057a395b022b"
     },
     {
       "path": "os/graphics_reference/README.md",
-      "size": 493,
-      "sha256": "b6dcb875e8e3acb68eade327fbcedcf6651d41c25d29ffebdb7080c5772f6813"
+      "size": 1545,
+      "sha256": "72cf86e4aee1387b9156a2b7243e117b4aacb3a6b6bfa3e6065fc55cb62430a1"
+    },
+    {
+      "path": "os/graphics_reference/RESOLUCAO_APENDICE.md",
+      "size": 2893,
+      "sha256": "c80ef0f37b965235d698cdcad18857b5103da9d73cdbf90b1b03c1575e42bf3c"
     },
     {
       "path": "os/graphics_reference/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5002,
-      "sha256": "afedaa3c4c27b340c785fadfa26b03e48638b08f6fd2c3bd37ccac7035ca2a52"
+      "size": 11366,
+      "sha256": "ffb06cf39965a87f5157a441867c72628a35959fd19fd15f7156ee3fbe1fbf41"
     },
     {
       "path": "os/graphics_reference/solutions/benchmarks/os_graphics_benchmark.cpp",
-      "size": 1210,
-      "sha256": "4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152"
+      "size": 2844,
+      "sha256": "fff762a503621d9b7f9ceb2b3a5e3865c9783a14a39b9622c4e07ee4c9989973"
     },
     {
       "path": "os/graphics_reference/solutions/CMakeLists.txt",
@@ -825,18 +836,18 @@
     },
     {
       "path": "os/graphics_reference/solutions/docs/architecture.md",
-      "size": 390,
-      "sha256": "fbde38a3235836b9909e68249d41e15a874b7024e71b2ba07b3811119e806c2f"
+      "size": 814,
+      "sha256": "d63c8c46b1a86acd12adf6d8fdaafeb666c1bc308785096c9c6861a128b61894"
     },
     {
       "path": "os/graphics_reference/solutions/include/graphics.hpp",
-      "size": 1074,
-      "sha256": "d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c"
+      "size": 2361,
+      "sha256": "5cb3299cd10e6e0f4e83474556cfe060a8cd445d350723b6e988d3bc4d5c52ba"
     },
     {
       "path": "os/graphics_reference/solutions/MILESTONES.md",
-      "size": 305,
-      "sha256": "6405d08d0f5e9657add444060afa472b755375069ab52476e45de599843ac284"
+      "size": 400,
+      "sha256": "7996b035a10a70864715811001212a7f7ef46309a10c6cb668db8e570f8fb31b"
     },
     {
       "path": "os/graphics_reference/solutions/README.md",
@@ -845,18 +856,18 @@
     },
     {
       "path": "os/graphics_reference/solutions/src/graphics.cpp",
-      "size": 3053,
-      "sha256": "ce0e01a0bb7438478468b369c4cf01456f6a14dad5737917c3eafb3ac011aba9"
+      "size": 8050,
+      "sha256": "2e77cda155823a43f94ebf713a6a02065e3bf2a5f914142d6fab42089120eee5"
     },
     {
       "path": "os/graphics_reference/solutions/tests/os_graphics_tests.cpp",
-      "size": 981,
-      "sha256": "5c4895398b26ca0aace3749273c4ee4824ea6866a7912794f9da46b51fd20f74"
+      "size": 3808,
+      "sha256": "135d3b52747b964b2e6afd87b0814d4f822953633645deb121ba590bb97330ed"
     },
     {
       "path": "os/graphics_reference/starter/benchmarks/os_graphics_benchmark.cpp",
-      "size": 1210,
-      "sha256": "4f755160ae47ea6238aa47a31d8d9e1dbbdce2e4c28d02f307e74fbd796da152"
+      "size": 2844,
+      "sha256": "fff762a503621d9b7f9ceb2b3a5e3865c9783a14a39b9622c4e07ee4c9989973"
     },
     {
       "path": "os/graphics_reference/starter/CMakeLists.txt",
@@ -865,33 +876,33 @@
     },
     {
       "path": "os/graphics_reference/starter/include/graphics.hpp",
-      "size": 1074,
-      "sha256": "d72ed6a1a7161065944a8bfca68223501c4872f1cc14b294534896193df26e0c"
+      "size": 2361,
+      "sha256": "5cb3299cd10e6e0f4e83474556cfe060a8cd445d350723b6e988d3bc4d5c52ba"
     },
     {
       "path": "os/graphics_reference/starter/README.md",
-      "size": 270,
-      "sha256": "eb347b7af56ca840db9ca997608ee33779acc491357f6fb3e5fbe2885d466049"
+      "size": 326,
+      "sha256": "702c75100e78acb5420ae389a1a682bbc256b7b64400a68e3bea854c3932ed8f"
     },
     {
       "path": "os/graphics_reference/starter/src/graphics.cpp",
-      "size": 1516,
-      "sha256": "3d9ad8a9f680c8cbdc708c9f17281e574c080269393e85f0f914fbb21d2567f5"
+      "size": 4575,
+      "sha256": "e40de2cd6b7b969388023cdb3b67e27f787aca4cba3a81a385e492c3e2a56734"
     },
     {
       "path": "os/graphics_reference/starter/tests/os_graphics_tests.cpp",
-      "size": 981,
-      "sha256": "5c4895398b26ca0aace3749273c4ee4824ea6866a7912794f9da46b51fd20f74"
+      "size": 3808,
+      "sha256": "135d3b52747b964b2e6afd87b0814d4f822953633645deb121ba590bb97330ed"
     },
     {
       "path": "os/graphics_reference/TEORIA_PASSO_A_PASSO.md",
-      "size": 4120,
-      "sha256": "0b65ab47870e9659d4820c0b02b28283668d2dd47c6baff9fb9c425eaba43764"
+      "size": 8022,
+      "sha256": "8315ff8dee7f0143adbb48fdc75140d850c94f4073c352bc933cc43d99a953cf"
     },
     {
       "path": "os/graphics_reference/TESTES_GUIADOS.md",
-      "size": 1613,
-      "sha256": "5996c071342c7434b785484275b2da03baaa110f149f70f1ab76ee0bd3e80c9c"
+      "size": 2170,
+      "sha256": "49884c0354b23d5c386a8e0803139148d1dcf21c86b62cadfc45f24d83acf8ed"
     },
     {
       "path": "quantum/statevector_intro/BENCHMARK_GUIADO.md",
@@ -905,18 +916,18 @@
     },
     {
       "path": "quantum/statevector_intro/PESQUISA_GUIADA.md",
-      "size": 816,
-      "sha256": "7351716c3bc97bf9723f558f2bd7deb5f8e03c63373d3dae11783b4438326147"
+      "size": 1246,
+      "sha256": "f83ee0a724d6a38858ee46aebb1eac65b5300f11afa7ee5b17064167f5e102e2"
     },
     {
       "path": "quantum/statevector_intro/README.md",
-      "size": 451,
-      "sha256": "4b7570c122f127916c16cb3df9902ff2171f41c46fed4921de5782975f14f2f4"
+      "size": 901,
+      "sha256": "2b945c1f4c4ec9960dc06b29f56517aa16074721ff8786a84327ee9cb06f9a8e"
     },
     {
       "path": "quantum/statevector_intro/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4345,
-      "sha256": "e7fe324b94af71d974514c730d13bcf561c3ce8694774d9e5678c47cf0f4a534"
+      "size": 8138,
+      "sha256": "44bee7fdc5255d0d7702bb15face380960de1746fe670c213e41aaa6d65d67fe"
     },
     {
       "path": "quantum/statevector_intro/solutions/benchmarks/qsim_benchmark.cpp",
@@ -990,8 +1001,8 @@
     },
     {
       "path": "quantum/statevector_intro/TEORIA_PASSO_A_PASSO.md",
-      "size": 4349,
-      "sha256": "2c1d0b44183ae8588941791f6e75b3f457b5c77621bd9c852c61378d829c91f6"
+      "size": 3888,
+      "sha256": "f3798990af06f9f7d522c1f88fb2f0103849517f5e83c2e375516526d2f5728f"
     },
     {
       "path": "quantum/statevector_intro/TESTES_GUIADOS.md",
@@ -1000,33 +1011,33 @@
     },
     {
       "path": "README.md",
-      "size": 2301,
-      "sha256": "b7fe6ca032b32a766d5c8050524b6b1cb5c865632b5ee518c9a1b2f37befd144"
+      "size": 2274,
+      "sha256": "b8cb12fe563651d50fe4fe5f990f8c154e8c11797edface038890be1e491c621"
     },
     {
       "path": "redteam/elf64_triage/BENCHMARK_GUIADO.md",
-      "size": 668,
-      "sha256": "f3ec80afeef622cf2a4c9533dbc6acaa85e21e297d4a83767a7f6b33cda7ec7a"
+      "size": 844,
+      "sha256": "2def8b56f69d7e04a37d3b222dd7da5cf3477ec476aa7f2c6f72dc00398ce59d"
     },
     {
       "path": "redteam/elf64_triage/EXERCICIOS.md",
-      "size": 761,
-      "sha256": "615fca8f0d7987ab9b64875fdeab07df8e87aeb903662df7c505747b81200eff"
+      "size": 1147,
+      "sha256": "af4d3e64e8a61d76df9f131101dd4f6134b358cf2fc2eead0b5137fd801c801d"
     },
     {
       "path": "redteam/elf64_triage/PESQUISA_GUIADA.md",
-      "size": 1015,
-      "sha256": "0727bf852194d05180c9d03b35ee45d7a9a4d339d6928ed290f04299cc9f6821"
+      "size": 1700,
+      "sha256": "9385e7888bc741acb5eeb5d3ea0c2744a8b569cc7b9dcc433ad94217ae03947c"
     },
     {
       "path": "redteam/elf64_triage/README.md",
-      "size": 513,
-      "sha256": "6b33b50ae2f28a3f35ca82975654ad42e4335de057916266d9fb15728fe818c4"
+      "size": 1373,
+      "sha256": "6e0a26030f436600fe462d9d78840de6619ae780766243d2f4e20e67f693ac26"
     },
     {
       "path": "redteam/elf64_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4291,
-      "sha256": "fe619ba9229108aa6003d705f9890b20fc91033a1ef8f7f04246d9effc6159d1"
+      "size": 8149,
+      "sha256": "4a2ea7129c5960f49884c80fd75addbf93ec9b807e70ba7048d9864e4f8ffc8a"
     },
     {
       "path": "redteam/elf64_triage/solutions/benchmarks/benchmark.py",
@@ -1035,8 +1046,8 @@
     },
     {
       "path": "redteam/elf64_triage/solutions/benchmarks/elf64_benchmark.py",
-      "size": 992,
-      "sha256": "3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95"
+      "size": 3110,
+      "sha256": "748d98a4d1db1e4669e3967d769d6f372301d53ff1d0221c62404b90af5beea9"
     },
     {
       "path": "redteam/elf64_triage/solutions/CMakeLists.txt",
@@ -1045,18 +1056,18 @@
     },
     {
       "path": "redteam/elf64_triage/solutions/docs/architecture.md",
-      "size": 194,
-      "sha256": "27b3ad915d390d0938474e87be94427edaad3c2ade9251df1e9209e3a3585aea"
+      "size": 537,
+      "sha256": "75b5e91d0e03a71f40ef66e207186114b8c25e1819425307a251c8ec8d5e1376"
     },
     {
       "path": "redteam/elf64_triage/solutions/MILESTONES.md",
-      "size": 237,
-      "sha256": "25e34c08882ed67d200e48317306b7e9d0cbe8b963dd7ca1357dcb6fe43d558f"
+      "size": 302,
+      "sha256": "90d1250490a0e495634688428b7c4f492dae6312fc4a83f40c0175d3401d268b"
     },
     {
       "path": "redteam/elf64_triage/solutions/README.md",
-      "size": 1457,
-      "sha256": "ecedfc78df534476842b08a7bc0268536eaa69ab215b9dd8f40bf18ed0e98fdc"
+      "size": 1396,
+      "sha256": "46a277b6ee3e56b6d605b4f3b13b1580efa7bc03e31d6bc8fd83eb64cad459d6"
     },
     {
       "path": "redteam/elf64_triage/solutions/rules/lab_target.yar",
@@ -1075,8 +1086,8 @@
     },
     {
       "path": "redteam/elf64_triage/solutions/tests/test_elf64.py",
-      "size": 1798,
-      "sha256": "01ebbc4e1391b9d700a842af2d1ffff1745807b30e6c467b5e2d266ecf4babc0"
+      "size": 5616,
+      "sha256": "d7758da74fde9f4d67ccafa437c2139ec197bbf818e28e6017a9a85c5739d2c0"
     },
     {
       "path": "redteam/elf64_triage/solutions/tools/__init__.py",
@@ -1090,18 +1101,18 @@
     },
     {
       "path": "redteam/elf64_triage/solutions/tools/elf64.py",
-      "size": 1239,
-      "sha256": "a022860aa5d1fe362bb61c4d283c1a19dbe295e5aa9883b16bcfcc84d442f0ec"
+      "size": 5717,
+      "sha256": "58289d032cd34007394d71b85a39f436541f1bb440adfc2e02f01e854c25b0fa"
     },
     {
       "path": "redteam/elf64_triage/starter/benchmarks/elf64_benchmark.py",
-      "size": 992,
-      "sha256": "3a676e68c9234fa4c06161d6d00828052e5376a3ed814f6d26b957c7d15f4f95"
+      "size": 3110,
+      "sha256": "748d98a4d1db1e4669e3967d769d6f372301d53ff1d0221c62404b90af5beea9"
     },
     {
       "path": "redteam/elf64_triage/starter/README.md",
-      "size": 136,
-      "sha256": "00a5d1fb628b00cbfae220fcbc7f40b80172593a332707ada370a727cad68b11"
+      "size": 290,
+      "sha256": "b4cf19c0f7a23a660ceb889cf0c17b67a1ebe3ae1ab8fc9bd3f15e5bf87f2435"
     },
     {
       "path": "redteam/elf64_triage/starter/rules/lab_target.yar",
@@ -1120,8 +1131,8 @@
     },
     {
       "path": "redteam/elf64_triage/starter/tests/test_elf64.py",
-      "size": 1798,
-      "sha256": "01ebbc4e1391b9d700a842af2d1ffff1745807b30e6c467b5e2d266ecf4babc0"
+      "size": 5616,
+      "sha256": "d7758da74fde9f4d67ccafa437c2139ec197bbf818e28e6017a9a85c5739d2c0"
     },
     {
       "path": "redteam/elf64_triage/starter/tools/__init__.py",
@@ -1135,23 +1146,23 @@
     },
     {
       "path": "redteam/elf64_triage/starter/tools/elf64.py",
-      "size": 529,
-      "sha256": "9f103e6e9a807eff2009f7eda568e2e5c270de9431ab8d7dcb1e5f0b7fbe5df3"
+      "size": 1752,
+      "sha256": "933a0691c92f22ca481d7875b5ac9885702f9a553a7a9ac3becad0ce5c2c9c34"
     },
     {
       "path": "redteam/elf64_triage/TEORIA_PASSO_A_PASSO.md",
-      "size": 3999,
-      "sha256": "256108fc4869d66855d560e61becbc28a53534d80627a4c5a9b16789b0ef71ff"
+      "size": 9217,
+      "sha256": "90da9788d951dce4f1c64f38da959d2e9e5ed5f221f2864bb7479af0cc8e2ee4"
     },
     {
       "path": "redteam/elf64_triage/TESTES_GUIADOS.md",
-      "size": 1182,
-      "sha256": "29bd4ed8bd37036d5082f116cfafbdbcc209880eb273ff900f73c22eb86c7b0a"
+      "size": 1750,
+      "sha256": "926502a6b41363145ae903fa8d52412232b14290deb3245771380861a68756bc"
     },
     {
       "path": "START_HERE.md",
-      "size": 1823,
-      "sha256": "7e6330ea7813fa8537de85f6f4584a3d70edbbb2e39605a0c3f92715582dcdef"
+      "size": 2542,
+      "sha256": "7a708f4461b9bb70ff634543ce131073dd8c721579f415eeed5fa3af7d3c5037"
     },
     {
       "path": "systems/arena_allocator/BENCHMARK_GUIADO.md",
@@ -1165,18 +1176,18 @@
     },
     {
       "path": "systems/arena_allocator/PESQUISA_GUIADA.md",
-      "size": 1007,
-      "sha256": "4cdf4e0b0df8242bfea2b2c4ba9fdbdbb4673c0207c683e91079d8f18c170d26"
+      "size": 1438,
+      "sha256": "b9e331d3a24623f4926bd5d41acc6e8bbd0284dd15c61dec81233753aac45e9a"
     },
     {
       "path": "systems/arena_allocator/README.md",
-      "size": 517,
-      "sha256": "339607228afc703a981e27bbbb86cbac5b13768d31bffd0bce97657cff4fc7ad"
+      "size": 982,
+      "sha256": "0d51a846ad2ed871230e03987b1b2b602382ded0f6fa6dec284af1db63a649ab"
     },
     {
       "path": "systems/arena_allocator/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5921,
-      "sha256": "18b595530ffcdbc09164ee51ecfa219bddd286da1d65c812a40aab12516b8e0f"
+      "size": 8985,
+      "sha256": "7258c229d572369282fb5d4065d1b70e38c4485e49d4123c501a759279213617"
     },
     {
       "path": "systems/arena_allocator/solutions/benchmarks/arena_benchmark.cpp",
@@ -1250,8 +1261,8 @@
     },
     {
       "path": "systems/arena_allocator/TEORIA_PASSO_A_PASSO.md",
-      "size": 6515,
-      "sha256": "322658046bf28a98aafa75e6464eb59bb534984efac5921f6558884914c09a36"
+      "size": 3990,
+      "sha256": "3dc763bc4f1ed265e1485c21faad2072b9e61b5782a25713b34195900ca4dc96"
     },
     {
       "path": "systems/arena_allocator/TESTES_GUIADOS.md",
@@ -1260,8 +1271,13 @@
     },
     {
       "path": "TODO_MAP.md",
-      "size": 2353,
-      "sha256": "fce66413002ccf4fda9097ee55ee6d868cdbd04b4a187d7d87fbf8ada5404626"
+      "size": 2699,
+      "sha256": "8fa8dee112e2270262bc1a89b8ada7e1242c497679257c1aef0bf43cf15f5ba6"
+    },
+    {
+      "path": "Treino_LowLevel_Unificado_2026-09-04.docx",
+      "size": 96909,
+      "sha256": "798e12e88259f46d3889192ca86f6082f9b5d50f86d51bcd8a3ffa0ae4637c88"
     },
     {
       "path": "Treino_LowLevel_Unificado_2026-09-04_CORRIGIDO_FINAL.docx",
@@ -1270,8 +1286,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "size": 2621,
-      "sha256": "9e52ef744ebd1534645c5b566b8bdd17b239c8e43047f9cb0689dfb236bea182"
+      "size": 2637,
+      "sha256": "a3da7c1a3c352789474b8fbe839ddc1fb9fad1bd17a855d79b681862a0ad9b36"
     }
   ]
 }

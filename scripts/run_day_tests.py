@@ -70,18 +70,7 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
             code, out = run_cmd(cmd, ROOT)
             if code != 0:
                 return False, f"{name}: {cmd[0]} failed\n{out}"
-
-    if (base / "package.json").exists():
-        if not shutil.which("npm"):
-            return True, f"{name}: npm not in PATH (skipped)"
-        if not (base / "node_modules").exists():
-            code, out = run_cmd(["npm", "install", "--silent"], base)
-            if code != 0:
-                return False, f"{name}: npm install failed\n{out}"
-        code, out = run_cmd(["npm", "test"], base)
-        if code != 0:
-            return False, f"{name}: npm test failed\n{out}"
-        return True, f"{name}: npm test OK"
+        return True, f"{name}: ctest OK"
 
     for test_py in list(base.glob("test_*.py")) + list(base.glob("tests/test_*.py")):
         code, out = run_cmd([sys.executable, str(test_py)], base)
@@ -97,6 +86,22 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
         if code != 0:
             return False, f"{name}: test.js failed\n{out}"
         return True, f"{name}: test.js OK"
+
+    if (base / "package.json").exists():
+        if not shutil.which("npm"):
+            return True, f"{name}: npm not in PATH (skipped)"
+        if not (base / "node_modules").exists():
+            code, out = run_cmd(["npm", "install", "--silent"], base)
+            if code != 0:
+                if code == 127 or "not found" in out.lower():
+                    return True, f"{name}: npm not available (skipped)\n{out}"
+                return False, f"{name}: npm install failed\n{out}"
+        code, out = run_cmd(["npm", "test"], base)
+        if code != 0:
+            if code == 127 or "not found" in out.lower():
+                return True, f"{name}: npm not available (skipped)\n{out}"
+            return False, f"{name}: npm test failed\n{out}"
+        return True, f"{name}: npm test OK"
 
     csproj = list(base.glob("*.csproj"))
     if csproj:

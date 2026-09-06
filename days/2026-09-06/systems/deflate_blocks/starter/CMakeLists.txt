@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(deflate_blocks CXX)
+set(CMAKE_CXX_STANDARD 17)
+enable_testing()
+add_executable(test_deflate bit_stream.cpp deflate.cpp test_deflate.cpp)
+add_test(NAME deflate_blocks COMMAND test_deflate)

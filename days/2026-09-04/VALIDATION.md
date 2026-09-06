@@ -6,7 +6,7 @@ Data: 2026-09-04
 
 | Gate | Resultado | Detalhe |
 |------|-----------|---------|
-| `pedagogy_check_unified.py --day 2026-09-04` | **PASS** | 11 módulos, 43 mapeamentos starter TODO |
+| `pedagogy_check_unified.py --day 2026-09-04` | **PASS** | 11 módulos, 48 mapeamentos starter TODO |
 | `quality_check.py` (repo) | **FAIL pré-existente** | linhas longas em outros dias (`2026-09-03`, `2026-09-05`, `2026-09-05-v2`); Day 02 não introduziu novas violações |
 | Critério TEORIA ≥ 120 linhas + diagramas | **PASS** | 11/11 módulos (122–231 linhas; blocos `text`/`mermaid`) |
 | EXERCICIOS.md | **PASS** | 11/11 presentes |
@@ -37,7 +37,7 @@ python scripts/run_day_tests.py --day 2026-09-04 --mode solutions
 ## Arquivos de pacote criados/atualizados
 
 - `START_HERE.md` — roteiro do dia com ordem sugerida dos 11 módulos
-- `TODO_MAP.md` — 44 IDs `D2-*` mapeados
+- `TODO_MAP.md` — 48 IDs `D2-*` mapeados
 - `MANIFEST.json` — inventário com SHA-256 de todos os arquivos do dia
 - `VALIDATION.md` — este documento
 
@@ -47,4 +47,4 @@ Medições documentadas por módulo em `*/BENCHMARK_GUIADO.md` seção **Resulta
 
 ## Resumo pedagógico
 
-Upgrade completo in-place dos 11 módulos Day 02: teoria expandida (especialmente PE/CLI, Node streams e JS VM), exercícios novos nas 4 trilhas gerenciadas, resoluções com relatório operacional, benchmarks com observações reais ou declaração de skip, e projetos .NET legíveis.
+Currículo Day 02: `blocked_merge_sort` (substitui sorting CS101), `graphics_reference` com dirty-rect/frame pacing, `elf64_triage` com Phdr/Shdr/dynsym; teoria/resolução no padrão clvm; 48 TODOs mapeados; `run_day_tests --mode solutions` 11/11 (npm/.NET skip quando SDK ausente).

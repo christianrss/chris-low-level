@@ -1,41 +1,68 @@
-# Resolução guiada passo a passo — .NET — CIL Tiny Decoder
+# RESOLUÇÃO GUIADA — .NET / CIL Tiny Decoder
 
 ## Mapa exato starter → resolução
 
-- `CLR-IL-OPCODE-01` → `starter/Program.cs` (`CilDecoder.Decode` — casos `0x1F`, `0x58`, `0x2A`)
-- `CLR-IL-OPERAND-02` → `starter/Program.cs` (`CilDecoder.Decode` — leitura de `sbyte` após `0x1F` + rejeição de truncamento)
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `CLR-IL-OPCODE-01` | `starter/Program.cs` | `CilDecoder.Decode` — casos `0x1F`, `0x58`, `0x2A` |
+| `CLR-IL-OPERAND-02` | `starter/Program.cs` | operando `sbyte` após `0x1F` + truncamento |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST [ID]` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` / `PEDAGOGY-TEST [ID]` no mesmo `Program.cs` (asserts em `Main`).
 
-> Trabalhe em `days/2026-09-05/dotnet/cil_tiny_decoder/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+> Trabalhe em `days/2026-09-05/dotnet/cil_tiny_decoder/starter/`. `solutions/` é gabarito — consulte só depois da tentativa.
 
-## 0. Preparar o projeto
+> Não comece copiando `solutions/`. Rode `dotnet run` após cada caso do switch.
 
-Na raiz do repositório:
+---
 
-```bash
-dotnet run --project days/2026-09-05/dotnet/cil_tiny_decoder/starter/Chris.IlLab.csproj
+## CLR-IL-OPCODE-01 — reconhecer opcodes
+
+### 1. O problema (starter stub)
+
+```csharp
+// TODO [CLR-IL-OPCODE-01]: reconhecer ldc.i4.s, add e ret
+// TODO [CLR-IL-OPERAND-02]: consumir int8 assinado após 0x1F
+switch (opcode)
+{
+default:
+    throw new InvalidDataException($"unsupported opcode 0x{opcode:X2}");
+}
 ```
 
-O build deve funcionar. A execução **deve falhar** com `InvalidDataException` (opcode `0x1F` cai no `default` do `switch` vazio) ou `Exception: decode count`. Esse é o baseline.
+Bytecode do `Main`: `1F 05 1F 07 58 2A`. Com switch vazio, `0x1F` cai no `default` → `InvalidDataException`.
 
-## `CLR-IL-OPCODE-01` — reconhecer ldc.i4.s, add e ret
-
-### Arquivo
-
-Abra:
+### 2. O algoritmo
 
 ```text
-starter/Program.cs
+para cada byte opcode em code[i++]:
+  0x58 → emitir Instruction(offset, "add", null)
+  0x2A → emitir Instruction(offset, "ret", null)
+  0x1F → (CLR-IL-OPERAND-02) ler sbyte e emitir "ldc.i4.s"
+  outro → InvalidDataException
 ```
 
-Localize o `switch (opcode)` dentro de `CilDecoder.Decode` e substitua o bloco `default` isolado por casos completos:
+Tabela ECMA-335 (lab):
+
+| Opcode | Nome | Tamanho |
+|--------|------|---------|
+| `0x1F` | `ldc.i4.s` | 1 + 1 (int8) |
+| `0x58` | `add` | 1 |
+| `0x2A` | `ret` | 1 |
+
+### 3. Código completo (opcodes fixos + esqueleto ldc)
+
+No `switch` de `CilDecoder.Decode` em `starter/Program.cs`:
 
 ```csharp
 switch (opcode)
 {
 case 0x1F:
-    // operando preenchido no passo CLR-IL-OPERAND-02
+    // completar em CLR-IL-OPERAND-02
+    if (i >= code.Length)
+    {
+        throw new InvalidDataException("truncated operand");
+    }
+    result.Add(new(offset, "ldc.i4.s", unchecked((sbyte)code[i++])));
     break;
 case 0x58:
     result.Add(new(offset, "add", null));
@@ -48,25 +75,40 @@ default:
 }
 ```
 
-### Por que funciona?
+(Implementar `0x1F` junto fecha os dois TODOs de uma vez — o starter marca ambos no mesmo switch.)
 
-`0x58` e `0x2A` são opcodes de tamanho fixo (1 byte). O decoder registra o offset do opcode e avança `i` implicitamente na próxima iteração do `for`.
+### 4. Por que funciona?
 
-### Verificação manual
+- `offset = i` **antes** do `code[i++]`: a instrução reporta o PC do opcode, não do operando.
+- `add`/`ret` não consomem bytes extras; o `for` avança só pelo opcode.
+- Opcode desconhecido continua no `default` — contrato defensivo do decoder.
 
-Após implementar só `add` e `ret` (sem `ldc` completo), o decode do buffer de teste ainda falha — falta o caso `0x1F`. Isso confirma que os três casos são necessários.
+### 5. Verificação parcial
 
-### Checkpoint
+```bash
+dotnet run --project days/2026-09-05/dotnet/cil_tiny_decoder/starter/Chris.IlLab.csproj
+```
 
-Você ainda não deve ver `OK CIL` até completar o operando de `ldc.i4.s`.
+Com `0x58`/`0x2A` só: ainda falha em `0x1F`. Com os três casos + operando: deve imprimir `OK CIL`.
 
 ---
 
-## `CLR-IL-OPERAND-02` — operando int8 após 0x1F
+## CLR-IL-OPERAND-02 — int8 assinado e truncamento
 
-### Arquivo
+### 1. O problema
 
-No mesmo `switch`, complete o caso `0x1F`:
+`ldc.i4.s` precisa de exatamente um byte após `0x1F`. Buffer `[0x1F]` sozinho deve lançar `InvalidDataException` (`truncated accepted` no `Main` se aceitar).
+
+### 2. O algoritmo
+
+```text
+após ler opcode 0x1F:
+  se i ≥ code.Length → InvalidDataException("truncated operand")
+  operand ← (sbyte)code[i++]   // reinterpretar byte como signed
+  emitir Instruction(offset, "ldc.i4.s", operand)
+```
+
+### 3. Código completo (caso `0x1F`)
 
 ```csharp
 case 0x1F:
@@ -78,23 +120,13 @@ case 0x1F:
     break;
 ```
 
-### Por que funciona?
+### 4. Por que funciona?
 
-`ldc.i4.s` exige exatamente 1 byte de operando logo após o opcode. `unchecked((sbyte)...)` reinterpreta o byte como signed (-128..127). A checagem `i >= code.Length` garante que `[0x1F]` sozinho lance exceção.
+- `i >= code.Length` após consumir o opcode: não há operando → falha explícita.
+- `unchecked((sbyte)…)`: byte `0x05` → 5; byte `0xFF` → −1 (ECMA signed).
+- `i++` no operando: o próximo opcode começa no byte seguinte (`0x58` após o segundo ldc).
 
-### Verificação manual
-
-```text
-Decode([0x1F, 0x05, 0x1F, 0x07, 0x58, 0x2A])
-→ 4 instruções
-→ [0].Operand == 5
-→ [2].Name == "add"
-→ [3].Name == "ret"
-
-Decode([0x1F]) → InvalidDataException
-```
-
-### Checkpoint
+### 5. Verificação
 
 ```bash
 dotnet run --project days/2026-09-05/dotnet/cil_tiny_decoder/starter/Chris.IlLab.csproj
@@ -106,46 +138,45 @@ Saída esperada:
 OK CIL
 ```
 
+Trace manual:
+
+```text
+1F 05 → ldc.i4.s 5   (offset 0)
+1F 07 → ldc.i4.s 7   (offset 2)
+58    → add          (offset 4)
+2A    → ret          (offset 5)
+Count = 4; [0].Operand = 5; [2].Name = "add"; [3].Name = "ret"
+Decode([0x1F]) → InvalidDataException
+```
+
+Debug: se `Operand` for 5 mas Count ≠ 4, um caso não adiciona `Instruction`. Se truncado passa: falta o `if (i >= code.Length)`.
+
 ---
 
-## Rode os testes novamente
+## Mapa de consistência auditada
 
-O próprio `Program.Main` embute os asserts pedagógicos (não há projeto de teste separado). Confirme:
-
-1. `instructions.Count == 4`
-2. `instructions[0].Operand == 5`
-3. `instructions[2].Name == "add"`
-4. Buffer truncado `[0x1F]` lança `InvalidDataException`
-
-## Como depurar se falhar
-
-- `decode count`: `ldc.i4.s` não adiciona instrução ou operando lido errado — conte instruções no trace manual.
-- `truncated accepted`: falta `if (i >= code.Length)` antes de ler operando.
-- Operand negativo inesperado: você leu como `byte` em vez de `sbyte`.
-- `unsupported opcode 0x1F`: caso `0x1F` ainda cai no `default`.
-
-## Solução final comentada
-
-Compare `starter/Program.cs` com `solutions/Program.cs`. Justifique: ordem de leitura, `unchecked` para signed, e separação entre opcodes com e sem operando.
+- `CLR-IL-OPCODE-01` — `starter/Program.cs` → `solutions/Program.cs`.
+- `CLR-IL-OPERAND-02` — `starter/Program.cs` → `solutions/Program.cs`.
 
 ## Relatório de resolução
 
-| ID | Arquivo | Resultado esperado |
-|----|---------|-------------------|
-| CLR-IL-OPCODE-01 | `Program.cs` | `0x58`→`add`, `0x2A`→`ret`; desconhecido lança |
-| CLR-IL-OPERAND-02 | `Program.cs` | `0x1F`+byte → `ldc.i4.s` com `sbyte`; truncado lança |
+### O que foi validado
 
-Critério de aceite: `dotnet run` imprime `OK CIL` sem exceção.
+- TODOs `CLR-IL-OPCODE-01` e `CLR-IL-OPERAND-02` no switch de `CilDecoder.Decode`.
+- Asserts embutidos em `Main` (`PEDAGOGY-TEST`): 4 instruções, operando 5, `add`/`ret`, truncado rejeitado.
+- Starter falha com `unsupported opcode 0x1F` até os casos existirem.
 
-### Template do relatório
+### Armadilhas encontradas
 
-```
-Aluno:
-Módulo: .NET — CIL Tiny Decoder
-Data:
+- Ler operando como `byte`/`int` sem cast `sbyte`.
+- Esquecer checagem de truncamento.
+- Usar `offset` depois de `i++` no opcode (offset errado).
 
-1. TODOs: CLR-IL-OPCODE-01, CLR-IL-OPERAND-02
-2. Primeira falha: [ex.: InvalidDataException em 0x1F]
-3. Correção aplicada: [ex.: switch com casos + leitura sbyte]
-4. Evidência: [colar saída OK CIL]
-```
+### Depuração e saída esperada
+
+- **Depuração:** imprima `offset`, `opcode:X2` e `result.Count` a cada iteração.
+- **Saída esperada:** `OK CIL`.
+
+### Próximo passo sugerido
+
+Refazer o decoder sem a resolução. Depois meça throughput de decode em `BENCHMARK_GUIADO.md`.

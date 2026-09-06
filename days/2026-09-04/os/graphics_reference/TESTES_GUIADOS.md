@@ -12,7 +12,7 @@ cmake --build starter/build
 ctest --test-dir starter/build --output-on-failure
 ```
 
-**Antes de implementar:** build passa; `Surface::index`/compositor incompletos fazem o teste falhar.
+**Antes de implementar:** build passa; `Surface::index`/compositor/dirty/pace incompletos fazem o teste falhar.
 
 ## Mapa TODO → teste
 
@@ -36,6 +36,16 @@ ctest --test-dir starter/build --output-on-failure
 - Validação: layers são aplicadas em ordem, com offsets e clipping.
 - Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-COMPOSE`
 
+### `D2-GFX-DIRTY-RECT`
+- Arquivo: `starter/src/graphics.cpp`
+- Validação: `fill_rect` e blit de layer unem dirty AABB; `take_dirty_union` limpa; clip negativo marca só a interseção.
+- Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-DIRTY-RECT`
+
+### `D2-GFX-FRAME-PACE`
+- Arquivo: `starter/src/graphics.cpp`
+- Validação: `compose_with_damage` full-screen ≡ `compose`; damage parcial preserva pixels fora e reporta `pixels_touched` / `dirty_area`.
+- Marcador no código de teste: `PEDAGOGY-TEST: D2-GFX-FRAME-PACE`
+
 ## Depois de concluir
 
 Rode novamente o mesmo comando. Resultado esperado:
@@ -43,4 +53,4 @@ Rode novamente o mesmo comando. Resultado esperado:
 - `chris-os graphics reference tests passed`.
 - Não remova/afrouxe asserts para “fazer passar”.
 - Compare com `solutions/` somente depois de seu starter ficar verde.
-- Acrescente pelo menos um edge case próprio e anote qual regressão ele detectaria.
+- Acrescente um edge case próprio (ex.: damage totalmente fora dos bounds → `pixels_touched == 0`).

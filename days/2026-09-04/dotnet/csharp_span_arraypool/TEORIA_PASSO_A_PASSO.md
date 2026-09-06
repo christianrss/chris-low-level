@@ -6,6 +6,18 @@ Serviços de rede frequentemente precisam montar headers pequenos. Criar `byte[]
 
 Em microserviços de alta taxa de mensagens, alocações de curta duração dominam perfis de GC gen0 — pools e spans são ferramentas para reduzir churn sem sacrificar segurança de tipos.
 
+### O quê
+
+`FrameCodec` grava/lê um header fixo de 8 bytes (LE) e monta frames via `ArrayPool` + `PooledFrame`.
+
+### Como
+
+`BinaryPrimitives` em `Span`/`ReadOnlySpan`; `Rent` → `WriteHeader` → copiar payload → `Dispose` devolve o array uma vez (`Interlocked.Exchange`).
+
+### Por quê
+
+Separar view (`Span`) de ownership (`PooledFrame`) evita use-after-return e reduz churn de `byte[]` no hot path — o padrão de Kestrel/pipelines, em escala de lab.
+
 ## 2. `Span<T>` não é dono da memória
 
 `Span<byte>` descreve uma região contígua. Ele pode apontar para array, `stackalloc` ou memória nativa, mas não gerencia o lifetime do backing store. Isso explica por que `Span<T>` é `ref struct` e não pode ser campo de classe async.

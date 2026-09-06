@@ -1,168 +1,214 @@
-# Resolução guiada passo a passo — Systems — alocador bitmap de páginas
+# RESOLUÇÃO GUIADA — Systems / Bitmap page allocator
 
 ## Mapa exato starter → resolução
 
-- `SYS-PAGE-ALLOC-01` → `starter/page_allocator.cpp` (`trace_page_to_bit`, `is_used`, `allocate`)
-- `SYS-PAGE-FREE-02` → `starter/page_allocator.cpp` (`set_used`, `free_page`)
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `SYS-PAGE-ALLOC-01` | `starter/page_allocator.cpp` | `trace_page_to_bit`, `is_used`, `allocate` |
+| `SYS-PAGE-FREE-02` | `starter/page_allocator.cpp` | `set_used`, `free_page` |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito e `PEDAGOGY-TEST: ID` em `starter/test_page_allocator.cpp`.
 
-> Trabalhe em `days/2026-09-05/systems/bitmap_page_allocator/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+> Trabalhe em `days/2026-09-05/systems/bitmap_page_allocator/starter/`. `solutions/` é gabarito — consulte só depois da tentativa.
 
-## 0. Preparar o projeto
+> Não comece copiando `solutions/`. Compile e rode `ctest` após cada bloco.
 
-Na raiz do repositório:
+---
 
-```bash
-cmake -S days/2026-09-05/systems/bitmap_page_allocator/starter -B days/2026-09-05/systems/bitmap_page_allocator/starter/build
-cmake --build days/2026-09-05/systems/bitmap_page_allocator/starter/build
-ctest --test-dir days/2026-09-05/systems/bitmap_page_allocator/starter/build --output-on-failure
-```
+## SYS-PAGE-ALLOC-01 — mapeamento, consulta e allocate
 
-O build deve funcionar. O teste **deve falhar** enquanto os TODOs existirem — `trace_page_to_bit(13)` espera byte 1, bit 5.
-
-## Exercício fácil — `trace_page_to_bit` (SYS-PAGE-ALLOC-01)
-
-### Arquivo
-
-Abra:
-
-```text
-starter/page_allocator.cpp
-```
-
-Localize:
+### 1. O problema (starter stub)
 
 ```cpp
 PageBitTrace trace_page_to_bit(std::size_t page) {
-```
-
-Substitua o corpo por:
-
-```cpp
-return {page, page / 8, page % 8};
-```
-
-### Por que funciona?
-
-Cada byte cobre 8 páginas consecutivas. Divisão inteira `page / 8` seleciona o byte; resto `page % 8` seleciona o bit dentro desse byte. Para página 13: byte 1 (páginas 8–15), bit 5.
-
-### Verificação manual
-
-| page | byte_index | bit_index |
-|-----:|-----------:|----------:|
-| 0    | 0          | 0         |
-| 7    | 0          | 7         |
-| 8    | 1          | 0         |
-| 13   | 1          | 5         |
-
-## Exercício médio — `is_used` e `set_used`
-
-### `is_used`
-
-Localize `PageAllocator::is_used` e substitua por:
-
-```cpp
-if (page >= page_count_) {
+    // TODO [SYS-PAGE-ALLOC-01]: retornar page, byte_index (page/8), bit_index (page%8)
+    return {page, 0, 0};
+}
+bool PageAllocator::is_used(std::size_t page) const {
+    // TODO [SYS-PAGE-ALLOC-01]: consultar bit no bitmap
     return true;
 }
-return (bits_[page / 8] & static_cast<std::uint8_t>(1u << (page % 8))) != 0;
-```
-
-### Por que funciona?
-
-A máscara `1u << (page % 8)` isola exatamente um bit no byte. `&` diferente de zero significa página usada. Out-of-range retorna `true` para que `allocate` nunca “encontre” uma página inválida como livre.
-
-### `set_used`
-
-Localize `PageAllocator::set_used`:
-
-```cpp
-auto mask = static_cast<std::uint8_t>(1u << (page % 8));
-if (used) {
-    bits_[page / 8] |= mask;
-} else {
-    bits_[page / 8] &= static_cast<std::uint8_t>(~mask);
+int PageAllocator::allocate() {
+    // TODO [SYS-PAGE-ALLOC-01]: primeira página livre ou -1 (OOM)
+    return -1;
 }
 ```
 
-### Por que funciona?
+`is_used` sempre `true` → `allocate` nunca encontra página livre → teste espera 0,1,2 depois `-1`.
 
-`|=` liga o bit sem afetar os outros; `&= ~mask` limpa só aquele bit. Usar `std::uint8_t` evita promoção signed inesperada na máscara.
+### 2. O algoritmo
 
-## Exercício difícil — `allocate` (SYS-PAGE-ALLOC-01)
+```text
+trace(page):
+  return {page, page/8, page%8}
 
-Localize `PageAllocator::allocate`:
+is_used(page):
+  se page ≥ page_count_ → true   // inexistente = não alocável
+  return (bits_[page/8] & (1 << (page%8))) ≠ 0
+
+allocate():
+  para page em 0 .. page_count_-1:
+    se !is_used(page):
+      set_used(page, true)
+      return (int)page
+  return -1
+```
+
+### 3. Código completo
+
+Em `starter/page_allocator.cpp` (API de `page_allocator.hpp` — `set_used` é privado):
 
 ```cpp
-for (std::size_t page = 0; page < page_count_; ++page) {
-    if (!is_used(page)) {
-        set_used(page, true);
-        return static_cast<int>(page);
+PageBitTrace trace_page_to_bit(std::size_t page) {
+    return {page, page / 8, page % 8};
+}
+
+bool PageAllocator::is_used(std::size_t page) const {
+    if (page >= page_count_) {
+        return true;
     }
+    return (bits_[page / 8] & static_cast<std::uint8_t>(1u << (page % 8))) != 0;
 }
-return -1;
+
+int PageAllocator::allocate() {
+    for (std::size_t page = 0; page < page_count_; ++page) {
+        if (!is_used(page)) {
+            set_used(page, true);
+            return static_cast<int>(page);
+        }
+    }
+    return -1;
+}
 ```
 
-### Por que funciona?
+`set_used` ainda é stub: implemente `SYS-PAGE-FREE-02` antes do teste passar (allocate chama `set_used`).
 
-Scan linear da menor página livre garante ordem 0, 1, 2… como o teste espera. Marcar antes de retornar evita race lógica (em single-thread, duas chamadas seguidas não recebem a mesma página). `-1` sinaliza OOM quando o loop termina sem candidato.
+### 4. Por que funciona?
 
-## Exercício final — `free_page` (SYS-PAGE-FREE-02)
+- `page/8` e `page%8`: 8 páginas por byte; página 13 → byte 1, bit 5 (máscara `0x20`).
+- Out-of-range como “usada”: `allocate` nunca devolve índice inválido.
+- Scan 0…n−1: ordem determinística que o teste exige (0,1,2).
+- Marcar antes de retornar: duas `allocate()` seguidas não pegam a mesma página.
 
-Localize `PageAllocator::free_page`:
+### 5. Verificação parcial
+
+```powershell
+cd E:\Aulas\low-level-unified-portfolio\days\2026-09-05\systems\bitmap_page_allocator\starter
+cmake -S . -B build
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
+```
+
+Com só ALLOC e `set_used` stub vazio, bits nunca mudam → `allocate` pode repetir 0 ou OOM. Complete FREE a seguir.
+
+Trace esperado para página 13: `{13, 1, 5}`.
+
+---
+
+## SYS-PAGE-FREE-02 — set bit e free com double-free
+
+### 1. O problema (starter stub)
 
 ```cpp
-if (page >= page_count_ || !is_used(page)) {
+void PageAllocator::set_used(std::size_t page, bool used) {
+    // TODO [SYS-PAGE-FREE-02]: setar ou limpar bit
+}
+bool PageAllocator::free_page(std::size_t page) {
+    // TODO [SYS-PAGE-FREE-02]: liberar página usada; rejeitar double-free
     return false;
 }
-set_used(page, false);
-return true;
 ```
 
-### Por que funciona?
+Sem `set_used`, allocate não persiste estado. Sem guard em `free_page`, double-free passa.
 
-`!is_used(page)` cobre double-free e liberação de página nunca alocada — o bit já está 0, então retorna `false` sem corromper estado. Só páginas válidas e usadas passam para `set_used(false)`.
+### 2. O algoritmo
 
-## Rode os testes novamente
+```text
+set_used(page, used):
+  mask ← uint8(1 << (page % 8))
+  se used: bits_[page/8] |= mask
+  senão:   bits_[page/8] &= ~mask
 
-```bash
-cmake --build days/2026-09-05/systems/bitmap_page_allocator/starter/build
-ctest --test-dir days/2026-09-05/systems/bitmap_page_allocator/starter/build --output-on-failure
+free_page(page):
+  se page ≥ page_count_ ou !is_used(page) → false
+  set_used(page, false)
+  return true
 ```
 
-Saída esperada:
+### 3. Código completo
+
+```cpp
+void PageAllocator::set_used(std::size_t page, bool used) {
+    auto mask = static_cast<std::uint8_t>(1u << (page % 8));
+    if (used) {
+        bits_[page / 8] |= mask;
+    } else {
+        bits_[page / 8] &= static_cast<std::uint8_t>(~mask);
+    }
+}
+
+bool PageAllocator::free_page(std::size_t page) {
+    if (page >= page_count_ || !is_used(page)) {
+        return false;
+    }
+    set_used(page, false);
+    return true;
+}
+```
+
+### 4. Por que funciona?
+
+- `|=` / `&= ~mask`: altera um bit sem tocar nos vizinhos no mesmo byte.
+- `uint8_t` na máscara: evita promoção signed em shifts.
+- `!is_used` cobre double-free e never-allocated; `page >= page_count_` cobre `free_page(99)`.
+- Após `free_page(1)`, o próximo `allocate()` devolve 1 (menor livre).
+
+### 5. Verificação
+
+```powershell
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
+```
+
+Saída esperada do executável:
 
 ```text
 OK page allocator
-100% tests passed
 ```
 
-## Como depurar se falhar
+Trace do Caso OOM (3 páginas):
 
-- **`trace.byte_index` errado para 13**: confira `page / 8` (não `% 8`).
-- **`allocate` retorna -1 cedo**: `is_used` provavelmente sempre `true` — stub não foi substituído.
-- **double-free passa**: `free_page` não checa `is_used` antes de limpar.
-- **OOM não acontece com 3 páginas**: loop deve ir até `page_count_`, não `bits_.size() * 8` sem limite.
-
-No GDB:
-
-```bash
-gdb --args days/2026-09-05/systems/bitmap_page_allocator/starter/build/chris_page_allocator_tests
+```text
+bits: 000 → 001 → 011 → 111 → allocate=-1
+free(1) → 101; allocate → 1; free(1) de novo → false
 ```
 
-Breakpoint em `allocate`; observe `bits_[0]` em hexadecimal após cada alocação.
+---
 
-## Solução final comentada
+## Mapa de consistência auditada
 
-Compare seu arquivo com `solutions/page_allocator.cpp`. Você deve conseguir justificar mapeamento page→bit, scan, OOM e rejeição de double-free.
+- `SYS-PAGE-ALLOC-01` — `starter/page_allocator.cpp` → `solutions/page_allocator.cpp`.
+- `SYS-PAGE-FREE-02` — `starter/page_allocator.cpp` → `solutions/page_allocator.cpp`.
 
 ## Relatório de resolução
 
-| ID | Função | Resultado esperado |
-|----|--------|-------------------|
-| SYS-PAGE-ALLOC-01 | `trace_page_to_bit` | página 13 → byte 1, bit 5 |
-| SYS-PAGE-ALLOC-01 | `is_used`, `allocate` | sequência 0,1,2; depois -1 |
-| SYS-PAGE-FREE-02 | `set_used`, `free_page` | libera 1; realoca 1; segunda free false |
+### O que foi validado
 
-Critério de aceite: `ctest` reporta `OK page allocator` e 100% dos testes. Se `free_page(99)` não retorna `false`, revise o guard `page >= page_count_`.
+- TODOs `SYS-PAGE-ALLOC-01` e `SYS-PAGE-FREE-02` em `starter/page_allocator.cpp`.
+- `PEDAGOGY-TEST`: trace página 13, sequência 0/1/2/−1, free+realloc, double-free, out-of-range.
+- Starter falha até bits e scan estarem corretos.
+
+### Armadilhas encontradas
+
+- Trocar `/` e `%` no mapeamento.
+- Scan até `bits_.size()*8` em vez de `page_count_` (bits fantasma no último byte).
+- `free_page` sempre `true` sem checar `is_used`.
+
+### Depuração e saída esperada
+
+- **Depuração:** imprima `bits_[0]` em hex após cada `allocate`/`free_page`.
+- **Saída esperada:** `OK page allocator`; `ctest` 100%.
+
+### Próximo passo sugerido
+
+Refazer sem a resolução. Meça scans em `BENCHMARK_GUIADO.md` (N grande, fragmentação artificial) e registre em **Resultados observados**.

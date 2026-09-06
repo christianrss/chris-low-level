@@ -9,7 +9,10 @@ https://refspecs.linuxfoundation.org/
 
 ## Pesquise
 - `ELF e_ident EI_CLASS EI_DATA`
-- `Elf64_Ehdr e_machine e_entry e_phoff e_shoff`
+- `Elf64_Ehdr e_machine e_entry e_phoff e_shoff e_phnum e_shnum e_shstrndx`
+- `Elf64_Phdr p_type p_offset p_vaddr p_filesz p_memsz` (56 bytes)
+- `Elf64_Shdr sh_name sh_type sh_offset sh_size` (64 bytes) + `.shstrtab`
+- `Elf64_Sym st_name st_value` (24 bytes) + `.dynsym` / `.dynstr`
 - `EM_X86_64 value 62`
 - `python struct unpack_from little endian`
 
@@ -17,11 +20,13 @@ https://refspecs.linuxfoundation.org/
 1. Qual é a magic ELF de 4 bytes?
 2. Qual valor de `EI_CLASS` identifica ELF64?
 3. Qual valor de `EI_DATA` identifica little-endian?
-4. Onde ficam `e_machine`, `e_entry`, `e_phoff`, `e_shoff`, `e_phnum`, `e_shnum` e `e_shstrndx` no header de 64 bytes?
-5. Por que um parser defensivo valida tamanho **antes** de `unpack_from`?
+4. Onde ficam `e_phoff`, `e_shoff`, `e_phnum`, `e_shnum` e `e_shstrndx`?
+5. Quais offsets relativos de `p_type`, `p_offset`, `p_vaddr`, `p_filesz`, `p_memsz` na Phdr de 56 B?
+6. Como `sh_name` se combina com a seção em `e_shstrndx`?
+7. Por que um parser defensivo valida tamanho **antes** de loops `phnum`/`shnum`?
 
 ## Limite de segurança
-Use somente fixtures e o `lab_target` produzido por este laboratório ou outros binários que você tenha autorização para analisar. O objetivo é formato/triagem, não evasão ou comprometimento.
+Use somente fixtures e o `lab_target` deste laboratório ou outros binários autorizados. Objetivo: formato/triagem, não evasão ou comprometimento. Sem conteúdo de malware.
 
 ## Registro do aluno
 
@@ -31,4 +36,4 @@ Use somente fixtures e o `lab_target` produzido por este laboratório ou outros 
 
 ## Checkpoint
 
-Antes de implementar o primeiro `TODO [ID]`, você deve conseguir explicar o conceito central **sem olhar a resolução**. Registre no Relatório de resolução se passou neste checkpoint.
+Antes do primeiro `TODO [ID]`, explique Ehdr→Phdr→Shstrtab→Dynsym **sem** olhar a resolução.

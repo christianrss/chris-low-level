@@ -33,4 +33,4 @@ The project currently scans only printable ASCII sequences and operates on files
 
 ## Day 02 extension
 
-Day 02 adds a strict ELF64 identification/header parser with synthetic fixtures, truncation/magic checks and no process access. It remains a defensive/educational binary-inspection tool for owned samples.
+Day 02 extends ELF64 triage beyond Ehdr: program headers, section headers (names via shstrndx), and dynamic symbol listing, still on synthetic fixtures with truncation/magic checks and no process access.

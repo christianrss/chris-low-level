@@ -1,0 +1,4091 @@
+{
+  "day": "2026-09-06",
+  "file_count": 817,
+  "files": [
+    {
+      "path": "ai/tensor_entropy_lab/BENCHMARK_GUIADO.md",
+      "size": 1013,
+      "sha256": "5aa9990cff3229186248a47b869f386d69d9e13d694889ff84be12861d493e62"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/EXERCICIOS.md",
+      "size": 765,
+      "sha256": "1115dd1a35b51dd67f1c60206227f52ef9f8276c8e70ff5f3695f5f04b787b35"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/PESQUISA_GUIADA.md",
+      "size": 1240,
+      "sha256": "46b9bde96dce2c0e2f8a01b25e6504ea7618591fe6a08368377586466168bc12"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/README.md",
+      "size": 1251,
+      "sha256": "d38df0ff71ed4867e2f9806a17d4c042f5f39ae582a237b3b87d3976669377bd"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4572,
+      "sha256": "90cd46bd26ea4d75c34df149e72e876f3fd8380b4466f6b60f4505349959b05c"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/solutions/entropy_lab.py",
+      "size": 1473,
+      "sha256": "82b6b2b955c3f241e495fdb890f454390cd76b779d6f15fd81a429760fcd938f"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/solutions/test_entropy_lab.py",
+      "size": 1119,
+      "sha256": "d5b7e431c1f925b064103a768cf249e90c03eb41936de31f0237ae803e5df40d"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/starter/entropy_lab.py",
+      "size": 1209,
+      "sha256": "ef5ae0dc9b20738e99611662d47ac4a8403339db48dca22c9a7f3336dcab042b"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/starter/test_entropy_lab.py",
+      "size": 1495,
+      "sha256": "ad1c7f4e2b7abeb8b58cd83aea73191b60baa451acd0b8dbd7d8d387a6d4bb52"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/TEORIA_PASSO_A_PASSO.md",
+      "size": 6445,
+      "sha256": "288bc2e767d0377911a2b501e9ba37ba263beb7c1b3833eafa8da6d16148c4d4"
+    },
+    {
+      "path": "ai/tensor_entropy_lab/TESTES_GUIADOS.md",
+      "size": 1331,
+      "sha256": "b5682a7dd843dc2f9b8e4414a9213c0512d45df5e9b605801e9e0c24021de512"
+    },
+    {
+      "path": "ATIVIDADES.md",
+      "size": 3373,
+      "sha256": "5c9306caef6083263a125cc12cf7c6579ee3e289c32357ab2e85e6aa1f6ac275"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/BENCHMARK_GUIADO.md",
+      "size": 1018,
+      "sha256": "05e47f00c71c4b91ed732fc507530cfbcbb1ef09c2fbabc275393ce6331d4ec6"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/EXERCICIOS.md",
+      "size": 625,
+      "sha256": "397694993f4b644380c37dbd467521535aec56c77facf3eec11194c4447826d6"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/PESQUISA_GUIADA.md",
+      "size": 1043,
+      "sha256": "d25ff6a3525a40273dbfde8539e5d3fd271c55c92f182fa89361489f95a3392c"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/README.md",
+      "size": 1230,
+      "sha256": "c9a54ba9764369f26840b4f4602b0df571f082b661773dc02d4bbfad51719b5d"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4231,
+      "sha256": "16e2cb39275ec980c971ea606eb2c81745c832ad808d1b431ff2d6cb505bd17a"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/bin/Debug/net8.0/Chris.IlLab.deps.json",
+      "size": 425,
+      "sha256": "a2390d9b3de60a2f46a136d3e27b1bddb6fcbf07d333656e251f5bec15b112a7"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/bin/Debug/net8.0/Chris.IlLab.dll",
+      "size": 6656,
+      "sha256": "8f91996fdaef7e06c743d9b677bd799b2f0568fab28dbc11cce954347af39e78"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/bin/Debug/net8.0/Chris.IlLab.exe",
+      "size": 151552,
+      "sha256": "c410bb37def3515fa6a0959e6611ec03fd0ed2d186a2f2875a7c6c09cba7fa6a"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/bin/Debug/net8.0/Chris.IlLab.pdb",
+      "size": 11412,
+      "sha256": "c79996bed28bf71b16997e0385e3cb52643cd5603eea8665ce3d880243095ec8"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/bin/Debug/net8.0/Chris.IlLab.runtimeconfig.json",
+      "size": 268,
+      "sha256": "162d81f468bec570ec15e527433f4de5d5729ffe338ab79b22671f38760d34bd"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/Chris.IlLab.csproj",
+      "size": 237,
+      "sha256": "031da6a6f6d810b9f23ffe7818f3acefb7b0ff54b0eb8c6752735ad58d254904"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Chris.IlLab.csproj.nuget.dgspec.json",
+      "size": 2320,
+      "sha256": "2da0461daf17f71cdcd04abd6034d1d1905c76a6149e45ac73904684b76c29bb"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Chris.IlLab.csproj.nuget.g.props",
+      "size": 1323,
+      "sha256": "83de73fcb84d025ee9f61674f449dcf2c7cad142131fc1214706164861b98b0e"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Chris.IlLab.csproj.nuget.g.targets",
+      "size": 150,
+      "sha256": "971cc9b535384849b5c661d776cd7a80833a416265e32e8968e06c367368b8b5"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+      "size": 198,
+      "sha256": "f7a5d9789c863625e139ff99e1113a503830f6b85a88f6129916df83ac76b49e"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/apphost.exe",
+      "size": 151552,
+      "sha256": "c410bb37def3515fa6a0959e6611ec03fd0ed2d186a2f2875a7c6c09cba7fa6a"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.AssemblyInfo.cs",
+      "size": 1006,
+      "sha256": "332355f153d2a347c9b6c47d45c16d9132027c97900186b8a71a9d58f0a3e6e4"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.AssemblyInfoInputs.cache",
+      "size": 66,
+      "sha256": "d754d5c85a277c94a86771a2b452421cd80217360d8c238c063fdb4a9709f601"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.assets.cache",
+      "size": 214,
+      "sha256": "2143491398f5e6f8ebf96b2a615f562a92f4a71e8389978c72ccc0fa61eeaff9"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.csproj.CoreCompileInputs.cache",
+      "size": 66,
+      "sha256": "d55a30a248b8aa8ac26d747c58fa0d2ef85cae671b5d65a682b1a5b1637452e4"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.csproj.FileListAbsolute.txt",
+      "size": 2036,
+      "sha256": "4eb42939b62c32213f09e06673240b9eaba7f07baa666ca622e79f855010bc3f"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.dll",
+      "size": 6656,
+      "sha256": "8f91996fdaef7e06c743d9b677bd799b2f0568fab28dbc11cce954347af39e78"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.GeneratedMSBuildEditorConfig.editorconfig",
+      "size": 640,
+      "sha256": "f21d7a78d95f9747cd075f5ed17eeaaee792328a70fa34e774bee7839c487892"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.genruntimeconfig.cache",
+      "size": 66,
+      "sha256": "365de173acfd3c0dd24f9d03cdc1421f08c3675af49ad497812ca4517feec055"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.GlobalUsings.g.cs",
+      "size": 295,
+      "sha256": "f3f134e9e825e3e7268090f58b1af2bda2de513f61a09c56f48b9b8d08612abc"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.pdb",
+      "size": 11412,
+      "sha256": "c79996bed28bf71b16997e0385e3cb52643cd5603eea8665ce3d880243095ec8"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/Chris.IlLab.sourcelink.json",
+      "size": 167,
+      "sha256": "04e86a6d7c6f3786d38eabe7fab4309c6b5305846b86474469b0e3aa33c714fd"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/ref/Chris.IlLab.dll",
+      "size": 5632,
+      "sha256": "191ce87536945d927bef8f92c792164104daec821c71736cc307c55bfa74c196"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/Debug/net8.0/refint/Chris.IlLab.dll",
+      "size": 5632,
+      "sha256": "191ce87536945d927bef8f92c792164104daec821c71736cc307c55bfa74c196"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/project.assets.json",
+      "size": 2184,
+      "sha256": "747edf0862fe667f0a31b74ccf4f93776f85c7cd097cc2798839ae09d8aaebbf"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/obj/project.nuget.cache",
+      "size": 262,
+      "sha256": "6379842a1fa6d4acbca6cfeddaec4d865b08fef0ae9a11c83c3690a9458bae27"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/solutions/Program.cs",
+      "size": 2544,
+      "sha256": "5dc133ff076490dfb4134963bb5e81e7c9c20247240925b078dd6f9b5ce6dc49"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/starter/Chris.IlLab.csproj",
+      "size": 237,
+      "sha256": "031da6a6f6d810b9f23ffe7818f3acefb7b0ff54b0eb8c6752735ad58d254904"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/starter/Program.cs",
+      "size": 2075,
+      "sha256": "1d852fdb1c95f604d5e708abdaa17498ff62d97d3c1b6bb79616583a51446e13"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/TEORIA_PASSO_A_PASSO.md",
+      "size": 6343,
+      "sha256": "0a99b3acc0dab70514ecc9a8e3c96f1770bc0c707226817550e4072ca249908f"
+    },
+    {
+      "path": "dotnet/span_deflate_buffers/TESTES_GUIADOS.md",
+      "size": 1241,
+      "sha256": "32d8b09e5d03d962fbc385228c4803c2502e7e1f0b22400db206dc8dbe974512"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/BENCHMARK_GUIADO.md",
+      "size": 512,
+      "sha256": "605da94d6fa7da29168c4c33cb5a400e55bf3cc12d32bf83471965f353e80dd0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/CMakeLists.txt",
+      "size": 1104,
+      "sha256": "6d2c19335fcb39912b1592bbfca3c6740485e2eddecea1abe8a0adda89ae8e5d"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/EXERCICIOS.md",
+      "size": 618,
+      "sha256": "626e3801559f137cfd7fa6b3d8ce95a23cfd4fd9857ae2993f58adb29bf29d43"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/PESQUISA_GUIADA.md",
+      "size": 572,
+      "sha256": "f2a147783071fa5b4d2ffeae88c3182199a225f3e11158d5dc8bff8ae8a0e341"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/README.md",
+      "size": 1002,
+      "sha256": "feea392428db3749663c625edd4eb03da2f56a8183323b54e0fbb0de2839cd3b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4822,
+      "sha256": "858f7608198074b4a3edc88e8e92d11078e9be03813bd1e894edc200845d8853"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 43482,
+      "sha256": "192c982b5d25e8e9683d804cc5b9c88c696066d155161d2e7e72d85049fc0e70"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 348,
+      "sha256": "071df387cd2485a33ffe870c1540f7d518323fc8579f0dbbd522ea65e08e0381"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/cmake_install.cmake",
+      "size": 2119,
+      "sha256": "3867d5efa5a7573a68915a8b470496747c08e33eccfe6cb40b11f1bdabdbf9e3"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeCache.txt",
+      "size": 13317,
+      "sha256": "1ebbc408a3f4eeb7f468c421cb1bc365e4813c849de74ac2acc60a5c59dd52db"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "011f1f26137c10bbbb102bce0397627e5b721ce13021ac4a55723ce004acb2a1"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "3b12e72d631e30b7f04eb72cd952891653129cb4b6b399ac7f5c20c4f19397ec"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2433,
+      "sha256": "e2d7bcaa278d70ff0407218ada2873315e0e7930be8e399f39d7ddcab18cac6b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 394,
+      "sha256": "551f3bbbdf8555a3c412b67c27edab1e816cd4d62cb4c253b031364625663023"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 1008,
+      "sha256": "38ec9b6c6c07ad96c9314d6c6fe2461507025183c629d83cb2ccb28367f36c79"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 321,
+      "sha256": "8aa22c15d483151a1c69813274456710c80a554983121d1c426f94add8afc4ac"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 704,
+      "sha256": "6150adac4e630dfee1a9ff22647585b741afdb16ecef784fbd27b364a3d9a5e4"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 648,
+      "sha256": "df2ee796e6a4db937bc5ff73cb01e5a27f05065af0fb6c52d3a838c775a615c4"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 303,
+      "sha256": "4ff1bc79c901630519efdeff15bb2ccdbda1b5b2ca29ee242ed9fc7f7f30ad7b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1170,
+      "sha256": "bb8278be42a2d03ae6db3996acbc9fe77f36a4cc662658d5bb6df5c9cce3b9f2"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3102,
+      "sha256": "f9f70bb65d0974039ad675c19fa0cb4c938f3c6bc9ad801ce5dbdc6ea9752a8f"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 165,
+      "sha256": "a7a73fa2cf1e54b3f04a7c2b6ecdeeab37bd434290e0af0438491a0d752de70b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 638,
+      "sha256": "66f917c297ab331fba7455627970b02fe672c791b5a7d968f3f8db2da64c5466"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 386,
+      "sha256": "53f46ad6812dc1c9654d847c01419d408128418208191cc9f4e08aeb5b0bd04f"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 289,
+      "sha256": "ea955d520ea9c86f8321c811be51ac6b082ad02e823170e9dae185e0c11292a1"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/80e60101fcc68da8880d0fd50d041c49/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/80e60101fcc68da8880d0fd50d041c49/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 88097,
+      "sha256": "867f7b301eb46ecb99feaafd8fe15f6fb7411a7961f9fc1bad7cb631274587ff"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 7861,
+      "sha256": "d4c71cbaa2d5d3f13bbd3aadd1bc74c0216f39f05d789a909af78d94e61a5da8"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 130,
+      "sha256": "0bd8bbc84ae662217a256297d0dae485c847802dad59cd9c0c520befe970ac9e"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 186,
+      "sha256": "f4643c83c3fe28e923f0e84d87e3a48a6ba2843660cb758f2310c904fa32047b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 934,
+      "sha256": "7070ebb533839ba094316bb58dd57ad71930db8dfb9c0fee473840774ba4f3d0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/CTestTestfile.cmake",
+      "size": 8920,
+      "sha256": "39cd647b851638ccba4a4ba180194b03d0a8c227216c8bcf7d7e121a5448cd3b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/math.obj",
+      "size": 6244,
+      "sha256": "80f2c1f9c8fdf69e744203cfe79f476399e224711c1e513ec700525c52f6f05c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal.obj",
+      "size": 7588,
+      "sha256": "73c09e210f508db2b22c8307653df57539bcd360c91cc1760fdbe9aa21c0e9fd"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.lib.recipe",
+      "size": 368,
+      "sha256": "a0916350fad4e1408426cefe2f617efa1c93f2106eade3cca27d22a2bf794659"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.command.1.tlog",
+      "size": 5198,
+      "sha256": "a1c501055800a20ecf335bb9360d878689125661fe8e89bd7fa0642177b29b7a"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Cl.items.tlog",
+      "size": 1002,
+      "sha256": "c3d0ab2f2c26603f83e62f277bb5ff44767d3f71b37367501d4d931c409bcb18"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.read.1.tlog",
+      "size": 30920,
+      "sha256": "b108468f3dd3d76a8381ec0c4ce4255422114e1a70348321390accab1ff9b349"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.write.1.tlog",
+      "size": 2010,
+      "sha256": "a424d4aa51c339444dcd16482fa23d36ca72662122a025f3d5211142057ff31e"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.command.1.tlog",
+      "size": 683,
+      "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.read.1.tlog",
+      "size": 7806,
+      "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.write.1.tlog",
+      "size": 241,
+      "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib-link.read.1.tlog",
+      "size": 2404,
+      "sha256": "e10d541ab72e796e58eb224b393f3d37342e08aca085d1f0659c733370a5736a"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib-link.write.1.tlog",
+      "size": 1376,
+      "sha256": "10863ff579f6cb4a6ea1f557c1aa7e82b640c31dbccc8a3e47d900354fbfa9de"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib.command.1.tlog",
+      "size": 1756,
+      "sha256": "219974f822a1f312226d4efa926ec9e3d34a19fad1611f968c65065de39f98ae"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/portal_core.lastbuildstate",
+      "size": 274,
+      "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/sphere_portal.obj",
+      "size": 11114,
+      "sha256": "bc639f5d1e18a9915896a060bc8fe0126cd235424a45eeb78c5f7a1626f2abe0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/verlet.obj",
+      "size": 39024,
+      "sha256": "305254971847a5462fb12b29b1f41e0f55bcd5c01633d4c2d4f474331807f623"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.vcxproj",
+      "size": 52822,
+      "sha256": "6944813eef5b8625da5e0f473ef9948b5bf57b25ad8ee735fbc2da4c33d48f6e"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.vcxproj.filters",
+      "size": 1283,
+      "sha256": "83d9a887821144028b2f1e43712e5744e6740233360c094746e2c35ba40654f5"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_verlet_solutions.slnx",
+      "size": 2355,
+      "sha256": "f0966c92b5c1af56f62aeca539c269902f6abebd0bd9edd698fb0bc46dc60ef3"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/portal_core.lib",
+      "size": 78088,
+      "sha256": "65fe9b0dca7ffc6ccaac33d204befd812285e6f742a5737376fd8cc1fb4c674c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/test_portal_transform.exe",
+      "size": 15872,
+      "sha256": "c22c2c1186487b6996c375acdf03cfe8350c3fdb70008c01479eab57601722f7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/test_sphere_portal.exe",
+      "size": 17408,
+      "sha256": "9e7eaafa4ab45efe7a469fc2b93ec5fc2a0d8dc965f63168129c112d52856292"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/test_verlet_rope.exe",
+      "size": 17408,
+      "sha256": "f8e2686c2a74863b595c42b5de5eae231a6cbbb2ab9c0b8a84c8d2bf449e457f"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10338,
+      "sha256": "df8ff101cdf632bf471040dc7b82887decbf0326a5e50d651f44d0d8324f3b24"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 595,
+      "sha256": "dd12b8ac3e9cb81618b1f8882a2a45dca1385dfc24e75b3e5498c72d69b398f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.command.1.tlog",
+      "size": 1210,
+      "sha256": "eb0249c51cf8e03aeb170b4dedece528b0e12d698ccb2e037e282b848eda476f"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/Cl.items.tlog",
+      "size": 288,
+      "sha256": "fe39f20e3d9a60a58707d011ee1e14cbcd4584c0f3fd5aa5098ede2850fe17bd"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.read.1.tlog",
+      "size": 22684,
+      "sha256": "dcde2028d041b2418876188d7d5cd7991491d6031987d79827129d17b8fc4689"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.write.1.tlog",
+      "size": 582,
+      "sha256": "a59d7dc41aaa4e7093f572b6d3fa20160f67745424cad927c634cacc112cd2e5"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.command.1.tlog",
+      "size": 683,
+      "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.read.1.tlog",
+      "size": 7806,
+      "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.write.1.tlog",
+      "size": 241,
+      "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.command.1.tlog",
+      "size": 1916,
+      "sha256": "de0d304b6c8b89f8c34e4195983be8b3dede2330e3d8fb4fa895a536791df96b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.read.1.tlog",
+      "size": 3330,
+      "sha256": "04ffe9b8289438bac92abf6289d81f78f196d7f2f0a01c969e07bfb5c55e9f42"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.secondary.1.tlog",
+      "size": 165,
+      "sha256": "e89e674436320d5a04d120afb044da7bd93d4d08931084f442cf2c63ec19d391"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.write.1.tlog",
+      "size": 608,
+      "sha256": "1c918fc7e0a2d21a1cadae4ce57436946ede435216cfad5bb3f645719c2332b3"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/test_portal_transform.lastbuildstate",
+      "size": 274,
+      "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_portal_transform.exe.recipe",
+      "size": 576,
+      "sha256": "d170dab74e79b3285e56d4cbe73decc23bf381a3d28bb8ba8b3e0303b4cfdaea"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_portal_transform.obj",
+      "size": 14317,
+      "sha256": "a42a5d7448dd2a8ac223c6db49129215fd262f4dc720fc1f85257b96b2c0dbb1"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.vcxproj",
+      "size": 58523,
+      "sha256": "7397f63878a52c62dc54442b10e09fba1f335c2eae44685856f36c3cbcfc1598"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.vcxproj.filters",
+      "size": 720,
+      "sha256": "e76e2016e6a56325b7e0619fe733f83f6ae37ef9f5fd582e3a94c70cadcdca61"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.command.1.tlog",
+      "size": 1186,
+      "sha256": "b4ba989795e5fce5854dc2c4e6eb97604d9b1d6354d9144ef3e079f11a758ec1"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/Cl.items.tlog",
+      "size": 279,
+      "sha256": "ee22accaa6f200f98f89225a4251e447eea9e35c59f1518b0261aee8e28c9f43"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.read.1.tlog",
+      "size": 22912,
+      "sha256": "80522efcb4750c69bf58acad3125c23c3713fa9511b8c1336d701f5e6215dd2c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.write.1.tlog",
+      "size": 564,
+      "sha256": "e229d8bb5bad4d1ad0c80412f978109f82e36fb558400b2499f9ff50e26c7632"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.command.1.tlog",
+      "size": 683,
+      "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.read.1.tlog",
+      "size": 7806,
+      "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.write.1.tlog",
+      "size": 241,
+      "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.command.1.tlog",
+      "size": 1874,
+      "sha256": "5a8ab41baf30aa241349e2f91b74c9a448103ddf5a5581d88744469efc4200e0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.read.1.tlog",
+      "size": 3306,
+      "sha256": "6b661142db32c9ef9d2a36c1d6cea2585f5572e32ca92aa269152d42c53e4ffe"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.secondary.1.tlog",
+      "size": 159,
+      "sha256": "52f14a37990e732d65fe45da0b28c8d38e4e5552ef50b64fcf518dd3ebf04fb3"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.write.1.tlog",
+      "size": 590,
+      "sha256": "9e4f4ef9886962cd93bf086e9e3dfcd6f205c7caafd6a16c270ffcbcc4958929"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/test_sphere_portal.lastbuildstate",
+      "size": 274,
+      "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sphere_portal.exe.recipe",
+      "size": 573,
+      "sha256": "0c5694bb32e1ea00710a949f3acda902afd00de18ba22e53549724b3239e6351"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sphere_portal.obj",
+      "size": 14103,
+      "sha256": "c259a87ad49050e91203c7fc8f85dcf8baef7998ca48f308da0b21373c484a51"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.vcxproj",
+      "size": 58469,
+      "sha256": "f99c931448a82ada253b2a92c95d4fdae2b7d7c0d7f555607e6f52e44d0f60fa"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.vcxproj.filters",
+      "size": 717,
+      "sha256": "ae758974e715b484a7dd47bedf3ee175355e2d538a966e01eac424b8c524f520"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.exe.recipe",
+      "size": 571,
+      "sha256": "d7ac4e6dd5019d09fe905a89f779797fca29df30e22745ea736fd79c0b451b28"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.obj",
+      "size": 19033,
+      "sha256": "1e333e69a105c0cf383c83e6256a4ad95c693da9382bee19404298d62f3a2a59"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.command.1.tlog",
+      "size": 1170,
+      "sha256": "c0a3ec8e2866073f7e625492397e5a59b360a1da67c3cf6657b08b2b56160c3c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/Cl.items.tlog",
+      "size": 273,
+      "sha256": "b7fb590e05996365a8cbb321b8cdda86a7f959ed33418177943f8b03bb909dbd"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.read.1.tlog",
+      "size": 23086,
+      "sha256": "3f0d2f8cf7404d74f3836bd38f65e2f6ba7a8aa8ba01077a2924e1cc50872520"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.write.1.tlog",
+      "size": 552,
+      "sha256": "620ac08ee5cb9b6b734c2dad5ebc38de91390355d40d8a9c5e4f25d1dd3babd9"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.command.1.tlog",
+      "size": 683,
+      "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.read.1.tlog",
+      "size": 7806,
+      "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.write.1.tlog",
+      "size": 241,
+      "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.command.1.tlog",
+      "size": 1846,
+      "sha256": "88b124cb0ee8c5d41df903e4266e5db8a6742439e4d76d32fc02f6b9881145ae"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.read.1.tlog",
+      "size": 3290,
+      "sha256": "34fdeb4a45d8595432f4ad519e140f6cc1ee4c063e5c50473822bcdb7b930f67"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.secondary.1.tlog",
+      "size": 155,
+      "sha256": "00e7d08c0da6ee85a37e948d9fbb56df3db98dac612fff92eb438272e8140927"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.write.1.tlog",
+      "size": 578,
+      "sha256": "8d1a0a9cc4994dc1b8850164f1da7579f6699d838511d79607a2b633e8236dc5"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/test_verlet_rope.lastbuildstate",
+      "size": 274,
+      "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.vcxproj",
+      "size": 58433,
+      "sha256": "e8bae98ad7be3e73735f32d9866e1a3644302d7bf1f543dbe05ff7fd9a9c5c4d"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.vcxproj.filters",
+      "size": 715,
+      "sha256": "f7d2df3ded89b0ba3d47f8646449d8f643d821cb177e742e10e9152ca6f4668c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 102,
+      "sha256": "56240feaf5cc42d13d832ace1726de334199b4ec814dea80152d60d25e3353f5"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 2482,
+      "sha256": "4ef2fa3835feba6c9483a9330c49917a62ee9edf495ff981a2068d83fe4ac33f"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 1180,
+      "sha256": "f0e8bd9d713e6aba959cc676bf88633782f6a445498201e0fd179a6d2405d85a"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 274,
+      "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 683,
+      "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 7806,
+      "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 241,
+      "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 368,
+      "sha256": "a0916350fad4e1408426cefe2f617efa1c93f2106eade3cca27d22a2bf794659"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 794,
+      "sha256": "194a096c8716f4e4fad004fa09b8ff8ec70054ba3e354f57dcd895553d528a21"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 7974,
+      "sha256": "69baeabd3f0d3d28ffcb33dc5e72675a616c161a940ab3fe622ab18eea45b741"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 299,
+      "sha256": "8c7d0235b78c90fbbcf4ab68ece80b8982f821f48c916d862578e014d5e7ffe2"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 274,
+      "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 42624,
+      "sha256": "bb8f28069d4ffb2cbb043b9c0649c6a7d54cd87755968ecae235eeffe0ab9973"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 594,
+      "sha256": "3a52219a9c7b7fa4d6fe156644e57be664c13c8a73815c709d100694ec8c4c9b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/CMakeLists.txt",
+      "size": 623,
+      "sha256": "65c6f8b282c6b2bda7a56c01cf88237441727bfbb261db7ff272e82897db449c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/main_opengl.cpp",
+      "size": 567,
+      "sha256": "0dccbda1eedf1fd79495e9377341747efa1accdb09370464581d3a1ca776e451"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/math.cpp",
+      "size": 2043,
+      "sha256": "f2f2ba2625d304c9ec0586c2d36a84d9c3e320ea05936077356549ad8e4e6cde"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/math.hpp",
+      "size": 1014,
+      "sha256": "3a9fdd4954d61c18d812671fc6224fd610b17244572f6e9db88663398ec060ea"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/portal.cpp",
+      "size": 1759,
+      "sha256": "25828c3049f2eda9766b4f6ab0ea3e0974b9c8fdec922aee5b30c77a61006057"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/portal.hpp",
+      "size": 541,
+      "sha256": "50bb4189a47126dd795aecbb2082ba8ce839e2141b36b4ffddd12b6f70a2f9dd"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/sphere_portal.cpp",
+      "size": 1295,
+      "sha256": "ff3bcee043acfdca523f4771b0dc64082bb5f5e4241fe7abc71f47e414d9073b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/sphere_portal.hpp",
+      "size": 346,
+      "sha256": "da09bb3ca77e659c5cad98c419f4cdb43ff8025e81c322681dec5cba04ec1dee"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/verlet.cpp",
+      "size": 1962,
+      "sha256": "a13ab0ab0fc8b2b3bab2884767ac298cc2669c7e6c3636c98508b78fcdf0ce3b"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/solutions/src/verlet.hpp",
+      "size": 384,
+      "sha256": "b370c3b3385ce8d156815c52f8045a59b48008984ee787535c60563bc887b0d7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/CMakeLists.txt",
+      "size": 610,
+      "sha256": "70242c0b8b9dcc73d355588f08ce610c9af6d6943d233f2bc55390d715795f56"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/main_opengl.cpp",
+      "size": 555,
+      "sha256": "f4cf5ec4863f86a19fb1b2cc6fc680070c34bdaba3cd33160a5b56235a86f005"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/math.cpp",
+      "size": 1210,
+      "sha256": "6d734b9d1c3e568170091770d8be018defb895d637e21b7f2f471e6628da180c"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/math.hpp",
+      "size": 1023,
+      "sha256": "5c57155fa59ef378c41397c11a0634d4aa5560bbacb95a65e71f4e6e25633841"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/portal.cpp",
+      "size": 672,
+      "sha256": "4292cd2f98e1844fc3a8fc164794c2eb0481ca766ad276c0d256cb591460c070"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/portal.hpp",
+      "size": 541,
+      "sha256": "50bb4189a47126dd795aecbb2082ba8ce839e2141b36b4ffddd12b6f70a2f9dd"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/sphere_portal.cpp",
+      "size": 479,
+      "sha256": "ada3ae375f400a8636a5946ae87c67c1b13f96628811fd45c186d3dc61943b16"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/sphere_portal.hpp",
+      "size": 346,
+      "sha256": "da09bb3ca77e659c5cad98c419f4cdb43ff8025e81c322681dec5cba04ec1dee"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/verlet.cpp",
+      "size": 1581,
+      "sha256": "59b754d8fc6f47dd0bd44fa11bd0638c7df1fd8f913467ccd0f8ada08ad49775"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/src/verlet.hpp",
+      "size": 384,
+      "sha256": "b370c3b3385ce8d156815c52f8045a59b48008984ee787535c60563bc887b0d7"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/tests/test_portal_transform.cpp",
+      "size": 1771,
+      "sha256": "ea59f36fe2eb5144cbfa4c6b2305914c9f1dfc63a589582780c091d695e4dcc9"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/tests/test_sphere_portal.cpp",
+      "size": 1312,
+      "sha256": "2d605587eb963b8b4e1e3afab8576e15837ddba8813a30da305dca78a7fad343"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/starter/tests/test_verlet_rope.cpp",
+      "size": 1094,
+      "sha256": "aa36b5c0f11c6af7fe6e60f2d831c1925fcecc90a4cbd41ec28f2a9cbe428b86"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/TEORIA_PASSO_A_PASSO.md",
+      "size": 5374,
+      "sha256": "445319ec0c5c2c6c4e7312b4bc5bbf36ba1bc0cba597626714c9374f06abe119"
+    },
+    {
+      "path": "graphics/portal_verlet_physics/TESTES_GUIADOS.md",
+      "size": 858,
+      "sha256": "a97a7d7b3077274a551f4398ce5d104a90da7c5212992a12f0407ea5192258f3"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 15297,
+      "sha256": "b434f275b0a223aa7535d96c0f857e1eceaa2608f8fbf3205ccbee6c5da1ae03"
+    },
+    {
+      "path": "nodejs/gunzip_transform/BENCHMARK_GUIADO.md",
+      "size": 1156,
+      "sha256": "b38f785fa18ca1a150ced87027aa5fb7c35f4263ad83d60f7bee8f30f9ce327b"
+    },
+    {
+      "path": "nodejs/gunzip_transform/EXERCICIOS.md",
+      "size": 676,
+      "sha256": "cadfc18314bb267324f1d120119b35a0cb56816277eb42c7f492c45031951f81"
+    },
+    {
+      "path": "nodejs/gunzip_transform/PESQUISA_GUIADA.md",
+      "size": 1060,
+      "sha256": "5c95dddab223106b6ac54416099cea59b2296c8c08cb0b1d2245b32f8e9f640a"
+    },
+    {
+      "path": "nodejs/gunzip_transform/README.md",
+      "size": 1242,
+      "sha256": "c7f1aa93498b3dfc8f9c55cf9a7e62a668d2d6d6bd7e46b8fb7f7b5b4a3ed477"
+    },
+    {
+      "path": "nodejs/gunzip_transform/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4268,
+      "sha256": "154d59212622843f9515c83e74b356c1c2cfa05a0ae02bf1d3d3f05352467f40"
+    },
+    {
+      "path": "nodejs/gunzip_transform/solutions/backpressure_metrics.js",
+      "size": 1285,
+      "sha256": "98d7435c7aa76ef8dc5364af938ea1499589893faf8a33ce1136ae7f22d81a19"
+    },
+    {
+      "path": "nodejs/gunzip_transform/solutions/gunzip_transform.js",
+      "size": 1104,
+      "sha256": "26a3d62d779803776139f70e460134f0b0c976a93b038e0db9cc481238c7e62d"
+    },
+    {
+      "path": "nodejs/gunzip_transform/solutions/package.json",
+      "size": 98,
+      "sha256": "ccdffef711c4fca66fdf23789980ebf7ec1a021af1adc958cb102937b048578e"
+    },
+    {
+      "path": "nodejs/gunzip_transform/solutions/test.js",
+      "size": 1260,
+      "sha256": "373e22c7380c5dbcb8853554b72b3bf52e38753ed78e5e0379a8f6fe7e50bb16"
+    },
+    {
+      "path": "nodejs/gunzip_transform/starter/backpressure_metrics.js",
+      "size": 1039,
+      "sha256": "40cb53984651fcc5c372ce1c093ac5186d989f023cb2a6be1502f253c6c45493"
+    },
+    {
+      "path": "nodejs/gunzip_transform/starter/gunzip_transform.js",
+      "size": 978,
+      "sha256": "c14faa12630329c0873cc75144c5d610b4e6034bb16a08fb751920d2767c5b4e"
+    },
+    {
+      "path": "nodejs/gunzip_transform/starter/package.json",
+      "size": 98,
+      "sha256": "ccdffef711c4fca66fdf23789980ebf7ec1a021af1adc958cb102937b048578e"
+    },
+    {
+      "path": "nodejs/gunzip_transform/starter/test.js",
+      "size": 1608,
+      "sha256": "391ef687a713a17cacd483c4764eb80bc9a2aef7fbcd779a5bf1e2a149090957"
+    },
+    {
+      "path": "nodejs/gunzip_transform/TEORIA_PASSO_A_PASSO.md",
+      "size": 6454,
+      "sha256": "c2786462844b1b5e87b8c540c6d737e36554b3b555db5cc3b98a9bf1d834d45d"
+    },
+    {
+      "path": "nodejs/gunzip_transform/TESTES_GUIADOS.md",
+      "size": 1271,
+      "sha256": "0660b7ab96e7dfdcd95257d9e2651730d778b2176f4197db827038805cd6c8b6"
+    },
+    {
+      "path": "README.md",
+      "size": 1706,
+      "sha256": "0e9684791a2accbdbcea5f984f980ec42e481fe17fd81ae07d2f221ccc1e36cb"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/BENCHMARK_GUIADO.md",
+      "size": 1007,
+      "sha256": "527ea95e1207a5d84d468b381edb085ef93d99b5c7c87a82ba79934eaf3e9ef1"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/EXERCICIOS.md",
+      "size": 736,
+      "sha256": "11a9daa57a365f9a8a443d9aa41ae8d4bd5affb921636add30499e9545198f22"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/PESQUISA_GUIADA.md",
+      "size": 1148,
+      "sha256": "df36d3081047aff7867db6d0988a326139f1be2b19c82b59b0f42d25febbcd56"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/README.md",
+      "size": 1205,
+      "sha256": "d33bb62b486ef4bba06c05313cde2b620db57132955904a1db6a9f3cf3e0d6f0"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4610,
+      "sha256": "f2949668cb4240cfd23977e045f8a186aefd6f50347e10565984092dda6c5377"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/solutions/blob_triage.py",
+      "size": 1703,
+      "sha256": "491237448c9cfd4f99f4e11213731c094f6d8141a647fd5c22da319c4fa0ae5f"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/solutions/test_blob_triage.py",
+      "size": 1337,
+      "sha256": "4240bebfb51dfcde4220d3ef4189534e44d2afb0f40eee0715de6d9f1c610e31"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/starter/blob_triage.py",
+      "size": 1357,
+      "sha256": "40c13e99a7781cb2ae7b83a3ce945297a86619beae157e0d2d6143347fcbacda"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/starter/test_blob_triage.py",
+      "size": 1667,
+      "sha256": "39278864d5d08a29eee3f9fa7d048d0dd7e28dc6455c65ee9039cdde5a5463da"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/TEORIA_PASSO_A_PASSO.md",
+      "size": 6500,
+      "sha256": "f209894c4504c174749c9058dc8c28f9fd0a6175206b8c0871d6752f04c2d1b2"
+    },
+    {
+      "path": "redteam/compressed_blob_triage/TESTES_GUIADOS.md",
+      "size": 1277,
+      "sha256": "8fa005f6b96eced24df7d7a02df3a54717bc377b6d53768d229214424df3e62d"
+    },
+    {
+      "path": "START_HERE.md",
+      "size": 1475,
+      "sha256": "99c892f2d014ced909bb67ac4c1de73fd7549398dad2ab8493c8808cb1ffc70c"
+    },
+    {
+      "path": "systems/deflate_blocks/BENCHMARK_GUIADO.md",
+      "size": 198,
+      "sha256": "eb097fde73c8272fbfecb2885c8a4a496853d39563a40464ccf8e7875a6ceabe"
+    },
+    {
+      "path": "systems/deflate_blocks/EXERCICIOS.md",
+      "size": 260,
+      "sha256": "a9cd80ef545f8a87a8f816393b63866a5f1ebb14ecc6cd0cf2f52bd231f212cf"
+    },
+    {
+      "path": "systems/deflate_blocks/GABARITO.md",
+      "size": 277,
+      "sha256": "243752688a419e2a33e9c17f7aa216ae2ae04d21624aca08e30c7c7fafa2be84"
+    },
+    {
+      "path": "systems/deflate_blocks/PESQUISA_GUIADA.md",
+      "size": 167,
+      "sha256": "a533511d76bba8a60612e0f381aea47100c3d78a373e23739d5160fd34294d24"
+    },
+    {
+      "path": "systems/deflate_blocks/README.md",
+      "size": 209,
+      "sha256": "9b589f8eab53ccf2abf3527131836c65a7af08b4873c1450bc97c230b19f7800"
+    },
+    {
+      "path": "systems/deflate_blocks/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 4005,
+      "sha256": "8a0a31090ccfaef47d822a8e6052cacb899331ba7a1a86ecb89695f0c14ad2af"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/bit_stream.cpp",
+      "size": 1518,
+      "sha256": "0be70a473ecccf61ebd70a07e6845a0cc189b72bd0992f0164dfa81e93007cdf"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/bit_stream.hpp",
+      "size": 746,
+      "sha256": "d2426727fda3304717868c022f4e0fb8f2454d30d34a7ff45d6360ec5432acc9"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 20415,
+      "sha256": "e26b0ac12b2c1a792b2ef12eb8db113c36a349ef17357d6126c765d97814aaaf"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 340,
+      "sha256": "a7ab9ca5e1564dfdd6671d30e871f1a84cdb35ad071f56fac7164815a7dcf3e7"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/cmake_install.cmake",
+      "size": 2086,
+      "sha256": "2e81325dce7ec35c66346173346d68ef1df0337a8a7dfaeb33d5159ceb14eab6"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeCache.txt",
+      "size": 13224,
+      "sha256": "d88fbd83c8983c5f6a824c133a943b64b96f08043880693630d184580b197dfa"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "e66138a384f6bb6cdd22402c11750ec68deb1c293b042bd5b472b7cdb4a8d14e"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "56e61050326f1219d06350bfd61ce9656f0e6801074af92be1c687c5bca53754"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2425,
+      "sha256": "d76be1f2c993910ee9f94ad0e7da37e632de3f4166201d16207b1a61f576226d"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 386,
+      "sha256": "560348dd470fd761a9562dc96c860e667815d97d827d0d6eb7d6571990fb6748"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 976,
+      "sha256": "2d3b9a821e94dcac065080b3bbb496285c571020f1f1e42cd23d730fbb0c4f04"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 305,
+      "sha256": "01074c2b94dc4603f7d9531eac00b483ab106073e97e20a2a4e8e40f4e6596af"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 688,
+      "sha256": "7d07c246608149138769af76b897f8be9cc00b3fefdeba2609afb3042b0dca82"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 616,
+      "sha256": "71664644fd7169d4996c06b61174b3f96a6072370a959118f4af2754e6a592fa"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 295,
+      "sha256": "11c02e854d3a77f54eaa55fcc8488f12201ee64e7596f752cf506da6cae59ed9"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1154,
+      "sha256": "bcb9540df2dced207e78f5de57153704f774761bbce2959bfc1b9ee428615924"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3070,
+      "sha256": "7907fb998a9bb416bd3d30c751f56b4906a802c9043a48df419725a4b6b195e1"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 157,
+      "sha256": "e93fffb14ad5875bde7ce62ff04158702949fc420ee33a2d71ca8db1fc368fd0"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 606,
+      "sha256": "ff815079bd445f9797a11a0f460e35ce69b458a173b09ea566ba76253a624013"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 378,
+      "sha256": "26200559d5fb5529517c3193a6f60a64ac5e3d225fc3f485ae20c337d7483fd2"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 281,
+      "sha256": "82d69a81aeee8284f9f04089238d632fad422a5c89e3c9a4bfe8e481d4f49a92"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 87859,
+      "sha256": "e3512e9526646edb004d58b2bcf1aa22e6db787eaf5917eba2bf05ef48f7aa6d"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/f0fd9bec0227cc423b4483c7662bdfbf/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/f0fd9bec0227cc423b4483c7662bdfbf/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 2287,
+      "sha256": "6b96fe99cd8110317fa1b2628f6114611ad45e97d47caf732343b63b6ed62ab1"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 122,
+      "sha256": "1f126ee7e17c8a717e55da86b3940b9a35db4f704a15425cc2cc3a284fa79bd1"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 178,
+      "sha256": "3f204f9f39a5d9320064e03ad61350838122e3b3c2e2c4d030d890fd21431550"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 488,
+      "sha256": "6bb7f9fe75379ea80e2857153c6bbb81c408877b139e5b0b251f042959396a50"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/CTestTestfile.cmake",
+      "size": 2557,
+      "sha256": "197bfc25e2a12d5570f7f4cd887f2066768cee02efd3d92a39c81e5c3a299460"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/deflate_blocks.slnx",
+      "size": 1434,
+      "sha256": "3cf5d78fab126dee318ec2afcdf6e9e298e3ebabc79dd10a1eff210948b446b1"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/Release/test_deflate.exe",
+      "size": 22016,
+      "sha256": "dc93d41733d8ada5fc261c5265bd5a56124ca44d34629f1b4bfcc79ca2fe8168"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10290,
+      "sha256": "1500d716a4e108adb2f980df8eb5ca54610b8b53f5bd6fa4fa0db24479f14e4b"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 587,
+      "sha256": "dc0affd6a586e76a20d4a947f5e2499963011e987d93a7c4ebb7c7888ef622f8"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/bit_stream.obj",
+      "size": 35300,
+      "sha256": "d10123b7bcd753491f0b2c199c51631685ae628aaa3b933225432cb6dcc1fa09"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/deflate.obj",
+      "size": 49678,
+      "sha256": "8e72d082ab54ab3759b6ec8cceb78c023115a7fb9c60eb161f329bab3547c7af"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.exe.recipe",
+      "size": 551,
+      "sha256": "0f54dbdd79c716d627ec201a55062274c39b3f10a1e8aa1749f820f78e51dc32"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.obj",
+      "size": 75719,
+      "sha256": "92b721500702651a45ab8e48b9802480a3e1d40ba239ee09de6ba9201236bc14"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/CL.command.1.tlog",
+      "size": 2626,
+      "sha256": "2ff996fc58e65e175bc6adda63e0e28d6156629211904afdaf749a59ebc67796"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/Cl.items.tlog",
+      "size": 709,
+      "sha256": "a4516a734a7f7298ceb155637d35d9b32ab4b71624cb7b76b12918a8548c70cd"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/CL.read.1.tlog",
+      "size": 54196,
+      "sha256": "abf31654a4f38ded30c8aa71b482505f1a34cd2ca20e5833464390cbbd265c18"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/CL.write.1.tlog",
+      "size": 1424,
+      "sha256": "fcf03da4468622c2a30d76e79a1f07a1d6a8302fcf63c90a8c1126e65290853c"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/CustomBuild.command.1.tlog",
+      "size": 651,
+      "sha256": "394313741ee612fcae06401ff7b6225339e715797d6a959a1cc642e323d98fce"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/CustomBuild.read.1.tlog",
+      "size": 2232,
+      "sha256": "d2fadde19648e75847bfad3ad05c2325b513c66f15f4f780783a8a82f7ff544f"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/CustomBuild.write.1.tlog",
+      "size": 225,
+      "sha256": "b469f7ffebb3c06ac7375db81422149e3db519f2bb4b2900cd9095f17be533cd"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/link.command.1.tlog",
+      "size": 2370,
+      "sha256": "eabd901e77d694e3e0022b45cdce9a4b6c4f47114c1fb0df30f2b8618dc9ba50"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/link.read.1.tlog",
+      "size": 4042,
+      "sha256": "0a4990c2960b55f6762ebd79c5b592583fbd908464983372e3f526ae6ad1b05e"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/link.secondary.1.tlog",
+      "size": 406,
+      "sha256": "e3ad1830d6dead5dbb0a55950e1e54b187e15effc6b8fdbd39de5fc75f30e8de"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/link.write.1.tlog",
+      "size": 1056,
+      "sha256": "55632cf7b12fb46b65999212fedb08d524093c13520f9fdbb81b966593ec42be"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.dir/Release/test_deflate.tlog/test_deflate.lastbuildstate",
+      "size": 266,
+      "sha256": "49a0c5f0fe354a22774cd00e4ed4b54e0d8a56b5b39d6eb0fd636be90209c693"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.vcxproj",
+      "size": 33971,
+      "sha256": "dd597b017e98f0cf4975a314b92c400154f7b0714fd7053153148a1ebe890fe5"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/test_deflate.vcxproj.filters",
+      "size": 1054,
+      "sha256": "9c5babc279d9bdd6a92cdc8de1d065e62db471d57a2262938efdbf9e4834ee36"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 33,
+      "sha256": "a6e9354979af51ebc9df7bd84a88ab06b25ba78d951f015acf63abf14dbad4bc"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 892,
+      "sha256": "893f68eb42e263a7cd0351e763419801eb8a4c03e76ec79e0ff69324eed59bfb"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 739,
+      "sha256": "f1b448036e5cbd6fec2e7e385157a6d23e3eb57d1b2b73d755955b8a18d45a65"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 266,
+      "sha256": "49a0c5f0fe354a22774cd00e4ed4b54e0d8a56b5b39d6eb0fd636be90209c693"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 651,
+      "sha256": "394313741ee612fcae06401ff7b6225339e715797d6a959a1cc642e323d98fce"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 2232,
+      "sha256": "d2fadde19648e75847bfad3ad05c2325b513c66f15f4f780783a8a82f7ff544f"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 225,
+      "sha256": "b469f7ffebb3c06ac7375db81422149e3db519f2bb4b2900cd9095f17be533cd"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 360,
+      "sha256": "4233e601dc52f2b98bc58872660c1d97126a2e78d3abfc6929c7992ecacc0817"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 753,
+      "sha256": "d871cef389d54feb9b874757d80a8796f8b0746df08a6b595d0e52b1a229bc44"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 2392,
+      "sha256": "0fe83d240ff56ada74578c99b1b9fd55cbacfcf50ba6301ad54666cc1646e2f5"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 283,
+      "sha256": "24445543ff1bc5156307217d35469333f5855bf88c6e12319456f5d3eaf944de"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 266,
+      "sha256": "49a0c5f0fe354a22774cd00e4ed4b54e0d8a56b5b39d6eb0fd636be90209c693"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 20416,
+      "sha256": "660d75ffc6cb732b9f7573da4a2a05b3184616f1e9b7c7d528e9e8a177982a77"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 586,
+      "sha256": "a5912bcbda5e2c0a1ad0271f7fac18410a4109a15f8d52b2f3ad42fe10cf00c2"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/CMakeLists.txt",
+      "size": 233,
+      "sha256": "26e3e0bee04f3ba58e89b3e90d2f114b763bd19ccb8cefa82b7f652541f3bc3f"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/deflate.cpp",
+      "size": 4939,
+      "sha256": "dc830cbf519f91f8b9e29f3e9abbeb0630209ce21a2d274a6e41528b00682a7f"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/deflate.hpp",
+      "size": 585,
+      "sha256": "80a1dfc3ced7b704395533c64819606430da8aa4df8fbc21fa2e66ca4017cad3"
+    },
+    {
+      "path": "systems/deflate_blocks/solutions/test_deflate.cpp",
+      "size": 1433,
+      "sha256": "5311eb81addc6c443458612fe0615628496fc2e90f1d58774b72bb5e8f62445a"
+    },
+    {
+      "path": "systems/deflate_blocks/START_HERE.md",
+      "size": 89,
+      "sha256": "f94b5c4df19f0be4c0b6bc08923ac1b5c8c0bc54c970864c1aaa5123f81e8cfd"
+    },
+    {
+      "path": "systems/deflate_blocks/starter/bit_stream.cpp",
+      "size": 1030,
+      "sha256": "ef7dd29424e6f07b6ea1017476fdaae4c6ced71a3103ea24186ee6c2b8ee302f"
+    },
+    {
+      "path": "systems/deflate_blocks/starter/bit_stream.hpp",
+      "size": 746,
+      "sha256": "d2426727fda3304717868c022f4e0fb8f2454d30d34a7ff45d6360ec5432acc9"
+    },
+    {
+      "path": "systems/deflate_blocks/starter/CMakeLists.txt",
+      "size": 233,
+      "sha256": "26e3e0bee04f3ba58e89b3e90d2f114b763bd19ccb8cefa82b7f652541f3bc3f"
+    },
+    {
+      "path": "systems/deflate_blocks/starter/deflate.cpp",
+      "size": 927,
+      "sha256": "51e49e449584ccf195d21d95e809f52688fe21ddd51ae690cf24565e714f9627"
+    },
+    {
+      "path": "systems/deflate_blocks/starter/deflate.hpp",
+      "size": 585,
+      "sha256": "80a1dfc3ced7b704395533c64819606430da8aa4df8fbc21fa2e66ca4017cad3"
+    },
+    {
+      "path": "systems/deflate_blocks/starter/test_deflate.cpp",
+      "size": 1555,
+      "sha256": "635bcdf220ac0fd289a2b7812f42f1ad68f4280be1aedbeafb1423ab97834b73"
+    },
+    {
+      "path": "systems/deflate_blocks/TEORIA_PASSO_A_PASSO.md",
+      "size": 3861,
+      "sha256": "18d871b0f90d449d83df9f007594e016b77dec348f1ca9683959c63c924ac706"
+    },
+    {
+      "path": "systems/deflate_blocks/TESTES_GUIADOS.md",
+      "size": 481,
+      "sha256": "c0783e81e155f67fd53144306bd09f9c20dc527eb389dfa9295d4f7a1f763a0e"
+    },
+    {
+      "path": "systems/huffman_entropy/BENCHMARK_GUIADO.md",
+      "size": 567,
+      "sha256": "18c68f0a4335a027e93dac4d1745415cf843e2e6e4ded6b5e27efd6bbfb03fe1"
+    },
+    {
+      "path": "systems/huffman_entropy/EXERCICIOS.md",
+      "size": 359,
+      "sha256": "be38d55d404c4fe91147680b1871cc87eb2fc2dee5e48b75610d6d92a85f5c25"
+    },
+    {
+      "path": "systems/huffman_entropy/PESQUISA_GUIADA.md",
+      "size": 692,
+      "sha256": "ac3e31e67e0b08aaf767a89bcc62ae1d254e3ed783bf1e698718ec7954292e77"
+    },
+    {
+      "path": "systems/huffman_entropy/README.md",
+      "size": 415,
+      "sha256": "ee43664ae49707415faabc9a87020787826fee6d6461fec7a7c0ae031c31b0e9"
+    },
+    {
+      "path": "systems/huffman_entropy/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3362,
+      "sha256": "0544b6272b76daeb743ea85433c369af5a8a5a84d013abcb8a96ced5558eb93c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/bit_io.cpp",
+      "size": 1117,
+      "sha256": "a63aa5ad31ae10dedd89f19fb71cc1e30194b88e39d57b0a36d8b888b8047400"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/bit_io.hpp",
+      "size": 639,
+      "sha256": "e4cea6481b79db9ea6bd01345e4df35065a9130bebdc44793b6b7a2ea7d9b36a"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 20450,
+      "sha256": "614de02aef46040d411a3fca278b70b522c03ac8babf00c8cf9136a83e5298e3"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 341,
+      "sha256": "f9d6e99c9dab28ddc460e32117aa3388bf6d9c8b0b21a45ba490ee30d7bf018f"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/cmake_install.cmake",
+      "size": 2082,
+      "sha256": "1ea0a10d7c734794afad7241c3b940d584d2a65eed7aaac61564a4a8626038a5"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeCache.txt",
+      "size": 13195,
+      "sha256": "79daf8f6267fe454f123a78c8c32db1898c69c448be01c93c2b52febe49887d0"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/3c73d2e8484abe47751b44de5ee3f468/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/3c73d2e8484abe47751b44de5ee3f468/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "9a6ded107764c2b164de798251b949599bfe3f14c5d8350d91de9bad9c239e6c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "c3cbfeb513fb842ea2b1e4ffb90f7bdbc19c39d9f09214da13dec2d310b71b55"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2425,
+      "sha256": "4339759ca6acc52c9954bef8a7815bc9aa9778333e5c429a4c15d99ca304d966"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 387,
+      "sha256": "26e969ad547e4453157b806ca79c3a16f7a99372877e00e6758d1aef79694e92"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 980,
+      "sha256": "9a1a8f9f9623f9a5eb48a59fedc4d03346664fe3ba4bb91520e9fcd6cb4b155d"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 307,
+      "sha256": "5e66a66df6843ad5f33336bd50107eac233b7a9852c9574ecf993e8a65243e64"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 690,
+      "sha256": "58c06de1c364f532e016948a22a4eb9d5d9da3e300ff939930723efb5cde1e06"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 620,
+      "sha256": "78f2b3d5f97a796b5dfdc86acfe2f02c88b51126723b6a2b837368dd0afeaa53"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 296,
+      "sha256": "75fea2712f0e993631ae5c2e28d10257a0becdc23aa68046c613d37be8a1d476"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1156,
+      "sha256": "373853915a3dd15182af4c009bf258b259556a8df98f090fb7c3ab0a591f2ef4"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3074,
+      "sha256": "f0071626a908146b3d7339074af8abed382e99c0d6a1e757f1466f88ad278808"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 158,
+      "sha256": "2e700a2fec398b0d3d373ced4943d2c8f0309a62ff31f529effa3a248a137883"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 610,
+      "sha256": "e9dcba7e85cd18c1ac8a585355d71df342f901b1a481a2032bdcf89694eece2a"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 379,
+      "sha256": "1346f24018df674410af01af76ec179f555bf3f5bf6befca4012eb6ce5ab87b4"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 282,
+      "sha256": "3a274d4eff003a6e811c5b2fdebf6f91d5b918f61d43245aa6b50fe99fe8deb9"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 87775,
+      "sha256": "774e43e3384a419e24cb9174550aef36d42c482e549135d1fdeacb2c672d8cae"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 2291,
+      "sha256": "a5dc1c5c104bd3d278c51e915e4f9230333323bdc7fb79e68f635fafd86d7cb4"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 123,
+      "sha256": "e193d60b90594f01d587b70690d8853d42646dd9681c154fad9a24bc515f6614"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 179,
+      "sha256": "b01539cc8e33380fd5868506a6b9c0e3b6a3361c27957820da2c39f817996348"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 492,
+      "sha256": "6f09993dade03b23166cc81aeed6ebfe677cf3602f21a46ba36b8de8d4f78d3b"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/CTestTestfile.cmake",
+      "size": 2553,
+      "sha256": "22e316149165c5ff1c89d5f0ea77722b0e4c4769207e5b357ec65ef4259b4bbc"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/huffman.slnx",
+      "size": 1434,
+      "sha256": "11e5f1a9abb453cb49d5341d091136a7bfed2e3a721d7fca03d6027edc40d99e"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/Release/test_huffman.exe",
+      "size": 29184,
+      "sha256": "25f93282294dc6f04c8b032da1e4aff2864722e0dfcc05bced346c8a66b930f8"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10296,
+      "sha256": "43cd97d3ab533745a20f362e2bda89a6c1ebb2e8cf207a3aefbcecbe5b59940b"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 588,
+      "sha256": "88ecd37237bd1dfd558455f912ff4cd9e5c594f0d96572e98130207d36c3a064"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/bit_io.obj",
+      "size": 31796,
+      "sha256": "d4b3b0e5c6f903884273654ea16c54a90ea7f02576b35e283ee921fa5a4bd8f1"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/huffman.obj",
+      "size": 239582,
+      "sha256": "0e7179ee7597d9e9a33861973a5ffa9aca652975ef0f70900654efc84cc847ec"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.exe.recipe",
+      "size": 553,
+      "sha256": "6db373a465a1ba683a261a6908979ac0d5775fc86fbcaf0d7f0f7b06cf864c3f"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.obj",
+      "size": 60349,
+      "sha256": "d05b997c9b33c37a03ada28bb15cd43ba1a7220c21798de7332aad123d9de6b3"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/CL.command.1.tlog",
+      "size": 2622,
+      "sha256": "a416ffd7b48adf72aa2e03e31f95de54c93f7e4f84d6a61dee1419a9d68e761b"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/Cl.items.tlog",
+      "size": 707,
+      "sha256": "eff11e5ed214d7209763579afca0bb6243cb6b7893f850caf8c55283eda4ab74"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/CL.read.1.tlog",
+      "size": 55654,
+      "sha256": "617a77ad3a17003a315f7fc565e33b54cbbd8d2241c0716adb8f87825a02755a"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/CL.write.1.tlog",
+      "size": 1420,
+      "sha256": "336ed7799bb17c029c9044bef6e02668ffca6f82fe1469e9727069fdffbf76a9"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/CustomBuild.command.1.tlog",
+      "size": 655,
+      "sha256": "edce78b8245fc9045483f9b9e557f101a3704694876c81a0b083eea20772a49c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/CustomBuild.read.1.tlog",
+      "size": 2236,
+      "sha256": "932017878aee066ce8d37ee6681c975520e70c67c1727a30d5a4c5a10fed8d82"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/CustomBuild.write.1.tlog",
+      "size": 227,
+      "sha256": "c7b64b679ffa91d7f77ec22bb6954cc6c0b0ad5e64d7f994a52f2d80eb5095d7"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/link.command.1.tlog",
+      "size": 2366,
+      "sha256": "95fc1f788c816c19e932146891592736a0109c4309b139695d74a290dc814caf"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/link.read.1.tlog",
+      "size": 4038,
+      "sha256": "a0e66398e04bf645bee7ec4c4e252bad07b0b8c4cf2a80451ae1fe02a577de7d"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/link.secondary.1.tlog",
+      "size": 405,
+      "sha256": "068dc49a41d35814b327b736e677b030d54ef8e12ad62ad2fa7d8f9720caa32b"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/link.write.1.tlog",
+      "size": 1056,
+      "sha256": "06f5d71f6534af5190b05a4cb8cffa83ee50f365596667dbf06528b439558439"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.dir/Release/test_huffman.tlog/test_huffman.lastbuildstate",
+      "size": 267,
+      "sha256": "f19229600e067e380854df167abbc806034c3f705f36c80cff6fd349cef65c9c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.vcxproj",
+      "size": 34016,
+      "sha256": "98ab853caa3aec41c94860aaf6cd7df6fce92be0c25f11808ac5c6e311e80ff6"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/test_huffman.vcxproj.filters",
+      "size": 1054,
+      "sha256": "bafe09df32f74d93a4255e594523efebdb131f4019f55cc83465f8479d1a679f"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 31,
+      "sha256": "dffedbb7e9f9d2390c962cddd001b12a2c77a28f7589a0f2a27110e8bcd6fa69"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 877,
+      "sha256": "07b0144cac0ae61a6924813c4de6a3bc829ab15f178ce6c306f767231104a455"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 742,
+      "sha256": "fd83ee9e61e9687b42b1b78aaa3efd14cedbb0969a8c8b6722df05a4b6e0cf63"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 267,
+      "sha256": "f19229600e067e380854df167abbc806034c3f705f36c80cff6fd349cef65c9c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 655,
+      "sha256": "edce78b8245fc9045483f9b9e557f101a3704694876c81a0b083eea20772a49c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 2236,
+      "sha256": "932017878aee066ce8d37ee6681c975520e70c67c1727a30d5a4c5a10fed8d82"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 227,
+      "sha256": "c7b64b679ffa91d7f77ec22bb6954cc6c0b0ad5e64d7f994a52f2d80eb5095d7"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 361,
+      "sha256": "46a8b887d353b9eea3e6e99f35ac3087393e7a527b479f2c6ab536ebf71c1d8e"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 750,
+      "sha256": "231a38c17b422c9103397ce12f4671b50b3c0837eaad431dd7e39ee7c21ac676"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 2397,
+      "sha256": "163ac16e777cb18ab0a45de191c6638d12a12b7adeba6b518b85997d7f4b2e18"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 285,
+      "sha256": "0dd2315f8d8191447f7e2d27b0ae169f2a3d73991dd078d5595eec2afdf29d8c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 267,
+      "sha256": "f19229600e067e380854df167abbc806034c3f705f36c80cff6fd349cef65c9c"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 20421,
+      "sha256": "ad940f246ab16ac41cf3adbfbbb958560d6c07ac2df83afe47f9e834f12a6a1f"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 587,
+      "sha256": "9d42f8196a5fa54cf35cda395e86521d14f1c5330af95de35f19940b16569692"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/CMakeLists.txt",
+      "size": 220,
+      "sha256": "9c782be130ae8e9eeb62260c338254a85d6cff54bc66478ce5de8ef88652b064"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/huffman.cpp",
+      "size": 6328,
+      "sha256": "5f4e18e4400bcad4530cbc213cd2edaebe2ae0b671211042f8d923bdd971fd10"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/huffman.hpp",
+      "size": 511,
+      "sha256": "15f978c3227c794d817c37275ae693df41ac4607c72c1ad089e88f6f0c20a43f"
+    },
+    {
+      "path": "systems/huffman_entropy/solutions/test_huffman.cpp",
+      "size": 1415,
+      "sha256": "04331d6e2b296ea34732d4e1be7c1e121144bb6a1b7c854c5a08b9f7e8952a5d"
+    },
+    {
+      "path": "systems/huffman_entropy/starter/bit_io.cpp",
+      "size": 646,
+      "sha256": "c0b7d63016c87f2fcebf2864651096f78ee0cfbf37237d537bea63ebf907d147"
+    },
+    {
+      "path": "systems/huffman_entropy/starter/bit_io.hpp",
+      "size": 639,
+      "sha256": "e4cea6481b79db9ea6bd01345e4df35065a9130bebdc44793b6b7a2ea7d9b36a"
+    },
+    {
+      "path": "systems/huffman_entropy/starter/CMakeLists.txt",
+      "size": 220,
+      "sha256": "9c782be130ae8e9eeb62260c338254a85d6cff54bc66478ce5de8ef88652b064"
+    },
+    {
+      "path": "systems/huffman_entropy/starter/huffman.cpp",
+      "size": 781,
+      "sha256": "2c33a968ab107a564b199f11676081efca4a91cdc44e6ef8a22649c3515d7455"
+    },
+    {
+      "path": "systems/huffman_entropy/starter/huffman.hpp",
+      "size": 511,
+      "sha256": "15f978c3227c794d817c37275ae693df41ac4607c72c1ad089e88f6f0c20a43f"
+    },
+    {
+      "path": "systems/huffman_entropy/starter/test_huffman.cpp",
+      "size": 1415,
+      "sha256": "04331d6e2b296ea34732d4e1be7c1e121144bb6a1b7c854c5a08b9f7e8952a5d"
+    },
+    {
+      "path": "systems/huffman_entropy/TEORIA_PASSO_A_PASSO.md",
+      "size": 3883,
+      "sha256": "d098034d81080784a2b13e54ce72bad6adf1dccfeddad4564b6547fcf87492bd"
+    },
+    {
+      "path": "systems/huffman_entropy/TESTES_GUIADOS.md",
+      "size": 541,
+      "sha256": "647d8de1b2c9b9ba4a952d2b19e22bf01280b3c8cdaacaf7beac36bfde8f8fe2"
+    },
+    {
+      "path": "systems/lz77_dictionary/BENCHMARK_GUIADO.md",
+      "size": 567,
+      "sha256": "318b7ab42cfaefab1ab19816b50b574c24302319dafaaf3cf8ff765442d8e647"
+    },
+    {
+      "path": "systems/lz77_dictionary/EXERCICIOS.md",
+      "size": 363,
+      "sha256": "9ce7e33905c8f58919c75efece0614b675303230b12327f36c0708357d9d6df1"
+    },
+    {
+      "path": "systems/lz77_dictionary/PESQUISA_GUIADA.md",
+      "size": 692,
+      "sha256": "ec436d4a7690738555d8b334c2671cfc41dbac35afe2bd50e6b2c37e70368f8d"
+    },
+    {
+      "path": "systems/lz77_dictionary/README.md",
+      "size": 419,
+      "sha256": "dc498c27e79b479177205d6473f2662226be002cd3e452b935c0138e1f4f6210"
+    },
+    {
+      "path": "systems/lz77_dictionary/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 2782,
+      "sha256": "0e58f3d9bc21c5623d81712ae7224cfef4cc398907246e8b906264dd68910440"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 20444,
+      "sha256": "730d7a54ff16c2bace0feaac40add28b9adda09ea0d92c2cf63e13ff58b156cd"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 341,
+      "sha256": "abb709502e321fde00f2e0d2cc8db72cb00252da4309622949af03827c0a0ba7"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/cmake_install.cmake",
+      "size": 2079,
+      "sha256": "07732702b11caf7f3d0ff56f2bd3750e4d7bdd7e8a3550680ee7e532dd91ac73"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeCache.txt",
+      "size": 13180,
+      "sha256": "46fc4e9d5f4875a590b5be1239db887dcaccd2afcdf6c0d755966d4e06a26fdc"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "c17003cd048a5fd10dcbde7e8823d7ab8d80ac9bb47719781b4b185fe19ca18c"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "f5646957d8de4cd5a34543beadeff68a2e69b4637f737e2ccab36e48f4b460b4"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2425,
+      "sha256": "3540b2ae77d260780ace0fac848cc30223bd82e9f7e1f252b2acf3a98fd9b051"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 387,
+      "sha256": "cf13eb21320d0367432a5552dbf159cb22a8ebe1fe7771c6a4837fe1ccf4f877"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 980,
+      "sha256": "88e5022c48e4d855657e00de979fad4e17a12225480cdbaf1a798e7db581ba01"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 307,
+      "sha256": "e96a486eafbbe8047a1e6563b28383c5a49a904fb6033791cf68ad0d50ee62a3"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 690,
+      "sha256": "9dc7ad901cf798ddc547c7619b319995390745cdcf1f1a12f50bbd0f9d9317e5"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 620,
+      "sha256": "6298c9f564740fb13ee67beecba4c502acb6b704ad639b74eb0a545458f0ca1b"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 296,
+      "sha256": "b023302ffd58aacaf8aa5b56943a908e33e935831e7c175d99101ce85ccf290c"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1156,
+      "sha256": "c813381aa028d983e2426a2be4815c1e96a103f70ac200459f8ff39d0b1923cd"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3074,
+      "sha256": "9e6a567883fb8d7dc9b3f5e940174cd3225141f655b56631d8f3fc6052f5f285"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 158,
+      "sha256": "bb41b71dfce2289bf5bcfb471c33c609d8167b56edea18bd988e2298ceccb899"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 610,
+      "sha256": "3fc7ae594c9abb507e5f30531906f81932795e1fa78867d670b83511799d7a20"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 379,
+      "sha256": "1be84294b5c2a3fe1e4770daea7c4ed636bc61c07e0b27de84142f76cb7d2f93"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 282,
+      "sha256": "09483c365748e42439ceb1ca8b687c16ada6efed9c7d2c8492a94e3bf9b17704"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/7557ca00e869d5bd19236b202fc5b6a7/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/7557ca00e869d5bd19236b202fc5b6a7/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 87733,
+      "sha256": "3be7300a2c0a8ef7d6b603cf692c45a84909bbffb6cedb1d00e1483704a8888b"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 2291,
+      "sha256": "1a088feea3d5e43258c8498faab7885da539cca0d55d5118c1586bb659125cfe"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 123,
+      "sha256": "d537fbb22516704134b562ad05b8d3cae9543d38a8f5268775e321a750012b01"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 179,
+      "sha256": "a99c3551aa0fbbf83205c5ab0d1384caf0942976940b3c02b30680656a729310"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 489,
+      "sha256": "976903c1a248d3551ee51f10edc0135d544e9fd1f3806d0ff46805ae868cbadb"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/CTestTestfile.cmake",
+      "size": 2514,
+      "sha256": "bab93e049d20b2083d1d7228f215b044b12479df127f5be6aff03ba61e6eee8b"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/lz77.slnx",
+      "size": 1428,
+      "sha256": "55d09492046cbdb263fd5d4ec9aa430565f686afb9906a11f058a255f2ddc8bc"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/Release/test_lz77.exe",
+      "size": 21504,
+      "sha256": "fc4f897b883cf2fe99eff0038af9502fb1033d1d213394ed5ac7f333d76d55ea"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10296,
+      "sha256": "47431e067011e978e4b78931d396a466744b867a52fdc4afd7d038d26e4bb9d2"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 588,
+      "sha256": "26484324fda54a2a4edcbe307ff3cf336fce74786d783abf5726cc3bf0f294b1"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/lz77.obj",
+      "size": 65513,
+      "sha256": "dba49bbb38c4b1c3e9f88506cdea1c33c7d56b89f1603deb92049a96077c4267"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.exe.recipe",
+      "size": 550,
+      "sha256": "ac3bfd3bb21dc4da03bf9c429990095d434b249c6bce1b1e86626c04a0172b3b"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.obj",
+      "size": 68643,
+      "sha256": "626237316d28d7215830cc233cd77d3d0c8db443536ca14cea63f14542ba23a9"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/CL.command.1.tlog",
+      "size": 1710,
+      "sha256": "3db6766ae459ad55429b07bbf9d6694f3f10d825a62a64836227bc998a9a843b"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/Cl.items.tlog",
+      "size": 458,
+      "sha256": "d8cc0d4d6cb745651756e34dfc87a66318e420e7c5b38db68a834b0648565113"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/CL.read.1.tlog",
+      "size": 39390,
+      "sha256": "aae9d11dbfb48bd878e796be5706113177a8f06a1e11b740b08507018383b027"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/CL.write.1.tlog",
+      "size": 922,
+      "sha256": "d31a82a605d27b7d557610b72ffef876530cbf8300f803192d1858508f4f6524"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/CustomBuild.command.1.tlog",
+      "size": 655,
+      "sha256": "0015f8eae1d4f871dcc344faed9c5acf3a2d0524293991bdaa95462724ceba69"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/CustomBuild.read.1.tlog",
+      "size": 2236,
+      "sha256": "6a2c420a1ba1ff10ae0883e5bbb82ffddbc94774fe909a4fc44adf205b458fda"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/CustomBuild.write.1.tlog",
+      "size": 227,
+      "sha256": "1021653a38760923f0555c9e6fda71c55e69de6e27e484250a81403e866f61cf"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/link.command.1.tlog",
+      "size": 1962,
+      "sha256": "f56e024c35b44ae4b020c7955152a68c82b3995da986996e614dc8392c05e862"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/link.read.1.tlog",
+      "size": 3460,
+      "sha256": "70e15caf21b6ced727964f964ffc979470eb24ac6025a25f3ee2bb101a6af67c"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/link.secondary.1.tlog",
+      "size": 261,
+      "sha256": "14c59b5c91774c07664c4baa8130a86ec8978b86e84fd4f64a8671755c3083a3"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/link.write.1.tlog",
+      "size": 762,
+      "sha256": "f77abf20344fdf33e0bcbac22e9283210e6acd049bde16d4d36ac3cbd44fc3d2"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.dir/Release/test_lz77.tlog/test_lz77.lastbuildstate",
+      "size": 267,
+      "sha256": "f09294c4814b065e88bd9ed186a223e1fc049732d3742cb86c2b41927482999e"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.vcxproj",
+      "size": 33832,
+      "sha256": "884a77f95b947286a83be3ec32298528e024bc2b9b2c4c49f45f29c367f4202c"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/test_lz77.vcxproj.filters",
+      "size": 868,
+      "sha256": "05e4160d37b584bdea49d153bfa92172cbf319171a4231d1332961073de98646"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 28,
+      "sha256": "56c94337915ecd301e4c381bef92285a1e920c144954cda9d2d7a0c3df508b08"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 856,
+      "sha256": "d1c12eda7ae10410a16fbe8ef06be66dad37b7eefad098569c209587d5d971c8"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 739,
+      "sha256": "205fa0229f97c4a09d3c3e90611640c845433bd03aed8cc2cddc7f40646966a4"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 267,
+      "sha256": "f09294c4814b065e88bd9ed186a223e1fc049732d3742cb86c2b41927482999e"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 655,
+      "sha256": "0015f8eae1d4f871dcc344faed9c5acf3a2d0524293991bdaa95462724ceba69"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 2236,
+      "sha256": "6a2c420a1ba1ff10ae0883e5bbb82ffddbc94774fe909a4fc44adf205b458fda"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 227,
+      "sha256": "1021653a38760923f0555c9e6fda71c55e69de6e27e484250a81403e866f61cf"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 361,
+      "sha256": "e582a4e4adc096d38ffd41012588951ab553a49cd4b150c603d5e0a4dba91112"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 747,
+      "sha256": "f14ef10619d47d56614037e61ccd784ee01ba33102e6b3a84ffb88e5f4929374"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 2397,
+      "sha256": "453d6b990bd1dd6fcc1b64a82c0989ace06b866373b024556a9a295a4960dc4f"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 285,
+      "sha256": "aea2a8472671ff9568a917036d98de908e7dd81bd83e1a383532e2d07857f04c"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 267,
+      "sha256": "f09294c4814b065e88bd9ed186a223e1fc049732d3742cb86c2b41927482999e"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 20409,
+      "sha256": "f7c7688580d9a1d364d6ade99eded03de11075e8c82ae62c2bc0263682f24de1"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 587,
+      "sha256": "c3d334a2d322b71c9f34c2976562d0fa88aeef274c707defdda873ddd4bccee5"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/CMakeLists.txt",
+      "size": 191,
+      "sha256": "e3def6cef6740dcda0165038492a9353a56662f496e364952b4df523c92f3414"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/lz77.cpp",
+      "size": 3722,
+      "sha256": "2fd223f319e99f4028940d1b46ea3fadc80aa849e8fcbc09e7d452d42b82c842"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/lz77.hpp",
+      "size": 602,
+      "sha256": "7f672919b399d2f0bb528c57e9678d8f84ddc50bb9c9e9740019bdcbb6b37a76"
+    },
+    {
+      "path": "systems/lz77_dictionary/solutions/test_lz77.cpp",
+      "size": 1155,
+      "sha256": "1e2ac1bdb7b1790eac4f4dac09bdf3d14ee2e11b67b79454b8d2ccc6622770d6"
+    },
+    {
+      "path": "systems/lz77_dictionary/starter/CMakeLists.txt",
+      "size": 191,
+      "sha256": "e3def6cef6740dcda0165038492a9353a56662f496e364952b4df523c92f3414"
+    },
+    {
+      "path": "systems/lz77_dictionary/starter/lz77.cpp",
+      "size": 748,
+      "sha256": "4d7190ed1d64945b83b7235e7861930ed78987dac6cf87151e96e9f2ccc05abf"
+    },
+    {
+      "path": "systems/lz77_dictionary/starter/lz77.hpp",
+      "size": 602,
+      "sha256": "7f672919b399d2f0bb528c57e9678d8f84ddc50bb9c9e9740019bdcbb6b37a76"
+    },
+    {
+      "path": "systems/lz77_dictionary/starter/test_lz77.cpp",
+      "size": 1155,
+      "sha256": "1e2ac1bdb7b1790eac4f4dac09bdf3d14ee2e11b67b79454b8d2ccc6622770d6"
+    },
+    {
+      "path": "systems/lz77_dictionary/TEORIA_PASSO_A_PASSO.md",
+      "size": 3825,
+      "sha256": "bc8386445bcaad559909e81a61bc6c225be9c9bcb6db456d19f89beccedbb0c3"
+    },
+    {
+      "path": "systems/lz77_dictionary/TESTES_GUIADOS.md",
+      "size": 549,
+      "sha256": "99b0bb6fef61500c6186001dd10136d585eee5151e912d531df3bc2234214a4e"
+    },
+    {
+      "path": "systems/rle_byte_codec/BENCHMARK_GUIADO.md",
+      "size": 560,
+      "sha256": "4a96b2a7babda8120390b6afd75c2d0f2fdbb19ae62bce26a22cf7955573ad1e"
+    },
+    {
+      "path": "systems/rle_byte_codec/EXERCICIOS.md",
+      "size": 352,
+      "sha256": "5b49d698ecc2fa457f620e3e16778647209f81bb71696ee9c4d3dfa4df7192e0"
+    },
+    {
+      "path": "systems/rle_byte_codec/PESQUISA_GUIADA.md",
+      "size": 685,
+      "sha256": "e3cf507cf7854ae3f007fbac0c9f4c4463df6deebe1506016a68bc04da7d1588"
+    },
+    {
+      "path": "systems/rle_byte_codec/README.md",
+      "size": 392,
+      "sha256": "2231530d55d8503b48706dd56ac860499607470a0e28631634b75da024f30614"
+    },
+    {
+      "path": "systems/rle_byte_codec/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3031,
+      "sha256": "95da621d5d132df5ee7244ab94bbf1b316681400c690a324c6e669b587b4f49d"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 20407,
+      "sha256": "71bddc3bb852f3828e62b22434dbb157b4bbe086937ff44b608588f9667954bb"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 340,
+      "sha256": "9f9f258acb883953ca3b60564063929a07b9e59303214da3e59818d90ec175c2"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/cmake_install.cmake",
+      "size": 2075,
+      "sha256": "774d10a3adc83e712df1a6ba66b06b4d662011b55d1e90343d15527cc59bd72f"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeCache.txt",
+      "size": 13169,
+      "sha256": "ad571d5e8087b2e79049590456c9f36eed154dceb200e8e674cf8b8877b75056"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "6ce94d4948952bdef488ae1796081ada0970d1492383946872de36664349df59"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "3f28ba8c14071753dfefb51cb058996b4b6b3b23cef04f2e5469c977d292a57e"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2425,
+      "sha256": "3b7c5e09474dd7b8f94999119206bad5d40421b31a1e6019cf72c956c0c86c58"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 386,
+      "sha256": "602af97e734083039f01a64a426d31327444c1625aab7fa2e16fae479ac9e193"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 976,
+      "sha256": "02d8df87c07a465ca6e4cbecaaa3deccbd8607d9676de775d930800611033ed2"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 305,
+      "sha256": "431dc9f2fedcf69bc37b30547cb8811fd173dc0d65f021263170dd1d85cac045"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 688,
+      "sha256": "646d435e81b26e604a47cab8a69877bea909622107750b01ba6450418e0ed13b"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 616,
+      "sha256": "6a77a91c8c3ce0150c01c3fe573b128c6c23da582481c2729c7fe74d0d7350ba"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 295,
+      "sha256": "8ca8f8c45a22b168107a74100473916fba40d4761ce8b76b8a3efbe65220436e"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1154,
+      "sha256": "9b3acb84b6a98b1963b274dcb28b5fb6a162a9dd50ce7aa608122dbe3a69ec47"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3070,
+      "sha256": "e7405119ec4f5a63b6bc53684312910bc60ab32db167c93ed831cbee35636d21"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 157,
+      "sha256": "bd2d75c60a66294b2f749ab61834867a6976a816102f56928a9e6ea8591cc605"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 606,
+      "sha256": "aeec81ccd169da7e4e571b30d49d76a8cf812be46d01fcfb65cc4726ecc30089"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 378,
+      "sha256": "03cf9a6e10114e7705d93137f066ee571fc98aec7aeadd91afbc9efc39f9c190"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 281,
+      "sha256": "cc0bf51f0018c11a1c7d4f4e4729df8b02570821550b2821eb0e98ddc5d532fe"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 87705,
+      "sha256": "7b2de6c86cbef1ee376683ecb934d8db112fd90de5186e29f5e9c084eee4e47a"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/ff19365efafef7ba02692f68d239e4e5/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/ff19365efafef7ba02692f68d239e4e5/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 2287,
+      "sha256": "37d009e6c9ad8261c012b5ef346e3fb3ff8c653c2992e08c0ba1cafbe25d72a0"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 122,
+      "sha256": "209f81c17c5e8d5b2bcf0a043f946ca76d03eadd1ac33ed0cd6698d7a8918e9d"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 178,
+      "sha256": "116c0777336338f66a4cefe53b0aa897a625fdefebfd3a728c1e567de317870f"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 484,
+      "sha256": "619144865227421c08f71414a8f54fd9eea5b88f46cfce49ae91c79c13b83baa"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/CTestTestfile.cmake",
+      "size": 2487,
+      "sha256": "928dff85828ea5a1315362249956bfa7246cff3c08f590b5420656a112ed87f6"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/Release/test_rle.exe",
+      "size": 18944,
+      "sha256": "d023f53a32f3a8777dbd7445db70d0329e073459c8c61e692b33be6cb987458e"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/rle.slnx",
+      "size": 1426,
+      "sha256": "22b31ead7351cf9da196f3d23952d0338112a6b1109180f9285c3b4756da0b1a"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10290,
+      "sha256": "5ce7fcf855c8203fddb3352d041bdf605d29ab6398f80e8006295548d184df4a"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 587,
+      "sha256": "a506c5d472cb22be2f9516946bd78e15f991ddbdb3acaca6dbdba7c3d65005d9"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/rle.obj",
+      "size": 65122,
+      "sha256": "c8a05fabf3376212769b72108e7d4e2fd1f7b5b26a0d7656ff00e1486a64ad40"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.exe.recipe",
+      "size": 547,
+      "sha256": "e05224def55d96338565d062203633bf422f4f747e307d2f57f5f515f51eeaa2"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.obj",
+      "size": 60046,
+      "sha256": "d60387ab122917d9ab127a310f895ad909814ab9e407df02452c6c5265e6347f"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/CL.command.1.tlog",
+      "size": 1686,
+      "sha256": "bc42ddc5e43eaed6310dec559779a157236983643afca2ae86438560ac028c5e"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/Cl.items.tlog",
+      "size": 448,
+      "sha256": "28f6009ff062c1404683d1f6b2a3507cdb3a39ac33d4b7e9f17d97d8de1a3913"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/CL.read.1.tlog",
+      "size": 38538,
+      "sha256": "a57f359f306576263a58cfb2694200324b4d19f38ae6951daf8f87c9ebf76702"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/CL.write.1.tlog",
+      "size": 902,
+      "sha256": "7fe8fbaef34e9a06c8f819d0d43386a6f10802babb4d573f7513ffc7562571cf"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/CustomBuild.command.1.tlog",
+      "size": 651,
+      "sha256": "fe6150649f38ff09b336a505926235df87eca81ba1ebd25f7437046175f224f7"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/CustomBuild.read.1.tlog",
+      "size": 2232,
+      "sha256": "b4c7aa3bb8be768052f2d8e2b628cf8780ab9c0991e97fd971d8c490d9e54c72"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/CustomBuild.write.1.tlog",
+      "size": 225,
+      "sha256": "19c661f2a4fddde20ba2b7d1ec4104ef281eae7a9eb807467386c387d2954215"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/link.command.1.tlog",
+      "size": 1930,
+      "sha256": "826caa0b5c599b6729fb831354fec39e11accf8f759a7b82a77f26480e1b445b"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/link.read.1.tlog",
+      "size": 3436,
+      "sha256": "21af26898b755a802bd6a1d6cb4219f404f7795823cf34b929a3e80c5b6541d0"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/link.secondary.1.tlog",
+      "size": 255,
+      "sha256": "9ff521fb7011632bd9f6271f6a07c1817d09da23902565b54485dc50a598dcbc"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/link.write.1.tlog",
+      "size": 746,
+      "sha256": "70951abcdaa21ed7ee3966cb45a4014dbad35a5c723b7a18b10ee0df6110598d"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.dir/Release/test_rle.tlog/test_rle.lastbuildstate",
+      "size": 266,
+      "sha256": "95d61e451db17f8ea118960e1a346c1c3a2c0da5bf0b4b132730c02856b62382"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.vcxproj",
+      "size": 33765,
+      "sha256": "18a1aa884d0319729abb34942de29aed80256ac25c67ff85f2f5b50796f73743"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/test_rle.vcxproj.filters",
+      "size": 863,
+      "sha256": "65fdc2e8f6b4926acbd86a74cce0fb0c141743ad616a8e35863266d61435d73e"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 27,
+      "sha256": "45b252bf1706d703c856438b97abef1072f36ad1a9bbf624436f73c77b678275"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 847,
+      "sha256": "717d707fdb23ed26ffb89fcc78263db787e8725ff0745666dea2bcb08364b238"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 735,
+      "sha256": "d20b4f8a05ae09aab7f6c5d3b2fb81cb299a5a7c20b30bffc925e313981cb8ea"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 266,
+      "sha256": "95d61e451db17f8ea118960e1a346c1c3a2c0da5bf0b4b132730c02856b62382"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 651,
+      "sha256": "fe6150649f38ff09b336a505926235df87eca81ba1ebd25f7437046175f224f7"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 2232,
+      "sha256": "b4c7aa3bb8be768052f2d8e2b628cf8780ab9c0991e97fd971d8c490d9e54c72"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 225,
+      "sha256": "19c661f2a4fddde20ba2b7d1ec4104ef281eae7a9eb807467386c387d2954215"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 360,
+      "sha256": "4d35915fa04c2b902b450a77674a4ddc33c964589f7356a14fb48a320c06636e"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 742,
+      "sha256": "ca3454fbc0ee62992d9ae223495397cdba43cbd90a938de35d5801b3b8ef25ad"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 2392,
+      "sha256": "107dda5644019cb1c6b6f902ef146bd6d1e2f041d706eb586bfb845b5dccc092"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 283,
+      "sha256": "1f5f6bd99d2d0b59c6b5998753029fdd3c3fe641d00da5f6b08a6bc61a2c44c3"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 266,
+      "sha256": "95d61e451db17f8ea118960e1a346c1c3a2c0da5bf0b4b132730c02856b62382"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 20372,
+      "sha256": "3c3874f2230778d6d11fe86531522bb97917d2b51fa6390fac4274af121babc4"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 586,
+      "sha256": "3feaf6484f3653a0ea62f538e6d5c95f7f003ce87fab215beb9cb95f1f9d462c"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/CMakeLists.txt",
+      "size": 185,
+      "sha256": "fa3b56e4b50395eea9a62928dc321c174e063f046d3b4605026676a4caaba3b8"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/rle.cpp",
+      "size": 1760,
+      "sha256": "7bde6f48ceba585e40bc1e8b31f1714cab93ae9540c0b2a10618f4970af280f9"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/rle.hpp",
+      "size": 288,
+      "sha256": "be3d409e267fc3b34f4ce3b59fb314fa73aa085e997ec5b5b47a7f363562a041"
+    },
+    {
+      "path": "systems/rle_byte_codec/solutions/test_rle.cpp",
+      "size": 848,
+      "sha256": "b2c423c0f018f20230fa83f98bee428730a25b5edc885c2a72f47c2ef95fc852"
+    },
+    {
+      "path": "systems/rle_byte_codec/starter/CMakeLists.txt",
+      "size": 185,
+      "sha256": "fa3b56e4b50395eea9a62928dc321c174e063f046d3b4605026676a4caaba3b8"
+    },
+    {
+      "path": "systems/rle_byte_codec/starter/rle.cpp",
+      "size": 546,
+      "sha256": "f288e98af18402c0affe908a18f159301e529e2ec1a02cbeb37bd01de19a8d14"
+    },
+    {
+      "path": "systems/rle_byte_codec/starter/rle.hpp",
+      "size": 288,
+      "sha256": "be3d409e267fc3b34f4ce3b59fb314fa73aa085e997ec5b5b47a7f363562a041"
+    },
+    {
+      "path": "systems/rle_byte_codec/starter/test_rle.cpp",
+      "size": 848,
+      "sha256": "b2c423c0f018f20230fa83f98bee428730a25b5edc885c2a72f47c2ef95fc852"
+    },
+    {
+      "path": "systems/rle_byte_codec/TEORIA_PASSO_A_PASSO.md",
+      "size": 4249,
+      "sha256": "02d54efd049bbd11caf6553c0a0042b53bbaefa9b9520f06cf96cda6e787ea68"
+    },
+    {
+      "path": "systems/rle_byte_codec/TESTES_GUIADOS.md",
+      "size": 483,
+      "sha256": "cdfa3a81e8650d1a55fa035d41c2cbff42c2a077ebfa2c9f4cc979c659279f6f"
+    },
+    {
+      "path": "TODO_MAP.md",
+      "size": 19522,
+      "sha256": "6a0ccc38d5bfaa4bee4a3b67f8b5c804eefb4705beb88b0c635388dc9d1a0d99"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/BENCHMARK_GUIADO.md",
+      "size": 213,
+      "sha256": "ceb2e48dcf36a7053eaacb70182d165a11bbdb4442f4f38e7921e0267ad4d468"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/EXERCICIOS.md",
+      "size": 216,
+      "sha256": "a5d2f7b7e73fb28e79f019dab9a91a1a5be714809c0c7addb54aa0f28f43fc92"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/GABARITO.md",
+      "size": 229,
+      "sha256": "433c1b20ad82dcc0705638b4aaa51318ac6a7c4534ebf9ea156420ad5ccd5be7"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/PESQUISA_GUIADA.md",
+      "size": 170,
+      "sha256": "6c93d469f35de0cdf9d57256365c217f050550f61e40b4fbc527da506b93f9bb"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/README.md",
+      "size": 194,
+      "sha256": "bf97a5d9d7c1c047006ac5ed53fbc3f81689e1f78eb713c28c54dc132c0105d0"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3407,
+      "sha256": "69e51dae8d14abf57243357d7791347c42be17f87ad1a3c0e48f6cdd6a3882a5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/adler32.cpp",
+      "size": 406,
+      "sha256": "7558bc8d4dfd2813885b99f15a76d0d93a1cb6b6258df7d506ad8638c9278dcc"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/adler32.hpp",
+      "size": 179,
+      "sha256": "c3e652fe1d185964af838d015c54966e7e93b5c78e6676682467840755269b3a"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/bit_stream.cpp",
+      "size": 1483,
+      "sha256": "686671a8fa97ad474f7261db0525b2f947ed01e39c94d70895a608c84c7a5835"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/bit_stream.hpp",
+      "size": 746,
+      "sha256": "d2426727fda3304717868c022f4e0fb8f2454d30d34a7ff45d6360ec5432acc9"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 20512,
+      "sha256": "e1356173457445b1040240e1fe019e8f099fbd9a46fe01e191b4a47c6513368e"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 343,
+      "sha256": "d090b5838b63aa8f11ef5a45b2d17b1f43cdf2fbefd500769df3e15302ad2548"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/cmake_install.cmake",
+      "size": 2098,
+      "sha256": "b04f2cd48aea675a15e059a88d6d78b95df25c25646cfff5462445a378fa094c"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeCache.txt",
+      "size": 13257,
+      "sha256": "9b16d813ca527f73759a7dc23b2c912c261b5efd3415e116c34f19d2fe4487dd"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "48a02fc52f54739a2572824ffa1fa628dbf41658ddd090b68ef9c8cfea6e7cb2"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "ac08fe9f60c6abe3be4c40763032b9c4703a9d88419b6fde6a416535b1114316"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2429,
+      "sha256": "ad09939f649d177c82a62d40530efdce228823f77365d8f25e16e7ba675f58ba"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 389,
+      "sha256": "18d2d562933034ef6441505ff61c833645aa8c588053b9b3b0e6b394b2a5d54c"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 988,
+      "sha256": "09af4516cfec87f1bb2d32b4ccc388a35dd090cf94123bd16fc29f83c570a894"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 311,
+      "sha256": "2894d05ddaa1907e61945a164f1f4dee033865c336b4d57e14623db5acc109fb"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 694,
+      "sha256": "7b1eb9591b258c3676ea4740cb17be6f59cec0b5ea735c31ccc1fb39b342d80a"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 628,
+      "sha256": "ae4fd275628e379bd9b22e59c3c4dc2ab678e1f321961abfb174a829dc016015"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 298,
+      "sha256": "7c84b41892b050c8d05d45cc10c6477a831ac6953507f13704486641f19bc3a0"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1160,
+      "sha256": "b31d44067bd9650d08ba2d5a1a6733c6e59cc70428b2d9de2c51dd6b87e1feb0"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3082,
+      "sha256": "3478461e0c253257a114236e4aa98417de723f7ac81adc6d7e23f6b2ea7001dd"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 160,
+      "sha256": "0cdca5c907758130f55d6b2b17ad7c28bab001cdbd1cf04d31702db0a5514e29"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 618,
+      "sha256": "94e04587f0b000d4e86e8aa4ac11ce2b23771b2901cdaf58512693ccdcfa86fc"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 381,
+      "sha256": "01016a2cfe3a28f8e8e3cb87e6e967ff0ff2b03fb5079e13b7e65a079e247e2c"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 284,
+      "sha256": "1d39df8c62e411c9e78c04608cfb8438c495594555077b0ac3513fa4ca6eef61"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/7ec82bb53a83f5af7a3fdea511d57d24/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/7ec82bb53a83f5af7a3fdea511d57d24/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 87943,
+      "sha256": "b86729bca6baf0f84e589bed4197016caf2ca8d421a07bfc38df246be859c909"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 2299,
+      "sha256": "d4c012a03449caf341d2195a6e759b25bd0acbd59fb46c3c9ad9367bb299d87a"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 125,
+      "sha256": "fb43995b1944c87623d8e551e245a781b8c75950d1347dd2081dbddde9be8919"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 181,
+      "sha256": "ca247603e1ea410353329e290358567ce29f0c796513d02ced1af30f537edbd5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 496,
+      "sha256": "e3f9a541f971508363372ecdd515ff6c7c8458d80d41facc81e8c6c8315468bf"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/CTestTestfile.cmake",
+      "size": 2533,
+      "sha256": "585ed1bc82fe37fd5003dd0c4ed062c5fd211592d8851a9458e0dd8ad368b19d"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/png_idat_pipeline.slnx",
+      "size": 1426,
+      "sha256": "51052a706e701254161be97452613ac14762208c3ce9b505f0f418ab26ad3af6"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/Release/test_png.exe",
+      "size": 28160,
+      "sha256": "39648f6cdacb1ad0c35cc330a33096071e0416c9ec6db6544e63ecaa1875a53d"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10308,
+      "sha256": "f752fee1da756155603b4da275bae91b087460c961ec5064079627c7b5e5c839"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 590,
+      "sha256": "9617d60ed062091bb5aa0657fd774215a1b475d6b99a4d079c0b266ed4d58f50"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/adler32.obj",
+      "size": 1996,
+      "sha256": "09de2eb1c1042e52e68c7696a037802feafd3321b7d4bf323bd35d0dfaecceb5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/bit_stream.obj",
+      "size": 35300,
+      "sha256": "a5489e741a64c5e866fb97013227648ad129404aa871ed3a027282ed11321bbe"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/crc32.obj",
+      "size": 3231,
+      "sha256": "64bb21f94622ddb9e4285d81e1ab375eb5b57a0744b686915b132fb38c662eca"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/deflate_stored.obj",
+      "size": 41688,
+      "sha256": "b94dee019fe516cc75c0fbc22741769cf998610a497259e5ef65554eeb2382ab"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/png.obj",
+      "size": 109657,
+      "sha256": "094b9deca78abc5257782ce74342f6b7cd511f44a5e50ad702d16ac1aee0de9f"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.exe.recipe",
+      "size": 553,
+      "sha256": "124d3467bf2312f47702a500020561e77a7300ff70f093247faeb080409a611c"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.obj",
+      "size": 50929,
+      "sha256": "236439c2faf2e41089b3fae59f4f6b918f84feccc9064b9e5803f06e5c39e17e"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/CL.command.1.tlog",
+      "size": 6046,
+      "sha256": "5093bdd3ce83b3f254fa2dcebcda592f9fa0ac0e0215833caebd8ab52a51c181"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/Cl.items.tlog",
+      "size": 1643,
+      "sha256": "a8f596e41c22edd9cefc7381d18ceda69f77862db52b1f2868aea4eff4e70cf7"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/CL.read.1.tlog",
+      "size": 116146,
+      "sha256": "4a11b22e21ea93b51c28ce5f3c9f7677f179821765f42975c5ccfaca30d0c2d0"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/CL.write.1.tlog",
+      "size": 3292,
+      "sha256": "c23c8ade8ca626003eba7c1ff21820dcc353f511d9db3bdb06fd6bba9b32b2e4"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/CustomBuild.command.1.tlog",
+      "size": 663,
+      "sha256": "40ed1044b1d5f692a754ff3109de49230d695e127dfe0ed6e58eeb9fb10d6507"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/CustomBuild.read.1.tlog",
+      "size": 2244,
+      "sha256": "062e992253174f83022b175c280a493718ef527c645b8cd804368d73fc16ed6b"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/CustomBuild.write.1.tlog",
+      "size": 231,
+      "sha256": "170f4e2710579df86c4553916fe9ebdf56eb4068062b25618491f25229636bc5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/link.command.1.tlog",
+      "size": 3646,
+      "sha256": "fea6f96861af25b76caf5940b30ac356217b725a9a40ba2ca6062677700a50f5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/link.read.1.tlog",
+      "size": 6126,
+      "sha256": "8e7f36c4d3f19b525f44f09a54d59da542acfc77942a0753678c62a397045286"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/link.secondary.1.tlog",
+      "size": 925,
+      "sha256": "223e051a82d84c4bcd69f1866ccbd7f0c0823219e6ea612acd0b7ba770aa709f"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/link.write.1.tlog",
+      "size": 2092,
+      "sha256": "14784b968a1f8b696e09df4955dc158c6f8cfb0596b7746e5fd3da027238ccea"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/test_png.tlog/test_png.lastbuildstate",
+      "size": 269,
+      "sha256": "0c3632dc046ac149bc8a1fe5705e3c5a760b91e23e026e8f3df1a78f611bb398"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.dir/Release/zlib_min.obj",
+      "size": 79007,
+      "sha256": "7032906de9bb5b7a2a1e87267ff7f7d58ef37e17a41b89104d184beb9cc9cff6"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.vcxproj",
+      "size": 34568,
+      "sha256": "681c9031d90c24864e02f38534ac396ad7597e3298d621ddbff3234055a80808"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/test_png.vcxproj.filters",
+      "size": 1796,
+      "sha256": "854cb0183c5308ba1b1ada4108b79840f1726841d4f6cd792d6e351e094c7865"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 27,
+      "sha256": "40abdb016a2ac0a80c1f661b9bc48c479db71f316d4fb3f9e3906f1482bb10d1"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 867,
+      "sha256": "db2920c169043234ac23ff16e8f96917ddb7c6da7cc07c339d196ddd29afa752"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 744,
+      "sha256": "efb3ee071d19d5f9c5cf2967315fd116efca18843b68a47e02ed2451f04a1d4f"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 269,
+      "sha256": "0c3632dc046ac149bc8a1fe5705e3c5a760b91e23e026e8f3df1a78f611bb398"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 663,
+      "sha256": "40ed1044b1d5f692a754ff3109de49230d695e127dfe0ed6e58eeb9fb10d6507"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 2244,
+      "sha256": "062e992253174f83022b175c280a493718ef527c645b8cd804368d73fc16ed6b"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 231,
+      "sha256": "170f4e2710579df86c4553916fe9ebdf56eb4068062b25618491f25229636bc5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 363,
+      "sha256": "23f3030b75e48ac080be8477f31bec7ef894937ff52967b07f9864f1090c9857"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 768,
+      "sha256": "f9903c80bf915ddd5e2bd9c1e995b1d8ff2fd31cbdb01f06b4c4701991133cd5"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 2407,
+      "sha256": "c491272c52666e0c36e2dc232557679e971c52d0c08bde5747c3db4ad0f70ab4"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 289,
+      "sha256": "e39211db9853ed9d0b82e6e80863cf8c303c536e996ac27b6a5f9945f1b759cd"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 269,
+      "sha256": "0c3632dc046ac149bc8a1fe5705e3c5a760b91e23e026e8f3df1a78f611bb398"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 20527,
+      "sha256": "8ba8c42d6d3042787b92e534b2205be1720b6322eae3c98eb9a55a5b9644f045"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 589,
+      "sha256": "96c962fc051ed24020619c402ba093270cd60cbdf0f8afe2a13ce9329d01fc20"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/CMakeLists.txt",
+      "size": 296,
+      "sha256": "5d4fc193b6b1b0fcafedcdc884a5651967ce0dacf5b77ddff4a530f5d041c11b"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/crc32.cpp",
+      "size": 765,
+      "sha256": "71bc146e7b444f585823143e1922e1f371c59259c762efdf654d44bc3eb7eafe"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/crc32.hpp",
+      "size": 175,
+      "sha256": "a3027cf3f3e554d52e15a1e43140e2092b9a00ae092774c8b9be1cb12316eaee"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/deflate_stored.cpp",
+      "size": 1614,
+      "sha256": "f06376fce93b98182dd6d527ef895ca1e24c58db6ae56af81bde5d0f67cbdac3"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/deflate_stored.hpp",
+      "size": 241,
+      "sha256": "73868c5db402ea05dd657f5c5e8911419cff6271d25eb9daecf31c33b76298fd"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/png.cpp",
+      "size": 5655,
+      "sha256": "696d61ba9f57268aaea0c6fc0889276d6d3b3fab2c4bf83899146c3aebce0c91"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/png.hpp",
+      "size": 661,
+      "sha256": "631eed19d4e7985b1dda07a30f66495f0622c79a8a213a30ecab24c95d96e375"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/test_png.cpp",
+      "size": 1360,
+      "sha256": "a9a5b30b48ee52465c885de5e3ba3e991c1fe1d744b69bcac465b99bc228f108"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/zlib_min.cpp",
+      "size": 1370,
+      "sha256": "e127e4c799e06bf8f843f112a1bbb46b186ad8b231e487fe2dd15ecc2aa06741"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/solutions/zlib_min.hpp",
+      "size": 221,
+      "sha256": "4f4cce1627d8f365ca2c3bd11e7af82bf709b55a5bcd8c6de8d3b5a91cf789f0"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/START_HERE.md",
+      "size": 92,
+      "sha256": "e13f4de562aedf94e478b2527c9d6d7fc6e51c42a3e126445d386e45d5aeb4d9"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/adler32.cpp",
+      "size": 406,
+      "sha256": "7558bc8d4dfd2813885b99f15a76d0d93a1cb6b6258df7d506ad8638c9278dcc"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/adler32.hpp",
+      "size": 179,
+      "sha256": "c3e652fe1d185964af838d015c54966e7e93b5c78e6676682467840755269b3a"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/bit_stream.cpp",
+      "size": 1483,
+      "sha256": "686671a8fa97ad474f7261db0525b2f947ed01e39c94d70895a608c84c7a5835"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/bit_stream.hpp",
+      "size": 746,
+      "sha256": "d2426727fda3304717868c022f4e0fb8f2454d30d34a7ff45d6360ec5432acc9"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/CMakeLists.txt",
+      "size": 296,
+      "sha256": "5d4fc193b6b1b0fcafedcdc884a5651967ce0dacf5b77ddff4a530f5d041c11b"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/crc32.cpp",
+      "size": 765,
+      "sha256": "71bc146e7b444f585823143e1922e1f371c59259c762efdf654d44bc3eb7eafe"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/crc32.hpp",
+      "size": 175,
+      "sha256": "a3027cf3f3e554d52e15a1e43140e2092b9a00ae092774c8b9be1cb12316eaee"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/deflate_stored.cpp",
+      "size": 1614,
+      "sha256": "f06376fce93b98182dd6d527ef895ca1e24c58db6ae56af81bde5d0f67cbdac3"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/deflate_stored.hpp",
+      "size": 241,
+      "sha256": "73868c5db402ea05dd657f5c5e8911419cff6271d25eb9daecf31c33b76298fd"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/png.cpp",
+      "size": 996,
+      "sha256": "9f1bff15671f489a4f4a8eadf84f72a380465c72b7ec63e2778d25c2cf93c361"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/png.hpp",
+      "size": 661,
+      "sha256": "631eed19d4e7985b1dda07a30f66495f0622c79a8a213a30ecab24c95d96e375"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/test_png.cpp",
+      "size": 1435,
+      "sha256": "c7ca9ddb88e03c133f1095a14cfdc44401a34a07e1b9342ef29e3f523e0725fa"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/zlib_min.cpp",
+      "size": 1370,
+      "sha256": "e127e4c799e06bf8f843f112a1bbb46b186ad8b231e487fe2dd15ecc2aa06741"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/starter/zlib_min.hpp",
+      "size": 221,
+      "sha256": "4f4cce1627d8f365ca2c3bd11e7af82bf709b55a5bcd8c6de8d3b5a91cf789f0"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/TEORIA_PASSO_A_PASSO.md",
+      "size": 3817,
+      "sha256": "5bd21b58359a717cb9c4fc508a6a17f9811b48107d7ce5056727a954ac60df89"
+    },
+    {
+      "path": "tooling/png_idat_pipeline/TESTES_GUIADOS.md",
+      "size": 397,
+      "sha256": "d44a7861566e2e444d4659e646c1b9df6872e6af104f87b5d8ddaf35610fe01e"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/BENCHMARK_GUIADO.md",
+      "size": 204,
+      "sha256": "29ba205323ebef52c366f85db3fb44cde573642186d2fc73a354023037db3a85"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/EXERCICIOS.md",
+      "size": 223,
+      "sha256": "e7c93849536750a3f398edcb170207f697cce985d49e75b85d92d8abe14d4062"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/GABARITO.md",
+      "size": 236,
+      "sha256": "5dbf2df5fe9af44343e1969c9ef02395d56b84e01ee599b3c7018df4dd85c31d"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/PESQUISA_GUIADA.md",
+      "size": 173,
+      "sha256": "46afbc1cd06aae778397690e7acbd6482392a2f65be8e76a2f84705fb8b8d08e"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/README.md",
+      "size": 204,
+      "sha256": "cea4b1b4219be1368e5fe16a78a33651e7e13fa765e57f3faa93a0359b47b4f8"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3549,
+      "sha256": "668fdbc5f1c0f37983fd896ba48b3dc04110165b6d7ea2da6b71fde93b139ab0"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/adler32.cpp",
+      "size": 441,
+      "sha256": "daf242d5995b1aaadcbae31fa1f9fe580de328c6913654ccacdb3f9dc1958bb7"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/adler32.hpp",
+      "size": 179,
+      "sha256": "c3e652fe1d185964af838d015c54966e7e93b5c78e6676682467840755269b3a"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/bit_stream.cpp",
+      "size": 1483,
+      "sha256": "686671a8fa97ad474f7261db0525b2f947ed01e39c94d70895a608c84c7a5835"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/bit_stream.hpp",
+      "size": 746,
+      "sha256": "d2426727fda3304717868c022f4e0fb8f2454d30d34a7ff45d6360ec5432acc9"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/ALL_BUILD.vcxproj",
+      "size": 20619,
+      "sha256": "784db77c59d13d7cddc189d0fc0dac74b1269b1b4cf1dd4cb1b874c45d1d7919"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "size": 346,
+      "sha256": "70db6975aa732f579c3bd650e8efddf2683c018fcf9a728ceb8ff9b2ad7b5ec9"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/cmake_install.cmake",
+      "size": 2110,
+      "sha256": "730b334d11ac85d7b1e9f6ea007b48cf764e931ac94a90ed1d5cbb9fbb3ebdc9"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeCache.txt",
+      "size": 13290,
+      "sha256": "91123e801dff8d5f5738368c7f0303f1ebde0eaf5d6c7d5f9d50336941e5f980"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "size": 6480,
+      "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "size": 50176,
+      "sha256": "4b53cf0b590180f055b24d23d048ad97fb49bce77a79bc03b5a9aeb7e2634614"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "size": 212,
+      "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "size": 395,
+      "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "size": 30429,
+      "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "size": 14336,
+      "sha256": "d83aac5bc675006c37fc5d99cde11f253ebd7bb83a2e944f4c824752fd12c301"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "size": 2806,
+      "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "size": 2433,
+      "sha256": "d74d592b0c8c639d6a69e33d90a80534d2ae9dbf0ac6e4c89d1c9a0ab79f7ea3"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "size": 392,
+      "sha256": "3bc87986c2488b16e930f722575a2b18dd31b1bce1f83b597116c3c97d08a32d"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "size": 1000,
+      "sha256": "cbb2df0bbd4ade4f7a30b6dc42c3e2a8886bb9624ee3692f410121edc0b9018f"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "size": 317,
+      "sha256": "7dd237b7a0b38f85d40496942d6e99475e9ac940752ba48e9d8e752dc9b0a0c6"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "size": 700,
+      "sha256": "f3b638059b99b81b5c7c553e841772f8003cf5415bb9820b6ca3ddf2674961f0"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "size": 640,
+      "sha256": "ef04114f8704fef98a62eb53939232c9a34adcad872afdc593345b2a6273f675"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "size": 301,
+      "sha256": "1ce0a3c06f5dabe2b9846772af0f04e81ede2752dff972b84ad4580d7833c5b3"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "size": 1166,
+      "sha256": "29f68365968d487a45eb3d6140f13231787715df6c2c3381e06186f3ce6e4def"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "size": 3094,
+      "sha256": "b64dbcdeff7636660c6a28e0b0f876261fab7f9b14567ef26a2dc360e74508d1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "size": 163,
+      "sha256": "4c61c2306267b97cffa723e97519ec9fbd47a70ed9e877e7b980a877693d2056"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "size": 630,
+      "sha256": "268c45feeb1d99acce679f04144413d5ea2637a26971c5361cb5c5e0f575fcf6"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "size": 384,
+      "sha256": "8c569d69d8ff9d034e8268b53f7cd6d3b1cb7a543940d0c80b5df7959a88f5bb"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "size": 287,
+      "sha256": "737313d74d624cb053cf37da4628aeaf241893d92294ff10a9bb6373868a355a"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "size": 81,
+      "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "size": 1255,
+      "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "size": 86,
+      "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "size": 88027,
+      "sha256": "8e1da932f2bca8d5d2bbc07159c0a9c39b1511055275b9b406779eba0321088c"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/e9619c560b19711d04b7e44a3df14021/generate.stamp.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/e9619c560b19711d04b7e44a3df14021/RUN_TESTS_force.rule",
+      "size": 24,
+      "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/generate.stamp",
+      "size": 55,
+      "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "size": 2311,
+      "sha256": "fcea8ee83796f459fe924af82e1ff9cc04e28eaa812b3b2e812e549653d6b275"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "size": 128,
+      "sha256": "0cd3d4ff3d577a9a1e9a4f3639006b52917cc96eea601e0fb5f3e51f9b6d0cc5"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "size": 184,
+      "sha256": "d947fbbd2c395d420008fac513beccd81e06502adc96dce939f1fe9e242074dd"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "size": 509,
+      "sha256": "19c216252fd88854fe1819793d5098c232099b5724b56a2de8607fd23e74b63b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/CTestTestfile.cmake",
+      "size": 2588,
+      "sha256": "a3ddd2e3512f9645fb1d1c2abc8c53fea7e2c1c19c298e3e11cec5fff230dbcd"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/Release/test_zlib.exe",
+      "size": 24576,
+      "sha256": "49465b495230a07fb99534ab5a7eb91e16543b44f2558ac80d26b8497837d579"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/RUN_TESTS.vcxproj",
+      "size": 10326,
+      "sha256": "c722a280600f3780850f237f1f71cabfc123ba945943755acac9dcc190a94d0b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "size": 593,
+      "sha256": "3c8fd4283ea167faacbe5f8281d5fb6d6f1d973d10562d55e61d42382ff321d1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/adler32.obj",
+      "size": 2000,
+      "sha256": "1317494f4fd12bffa668cec9309b9a07e23f17b53358e9f1c2108c6aeb10534b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/bit_stream.obj",
+      "size": 35304,
+      "sha256": "4d5d279534bf4b7a3e6318edc873642dd96006d4ca0e64ca68c10c809657c5a9"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/crc32.obj",
+      "size": 3235,
+      "sha256": "30103111235dbfcefa2a2ce781d415b6faddf62da1a26ab66ab9fb423e9110d3"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/deflate_stored.obj",
+      "size": 41692,
+      "sha256": "5f0b524b035be5858620045769aaa4f94b1dfb47421d22d2ecf0f86965dbe7a5"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/gzip_wrap.obj",
+      "size": 79605,
+      "sha256": "1da8bd32692c696113993c806047ae07989a66d24609c4a3f2f7d135be63e66a"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.exe.recipe",
+      "size": 560,
+      "sha256": "ef2f73a001c928fa5ff156ba6ba3692064466444c4f054f5ad0961caabdb9408"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.obj",
+      "size": 74672,
+      "sha256": "579c17cfd2a7fd8f4974dba8b843952b2d1427be1e07e8f678d76131154db679"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/CL.command.1.tlog",
+      "size": 6190,
+      "sha256": "477f0c2ea7e6fbc6eb70cde3c92f7d827db58262e23db58af73e077dfd9cc6b8"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/Cl.items.tlog",
+      "size": 1708,
+      "sha256": "a54de2939d76ded344ee0f1b72df7473588c96840b5d09ebb9c927fbbc45ae55"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/CL.read.1.tlog",
+      "size": 117136,
+      "sha256": "9d42d15a5fb756bc0376da06abb2ffd44e4a1e0c6efa281b30d4ebd807bf270b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/CL.write.1.tlog",
+      "size": 3422,
+      "sha256": "75bdd0ac189b3e477e89befd86ab700e9d7398fedb8e05722b750680dda4e521"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/CustomBuild.command.1.tlog",
+      "size": 675,
+      "sha256": "d98f2a709348659d65d24c45fc451095bade6ba857eba28823e6ef79044d2f63"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/CustomBuild.read.1.tlog",
+      "size": 2256,
+      "sha256": "f5f7dff3c8b8a3e5d19b5666b126f6ba645bc91537a9e44859475284c0c2bba1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/CustomBuild.write.1.tlog",
+      "size": 237,
+      "sha256": "17528dfb5e2beb2fd3d1dfe7ee707e1efb94706b16dacaab58667064782ad6d1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/link.command.1.tlog",
+      "size": 3772,
+      "sha256": "072b5487ee8af5b3709de248ff9204383c99ec19e6ded742e72d7985faf0940b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/link.read.1.tlog",
+      "size": 6270,
+      "sha256": "6c9524093664c4554b6c782e3ef0763dfd0ab660ad6265ea274018fa4c5cf0be"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/link.secondary.1.tlog",
+      "size": 961,
+      "sha256": "ff996028163f264899fba20f9b5afa5c150d5399cf386d7c5c179e95116b0e0d"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/link.write.1.tlog",
+      "size": 2172,
+      "sha256": "7309dfe247587223207bceb9e489060ba2e35df006f15e659a1f15adb248e866"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/test_zlib.tlog/test_zlib.lastbuildstate",
+      "size": 272,
+      "sha256": "4fecf1c9054c488c74695c0c8039e7f258bc4a7245ea6bb841355acd94beba67"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.dir/Release/zlib_wrap.obj",
+      "size": 85129,
+      "sha256": "910fddc45b4b7acac5b6d6abeaa4e5e3203840f921713bf2a22d48b46ecde812"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.vcxproj",
+      "size": 34752,
+      "sha256": "68619e6e2b94c0f0cb28e93c2ef725c722b42303fa5b7ef551353917814198c4"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/test_zlib.vcxproj.filters",
+      "size": 1828,
+      "sha256": "2932503d87184d2bf0c90eb634f4ed6a6f90a286f3951114ad07f6898f70906c"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "size": 28,
+      "sha256": "e6348dea5ce268feaf199761612406f5d18d36fb38df83d20065226a7e2b75c8"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "size": 882,
+      "sha256": "a9f1b9b1d7903ec912b642fabfcca076ba92cf54236c5f8814a086a01e039039"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "size": 754,
+      "sha256": "5c9fa63aa109f32948b964505c78f3884b7c0f88101d14ef95507d2db6f6d6fd"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "size": 272,
+      "sha256": "4fecf1c9054c488c74695c0c8039e7f258bc4a7245ea6bb841355acd94beba67"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "size": 675,
+      "sha256": "d98f2a709348659d65d24c45fc451095bade6ba857eba28823e6ef79044d2f63"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "size": 2256,
+      "sha256": "f5f7dff3c8b8a3e5d19b5666b126f6ba645bc91537a9e44859475284c0c2bba1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "size": 237,
+      "sha256": "17528dfb5e2beb2fd3d1dfe7ee707e1efb94706b16dacaab58667064782ad6d1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "size": 366,
+      "sha256": "49476286cd095f66d2fbaddc72dcdc1b9c31a7fea5580cbfb0c90d2d196eb0ca"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "size": 783,
+      "sha256": "f8becfdafea629f778e8ac99810b78473fc36212fcf3cca99dd5821d191f5285"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "size": 2422,
+      "sha256": "f52d669a1fec1d4764a45ac19d082c08f40fd8a499e9430b3bcff94616db1f89"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "size": 295,
+      "sha256": "ae8b963bb6549a53365c0eef7c1f9f8ea51216b1a5e20e05125d2b23ceca2635"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "size": 272,
+      "sha256": "4fecf1c9054c488c74695c0c8039e7f258bc4a7245ea6bb841355acd94beba67"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "size": 20638,
+      "sha256": "6068b17191921dc61785e2eee085cec97061bac1ec50b340d13e702f0b7d5f23"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "size": 592,
+      "sha256": "4fc45c247532e0e447ed812d751b76738fdd78e0fd9b81a63df60a888c4088bb"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/build_ci/zlib_gzip_containers.slnx",
+      "size": 1428,
+      "sha256": "46eeaeca050be7303b10dffb2a36dd854f48cb56e45b68370a52273d011950d3"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/CMakeLists.txt",
+      "size": 310,
+      "sha256": "4033972225b94084d33d4d3eb4a6d60ca34cc2eba4a0d5958ef0a80b8edf07a7"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/crc32.cpp",
+      "size": 800,
+      "sha256": "0398fbf6a2b987f6210d6a3c04d799670850aea560b7e664aa996b95b0c7b156"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/crc32.hpp",
+      "size": 175,
+      "sha256": "a3027cf3f3e554d52e15a1e43140e2092b9a00ae092774c8b9be1cb12316eaee"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/deflate_stored.cpp",
+      "size": 1614,
+      "sha256": "f06376fce93b98182dd6d527ef895ca1e24c58db6ae56af81bde5d0f67cbdac3"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/deflate_stored.hpp",
+      "size": 241,
+      "sha256": "73868c5db402ea05dd657f5c5e8911419cff6271d25eb9daecf31c33b76298fd"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/gzip_wrap.cpp",
+      "size": 2291,
+      "sha256": "5d3eba35012f512db01072e7c6d764cb64b6bfac7e66b6de1e4de91c2645f831"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/gzip_wrap.hpp",
+      "size": 213,
+      "sha256": "e17437ba342bb969fe5f09b3207d207c5bd2cf0cae1cfe2f21e1bb44196ab662"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/test_zlib.cpp",
+      "size": 1269,
+      "sha256": "4d11ad39af24643f7e0e254af703b4e824651c1b922f7784c9aee96ab85f25f5"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/zlib_wrap.cpp",
+      "size": 2078,
+      "sha256": "7455c1616f6128a4981873ac3c5f0c5b88f4c1e3f3bc014188f0cd60cdcc0e98"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/solutions/zlib_wrap.hpp",
+      "size": 424,
+      "sha256": "2308c4ded8b27cf4948efdbc177d336c4365ceb4140ac903803e621467e8836a"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/START_HERE.md",
+      "size": 95,
+      "sha256": "17d5560051abd9d91540f467883d78b02d5ebc5c0d0b12bc03f1ec8aa20db9d7"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/adler32.cpp",
+      "size": 277,
+      "sha256": "aca1fc9c43fac405d223a0ab384ec63523feeb4359f0d879318cc2db3cdf14f1"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/adler32.hpp",
+      "size": 179,
+      "sha256": "c3e652fe1d185964af838d015c54966e7e93b5c78e6676682467840755269b3a"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/bit_stream.cpp",
+      "size": 1483,
+      "sha256": "686671a8fa97ad474f7261db0525b2f947ed01e39c94d70895a608c84c7a5835"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/bit_stream.hpp",
+      "size": 746,
+      "sha256": "d2426727fda3304717868c022f4e0fb8f2454d30d34a7ff45d6360ec5432acc9"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/CMakeLists.txt",
+      "size": 310,
+      "sha256": "4033972225b94084d33d4d3eb4a6d60ca34cc2eba4a0d5958ef0a80b8edf07a7"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/crc32.cpp",
+      "size": 274,
+      "sha256": "19128d589fe5c53e884c83f661a5f7a8166a6195a5171ab06ee6c7a5c6c30f89"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/crc32.hpp",
+      "size": 175,
+      "sha256": "a3027cf3f3e554d52e15a1e43140e2092b9a00ae092774c8b9be1cb12316eaee"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/deflate_stored.cpp",
+      "size": 1614,
+      "sha256": "f06376fce93b98182dd6d527ef895ca1e24c58db6ae56af81bde5d0f67cbdac3"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/deflate_stored.hpp",
+      "size": 241,
+      "sha256": "73868c5db402ea05dd657f5c5e8911419cff6271d25eb9daecf31c33b76298fd"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/gzip_wrap.cpp",
+      "size": 440,
+      "sha256": "0468ab73f41253e0b9fc5f4df414871c0d651b83a7a0bf5dbebc62cd4c0414b9"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/gzip_wrap.hpp",
+      "size": 213,
+      "sha256": "e17437ba342bb969fe5f09b3207d207c5bd2cf0cae1cfe2f21e1bb44196ab662"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/test_zlib.cpp",
+      "size": 1366,
+      "sha256": "663e3361bfc2d9470653f64fef106b264329fa529c533128e0167a12794ac91b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/zlib_wrap.cpp",
+      "size": 585,
+      "sha256": "6d49a27600af69a4364991f6b9cef8ec665dc8bbb11ae4699af94b2e461a810b"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/starter/zlib_wrap.hpp",
+      "size": 424,
+      "sha256": "2308c4ded8b27cf4948efdbc177d336c4365ceb4140ac903803e621467e8836a"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/TEORIA_PASSO_A_PASSO.md",
+      "size": 3843,
+      "sha256": "7dde25c25fb6189e4fdfe4041b93aea4b06691af898b84eab2ac14eeeb83925c"
+    },
+    {
+      "path": "tooling/zlib_gzip_containers/TESTES_GUIADOS.md",
+      "size": 405,
+      "sha256": "abf2e29107e9ff0d31bc5f3f72c769f6c85c2cf8b7cb704ef7c166b9aa58ec38"
+    },
+    {
+      "path": "tools/compression_modules_created.txt",
+      "size": 4650,
+      "sha256": "01d3336cdb75a8c0a66f11d63cdad6f3ec1d365c5415d624c6ea7e69892c0387"
+    },
+    {
+      "path": "tools/gen_compression_modules.py",
+      "size": 49700,
+      "sha256": "c9d8433bc1540af6245eb65c13935bce14b7483231d59cf7a8296386e2e9bfd4"
+    },
+    {
+      "path": "VALIDATION.md",
+      "size": 804,
+      "sha256": "43c2a7773de1adb0b17017883fac53638b58c012cf245bcf8ee28b3f51fed1cf"
+    }
+  ]
+}

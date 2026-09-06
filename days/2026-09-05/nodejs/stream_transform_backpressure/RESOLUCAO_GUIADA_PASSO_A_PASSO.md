@@ -1,85 +1,136 @@
-# Resolução guiada passo a passo — Node.js — Streams
+# RESOLUÇÃO GUIADA — Node.js / Stream transform + backpressure
 
 ## Mapa exato starter → resolução
 
-- `NODE-XFORM-01` → `starter/line_transform.js` (`_transform`, `_flush`)
-- `NODE-BACKPRESSURE-02` → `starter/backpressure_demo.js` (`runBackpressureDemo`)
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `NODE-XFORM-01` | `starter/line_transform.js` | `_transform`, `_flush` — split UTF-8 |
+| `NODE-BACKPRESSURE-02` | `starter/backpressure_demo.js` | `runBackpressureDemo` — `write`/`drain` |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito e `PEDAGOGY-TEST: ID` em `starter/test.js`.
 
-> Trabalhe em `days/2026-09-05/nodejs/stream_transform_backpressure/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+> Trabalhe em `days/2026-09-05/nodejs/stream_transform_backpressure/starter/`. `solutions/` é gabarito — consulte só depois da tentativa.
 
-## 0. Preparar o projeto
+> Não comece copiando `solutions/`. Rode `node test.js` após cada TODO.
+
+---
+
+## NODE-XFORM-01 — LineTransform UTF-8
+
+### 1. O problema (starter stub)
+
+```javascript
+_transform(chunk, encoding, callback) {
+    // TODO [NODE-XFORM-01]: dividir linhas UTF-8 com suporte a multibyte
+    callback();
+}
+_flush(callback) {
+    // TODO [NODE-XFORM-01]: emitir linha pendente no final
+    callback();
+}
+```
+
+O teste escreve `a\n\n`, depois `b` + 1º byte de `€`, depois resto de `€` + `\nc`. Sem `StringDecoder` + `pending`, `€` parte e `lines` ≠ `['a','','b€','c']`.
+
+### 2. O algoritmo
+
+```text
+_transform(chunk):
+  text ← pending + decoder.write(chunk)
+  parts ← text.split('\n')
+  pending ← parts.pop()   // fragmento sem \n final
+  para cada line em parts: push(line)
+  callback()
+
+_flush():
+  pending ← pending + decoder.end()
+  se pending.length > 0: push(pending)
+  callback()
+```
+
+### 3. Código completo
+
+Em `starter/line_transform.js` (classe já tem `decoder` e `pending` no construtor):
+
+```javascript
+_transform(chunk, encoding, callback) {
+    const text = this.pending + this.decoder.write(chunk);
+    const parts = text.split('\n');
+    this.pending = parts.pop() ?? '';
+    for (const line of parts) {
+        this.push(line);
+    }
+    callback();
+}
+
+_flush(callback) {
+    this.pending += this.decoder.end();
+    if (this.pending.length > 0) {
+        this.push(this.pending);
+    }
+    callback();
+}
+```
+
+### 4. Por que funciona?
+
+- `StringDecoder`: retém bytes UTF-8 incompletos entre chunks; `toString()` quebraria `€` (`E2 82 AC`).
+- `pending + write`: junta resto da linha anterior com texto novo.
+- `split('\n')` + `pop()`: linhas completas saem; o último pedaço (sem `\n`) fica pendente — inclusive string vazia entre `\n\n`.
+- `_flush` + `decoder.end()`: emite resto e caracteres retidos no decoder.
+
+### 5. Verificação parcial
+
+Trace do teste:
+
+```text
+write "a\n\n"              → push 'a', push ''
+write "b" + E2            → pending 'b' (decoder guarda E2)
+write 82 AC + "\nc"       → text "b€\nc" → push 'b€', pending 'c'
+end / _flush              → push 'c'
+→ ['a', '', 'b€', 'c']
+```
 
 ```bash
 cd days/2026-09-05/nodejs/stream_transform_backpressure/starter
 node test.js
 ```
 
-Baseline: falha porque `_transform` não emite linhas e/ou `runBackpressureDemo` lança `backpressure not observed`.
+Esperado **ainda FAIL** em backpressure se `NODE-BACKPRESSURE-02` estiver stub.
 
-## Exercício médio — `NODE-XFORM-01` em `_transform`
+---
 
-### Arquivo
+## NODE-BACKPRESSURE-02 — respeitar `write() === false`
 
-Abra `starter/line_transform.js`, localize `_transform`.
-
-Substitua o corpo por:
+### 1. O problema (starter stub)
 
 ```javascript
-const text = this.pending + this.decoder.write(chunk);
-const parts = text.split('\n');
-this.pending = parts.pop() ?? '';
-for (const line of parts) {
-    this.push(line);
+// TODO [NODE-BACKPRESSURE-02]: escrever 50 buffers de 8 bytes;
+// quando write() retornar false, aguarde 'drain' antes de continuar.
+for (let i = 0; i < 50; i++) {
+    sink.write(Buffer.alloc(8));
 }
-callback();
 ```
 
-### Por que funciona?
+`highWaterMark: 8` + chunks de 8 bytes → buffer enche rápido. Sem `await drain`, `falseWrites` fica 0 → `backpressure not observed`.
 
-- `decoder.write(chunk)` converte bytes UTF-8 em string, retendo bytes incompletos internamente.
-- `pending` guarda texto da linha anterior que ainda não terminou com `\n`.
-- `split('\n')` separa linhas completas; `pop()` deixa o fragmento final (sem newline) em `pending`.
-- `push(line)` alimenta o lado readable em objectMode.
-
-### Trace UTF-8 (do teste)
+### 2. O algoritmo
 
 ```text
-write "a\n\n"     → push 'a', push ''
-write "b" + 0xE2  → pending 'b'
-write 0x82 0xAC + "\nc" → text "b€\nc" → push 'b€', push 'c'
+falseWrites ← 0; drains ← 0
+para i em 0..49:
+  ok ← sink.write(Buffer.alloc(8))
+  se !ok:
+    falseWrites++
+    await once(sink, 'drain')
+    drains++
+sink.end(); await once(sink, 'finish')
+exigir falseWrites > 0 e drains === falseWrites
 ```
 
-## Exercício médio — `NODE-XFORM-01` em `_flush`
+### 3. Código completo
 
-Localize `_flush`:
-
-```javascript
-this.pending += this.decoder.end();
-if (this.pending.length > 0) {
-    this.push(this.pending);
-}
-callback();
-```
-
-### Por que funciona?
-
-`decoder.end()` emite caracteres retidos (multibyte incompleto). Se sobrou texto sem `\n` final, ele deve ser emitido como linha — o teste não depende disso para o caso `c` (há `\n` antes), mas `_flush` é invariante correta do Transform.
-
-## Verificação parcial LineTransform
-
-Comente temporariamente o bloco `runBackpressureDemo` em `test.js` ou rode só a parte do transform no REPL. Esperado após `end`:
-
-```javascript
-['a', '', 'b€', 'c']
-```
-
-## Exercício difícil — `NODE-BACKPRESSURE-02`
-
-### Arquivo
-
-Abra `starter/backpressure_demo.js`. Substitua o loop vazio por:
+Substitua o loop em `starter/backpressure_demo.js` (`runBackpressureDemo` já declara `falseWrites`/`drains` e o `Writable` lento):
 
 ```javascript
 for (let i = 0; i < 50; i++) {
@@ -92,57 +143,57 @@ for (let i = 0; i < 50; i++) {
 }
 ```
 
-### Por que funciona?
+O resto da função (`sink.end()`, `await finish`, asserts, `return`) permanece.
 
-- `Writable` com `highWaterMark: 8` e chunks de 8 bytes enchem o buffer rapidamente.
-- `write` retorna `false` quando deve pausar — incrementamos `falseWrites`.
-- `once(sink, 'drain')` bloqueia até o consumidor drenar — só então continuamos.
-- Cada pausa corresponde a exatamente um `drain` → `drains === falseWrites`.
+### 4. Por que funciona?
 
-### Trace simplificado
+- `write` retorna `false` quando o buffer interno ≥ `highWaterMark` — sinal para pausar.
+- `once(sink, 'drain')`: retoma só quando o `write` interno chamou `callback` o bastante para esvaziar.
+- Contar `falseWrites` e `drains` 1:1 prova que você esperou em cada pausa (não só “escreveu rápido”).
+- `setTimeout(callback, 2)` no sink garante que o produtor pode adiantar e observar backpressure.
 
-```text
-write #1 → true
-write #2 → false → await drain → drains=1
-...
-após 50 writes: falseWrites > 0
-```
-
-## Rode os testes novamente
+### 5. Verificação
 
 ```bash
 node test.js
 ```
 
-Saída esperada (valores variam, relação não):
+Saída esperada (números variam; relação não):
 
 ```text
 OK node streams { falseWrites: <n>, drains: <n> }
 ```
 
-Demo isolada:
+Demo isolada: `node backpressure_demo.js`.
 
-```bash
-node backpressure_demo.js
-```
+Debug: `falseWrites === 0` → chunks menores que HWM ou loop incompleto; hang → `await drain` sem o sink completar `callback`.
 
-## Como depurar se falhar
+---
 
-- **`lines` vazio ou `['a']` só:** `_transform` não chama `push`; verifique `split` e loop.
-- **`b` e `€` em linhas separadas:** você usou `toString()` em vez de `StringDecoder`.
-- **`backpressure not observed` com `falseWrites === 0`:** `highWaterMark` ou tamanho do buffer — confira `Buffer.alloc(8)` e que o loop executa 50 vezes.
-- **`drains !== falseWrites`:** você aguarda `drain` sem checar `!ok`, ou aguarda quando `ok` é true.
-- **Hang infinito:** `await drain` sem o sink completar `callback` no `write` — o starter já tem `setTimeout(callback, 2)`.
+## Mapa de consistência auditada
 
-## Solução final comentada
-
-Compare com `solutions/line_transform.js` e `solutions/backpressure_demo.js`. Justifique: por que `pending` + `decoder`, e por que backpressure exige pareamento 1:1 entre `false` e `drain`.
+- `NODE-XFORM-01` — `starter/line_transform.js` → `solutions/line_transform.js`.
+- `NODE-BACKPRESSURE-02` — `starter/backpressure_demo.js` → `solutions/backpressure_demo.js`.
 
 ## Relatório de resolução
 
-| ID | Arquivo | Resultado esperado |
-|----|---------|-------------------|
-| NODE-XFORM-01 | `line_transform.js` | `['a', '', 'b€', 'c']` com € partido entre chunks |
-| NODE-BACKPRESSURE-02 | `backpressure_demo.js` | `falseWrites > 0` e `drains === falseWrites` |
+### O que foi validado
 
-Critério de aceite: `node test.js` imprime `OK node streams`. Se `b€` virar duas linhas, revise `StringDecoder` — não concatene Buffers como UTF-8 manualmente.
+- TODOs `NODE-XFORM-01` e `NODE-BACKPRESSURE-02` nos dois starters.
+- `test.js`: linhas `['a','','b€','c']`; `falseWrites > 0` e `drains === falseWrites`.
+- Starter falha em assert de linhas e/ou backpressure até ambos existirem.
+
+### Armadilhas encontradas
+
+- `chunk.toString('utf8')` sem `StringDecoder` parte multibyte.
+- Aguardar `drain` sem checar `!ok` (contadores divergem).
+- Esquecer `_flush` / `decoder.end()`.
+
+### Depuração e saída esperada
+
+- **Depuração:** logue `parts` e `pending` em `_transform`; logue `ok` no loop de write.
+- **Saída esperada:** `OK node streams { falseWrites, drains }`.
+
+### Próximo passo sugerido
+
+Refazer sem a resolução. Meça taxa de `drain` vs HWM em `BENCHMARK_GUIADO.md`.

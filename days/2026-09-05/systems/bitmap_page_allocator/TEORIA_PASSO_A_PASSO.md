@@ -30,14 +30,21 @@ O construtor do starter já inicializa `bits_` com zeros — todas as páginas c
         +-------- free_page(0) ---------+
 ```
 
-## 3. Mapeamento page → byte → bit
+## 3. Mapeamento page → byte → bit (`SYS-PAGE-ALLOC-01`)
 
+### O quê
+Converter um índice de página em `(byte_index, bit_index)` dentro do vetor `bits_`, para o teste e para as operações de bit.
+
+### Como
 Função auxiliar `trace_page_to_bit(page)`:
 
 ```text
 byte_index = page / 8
 bit_index  = page % 8
 ```
+
+### Por quê
+Sem esse mapeamento explícito, `allocate`/`free` viram magia de máscaras. O assert `trace_page_to_bit(13) → byte 1, bit 5` prova que divisão e resto estão no sentido certo.
 
 ### Tabela de exemplos
 
@@ -52,13 +59,16 @@ Trace manual para página 13: `13 / 8 = 1`, `13 % 8 = 5` — bit 5 do byte 1.
 
 ## 4. Operações bit a bit
 
-### Consultar (`is_used`)
+### O quê
+Consultar e alterar um único bit sem corromper os outros sete do mesmo byte.
+
+### Como — consultar (`is_used`)
 
 ```cpp
 (bits_[page / 8] & (1u << (page % 8))) != 0
 ```
 
-### Setar livre/usada (`set_used`)
+### Como — setar livre/usada (`set_used`, `SYS-PAGE-FREE-02`)
 
 ```cpp
 auto mask = static_cast<std::uint8_t>(1u << (page % 8));
@@ -66,18 +76,29 @@ if (used) bits_[page / 8] |= mask;
 else       bits_[page / 8] &= ~mask;
 ```
 
-Páginas fora de `[0, page_count_)` devem ser tratadas como inválidas ou “usadas” conforme a API do método — `is_used` no gabarito retorna `true` para out-of-range (página inexistente = não alocável).
+### Por quê
+`|=` / `&= ~mask` isolam o bit; `uint8_t` evita surpresa de promoção signed. Páginas fora de `[0, page_count_)`: `is_used` no gabarito retorna `true` (página inexistente = não alocável).
 
-## 5. `allocate` — scan linear
+## 5. `allocate` — scan linear (`SYS-PAGE-ALLOC-01`)
 
+### O quê
+Devolver o menor índice livre, marcá-lo usado, ou `-1` se o bitmap estiver cheio.
+
+### Como
 Percorra `page` de `0` a `page_count_ - 1`:
 
 1. Se `!is_used(page)`, marque usada com `set_used(page, true)` e retorne `page`.
 2. Se nenhuma livre, retorne `-1` (OOM).
 
-Complexidade O(n) por alocação — aceitável para lab pequeno; produção usa buddy/slab ou bitmap com hint de próxima livre.
+### Por quê
+Ordem 0,1,2… é o contrato do teste e o comportamento clássico first-fit em frame allocator educacional. Complexidade O(n) por alocação — aceitável para lab pequeno; produção usa buddy/slab ou hint de próxima livre.
 
-## 6. `free_page` — sem double-free
+## 6. `free_page` — sem double-free (`SYS-PAGE-FREE-02`)
+
+### O quê
+Liberar uma página usada e rejeitar double-free / out-of-range sem corromper o bitmap.
+
+### Como
 
 ```text
 if page >= page_count_ → false
@@ -85,7 +106,8 @@ if !is_used(page)       → false  (já livre ou nunca alocada)
 set_used(page, false)  → true
 ```
 
-O teste chama `free_page(1)` duas vezes: segunda deve retornar `false`.
+### Por quê
+Retornar `false` em vez de assert permite que o runtime trate erro; o teste chama `free_page(1)` duas vezes e exige a segunda = `false`.
 
 ## 7. Invariantes do laboratório
 

@@ -109,12 +109,12 @@ MODULE_PROJECT: dict[str, dict[str, str]] = {
         "milestone": "MILESTONES.md — tensor core",
         "commit": "feat(tensor): port strides from day02 lab",
     },
-    "2026-09-04/algorithms/sorting_research": {
+    "2026-09-04/algorithms/blocked_merge_sort": {
         "project": "projects/chris-algorithms",
-        "carry": "instrumented merge/quick sort",
-        "tests": "correctness + stability",
-        "milestone": "MILESTONES.md — sorting research",
-        "commit": "feat(algo): port sorting from day02 lab",
+        "carry": "blocked merge sort + SortIoStats",
+        "tests": "correctness + tile I/O accounting",
+        "milestone": "MILESTONES.md — blocked merge sort",
+        "commit": "feat(algo): port blocked merge sort from day02 lab",
     },
     "2026-09-04/quantum/statevector_intro": {
         "project": "projects/chris-qsim",

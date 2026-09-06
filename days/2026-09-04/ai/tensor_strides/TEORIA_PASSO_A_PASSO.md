@@ -6,6 +6,18 @@ Nosso `Tensor2D` guarda floats contíguos. Uma matriz 2x3 `[1,2,3;4,5,6]` é fis
 
 Esta separação é o núcleo de NumPy, PyTorch, TensorFlow e bibliotecas de inferência: o **buffer** é único; **views** reinterpretam geometria sem copiar.
 
+### O quê
+
+Storage contíguo + `TensorView2D` (pointer + strides) + `matmul` sobre views (incluindo transpose zero-copy).
+
+### Como
+
+`offset = row * row_stride + col * col_stride`; view contígua `(cols, 1)`; transpose `(1, cols)`; matmul com loops `i-k-j`.
+
+### Por quê
+
+Sem strides, cada “transpose” copia dados. Com strides, NumPy/PyTorch compartilham buffer — e bugs de indexação mascaram-se até matrizes maiores.
+
 ## 2. Fórmula de offset
 
 Em uma view 2D:

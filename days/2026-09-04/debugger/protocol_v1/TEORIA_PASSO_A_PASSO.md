@@ -1,169 +1,143 @@
 # Teoria passo a passo — Debug protocol v1
 
-## 1. Por que um protocolo binário?
+## 1. O problema de produção
 
-Debuggers precisam trocar mensagens compactas e parseáveis entre host e stub no kernel/alvo. Texto livre é frágil (encoding, delimitadores, injeção). Um layout fixo permite validação defensiva antes de interpretar payload.
+Debuggers trocam mensagens compactas entre host e stub. Texto livre é frágil; layout binário fixo permite validar **antes** de interpretar payload. Este módulo é o wire format do futuro `chris-debugger`.
 
-Este módulo implementa **chris-debugger protocol v1**: serialização little-endian, checksum FNV-1a e decode que falha cedo.
+### O quê
 
-## 2. Layout do pacote
+Serialização LE (`append`/`read` u16/u32), checksum FNV-1a do payload, `encode_debug_packet` / `decode_debug_packet` com header de 20 bytes.
 
-Header fixo de 20 bytes:
+### Como
 
-```text
-offset  size  campo
-0       4     magic "CKD1" (0x31444B43 LE)
-4       2     version
-6       2     command
-8       4     request_id
-12      4     payload_size
-16      4     FNV-1a(payload)
-20      N     payload
-```
+Escrever magic→version→command→request_id→payload_size→hash→bytes. Decode fail-fast: tamanho ≥20 → magic → version → campos → `size == 20+payload_size` → hash.
 
-Inteiros são little-endian. O decoder deve rejeitar header truncado, magic/version incorretos, comprimento divergente e checksum inválido.
+### Por quê
 
-## 3. Diagrama encode/decode
+Length mentiroso sem checagem = buffer overrun lógico / DoS. Hash no header sem validar tamanho = trabalho inútil em pacote truncado. FNV-1a detecta corrupção acidental — **não** autentica (sem MAC/TLS).
 
-```mermaid
-sequenceDiagram
-  participant Host
-  participant Wire
-  participant Stub
-  Host->>Wire: encode(packet)
-  Wire->>Stub: bytes
-  Stub->>Stub: decode + validar
-  Stub-->>Host: resposta (futuro)
-```
-
-## 4. Little-endian na prática
-
-Valor `0x1234` como u16:
+## 2. Layout (20 B + N)
 
 ```text
-byte0 = 0x34
-byte1 = 0x12
+0   4  magic "CKD1" (0x31444B43 LE)
+4   2  version
+6   2  command
+8   4  request_id
+12  4  payload_size
+16  4  FNV-1a(payload)
+20  N  payload
 ```
 
-Valor `0x31444B43` (magic CKD1):
+## 3. Little-endian
 
-```text
-bytes: 43 4B 44 31  ("C" "K" "D" "1" em ASCII)
-```
-
-### Tabela de operações
-
-| Operação | Entrada | Saída bytes |
-|----------|---------|-------------|
+| Op | Entrada | Bytes |
+|----|---------|-------|
 | append_u16(0x0102) | 258 | 02 01 |
-| append_u32(0x00000005) | 5 | 05 00 00 00 |
-| read_u16 em [0x34,0x12] | — | 0x1234 |
+| append_u32(5) | 5 | 05 00 00 00 |
+| read_u16 [34,12] | — | 0x1234 |
 
-## 5. FNV-1a
+Magic CKD1 wire: `43 4B 44 31`.
 
-Algoritmo simples de hash 32-bit:
+## 4. FNV-1a
 
 ```text
 hash = 2166136261
-para cada byte b:
-  hash ^= b
-  hash *= 16777619
+para cada byte b: hash ^= b; hash *= 16777619
 ```
 
-**Não é criptografia.** Serve para detectar corrupção acidental de transporte. Em produção, protocolos críticos usam MAC/HMAC ou AEAD.
+Não é cripto. Produção crítica usa MAC/AEAD.
 
-## 6. Encode — ordem das validações
+## 5. Encode / decode
 
-1. rejeitar payload > 1 MiB;
-2. reservar `20 + payload.size()`;
-3. escrever campos na ordem do layout;
-4. calcular hash sobre payload;
-5. concatenar payload.
+Encode: rejeitar payload > 1 MiB; reserve; append campos; hash só do payload; concatena.
 
-## 7. Decode defensivo
-
-Ordem recomendada (fail-fast):
+Decode (ordem):
 
 ```text
-1. bytes.size() >= 20
-2. magic == CKD1
-3. version == 1
-4. ler command, request_id, payload_size, expected_hash
-5. bytes.size() == 20 + payload_size
-6. copiar payload
-7. actual_hash = fnv1a(payload)
-8. actual_hash == expected_hash
+1 size>=20  2 magic  3 version  4 ler campos
+5 size==20+N  6 copiar payload  7 hash  8 comparar
 ```
 
-Qualquer falha: exceção com mensagem específica (facilita testes).
-
-## 8. Exemplo manual
-
-Payload `{0xAA, 0xBB}`, command=1, request_id=42:
-
-```text
-header campos (conceitual):
-  magic CKD1
-  version 1
-  command 1
-  request_id 42
-  payload_size 2
-  hash = fnv1a([AA BB])
-  + AA BB
-```
-
-Alterar último byte do payload deve mudar hash e falhar no passo 8.
-
-## 9. Invariantes
+## 6. Invariantes
 
 | Invariante | Motivo |
 |------------|--------|
-| `kHeaderSize == 20` | layout fixo |
-| `payload_size` consistente com buffer | evita leitura fora |
-| hash cobre só payload, não header | contrato do protocolo |
-| version explícita | evolução compatível |
-| limite 1 MiB | anti-DoS no stub |
+| `kHeaderSize==20` | layout fixo |
+| hash só payload | contrato |
+| limite 1 MiB | anti-DoS |
+| version explícita | evolução |
 
-## 10. Bugs clássicos
+## 7. Bugs clássicos
 
-1. **Big-endian em host BE sem conversão** (lab assume LE wire).
-2. **Incluir header no hash**.
-3. **Aceitar `payload_size` gigante sem checar `bytes.size()`**.
-4. **Ler payload antes de validar tamanho total**.
-5. **Confundir checksum com autenticação**.
+1. BE no wire.
+2. Hash incluir header.
+3. Aceitar `payload_size` gigante sem checar `bytes.size()`.
+4. Copiar payload antes de validar tamanho total.
+5. Tratar FNV como autenticação.
 
-## 11. Comparação com produção
+## 8. Comparação
 
-| Aspecto | Protocol v1 | GDB remote | LLDB | KD/Windbg |
-|---------|-------------|------------|------|-----------|
-| Formato | binário fixo | RSP texto+bin | packetized | variado |
-| Integridade | FNV-1a | opcional | checksums | depende |
-| Extensibilidade | version field | rica | rica | rica |
-| Contexto | stub futuro no kernel | userspace | userspace | kernel |
+| | v1 | GDB RSP | LLDB |
+|--|----|---------|------|
+| Formato | binário fixo | texto+bin | packets |
+| Integridade | FNV-1a | opcional | checksums |
 
-Nosso parser precisa ser pequeno porque no futuro estará próximo de código privilegiado.
-
-## 12. Arquitetura futura
+## 9. Arquitetura futura
 
 ```text
 chris-kd-stub (kernel)
-    <-> transporte serial / virtio / TCP
-    <-> protocolo v1 (este módulo)
-    <-> cliente host chris-debugger
+  <-> serial / virtio / TCP
+  <-> protocolo v1 (este módulo)
+  <-> host chris-debugger
 ```
 
-## 13. Ataques considerados (parcial)
+## 10. Ataques parciais
 
-| Ataque | Mitigação no v1 |
-|--------|-----------------|
-| Pacote truncado | checagem de tamanho |
-| Tamanho mentiroso | `size == 20+payload_size` |
-| Payload corrompido | FNV-1a |
-| Payload enorme | limite 1 MiB |
-| Replay / MITM | **não mitigado** (sem MAC/TLS) |
+| Ataque | Mitigação v1 |
+|--------|--------------|
+| Truncado | size checks |
+| Length mentiroso | `== 20+N` |
+| Corrupção | FNV-1a |
+| Replay/MITM | **não** |
 
-## 14. Perguntas de verificação
+## 11. Perguntas
 
-1. Por que validar magic antes de ler payload_size?
-2. O que acontece se `payload_size=0`?
-3. Por que FNV-1a não basta em rede hostil?
+1. Por que magic antes de ler `payload_size`?
+2. O que faz `payload_size=0`?
+3. Por que FNV não basta em rede hostil?
+
+## Fundamentos adicionais (reforço Dia 01)
+
+### O quê
+
+Um protocolo de debugger serializa comandos e respostas em frames com checksum para sobrevivência a truncamento.
+
+### Como
+
+Trabalhe com um exemplo numérico no papel antes de editar o starter: anote entradas, estado intermediário e saída esperada.
+
+### Por quê
+
+Sem o modelo mental no papel, o código vira tentativa-e-erro e os testes não ensinam o invariante.
+
+### Por quê comparar com produção
+
+Implementações reais (libc, kernels, VMs, GPUs) usam as mesmas ideias com mais camadas; este lab isola o núcleo.
+
+### Por quê falhar de propósito no starter
+
+O starter compila e o teste falha até o TODO existir — isso prova que o harness mede o comportamento certo.
+
+### Trace manual
+
+`	ext
+entrada -> transformação -> invariante -> saída
+` 
+
+### Bugs comuns (módulo)
+
+| Sintoma | Causa | Depuração |
+|---------|-------|-----------|
+| Teste falha após 'implementar' | Off-by-one / endian | Trace byte a byte |
+| PASS sem entender | Copiou gabarito | Refaça o paper-trace |
+

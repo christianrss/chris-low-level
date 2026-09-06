@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\ai\tensor_strides\solutions\build_ci\CMakeFiles\056ba946c0642df67bd152beb0e694bb\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F1CCDCDB-DC84-3D70-9E15-ADE08557B070}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

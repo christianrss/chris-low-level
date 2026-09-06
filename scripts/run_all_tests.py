@@ -12,6 +12,8 @@ PROJECTS = [
     "chris-disassembler",
     "chris-binary-toolkit",
     "chris-renderer",
+    "chris-lantern-hunt",
+    "chris-compress",
     "chris-assembly-lab",
     "chris-cpu",
     "chris-nasm",

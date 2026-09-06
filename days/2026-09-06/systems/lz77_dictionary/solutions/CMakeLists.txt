@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(lz77 CXX)
+set(CMAKE_CXX_STANDARD 20)
+enable_testing()
+add_executable(test_lz77 lz77.cpp test_lz77.cpp)
+add_test(NAME test_lz77 COMMAND test_lz77)

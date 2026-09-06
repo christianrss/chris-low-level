@@ -1,24 +1,52 @@
-# Resolução guiada passo a passo — Graphics reference do chris-os
+# RESOLUÇÃO GUIADA — OS / Graphics reference (chris-os)
 
 ## Mapa exato starter → resolução
 
-- `D2-GFX-INDEX` → `starter/src/graphics.cpp`
-- `D2-GFX-FILL-RECT` → `starter/src/graphics.cpp`
-- `D2-GFX-ALPHA-OVER` → `starter/src/graphics.cpp`
-- `D2-GFX-COMPOSE` → `starter/src/graphics.cpp`
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `D2-GFX-INDEX` | `starter/src/graphics.cpp` | `Surface::index` |
+| `D2-GFX-FILL-RECT` | `starter/src/graphics.cpp` | `Surface::fill_rect` |
+| `D2-GFX-ALPHA-OVER` | `starter/src/graphics.cpp` | `alpha_over` |
+| `D2-GFX-COMPOSE` | `starter/src/graphics.cpp` | `Compositor::compose` |
+| `D2-GFX-DIRTY-RECT` | `starter/src/graphics.cpp` | `DirtyTracker` + marks em fill/blit |
+| `D2-GFX-FRAME-PACE` | `starter/src/graphics.cpp` | `FramePacer::compose_with_damage` |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito e `PEDAGOGY-TEST: ID` nos testes. Se não bater, pare.
+
+> Trabalhe em `days/2026-09-04/os/graphics_reference/starter/`. `solutions/` só após tentativa.
+
+Layout: pixels row-major; `Pixel {r,g,b,a}`; `Layer {surface*, x, y}`; `Rect` AABB; `DirtyTracker`; `FrameStats`.
+
+Os exercícios 5–6 (dirty + frame pace) continuam em `RESOLUCAO_APENDICE.md` se você preferir fatiar a leitura — o mapa acima cobre os seis IDs.
+
+---
 
 ## Baseline
 
 ```bash
-cmake -S days/2026-09-04/os/graphics_reference/starter -B days/2026-09-04/os/graphics_reference/starter/build
-cmake --build days/2026-09-04/os/graphics_reference/starter/build
-ctest --test-dir days/2026-09-04/os/graphics_reference/starter/build --output-on-failure
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
 ```
 
-## Fácil — índice de pixel
-Abra `starter/src/graphics.cpp`, função `Surface::index`.
+Build passa; testes falham enquanto os TODOs existirem.
+
+---
+
+## Exercício Fácil — `D2-GFX-INDEX`
+
+### 1. O problema
+
+O starter lança `logic_error("TODO index")`. Sem índice, `pixel`/`set_pixel`/`fill_rect` não acessam o buffer.
+
+### 2. O algoritmo
+
+```text
+se x >= width_ ou y >= height_: throw out_of_range
+return y * width_ + x
+```
+
+### 3. Escreva o código
 
 ```cpp
 if (x >= width_ || y >= height_) {
@@ -27,46 +55,81 @@ if (x >= width_ || y >= height_) {
 return y * width_ + x;
 ```
 
-Para width=4 e `(x=1,y=2)`, offset=9. Desenhe a grade 4x4 e confirme.
+### 4. Por que funciona
 
-### Por que funciona?
-Pixels são armazenados row-major: cada linha ocupa `width_` slots consecutivos. `y * width_ + x` salta `y` linhas completas e avança `x` colunas. Guard `out_of_range` evita escrita fora do buffer.
+Row-major: cada linha ocupa `width_` slots. `y * width_ + x` salta `y` linhas e avança `x` colunas. Guard evita escrita fora do `vector`.
 
-## Médio — `fill_rect` com clipping
-Comece ignorando dimensões vazias:
+Trace — width=4, `(1,2)` → `2*4+1=9`.
+
+### 5. Verifique
+
+Compile; testes de fill/compose ainda falham. Confirme `(0,0)` → 0 e `(width-1,height-1)` → último.
+
+---
+
+## Exercício Médio — `D2-GFX-FILL-RECT`
+
+### 1. O problema
+
+TODO vazio: retângulos (inclusive negativos) não pintam. O teste `fill_rect(-1,-1,3,3)` espera só a interseção visível.
+
+### 2. O algoritmo
+
+```text
+se width<=0 ou height<=0: return
+x0 = max(0, x);  y0 = max(0, y)
+x1 = min(width_, x+width);  y1 = min(height_, y+height)
+se x0>=x1 ou y0>=y1: return
+para py in [y0,y1), px in [x0,x1): set_pixel(px,py,value)
+mark_dirty(x0,y0,x1-x0,y1-y0)   // ver D2-GFX-DIRTY-RECT
+```
+
+### 3. Escreva o código
 
 ```cpp
 if (width <= 0 || height <= 0) {
     return;
 }
-```
-
-Calcule limites recortados:
-
-```cpp
 const int x0 = std::max(0, x);
 const int y0 = std::max(0, y);
 const int x1 = std::min(static_cast<int>(width_), x + width);
 const int y1 = std::min(static_cast<int>(height_), y + height);
-```
-
-Preencha:
-
-```cpp
+if (x0 >= x1 || y0 >= y1) {
+    return;
+}
 for (int py = y0; py < y1; ++py) {
     for (int px = x0; px < x1; ++px) {
         set_pixel(static_cast<std::size_t>(px), static_cast<std::size_t>(py), value);
     }
 }
+mark_dirty(x0, y0, x1 - x0, y1 - y0);
 ```
 
-No teste `fill_rect(-1,-1,3,3)`, apenas a região [0,2)x[0,2) deve receber vermelho.
+### 4. Por que funciona
 
-### Por que funciona?
-`x0,y0` e `x1,y1` recortam o retângulo pedido à interseção com a surface — retângulos parcialmente fora da tela não corrompem memória nem lançam exceção. Loops semiabertos `[x0,x1)` evitam off-by-one.
+`[x0,x1)×[y0,y1)` é a interseção com a surface. Semiaberto evita off-by-one. Dirty só após clip — nunca marque o pedido cru.
 
-## Difícil A — alpha-over
-Implemente `alpha_over`:
+### 5. Verifique
+
+Surface 4×4, `(-1,-1,3,3)` → `[0,2)×[0,2)`. Pedido `(10,10,2,2)` → vazio, sem dirty.
+
+---
+
+## Exercício Difícil A — `D2-GFX-ALPHA-OVER`
+
+### 1. O problema
+
+Starter devolve `dst` inalterado. Blend 50% vermelho+azul deve ~`(127,0,128)`.
+
+### 2. O algoritmo
+
+```text
+α = src.a;  inv = 255 - α
+canal = (src*α + dst*inv + 127) / 255
+out.a = 255
+```
+
+### 3. Escreva o código
 
 ```cpp
 const unsigned alpha = src.a;
@@ -79,22 +142,40 @@ out.a = 255;
 return out;
 ```
 
-`+127` serve como arredondamento inteiro aproximado antes da divisão.
+### 4. Por que funciona
 
-### Por que funciona?
-Fórmula `src*α + dst*(255-α)` com divisão por 255 implementa “over” em inteiro. `+127` antes de `/255` aproxima arredondamento para o vizinho mais próximo — vermelho+azul 50% → ~(127,0,128).
+Source-over 8-bit. `+127` aproxima arredondamento. Destino tratado como opaco.
 
-## Difícil B — compositor
-Crie saída:
+### 5. Verifique
 
-```cpp
-Surface output(width, height, background);
+`(255,0,0,128)` sobre `(0,0,255,255)` — R e B ~128. α=0 → dst; α=255 → src.
+
+---
+
+## Exercício Difícil B — `D2-GFX-COMPOSE`
+
+### 1. O problema
+
+Starter só devolve surface com `background`. Layers não são desenhadas.
+
+### 2. O algoritmo
+
+```text
+output = Surface(width, height, background)
+para cada layer (nullptr → skip):
+  para sy,sx na layer:
+    dx = layer.x + sx; dy = layer.y + sy
+    se fora do destino: continue
+    output[dx,dy] = alpha_over(layer[sx,sy], output[dx,dy])
+  mark_dirty(footprint ∩ bounds)   // D2-GFX-DIRTY-RECT
+return output
 ```
 
-Para cada layer, ignore `nullptr`, percorra a surface e converta coordenada local `(sx,sy)` em destino `(dx,dy)`. Digite o bloco completo no TODO `D2-GFX-COMPOSE` de `starter/src/graphics.cpp`:
+### 3. Escreva o código
 
 ```cpp
 Surface output(width, height, background);
+const Rect bounds{0, 0, static_cast<int>(width), static_cast<int>(height)};
 for (const auto& layer : layers) {
     if (layer.surface == nullptr) {
         continue;
@@ -110,44 +191,214 @@ for (const auto& layer : layers) {
             const auto ux = static_cast<std::size_t>(dx);
             const auto uy = static_cast<std::size_t>(dy);
             output.set_pixel(
-                ux,
-                uy,
+                ux, uy,
                 alpha_over(layer.surface->pixel(sx, sy), output.pixel(ux, uy)));
         }
+    }
+    const Rect footprint{
+        layer.x,
+        layer.y,
+        static_cast<int>(layer.surface->width()),
+        static_cast<int>(layer.surface->height())};
+    const Rect dirty = footprint.intersect(bounds);
+    if (!dirty.empty()) {
+        output.mark_dirty(dirty);
     }
 }
 return output;
 ```
 
-### Por que funciona?
-Cada layer desenha por cima da composição acumulada (`alpha_over` com pixel já composto). Clipping em `(dx,dy)` ignora pixels fora da surface destino. Ordem do vetor `layers` é z-order — último layer vence.
+### 4. Por que funciona
 
-## Teste esperado
+Z-order = ordem do vetor. Clip em `(dx,dy)`. Dirty do footprint permite o frame pacer saber o que mudou.
+
+### 5. Verifique
+
+Testes antigos de compose/alpha devem passar. Dirty da layer 2×2 em `(2,1)` → rect `(2,1,2,2)`.
+
+---
+
+## Exercício Difícil C — `D2-GFX-DIRTY-RECT`
+
+### 1. O problema
+
+`DirtyTracker::mark_dirty` / `take_dirty_union` estão vazios. Sem união, não há damage para o frame pacer.
+
+### 2. O algoritmo
 
 ```text
-chris-os graphics reference tests passed
-100% tests passed
+mark(x,y,w,h):
+  se w<=0 ou h<=0: return
+  se tracker vazio: union = rect
+  senao: union = union.unite(rect)
+
+take_dirty_union:
+  out = dirty_union(); clear(); return out
 ```
 
-O pixel misturado vermelho + azul 50% deve ficar aproximadamente `(127,0,128)`.
+### 3. Escreva o código
 
-## Debug estilo sistemas
-Se clipping falhar, inspecione `x0,y0,x1,y1`. Se composição falhar, inspecione `sx,sy,dx,dy`, pixel source, pixel destination e alpha. Faça primeiro um caso 2x2 no papel.
+```cpp
+void DirtyTracker::mark_dirty(int x, int y, int width, int height) {
+    if (width <= 0 || height <= 0) {
+        return;
+    }
+    const Rect added{x, y, width, height};
+    if (!has_ || union_.empty()) {
+        union_ = added;
+        has_ = true;
+        return;
+    }
+    union_ = union_.unite(added);
+}
+
+Rect DirtyTracker::take_dirty_union() {
+    const Rect out = dirty_union();
+    clear();
+    return out;
+}
+```
+
+Ligue `fill_rect` (após clip) e o footprint do compose a `mark_dirty` — ver exercícios anteriores.
+
+### 4. Por que funciona
+
+AABB union é O(1) por mark. Trace: marks `(0,0,2,2)` + `(5,5,2,2)` → `(0,0,7,7)` área 49.
+
+### 5. Verifique
+
+`PEDAGOGY-TEST: D2-GFX-DIRTY-RECT` — fill clipado, união de dois fills, footprint do compose.
+
+---
+
+## Exercício Difícil D — `D2-GFX-FRAME-PACE`
+
+### 1. O problema
+
+`compose_with_damage` devolve `FrameStats{}` e não toca o framebuffer. Precisa recompor **só** `damage ∩ bounds`.
+
+### 2. O algoritmo
+
+```text
+region = damage.intersect(bounds do target)
+stats.dirty_area = region.area()
+para cada pixel (px,py) em region:
+  cor = background
+  para cada layer: se (px,py) cai na layer → alpha_over
+  target.set_pixel(px,py,cor)
+  pixels_touched++
+mark_dirty(region) no target
+return stats
+```
+
+A overload com `DirtyTracker&` chama `take_dirty_union()` e delega.
+
+### 3. Escreva o código
+
+```cpp
+FrameStats FramePacer::compose_with_damage(
+    Surface& target,
+    Pixel background,
+    const std::vector<Layer>& layers,
+    Rect damage) {
+    FrameStats stats{};
+    const Rect bounds{
+        0, 0,
+        static_cast<int>(target.width()),
+        static_cast<int>(target.height())};
+    const Rect region = damage.intersect(bounds);
+    stats.dirty_area = region.area();
+    if (region.empty()) {
+        return stats;
+    }
+    for (int py = region.y; py < region.y + region.height; ++py) {
+        for (int px = region.x; px < region.x + region.width; ++px) {
+            Pixel out = background;
+            for (const auto& layer : layers) {
+                if (layer.surface == nullptr) {
+                    continue;
+                }
+                const int sx = px - layer.x;
+                const int sy = py - layer.y;
+                if (sx < 0 || sy < 0 ||
+                    sx >= static_cast<int>(layer.surface->width()) ||
+                    sy >= static_cast<int>(layer.surface->height())) {
+                    continue;
+                }
+                out = alpha_over(
+                    layer.surface->pixel(
+                        static_cast<std::size_t>(sx),
+                        static_cast<std::size_t>(sy)),
+                    out);
+            }
+            target.set_pixel(
+                static_cast<std::size_t>(px),
+                static_cast<std::size_t>(py),
+                out);
+            ++stats.pixels_touched;
+        }
+    }
+    target.mark_dirty(region);
+    return stats;
+}
+```
+
+### 4. Por que funciona
+
+Pixels fora do damage **permanecem** (frame anterior). Damage full-screen deve bater bit-a-bit com `Compositor::compose`. `pixels_touched == dirty_area` neste lab (uma AABB).
+
+### 5. Verifique
+
+```bash
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+Esperado: `chris-os graphics reference tests passed`.
+
+---
+
+## Checkpoint no papel
+
+1. `fill_rect(-1,-1,3,3)` em 4×4 — pixels e dirty?
+2. Dois marks distantes — área da união vs soma das áreas?
+3. Damage 2×2 com framebuffer cinza — o que acontece em `(7,7)`?
+4. Sprite que se move: por que marcar posição antiga **e** nova?
+
+## Debugging
+
+1. Clip falha → `x0,y0,x1,y1` semiaberto.
+2. Dirty “gigante” → marcou antes do clip ou esqueceu `take`.
+3. Fantasma do sprite → damage sem posição anterior.
+4. Pace ≠ compose full → z-order / sample `sx = px - layer.x`.
+5. Mais em `RESOLUCAO_APENDICE.md`.
 
 ## Benchmark
-O benchmark compõe 40 frames 640x360 com duas surfaces. Compile com `CHRIS_BUILD_BENCHMARKS=ON`, rode e registre FPS. Depois use isso como baseline antes de adicionar damage tracking/SIMD.
 
+```bash
+cmake -S starter -B starter/build-bench -DCHRIS_BUILD_BENCHMARKS=ON
+cmake --build starter/build-bench
+./starter/build-bench/os_graphics_benchmark
+```
 
-## Solução final comentada
-Depois de deixar o starter verde, compare somente os blocos `PEDAGOGY-SOLUTION` em `solutions/` correspondentes aos IDs do mapa. Se houver uma linha necessária no gabarito que não foi ensinada acima, trate como defeito do material e não como algo que você deveria adivinhar.
+Compare `mode=full` vs `mode=damage` (`pixels_touched`). Hipótese antes de rodar.
+
+## Relatório
+
+| ID | Aceite |
+|----|--------|
+| INDEX | `y*width+x`; fora → throw |
+| FILL-RECT | negativo parcialmente visível + dirty clipado |
+| ALPHA-OVER | vermelho+azul 50% ≈ (127,0,128) |
+| COMPOSE | layers posteriores por cima + dirty footprint |
+| DIRTY-RECT | união AABB; `take` limpa |
+| FRAME-PACE | só damage; `pixels_touched` / `dirty_area` |
+
+**Saída:** `chris-os graphics reference tests passed`.
 
 ## Relatório de resolução
 
-| ID | Função | Aceite visual/numérico |
-|----|--------|------------------------|
-| D2-GFX-INDEX | `Surface::index` | `y*width+x`; fora dos limites lança |
-| D2-GFX-FILL-RECT | clipping | retângulo negativo parcialmente visível |
-| D2-GFX-ALPHA-OVER | blend | vermelho+azul 50% ≈ (127,0,128) |
-| D2-GFX-COMPOSE | z-order | layers posteriores por cima |
-
-Aceite: `chris-os graphics reference tests passed`. Depure clipping com `x0,y0,x1,y1` antes de alpha. Benchmark 640×360 estabelece baseline FPS CPU antes de otimizações futuras do chris-os.
+- TODOs concluídos: ___
+- Testes starter: FAIL esperado antes / PASS depois? ___
+- Paper-trace dirty+pace feito? Sim/Não
+- Portei para projects/? Sim/Não — evidência: ___

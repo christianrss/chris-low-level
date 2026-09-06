@@ -8,7 +8,7 @@ Foram auditados os 11 módulos do Day 02:
 
 1. `systems/arena_allocator`
 2. `ai/tensor_strides`
-3. `algorithms/sorting_research`
+3. `algorithms/blocked_merge_sort`
 4. `quantum/statevector_intro`
 5. `os/graphics_reference`
 6. `debugger/protocol_v1`
@@ -29,7 +29,7 @@ python scripts/pedagogy_check_day02.py
 Resultado observado:
 
 ```text
-day02 pedagogy check passed: 11 modules, 43 starter TODO mappings
+day02 pedagogy check passed: 11 modules, 48 starter TODO mappings
 ```
 
 O gate exige, para cada TODO de código:
@@ -79,7 +79,7 @@ Nos módulos C++/Python/Node disponíveis neste container, os starters foram con
 Resultados de solution:
 
 - `tensor_strides`: PASS
-- `sorting_research`: PASS
+- `blocked_merge_sort`: PASS
 - `protocol_v1`: PASS
 - `graphics_reference`: PASS
 - `statevector_intro`: PASS

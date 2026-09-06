@@ -1,6 +1,8 @@
 # Milestones
 - [x] portable RGBA surface reference
 - [x] clipped rectangles and alpha compositor
+- [x] dirty-rectangle tracker (AABB union)
+- [x] frame pace / compose_with_damage + FrameStats
 - [ ] bootable kernel/serial console
 - [ ] framebuffer driver
 - [ ] keyboard/mouse input

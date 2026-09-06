@@ -1,155 +1,139 @@
 # Teoria passo a passo — Arena allocator
 
-## 1. O problema que estamos resolvendo
+## 1. O problema de produção
 
-`new`/`delete` e `malloc`/`free` são interfaces gerais. Um *arena allocator* resolve um problema mais restrito: reservar um bloco grande de memória e atender várias alocações pequenas movendo apenas um cursor (`offset`). Isso troca flexibilidade por simplicidade e previsibilidade.
+`malloc`/`free` são gerais. Uma arena reserva um bloco e atende alocações movendo um cursor — previsível quando muitas alocações compartilham lifetime (AST, tokens, frame de jogo, request HTTP).
 
-Em produção, arenas aparecem em compiladores (AST nodes por função), parsers (tokens por arquivo), jogos (frame allocator), servidores HTTP (request scope) e kernels (slab/zone temporária). O padrão comum é: **muitas alocações pequenas com lifetime igual ou menor que um escopo conhecido**.
+### O quê
+
+`Arena`: `is_power_of_two`, `align_up`, `allocate(size, alignment)`, `reset()` O(1) sobre `vector<byte>`.
+
+### Como
+
+Alinhar o endereço real `base+offset_` (não só o offset); checar capacidade sem overflow (`size > cap - aligned_offset`); avançar cursor; reset zera `offset_`.
+
+### Por quê
+
+Alinhar só o offset assume `data()` já alinhado a qualquer A — falso. Soma `aligned+size` sem guard overflow → aceita alocação que ultrapassa o bloco. Reset sem disciplina = use-after-reset (UB).
 
 ## 2. Modelo mental
 
-Imagine um vetor de bytes de 1024 posições. `offset_` começa em zero. Uma alocação de 7 bytes ocupa uma faixa; antes da próxima alocação, o endereço pode precisar ser arredondado para satisfazer um alinhamento de 8, 16, 32 bytes etc.
-
 ```text
-storage_: [........................................................]
-           ^ base
-           ^ offset inicial = 0
-
-allocate(7, 8)
-           [#######]
-                  ^ próximo cursor lógico
-
-allocate(32, 32)
-                  .....padding.....[################################]
+storage_: [................................]
+           ^ base   offset_=0
+allocate(7,8) → [#######]  cursor avança (+padding se preciso)
 ```
 
-### Diagrama de estados
+## 3. Alinhamento (potência de 2)
 
 ```text
-  [CRIADA] --allocate()--> [PARCIALMENTE USADA] --reset()--> [VAZIA]
-                |                                              ^
-                +-- bad_alloc se cheia ------------------------+
+mask = A-1; aligned = (value + mask) & ~mask
 ```
 
-## 3. Alinhamento
+| value | A | aligned |
+|------:|--:|--------:|
+| 13 | 8 | 16 |
+| 17 | 8 | 24 |
+| 33 | 32 | 64 |
 
-Um endereço satisfaz alinhamento `A` quando `endereco % A == 0`. No exercício aceitamos apenas alinhamentos que são potências de dois. Para esses valores, o arredondamento pode ser feito com máscara:
+## 4. Base real vs offset
 
 ```text
-mask = alignment - 1
-aligned = (value + mask) & ~mask
+base=0x1001, offset=0, A=16
+ERRADO: align_up(0,16)=0 → ptr 0x1001 desalinhado
+CERTO:  align_up(0x1001,16)=0x1010 → offset 15
 ```
 
-### Tabela de exemplos manuais
-
-| value | alignment | mask | value+mask | aligned |
-|------:|----------:|-----:|-----------:|--------:|
-| 0     | 8         | 7    | 7          | 0       |
-| 13    | 8         | 7    | 20         | 16      |
-| 16    | 8         | 7    | 23         | 16      |
-| 17    | 8         | 7    | 24         | 24      |
-| 0     | 32        | 31   | 31         | 0       |
-| 33    | 32        | 31   | 64         | 64      |
-
-Você não deve decorar isso sem verificar. No papel, use `value=13`, `alignment=8`: o próximo múltiplo de 8 é 16.
-
-## 4. Por que alinhar o endereço real e não apenas offset?
-
-`std::vector<std::byte>::data()` tem um endereço base. Se você arredondar somente `offset_`, você implicitamente supõe que `base` já está alinhado para todo alinhamento pedido. A implementação deste laboratório calcula `base + offset_`, alinha o endereço e converte de volta para offset.
+## 5. Overflow
 
 ```text
-base = 0x1001 (não múltiplo de 16)
-offset_ = 0
-pedido: allocate(8, 16)
-
-ERRADO: aligned_offset = align_up(0, 16) = 0  -> endereço 0x1001 (desalinhado)
-CERTO:  aligned_addr = align_up(0x1001, 16) = 0x1010 -> offset = 15
+se aligned_offset > cap → bad_alloc
+se size > cap - aligned_offset → bad_alloc
 ```
 
-## 5. Overflow e capacidade
-
-Nunca faça apenas `aligned_offset + size > capacity` sem pensar em overflow. A forma usada no projeto é:
-
-```text
-if aligned_offset > capacity -> falha
-if size > capacity - aligned_offset -> falha
-```
-
-### Trace de exaustão
-
-Arena com capacidade 64, `offset_=60`, pedido `allocate(8, 8)`:
-
-```text
-aligned_offset = 60
-size = 8
-capacity - aligned_offset = 4
-8 > 4 -> std::bad_alloc
-```
-
-## 6. Reset O(1)
-
-Uma arena não precisa percorrer objetos para recuperar o espaço bruto. Neste laboratório, `reset()` apenas coloca `offset_ = 0`. Isso não chama destrutores de objetos C++ que você eventualmente tenha construído manualmente nessa memória — limitação importante para fases futuras.
-
-## 7. Invariantes do laboratório
+## 6. Invariantes
 
 | Invariante | Significado |
 |------------|-------------|
-| `0 <= offset_ <= storage_.size()` | cursor nunca ultrapassa capacidade |
-| cada `allocate` retorna endereço alinhado | `reinterpret_cast<uintptr_t>(ptr) % alignment == 0` |
-| `alignment` é potência de dois não nula | rejeitado com `invalid_argument` |
-| `size > 0` | alocação de tamanho zero é erro |
-| após `reset`, todas as alocações anteriores são inválidas | uso após reset é UB |
+| `0 ≤ offset_ ≤ size` | cursor válido |
+| ptr % A == 0 | alinhamento |
+| A potência de 2 ≠ 0 | senão invalid_argument |
+| size > 0 | zero rejeitado |
+| após reset, ptrs velhos inválidos | UB se usados |
 
-## 8. Bugs clássicos de estudante
+## 7. Bugs clássicos
 
-1. **Testar `alignment` com `% 2 == 0`**: 6 passa, mas não é potência de dois.
-2. **Esquecer `value != 0` em `is_power_of_two`**: zero retorna true incorretamente.
-3. **Somar `aligned_offset + size` sem checar overflow de `size_t`**.
-4. **Retornar ponteiro sem avançar `offset_`**: duas alocações sobrepõem memória.
-5. **Assumir que `reset` destrói objetos**: vazamento de recursos se você usou placement new.
+1. `% 2 == 0` aceita 6.
+2. Esquecer `value != 0` em power-of-two.
+3. Overflow em `aligned+size`.
+4. Retornar sem avançar `offset_`.
+5. Assumir que reset chama destrutores.
 
-## 9. Comparação com produção
+## 8. Quando usar
 
-| Aspecto | Arena deste lab | `malloc`/`free` | Bump allocator em jogo | LLVM BumpPtrAllocator |
-|---------|-----------------|-----------------|------------------------|----------------------|
-| Liberação individual | não | sim | não | não |
-| Reset em lote | O(1) | N chamadas free | O(1) por frame | O(1) por escopo |
-| Alinhamento arbitrário | potências de 2 | sim (via align) | sim | sim |
-| Thread-safety | não | depende | por thread | por instância |
-| Fragmentação interna | padding por alinhamento | pode fragmentar heap | mínima | mínima |
+Usar: lifetime em lote, pico previsível, evitar contenção no allocator global.  
+Evitar: lifetimes independentes, RAII por objeto, tamanhos que explodem a capacidade.
 
-## 10. Quando usar arena vs heap
+## 9. Comparação
 
-Use arena quando:
-- o lifetime de todas as alocações termina juntos;
-- o pico de memória é previsível;
-- você quer evitar contenção no allocator global.
+| | Arena lab | malloc | Bump jogo | LLVM BumpPtr |
+|--|-----------|--------|-----------|--------------|
+| Free individual | não | sim | não | não |
+| Reset lote | O(1) | N frees | O(1)/frame | O(1)/escopo |
+| Threads | não | depende | por thread | por instância |
 
-Evite arena quando:
-- objetos precisam de lifetime independente;
-- tamanhos são imprevisíveis e podem exceder a capacidade;
-- destrutores e RAII precisam rodar por objeto.
-
-## 11. Exemplo manual completo
-
-Arena capacidade 32, alinhamento padrão 8:
+## 10. Exemplo completo (cap 32, A=8)
 
 ```text
-allocate(5, 8)  -> offset 0..5, próximo aligned 8
-allocate(3, 8)  -> offset 8..11, próximo 16
-allocate(10, 16)-> padding 16..16, bytes 16..26, próximo 32
-allocate(1, 8)  -> bad_alloc (não cabe)
-reset()
-allocate(20, 8) -> offset 0..20, OK
+alloc(5,8) → 0..5, próximo 8
+alloc(3,8) → 8..11, próximo 16
+alloc(10,16) → 16..26
+alloc(1,8) → bad_alloc
+reset; alloc(20,8) → OK
 ```
 
-## 12. Relação com o restante do portfólio
+## 11. Relação com o portfólio
 
-Este módulo prepara o terreno para allocators de página (bitmap), pools fixos e estruturas de kernel onde liberar byte a byte seria proibitivo em hot path. A disciplina de **invariantes + overflow + alinhamento** reaparece em quase todo código de sistemas.
+Prepara bitmap page allocator, pools e hot paths de kernel onde free byte-a-byte é proibitivo. Invariantes + overflow + alinhamento reaparecem em quase todo código de sistemas.
 
-## 13. Perguntas de verificação
+## 12. Perguntas
 
-Antes de implementar, responda no caderno:
-1. Por que `13` alinhado a `8` vira `16` e não `8`?
-2. O que acontece se dois threads chamam `allocate` sem lock?
-3. Por que benchmark arena vs `new[]` em loop pode ser injusto se o loop também mede destruição?
+1. Por que 13→16 e não 8?
+2. Dois threads sem lock?
+3. Benchmark arena vs `new[]` com destruição no loop — justo?
+
+## Fundamentos adicionais (reforço Dia 01)
+
+### O quê
+
+Uma arena (bump allocator) entrega blocos contíguos com reset O(1), sem free individual.
+
+### Como
+
+Trabalhe com um exemplo numérico no papel antes de editar o starter: anote entradas, estado intermediário e saída esperada.
+
+### Por quê
+
+Sem o modelo mental no papel, o código vira tentativa-e-erro e os testes não ensinam o invariante.
+
+### Por quê comparar com produção
+
+Implementações reais (libc, kernels, VMs, GPUs) usam as mesmas ideias com mais camadas; este lab isola o núcleo.
+
+### Por quê falhar de propósito no starter
+
+O starter compila e o teste falha até o TODO existir — isso prova que o harness mede o comportamento certo.
+
+### Trace manual
+
+`	ext
+entrada -> transformação -> invariante -> saída
+` 
+
+### Bugs comuns (módulo)
+
+| Sintoma | Causa | Depuração |
+|---------|-------|-----------|
+| Teste falha após 'implementar' | Off-by-one / endian | Trace byte a byte |
+| PASS sem entender | Copiou gabarito | Refaça o paper-trace |
+

@@ -1,12 +1,28 @@
-# Teoria passo a passo — ELF64 e extração de strings
+# Teoria passo a passo — ELF64 triage (Ehdr → Phdr → Shdr → Dynsym)
 
 ## 1. ELF em uma frase
 
-ELF (Executable and Linkable Format) descreve como executáveis, objetos e bibliotecas compartilhadas são representados em disco e carregados em memória. Triagem defensiva começa pelo header: magic, ISA, pontos de entrada e offsets de tabelas.
+ELF (Executable and Linkable Format) descreve como executáveis e bibliotecas são representados em disco e mapeados em memória. Triagem defensiva sobe em camadas: identificar o arquivo → segmentos de carga → seções nomeadas → símbolos dinâmicos — sempre em fixtures/lab targets próprios, sem malware.
+
+### O quê
+
+Parsers pedagógicos em cascata:
+
+1. `parse_elf64_header` — subset ELFCLASS64 little-endian
+2. `parse_program_headers` — tabela `Elf64_Phdr` (56 B)
+3. `parse_section_headers` — tabela `Elf64_Shdr` (64 B) + nomes via `shstrndx`
+4. `list_dynamic_symbols` — `.dynsym` + `.dynstr` → `(name, st_value)`
+5. `extract_ascii_strings` — runs imprimíveis `0x20..0x7E`
+
+### Como
+
+Validar `e_ident` → ler offsets do Ehdr → indexar tabelas com `struct.unpack_from("<…")` → resolver C-strings nas string tables.
+
+### Por quê
+
+Header sozinho não mostra o que o loader mapeia nem quais símbolos dinâmicos existem. Phdr/Shdr/Dynsym fecham a lente de triagem inicial **sem** desassemblar nem executar.
 
 ## 2. Identificação — e_ident
-
-Os primeiros 16 bytes são `e_ident`:
 
 ```text
 offset  campo
@@ -14,134 +30,222 @@ offset  campo
 4       class (1=32-bit, 2=64-bit)
 5       data  (1=LE, 2=BE)
 6       version ident
-7..15   padding/OSABI
+7..15   OSABI / padding
 ```
 
-Nosso parser aceita **ELFCLASS64 little-endian** apenas — subset deliberado.
+Este lab aceita **somente** ELFCLASS64 + little-endian — subset deliberado para offsets fixos.
 
-## 3. Header de 64 bytes — campos usados
+## 3. Elf64_Ehdr — campos usados (64 bytes)
 
 | Offset | Tamanho | Campo | Uso na triagem |
 |-------:|--------:|-------|----------------|
-| 18 | 2 | e_machine | ISA (62=x86-64) |
-| 24 | 8 | e_entry | endereço de _start |
-| 32 | 8 | e_phoff | program headers |
-| 40 | 8 | e_shoff | section headers |
-| 56 | 2 | e_phnum | contagem PH |
-| 60 | 2 | e_shnum | contagem SH |
-| 62 | 2 | e_shstrndx | índice da string table |
+| 18 | 2 | e_machine | ISA (62 = EM_X86_64) |
+| 24 | 8 | e_entry | VA de entrada |
+| 32 | 8 | e_phoff | início da tabela Phdr |
+| 40 | 8 | e_shoff | início da tabela Shdr |
+| 54 | 2 | e_phentsize | deve ser 56 neste lab |
+| 56 | 2 | e_phnum | contagem Phdr |
+| 58 | 2 | e_shentsize | deve ser 64 neste lab |
+| 60 | 2 | e_shnum | contagem Shdr |
+| 62 | 2 | e_shstrndx | índice da seção `.shstrtab` |
 
-## 4. Diagrama de leitura
+## 4. Elf64_Phdr — tabela de program headers (56 bytes cada)
 
-```text
-[ e_ident 16B ][ resto do ELF64 header ]
-        |                |
-   validar magic     struct.unpack_from("<H"/"<Q")
-   class/endian
-```
+### O quê
 
-## 5. Exemplo manual do fixture de teste
+Cada entrada descreve um **segmento** que o loader pode mapear (ex.: `PT_LOAD`). Triagem lê type, file offset, VA, tamanho em arquivo e tamanho em memória.
 
-Bytes sintéticos do teste esperam:
+### Como — tabela de offsets relativos ao início da entrada
 
-```text
-machine = 62        (EM_X86_64)
-entry   = 0x401000
-phnum   = 3
-shnum   = 12
-shstrndx = 11
-```
+| Offset | Tipo | Campo | Significado |
+|-------:|------|-------|-------------|
+| 0 | `<I` | p_type | tipo (1 = PT_LOAD) |
+| 4 | `<I` | p_flags | R/W/X (não exigido no parser mínimo) |
+| 8 | `<Q` | p_offset | offset no arquivo |
+| 16 | `<Q` | p_vaddr | endereço virtual |
+| 24 | `<Q` | p_paddr | físico (raro em userland) |
+| 32 | `<Q` | p_filesz | bytes no arquivo |
+| 40 | `<Q` | p_memsz | bytes em memória (≥ filesz se BSS) |
+| 48 | `<Q` | p_align | alinhamento |
 
-Qualquer offset errado em `unpack_from` quebra um campo isolado — use hex dump para depurar.
+Leitura: `base = phoff + i * 56`. Validar `phoff + phnum * 56 ≤ len(data)`.
 
-## 6. Strings ASCII — algoritmo
+### Por quê
 
-Percorra `data + b"\x00"` (sentinela força fechamento no fim):
-
-```text
-para cada byte:
-  se 0x20 <= byte <= 0x7E -> continua run
-  senão -> fecha run se len >= minimum
-```
-
-### Exemplo
+`memsz > filesz` indica preenchimento zero (BSS). Segmentos anômalos (offset fora do arquivo, type estranho) são sinais de triagem — não prova de malware.
 
 ```text
-bytes: 48 65 6C 6C 6F 00 41 42
-       H  e  l  l  o     A  B
-runs (min=4): offset 0 "Hello"
-runs (min=2): "Hello", offset 6 "AB" (se A,B contíguos imprimíveis)
+[ Ehdr 64B ][ Phdr0 56B ][ Phdr1 56B ] ...
+     |            ^
+  e_phoff --------+
 ```
 
-## 7. Invariantes do parser
+## 5. Elf64_Shdr — tabela de section headers (64 bytes cada)
 
-| Invariante | Ação se violado |
-|------------|-----------------|
-| `len(data) >= 64` | ValueError truncated |
-| magic ELF | ValueError mismatch |
-| class == 2 | só 64-bit |
-| data == 1 | só LE |
-| offsets dentro do buffer | futuras fases |
+### O quê
 
-## 8. Bugs clássicos
+Seções nomeadas (`.dynsym`, `.dynstr`, `.text`, …) usadas por linkers e ferramentas. Triagem precisa do **nome** além de type/offset/size.
 
-1. **Offset errado na tabela ELF** (copiar de diagrama 32-bit).
-2. **Endianness errada** (`>` em vez de `<`).
-3. **Strings sem sentinela NUL** (última run não fecha).
-4. **Confundir `minimum` com encoding** (UTF-8 multibyte não é ASCII).
-5. **Concluir malware só por string** ("/bin/sh" pode ser falso positivo).
+### Como — offsets relativos
 
-## 9. Comparação com produção
+| Offset | Tipo | Campo | Significado |
+|-------:|------|-------|-------------|
+| 0 | `<I` | sh_name | índice em `.shstrtab` |
+| 4 | `<I` | sh_type | 0=NULL, 3=STRTAB, 11=DYNSYM, … |
+| 8 | `<Q` | sh_flags | alocável etc. |
+| 16 | `<Q` | sh_addr | VA (se carregada) |
+| 24 | `<Q` | sh_offset | offset no arquivo |
+| 32 | `<Q` | sh_size | tamanho |
+| 40 | `<I` | sh_link | link (dynsym → dynstr) |
+| 56 | `<Q` | sh_entsize | tamanho do elemento (24 p/ Sym) |
+
+Resolver nomes:
+
+```text
+shstr = sections[e_shstrndx]
+nome  = C-string em data[shstr.offset + sh_name]
+```
+
+Alternativa pedagógica: se `shstrndx` falhar, varrer bytes de cada seção candidata por substrings `.dynsym` / `.dynstr` — o lab preferencial usa `shstrndx`.
+
+### Por quê
+
+Sem nomes, `SHT_DYNSYM` ainda ajuda, mas binários stripped/renomeados exigem cruzar type + conteúdo. String table correta evita achar a seção errada.
+
+```text
+Shdr table @ e_shoff
+   |
+   +--> [0] SHT_NULL
+   +--> [1] .dynsym  (type 11) -----> bytes @ sh_offset
+   +--> [2] .dynstr  (type 3)  -----> "\0lab_main\0"
+   +--> [3] .shstrtab (type 3) -----> "\0.dynsym\0.dynstr\0..."
+                ^
+           e_shstrndx
+```
+
+## 6. Elf64_Sym — símbolos dinâmicos (24 bytes)
+
+### O quê
+
+Lista `(name, st_value)` de `.dynsym`, com nomes em `.dynstr`. Triagem benigna: inventário de exports/imports dinâmicos do fixture.
+
+### Como
+
+| Offset | Tipo | Campo |
+|-------:|------|-------|
+| 0 | `<I` | st_name (índice em dynstr) |
+| 4 | `B` | st_info |
+| 5 | `B` | st_other |
+| 6 | `<H` | st_shndx |
+| 8 | `<Q` | st_value |
+| 16 | `<Q` | st_size |
+
+`name = C-string(dynstr.offset + st_name)`. Entrada nula (`st_name == 0`) é ignorada na listagem pedagógica.
+
+### Por quê
+
+Símbolos dão âncoras nomeadas para o relatório de triagem (ex.: `lab_main @ 0x401100`) sem precisar de desassembler. Não implica comportamento malicioso.
+
+## 7. Fixture sintético do teste
+
+Layout compacto e benigno:
+
+```text
+0x000  Ehdr (phoff=64, phnum=1, shoff=0x200, shnum=4, shstrndx=3)
+0x040  Phdr PT_LOAD vaddr=0x400000 filesz=memsz=len(blob)
+0x100  .dynsym  — 1 × Elf64_Sym (st_name=1, st_value=0x401100)
+0x120  .dynstr  — "\0lab_main\0"
+0x140  .shstrtab — "\0.dynsym\0.dynstr\0.shstrtab\0"
+0x200  Shdr[4]
+```
+
+Esperado: um PHDR `type=1`, seções `.dynsym`/`.dynstr` resolvidas, símbolo `lab_main`.
+
+## 8. Strings ASCII — algoritmo
+
+### O quê
+
+Lista `(offset, text)` de runs ASCII longas o bastante.
+
+### Como
+
+Percorra `data + b"\x00"`; feche run em byte fora de `0x20..0x7E`; filtre por `minimum`.
+
+### Por quê
+
+Complementa símbolos: paths e mensagens aparecem em strings mesmo sem dynsym. Sentinela NUL evita perder a última run.
+
+## 9. Invariantes defensivas
+
+| Invariante | Se violado |
+|------------|------------|
+| `len >= 64` + magic/class/endian/version | ValueError no Ehdr |
+| `phoff + phnum*56 ≤ len` | Phdr truncado |
+| `shoff + shnum*64 ≤ len` | Shdr truncado |
+| `shstrndx < shnum` | índice inválido |
+| `dynsym.size % 24 == 0` | tabela corrompida |
+| offsets de string tables dentro do buffer | truncamento |
+
+## 10. Bugs clássicos
+
+1. Usar offsets de **Elf32_Phdr/Shdr** (tamanhos e campos diferentes).
+2. Endian `>` em host little-endian.
+3. Esquecer que `sh_name` é índice na **shstrtab**, não offset absoluto no arquivo.
+4. Confundir `p_vaddr` com file offset ao achar seções.
+5. Tratar string/`lab_main` como IOC de malware — neste lab é fixture benigno.
+6. Strings sem sentinela NUL no scanner ASCII.
+
+## 11. Comparação com produção
 
 | Ferramenta | Escopo | Nosso lab |
 |------------|--------|-----------|
-| readelf | completo | header subset |
-| objdump | símbolos+reloc | não |
-| strings(1) | scan otimizado | pedagogico |
-| YARA | assinaturas | regra separada no módulo |
-| Binary Ninja | IR completo | triagem inicial |
+| readelf -l/-S/-s | completo | subset Phdr/Shdr/Dynsym |
+| objdump -T | dynsym rico | nome + value |
+| eu-readelf | robusto a corruptos | ValueError cedo |
+| Binary Ninja | IR | triagem inicial |
 
-Triagem real combina header, seções, imports, entropia e regras — strings é só uma lente.
+## 12. Limitações conscientes
 
-## 10. Limitações conscientes
+- Sem relocações, `.dynamic`, hash GNU, ou verificação de assinatura.
+- Sem ELF32 / big-endian.
+- Sem execução do binário.
+- Dynsym listado só por nome de seção (ou type DYNSYM + STRTAB).
 
-- Não parseamos program/section headers completos ainda.
-- Não validamos checksum do ELF.
-- Não suportamos ELF32 nem big-endian.
-- Strings não provam comportamento.
-
-## 11. Workflow de análise (lab)
+## 13. Workflow de análise (lab)
 
 ```text
-1. parse_elf64_header -> ISA, entry, offsets
-2. ascii_strings -> IOCs candidatos
-3. comparar com readelf em binário benigno compilado localmente
-4. cruzar com YARA (lab_target.yar)
+1. parse_elf64_header
+2. parse_program_headers   -> segmentos
+3. parse_section_headers   -> .dynsym/.dynstr
+4. list_dynamic_symbols    -> (name, value)
+5. extract_ascii_strings   -> IOCs candidatos
+6. opcional: readelf no lab_target.c compilado localmente
 ```
 
-## 12. Segurança operacional
+## 14. Segurança operacional
 
-Compile apenas `lab_target.c` fornecido. Não execute binários desconhecidos. Strings podem conter dados sensíveis — trate logs como confidenciais.
+Compile apenas `lab_target.c` fornecido. Não execute binários desconhecidos. Fixtures são sintéticos e benignos. Logs de strings podem conter dados sensíveis de amostras autorizadas — trate como confidenciais.
 
-## 13. Relação red team / blue team
+## 15. Red team / blue team
 
-Red team usa strings para encontrar credenciais hardcoded, paths e comandos. Blue team sabe que ofuscação e criptografia reduzem esse sinal. O exercício treina **parser correto**, não conclusões apressadas.
+Red team usa dynsym/strings para achar APIs e paths. Blue team sabe que strip, packing e nomes falsos degradam o sinal. O exercício treina **parser correto**, não veredito de malware.
 
-## 14. Perguntas de verificação
+## 16. Perguntas de verificação
 
-1. Qual diferença entre `e_phoff` e `e_shoff`?
-2. Por que adicionamos `b"\x00"` no scanner?
-3. O que significa `machine=62`?
+1. Qual a diferença entre `p_filesz` e `p_memsz`?
+2. Como `e_shstrndx` conecta `sh_name` ao texto `.dynsym`?
+3. Por que `Elf64_Sym` tem 24 bytes e onde está `st_value`?
+4. Por que validar bounds **antes** de `unpack_from` em loops `phnum`/`shnum`?
 
 ---
 
 ## Por quê — síntese pedagógica
 
 ### Por quê este módulo existe?
-Conectar teoria de baixo nível a decisões de implementação verificáveis — não decorar API.
+Conectar layout ELF real a decisões de implementação verificáveis — Ehdr sozinho é insuficiente para triagem séria.
 
 ### Por quê estas invariantes?
-Cada `TODO [ID]` protege uma propriedade que quebra silenciosamente em produção se ignorada (overflow, estado inválido, parsing parcial).
+Cada `TODO [ID]` protege truncamento, índice inválido ou parsing parcial que falha silenciosamente em produção.
 
 ### Por quê medir e portar para `projects/`?
-Lab isola o aprendizado; `projects/chris-*` consolida engenharia de portfólio com testes e benchmarks reproduzíveis.
+Lab isola o aprendizado; `projects/chris-binary-toolkit` consolida o toolkit com testes e benchmarks reproduzíveis.

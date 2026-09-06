@@ -6,6 +6,18 @@ Serviços Node.js frequentemente consomem **streams** — logs, NDJSON, protocol
 
 Sem framing, você acumula bytes até EOF (memória ilimitada) ou interpreta chunks como mensagens completas (corrupção silenciosa). Backpressure entra quando o produtor envia mais rápido que o consumidor processa.
 
+### O quê
+
+`LineFramer` (`Transform`): bytes in → strings de linha out, com `#pending` e teto `maxLineBytes`.
+
+### Como
+
+Acumular chunks em `Buffer`; loop `indexOf(0x0A)`; `push` linha; reter remainder; `_flush` emite resto no EOF; `pipeline` + `highWaterMark` demonstram backpressure.
+
+### Por quê
+
+Chunk ≠ mensagem. Framing correto + limite de memória é o núcleo de NDJSON, logs e parsers de protocolo texto em produção Node.
+
 ## 2. Modelo mental — bytes vs mensagens
 
 ```text

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(huffman CXX)
+set(CMAKE_CXX_STANDARD 20)
+enable_testing()
+add_executable(test_huffman bit_io.cpp huffman.cpp test_huffman.cpp)
+add_test(NAME test_huffman COMMAND test_huffman)

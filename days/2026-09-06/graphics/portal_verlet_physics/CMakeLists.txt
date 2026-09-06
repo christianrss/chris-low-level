@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(portal_verlet_physics CXX)
+set(CMAKE_CXX_STANDARD 17)
+enable_testing()
+
+option(USE_SOLUTIONS "Build solutions instead of starter" OFF)
+if(USE_SOLUTIONS)
+    add_subdirectory(solutions)
+else()
+    add_subdirectory(starter)
+endif()

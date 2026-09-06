@@ -4,12 +4,13 @@ Laboratório unificado de low-level. O estudo é **modular**: cada pasta `<trilh
 
 ## Fluxo por módulo
 
-1. Leia `README.md` e `TEORIA_PASSO_A_PASSO.md` (≥120 linhas, diagramas, O quê/Como/Por quê).
-2. Abra `EXERCICIOS.md` — quatro níveis: Fácil → Médio → Difícil → Desafio.
-3. Implemente no `starter/` seguindo os `TODO [ID]` (veja `TODO_MAP.md`).
-4. Rode testes — procure `PEDAGOGY-TEST: ID` nos arquivos de teste.
-5. Consulte `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` só ao travar; inclui mapa starter→TODO e Relatório de resolução.
-6. Compare com `solutions/` após tentativa honesta; registre benchmark em `BENCHMARK_GUIADO.md`.
+1. Leia `README.md` e `TEORIA_PASSO_A_PASSO.md` — O quê / Como / Por quê + **trace no papel**.
+2. Faça o **checkpoint conceitual** (paper-trace) do módulo **antes** de abrir o `starter/` — desenhe no papel o fluxo/estado que a TEORIA descreve; `ctest PASS` sozinho não basta.
+3. Abra `EXERCICIOS.md` — quatro níveis: Fácil → Médio → Difícil → Desafio.
+4. Implemente no `starter/` seguindo os `TODO [ID]` (veja `TODO_MAP.md`).
+5. Rode testes — procure `PEDAGOGY-TEST: ID` nos arquivos de teste. Esperado: FAIL até completar.
+6. Consulte `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` só ao travar — problema → algoritmo → código → Por que funciona.
+7. Compare com `solutions/` após tentativa honesta; registre benchmark em `BENCHMARK_GUIADO.md`.
 
 ## Ordem recomendada
 

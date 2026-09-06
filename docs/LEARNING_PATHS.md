@@ -36,7 +36,7 @@ flowchart LR
 | Etapa | Módulo | Conceito |
 |-------|--------|----------|
 | 1 | `2026-09-03/tooling/miniobjdump` | ELF/PE headers, primeiros opcodes |
-| 2 | `2026-09-04/redteam/elf64_triage` | triage defensivo, strings |
+| 2 | `2026-09-04/redteam/elf64_triage` | Ehdr + Phdr/Shdr + dynsym + strings |
 | 3 | `2026-09-05/redteam/elf_entry_inspector` | `e_entry`, validação byte-a-byte |
 | Capstone | `projects/chris-binary-toolkit` | pipeline strings + ELF + YARA-style |
 
@@ -101,8 +101,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  gfx[Day01 dual_backend_3d] --> os[Day02 graphics_reference]
-  os --> vk[Day05 vulkan_states]
+  gfx[Day01 dual_backend_3d] --> portal[Day06 portal_verlet]
+  portal --> vk[Day05 vulkan_states]
+  hunt[projects/chris-lantern-hunt]
   clr[Day02 clr_pe] --> cil[Day05 cil_decoder]
   matmul[Day05 tiled_matmul] --> capstone[projects/chris-tensor]
 ```
@@ -110,10 +111,36 @@ flowchart LR
 | Etapa | Módulo | Conceito |
 |-------|--------|----------|
 | 1 | `2026-09-03/graphics/dual_backend_3d` | software vs GL |
-| 2 | `2026-09-04/os/graphics_reference` | compositor software |
-| 3 | `2026-09-05/graphics/vulkan_d3d12_resource_states` | máquina de estados GPU |
-| 4 | `2026-09-05/ai/tiled_matmul_cache` | cache blocking, benchmark |
+| 1b | `projects/chris-lantern-hunt` | FPS horror OpenGL (projeto extra opcional) |
+| 2 | `2026-09-06/graphics/portal_verlet_physics` | portais stencil + Verlet + esfera |
+| 3 | `2026-09-04/os/graphics_reference` | compositor RGBA + dirty-rect + frame pacing |
+| 4 | `2026-09-05/graphics/vulkan_d3d12_resource_states` | máquina de estados GPU |
+| 5 | `2026-09-05/ai/tiled_matmul_cache` | cache blocking, benchmark |
 | Capstone | `projects/chris-tensor` + `projects/chris-gpu-state` |
+
+---
+
+## 7. Compressão e formatos de arquivo
+
+```mermaid
+flowchart LR
+  rle[Day06 rle] --> huf[Day06 huffman]
+  huf --> lz[Day06 lz77]
+  lz --> defl[Day06 deflate]
+  defl --> zlib[Day06 zlib_gzip]
+  zlib --> png[Day06 png_idat]
+  png --> cap[projects/chris-compress]
+```
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-06/systems/rle_byte_codec` | runs byte-a-byte |
+| 2 | `2026-09-06/systems/huffman_entropy` | entropia, árvore canônica |
+| 3 | `2026-09-06/systems/lz77_dictionary` | janela deslizante |
+| 4 | `2026-09-06/systems/deflate_blocks` | RFC 1951 subset |
+| 5 | `2026-09-06/tooling/zlib_gzip_containers` | wrappers zlib/gzip |
+| 6 | `2026-09-06/tooling/png_idat_pipeline` | chunks PNG + IDAT |
+| Capstone | `projects/chris-compress` | CLI encadeada |
 
 ---
 

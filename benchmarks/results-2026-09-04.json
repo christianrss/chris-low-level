@@ -17,30 +17,9 @@
       "gflops": 1.61508
     },
     "chris-algorithms": {
-      "random": {
-        "merge_us": 980,
-        "merge_comparisons": 147678,
-        "quick_us": 791,
-        "quick_comparisons": 193075
-      },
-      "sorted": {
-        "merge_us": 235,
-        "merge_comparisons": 79312,
-        "quick_us": 51486,
-        "quick_comparisons": 71609635
-      },
-      "reversed": {
-        "merge_us": 229,
-        "merge_comparisons": 84331,
-        "quick_us": 50107,
-        "quick_comparisons": 71792768
-      },
-      "duplicates": {
-        "merge_us": 627,
-        "merge_comparisons": 144778,
-        "quick_us": 2657,
-        "quick_comparisons": 4561956
-      }
+      "n": 65536,
+      "tile_size": 256,
+      "note": "blocked_merge_sort SortIoStats; replace with measured us/cmp/bread/bwrite"
     },
     "chris-qsim": [
       {
@@ -106,13 +85,13 @@
         }
       ]
     },
-    "algorithms/sorting_research": {
+    "algorithms/blocked_merge_sort": {
       "status": "ok",
       "targets": [
         {
           "name": "algorithm_benchmark.exe",
-          "median_ms": 329.6997,
-          "last_line": "duplicates n=12000 merge_us=934 merge_cmp=144778 quick_us=9956 quick_cmp=4561956"
+          "median_ms": 0,
+          "last_line": "random n=65536 tile=256 (re-run bench after port)"
         }
       ]
     },

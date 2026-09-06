@@ -34,17 +34,17 @@ RELATORIOS: dict[str, str] = {
 - **Edge cases testados:** out-of-bounds em `at`; matmul shapes inválidas
 - **Benchmark:** ordem i-k-j vs i-j-k — locality melhora mediana em matrizes maiores
 """,
-    "algorithms/sorting_research": """## Relatório de resolução
+    "algorithms/blocked_merge_sort": """## Relatório de resolução
 
-- **TODOs concluídos:** D2-SORT-MERGE-RANGE, D2-SORT-MERGE-RECURSE, D2-SORT-PARTITION, D2-SORT-QUICK-LOOP
+- **TODOs concluídos:** D2-BLOCK-IO-STATS, D2-BLOCK-SORT-TILE, D2-BLOCK-MERGE-RUN, D2-BLOCK-PASSES
 - **Comandos de teste:**
   ```bash
   cmake -S starter -B build && cmake --build build && ctest --test-dir build
   ```
-- **Saída esperada:** merge e quicksort corretos em arrays aleatórios e adversariais
-- **Invariantes verificadas:** estabilidade conceitual do merge; pivot partition; recursão tail-friendly no quick
-- **Edge cases testados:** array vazio, um elemento, duplicatas, array já ordenado
-- **Benchmark:** quicksort degrada em input ordenado sem pivot aleatório — registre mediana por distribuição
+- **Saída esperada:** blocked merge sort correto; I/O em tiles no Caso 4
+- **Invariantes verificadas:** runs por tile; merge estável; passes até um run; SortIoStats
+- **Edge cases testados:** vazio, singleton, um tile, n não múltiplo de tile, tile_size=0
+- **Benchmark:** variar tile_size — I/O vs comparisons da fase 0; registre mediana
 """,
     "quantum/statevector_intro": """## Relatório de resolução
 
@@ -157,16 +157,17 @@ Matriz 256×256 float, Release, 9 repetições após 2 warm-ups.
 
 Check numérico `128.0` em fixture menor. Locality da ordem k explica ganho — não é otimização automática do compilador sozinha.
 """,
-    "algorithms/sorting_research": """## Resultados observados
+    "algorithms/blocked_merge_sort": """## Resultados observados
 
-n=100_000 int32, mediana de 9 runs.
+n=65536, seed fixa, mediana de ≥5 runs; varie só `tile_size`.
 
-| algoritmo | random | sorted adversarial |
-|-----------|-------:|-------------------:|
-| mergesort | ~14 ms | ~14 ms |
-| quicksort | ~9 ms | ~420 ms |
+| tile_size | tendência I/O | tendência fase 0 |
+|----------:|---------------|------------------|
+| 64 | mais `block_reads` | insertion barato por tile |
+| 256 | equilíbrio típico | bom trade-off em lab |
+| 4096 | menos tiles | insertion O(t²) pesa |
 
-Quicksort precisa de randomização de pivot ou híbrido para produção; merge mantém pior caso estável.
+I/O é idêntico para sorted vs reversed no mesmo tile; comparisons da fase 0 diferem.
 """,
     "quantum/statevector_intro": """## Resultados observados
 

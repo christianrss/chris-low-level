@@ -1,74 +1,140 @@
-# Resolução guiada passo a passo — Linux — ANSI Parser
+# RESOLUÇÃO GUIADA — Linux / ANSI CSI parser
 
 ## Mapa exato starter → resolução
 
-- `TERM-ANSI-SGR-01` → `starter/ansi.py` (`_apply_csi` final `m`, `feed` loop CSI)
-- `TERM-CURSOR-02` → `starter/ansi.py` (`_apply_csi` final `H`)
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `TERM-ANSI-SGR-01` | `starter/ansi.py` | `_apply_csi` final `m` + loop `feed` |
+| `TERM-CURSOR-02` | `starter/ansi.py` | `_apply_csi` final `H` + loop `feed` |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito e `PEDAGOGY-TEST: ID` em `starter/test_ansi.py`.
 
-> Trabalhe em `days/2026-09-05/linux/pty_ansi_terminal/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+> Trabalhe em `days/2026-09-05/linux/pty_ansi_terminal/starter/`. `solutions/` é gabarito — consulte só depois da tentativa.
 
-## 0. Preparar o projeto
+> Não comece copiando `solutions/`. Rode `python test_ansi.py` após cada bloco.
 
-```bash
-cd days/2026-09-05/linux/pty_ansi_terminal/starter
+---
+
+## TERM-ANSI-SGR-01 — SGR (`m`) e tokenização em `feed`
+
+### 1. O problema (starter stub)
+
+```python
+def _apply_csi(self, params: str, final: str) -> None:
+    # TODO [TERM-ANSI-SGR-01] / [TERM-CURSOR-02]
+    raise NotImplementedError
+
+def feed(self, text: str) -> None:
+    # TODO [TERM-ANSI-SGR-01] [TERM-CURSOR-02]
+    raise NotImplementedError
+```
+
+Sem `feed`, literais e CSI nunca entram. Sem `m`, `fg` fica 7 e o teste falha em `\x1b[31m` → `fg=1`.
+
+### 2. O algoritmo
+
+```text
+_apply_csi(params, final):
+  values ← [int(x) ou 0] de params.split(";") ; se params vazio → [0]
+  se final == "m":
+    para v em values: 0 → fg=7 ; 31 → fg=1
+  (H fica para o próximo TODO)
+
+feed(text):
+  index ← 0
+  enquanto index < len(text):
+    se text[index:index+2] == ESC+"[":
+      cursor ← index+2; avançar até char em "mH"
+      se fim sem final → ValueError("incomplete CSI")
+      _apply_csi(params, final); index ← após final
+    senão: screen_text += text[index]; index += 1
+```
+
+### 3. Código completo
+
+Em `starter/ansi.py`, substitua `_apply_csi` e `feed` (deixe o branch `H` para o próximo TODO ou implemente já):
+
+```python
+def _apply_csi(self, params: str, final: str) -> None:
+    values = (
+        [int(x) if x else 0 for x in params.split(";")]
+        if params
+        else [0]
+    )
+    if final == "m":
+        for value in values:
+            if value == 0:
+                self.fg = 7
+            elif value == 31:
+                self.fg = 1
+    elif final == "H":
+        row = values[0] if values and values[0] else 1
+        col = values[1] if len(values) > 1 and values[1] else 1
+        self.row = row - 1
+        self.col = col - 1
+
+def feed(self, text: str) -> None:
+    index = 0
+    while index < len(text):
+        if (
+            text[index] == "\x1b"
+            and index + 1 < len(text)
+            and text[index + 1] == "["
+        ):
+            cursor = index + 2
+            while cursor < len(text) and text[cursor] not in "mH":
+                cursor += 1
+            if cursor >= len(text):
+                raise ValueError("incomplete CSI")
+            self._apply_csi(text[index + 2 : cursor], text[cursor])
+            index = cursor + 1
+        else:
+            self.screen_text += text[index]
+            index += 1
+```
+
+### 4. Por que funciona?
+
+- `params.split(";")` + `int(x) if x else 0`: `"31"` → `[31]`; `""` → `[0]`; `31;;1` não quebra em `int('')`.
+- SGR só muta `fg` — escapes nunca entram em `screen_text`.
+- `0` → `fg=7` é o default do teste após `\x1b[0m`.
+- ESC+`[` + scan até `m`/`H`: tokeniza CSI sem consumir literais; incompleto → `ValueError`.
+
+### 5. Verificação parcial
+
+```powershell
+cd E:\Aulas\low-level-unified-portfolio\days\2026-09-05\linux\pty_ansi_terminal\starter
 python test_ansi.py
 ```
 
-Baseline: `NotImplementedError` em `feed` ou `_apply_csi`. Os testes devem falhar até implementar os TODOs.
-
-## Exercício médio — `TERM-ANSI-SGR-01` em `_apply_csi`
-
-### Arquivo
-
-Abra `starter/ansi.py`, localize `_apply_csi`.
-
-Substitua o corpo por:
-
-```python
-values = (
-    [int(x) if x else 0 for x in params.split(";")]
-    if params
-    else [0]
-)
-
-if final == "m":
-    for value in values:
-        if value == 0:
-            self.fg = 7
-        elif value == 31:
-            self.fg = 1
-```
-
-Deixe `elif final == "H":` para o próximo TODO (ou implemente stub vazio temporariamente).
-
-### Por que funciona?
-
-- `params.split(";")` decompõe `"31"` → `["31"]` e `"0"` → `["0"]`.
-- `int(x) if x else 0` trata segmentos vazios em sequências como `31;;1`.
-- SGR não altera `screen_text` — apenas estado `fg`.
-- `0` restaura o default 7 exigido pelo teste após `\x1b[0m`.
-
-### Trace no papel
-
-`_apply_csi("31", "m")`:
+Com SGR+`feed` e `H` ainda stub vazio, asserts de cursor falham. Trace SGR no papel:
 
 ```text
-values = [31]
-value 31 → fg = 1
+_apply_csi("31","m") → values=[31] → fg=1
+_apply_csi("0","m")  → values=[0]  → fg=7
 ```
 
-`_apply_csi("0", "m")`:
+---
+
+## TERM-CURSOR-02 — Cursor Position (`H`)
+
+### 1. O problema
+
+O branch `elif final == "H"` no stub acima ainda precisa dos defaults 1-based e da conversão 0-based. Sem isso, `\x1b[10;20H` deixa `row=0` e `\x1b[H` pode ir a (−1,−1).
+
+### 2. O algoritmo
 
 ```text
-values = [0]
-value 0 → fg = 7
+se final == "H":
+  row ← values[0] se truthy senão 1
+  col ← values[1] se existe e truthy senão 1
+  self.row ← row - 1
+  self.col ← col - 1
 ```
 
-## Exercício médio — `TERM-CURSOR-02` em `_apply_csi`
+### 3. Código completo
 
-No mesmo método, após o bloco `m`, adicione:
+O bloco `H` já está no código da seção anterior — confirme que está assim:
 
 ```python
 elif final == "H":
@@ -78,95 +144,32 @@ elif final == "H":
     self.col = col - 1
 ```
 
-### Por que funciona?
+### 4. Por que funciona?
 
-- ANSI usa coordenadas 1-based; os testes comparam com índices 0-based.
-- `\x1b[H` tem `params=""` → `values=[0]` → `values[0]` é 0 (falsy) → default row=1 → `self.row=0`.
-- Coluna omitida (`\x1b[3H`) usa default col=1 → `self.col=0`.
+- ANSI é 1-based; o lab compara índices 0-based (`10;20` → `(9,19)`).
+- `values[0]==0` (params vazios) é falsy → default row/col = 1 → home `(0,0)`.
+- Coluna omitida (`\x1b[3H`) → `len(values)==1` → col default 1 → `self.col=0`.
 
-### Trace no papel
+### 5. Verificação
 
-`_apply_csi("10;20", "H")`:
-
-```text
-values = [10, 20]
-row = 10, col = 20
-self.row = 9, self.col = 19
+```powershell
+python test_ansi.py
 ```
 
-`_apply_csi("", "H")`:
+Esperado: `OK ansi`.
 
-```text
-values = [0]
-row default 1 → self.row = 0
-col default 1 → self.col = 0
-```
-
-## Exercício difícil — `feed` (ambos os IDs)
-
-Localize `feed` e implemente o loop:
-
-```python
-index = 0
-while index < len(text):
-    if (
-        text[index] == "\x1b"
-        and index + 1 < len(text)
-        and text[index + 1] == "["
-    ):
-        cursor = index + 2
-        while cursor < len(text) and text[cursor] not in "mH":
-            cursor += 1
-        if cursor >= len(text):
-            raise ValueError("incomplete CSI")
-        self._apply_csi(text[index + 2 : cursor], text[cursor])
-        index = cursor + 1
-    else:
-        self.screen_text += text[index]
-        index += 1
-```
-
-### Por que funciona?
-
-- Detecta início CSI com ESC + `[` sem consumir bytes prematuramente.
-- O inner `while` acumula params até `m` ou `H` — os únicos finals deste lab.
-- `cursor >= len(text)` sem final → `ValueError` conforme TESTES_GUIADOS.
-- Caracteres fora de CSI vão para `screen_text` um a um.
-
-### Trace do teste `test_sgr_and_cursor`
-
-Entrada `"A\x1b[31mB\x1b[10;20HC\x1b[0m"`:
+Trace do teste principal `"A\x1b[31mB\x1b[10;20HC\x1b[0m"`:
 
 ```text
 'A' → screen_text="A"
 CSI 31m → fg=1
-'B' → screen_text="AB"
+'B' → "AB"
 CSI 10;20H → row=9,col=19
-'C' → screen_text="ABC"
+'C' → "ABC"
 CSI 0m → fg=7
 ```
 
-## Rode os testes novamente
-
-```bash
-python test_ansi.py
-```
-
-Saída esperada:
-
-```text
-OK ansi
-```
-
-## Como depurar se falhar
-
-- **`screen_text` com escapes visíveis:** o branch CSI não está sendo tomado; verifique `\x1b` e `[`.
-- **`row == 10` em vez de 9:** você esqueceu de subtrair 1 (ANSI é 1-based).
-- **`\x1b[H` não vai para (0,0):** trate `values[0]==0` como "usar default 1", não como linha 0.
-- **`ValueError: invalid literal` em split:** use `int(x) if x else 0`.
-- **Import `Terminal`:** a classe deve se chamar `AnsiParser`.
-
-Teste manual rápido no REPL:
+REPL rápido:
 
 ```python
 from ansi import AnsiParser
@@ -175,9 +178,15 @@ p.feed("\x1b[3;5H")
 print(p.row, p.col)  # 2 4
 ```
 
-## Solução final comentada
+---
 
-Compare com `solutions/ansi.py`. Você deve explicar: separação literal vs CSI, conversão 1-based→0-based, e por que SGR não toca `screen_text`.
+## Como depurar se falhar
+
+- Escapes em `screen_text`: branch CSI não dispara — confira `\x1b` e `[`.
+- `row == 10`: esqueceu `row - 1`.
+- `\x1b[H` ≠ `(0,0)`: trate `0` como “usar default 1”.
+- `int('')`: use `int(x) if x else 0`.
+- Import/`Terminal`: a classe deve ser `AnsiParser`.
 
 ## Relatório de resolução
 
@@ -186,4 +195,4 @@ Compare com `solutions/ansi.py`. Você deve explicar: separação literal vs CSI
 | TERM-ANSI-SGR-01 | `ansi.py` | `\x1b[31m` → fg=1; `\x1b[0m` → fg=7; literais em `screen_text` |
 | TERM-CURSOR-02 | `ansi.py` | `\x1b[10;20H` → (9,19); `\x1b[H` → (0,0) |
 
-Critério de aceite: `python test_ansi.py` imprime `OK ansi`. Se `screen_text != "ABC"` no teste principal, revise se caracteres dentro de CSI estão sendo concatenados por engano.
+Critério de aceite: `python test_ansi.py` imprime `OK ansi`. Se `screen_text != "ABC"`, caracteres dentro de CSI estão sendo concatenados por engano.

@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions
+# Build directory: E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/build_ci
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test([=[ascii_string_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_ascii_strings.py")
+  set_tests_properties([=[ascii_string_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;18;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test([=[ascii_string_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_ascii_strings.py")
+  set_tests_properties([=[ascii_string_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;18;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test([=[ascii_string_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_ascii_strings.py")
+  set_tests_properties([=[ascii_string_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;18;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test([=[ascii_string_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_ascii_strings.py")
+  set_tests_properties([=[ascii_string_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;18;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+else()
+  add_test([=[ascii_string_tests]=] NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test([=[elf64_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_elf64.py")
+  set_tests_properties([=[elf64_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;20;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test([=[elf64_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_elf64.py")
+  set_tests_properties([=[elf64_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;20;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test([=[elf64_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_elf64.py")
+  set_tests_properties([=[elf64_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;20;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test([=[elf64_tests]=] "C:/Users/souza/AppData/Local/Python/pythoncore-3.14-64/python.exe" "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/tests/test_elf64.py")
+  set_tests_properties([=[elf64_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;20;add_test;E:/Aulas/low-level-unified-portfolio/days/2026-09-04/redteam/elf64_triage/solutions/CMakeLists.txt;0;")
+else()
+  add_test([=[elf64_tests]=] NOT_AVAILABLE)
+endif()

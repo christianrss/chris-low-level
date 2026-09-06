@@ -12,11 +12,11 @@
 - `D2-TENSOR-TRANSPOSE` — transpose zero-copy
 - `D2-TENSOR-MATMUL` — matmul i-k-j
 
-## algorithms/sorting_research
-- `D2-SORT-MERGE-RANGE` — merge de intervalos
-- `D2-SORT-MERGE-RECURSE` — mergesort recursivo
-- `D2-SORT-PARTITION` — partition Lomuto
-- `D2-SORT-QUICK-LOOP` — quicksort tail-recursion friendly
+## algorithms/blocked_merge_sort
+- `D2-BLOCK-MERGE-RUN` — merge de dois runs ordenados
+- `D2-BLOCK-SORT-TILE` — sort in-place de um tile
+- `D2-BLOCK-PASSES` — passes: sort tiles + merge adjacente
+- `D2-BLOCK-IO-STATS` — SortIoStats (comparisons / tile I/O)
 
 ## quantum/statevector_intro
 - `D2-QSIM-SINGLE` — apply matriz 2×2
@@ -30,6 +30,8 @@
 - `D2-GFX-FILL-RECT` — preenchimento recortado
 - `D2-GFX-ALPHA-OVER` — composição alpha
 - `D2-GFX-COMPOSE` — stack de layers
+- `D2-GFX-DIRTY-RECT` — união AABB de regiões dirty
+- `D2-GFX-FRAME-PACE` — recompor só damage + FrameStats
 
 ## debugger/protocol_v1
 - `D2-DBG-APPEND-U16` — serializar uint16 LE
@@ -41,8 +43,11 @@
 - `D2-DBG-DECODE` — validar e decodificar pacote
 
 ## redteam/elf64_triage
-- `D2-ELF-HEADER` — parser defensivo ELF64
+- `D2-ELF-HEADER` — parser defensivo ELF64 Ehdr
 - `D2-ELF-STRINGS` — extrator ASCII seguro
+- `D2-ELF-PHDR` — tabela Elf64_Phdr (type/offset/vaddr/filesz/memsz)
+- `D2-ELF-SHDR` — tabela Elf64_Shdr + nomes via shstrndx
+- `D2-ELF-DYNSYM` — lista (name, st_value) de .dynsym/.dynstr
 
 ## dotnet/csharp_span_arraypool
 - `D2-CSHARP-WRITE-HEADER` — frame header LE
@@ -65,4 +70,4 @@
 - `D2-JS-PREC-MUL` — nível term
 - `D2-JS-VM-ADD` — opcode Add na stack VM
 
-**Total:** 11 módulos, 43 TODOs mapeados.
+**Total:** 11 módulos, 48 TODOs mapeados.

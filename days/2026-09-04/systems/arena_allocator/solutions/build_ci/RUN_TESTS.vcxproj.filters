@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-04\systems\arena_allocator\solutions\build_ci\CMakeFiles\f32757b037f6971c527c9e8535d84f24\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DD39A901-B8FC-32AD-A2A6-9A1C8C768AE7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

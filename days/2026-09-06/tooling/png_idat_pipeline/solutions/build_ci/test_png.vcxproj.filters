@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\bit_stream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\deflate_stored.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\adler32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\crc32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\zlib_min.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\png.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\test_png.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C55C4423-DF02-364B-A5A6-30AF7632F743}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

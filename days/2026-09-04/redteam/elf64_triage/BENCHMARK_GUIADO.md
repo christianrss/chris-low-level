@@ -1,18 +1,19 @@
 # Benchmark guiado — ELF64 triage
 
-O benchmark mede somente parsing de header ELF64 em bytes já na memória.
+O benchmark mede a pipeline pedagógica em bytes já na memória: header → program headers → section headers → dynsym.
 
-Execute pelo menos cinco vezes, registre Python, CPU e SO e use a mediana de `headers/s`.
+Execute pelo menos cinco vezes, registre Python, CPU e SO e use a mediana de `triages/s` (ou `headers/s` se rodar só o estágio Ehdr).
 
-Não compare diretamente com `readelf` como se fizessem o mesmo trabalho; `readelf` analisa muito mais estruturas.
+Não compare diretamente com `readelf` como se fizessem o mesmo trabalho; `readelf` analisa muito mais estruturas e faz I/O.
 
 ## Resultados observados
 
-`python starter/benchmarks/elf64_benchmark.py`, fixture em memória:
+`python starter/benchmarks/elf64_benchmark.py`, fixture rico em memória:
 
 | Métrica | Faixa típica |
 |---------|-------------|
-| headers/s | 500k–2M |
-| µs/header | 0.5–2.0 |
+| triages/s (pipeline) | 40k–400k |
+| µs/triage | 2.5–25 |
+| headers/s (só Ehdr, se isolado) | 500k–2M |
 
-Python puro, sem I/O de disco — mede apenas `parse_elf64_header`. Strings benchmark separado; não misturar métricas. Mediana de ≥5 runs.
+Python puro, sem I/O de disco. Mediana de ≥5 runs. Strings permanecem em benchmark separado (`benchmarks/benchmark.py`); não misturar métricas.

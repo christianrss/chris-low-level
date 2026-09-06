@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\build_ci\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\build_ci\Release\test_png.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\Aulas\low-level-unified-portfolio\days\2026-09-06\tooling\png_idat_pipeline\solutions\build_ci\x64\Release\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

@@ -1,36 +1,23 @@
-# Resolução guiada passo a passo — JavaScript — Bytecode Branch VM
+# RESOLUÇÃO GUIADA — JavaScript / Bytecode branch VM
 
 ## Mapa exato starter → resolução
 
-- `JSVM-JZ-01` → `starter/vm.js` (case `JZ` em `run`)
-- `JSVM-JMP-02` → `starter/vm.js` (case `JMP` em `run`)
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `JSVM-JZ-01` | `starter/vm.js` | `run` — case `JZ` (pop + salto se 0) |
+| `JSVM-JMP-02` | `starter/vm.js` | `run` — case `JMP` (salto absoluto) |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito e `PEDAGOGY-TEST: ID` em `starter/test.js`.
 
-> Trabalhe em `days/2026-09-05/javascript/bytecode_branch_vm/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+> Trabalhe em `days/2026-09-05/javascript/bytecode_branch_vm/starter/`. `solutions/` é gabarito — consulte só depois da tentativa.
 
-## 0. Preparar o projeto
+> Não comece copiando `solutions/`. Rode `npm test` / `node test.js` após cada case.
 
-Na raiz do repositório:
+---
 
-```bash
-cd days/2026-09-05/javascript/bytecode_branch_vm/starter
-npm test
-```
+## JSVM-JZ-01 — salto condicional
 
-O comando deve executar, mas os testes **devem falhar**: com `condition=0`, a VM retorna `undefined` (não executa `PUSH 20`); com `condition=1`, o trace não inclui o salto via `JMP`. Esse é o baseline.
-
-## `JSVM-JZ-01` — desvio se topo da pilha == 0
-
-### Arquivo
-
-Abra:
-
-```text
-starter/vm.js
-```
-
-Localize o case `JZ`:
+### 1. O problema (starter stub)
 
 ```javascript
 case 'JZ':
@@ -39,7 +26,35 @@ case 'JZ':
     break;
 ```
 
-Substitua por:
+Programa do teste (`makeProgram(condition)`):
+
+```text
+0 PUSH condition
+1 JZ  → 4
+2 PUSH 10
+3 JMP → 5
+4 PUSH 20
+5 HALT
+```
+
+Com `JZ` = só `ip++`, `condition=0` nunca alcança `PUSH 20` via salto → retorno `undefined` (cai em `PUSH 10`/`JMP` stub).
+
+### 2. O algoritmo
+
+```text
+condition ← stack.pop()
+se condition === undefined → Error('underflow')
+se condition === 0:
+  ip ← _jumpTarget(program, instruction.arg)
+senão:
+  ip ← ip + 1
+```
+
+`_jumpTarget` já valida `arg ∈ [0, program.length)`.
+
+### 3. Código completo
+
+Substitua o case `JZ` em `starter/vm.js`:
 
 ```javascript
 case 'JZ': {
@@ -54,37 +69,37 @@ case 'JZ': {
 }
 ```
 
-### Por que funciona?
+### 4. Por que funciona?
 
-`PUSH` deixa o valor condicional no topo. `pop()` remove e testa com `=== 0`. Se zero, `ip` vai para o índice 4 (`PUSH 20`); se não, avança para `ip=2` (`PUSH 10`).
+- `PUSH` deixa o predicado no topo; `JZ` **consome** (como VM de pilha real) — não deixa valor residual.
+- `=== 0`: só zero desvia; `1` (e qualquer não-zero) cai no ramo then (`PUSH 10`).
+- Não fazer `ip++` depois do salto: `_jumpTarget` já define o próximo IP absoluto.
+- `underflow`: `JZ` sem `PUSH` é bug de programa — falha explícita.
 
-### Verificação manual
+### 5. Verificação parcial
 
-Com `condition=0`:
+Trace com `condition=0`:
 
 ```text
-ip=0 PUSH 0
-ip=1 JZ→4  (pop 0, salta)
-ip=4 PUSH 20
-ip=5 HALT  → retorna 20
-trace: [0, 1, 4, 5]
+ip=0 PUSH 0     stack=[0]     trace+[0]
+ip=1 JZ→4       stack=[]      trace+[1]
+ip=4 PUSH 20    stack=[20]    trace+[4]
+ip=5 HALT → 20                trace+[5]
+trace = [0, 1, 4, 5]
 ```
-
-### Checkpoint
 
 ```bash
-npm test
+cd days/2026-09-05/javascript/bytecode_branch_vm/starter
+node test.js
 ```
 
-O primeiro par de asserts (`run(0) === 20` e trace `[0,1,4,5]`) deve passar; o segundo par ainda falha até implementar `JMP`.
+Esperado: primeiro assert (`run(0)===20`, trace) passa; segundo ainda falha até `JMP`.
 
 ---
 
-## `JSVM-JMP-02` — salto incondicional
+## JSVM-JMP-02 — salto incondicional
 
-### Arquivo
-
-Localize o case `JMP`:
+### 1. O problema (starter stub)
 
 ```javascript
 case 'JMP':
@@ -93,7 +108,17 @@ case 'JMP':
     break;
 ```
 
-Substitua por:
+Com `condition=1`, o fluxo chega em `PUSH 10` e depois precisa pular o `PUSH 20`. Stub `ip++` executa o índice 4 → retorno 20 em vez de 10; trace inclui `4`.
+
+### 2. O algoritmo
+
+```text
+ip ← _jumpTarget(program, instruction.arg)
+```
+
+Sem pop; sem `ip++` extra.
+
+### 3. Código completo
 
 ```javascript
 case 'JMP':
@@ -101,79 +126,72 @@ case 'JMP':
     break;
 ```
 
-### Por que funciona?
+### 4. Por que funciona?
 
-Após `PUSH 10` em `ip=2`, o programa em `ip=3` deve pular o `PUSH 20` em `ip=4` e ir direto para `HALT` em `ip=5`. `_jumpTarget` valida que `5` está dentro dos limites.
+- Salto absoluto para o índice do argumento (`5` = `HALT`), validado por `_jumpTarget`.
+- Sem consumir pilha: `JMP` não é condicional.
+- Evita executar `PUSH 20` no ramo verdadeiro — o `JZ` já escolheu o caminho then.
 
-### Verificação manual
+### 5. Verificação
 
-Com `condition=1`:
+Trace com `condition=1`:
 
 ```text
-ip=0 PUSH 1
-ip=1 JZ      (pop 1, ip→2)
-ip=2 PUSH 10
-ip=3 JMP→5  (pula índice 4)
-ip=5 HALT   → retorna 10
-trace: [0, 1, 2, 3, 5]
+ip=0 PUSH 1     stack=[1]     trace+[0]
+ip=1 JZ (≠0)    stack=[]      ip→2   trace+[1]
+ip=2 PUSH 10    stack=[10]    trace+[2]
+ip=3 JMP→5                    trace+[3]
+ip=5 HALT → 10                trace+[5]
+trace = [0, 1, 2, 3, 5]
 ```
-
-### Checkpoint
-
-Todos os asserts passam.
-
----
-
-## Rode os testes novamente
 
 ```bash
-npm test
+node test.js
 ```
 
-Saída esperada contém:
+Saída esperada:
 
 ```text
 OK jsvm branches
 ```
 
-## Como depurar se falhar
-
-- Retorno `undefined` com `condition=0`: `JZ` não salta — ainda faz `ip++` fixo.
-- Retorno `20` com `condition=1`: falta `JMP` — executou `PUSH 20` indevidamente.
-- Trace com `4` quando deveria pular: `JMP` não atribui `ip` diretamente.
-- `bad target`: `instruction.arg` fora de `[0, length)` — confira o programa em `test.js`.
-- `underflow`: `JZ` sem `PUSH` anterior.
+Debug: retorno `20` com condition 1 → `JMP` ainda faz `ip++`; `bad target` → `arg` fora do range; `step limit` → loop infinito (salto para si mesmo sem HALT).
 
 Inspeção rápida:
 
 ```javascript
+import { VM } from './vm.js';
 const vm = new VM();
-console.log(vm.run(makeProgram(0)));
+console.log(vm.run([{op:'PUSH',arg:0},{op:'JZ',arg:4},{op:'PUSH',arg:10},{op:'JMP',arg:5},{op:'PUSH',arg:20},{op:'HALT'}]));
 console.log(vm.trace);
 ```
 
-## Solução final comentada
+---
 
-Compare `starter/vm.js` com `solutions/vm.js`. Justifique: consumo da pilha em `JZ`, diferença entre salto condicional e incondicional, e uso de `_jumpTarget`.
+## Mapa de consistência auditada
+
+- `JSVM-JZ-01` — `starter/vm.js` → `solutions/vm.js` (case `JZ`).
+- `JSVM-JMP-02` — `starter/vm.js` → `solutions/vm.js` (case `JMP`).
 
 ## Relatório de resolução
 
-| ID | Arquivo | Resultado esperado |
-|----|---------|-------------------|
-| JSVM-JZ-01 | `vm.js` | `condition=0` → resultado 20; trace `[0,1,4,5]` |
-| JSVM-JMP-02 | `vm.js` | `condition=1` → resultado 10; trace `[0,1,2,3,5]` |
+### O que foi validado
 
-Critério de aceite: `npm test` imprime `OK jsvm branches` sem falha.
+- TODOs `JSVM-JZ-01` e `JSVM-JMP-02` nos cases de `VM.run`.
+- `PEDAGOGY-TEST` em `test.js`: resultado 20/10 e traces `[0,1,4,5]` / `[0,1,2,3,5]`.
+- Starter com `ip++` fixo falha ambos os ramos até os saltos corretos.
 
-### Template do relatório
+### Armadilhas encontradas
 
-```
-Aluno:
-Módulo: JavaScript — Bytecode Branch VM
-Data:
+- `JZ` sem `pop` (ou peek sem consumir) deixa lixo na pilha.
+- Fazer `ip++` depois de atribuir o alvo do salto.
+- Comparar com `==` frouxo ou tratar só `false` em vez de `=== 0`.
 
-1. TODOs: JSVM-JZ-01, JSVM-JMP-02
-2. Primeira falha: [ex.: expected 20, got undefined]
-3. Correção aplicada: [ex.: pop + ip condicional em JZ; JMP com _jumpTarget]
-4. Evidência: [colar saída OK jsvm branches]
-```
+### Depuração e saída esperada
+
+- **Depuração:** logue `ip`, `instruction.op`, `stack` a cada passo; compare com o trace esperado.
+- **Saída esperada:** `OK jsvm branches`.
+
+### Próximo passo sugerido
+
+Refazer JZ/JMP sem a resolução. Meça passos até HALT em loops em `BENCHMARK_GUIADO.md` (respeitando o step limit 1000).

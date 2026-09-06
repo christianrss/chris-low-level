@@ -46,6 +46,7 @@ scripts/           validation, benchmarks, porting map, depth upgrades
 | `chris-disassembler` | ELF/PE inspection + first x86-64 decoding | integration |
 | `chris-binary-toolkit` | benign binary/string tooling | unit |
 | `chris-renderer` | shared 3D/physics core + software/OpenGL Win32 backends | unit |
+| `chris-lantern-hunt` | FPS horror OpenGL: procgen, normal maps, miniaudio, spotlight | unit (procgen/collision) |
 | `chris-assembly-lab` | System V x86-64 ABI function in Assembly | unit + benchmark |
 | `chris-cpu` | tiny fetch/decode/execute CPU | unit + benchmark |
 | `chris-nasm` | real x86-64 encoding for a tiny instruction subset | byte-for-byte unit tests |
@@ -81,6 +82,7 @@ Read [`START_HERE.md`](START_HERE.md), then open the day folder you are studying
 | 2026-09-03 | [`days/2026-09-03/`](days/2026-09-03/) | 13 | [`benchmarks/results-2026-09-03.json`](benchmarks/results-2026-09-03.json) |
 | 2026-09-04 | [`days/2026-09-04/`](days/2026-09-04/) | 11 | [`benchmarks/results-2026-09-04.json`](benchmarks/results-2026-09-04.json) |
 | 2026-09-05 | [`days/2026-09-05/`](days/2026-09-05/) | 10 | [`benchmarks/results-2026-09-05.json`](benchmarks/results-2026-09-05.json) |
+| 2026-09-06 | [`days/2026-09-06/`](days/2026-09-06/) | 11 (compressão + portal Verlet) | — |
 
 ### Fluxo por módulo (ponta a ponta)
 
@@ -121,6 +123,7 @@ python scripts/pedagogy_check_unified.py --day 2026-09-03 --all-days
 python scripts/run_day_tests.py --day 2026-09-03 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-04 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-05 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-06 --mode solutions
 
 # Benchmarks → benchmarks/results-YYYY-MM-DD.json
 python scripts/run_day_benchmarks.py --day 2026-09-03
@@ -155,11 +158,15 @@ python scripts/build_day_docx.py --day 2026-09-04
 python scripts/build_day_docx.py --day 2026-09-05
 ```
 
-CI (`.github/workflows/ci.yml`) roda pedagogy check + `run_day_tests --mode solutions` nos 3 dias + testes dos `projects/`.
+CI (`.github/workflows/ci.yml`) roda pedagogy check + `run_day_tests --mode solutions` nos dias 03–06 + testes dos `projects/`.
 
 The lab is intentionally honest about what was and was not tested. Hardware-specific, Windows-specific, firmware and QEMU milestones are documented separately until the required environment is available.
 
 For the complete mapping from the user-defined curriculum directives to Day 01 evidence and future milestones, see [`docs/DIRECTIVES_COVERAGE.md`](docs/DIRECTIVES_COVERAGE.md).
+
+## Day 06 — 2026-09-06
+
+11 módulos: trilha compressão (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG IDAT), `graphics/portal_verlet_physics`, tensor entropy, blob triage, Span deflate, gunzip transform. Capstone: `projects/chris-compress`. Extra: `projects/chris-lantern-hunt` (fora do dia). Ver [`days/2026-09-06/README.md`](days/2026-09-06/README.md).
 
 ## Day 05 — 2026-09-05
 
@@ -167,4 +174,4 @@ For the complete mapping from the user-defined curriculum directives to Day 01 e
 
 ## Day 02 — 2026-09-04
 
-Adds `chris-arena`, `chris-tensor`, `chris-algorithms`, `chris-qsim`, the first host-reference milestone of `chris-os`, the first protocol milestone of `chris-debugger`, ELF64 parsing in `chris-binary-toolkit`, plus the parallel managed/runtime tracks `chris-dotnet-bench`, `chris-dotnet-pe`, `chris-node-streaming` and `chris-js`. See `days/2026-09-04/README.md` and `docs/RUNTIME_STACKS_DOTNET_NODE.md`.
+Adds `chris-arena`, `chris-tensor`, `chris-algorithms` (**blocked merge**), `chris-qsim`, host-reference `chris-os` (**dirty-rect compositor**), `chris-debugger` protocol, ELF64 **Phdr/Shdr/dynsym** in `chris-binary-toolkit`, plus managed tracks `chris-dotnet-bench`, `chris-dotnet-pe`, `chris-node-streaming` and `chris-js`. See `days/2026-09-04/README.md`.

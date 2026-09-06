@@ -26,7 +26,7 @@ Do not create dozens of shallow projects. Deepen the milestone projects and intr
 
 ## 2026-09-04
 
-- Day 02 implemented: arena allocator, tensor/strides matmul, instrumented sorting research, state-vector quantum simulator, graphical OS reference compositor, debugger protocol v1, ELF64 defensive parsing.
+- Day 02 implemented: arena allocator, tensor/strides matmul, blocked merge sort (I/O tiles), state-vector quantum simulator, graphical OS reference compositor (dirty-rect), debugger protocol v1, ELF64 Phdr/Shdr/dynsym triage.
 - Long-term roadmap explicitly expanded to graphical OS + first-party debugger, multimedia creative stack, game engine, algorithms, quantum and additional research/system gaps.
 
 

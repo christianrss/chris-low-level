@@ -1,107 +1,138 @@
-# Resolução guiada passo a passo — Red Team — ELF64 entry inspector
+# RESOLUÇÃO GUIADA — Red Team / ELF64 entry inspector
 
 ## Mapa exato starter → resolução
 
-- `RT-ELF-HDR-01` → `starter/elf_entry.py`, função `parse_ident`
-- `RT-ELF-ENTRY-02` → `starter/elf_entry.py`, função `parse_elf64`
+| TODO ID | Starter | Função |
+|---------|---------|--------|
+| `RT-ELF-HDR-01` | `starter/elf_entry.py` | `parse_ident` — magic, class, endian |
+| `RT-ELF-ENTRY-02` | `starter/elf_entry.py` | `parse_elf64` — `e_type`…`e_entry` via `ELF64_OFFSETS` |
 
-Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
+Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito e `PEDAGOGY-TEST: ID` em `starter/test_elf_entry.py`.
 
-> Trabalhe em `days/2026-09-05/redteam/elf_entry_inspector/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+> Trabalhe em `days/2026-09-05/redteam/elf_entry_inspector/starter/`. `solutions/` é gabarito — consulte só depois da tentativa.
 
-## 0. Preparar o projeto
+> Não comece copiando `solutions/`. Rode o teste após cada TODO.
 
-Na raiz do repositório:
+---
+
+## RT-ELF-HDR-01 — validar `e_ident`
+
+### 1. O problema (starter stub)
+
+```python
+def parse_ident(data: bytes) -> dict[str, Any]:
+    """TODO [RT-ELF-HDR-01]"""
+    raise NotImplementedError("RT-ELF-HDR-01")
+```
+
+`test_rejects_bad_magic` passa `b""` e `b"NOTELF"+…` para `parse_elf64`, que deve chamar `parse_ident` (ou repetir as checagens). Sem validação, o unpack lê lixo.
+
+### 2. O algoritmo
+
+```text
+se len(data) < 16 → ValueError("truncated ident")
+se data[0:4] ≠ 7F 45 4C 46 → ValueError("bad magic")
+se data[4] ≠ 2 → ValueError("not ELF64")
+se data[5] ≠ 1 → ValueError("not little-endian")
+retornar {class: 64, little_endian: True}
+```
+
+### 3. Código completo
+
+Substitua o corpo de `parse_ident` em `starter/elf_entry.py`:
+
+```python
+def parse_ident(data: bytes) -> dict[str, Any]:
+    if len(data) < 16:
+        raise ValueError("truncated ident")
+    if data[:4] != b"\x7fELF":
+        raise ValueError("bad magic")
+    if data[4] != 2:
+        raise ValueError("not ELF64")
+    if data[5] != 1:
+        raise ValueError("not little-endian")
+    return {"class": 64, "little_endian": True}
+```
+
+### 4. Por que funciona?
+
+- `len < 16` antes de `data[4]`/`data[5]`: evita `IndexError` no buffer vazio do teste.
+- Magic `\x7fELF` é o contrato do formato; qualquer outra assinatura é rejeitada cedo.
+- Byte 4 = `ELFCLASS64` (2); byte 5 = `ELFDATA2LSB` (1). O lab só aceita esse par — o resto do parser assume LE64.
+- O dict retornado documenta o que foi validado; `parse_elf64` usa o side-effect de exceção, não os campos.
+
+### 5. Verificação
 
 ```bash
 python days/2026-09-05/redteam/elf_entry_inspector/starter/test_elf_entry.py
 ```
 
-Saída esperada **antes** dos TODOs: `NotImplementedError` ou falha de assert. Esse é o baseline.
-
-## Exercício fácil — `parse_ident` (RT-ELF-HDR-01)
-
-### Arquivo
-
-Abra:
-
-```text
-starter/elf_entry.py
-```
-
-Localize:
+Esperado **ainda FAIL**: `parse_elf64` continua `NotImplementedError`. Isoladamente:
 
 ```python
-def parse_ident(data: bytes) -> dict[str, Any]:
+from elf_entry import parse_ident
+parse_ident(b"\x7fELF" + bytes([2, 1]) + bytes(10))  # → class 64
+parse_ident(b"")  # → ValueError
 ```
 
-Substitua o corpo por:
+---
 
-```python
-if len(data) < 16:
-    raise ValueError("truncated ident")
-if data[:4] != b"\x7fELF":
-    raise ValueError("bad magic")
-if data[4] != 2:
-    raise ValueError("not ELF64")
-if data[5] != 1:
-    raise ValueError("not little-endian")
-return {"class": 64, "little_endian": True}
-```
+## RT-ELF-ENTRY-02 — extrair `e_machine` e `e_entry`
 
-### Por que funciona?
-
-Os primeiros 16 bytes (`e_ident`) concentram tudo que você precisa para saber **como** interpretar o resto. Magic `\x7fELF` descarta lixo; byte 4 = 2 fixa ELF64; byte 5 = 1 fixa little-endian. Validar tamanho antes de `data[4]` evita `IndexError` em buffer vazio — o teste `test_rejects_bad_magic` passa `b""` de propósito.
-
-### Verificação manual
-
-| `data` | Resultado esperado |
-|--------|-------------------|
-| 16+ bytes com magic válido, class 2, LE | `{"class": 64, "little_endian": True}` |
-| `b""` | `ValueError` |
-| `b"NOTELF" + ...` | `ValueError("bad magic")` |
-
-## Exercício médio — `parse_elf64` (RT-ELF-ENTRY-02)
-
-Localize:
+### 1. O problema (starter stub)
 
 ```python
 def parse_elf64(data: bytes) -> dict[str, Any]:
+    """TODO [RT-ELF-ENTRY-02]"""
+    raise NotImplementedError("RT-ELF-ENTRY-02")
 ```
 
-Substitua o corpo por:
+O teste sintético grava em offset 16: `e_type=2`, `e_machine=62`, `e_version=1`, `e_entry=0x401000` e espera esses campos no dict.
 
-```python
-if len(data) < 64:
-    raise ValueError("truncated ELF64 header")
-parse_ident(data)
-e_type, e_machine, e_version, e_entry = struct.unpack_from(
-    "<HHIQ", data, ELF64_OFFSETS["e_type"]
-)
-return {
-    "e_type": e_type,
-    "e_machine": e_machine,
-    "e_version": e_version,
-    "e_entry": e_entry,
-}
-```
-
-### Por que funciona?
-
-O formato `"<HHIQ"` corresponde exatamente à sequência de tipos no header a partir de offset 16: dois `u16`, um `u32`, um `u64` — todos little-endian (`<`). `ELF64_OFFSETS["e_type"]` é 16, então `e_machine` cai em 18 e `e_entry` em 24 sem você decorar números. Chamar `parse_ident` primeiro garante que magic/classe/endian já foram validados antes do unpack.
-
-### Trace no papel
-
-Fixture do teste grava em offset 24 o valor `0x401000`:
+### 2. O algoritmo
 
 ```text
-struct.pack_into("<HHIQ", blob, 16, 2, 62, 1, 0x401000)
-                              ^type ^mach ^ver ^entry@24
+se len(data) < 64 → ValueError("truncated ELF64 header")
+parse_ident(data)
+(e_type, e_machine, e_version, e_entry) ← unpack "<HHIQ" em ELF64_OFFSETS["e_type"] (16)
+retornar dict com os quatro campos
 ```
 
-Resultado: `e_machine == 62`, `e_entry == 0x401000`.
+Layout a partir do offset 16:
 
-## Rode os testes novamente
+```text
++0  u16 e_type
++2  u16 e_machine
++4  u32 e_version
++8  u64 e_entry   → absoluto file offset 24
+```
+
+### 3. Código completo
+
+```python
+def parse_elf64(data: bytes) -> dict[str, Any]:
+    if len(data) < 64:
+        raise ValueError("truncated ELF64 header")
+    parse_ident(data)
+    e_type, e_machine, e_version, e_entry = struct.unpack_from(
+        "<HHIQ", data, ELF64_OFFSETS["e_type"]
+    )
+    return {
+        "e_type": e_type,
+        "e_machine": e_machine,
+        "e_version": e_version,
+        "e_entry": e_entry,
+    }
+```
+
+### 4. Por que funciona?
+
+- Header ELF64 tem 64 bytes; truncar antes do unpack evita ler além do buffer.
+- `parse_ident` primeiro: magic/class/endian já validados antes de confiar no LE unpack.
+- `"<HHIQ"` casa com a sequência de tipos; `ELF64_OFFSETS["e_type"]` = 16 fixa o ponto de partida — `e_entry` cai em 24 sem hardcode solto.
+- `e_machine == 62` é `EM_X86_64`; `0x401000` é o entry típico da fixture.
+
+### 5. Verificação
 
 ```bash
 python days/2026-09-05/redteam/elf_entry_inspector/starter/test_elf_entry.py
@@ -113,31 +144,41 @@ Saída esperada:
 OK ELF inspector
 ```
 
-## Como depurar se falhar
+Trace do fixture sintético:
 
-- **`e_entry` errado**: imprima `data[24:32].hex()` e compare com `0x401000` em LE (`00 10 40 00 00 00 00 00`).
-- **`bad data accepted`**: `parse_elf64` deve chamar `parse_ident` ou repetir checagem de magic — buffer `b""` não pode retornar dict.
-- **`e_machine` zero**: confira se `unpack_from` usa offset `ELF64_OFFSETS["e_type"]` (16), não 0.
-- **Fixture file falha**: confirme que `fixtures/hello_elf64.bin` existe ao lado de `test_elf_entry.py`.
-
-Debug rápido no REPL:
-
-```python
-from pathlib import Path
-from elf_entry import parse_elf64
-data = Path("starter/fixtures/hello_elf64.bin").read_bytes()
-print(parse_elf64(data))
+```text
+struct.pack_into("<HHIQ", blob, 16, 2, 62, 1, 0x401000)
+bytes[24:32] = 00 10 40 00 00 00 00 00  → e_entry = 0x401000
 ```
 
-## Solução final comentada
+Debug se `e_entry` errado: `print(data[24:32].hex())`. Se magic inválido for aceito: `parse_elf64` não chamou `parse_ident`.
 
-Compare seu arquivo com `solutions/elf_entry.py`. Você deve conseguir justificar cada validação e o uso de `ELF64_OFFSETS` + `struct.unpack_from`.
+---
+
+## Mapa de consistência auditada
+
+- `RT-ELF-HDR-01` — `starter/elf_entry.py` → `solutions/elf_entry.py` (`parse_ident`).
+- `RT-ELF-ENTRY-02` — `starter/elf_entry.py` → `solutions/elf_entry.py` (`parse_elf64`).
 
 ## Relatório de resolução
 
-| ID | Função | Resultado esperado |
-|----|--------|-------------------|
-| RT-ELF-HDR-01 | `parse_ident` | magic/class/endian validados; truncado rejeitado |
-| RT-ELF-ENTRY-02 | `parse_elf64` | `e_machine`, `e_entry` corretos; header < 64 rejeitado |
+### O que foi validado
 
-Critério de aceite: `python starter/test_elf_entry.py` imprime `OK ELF inspector`. Se magic inválido não lança `ValueError`, revise `parse_ident` — o teste `test_rejects_bad_magic` depende disso.
+- TODOs `RT-ELF-HDR-01` e `RT-ELF-ENTRY-02` implementados em `starter/elf_entry.py`.
+- `PEDAGOGY-TEST` em `test_elf_entry.py`: header sintético, fixture `hello_elf64.bin`, rejeição de magic/vazio.
+- Starter original levanta `NotImplementedError` até cada ID ser preenchido.
+
+### Armadilhas encontradas
+
+- Validar `len` antes de indexar `e_ident`.
+- Usar `ELF64_OFFSETS["e_type"]`, não offset 0 no unpack do header.
+- `parse_elf64` deve rejeitar via `parse_ident` — o teste só chama `parse_elf64` nos casos ruins.
+
+### Depuração e saída esperada
+
+- **Depuração:** `data[:16].hex()` e `data[24:32].hex()`; confira LE de `0x401000`.
+- **Saída esperada:** `OK ELF inspector`.
+
+### Próximo passo sugerido
+
+Refazer o parser sem olhar esta resolução. Depois registre offsets extras (`e_phoff`, `e_shnum`) em `BENCHMARK_GUIADO.md` se medir tempo de parse.

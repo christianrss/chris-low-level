@@ -6,6 +6,18 @@ Quando você compila C# com `dotnet build`, o resultado continua sendo um arquiv
 
 Entender PE/CLI é pré-requisito para ferramentas como `ildasm`, analisadores de malware .NET, profilers nativos e debuggers híbridos que alternam entre world nativo e managed.
 
+### O quê
+
+`CliPeInspector.Inspect` navega MZ → PE → DataDirectory[14] → CLI header → metadata root `BSJB`.
+
+### Como
+
+Scaffolding parseia DOS/COFF/Optional; o aluno converte **dois RVAs** com `RvaToOffset` (CLI e metadata) via section table.
+
+### Por quê
+
+RVA ≠ file offset. Esse é o bug clássico em triage .NET e CTFs: sem a conversão, `BSJB` “nunca aparece” mesmo com o RVA certo.
+
 ## 2. Mapa do arquivo — visão de alto nível
 
 ```text

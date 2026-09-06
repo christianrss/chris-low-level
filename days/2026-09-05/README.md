@@ -14,5 +14,11 @@ Day 03 continua os dois dias anteriores e inaugura formalmente as trilhas perman
 9. Graphics — resource-state tracker com mapeamento Vulkan/D3D12 + debug shaders.
 10. Linux terminal — ANSI/CSI parser preparando PTY/TTY.
 
+## Como estudar
+
+1. [`START_HERE.md`](START_HERE.md)
+2. Por módulo: TEORIA (O quê/Como/Por quê) → **paper-trace / checkpoint conceitual no papel** → EXERCICIOS → starter → TESTES → RESOLUCAO (só se travar)
+3. Não avance ao código sem conseguir explicar o fluxo/estado no papel (igual Dia 06; este dia não tem `ATIVIDADES.md` centralizado).
+
 ## Honestidade de execução
 Vulkan/D3D12 são ensinados hoje por um simulador portátil de estados + shaders fonte; nenhum backend real é declarado como executado. O módulo de kernel real é revisão de fonte; o modelo de lifecycle é o artefato executado. .NET não foi executado por ausência do SDK.

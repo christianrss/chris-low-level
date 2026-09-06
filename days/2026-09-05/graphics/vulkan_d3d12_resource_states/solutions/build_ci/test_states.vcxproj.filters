@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\graphics\vulkan_d3d12_resource_states\solutions\resource_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\graphics\vulkan_d3d12_resource_states\solutions\test_states.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Aulas\low-level-unified-portfolio\days\2026-09-05\graphics\vulkan_d3d12_resource_states\solutions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{A16FADEC-8539-3319-B330-CFB5B5059BC3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
