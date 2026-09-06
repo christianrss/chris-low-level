@@ -60,6 +60,82 @@ int run(const clvm_image& image, bool trace) {
                 return 0;
 
             // TODO [CLVM-VM-ARITH-01]: implement ADD/SUB/MUL/DIV/DUP/PRINT with checks.
+            case Op::Add: {
+                if (stack.size() < 2) {
+                    std::cerr << "stack underflow in ADD\n";
+                    return 2;
+                }
+
+                const std::int32_t rhs = stack.back();
+                stack.pop_back();
+                const std::int32_t lhs = stack.back();
+                stack.pop_back();
+
+                stack.push_back(lhs + rhs);
+                break;
+            }
+            case Op::Sub: {
+                if(stack.size() < 2) {
+                    std::cerr << "stack underflow in SUB\n";
+                    return 2;
+                }
+
+                const std::int32_t rhs = stack.back();
+                stack.pop_back();
+                const std::int32_t lhs = stack.back();
+                stack.pop_back();
+
+                stack.push_back(lhs - rhs);
+                break;
+            }
+            case Op::Mul: {
+                if(stack.size() < 2) {
+                    std::cerr << "stack underflow in SUB\n";
+                    return 2;
+                }
+
+                const std::int32_t rhs = stack.back();
+                stack.pop_back();
+                const std::int32_t lhs = stack.back();
+                stack.pop_back();
+
+                stack.push_back(lhs * rhs);
+                break;
+            }
+            case Op::Div: {
+                if(stack.size() < 2) {
+                    std::cerr << "stack underflow in DIV\n";
+                    return 2;
+                }
+
+                const std::int32_t rhs = stack.back();
+                stack.pop_back();
+                const std::int32_t lhs = stack.back();
+                stack.pop_back();
+
+                if (rhs == 0) {
+                    std::cerr << "division by zero\n";
+                    return 2;
+                }
+
+                stack.push_back(lhs / rhs);
+                break;
+            }
+            case Op::Dup:
+                if (stack.empty()) {
+                    std::cerr << "stack underflow in DUP\n";
+                    return 2;
+                }
+                stack.push_back(stack.back());
+                break;
+            case Op::Print:
+                if (stack.empty()) {
+                    std::cerr << "stack undeflow in PRINT\n";
+                    return 2;
+                }
+                std::cout << stack.back() << "\n";
+                stack.pop_back();
+                break;
             // TODO [CLVM-VM-JUMP-01]: implement JMP/JZ with signed i16 relative offsets.
             default:
                 std::cerr << "unimplemented/unknown opcode at pc="
