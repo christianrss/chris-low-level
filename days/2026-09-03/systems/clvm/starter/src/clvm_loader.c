@@ -28,5 +28,14 @@ int clvm_parse(const uint8_t *file,size_t file_size,clvm_image *out,char *err,si
     if(img.version!=CLVM_VERSION) return fail(err,err_cap,"unsupported version");
     if((size_t)img.code_size!=file_size-16) return fail(err,err_cap,"size mismatch");
     /* TODO [CLVM-C-HEADER-01]: reject flags != 0, invalid entry, and checksum mismatch. */
+    if (img.flags != 0U) {
+        return fail(err, err_cap, "unsupported flags");
+    }
+    if (img.entry >= img.code_size && img.code_size != 0U) {
+        return fail(err, err_cap, "entry outside code");
+    }
+    if (clvm_fnv1a32(img.code, img.code_size) != img.checksum) {
+        return fail(err, err_cap, "checksum mismatch");
+    }
     *out=img; return 1;
 }
