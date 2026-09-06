@@ -1,3 +1,5 @@
+# PEDAGOGY-SOLUTION: TERM-CURSOR-02
+# PEDAGOGY-SOLUTION: TERM-ANSI-SGR-01
 # SOLVES [TERM-ANSI-SGR-01] [TERM-CURSOR-02]
 class AnsiParser:
     def __init__(self): self.fg=7;self.row=0;self.col=0;self.screen_text=''

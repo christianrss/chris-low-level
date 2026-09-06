@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.20)
+project(clvm LANGUAGES C CXX)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+add_library(clvm_loader src/clvm_loader.c)
+target_include_directories(clvm_loader PUBLIC include)
+add_executable(clvm src/main.cpp)
+target_link_libraries(clvm PRIVATE clvm_loader)
+if(MSVC)
+  target_compile_options(clvm_loader PRIVATE /W4)
+  target_compile_options(clvm PRIVATE /W4)
+else()
+  target_compile_options(clvm_loader PRIVATE -Wall -Wextra -Wpedantic)
+  target_compile_options(clvm PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+
+enable_testing()
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME clvm_integration
+    COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/integration_test.py $<TARGET_FILE:clvm> ${CMAKE_CURRENT_SOURCE_DIR})

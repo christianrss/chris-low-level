@@ -1,3 +1,11 @@
+## Mapa exato starter → resolução
+
+| TODO ID | Starter |
+|---------|--------|
+| `LINUX-ROOTFS-BUILD-03` | `starter/build_rootfs.sh` |
+| `LINUX-PKG-PARSE-01` | `starter/chris_pkg.py` |
+| `LINUX-PKG-INSTALL-02` | `starter/chris_pkg.py` |
+
 # Resolução guiada passo a passo
 
 ## Parte A - parser do manifest
@@ -22,6 +30,15 @@ Ainda em `starter/chris_pkg.py`, implemente `install_package()`. Chame `load_man
 ## Parte C - rootfs
 Abra `starter/build_rootfs.sh`. Substitua `LINUX-ROOTFS-BUILD-03` por:
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/build_rootfs.sh` |
+| **Função / âncora** | comentário `TODO [LINUX-ROOTFS-BUILD-03]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [LINUX-ROOTFS-BUILD-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ```sh
 for d in bin etc proc sys dev tmp var/lib/chris-pkg; do
     mkdir -p "$ROOT/$d"
@@ -37,3 +54,27 @@ Se o teste de pacote falhar, imprima temporariamente `manifest`, `src` e `dst`. 
 - `LINUX-PKG-PARSE-01` - starter -> resolução -> teste -> solution.
 - `LINUX-PKG-INSTALL-02` - starter -> resolução -> teste -> solution.
 - `LINUX-ROOTFS-BUILD-03` - starter -> resolução -> teste -> solution.
+## Relatório de resolução
+
+- **TODOs concluídos:** (liste os IDs implementados)
+- **Comandos de teste:**
+  ```bash
+  # cole aqui o comando exato usado
+  ```
+- **Saída esperada:** PASS nos testes do módulo
+- **Invariantes verificadas:** (liste)
+- **Edge cases testados:** (liste)
+- **Benchmark:** hipótese + resultado ou declaração honesta de skip
+- **Toolchain não executada:** (se aplicável)
+
+### 4. Por que funciona
+
+O stub no âncora TODO é substituído pelo comportamento testado.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.

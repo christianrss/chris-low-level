@@ -1,3 +1,4 @@
+// PEDAGOGY-SOLUTION: KMOD-SOURCE-REVIEW-03
 // SOLVES [KMOD-SOURCE-REVIEW-03]: veja ANSWERS.md
 // REVIEW ONLY: do not load automatically
 #include <linux/module.h>

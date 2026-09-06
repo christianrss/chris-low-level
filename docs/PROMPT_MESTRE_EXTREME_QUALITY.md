@@ -34,13 +34,22 @@ Scripts unificados no repositório:
 | Artefato | Mínimo | Conteúdo obrigatório |
 |----------|--------|----------------------|
 | `TEORIA_PASSO_A_PASSO.md` | 120 linhas | diagrama/tabela, exemplo numérico, invariantes, bugs comuns |
-| `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` | 80 linhas (100 complexos) | mapa starter→TODO, **Por que funciona?** por passo, debugging |
+| `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` | 80 linhas (100 complexos) | mapa starter→TODO, **Onde colocar** (Arquivo/Função/Substituir\|Inserir) por TODO, **Por que funciona?**, debugging |
 | `EXERCICIOS.md` | 4 níveis | fácil, médio, difícil, desafio |
 | DOCX (opcional) | export de todos os MD | gerado por `build_day_docx.py`, não fonte primária |
 
 Módulos complexos: graphics, clvm, http_parser, bytecode VM, distro, kernel, matmul, miniobjdump.
 
 Se RESOLUCAO > 450 linhas: criar `RESOLUCAO_APENDICE.md`.
+
+---
+
+# 42b. ONDE COLOCAR (OBRIGATÓRIO POR TODO)
+
+Cada `TODO [ID]` na RESOLUCAO deve ter um bloco **Onde colocar** com Arquivo (`starter/...`), Função/âncora, Substituir ou Inserir, e Não mexer.
+
+Snippet: `docs/templates/RESOLUCAO_PLACEMENT_SNIPPET.md`.  
+Referência: `days/2026-09-03/systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md`.
 
 ---
 

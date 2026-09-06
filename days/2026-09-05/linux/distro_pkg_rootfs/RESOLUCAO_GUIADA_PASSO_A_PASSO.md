@@ -29,6 +29,15 @@ Com o TODO aberto, o script falha porque os diretórios FHS não existem.
 
 ## Exercício fácil — `LINUX-ROOTFS-BUILD-03`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/build_rootfs.sh` |
+| **Função / âncora** | comentário `TODO [LINUX-ROOTFS-BUILD-03]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [LINUX-ROOTFS-BUILD-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### Arquivo
 
 Abra `starter/build_rootfs.sh`. Descomente e complete o loop:

@@ -1,3 +1,8 @@
+// PEDAGOGY-TEST: GFX-PORTAL-04
+// PEDAGOGY-TEST: GFX-PORTAL-03
+// PEDAGOGY-TEST: GFX-PORTAL-02
+// PEDAGOGY-TEST: GFX-PORTAL-01
+// PEDAGOGY-TEST: GFX-PORTAL-06
 // PEDAGOGY-TEST: GFX-PORTAL-05: sphere crosses portal plane and teleports
 // Test cases (TESTES_GUIADOS.md):
 // Caso 1: `test_sphere_portal` — esfera atravessa portal A e reaparece em B.

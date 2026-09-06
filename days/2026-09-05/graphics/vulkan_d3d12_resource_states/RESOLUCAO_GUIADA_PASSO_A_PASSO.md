@@ -18,6 +18,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## GFX-STATE-TRANSITION-01 — tabela de transições
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/resource_state.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-STATE-TRANSITION-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-STATE-TRANSITION-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```cpp

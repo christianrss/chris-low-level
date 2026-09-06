@@ -102,6 +102,15 @@ Esperado **ainda FAIL** em backpressure se `NODE-BACKPRESSURE-02` estiver stub.
 
 ## NODE-BACKPRESSURE-02 — respeitar `write() === false`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/backpressure_demo.js` |
+| **Função / âncora** | comentário `TODO [NODE-BACKPRESSURE-02]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [NODE-BACKPRESSURE-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```javascript

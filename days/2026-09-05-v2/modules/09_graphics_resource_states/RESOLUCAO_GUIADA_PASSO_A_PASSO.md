@@ -1,3 +1,9 @@
+## Mapa exato starter → resolução
+
+| TODO ID | Starter |
+|---------|--------|
+| — | — |
+
 # Resolução guiada passo a passo
 
 Abra `starter/resource_state.cpp`.
@@ -26,3 +32,71 @@ Debug conceitual para textura preta: verifique conteúdo/upload -> descriptor ->
 - `GFX-STATE-TRANSITION-01` - starter -> resolução -> teste -> solution.
 - `GFX-VK-MAP-02` - starter -> resolução -> teste -> solution.
 - `GFX-D3D12-MAP-03` - starter -> resolução -> teste -> solution.
+## Relatório de resolução
+
+- **TODOs concluídos:** (liste os IDs implementados)
+- **Comandos de teste:**
+  ```bash
+  # cole aqui o comando exato usado
+  ```
+- **Saída esperada:** PASS nos testes do módulo
+- **Invariantes verificadas:** (liste)
+- **Edge cases testados:** (liste)
+- **Benchmark:** hipótese + resultado ou declaração honesta de skip
+- **Toolchain não executada:** (se aplicável)
+
+### 4. Por que funciona
+
+O stub no âncora TODO é substituído pelo comportamento testado.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+Checkpoint: rode o teste do módulo após cada TODO.
+
+
+## `GFX-STATE-01`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/resource_state.cpp` |
+| **Função / âncora** | `TODO [GFX-STATE-01]` |
+| **Substituir** | stub marcado por esse TODO |
+| **Não mexer** | outros arquivos até este ID passar |
+
+### Escreva o código
+
+```text
+# Implemente conforme starter/resource_state.cpp e compare solutions/resource_state.cpp
+```
+
+### Por que funciona
+
+A edição no arquivo certo faz o `PEDAGOGY-TEST: GFX-STATE-01` passar.

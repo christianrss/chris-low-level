@@ -30,6 +30,15 @@ O build compila; o teste falha nos `REQUIRE` de `0x1B` / stored / fixed enquanto
 
 ## Exercício A — bitstream LSB-first (`COMP-DEFL-01`)
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/bit_stream.cpp` |
+| **Função / âncora** | comentário `TODO [COMP-DEFL-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-DEFL-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `BitWriter::write_bit` está vazio; `read_bit` sempre retorna `false`. Sem isso, nenhum bloco DEFLATE é testável.

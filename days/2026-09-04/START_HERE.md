@@ -1,7 +1,7 @@
 # START HERE — Day 02 (2026-09-04)
 
-1. Leia `README.md` deste diretório para entender as 11 trilhas e a regra de honestidade sobre `chris-os` / `chris-debugger`.
-2. Abra `TODO_MAP.md` e escolha o próximo ID pendente **na ordem sugerida** (Systems → AI → Algorithms → Quantum → OS → Debugger → Red Team → .NET → Node → JS VM).
+1. Leia `README.md` deste diretório para entender as trilhas e a regra de honestidade sobre `chris-os` / `chris-debugger`.
+2. Abra `TODO_MAP.md` e escolha o próximo ID pendente **na ordem sugerida** (Systems → … → JS VM → **CLVM extended**).
 3. Entre no módulo e leia `TEORIA_PASSO_A_PASSO.md` (O quê / Como / Por quê) e `PESQUISA_GUIADA.md`.
 4. Faça um **checkpoint conceitual no papel** (trace de 1 caso) **antes** de abrir o starter — igual ao Dia 06: `ctest PASS` sozinho não basta.
 5. Trabalhe exclusivamente em `starter/` até os testes passarem (`TODO [ID]`).
@@ -9,9 +9,9 @@
 7. Se travar, use `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` (problema → algoritmo → código → entenda). No JS VM, traces longos estão em `RESOLUCAO_APENDICE.md`.
 8. Compare com `solutions/` somente após concluir ou para auditoria final.
 9. Execute o benchmark do módulo e registre observações em `BENCHMARK_GUIADO.md` (seção **Resultados observados**).
-10. Ao fechar o dia, rode `python scripts/pedagogy_check_day02.py` e `python scripts/quality_check.py` na raiz do repositório.
+10. Ao fechar o dia, rode `python scripts/pedagogy_check_unified.py --day 2026-09-04` e `python scripts/run_day_tests.py --day 2026-09-04 --mode solutions`.
 
-**Ordem sugerida dos 11 módulos**
+**Ordem sugerida dos módulos**
 
 | # | Caminho | Foco | Checkpoint no papel (exemplo) |
 |---|---------|------|-------------------------------|
@@ -26,5 +26,6 @@
 | 9 | `dotnet/clr_pe_cli_metadata` | PE/CLI/BSJB | cadeia DOS→PE→CLI→BSJB |
 | 10 | `nodejs/typescript_stream_backpressure` | Streams + framing | backpressure / highWaterMark |
 | 11 | `javascript/bytecode_vm_from_scratch` | Lexer/parser/VM | stack `[10,40]` antes do Add → `50` |
+| 12 | `systems/clvm_extended` | CLVM ISA estendida | `add2`→8, `mem_demo`→42, `max_loop`→0..3+1 |
 
 Misture dificuldade dentro de cada módulo: exercícios fáceis constroem a base para os TODOs principais.

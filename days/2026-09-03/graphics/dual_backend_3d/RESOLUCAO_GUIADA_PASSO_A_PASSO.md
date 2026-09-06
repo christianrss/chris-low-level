@@ -7,10 +7,37 @@
 | `GFX-CAMERA-01` | `starter/common/engine.cpp` | `camera_forward()` |
 | `GFX-CAMERA-02` | `starter/common/engine.cpp` | `camera_right()` |
 | `GFX-CAMERA-03` | `starter/common/engine.cpp` | `look_at()` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/common/engine.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-CAMERA-03]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CAMERA-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `GFX-CULL-01` | `starter/common/engine.cpp` | `screen_triangle_front_facing()` |
 | `GFX-CULL-02` | `starter/software_win32/main.cpp` | rasterização — área com sinal / back-face |
 | `GFX-CAMERA-04` | `starter/software_win32/main.cpp`, `starter/opengl_win32/main.cpp` | `update_camera_keyboard()` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/opengl_win32/main.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-CAMERA-04]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CAMERA-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `GFX-CAMERA-05` | `starter/software_win32/main.cpp`, `starter/opengl_win32/main.cpp` | `WM_MOUSEMOVE` — yaw/pitch |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/opengl_win32/main.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-CAMERA-05]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CAMERA-05]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `GFX-CULL-03` | `starter/opengl_win32/main.cpp` | `render_scene()` — `GL_CULL_FACE` |
 | `GFX-LAMBERT-01` | `starter/opengl_win32/main.cpp` | fragment shader — difuso + ambiente |
 
@@ -364,6 +391,15 @@ Coloque breakpoint na construção de `elbow` e depois `hand`. A pergunta a resp
 
 ## 7. TODO `GFX-CULL-01`: regra portátil de winding
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/common/engine.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-CULL-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CULL-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Abra:
 
 ```text
@@ -408,6 +444,15 @@ if (!screen_triangle_front_facing(signed_area)) {
 ```
 
 ## 9. TODO `GFX-CULL-03`: OpenGL
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/opengl_win32/main.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-CULL-03]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CULL-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Abra:
 

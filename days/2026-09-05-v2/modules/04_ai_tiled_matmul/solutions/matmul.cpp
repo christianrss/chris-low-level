@@ -1,3 +1,5 @@
+// PEDAGOGY-SOLUTION: AI-MM-TILED-02
+// PEDAGOGY-SOLUTION: AI-MM-NAIVE-01
 // SOLVES [AI-MM-NAIVE-01] [AI-MM-TILED-02]
 #include "matmul.hpp"
 #include <algorithm>

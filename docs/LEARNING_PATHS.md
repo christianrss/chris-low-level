@@ -44,20 +44,35 @@ flowchart LR
 
 ## 3. VMs e bytecode
 
+### 3a. CLVM (formato próprio)
+
 ```mermaid
 flowchart LR
-  clvm[Day01 clvm] --> jsvm[Day02 bytecode_vm]
-  jsvm --> branch[Day05 bytecode_branch_vm]
-  branch --> capstone[projects/chris-js]
+  d1[Day01_clvm] --> d4[Day04_clvm_extended]
+  d4 --> cap[projects_chris_vm]
 ```
 
 | Etapa | Módulo | Conceito |
 |-------|--------|----------|
-| 1 | `2026-09-03/systems/clvm` | stack VM, loader binário |
-| 2 | `2026-09-04/javascript/bytecode_vm_from_scratch` | dispatch loop, stack trace |
-| 3 | `2026-09-05/javascript/bytecode_branch_vm` | branches, IP, condicionais |
+| 1 | `2026-09-03/systems/clvm` | loader, stack VM, JMP/JZ |
+| 2 | `2026-09-04/systems/clvm_extended` | CALL/RET, mem, EQ/LT/JNZ/SWAP/DROP |
+| Capstone | `projects/chris-vm` | ISA estendida + testes |
+
+### 3b. JavaScript-like VM (trilha paralela)
+
+```mermaid
+flowchart LR
+  jsvm[Day02_bytecode_vm] --> branch[Day05_bytecode_branch_vm]
+  branch --> capjs[projects_chris_js]
+```
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-04/javascript/bytecode_vm_from_scratch` | dispatch loop, stack trace |
+| 2 | `2026-09-05/javascript/bytecode_branch_vm` | branches, IP, condicionais |
 | Capstone | `projects/chris-js` | VM com branches + testes |
 
+**Pergunta de síntese:** o que CALL/RET na CLVM e um call frame na JS VM têm em comum?
 ---
 
 ## 4. Streams, I/O e backpressure

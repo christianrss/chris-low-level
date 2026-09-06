@@ -37,6 +37,15 @@ Build passa; testes falham enquanto os TODOs existirem.
 
 ## Exercício Fácil — `D2-TENSOR-VIEW-AT`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/tensor.cpp` |
+| **Função / âncora** | comentário `TODO [D2-TENSOR-VIEW-AT]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-TENSOR-VIEW-AT]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `TensorView2D::at` no starter lança `logic_error("TODO...")`. Sem índice por stride, views e transpose não têm como ler o storage.

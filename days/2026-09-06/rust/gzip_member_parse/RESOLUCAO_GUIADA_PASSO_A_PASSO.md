@@ -15,6 +15,15 @@
 
 ## RS-GZ-01 — validate_fixed_header
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/lib.rs` |
+| **Função / âncora** | comentário `TODO [RS-GZ-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RS-GZ-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```rust

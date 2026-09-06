@@ -17,6 +17,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## SYS-PAGE-ALLOC-01 — mapeamento, consulta e allocate
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/page_allocator.cpp` |
+| **Função / âncora** | comentário `TODO [SYS-PAGE-ALLOC-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [SYS-PAGE-ALLOC-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```cpp

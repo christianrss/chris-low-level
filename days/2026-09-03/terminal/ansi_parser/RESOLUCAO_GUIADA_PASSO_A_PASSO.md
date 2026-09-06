@@ -7,6 +7,15 @@
 | `TERM-FEED-01` | `starter/src/terminal.cpp` | `Terminal::feed()` — máquina de estados ESC/CSI |
 | `TERM-CSI-01` | `starter/src/terminal.cpp` | `Terminal::handle_csi()` |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/terminal.cpp` |
+| **Função / âncora** | comentário `TODO [TERM-CSI-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [TERM-CSI-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/terminal/ansi_parser/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.

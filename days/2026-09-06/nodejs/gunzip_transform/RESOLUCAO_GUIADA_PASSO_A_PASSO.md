@@ -16,6 +16,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION` no gabarito e `P
 
 ## ND-GZ-01 — encaminhar chunks ao gunzip
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/gunzip_transform.js` |
+| **Função / âncora** | comentário `TODO [ND-GZ-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [ND-GZ-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```javascript
@@ -123,6 +132,15 @@ Após `transform.end(gz)`: `bytesIn === gz.length` e `bytesOut > bytesIn` no tes
 ---
 
 ## ND-GZ-02 — demo de backpressure
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/backpressure_metrics.js` |
+| **Função / âncora** | comentário `TODO [ND-GZ-02]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [ND-GZ-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 

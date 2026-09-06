@@ -1,3 +1,6 @@
+// PEDAGOGY-TEST: GFX-PORTAL-04
+// PEDAGOGY-TEST: GFX-PORTAL-05
+// PEDAGOGY-TEST: GFX-PORTAL-06
 // PEDAGOGY-TEST: GFX-PORTAL-01: Mat4 identity, multiply, transform point
 // PEDAGOGY-TEST: GFX-PORTAL-02: portal frame matrices A and B
 // PEDAGOGY-TEST: GFX-PORTAL-03: portal_transport A↔B preserves local offset

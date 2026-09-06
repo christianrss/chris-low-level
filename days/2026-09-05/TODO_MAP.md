@@ -271,3 +271,4 @@
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: SYS-PAGE-FREE-02`
 - **Solution:** `solutions/page_allocator.cpp` + `PEDAGOGY-SOLUTION: SYS-PAGE-FREE-02`
+

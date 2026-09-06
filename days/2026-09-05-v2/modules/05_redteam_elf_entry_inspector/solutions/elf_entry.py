@@ -1,3 +1,5 @@
+# PEDAGOGY-SOLUTION: RT-ELF-ENTRY-02
+# PEDAGOGY-SOLUTION: RT-ELF-HDR-01
 # SOLVES [RT-ELF-HDR-01] [RT-ELF-ENTRY-02]
 import struct
 def parse_ident(data:bytes):

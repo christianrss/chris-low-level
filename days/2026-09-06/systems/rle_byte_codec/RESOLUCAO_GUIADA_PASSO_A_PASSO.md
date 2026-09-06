@@ -18,6 +18,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## COMP-RLE-01 — encode: header + runs
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rle.cpp` |
+| **Função / âncora** | comentário `TODO [COMP-RLE-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-RLE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 Em `starter/rle.cpp`:

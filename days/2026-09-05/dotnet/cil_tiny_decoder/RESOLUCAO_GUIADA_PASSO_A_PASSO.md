@@ -17,6 +17,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` / `PEDAGOGY-
 
 ## CLR-IL-OPCODE-01 — reconhecer opcodes
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/Program.cs` |
+| **Função / âncora** | comentário `TODO [CLR-IL-OPCODE-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [CLR-IL-OPCODE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```csharp

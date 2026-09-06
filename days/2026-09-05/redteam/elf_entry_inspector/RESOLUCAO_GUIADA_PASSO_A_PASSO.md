@@ -17,6 +17,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## RT-ELF-HDR-01 — validar `e_ident`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/elf_entry.py` |
+| **Função / âncora** | comentário `TODO [RT-ELF-HDR-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RT-ELF-HDR-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```python

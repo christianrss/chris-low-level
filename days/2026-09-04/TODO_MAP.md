@@ -70,4 +70,36 @@
 - `D2-JS-PREC-MUL` — nível term
 - `D2-JS-VM-ADD` — opcode Add na stack VM
 
-**Total:** 11 módulos, 48 TODOs mapeados.
+**Total:** 12 módulos, 52 TODOs mapeados.
+
+## `CLVM-EXT-01`
+
+- **Módulo:** `systems/clvm_extended`
+- **Starter:** `starter/tools/assemble.py`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-EXT-01`
+- **Solution:** `solutions/tools/assemble.py` + `PEDAGOGY-SOLUTION: CLVM-EXT-01`
+
+## `CLVM-EXT-02`
+
+- **Módulo:** `systems/clvm_extended`
+- **Starter:** `starter/src/main.cpp`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-EXT-02`
+- **Solution:** `solutions/src/main.cpp` + `PEDAGOGY-SOLUTION: CLVM-EXT-02`
+
+## `CLVM-EXT-03`
+
+- **Módulo:** `systems/clvm_extended`
+- **Starter:** `starter/src/main.cpp`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-EXT-03`
+- **Solution:** `solutions/src/main.cpp` + `PEDAGOGY-SOLUTION: CLVM-EXT-03`
+
+## `CLVM-EXT-04`
+
+- **Módulo:** `systems/clvm_extended`
+- **Starter:** `starter/src/main.cpp` + `starter/programs/max_loop.asm`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-EXT-04`
+- **Solution:** `solutions/src/main.cpp` + `solutions/programs/max_loop.asm` + `PEDAGOGY-SOLUTION: CLVM-EXT-04`

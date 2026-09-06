@@ -27,6 +27,15 @@ offset 4..7  MessageType    int32 little-endian
 
 ## Exercício Fácil — `D2-CSHARP-WRITE-HEADER`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/Chris.DotNet.Buffers/FrameCodec.cs` |
+| **Função / âncora** | comentário `TODO [D2-CSHARP-WRITE-HEADER]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-CSHARP-WRITE-HEADER]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 O starter já valida destino e `PayloadLength`, mas o corpo do TODO só faz:

@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST: RE-YARA-01
 # PEDAGOGY-TEST: RE-STRINGS-01
 from __future__ import annotations
 import sys

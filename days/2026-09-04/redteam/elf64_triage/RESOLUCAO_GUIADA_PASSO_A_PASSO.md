@@ -29,6 +29,15 @@ Enquanto houver TODOs, espere `NotImplementedError`.
 
 ## Exercício Fácil — `D2-ELF-STRINGS`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/ascii_strings.py` |
+| **Função / âncora** | comentário `TODO [D2-ELF-STRINGS]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ELF-STRINGS]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Listar runs ASCII imprimíveis `(offset, text)` com `len >= minimum`.

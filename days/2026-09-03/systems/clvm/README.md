@@ -101,6 +101,7 @@ arbitrário nem interage com processos de terceiros.
 | Projeto | `projects/chris-vm` |
 | O que levar | CLVM loader + stack VM |
 | Testes a replicar | integration tests |
+| Evolução | Dia 04 `systems/clvm_extended` (CALL/mem/cmp) → `projects/chris-vm` |
 | Milestone | MILESTONES.md — CLVM VM |
 | Commit sugerido | `feat(vm): port CLVM from day01 lab` |
 

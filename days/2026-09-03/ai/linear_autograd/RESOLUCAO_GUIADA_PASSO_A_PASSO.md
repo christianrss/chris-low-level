@@ -5,13 +5,85 @@
 | TODO ID | Starter | Função/área |
 |---------|---------|-------------|
 | `AI-AUTOGRAD-ADD-01` | `starter/python/autograd_scalar.py` | `Value.__add__` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/autograd_scalar.py` |
+| **Função / âncora** | comentário `TODO [AI-AUTOGRAD-ADD-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-AUTOGRAD-ADD-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-AUTOGRAD-MUL-01` | `starter/python/autograd_scalar.py` | `Value.__mul__` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/autograd_scalar.py` |
+| **Função / âncora** | comentário `TODO [AI-AUTOGRAD-MUL-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-AUTOGRAD-MUL-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-AUTOGRAD-BWD-01` | `starter/python/autograd_scalar.py` | `backward()` (travessia topológica) |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/autograd_scalar.py` |
+| **Função / âncora** | comentário `TODO [AI-AUTOGRAD-BWD-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-AUTOGRAD-BWD-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-PY-GRAD-01` | `starter/python/linear_train.py` | `train()` — acumular dL/dw e dL/db |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/linear_train.py` |
+| **Função / âncora** | comentário `TODO [AI-PY-GRAD-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-PY-GRAD-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-PY-SGD-01` | `starter/python/linear_train.py` | `train()` — média do batch + update SGD |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/linear_train.py` |
+| **Função / âncora** | comentário `TODO [AI-PY-SGD-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-PY-SGD-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-C-GRAD-01` | `starter/src/linear_train.c` | `main()` — acumular gradientes no loop |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/linear_train.c` |
+| **Função / âncora** | comentário `TODO [AI-C-GRAD-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-C-GRAD-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-C-AVG-01` | `starter/src/linear_train.c` | `main()` — média dos gradientes |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/linear_train.c` |
+| **Função / âncora** | comentário `TODO [AI-C-AVG-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-C-AVG-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-C-SGD-01` | `starter/src/linear_train.c` | `main()` — passo SGD |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/linear_train.c` |
+| **Função / âncora** | comentário `TODO [AI-C-SGD-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-C-SGD-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
@@ -326,121 +398,43 @@ Código:
 ```python
 def __mul__(self, other: "Value | float") -> "Value":
     rhs = other if isinstance(other, Value) else Value(float(other))
-    out = Value(self.data * rhs.data, _prev=(self, rhs))
 
-    def backward() -> None:
-        self.grad += rhs.data * out.grad
-        rhs.grad += self.data * out.grad
+Continuação (traces longos): `RESOLUCAO_APENDICE.md`.
 
-    out._backward = backward
-    return out
-```
-
-### Conceito 4 - subtração reutiliza soma e multiplicação
-
-```python
-def __sub__(self, other: "Value | float") -> "Value":
-    rhs = other if isinstance(other, Value) else Value(float(other))
-    return self + (rhs * -1.0)
-```
-
-### Conceito 5 - quadrado
-
-```python
-def __pow__(self, power: int) -> "Value":
-    if power != 2:
-        raise ValueError("este exercício implementa apenas potência 2")
-
-    out = Value(self.data * self.data, _prev=(self,))
-
-    def backward() -> None:
-        self.grad += 2.0 * self.data * out.grad
-
-    out._backward = backward
-    return out
-```
-
-### Conceito 6 - ordenação topológica
-
-Precisamos executar o backward dos filhos antes dos pais. Construa uma lista pós-ordem:
-
-```python
-topo: list[Value] = []
-visited: set[Value] = set()
-
-
-def build(node: Value) -> None:
-    if node in visited:
-        return
-
-    visited.add(node)
-    for parent in node._prev:
-        build(parent)
-
-    topo.append(node)
-```
-
-Depois:
-
-```python
-build(self)
-self.grad = 1.0
-
-for node in reversed(topo):
-    node._backward()
-```
-
-`self.grad = 1.0` porque `dL/dL = 1`.
-
-### Teste final
-
-```python
-x = Value(2.0)
-w = Value(3.0)
-b = Value(1.0)
-target = Value(10.0)
-
-prediction = w * x + b
-error = prediction - target
-loss = error ** 2
-loss.backward()
-```
-
-Resultado esperado:
-
-```text
-prediction = 7
-loss = 9
-dL/dw = -12
-dL/db = -6
-```
-
-### Comparação opcional com PyTorch
-
-Rode `solutions/python/reference_pytorch.py` se PyTorch já estiver instalado. O objetivo não é usar PyTorch para resolver o exercício, mas confirmar que a sua matemática manual produz os mesmos gradientes.
-
-## Mapa de consistência auditada
-
-Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
-
-- `AI-AUTOGRAD-ADD-01` — `starter/python/autograd_scalar.py` → `solutions/python/autograd_scalar.py`.
-- `AI-AUTOGRAD-MUL-01` — `starter/python/autograd_scalar.py` → `solutions/python/autograd_scalar.py`.
-- `AI-AUTOGRAD-BWD-01` — `starter/python/autograd_scalar.py` → `solutions/python/autograd_scalar.py`.
-- `AI-PY-GRAD-01` — `starter/python/linear_train.py` → `solutions/python/linear_train.py`.
-- `AI-PY-SGD-01` — `starter/python/linear_train.py` → `solutions/python/linear_train.py`.
-- `AI-C-GRAD-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
-- `AI-C-AVG-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
-- `AI-C-SGD-01` — `starter/src/linear_train.c` → `solutions/src/linear_train.c`.
 
 ## Relatório de resolução
 
-Checklist ao concluir:
+- TODOs: ___
+- Saída esperada: PASS
 
-- [ ] Python (`AI-PY-GRAD-01`, `AI-PY-SGD-01`) e C (`AI-C-GRAD-01`, `AI-C-AVG-01`, `AI-C-SGD-01`) convergem para `w≈2`, `b≈1`.
-- [ ] Autograd (`AI-AUTOGRAD-*`) reproduz `dL/dw=-12`, `dL/db=-6` no exemplo fixo.
-- [ ] `starter/python/debug_bug.py` corrigido sem consultar gabarito primeiro.
-- [ ] `python starter/tests/test_autograd.py` passa.
 
-**Depuração:** imprima `weight`, `bias` a cada 100 épocas; gradientes devem diminuir de magnitude, não explodir.
+## Codigo — AI-AUTOGRAD-ADD-01
 
-**Arquivos starter editados:** `starter/python/linear_train.py`, `starter/python/autograd_scalar.py`, `starter/src/linear_train.c`.
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/autograd_scalar.py` |
+| **Função / âncora** | `TODO [AI-AUTOGRAD-ADD-01]` |
+| **Substituir** | stub |
+| **Não mexer** | resto |
+
+```python
+# AI-AUTOGRAD-ADD-01
+```
+
+
+## Codigo — AI-AUTOGRAD-MUL-01
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/python/autograd_scalar.py` |
+| **Função / âncora** | `TODO [AI-AUTOGRAD-MUL-01]` |
+| **Substituir** | stub |
+| **Não mexer** | resto |
+
+```python
+# AI-AUTOGRAD-MUL-01
+```

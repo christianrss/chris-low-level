@@ -80,6 +80,13 @@ MODULE_PROJECT: dict[str, dict[str, str]] = {
         "milestone": "MILESTONES.md — CLVM VM",
         "commit": "feat(vm): port CLVM from day01 lab",
     },
+    "2026-09-04/systems/clvm_extended": {
+        "project": "projects/chris-vm",
+        "carry": "CALL/RET, LOAD/STORE, EQ/LT/JNZ/SWAP/DROP",
+        "tests": "add2 + mem_demo + max_loop + negatives",
+        "milestone": "MILESTONES.md — Day 04 extended ISA",
+        "commit": "feat(vm): extended ISA from day04 clvm_extended",
+    },
     "2026-09-03/terminal/ansi_parser": {
         "project": "projects/chris-terminal",
         "carry": "ECMA-48/ANSI state machine",

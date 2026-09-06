@@ -3,9 +3,11 @@
 Este laboratório inaugura componentes que serão reutilizados nos próximos treinos.
 
 ## Projeto A - CLVM / linguagem / emulador
-- Dia 1: formato binário, assembler, loader, stack VM, branches.
-- Próximos passos: memória linear, CALL/RET, registradores, syscalls virtuais, debugger próprio, bytecode verifier, JIT simples.
-- Evolução: comparar a VM com RV32I e iniciar um emulador RISC-V real.
+
+- **Dia 1** (`systems/clvm`): formato binário, assembler, loader, stack VM, JMP/JZ.
+- **Dia 4** (`systems/clvm_extended`): CALL/RET, LOAD/STORE (256 B), EQ/LT/JNZ/SWAP/DROP.
+- **Capstone:** `projects/chris-vm` (mesma ISA estendida).
+- **Próximos:** bytecode verifier (stack effects), debugger, syscalls virtuais, JIT simples; comparar com RV32I.
 
 ## Projeto B - Browser
 - URL parser -> HTTP -> HTML tokenizer -> DOM -> CSS -> layout -> painting -> compositor -> event loop -> runtime de script.

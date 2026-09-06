@@ -18,6 +18,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## RT-COMP-01 — detect_compression_magic
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/blob_triage.py` |
+| **Função / âncora** | comentário `TODO [RT-COMP-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RT-COMP-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```python

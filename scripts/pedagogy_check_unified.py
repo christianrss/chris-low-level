@@ -118,6 +118,32 @@ def is_complex(module: Path) -> bool:
     return module.name in COMPLEX_MODULES
 
 
+DAY_DIR_RE = re.compile(r"^\d{4}-\d{2}-\d{2}(-v\d+)?$")
+
+
+def has_placement_block(window: str) -> bool:
+    """True if the RESOLUCAO window tells exactly where to edit code."""
+    low = window.lower()
+    if "onde colocar" in low:
+        return True
+    has_file = "arquivo" in low or "starter/" in low
+    has_anchor = (
+        "função" in low
+        or "funcao" in low
+        or "âncora" in low
+        or "ancora" in low
+        or "todo [" in low
+    )
+    has_edit = (
+        "substituir" in low
+        or "inserir" in low
+        or "cole " in low
+        or "cole isto" in low
+        or "cole o" in low
+    )
+    return has_file and has_anchor and has_edit
+
+
 def check_module(module: Path, root: Path, errors: list[str]) -> int:
     rel = module.relative_to(root)
     total = 0
@@ -260,12 +286,17 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
                 errors.append(f"{rel}: {ident} missing from TESTES_GUIADOS")
             if "REVIEW" not in ident and not has_test_marker(test_text, ident):
                 errors.append(f"{rel}: {ident} missing PEDAGOGY-TEST in test code")
-            # Semantic: RESOLUCAO should include a code fence for each TODO
-            ident_pos = res.find(ident)
-            if ident_pos >= 0:
-                window = res[ident_pos : ident_pos + 2500]
-                if "```" not in window:
+            # Semantic: RESOLUCAO should include a code fence + placement for each TODO
+            positions = [m.start() for m in re.finditer(re.escape(ident), res)]
+            if positions:
+                windows = [res[pos : pos + 2500] for pos in positions]
+                if not any("```" in w for w in windows):
                     errors.append(f"{rel}: {ident} missing code block in RESOLUCAO near TODO section")
+                if not any(has_placement_block(w) for w in windows):
+                    errors.append(
+                        f"{rel}: {ident} missing placement block "
+                        f"(Onde colocar / Arquivo+Função+Substituir|Inserir)"
+                    )
 
     if not seen_ids:
         errors.append(f"{rel}: no tagged TODOs in starter")
@@ -287,15 +318,18 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Unified pedagogy check for a day folder")
-    parser.add_argument("--day", required=True, help="Day folder name, e.g. 2026-09-03")
+    parser.add_argument("--day", help="Day folder name, e.g. 2026-09-03 or 2026-09-05-v2")
     parser.add_argument("--all-days", action="store_true", help="Check all days under days/")
     args = parser.parse_args()
+
+    if not args.all_days and not args.day:
+        parser.error("provide --day or --all-days")
 
     day_dirs: list[Path] = []
     if args.all_days:
         day_dirs = sorted(
             p for p in (ROOT / "days").iterdir()
-            if p.is_dir() and re.match(r"\d{4}-\d{2}-\d{2}$", p.name)
+            if p.is_dir() and DAY_DIR_RE.match(p.name)
         )
     else:
         day_dirs = [ROOT / "days" / args.day]

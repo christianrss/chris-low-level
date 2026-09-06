@@ -17,6 +17,15 @@ IDs: `TODO [ID]` no starter, `PEDAGOGY-SOLUTION` no gabarito, `PEDAGOGY-TEST` em
 
 ## COMP-HUF-01 — BitWriter / BitReader MSB-first
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/bit_io.cpp` |
+| **Função / âncora** | comentário `TODO [COMP-HUF-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-HUF-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 Em `starter/bit_io.cpp`, `write_bit`/`flush`/`read_bit` estão vazios; `write_bits` já chama `write_bit` do MSB ao LSB. Caso 1 espera `0xB0`.

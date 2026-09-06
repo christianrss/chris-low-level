@@ -5,8 +5,35 @@
 | TODO ID | Starter | Função/área |
 |---------|---------|-------------|
 | `RING-SUBMIT-01` | `starter/src/descriptor_ring.cpp` | `DescriptorRing::submit()` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/descriptor_ring.cpp` |
+| **Função / âncora** | comentário `TODO [RING-SUBMIT-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RING-SUBMIT-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `RING-COMPLETE-01` | `starter/src/descriptor_ring.cpp` | `DescriptorRing::device_complete_one()` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/descriptor_ring.cpp` |
+| **Função / âncora** | comentário `TODO [RING-COMPLETE-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RING-COMPLETE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `RING-RECLAIM-01` | `starter/src/descriptor_ring.cpp` | `DescriptorRing::reclaim()` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/descriptor_ring.cpp` |
+| **Função / âncora** | comentário `TODO [RING-RECLAIM-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RING-RECLAIM-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 

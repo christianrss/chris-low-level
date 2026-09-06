@@ -1,3 +1,5 @@
+// PEDAGOGY-SOLUTION: KMOD-MODEL-IO-02
+// PEDAGOGY-SOLUTION: KMOD-MODEL-OPEN-01
 /* SOLVES [KMOD-MODEL-OPEN-01] [KMOD-MODEL-IO-02] */
 #include "device_model.h"
 #include <string.h>

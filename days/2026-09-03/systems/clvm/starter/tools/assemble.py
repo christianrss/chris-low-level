@@ -69,6 +69,19 @@ def assemble(text: str) -> bytes:
 
     return bytes(output)
 
+def instruction_size(line: str) -> int:
+    if line.endswith(":"):
+        return 0
+
+    opcode_name = line.split()[0].upper()
+
+    if opcode_name == "PUSH":
+        return 5
+    if opcode_name in ("JMP", "JZ"):
+        return 3
+
+    return 1
+
 
 def main() -> None:
     parser = argparse.ArgumentParser()

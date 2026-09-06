@@ -31,6 +31,15 @@ ctest --test-dir starter/build --output-on-failure
 
 ## Exercício Fácil — `D2-QSIM-SINGLE`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/qsim.cpp` |
+| **Função / âncora** | comentário `TODO [D2-QSIM-SINGLE]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-QSIM-SINGLE]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 TODO vazio: nenhum gate muda o estado. X/H/Z/CNOT dependem deste kernel.

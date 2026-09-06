@@ -29,6 +29,15 @@ cmake --build build
 
 ## TODO `KMOD-MODEL-OPEN-01` — `device_open`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/device_model.c` |
+| **Função / âncora** | comentário `TODO [KMOD-MODEL-OPEN-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [KMOD-MODEL-OPEN-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### Arquivo
 Abra `starter/device_model.c` e localize:
 
@@ -150,6 +159,15 @@ Saída esperada no stderr:
 ---
 
 ## TODO `KMOD-SOURCE-REVIEW-03` — Revisão de `chris_char.c`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/chris_char.c` |
+| **Função / âncora** | comentário `TODO [KMOD-SOURCE-REVIEW-03]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [KMOD-SOURCE-REVIEW-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### O quê
 Não há compilação no Windows. Leia `starter/chris_char.c` e preencha a rubrica em `REVIEW_RUBRIC.md`.

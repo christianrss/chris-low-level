@@ -36,6 +36,15 @@ Build OK; testes falham por comportamento incompleto (não por CMake).
 
 ### Exercício Fácil A — `D2-JS-LEX-NUMBER`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/chris_js.cpp` |
+| **Função / âncora** | comentário `TODO [D2-JS-LEX-NUMBER]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-JS-LEX-NUMBER]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 #### 1. O problema
 
 O starter já avança `pos_` pelos dígitos, mas devolve `value=0`:

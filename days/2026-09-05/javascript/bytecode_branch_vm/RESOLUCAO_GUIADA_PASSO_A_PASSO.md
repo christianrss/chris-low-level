@@ -17,6 +17,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## JSVM-JZ-01 — salto condicional
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/vm.js` |
+| **Função / âncora** | comentário `TODO [JSVM-JZ-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [JSVM-JZ-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```javascript

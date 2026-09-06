@@ -1,3 +1,4 @@
+// PEDAGOGY-TEST: KMOD-SOURCE-REVIEW-03
 // PEDAGOGY-TEST: KMOD-MODEL-OPEN-01: double-open retorna -1
 // PEDAGOGY-TEST: KMOD-MODEL-IO-02: read/write só com device aberto
 // PEDAGOGY-TEST: KMOD-MODEL-OPEN-01: open exclusivo e rejeição de double-open

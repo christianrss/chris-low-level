@@ -1,3 +1,8 @@
+// PEDAGOGY-TEST: GFX-PORTAL-05
+// PEDAGOGY-TEST: GFX-PORTAL-03
+// PEDAGOGY-TEST: GFX-PORTAL-02
+// PEDAGOGY-TEST: GFX-PORTAL-01
+// PEDAGOGY-TEST: GFX-PORTAL-06
 // PEDAGOGY-TEST: GFX-PORTAL-04: verlet rope gravity + length constraint
 // Test cases (TESTES_GUIADOS.md):
 // Caso 1: `test_verlet_rope` — corda de 5 segmentos com gravidade.

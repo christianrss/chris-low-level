@@ -16,6 +16,15 @@ Cada ID existe como `TODO [ID]` no starter e `PEDAGOGY-SOLUTION` / `PEDAGOGY-TES
 
 ## RS-RLE-01 — encode
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/lib.rs` |
+| **Função / âncora** | comentário `TODO [RS-RLE-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RS-RLE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```rust

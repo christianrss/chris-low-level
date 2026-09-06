@@ -7,6 +7,15 @@
 | `RE-STRINGS-01` | `starter/tools/ascii_strings.py` | `extract_ascii_strings()` |
 | `RE-YARA-01` | `starter/rules/lab_target.yar` | seção `strings` da regra YARA |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rules/lab_target.yar` |
+| **Função / âncora** | comentário `TODO [RE-YARA-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RE-YARA-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/redteam/benign_reversing/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.

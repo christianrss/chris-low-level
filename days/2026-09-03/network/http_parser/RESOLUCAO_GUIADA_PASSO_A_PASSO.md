@@ -6,6 +6,15 @@
 |---------|---------|-------------|
 | `HTTP-PARSE-01` | `starter/src/http_parser.cpp` | `HttpRequestParser::try_parse()` |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/http_parser.cpp` |
+| **Função / âncora** | comentário `TODO [HTTP-PARSE-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [HTTP-PARSE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/network/http_parser/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.

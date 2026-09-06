@@ -1,7 +1,13 @@
 # Exercícios
 
-- **Fácil - GFX-STATE-TRANSITION-01:** implemente a tabela de transições válidas.
-- **Médio - GFX-VK-MAP-02:** mapeie cada estado abstrato para nome Vulkan.
-- **Médio - GFX-D3D12-MAP-03:** mapeie para nome D3D12.
-- **Difícil:** explique por que este modelo não substitui barriers reais.
-- **Visual:** leia os três shaders de debug e descreva a saída esperada.
+## Fácil
+Valide compreensão básica do conceito central deste módulo sem implementação completa.
+
+## Médio
+Implemente os TODOs principais do `starter/` seguindo a resolução guiada.
+
+## Difícil
+Trate edge cases documentados em `TESTES_GUIADOS.md` e explique por que cada invariante importa.
+
+## Desafio
+Amplie o laboratório (performance, formato real, integração com projeto cumulativo) e documente trade-offs.

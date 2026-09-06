@@ -73,6 +73,15 @@ No offset `0x400`, quatro bytes = `42 53 4A 42` (`BSJB`).
 
 ## Exercício Médio — `D2-CLR-CLI-RVA`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/Chris.DotNet.Pe/CliPeInspector.cs` |
+| **Função / âncora** | comentário `TODO [D2-CLR-CLI-RVA]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-CLR-CLI-RVA]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Após montar `sectionTable`, o starter faz:

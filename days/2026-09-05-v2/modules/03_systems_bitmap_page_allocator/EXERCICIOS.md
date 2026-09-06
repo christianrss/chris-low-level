@@ -1,6 +1,13 @@
 # Exercícios
 
-- **Fácil:** para páginas 0, 7, 8 e 15, calcule `byte` e `bit`.
-- **Médio - SYS-PAGE-ALLOC-01:** implemente `allocate()` first-fit.
-- **Difícil - SYS-PAGE-FREE-02:** implemente `free_page()` rejeitando out-of-range e double-free.
-- **Extra:** escreva no caderno como implementar `allocate_run(k)` para páginas contíguas.
+## Fácil
+Valide compreensão básica do conceito central deste módulo sem implementação completa.
+
+## Médio
+Implemente os TODOs principais do `starter/` seguindo a resolução guiada.
+
+## Difícil
+Trate edge cases documentados em `TESTES_GUIADOS.md` e explique por que cada invariante importa.
+
+## Desafio
+Amplie o laboratório (performance, formato real, integração com projeto cumulativo) e documente trade-offs.

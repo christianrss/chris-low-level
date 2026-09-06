@@ -18,6 +18,15 @@ Cada ID existe como `TODO [ID]` no starter e `PEDAGOGY-SOLUTION` / `PEDAGOGY-TES
 
 ## DN-SPAN-01 — ReadStoredHeader (BTYPE + offsets)
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/Program.cs` |
+| **Função / âncora** | comentário `TODO [DN-SPAN-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [DN-SPAN-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```csharp

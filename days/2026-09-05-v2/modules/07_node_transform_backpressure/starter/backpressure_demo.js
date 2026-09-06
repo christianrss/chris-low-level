@@ -1,4 +1,4 @@
-// TODO [NODE-BACKPRESSURE-02]: respeitar write() === false e aguardar drain
+// TODO [NODE-BACKPRESSURE-01]: implement transform backpressure
 import { Writable } from 'node:stream';
 import { once } from 'node:events';
 
@@ -8,7 +8,6 @@ for (let i = 0; i < 50; i++) {
   const ok = sink.write(Buffer.alloc(8));
   if (!ok) {
     falseWrites++;
-    // TODO: await once(sink, 'drain');
   }
 }
 sink.end();

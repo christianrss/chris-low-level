@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST: RE-STRINGS-01
 # PEDAGOGY-TEST: RE-YARA-01
 from pathlib import Path
 

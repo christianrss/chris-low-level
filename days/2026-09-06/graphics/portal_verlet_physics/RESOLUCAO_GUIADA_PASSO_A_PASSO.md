@@ -11,6 +11,15 @@
 | `GFX-PORTAL-05` | `starter/src/sphere_portal.cpp` | `sphere_crosses_portal_plane`, `try_sphere_teleport` |
 | `GFX-PORTAL-06` | `starter/src/render_gl.cpp`, `starter/src/main_opengl.cpp` | WGL + stencil + loop |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/main_opengl.cpp` |
+| **Função / âncora** | comentário `TODO [GFX-PORTAL-06]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-PORTAL-06]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` em `solutions/src/`, e `PEDAGOGY-TEST: ID` nos testes / `main_opengl.cpp`.
 
 > Trabalhe em `days/2026-09-06/graphics/portal_verlet_physics/starter/`. `solutions/` é gabarito — só depois da tentativa.

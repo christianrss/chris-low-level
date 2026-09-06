@@ -35,6 +35,15 @@ Build passa; testes falham enquanto os TODOs existirem.
 
 ## Exercício Fácil — `D2-GFX-INDEX`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/graphics.cpp` |
+| **Função / âncora** | comentário `TODO [D2-GFX-INDEX]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-GFX-INDEX]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 O starter lança `logic_error("TODO index")`. Sem índice, `pixel`/`set_pixel`/`fill_rect` não acessam o buffer.
@@ -219,6 +228,15 @@ Testes antigos de compose/alpha devem passar. Dirty da layer 2×2 em `(2,1)` →
 ---
 
 ## Exercício Difícil C — `D2-GFX-DIRTY-RECT`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/graphics.cpp` |
+| **Função / âncora** | comentário `TODO [D2-GFX-DIRTY-RECT]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-GFX-DIRTY-RECT]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

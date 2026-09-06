@@ -6,6 +6,15 @@
 |---------|---------|-------------|
 | `P2P-GOSSIP-01` | `starter/gossip.py` | `GossipNetwork.broadcast()` — fila, dedup e TTL |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/gossip.py` |
+| **Função / âncora** | comentário `TODO [P2P-GOSSIP-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [P2P-GOSSIP-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/p2p/gossip/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.

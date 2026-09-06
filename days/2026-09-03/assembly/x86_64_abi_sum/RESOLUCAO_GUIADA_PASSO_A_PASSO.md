@@ -6,6 +6,15 @@
 |---------|---------|-------------|
 | `ASM-SUM-01` | `starter/src/sum_x86_64.S` | `asm_sum_u64` — preservar ABI e loop de soma |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/sum_x86_64.S` |
+| **Função / âncora** | comentário `TODO [ASM-SUM-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [ASM-SUM-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/assembly/x86_64_abi_sum/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.

@@ -25,7 +25,7 @@ python scripts/build_day_docx.py --day YYYY-MM-DD   # opcional
 | Artefato | Mínimo |
 |----------|--------|
 | TEORIA_PASSO_A_PASSO.md | 120 linhas + diagrama + O quê/Como/Por quê |
-| RESOLUCAO_GUIADA_PASSO_A_PASSO.md | 80–450 linhas + mapa starter + Relatório |
+| RESOLUCAO_GUIADA_PASSO_A_PASSO.md | 80–450 linhas + mapa starter + **Onde colocar** por TODO + Relatório |
 | EXERCICIOS.md | 4 níveis |
 | DOCX por dia | opcional (export dos MD) |
 

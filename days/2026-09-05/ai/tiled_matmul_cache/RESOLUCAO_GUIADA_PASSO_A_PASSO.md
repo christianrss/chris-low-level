@@ -83,6 +83,15 @@ Recompile e rode `ctest`. A primeira parte do teste (trace) ainda falha, mas os 
 
 ## `AI-MM-TILED-02` — `trace_tile_4x4`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/matmul.cpp` |
+| **Função / âncora** | comentário `TODO [AI-MM-TILED-02]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-MM-TILED-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### Arquivo
 
 No mesmo `starter/matmul.cpp`, localize:

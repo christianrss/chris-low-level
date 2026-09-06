@@ -1,3 +1,5 @@
+// PEDAGOGY-SOLUTION: NODE-BACKPRESSURE-01
+// PEDAGOGY-SOLUTION: NODE-BACKPRESSURE-02
 // SOLVES [NODE-BACKPRESSURE-02]
 import { Writable } from 'node:stream';
 import { once } from 'node:events';

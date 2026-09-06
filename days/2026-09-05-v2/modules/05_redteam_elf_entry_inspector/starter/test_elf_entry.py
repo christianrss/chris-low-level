@@ -1,3 +1,5 @@
+# PEDAGOGY-TEST: RT-ELF-ENTRY-02
+# PEDAGOGY-TEST: RT-ELF-HDR-01
 # TESTS [RT-ELF-HDR-01] [RT-ELF-ENTRY-02]
 import struct,sys
 from pathlib import Path

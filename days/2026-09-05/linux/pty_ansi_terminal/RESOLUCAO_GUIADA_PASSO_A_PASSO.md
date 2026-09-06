@@ -17,6 +17,15 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ## TERM-ANSI-SGR-01 — SGR (`m`) e tokenização em `feed`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/ansi.py` |
+| **Função / âncora** | comentário `TODO [TERM-ANSI-SGR-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [TERM-ANSI-SGR-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```python

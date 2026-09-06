@@ -1,0 +1,8 @@
+# mem_demo: STORE 42 at addr 0, LOAD, PRINT → 42
+PUSH 42
+PUSH 0
+STORE
+PUSH 0
+LOAD
+PRINT
+HALT

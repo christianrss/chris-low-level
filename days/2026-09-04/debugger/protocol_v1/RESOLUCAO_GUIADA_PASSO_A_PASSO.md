@@ -5,9 +5,45 @@
 | TODO ID | Starter | Função |
 |---------|---------|--------|
 | `D2-DBG-APPEND-U16` | `starter/src/protocol.cpp` | `append_u16` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | comentário `TODO [D2-DBG-APPEND-U16]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-DBG-APPEND-U16]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `D2-DBG-APPEND-U32` | `starter/src/protocol.cpp` | `append_u32` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | comentário `TODO [D2-DBG-APPEND-U32]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-DBG-APPEND-U32]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `D2-DBG-READ-U16` | `starter/src/protocol.cpp` | `read_u16` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | comentário `TODO [D2-DBG-READ-U16]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-DBG-READ-U16]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `D2-DBG-READ-U32` | `starter/src/protocol.cpp` | `read_u32` |
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | comentário `TODO [D2-DBG-READ-U32]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-DBG-READ-U32]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `D2-DBG-FNV1A` | `starter/src/protocol.cpp` | `fnv1a` |
 | `D2-DBG-ENCODE` | `starter/src/protocol.cpp` | `encode_debug_packet` |
 | `D2-DBG-DECODE` | `starter/src/protocol.cpp` | `decode_debug_packet` |
@@ -74,6 +110,15 @@ No papel: `0x1234` → `34 12`. Magic → `43 4B 44 31` (`C K D 1`). Round-trip 
 ---
 
 ## Exercício Médio — `D2-DBG-FNV1A`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | comentário `TODO [D2-DBG-FNV1A]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-DBG-FNV1A]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

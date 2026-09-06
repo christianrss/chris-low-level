@@ -68,7 +68,7 @@ Laboratório unificado de low-level. O estudo é **modular**: cada pasta `<trilh
 2. Abra `EXERCICIOS.md` — quatro níveis: Fácil → Médio → Difícil → Desafio.
 3. Implemente no `starter/` seguindo os `TODO [ID]` (veja `TODO_MAP.md`).
 4. Rode testes — procure `PEDAGOGY-TEST: ID` nos arquivos de teste.
-5. Consulte `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` só ao travar; inclui mapa starter→TODO e Relatório de resolução.
+5. Consulte `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` só ao travar; inclui mapa starter→TODO, **Onde colocar** (arquivo/função/substituir|inserir) por TODO e Relatório de resolução.
 6. Compare com `solutions/` após tentativa honesta; registre benchmark em `BENCHMARK_GUIADO.md`.
 
 ## Ordem recomendada

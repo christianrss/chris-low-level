@@ -43,6 +43,15 @@ Você pode adicionar helpers locais `kSignature` e `read_be32` quando chegar em 
 
 ## Exercício Fácil — `COMP-PNG-01` chunk + CRC
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/png.cpp` |
+| **Função / âncora** | comentário `TODO [COMP-PNG-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-PNG-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 ```cpp

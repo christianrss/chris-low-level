@@ -40,6 +40,15 @@ Build passa; testes falham enquanto os TODOs existem (`logic_error` / asserts).
 
 ## Exercício Fácil — `D2-BLOCK-IO-STATS`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/blocked_sort.cpp` |
+| **Função / âncora** | comentário `TODO [D2-BLOCK-IO-STATS]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-BLOCK-IO-STATS]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `account_tile_io` no starter é vazio. Sem ele, Caso 4 nunca vê `block_reads` / `block_writes`.

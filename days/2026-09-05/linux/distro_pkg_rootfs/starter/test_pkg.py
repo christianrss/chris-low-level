@@ -1,3 +1,4 @@
+# PEDAGOGY-TEST: LINUX-ROOTFS-BUILD-03
 // Test cases (TESTES_GUIADOS.md):
 // Caso 1: `python starter/test_pkg.py` — deve falhar com TODOs abertos; imprime `OK linux 
 // Caso 2: `sh starter/test_rootfs.sh` — valida idempotência do builder (duas execuções).

@@ -1,3 +1,5 @@
+// PEDAGOGY-SOLUTION: SYS-PAGE-FREE-02
+// PEDAGOGY-SOLUTION: SYS-PAGE-ALLOC-01
 // SOLVES [SYS-PAGE-ALLOC-01] [SYS-PAGE-FREE-02]
 #include "page_allocator.hpp"
 PageAllocator::PageAllocator(std::size_t n):page_count_(n),bits_((n+7)/8,0){}

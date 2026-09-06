@@ -37,6 +37,15 @@ O build deve funcionar. O teste **deve falhar** enquanto `find_longest_match` re
 
 ## Exercício A — janela 32 KiB (`COMP-LZ77-01`)
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/lz77.cpp` |
+| **Função / âncora** | comentário `TODO [COMP-LZ77-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-LZ77-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Em `starter/lz77.cpp`, o stub zera `match` e retorna `false`. Sem clipe de janela, qualquer busca “desde o início do buffer” aceitaria offsets > 32768, o que o formato e o teste (`m.offset <= LZ77_WINDOW_SIZE`) rejeitam conceitualmente.

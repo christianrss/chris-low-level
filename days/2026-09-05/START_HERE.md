@@ -25,6 +25,8 @@ Laboratório unificado de low-level. O estudo é **modular**: cada pasta `<trilh
 9. `redteam/elf_entry_inspector`
 10. `systems/bitmap_page_allocator`
 
+(CLVM evoluiu no Dia 04: `systems/clvm_extended` — não há módulo CLVM neste dia.)
+
 ## Gates de qualidade
 
 ```bash

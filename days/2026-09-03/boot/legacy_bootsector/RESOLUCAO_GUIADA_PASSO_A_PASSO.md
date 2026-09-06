@@ -6,6 +6,15 @@
 |---------|---------|-------------|
 | `BOOT-IMAGE-01` | `starter/tools/build_minimal.py` | `build_image()` — bytes real-mode + assinatura `55 AA` |
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/build_minimal.py` |
+| **Função / âncora** | comentário `TODO [BOOT-IMAGE-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [BOOT-IMAGE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/boot/legacy_bootsector/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.

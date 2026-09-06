@@ -5,3 +5,14 @@
 3. `sh starter/test_rootfs.sh` deve imprimir `OK rootfs`.
 4. Testes de regressão importantes: pacote válido, path traversal, arquivo ausente no payload, duas execuções do rootfs.
 5. Para validar a referência final: execute os mesmos comandos dentro de `solutions/`.
+## LINUX-ROOTFS-BUILD-03
+
+`PEDAGOGY-TEST: LINUX-ROOTFS-BUILD-03` — aceitar PASS após implementar.
+
+## LINUX-PKG-PARSE-01
+
+`PEDAGOGY-TEST: LINUX-PKG-PARSE-01` — aceitar PASS após implementar.
+
+## LINUX-PKG-INSTALL-02
+
+`PEDAGOGY-TEST: LINUX-PKG-INSTALL-02` — aceitar PASS após implementar.

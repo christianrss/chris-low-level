@@ -30,6 +30,15 @@ Ordem sugerida: POWER2 → ALIGN-UP → ALLOCATE → RESET. Sem as duas primeira
 
 ## Exercício Fácil — `D2-ARENA-POWER2`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/arena.cpp` |
+| **Função / âncora** | comentário `TODO [D2-ARENA-POWER2]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ARENA-POWER2]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Starter sempre retorna `false`. Alinhamentos válidos (8, 16, 32) são rejeitados depois, ou o teste de power-of-two falha.

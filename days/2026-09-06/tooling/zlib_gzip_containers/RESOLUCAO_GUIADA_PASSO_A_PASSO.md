@@ -30,6 +30,15 @@ Build OK; teste **falha** (Adler retorna 0, wraps vazios). Esse é o baseline.
 
 ## Exercício Fácil — `COMP-ZLIB-01` Adler-32
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/adler32.cpp` |
+| **Função / âncora** | comentário `TODO [COMP-ZLIB-01]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-ZLIB-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Em `starter/adler32.cpp`:

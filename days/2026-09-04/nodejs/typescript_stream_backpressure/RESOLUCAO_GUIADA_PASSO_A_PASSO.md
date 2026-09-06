@@ -57,6 +57,15 @@ if (!Number.isInteger(maxLineBytes) || maxLineBytes <= 0)
 
 ## Exercício — `D2-NODE-FRAME-LINES`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/line-framer.ts` |
+| **Função / âncora** | comentário `TODO [D2-NODE-FRAME-LINES]` neste arquivo |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-NODE-FRAME-LINES]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 TCP/`Readable` entrega **chunks**, não mensagens. Sem framing:

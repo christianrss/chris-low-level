@@ -43,7 +43,11 @@ Proibido: parágrafos genéricos como "consulte os TODOs em starter/" sem explic
 1. **Mapa exato starter → resolução** — cada `TODO [ID]` com caminho de arquivo.
 2. **Baseline** — comandos de build/teste; saída **FAIL** esperada antes dos TODOs.
 3. **Por TODO** (repetir para cada ID):
-   - Arquivo e função a abrir
+   - **Onde colocar** (obrigatório) — tabela com:
+     - **Arquivo** — path sob `starter/...`
+     - **Função / âncora** — nome da função ou comentário `TODO [ID]`
+     - **Substituir** ou **Inserir** — o que exatamente editar (corpo, case, stub)
+     - **Não mexer** — o que deixar quieto neste passo
    - Código a digitar (bloco completo, não "implemente X")
    - **Por que funciona?** — raciocínio, não só o resultado
    - Verificação manual (trace, assert, saída)
@@ -51,7 +55,10 @@ Proibido: parágrafos genéricos como "consulte os TODOs em starter/" sem explic
 4. **Debug** — mensagens de erro típicas e correções
 5. **Relatório de resolução** — template para o aluno preencher
 
-Referência de qualidade: `days/2026-09-04/systems/arena_allocator/RESOLUCAO_GUIADA_PASSO_A_PASSO.md`.
+Referência de qualidade (placement): `days/2026-09-03/systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md`.  
+Snippet: `docs/templates/RESOLUCAO_PLACEMENT_SNIPPET.md`.
+
+O checker `scripts/pedagogy_check_unified.py` rejeita TODO sem bloco de placement na janela da RESOLUCAO.
 
 ### EXERCICIOS.md
 
