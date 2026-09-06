@@ -5,4 +5,11 @@ asm_sum_u64:
     # TODO [ASM-SUM-01]: preserve the ABI contract and implement the loop.
     xor %rax, %rax
     ret
+.loop:
+    add (%rdi), %rax
+    add $8, %rdi
+    dec %rsi
+    jne .loop
+.done:
+    ret
 .size asm_sum_u64, .-asm_sum_u64
