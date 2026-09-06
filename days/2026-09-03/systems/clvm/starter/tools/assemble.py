@@ -49,24 +49,51 @@ def parse_lines(text: str) -> list[str]:
 
 def assemble(text: str) -> bytes:
     """Monta PUSH e opcodes simples; labels ficam para o exercício difícil."""
-    output = bytearray()
+    lines = parse_lines(text)
+    labels: dict[str, int] = {}
+    pc = 0
 
-    for line in parse_lines(text):
+    for line in lines:
+        if line.endswith(":"):
+            label = line[:-1].strip()
+            if not label or label in labels:
+                raise ValueError(f"label inválido ou duplicado: {label}")
+            labels[label] = pc
+        else:
+            pc += instruction_size(line)
+
+    output = bytearray()
+    pc = 0
+
+    for line in lines:
+        if line.endswith(":"):
+            continue
         parts = line.split()
         opcode_name = parts[0].upper()
 
         if opcode_name == "PUSH":
+            if len(parts) != 2:
+                raise ValueError("PUSH precisa de um inteiro i32")
             output.append(0x01)
             output += struct.pack("<i", int(parts[1], 0))
         elif opcode_name in OPS:
+            if len(parts) != 1:
+                raise ValueError(f"{opcode_name} não recebe operando")
             output.append(OPS[opcode_name])
-        elif line.endswith(":") or opcode_name in ("JMP", "JZ"):
-            raise NotImplementedError(
-                "TODO [CLVM-ASM-LABELS-01]: implemente labels em duas passagens + JMP/JZ"
-            )
+        elif opcode_name in ("JMP", "JZ"):
+            if len(parts) != 2 or parts[1] not in labels:
+                raise ValueError(f"{opcode_name} precisa de um label conhecido")
+            opcode = 0x09 if opcode_name == "JMP" else 0x0A
+            next_pc = pc + 3
+            displacement = labels[parts[1]] - next_pc
+            if not -32768 <= displacement <= 32767:
+                raise ValueError("salto excede o alcance de i16")
+            output.append(opcode)
+            output += struct.pack("<h", displacement)
         else:
             raise ValueError(f"instrução desconhecida: {opcode_name}")
 
+        pc += instruction_size(line)
     return bytes(output)
 
 def instruction_size(line: str) -> int:
