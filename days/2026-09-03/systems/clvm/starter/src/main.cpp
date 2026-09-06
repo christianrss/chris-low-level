@@ -32,9 +32,29 @@ std::int32_t read_i32_le(const std::uint8_t* bytes) {
     return static_cast<std::int32_t>(value);
 }
 
+std::int16_t read_i16_le(const std::uint8_t* bytes) {
+    const std::uint16_t value =
+        static_cast<std::uint16_t>(bytes[0]) |
+        (static_cast<std::uint16_t>(bytes[1]) << 8U);
+    return static_cast<std::int16_t>(value);
+}
+
 int run(const clvm_image& image, bool trace) {
     std::vector<std::int32_t> stack;
     std::size_t pc = image.entry;
+
+    const auto need = [&](std::size_t byte_count) {
+        return pc + byte_count <= image.code_size;
+    };
+    const auto checked_jump = [&](std::int16_t relative) -> bool {
+        const std::int64_t base = static_cast<std::int64_t>(pc);
+        const std::int64_t target = base + static_cast<std::int64_t>(relative);
+        if (target < 0 || target >= static_cast<std::int64_t>(image.code_size)) {
+            return false;
+        }
+        pc = static_cast<std::size_t>(target);
+        return true;
+    };
 
     while (pc < image.code_size) {
         const std::size_t opcode_pc = pc;
@@ -137,6 +157,38 @@ int run(const clvm_image& image, bool trace) {
                 stack.pop_back();
                 break;
             // TODO [CLVM-VM-JUMP-01]: implement JMP/JZ with signed i16 relative offsets.
+            case Op::Jmp: {
+                if (!need(2)) {
+                    std::cerr << "error: truncated JMP\n";
+                    return 2;
+                }
+                const std::int16_t relative = read_i16_le(image.code + pc);
+                pc += 2;
+                if(!checked_jump(relative)) {
+                    std::cerr << "error: jump outside code\n";
+                    return 2;
+                }
+                break;
+            }
+            case Op::Jz: {
+                if (!need(2)) {
+                    std::cerr << "error: truncated JZ\n";
+                    return 2;
+                }
+                const std::int16_t relative = read_i16_le(image.code + pc);
+                pc += 2;
+                if (stack.empty()) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                const std::int32_t cond = stack.back();
+                stack.pop_back();
+                if (cond == 0 && !checked_jump(relative)) {
+                    std::cerr << "error: jump outside code\n";
+                    return 2;
+                }
+                break;
+            }
             default:
                 std::cerr << "unimplemented/unknown opcode at pc="
                           << opcode_pc << '\n';
