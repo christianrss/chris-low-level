@@ -17,7 +17,8 @@ public static class FrameCodec
             throw new ArgumentOutOfRangeException(nameof(header), "payload length cannot be negative");
 
         // TODO [D2-CSHARP-WRITE-HEADER]: write both Int32 fields in little-endian order.
-        destination[..HeaderSize].Clear();
+        BinaryPrimitives.WriteInt32LittleEndian(destination[0..4], header.PayloadLength);
+        BinaryPrimitives.WriteInt32LittleEndian(destination[4..8], header.MessageType);
     }
 
     public static FrameHeader ReadHeader(ReadOnlySpan<byte> source)
@@ -26,8 +27,8 @@ public static class FrameCodec
             throw new ArgumentException("source is smaller than frame header", nameof(source));
 
         // TODO [D2-CSHARP-READ-HEADER]: decode the two fields without allocating.
-        var payloadLength = 0;
-        var messageType = 0;
+        var payloadLength = BinaryPrimitives.ReadInt32LittleEndian(source[0..4]);
+        var messageType = BinaryPrimitives.ReadInt32LittleEndian(source[4..8]);
         if (payloadLength < 0)
             throw new InvalidDataException("encoded payload length is negative");
         return new FrameHeader(payloadLength, messageType);
@@ -37,7 +38,9 @@ public static class FrameCodec
     {
         // TODO [D2-CSHARP-RENT-FRAME]: rent, encode header, copy payload, transfer ownership.
         var required = checked(HeaderSize + payload.Length);
-        var buffer = new byte[required];
+        var buffer = ArrayPool<byte>.Shared.Rent(required);
+        WriteHeader(buffer.AsSpan(0, HeaderSize), new FrameHeader(payload.Length, messageType));
+        payload.CopyTo(buffer.AsSpan(HeaderSize, payload.Length));
         return new PooledFrame(buffer, required);
     }
 }
