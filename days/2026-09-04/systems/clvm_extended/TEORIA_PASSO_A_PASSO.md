@@ -108,7 +108,11 @@ Header, FNV checksum, PUSH/ADD/…/JMP/JZ **não mudam**. Programas `arithmetic.
 
 ## 11. Capstone
 
-Porte tudo para `projects/chris-vm` (mesmo FORMAT). Próximos no ROADMAP: verifier, debugger, JIT — não neste lab.
+Porte a ISA para `projects/chris-vm` (mesmo FORMAT). Lá o arco continua: **JS subset → CLVM**.
+
+CALL/RET e LOAD/STORE não são “extras cosméticos”: são exatamente o que o codegen de `function` / `let` precisa (args na pilha, locais em slots de 4 B na mem 256 B). Gramática e limites: [`projects/chris-vm/docs/JS_SUBSET.md`](../../../../projects/chris-vm/docs/JS_SUBSET.md). Guia código a código: `TEORIA_PASSO_A_PASSO.md` e `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` no chris-vm.
+
+Verifier/debugger/JIT ricos e heap/strings ficam para depois — não neste lab.
 
 ## 12. Checklist mental antes do código
 
@@ -120,4 +124,5 @@ Porte tudo para `projects/chris-vm` (mesmo FORMAT). Próximos no ROADMAP: verifi
 
 ## 13. Próximo passo após o lab
 
-Porte a ISA para `projects/chris-vm` e rode os mesmos programas lá — o FORMAT deve ser idêntico byte a byte.
+1. Porte a ISA para `projects/chris-vm` e rode `add2` / `mem_demo` / `max_loop` — FORMAT idêntico byte a byte.
+2. No chris-vm, siga a resolução guiada até `examples/js/fn_add.js` → `print(8)`.

@@ -44,19 +44,29 @@ flowchart LR
 
 ## 3. VMs e bytecode
 
-### 3a. CLVM (formato próprio)
+### 3a. CLVM (formato próprio → frontend JS)
 
 ```mermaid
 flowchart LR
   d1[Day01_clvm] --> d4[Day04_clvm_extended]
-  d4 --> cap[projects_chris_vm]
+  d4 --> cap[chris_vm_js2clvm]
+  cap --> n1[Day07_js_codegen]
+  n1 --> n2[Day07_verifier]
+  n2 --> n3[subset_mod]
+  n3 --> n4[Day07_v2_strings]
 ```
 
 | Etapa | Módulo | Conceito |
 |-------|--------|----------|
-| 1 | `2026-09-03/systems/clvm` | loader, stack VM, JMP/JZ |
-| 2 | `2026-09-04/systems/clvm_extended` | CALL/RET, mem, EQ/LT/JNZ/SWAP/DROP |
-| Capstone | `projects/chris-vm` | ISA estendida + testes |
+| 1 | `2026-09-03/systems/clvm` | loader, stack VM, JMP/JZ; assembler como IR legível |
+| 2 | `2026-09-04/systems/clvm_extended` | CALL/RET, mem, EQ/LT/JNZ |
+| Capstone | `projects/chris-vm` | ISA + **`js2clvm`** + checklist N0 |
+| N1 | `2026-09-07/systems/clvm_js_codegen` | você implementa codegen (LET/WHILE/CALL) |
+| N2 | `2026-09-07/systems/clvm_bytecode_verifier` | stack-effect + branch bounds |
+| N3 | chris-vm `%` + `N3_SUBSET_MOD.md` | extensão subset ainda v1 |
+| N4 | `2026-09-07/systems/clvm_v2_strings` | FORMAT **v2** strings (Dia01 intocado) |
+
+Estude o capstone com `TEORIA` / `RESOLUCAO_GUIADA` / `docs/STUDY_CHECKLIST_N0.md`.
 
 ### 3b. JavaScript-like VM (trilha paralela)
 
@@ -70,9 +80,9 @@ flowchart LR
 |-------|--------|----------|
 | 1 | `2026-09-04/javascript/bytecode_vm_from_scratch` | dispatch loop, stack trace |
 | 2 | `2026-09-05/javascript/bytecode_branch_vm` | branches, IP, condicionais |
-| Capstone | `projects/chris-js` | VM com branches + testes |
+| Capstone | `projects/chris-js` | VM com branches + testes (bytecode **próprio**, não CLVM) |
 
-**Pergunta de síntese:** o que CALL/RET na CLVM e um call frame na JS VM têm em comum?
+**Perguntas de síntese:** (1) o que CALL/RET na CLVM e um call frame na JS VM têm em comum? (2) por que existem duas VMs (chris-vm vs chris-js)? quando faria sentido **retargetar** o frontend JS para emitir CLVM em vez de opcodes chris-js?
 ---
 
 ## 4. Streams, I/O e backpressure

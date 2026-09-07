@@ -24,7 +24,7 @@ Projeto do dia: **CLVM (Christian Low-Level Virtual Machine)** — um formato bi
 - Python 3.10+
 - CMake 3.20+
 - compilador C11 e C++17 (GCC/Clang/MSVC)
-- opcional: Rust/Cargo para o validador
+- Rust/Cargo para o exercício guiado `rust-validator` (`CLVM-RS-*`)
 - opcional: GDB/LLDB, `xxd`/`hexdump`, `objdump`
 
 ## Caminho recomendado
@@ -34,8 +34,9 @@ Projeto do dia: **CLVM (Christian Low-Level Virtual Machine)** — um formato bi
 3. Faça primeiro o checksum FNV-1a em Python e C.
 4. Complete o parser C.
 5. Complete as operações aritméticas da VM C++.
-6. Por fim, implemente labels/JMP/JZ no assembler e na VM.
-7. Use `solutions/` apenas para conferência.
+6. Implemente labels/JMP/JZ no assembler e na VM.
+7. Complete o **validador Rust** (`CLVM-RS-FNV-01` → `HEADER` → `WALK`) em `starter/rust-validator`.
+8. Use `solutions/` apenas para conferência.
 
 ## Build do gabarito (Linux/macOS/WSL)
 
@@ -70,18 +71,20 @@ python tools/assemble.py programs/arithmetic.asm arithmetic.clvm
 .\build\Release\clvm.exe arithmetic.clvm --trace
 ```
 
-## Rust validator (opcional — intro)
+## Rust validator (exercício guiado)
 
-O `solutions/rust-validator` (e o espelho em `starter/`) é um **validador estrutural** de CLVM: magic, bounds, FNV-1a e walk de opcodes — **não executa** bytecode.
+O `starter/rust-validator` (gabarito em `solutions/rust-validator`) é um **validador estrutural** de CLVM: magic, bounds, FNV-1a e walk de opcodes — **não executa** bytecode. TODOs: `CLVM-RS-FNV-01`, `CLVM-RS-HEADER-01`, `CLVM-RS-WALK-01`.
 
-```bash
-cd solutions/rust-validator
-cargo run -- ../arithmetic.clvm
+```powershell
+cd starter/rust-validator
+cargo test
+cargo run -- ../programs/../  # após montar um .clvm, aponte o path
 ```
 
-Esperado: `VALID: ...` (exit 0) ou `INVALID: ...` (exit 1).
+Ou, pelo gate CMake: `ctest` chama `integration_test.py`, que roda `cargo test` se `cargo` estiver no PATH.
 
-**Trilha Rust completa:** no Dia 2026-09-06 (`rust/rle_byte_codec`, `rust/gzip_member_parse`) você pratica o mesmo ethos (bytes não confiáveis + `Result`) com pedagogia full (`TODO [RS-…]`, `cargo test`, TEORIA/RESOLUCAO). Use este validator só como aperitivo.
+**Trilha Rust completa:** Dia 2026-09-06 (`rust/rle_byte_codec`, `rust/gzip_member_parse`).
+
 ## Inspeção binária
 
 ```bash
@@ -101,7 +104,7 @@ arbitrário nem interage com processos de terceiros.
 | Projeto | `projects/chris-vm` |
 | O que levar | CLVM loader + stack VM |
 | Testes a replicar | integration tests |
-| Evolução | Dia 04 `systems/clvm_extended` (CALL/mem/cmp) → `projects/chris-vm` |
+| Evolução | Dia 04 `systems/clvm_extended` (CALL/mem/cmp) → `projects/chris-vm` → **`js2clvm`** (JS subset → CLVM) |
 | Milestone | MILESTONES.md — CLVM VM |
 | Commit sugerido | `feat(vm): port CLVM from day01 lab` |
 

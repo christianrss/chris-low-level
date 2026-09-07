@@ -114,11 +114,22 @@ O pipeline assembler→loader→interpreter é o mesmo padrão industrial.
 2. Header validation (`CLVM-C-HEADER-01`).
 3. VM aritmética + saltos em `main.cpp`.
 4. Labels em assembler.
-5. `integration_test.py` com `arithmetic.asm` → imprime `38`.
+5. Validador Rust (`CLVM-RS-*`) em `rust-validator` — mesmo FNV/header, walk sem executar.
+6. `integration_test.py` com `arithmetic.asm` → imprime `38` (+ `cargo test` se disponível).
 
-## 15. Como saber se está correto
+## 15. Por que um validador em Rust?
 
-`arithmetic` → `38`; `countdown` → `3 2 1 0`; checksum corrupto rejeitado; salto inválido rejeitado.
+Parser de bytes não confiáveis com `Result<(), String>` deixa erros explícitos (sem UB silenciosa). É o mesmo ethos do loader C, numa linguagem memory-safe — ponte para a trilha Rust do Dia 06.
+
+## 16. Como saber se está correto
+
+`arithmetic` → `38`; `countdown` → `3 2 1 0`; checksum corrupto rejeitado; salto inválido rejeitado; `cargo test` no `rust-validator` PASS.
+
+## 17. Para onde isso vai
+
+O texto `.asm` que você monta é uma **IR legível**: os mesmos opcodes (PUSH, ADD, JMP, …) serão o alvo de um compilador. No capstone [`projects/chris-vm`](../../../../projects/chris-vm), o módulo `js2clvm` baixa um **subset de JavaScript** para esse assembler e depois para `.clvm`.
+
+Neste lab você **não** escreve o frontend JS — você constrói o formato e a VM que o frontend vai precisar. Ordem: Dia 01 (este) → Dia 04 (`clvm_extended`, CALL/mem) → chris-vm (`TEORIA` + `RESOLUCAO_GUIADA` do compilador).
 
 ---
 

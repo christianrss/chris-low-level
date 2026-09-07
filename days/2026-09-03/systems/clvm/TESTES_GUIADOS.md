@@ -33,6 +33,26 @@ Monte `PUSH 7; PUSH 0; DIV; HALT`. A VM deve recusar a operação sem crash.
 
 Crie um bytecode cujo `JMP` aponte para fora do código. A VM deve detectar o destino inválido.
 
+## Teste 5 — rust-validator (`cargo test`)
+
+**Invariante:** o crate `rust-validator` valida estrutura sem executar.
+
+### CLVM-RS-FNV-01
+`fnv1a32(b"") == 0x811c9dc5`.
+
+### CLVM-RS-HEADER-01
+Arquivo com magic `XXXX` → `Err` contendo `magic`.
+
+### CLVM-RS-WALK-01
+Bytecode `[0x01]` (PUSH truncado) com header/checksum coerentes → `truncated PUSH`.
+
+```powershell
+cd starter/rust-validator   # ou solutions/rust-validator
+cargo test
+```
+
+O `integration_test.py` também dispara `cargo test` se `cargo` estiver no PATH.
+
 ## Como depurar um teste quebrado
 
 Use `--trace` e acompanhe `pc`, opcode e stack. Se a falha ocorrer antes da execução, coloque breakpoint em `clvm_parse`. Se ocorrer em branch, observe o valor de `pc` antes e depois de `checked_jump`.
@@ -47,6 +67,10 @@ Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser 
 - `CLVM-C-HEADER-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
 - `CLVM-PY-FNV-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
 - `CLVM-ASM-LABELS-01` — coberto pela sequência de testes/validação descrita neste arquivo; a solução correspondente também é verificada pelo `pedagogy_check`.
+- `CLVM-RS-FNV-01` — `cargo test` / `fnv_empty_is_offset_basis` em `rust-validator`.
+- `CLVM-RS-HEADER-01` — `cargo test` / `rejects_bad_magic`.
+- `CLVM-RS-WALK-01` — `cargo test` / `rejects_truncated_push`.
 
 Arquivos de teste automatizado presentes no starter:
 - `starter/tests/integration_test.py`
+- `starter/rust-validator/src/main.rs` (`#[cfg(test)]`)

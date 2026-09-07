@@ -35,6 +35,9 @@
 - `CLVM-C-FNV-01` — `systems/clvm`
 - `CLVM-C-HEADER-01` — `systems/clvm`
 - `CLVM-PY-FNV-01` — `systems/clvm`
+- `CLVM-RS-FNV-01` — `systems/clvm`
+- `CLVM-RS-HEADER-01` — `systems/clvm`
+- `CLVM-RS-WALK-01` — `systems/clvm`
 - `CLVM-VM-ARITH-01` — `systems/clvm`
 - `CLVM-VM-JUMP-01` — `systems/clvm`
 - `TERM-CSI-01` — `terminal/ansi_parser`
@@ -42,3 +45,27 @@
 - `OBJDUMP-PARSE-01` — `tooling/miniobjdump`
 - `OBJDUMP-U16-01` — `tooling/miniobjdump`
 - `OBJDUMP-U32-01` — `tooling/miniobjdump`
+
+## `CLVM-RS-FNV-01`
+
+- **Módulo:** `systems/clvm`
+- **Starter:** `starter/rust-validator/src/main.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-RS-FNV-01`
+- **Solution:** `solutions/rust-validator/src/main.rs` + `PEDAGOGY-SOLUTION: CLVM-RS-FNV-01`
+
+## `CLVM-RS-HEADER-01`
+
+- **Módulo:** `systems/clvm`
+- **Starter:** `starter/rust-validator/src/main.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-RS-HEADER-01`
+- **Solution:** `solutions/rust-validator/src/main.rs` + `PEDAGOGY-SOLUTION: CLVM-RS-HEADER-01`
+
+## `CLVM-RS-WALK-01`
+
+- **Módulo:** `systems/clvm`
+- **Starter:** `starter/rust-validator/src/main.rs`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: CLVM-RS-WALK-01`
+- **Solution:** `solutions/rust-validator/src/main.rs` + `PEDAGOGY-SOLUTION: CLVM-RS-WALK-01`

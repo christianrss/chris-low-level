@@ -87,6 +87,27 @@ MODULE_PROJECT: dict[str, dict[str, str]] = {
         "milestone": "MILESTONES.md — Day 04 extended ISA",
         "commit": "feat(vm): extended ISA from day04 clvm_extended",
     },
+    "2026-09-07/systems/clvm_js_codegen": {
+        "project": "projects/chris-vm",
+        "carry": "js2clvm codegen (LET/WHILE/CALL)",
+        "tests": "integration_test.py goldens",
+        "milestone": "MILESTONES.md — N1 codegen lab",
+        "commit": "feat(vm): port js codegen from day07",
+    },
+    "2026-09-07/systems/clvm_bytecode_verifier": {
+        "project": "projects/chris-vm",
+        "carry": "verify_clvm stack-effect + branches",
+        "tests": "fixtures ok/bad_checksum",
+        "milestone": "MILESTONES.md — N2 verifier lab",
+        "commit": "feat(vm): port verifier from day07",
+    },
+    "2026-09-07/systems/clvm_v2_strings": {
+        "project": "projects/chris-vm",
+        "carry": "FORMAT v2 string pool + PRINTS (experimental)",
+        "tests": "hello hi",
+        "milestone": "MILESTONES.md — N4 v2 strings",
+        "commit": "feat(vm): explore CLVM v2 strings from day07",
+    },
     "2026-09-03/terminal/ansi_parser": {
         "project": "projects/chris-terminal",
         "carry": "ECMA-48/ANSI state machine",

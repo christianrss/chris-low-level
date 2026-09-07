@@ -10,6 +10,9 @@
 | `CLVM-C-HEADER-01` | `starter/src/clvm_loader.c` | dentro de `clvm_parse`, após `size mismatch` — `TODO [CLVM-C-HEADER-01]` |
 | `CLVM-VM-ARITH-01` | `starter/src/main.cpp` | em `run()`, `switch` — `TODO [CLVM-VM-ARITH-01]` (cases Add…Print) |
 | `CLVM-VM-JUMP-01` | `starter/src/main.cpp` | `TODO [CLVM-VM-JUMP-01]` + `default:` (JMP/JZ caem no default hoje) |
+| `CLVM-RS-FNV-01` | `starter/rust-validator/src/main.rs` | função `fnv1a32` — `TODO [CLVM-RS-FNV-01]` |
+| `CLVM-RS-HEADER-01` | `starter/rust-validator/src/main.rs` | `validate` — `TODO [CLVM-RS-HEADER-01]` |
+| `CLVM-RS-WALK-01` | `starter/rust-validator/src/main.rs` | walk de opcodes — `TODO [CLVM-RS-WALK-01]` |
 
 > Raiz do trabalho: `days/2026-09-03/systems/clvm/starter/`. Não copie `solutions/` no começo.
 
@@ -486,6 +489,129 @@ Trace: `RESOLUCAO_APENDICE.md`. Debug: `clvm countdown.clvm --trace`.
 
 ---
 
+## CLVM-RS-FNV-01 — FNV-1a em Rust
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rust-validator/src/main.rs` |
+| **Função / âncora** | `fnv1a32` — `TODO [CLVM-RS-FNV-01]` |
+| **Substituir** | o corpo que hoje retorna `0` |
+| **Não mexer** | `main`, helpers `u16le`/`u32le` |
+
+### Escreva o código
+
+```rust
+fn fnv1a32(data: &[u8]) -> u32 {
+    let mut h = 0x811c_9dc5u32;
+    for &b in data {
+        h ^= b as u32;
+        h = h.wrapping_mul(0x0100_0193);
+    }
+    h
+}
+```
+
+### Por que funciona
+
+`wrapping_mul` = módulo `2^32`, igual ao `& 0xFFFFFFFF` em Python e ao `uint32_t` em C.
+
+### Verifique
+
+```powershell
+cd starter/rust-validator
+cargo test fnv_empty_is_offset_basis -- --nocapture
+```
+
+Esperado: PASS. Debug: compare com `fnv1a32(b"")` em Python.
+
+---
+
+## CLVM-RS-HEADER-01 — header em `validate`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rust-validator/src/main.rs` |
+| **Função / âncora** | `validate` — `TODO [CLVM-RS-HEADER-01]` |
+| **Substituir** | o `return Err("TODO [CLVM-RS-HEADER-01]...")` pelos checks |
+| **Não mexer** | `fnv1a32` (já feito); walk fica no próximo TODO |
+
+### Escreva o código
+
+```rust
+if &data[0..4] != b"CLVM" { return Err("bad magic".into()); }
+if data[4] != 1 { return Err("unsupported version".into()); }
+if data[5] != 0 { return Err("unsupported flags".into()); }
+let entry = u16le(&data[6..8]) as usize;
+let size = u32le(&data[8..12]) as usize;
+let expected = u32le(&data[12..16]);
+if size != data.len() - 16 { return Err("size mismatch".into()); }
+if size != 0 && entry >= size { return Err("entry outside code".into()); }
+let code = &data[16..];
+if fnv1a32(code) != expected { return Err("checksum mismatch".into()); }
+```
+
+### Por que funciona
+
+Mesmas mensagens do loader C — produtor/consumidor/validador concordam.
+
+### Verifique
+
+`cargo test rejects_bad_magic` → PASS.
+
+---
+
+## CLVM-RS-WALK-01 — walk de opcodes
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rust-validator/src/main.rs` |
+| **Função / âncora** | final de `validate` — `TODO [CLVM-RS-WALK-01]` |
+| **Inserir** | loop `pc` após o checksum OK; **não** interpretar stack |
+| **Não mexer** | VM C++ (`main.cpp`) — este crate só valida estrutura |
+
+### Escreva o código
+
+```rust
+let mut pc = 0usize;
+while pc < code.len() {
+    let op = code[pc];
+    pc += 1;
+    match op {
+        0x01 => {
+            if pc + 4 > code.len() { return Err("truncated PUSH".into()); }
+            pc += 4;
+        }
+        0x09 | 0x0a => {
+            if pc + 2 > code.len() { return Err("truncated branch".into()); }
+            pc += 2;
+        }
+        0x02..=0x08 => {}
+        _ => return Err(format!("unknown opcode 0x{op:02x}")),
+    }
+}
+Ok(())
+```
+
+### Por que funciona
+
+Só mede tamanhos de instrução — sem executar. Bom modelo de “trust boundary” em Rust com `Result`.
+
+### Verifique
+
+```powershell
+cargo test --manifest-path starter/rust-validator/Cargo.toml
+```
+
+Esperado (solutions): todos PASS. Starter: FAIL até completar os três TODOs.
+
+---
+
 ## Desafio opcional
 
 `CLVM-TOOL-01` (EXERCICIOS) — fora do TODO_MAP; arquivo novo à sua escolha (ex. `starter/tools/disassemble.py`).
@@ -500,6 +626,9 @@ Trace: `RESOLUCAO_APENDICE.md`. Debug: `clvm countdown.clvm --trace`.
 | ASM-LABELS | substituir `assemble()` | monta countdown |
 | VM-ARITH | cases sob TODO ARITH | `38` |
 | VM-JUMP | `read_i16_le` + cases antes do `default` | `3 2 1 0` |
+| RS-FNV | `rust-validator` → `fnv1a32` | `cargo test` FNV |
+| RS-HEADER | `validate` header | bad magic / checksum |
+| RS-WALK | walk opcodes | truncated PUSH |
 
 ## Relatório de resolução
 

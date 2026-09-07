@@ -40,4 +40,5 @@ ctest --test-dir build_ci -C Release --output-on-failure
 | Item | Detalhe |
 |------|---------|
 | Projeto | `projects/chris-vm` |
+| Depois | `js2clvm` (JS → CLVM) — ver TEORIA/RESOLUCAO no capstone |
 | Commit | `feat(vm): extended ISA from day04 clvm_extended` |
