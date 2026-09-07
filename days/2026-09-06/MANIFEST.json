@@ -243,772 +243,772 @@
       "sha256": "32d8b09e5d03d962fbc385228c4803c2502e7e1f0b22400db206dc8dbe974512"
     },
     {
-      "path": "graphics/portal_verlet_physics/BENCHMARK_GUIADO.md",
+      "path": "graphics/verlet_rope_3d/BENCHMARK_GUIADO.md",
       "size": 512,
       "sha256": "605da94d6fa7da29168c4c33cb5a400e55bf3cc12d32bf83471965f353e80dd0"
     },
     {
-      "path": "graphics/portal_verlet_physics/CMakeLists.txt",
+      "path": "graphics/verlet_rope_3d/CMakeLists.txt",
       "size": 1104,
       "sha256": "6d2c19335fcb39912b1592bbfca3c6740485e2eddecea1abe8a0adda89ae8e5d"
     },
     {
-      "path": "graphics/portal_verlet_physics/EXERCICIOS.md",
+      "path": "graphics/verlet_rope_3d/EXERCICIOS.md",
       "size": 618,
       "sha256": "626e3801559f137cfd7fa6b3d8ce95a23cfd4fd9857ae2993f58adb29bf29d43"
     },
     {
-      "path": "graphics/portal_verlet_physics/PESQUISA_GUIADA.md",
+      "path": "graphics/verlet_rope_3d/PESQUISA_GUIADA.md",
       "size": 572,
       "sha256": "f2a147783071fa5b4d2ffeae88c3182199a225f3e11158d5dc8bff8ae8a0e341"
     },
     {
-      "path": "graphics/portal_verlet_physics/README.md",
+      "path": "graphics/verlet_rope_3d/README.md",
       "size": 1002,
       "sha256": "feea392428db3749663c625edd4eb03da2f56a8183323b54e0fbb0de2839cd3b"
     },
     {
-      "path": "graphics/portal_verlet_physics/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "path": "graphics/verlet_rope_3d/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
       "size": 4822,
       "sha256": "858f7608198074b4a3edc88e8e92d11078e9be03813bd1e894edc200845d8853"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/ALL_BUILD.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/ALL_BUILD.vcxproj",
       "size": 43482,
       "sha256": "192c982b5d25e8e9683d804cc5b9c88c696066d155161d2e7e72d85049fc0e70"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/ALL_BUILD.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/ALL_BUILD.vcxproj.filters",
       "size": 348,
       "sha256": "071df387cd2485a33ffe870c1540f7d518323fc8579f0dbbd522ea65e08e0381"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/cmake_install.cmake",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/cmake_install.cmake",
       "size": 2119,
       "sha256": "3867d5efa5a7573a68915a8b470496747c08e33eccfe6cb40b11f1bdabdbf9e3"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeCache.txt",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeCache.txt",
       "size": 13317,
       "sha256": "1ebbc408a3f4eeb7f468c421cb1bc365e4813c849de74ac2acc60a5c59dd52db"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake",
       "size": 6480,
       "sha256": "40b5ad7a4738f622ea6cb7433979c0fe4a461b93d1aff9c74aaa40a8e306a4cd"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CMakeDetermineCompilerABI_CXX.bin",
       "size": 50176,
       "sha256": "011f1f26137c10bbbb102bce0397627e5b721ce13021ac4a55723ce004acb2a1"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CMakeRCCompiler.cmake",
       "size": 212,
       "sha256": "85223e3627ab66035651f1bc87d7ab01c67bccd4c1132ea0ebcf6fd87de0c7d1"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CMakeSystem.cmake",
       "size": 395,
       "sha256": "cb655f074177502b26612fa979ee72c606731a0b59f300e936ebba161d8cce09"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
       "size": 30429,
       "sha256": "9e26b0f20786a2d59935f5dddb7dbeceb54e40f39ffd6996b2fc0e339431808d"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.exe",
       "size": 14336,
       "sha256": "3b12e72d631e30b7f04eb72cd952891653129cb4b6b399ac7f5c20c4f19397ec"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/CompilerIdCXX.vcxproj",
       "size": 2806,
       "sha256": "32c99c1567dd97b62a9e0593daad4327f6ef01a2031bd09274256ebd9ec3bc7b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj",
       "size": 2433,
       "sha256": "e2d7bcaa278d70ff0407218ada2873315e0e7930be8e399f39d7ddcab18cac6b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe",
       "size": 394,
       "sha256": "551f3bbbdf8555a3c412b67c27edab1e816cd4d62cb4c253b031364625663023"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog",
       "size": 1008,
       "sha256": "38ec9b6c6c07ad96c9314d6c6fe2461507025183c629d83cb2ccb28367f36c79"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog",
       "size": 321,
       "sha256": "8aa22c15d483151a1c69813274456710c80a554983121d1c426f94add8afc4ac"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog",
       "size": 704,
       "sha256": "6150adac4e630dfee1a9ff22647585b741afdb16ecef784fbd27b364a3d9a5e4"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog",
       "size": 648,
       "sha256": "df2ee796e6a4db937bc5ff73cb01e5a27f05065af0fb6c52d3a838c775a615c4"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate",
       "size": 303,
       "sha256": "4ff1bc79c901630519efdeff15bb2ccdbda1b5b2ca29ee242ed9fc7f7f30ad7b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog",
       "size": 1170,
       "sha256": "bb8278be42a2d03ae6db3996acbc9fe77f36a4cc662658d5bb6df5c9cce3b9f2"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog",
       "size": 3102,
       "sha256": "f9f70bb65d0974039ad675c19fa0cb4c938f3c6bc9ad801ce5dbdc6ea9752a8f"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog",
       "size": 165,
       "sha256": "a7a73fa2cf1e54b3f04a7c2b6ecdeeab37bd434290e0af0438491a0d752de70b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog",
       "size": 638,
       "sha256": "66f917c297ab331fba7455627970b02fe672c791b5a7d968f3f8db2da64c5466"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe",
       "size": 386,
       "sha256": "53f46ad6812dc1c9654d847c01419d408128418208191cc9f4e08aeb5b0bd04f"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate",
       "size": 289,
       "sha256": "ea955d520ea9c86f8321c811be51ac6b082ad02e823170e9dae185e0c11292a1"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.txt",
       "size": 81,
       "sha256": "9b9ffd35de9d7ecbf1a4b66071c8db1839cc3eb869dbabf3adea9b4b503659df"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/4.3.3/VCTargetsPath.vcxproj",
       "size": 1255,
       "sha256": "ccfa7bdbd9965120ac85e8ababe7296f0d3ca5ff4dc4296ba3cc3c6a37bc18c2"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/80e60101fcc68da8880d0fd50d041c49/generate.stamp.rule",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/80e60101fcc68da8880d0fd50d041c49/generate.stamp.rule",
       "size": 24,
       "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/80e60101fcc68da8880d0fd50d041c49/RUN_TESTS_force.rule",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/80e60101fcc68da8880d0fd50d041c49/RUN_TESTS_force.rule",
       "size": 24,
       "sha256": "6d2663216bb5708992dad2784a833f449113afd00fd431274ca956fb2530d391"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/cmake.check_cache",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/cmake.check_cache",
       "size": 86,
       "sha256": "95079b44bcef481d601432c2fd3c654d7fe85b9c8386c355f2874502b47441d7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/CMakeConfigureLog.yaml",
       "size": 88097,
       "sha256": "867f7b301eb46ecb99feaafd8fe15f6fb7411a7961f9fc1bad7cb631274587ff"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/generate.stamp",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/generate.stamp",
       "size": 55,
       "sha256": "302f7e9a0c863c04b740065ade01d243c7587d7272fc79fb002870128a9558eb"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/generate.stamp.depend",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/generate.stamp.depend",
       "size": 7861,
       "sha256": "d4c71cbaa2d5d3f13bbd3aadd1bc74c0216f39f05d789a909af78d94e61a5da8"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/generate.stamp.list",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/generate.stamp.list",
       "size": 130,
       "sha256": "0bd8bbc84ae662217a256297d0dae485c847802dad59cd9c0c520befe970ac9e"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/InstallScripts.json",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/InstallScripts.json",
       "size": 186,
       "sha256": "f4643c83c3fe28e923f0e84d87e3a48a6ba2843660cb758f2310c904fa32047b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CMakeFiles/TargetDirectories.txt",
       "size": 934,
       "sha256": "7070ebb533839ba094316bb58dd57ad71930db8dfb9c0fee473840774ba4f3d0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/CTestTestfile.cmake",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/CTestTestfile.cmake",
       "size": 8920,
       "sha256": "39cd647b851638ccba4a4ba180194b03d0a8c227216c8bcf7d7e121a5448cd3b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/math.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/math.obj",
       "size": 6244,
       "sha256": "80f2c1f9c8fdf69e744203cfe79f476399e224711c1e513ec700525c52f6f05c"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal.obj",
       "size": 7588,
       "sha256": "73c09e210f508db2b22c8307653df57539bcd360c91cc1760fdbe9aa21c0e9fd"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.lib.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.lib.recipe",
       "size": 368,
       "sha256": "a0916350fad4e1408426cefe2f617efa1c93f2106eade3cca27d22a2bf794659"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.command.1.tlog",
       "size": 5198,
       "sha256": "a1c501055800a20ecf335bb9360d878689125661fe8e89bd7fa0642177b29b7a"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Cl.items.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Cl.items.tlog",
       "size": 1002,
       "sha256": "c3d0ab2f2c26603f83e62f277bb5ff44767d3f71b37367501d4d931c409bcb18"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.read.1.tlog",
       "size": 30920,
       "sha256": "b108468f3dd3d76a8381ec0c4ce4255422114e1a70348321390accab1ff9b349"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CL.write.1.tlog",
       "size": 2010,
       "sha256": "a424d4aa51c339444dcd16482fa23d36ca72662122a025f3d5211142057ff31e"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.command.1.tlog",
       "size": 683,
       "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.read.1.tlog",
       "size": 7806,
       "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/CustomBuild.write.1.tlog",
       "size": 241,
       "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib-link.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib-link.read.1.tlog",
       "size": 2404,
       "sha256": "e10d541ab72e796e58eb224b393f3d37342e08aca085d1f0659c733370a5736a"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib-link.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib-link.write.1.tlog",
       "size": 1376,
       "sha256": "10863ff579f6cb4a6ea1f557c1aa7e82b640c31dbccc8a3e47d900354fbfa9de"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/Lib.command.1.tlog",
       "size": 1756,
       "sha256": "219974f822a1f312226d4efa926ec9e3d34a19fad1611f968c65065de39f98ae"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/portal_core.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/portal_core.tlog/portal_core.lastbuildstate",
       "size": 274,
       "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/sphere_portal.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/sphere_portal.obj",
       "size": 11114,
       "sha256": "bc639f5d1e18a9915896a060bc8fe0126cd235424a45eeb78c5f7a1626f2abe0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.dir/Release/verlet.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.dir/Release/verlet.obj",
       "size": 39024,
       "sha256": "305254971847a5462fb12b29b1f41e0f55bcd5c01633d4c2d4f474331807f623"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.vcxproj",
       "size": 52822,
       "sha256": "6944813eef5b8625da5e0f473ef9948b5bf57b25ad8ee735fbc2da4c33d48f6e"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_core.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_core.vcxproj.filters",
       "size": 1283,
       "sha256": "83d9a887821144028b2f1e43712e5744e6740233360c094746e2c35ba40654f5"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/portal_verlet_solutions.slnx",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/portal_verlet_solutions.slnx",
       "size": 2355,
       "sha256": "f0966c92b5c1af56f62aeca539c269902f6abebd0bd9edd698fb0bc46dc60ef3"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/portal_core.lib",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/Release/portal_core.lib",
       "size": 78088,
       "sha256": "65fe9b0dca7ffc6ccaac33d204befd812285e6f742a5737376fd8cc1fb4c674c"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/test_portal_transform.exe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/Release/test_portal_transform.exe",
       "size": 15872,
       "sha256": "c22c2c1186487b6996c375acdf03cfe8350c3fdb70008c01479eab57601722f7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/test_sphere_portal.exe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/Release/test_sphere_portal.exe",
       "size": 17408,
       "sha256": "9e7eaafa4ab45efe7a469fc2b93ec5fc2a0d8dc965f63168129c112d52856292"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/Release/test_verlet_rope.exe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/Release/test_verlet_rope.exe",
       "size": 17408,
       "sha256": "f8e2686c2a74863b595c42b5de5eae231a6cbbb2ab9c0b8a84c8d2bf449e457f"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/RUN_TESTS.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/RUN_TESTS.vcxproj",
       "size": 10338,
       "sha256": "df8ff101cdf632bf471040dc7b82887decbf0326a5e50d651f44d0d8324f3b24"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/RUN_TESTS.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/RUN_TESTS.vcxproj.filters",
       "size": 595,
       "sha256": "dd12b8ac3e9cb81618b1f8882a2a45dca1385dfc24e75b3e5498c72d69b398f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.command.1.tlog",
       "size": 1210,
       "sha256": "eb0249c51cf8e03aeb170b4dedece528b0e12d698ccb2e037e282b848eda476f"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/Cl.items.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/Cl.items.tlog",
       "size": 288,
       "sha256": "fe39f20e3d9a60a58707d011ee1e14cbcd4584c0f3fd5aa5098ede2850fe17bd"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.read.1.tlog",
       "size": 22684,
       "sha256": "dcde2028d041b2418876188d7d5cd7991491d6031987d79827129d17b8fc4689"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CL.write.1.tlog",
       "size": 582,
       "sha256": "a59d7dc41aaa4e7093f572b6d3fa20160f67745424cad927c634cacc112cd2e5"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.command.1.tlog",
       "size": 683,
       "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.read.1.tlog",
       "size": 7806,
       "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/CustomBuild.write.1.tlog",
       "size": 241,
       "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.command.1.tlog",
       "size": 1916,
       "sha256": "de0d304b6c8b89f8c34e4195983be8b3dede2330e3d8fb4fa895a536791df96b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.read.1.tlog",
       "size": 3330,
       "sha256": "04ffe9b8289438bac92abf6289d81f78f196d7f2f0a01c969e07bfb5c55e9f42"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.secondary.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.secondary.1.tlog",
       "size": 165,
       "sha256": "e89e674436320d5a04d120afb044da7bd93d4d08931084f442cf2c63ec19d391"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/link.write.1.tlog",
       "size": 608,
       "sha256": "1c918fc7e0a2d21a1cadae4ce57436946ede435216cfad5bb3f645719c2332b3"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/test_portal_transform.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_por.46449949.tlog/test_portal_transform.lastbuildstate",
       "size": 274,
       "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_portal_transform.exe.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_portal_transform.exe.recipe",
       "size": 576,
       "sha256": "d170dab74e79b3285e56d4cbe73decc23bf381a3d28bb8ba8b3e0303b4cfdaea"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.dir/Release/test_portal_transform.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.dir/Release/test_portal_transform.obj",
       "size": 14317,
       "sha256": "a42a5d7448dd2a8ac223c6db49129215fd262f4dc720fc1f85257b96b2c0dbb1"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.vcxproj",
       "size": 58523,
       "sha256": "7397f63878a52c62dc54442b10e09fba1f335c2eae44685856f36c3cbcfc1598"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_portal_transform.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_portal_transform.vcxproj.filters",
       "size": 720,
       "sha256": "e76e2016e6a56325b7e0619fe733f83f6ae37ef9f5fd582e3a94c70cadcdca61"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.command.1.tlog",
       "size": 1186,
       "sha256": "b4ba989795e5fce5854dc2c4e6eb97604d9b1d6354d9144ef3e079f11a758ec1"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/Cl.items.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/Cl.items.tlog",
       "size": 279,
       "sha256": "ee22accaa6f200f98f89225a4251e447eea9e35c59f1518b0261aee8e28c9f43"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.read.1.tlog",
       "size": 22912,
       "sha256": "80522efcb4750c69bf58acad3125c23c3713fa9511b8c1336d701f5e6215dd2c"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CL.write.1.tlog",
       "size": 564,
       "sha256": "e229d8bb5bad4d1ad0c80412f978109f82e36fb558400b2499f9ff50e26c7632"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.command.1.tlog",
       "size": 683,
       "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.read.1.tlog",
       "size": 7806,
       "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/CustomBuild.write.1.tlog",
       "size": 241,
       "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.command.1.tlog",
       "size": 1874,
       "sha256": "5a8ab41baf30aa241349e2f91b74c9a448103ddf5a5581d88744469efc4200e0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.read.1.tlog",
       "size": 3306,
       "sha256": "6b661142db32c9ef9d2a36c1d6cea2585f5572e32ca92aa269152d42c53e4ffe"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.secondary.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.secondary.1.tlog",
       "size": 159,
       "sha256": "52f14a37990e732d65fe45da0b28c8d38e4e5552ef50b64fcf518dd3ebf04fb3"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/link.write.1.tlog",
       "size": 590,
       "sha256": "9e4f4ef9886962cd93bf086e9e3dfcd6f205c7caafd6a16c270ffcbcc4958929"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/test_sphere_portal.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sph.72501F77.tlog/test_sphere_portal.lastbuildstate",
       "size": 274,
       "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sphere_portal.exe.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sphere_portal.exe.recipe",
       "size": 573,
       "sha256": "0c5694bb32e1ea00710a949f3acda902afd00de18ba22e53549724b3239e6351"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.dir/Release/test_sphere_portal.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.dir/Release/test_sphere_portal.obj",
       "size": 14103,
       "sha256": "c259a87ad49050e91203c7fc8f85dcf8baef7998ca48f308da0b21373c484a51"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.vcxproj",
       "size": 58469,
       "sha256": "f99c931448a82ada253b2a92c95d4fdae2b7d7c0d7f555607e6f52e44d0f60fa"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_sphere_portal.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_sphere_portal.vcxproj.filters",
       "size": 717,
       "sha256": "ae758974e715b484a7dd47bedf3ee175355e2d538a966e01eac424b8c524f520"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.exe.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.exe.recipe",
       "size": 571,
       "sha256": "d7ac4e6dd5019d09fe905a89f779797fca29df30e22745ea736fd79c0b451b28"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.obj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.obj",
       "size": 19033,
       "sha256": "1e333e69a105c0cf383c83e6256a4ad95c693da9382bee19404298d62f3a2a59"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.command.1.tlog",
       "size": 1170,
       "sha256": "c0a3ec8e2866073f7e625492397e5a59b360a1da67c3cf6657b08b2b56160c3c"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/Cl.items.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/Cl.items.tlog",
       "size": 273,
       "sha256": "b7fb590e05996365a8cbb321b8cdda86a7f959ed33418177943f8b03bb909dbd"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.read.1.tlog",
       "size": 23086,
       "sha256": "3f0d2f8cf7404d74f3836bd38f65e2f6ba7a8aa8ba01077a2924e1cc50872520"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CL.write.1.tlog",
       "size": 552,
       "sha256": "620ac08ee5cb9b6b734c2dad5ebc38de91390355d40d8a9c5e4f25d1dd3babd9"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.command.1.tlog",
       "size": 683,
       "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.read.1.tlog",
       "size": 7806,
       "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/CustomBuild.write.1.tlog",
       "size": 241,
       "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.command.1.tlog",
       "size": 1846,
       "sha256": "88b124cb0ee8c5d41df903e4266e5db8a6742439e4d76d32fc02f6b9881145ae"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.read.1.tlog",
       "size": 3290,
       "sha256": "34fdeb4a45d8595432f4ad519e140f6cc1ee4c063e5c50473822bcdb7b930f67"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.secondary.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.secondary.1.tlog",
       "size": 155,
       "sha256": "00e7d08c0da6ee85a37e948d9fbb56df3db98dac612fff92eb438272e8140927"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/link.write.1.tlog",
       "size": 578,
       "sha256": "8d1a0a9cc4994dc1b8850164f1da7579f6699d838511d79607a2b633e8236dc5"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/test_verlet_rope.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.dir/Release/test_verlet_rope.tlog/test_verlet_rope.lastbuildstate",
       "size": 274,
       "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.vcxproj",
       "size": 58433,
       "sha256": "e8bae98ad7be3e73735f32d9866e1a3644302d7bf1f543dbe05ff7fd9a9c5c4d"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/test_verlet_rope.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/test_verlet_rope.vcxproj.filters",
       "size": 715,
       "sha256": "f7d2df3ded89b0ba3d47f8646449d8f643d821cb177e742e10e9152ca6f4668c"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/Testing/Temporary/CTestCostData.txt",
       "size": 102,
       "sha256": "56240feaf5cc42d13d832ace1726de334199b4ec814dea80152d60d25e3353f5"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/Testing/Temporary/LastTest.log",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/Testing/Temporary/LastTest.log",
       "size": 2482,
       "sha256": "4ef2fa3835feba6c9483a9330c49917a62ee9edf495ff981a2068d83fe4ac33f"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.recipe",
       "size": 1180,
       "sha256": "f0e8bd9d713e6aba959cc676bf88633782f6a445498201e0fd179a6d2405d85a"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate",
       "size": 274,
       "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog",
       "size": 683,
       "sha256": "edabb28cc8ea36f9cc13fa9fcc6260588d097ae837200ee3a697cad7fa4f6cdc"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog",
       "size": 7806,
       "sha256": "ad36a299f119778a24f17db526da3884cd2b6485d265a834794d12bf49aa1bd7"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog",
       "size": 241,
       "sha256": "c76a4c4479478281607b874245be48df2157ce3ee87357411e8283059ee4da99"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.recipe",
       "size": 368,
       "sha256": "a0916350fad4e1408426cefe2f617efa1c93f2106eade3cca27d22a2bf794659"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog",
       "size": 794,
       "sha256": "194a096c8716f4e4fad004fa09b8ff8ec70054ba3e354f57dcd895553d528a21"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog",
       "size": 7974,
       "sha256": "69baeabd3f0d3d28ffcb33dc5e72675a616c161a940ab3fe622ab18eea45b741"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog",
       "size": 299,
       "sha256": "8c7d0235b78c90fbbcf4ab68ece80b8982f821f48c916d862578e014d5e7ffe2"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/x64/Release/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate",
       "size": 274,
       "sha256": "cec5521513d6c2487adb56af70d5c9efc91ce0a1806b4c6b5e6f02a772be68f0"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/ZERO_CHECK.vcxproj",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/ZERO_CHECK.vcxproj",
       "size": 42624,
       "sha256": "bb8f28069d4ffb2cbb043b9c0649c6a7d54cd87755968ecae235eeffe0ab9973"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
+      "path": "graphics/verlet_rope_3d/solutions/build_ci/ZERO_CHECK.vcxproj.filters",
       "size": 594,
       "sha256": "3a52219a9c7b7fa4d6fe156644e57be664c13c8a73815c709d100694ec8c4c9b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/CMakeLists.txt",
+      "path": "graphics/verlet_rope_3d/solutions/CMakeLists.txt",
       "size": 623,
       "sha256": "65c6f8b282c6b2bda7a56c01cf88237441727bfbb261db7ff272e82897db449c"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/main_opengl.cpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/main_opengl.cpp",
       "size": 567,
       "sha256": "0dccbda1eedf1fd79495e9377341747efa1accdb09370464581d3a1ca776e451"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/math.cpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/math.cpp",
       "size": 2043,
       "sha256": "f2f2ba2625d304c9ec0586c2d36a84d9c3e320ea05936077356549ad8e4e6cde"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/math.hpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/math.hpp",
       "size": 1014,
       "sha256": "3a9fdd4954d61c18d812671fc6224fd610b17244572f6e9db88663398ec060ea"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/portal.cpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/portal.cpp",
       "size": 1759,
       "sha256": "25828c3049f2eda9766b4f6ab0ea3e0974b9c8fdec922aee5b30c77a61006057"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/portal.hpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/portal.hpp",
       "size": 541,
       "sha256": "50bb4189a47126dd795aecbb2082ba8ce839e2141b36b4ffddd12b6f70a2f9dd"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/sphere_portal.cpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/sphere_portal.cpp",
       "size": 1295,
       "sha256": "ff3bcee043acfdca523f4771b0dc64082bb5f5e4241fe7abc71f47e414d9073b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/sphere_portal.hpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/sphere_portal.hpp",
       "size": 346,
       "sha256": "da09bb3ca77e659c5cad98c419f4cdb43ff8025e81c322681dec5cba04ec1dee"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/verlet.cpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/verlet.cpp",
       "size": 1962,
       "sha256": "a13ab0ab0fc8b2b3bab2884767ac298cc2669c7e6c3636c98508b78fcdf0ce3b"
     },
     {
-      "path": "graphics/portal_verlet_physics/solutions/src/verlet.hpp",
+      "path": "graphics/verlet_rope_3d/solutions/src/verlet.hpp",
       "size": 384,
       "sha256": "b370c3b3385ce8d156815c52f8045a59b48008984ee787535c60563bc887b0d7"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/CMakeLists.txt",
+      "path": "graphics/verlet_rope_3d/starter/CMakeLists.txt",
       "size": 610,
       "sha256": "70242c0b8b9dcc73d355588f08ce610c9af6d6943d233f2bc55390d715795f56"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/main_opengl.cpp",
+      "path": "graphics/verlet_rope_3d/starter/src/main_opengl.cpp",
       "size": 555,
       "sha256": "f4cf5ec4863f86a19fb1b2cc6fc680070c34bdaba3cd33160a5b56235a86f005"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/math.cpp",
+      "path": "graphics/verlet_rope_3d/starter/src/math.cpp",
       "size": 1210,
       "sha256": "6d734b9d1c3e568170091770d8be018defb895d637e21b7f2f471e6628da180c"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/math.hpp",
+      "path": "graphics/verlet_rope_3d/starter/src/math.hpp",
       "size": 1023,
       "sha256": "5c57155fa59ef378c41397c11a0634d4aa5560bbacb95a65e71f4e6e25633841"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/portal.cpp",
+      "path": "graphics/verlet_rope_3d/starter/src/portal.cpp",
       "size": 672,
       "sha256": "4292cd2f98e1844fc3a8fc164794c2eb0481ca766ad276c0d256cb591460c070"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/portal.hpp",
+      "path": "graphics/verlet_rope_3d/starter/src/portal.hpp",
       "size": 541,
       "sha256": "50bb4189a47126dd795aecbb2082ba8ce839e2141b36b4ffddd12b6f70a2f9dd"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/sphere_portal.cpp",
+      "path": "graphics/verlet_rope_3d/starter/src/sphere_portal.cpp",
       "size": 479,
       "sha256": "ada3ae375f400a8636a5946ae87c67c1b13f96628811fd45c186d3dc61943b16"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/sphere_portal.hpp",
+      "path": "graphics/verlet_rope_3d/starter/src/sphere_portal.hpp",
       "size": 346,
       "sha256": "da09bb3ca77e659c5cad98c419f4cdb43ff8025e81c322681dec5cba04ec1dee"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/verlet.cpp",
+      "path": "graphics/verlet_rope_3d/starter/src/verlet.cpp",
       "size": 1581,
       "sha256": "59b754d8fc6f47dd0bd44fa11bd0638c7df1fd8f913467ccd0f8ada08ad49775"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/src/verlet.hpp",
+      "path": "graphics/verlet_rope_3d/starter/src/verlet.hpp",
       "size": 384,
       "sha256": "b370c3b3385ce8d156815c52f8045a59b48008984ee787535c60563bc887b0d7"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/tests/test_portal_transform.cpp",
+      "path": "graphics/verlet_rope_3d/starter/tests/test_portal_transform.cpp",
       "size": 1771,
       "sha256": "ea59f36fe2eb5144cbfa4c6b2305914c9f1dfc63a589582780c091d695e4dcc9"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/tests/test_sphere_portal.cpp",
+      "path": "graphics/verlet_rope_3d/starter/tests/test_sphere_portal.cpp",
       "size": 1312,
       "sha256": "2d605587eb963b8b4e1e3afab8576e15837ddba8813a30da305dca78a7fad343"
     },
     {
-      "path": "graphics/portal_verlet_physics/starter/tests/test_verlet_rope.cpp",
+      "path": "graphics/verlet_rope_3d/starter/tests/test_verlet_rope.cpp",
       "size": 1094,
       "sha256": "aa36b5c0f11c6af7fe6e60f2d831c1925fcecc90a4cbd41ec28f2a9cbe428b86"
     },
     {
-      "path": "graphics/portal_verlet_physics/TEORIA_PASSO_A_PASSO.md",
+      "path": "graphics/verlet_rope_3d/TEORIA_PASSO_A_PASSO.md",
       "size": 5374,
       "sha256": "445319ec0c5c2c6c4e7312b4bc5bbf36ba1bc0cba597626714c9374f06abe119"
     },
     {
-      "path": "graphics/portal_verlet_physics/TESTES_GUIADOS.md",
+      "path": "graphics/verlet_rope_3d/TESTES_GUIADOS.md",
       "size": 858,
       "sha256": "a97a7d7b3077274a551f4398ce5d104a90da7c5212992a12f0407ea5192258f3"
     },

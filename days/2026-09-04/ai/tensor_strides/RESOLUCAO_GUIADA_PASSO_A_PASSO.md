@@ -90,6 +90,15 @@ Ainda dependerá de `view`/`transpose_view` para o teste de integração; compil
 
 ## Exercício Médio A — `D2-TENSOR-VIEW`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/tensor.cpp` |
+| **Função / âncora** | ``Tensor2D::view` — `TODO [D2-TENSOR-VIEW]`` — comentário `TODO [D2-TENSOR-VIEW]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-TENSOR-VIEW]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `view()` deve expor a matriz dona como view contígua row-major **sem copiar** `data_`.
@@ -157,6 +166,15 @@ original 2×3:        transpose view 3×2:
 ---
 
 ## Exercício Difícil — `D2-TENSOR-MATMUL`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/tensor.cpp` |
+| **Função / âncora** | ``matmul` — `TODO [D2-TENSOR-MATMUL]`` — comentário `TODO [D2-TENSOR-MATMUL]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-TENSOR-MATMUL]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

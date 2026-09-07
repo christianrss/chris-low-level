@@ -128,6 +128,12 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
     if csproj:
         if not shutil.which("dotnet"):
             return True, f"{name}: dotnet SDK not in PATH (skipped)"
+        test_csproj = list((base / "tests").glob("*.csproj")) if (base / "tests").exists() else []
+        if test_csproj:
+            code, out = run_cmd(["dotnet", "test", str(test_csproj[0])], base)
+            if code != 0:
+                return False, f"{name}: dotnet test failed\n{out}"
+            return True, f"{name}: dotnet test OK"
         code, out = run_cmd(["dotnet", "run", "--project", str(csproj[0])], base)
         if code != 0:
             return False, f"{name}: dotnet run failed (SDK may be absent)\n{out}"

@@ -79,3 +79,16 @@ Os IDs abaixo precisam ter um critério de verificação antes de o módulo ser 
 
 Arquivos de teste automatizado presentes no starter:
 - `starter/tests/core_tests.cpp`
+
+## Caso manual — VISUAL-01
+
+Após `GFX-RASTER-01` + `GFX-LAMBERT-01` (e câmera opcional):
+
+1. Execute `software_win32` e `opengl_win32` do starter/solutions.
+2. **Esperado:** cubo wireframe/sólido com shading Lambert visível; WASD move a câmera; mesma cena reconhecível nos dois backends (paridade documentada em `docs/COMPARISON.md`).
+
+## Extensão D3D11 (opcional)
+
+- `GFX-D3D11-CTX-01` / `GFX-D3D11-DRAW-02` em `starter/d3d11_win32/main.cpp`
+- Após implementar: `d3d11_renderer.exe` mostra mesma cena (ver `RESOLUCAO_APENDICE` Parte G).
+

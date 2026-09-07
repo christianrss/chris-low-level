@@ -6,7 +6,7 @@ Data: 2026-09-05
 
 | Gate | Resultado | Detalhe |
 |------|-----------|---------|
-| `pedagogy_check_unified.py --day 2026-09-05` | **PASS** | 10 módulos, 23 TODOs |
+| `pedagogy_check_unified.py --day 2026-09-05` | **PASS** | 10 módulos, 23 TODOs (strict) |
 | TEORIA ≥ 120 linhas + diagramas | **PASS** | 10/10 (128–134 linhas) |
 | EXERCICIOS.md | **PASS** | 10/10 |
 | RESOLUCAO ≥ 80 linhas + Relatório | **PASS** | 10/10 |

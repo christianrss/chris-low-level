@@ -54,3 +54,8 @@ Rode novamente o mesmo comando. Resultado esperado:
 - Não remova/afrouxe asserts para “fazer passar”.
 - Compare com `solutions/` somente depois de seu starter ficar verde.
 - Acrescente um edge case próprio (ex.: damage totalmente fora dos bounds → `pixels_touched == 0`).
+
+## Caso manual — VISUAL-01
+
+Com demo janela (quando disponível): retângulos coloridos atualizam só na região dirty; pacing de frame perceptível ao mover o cursor de damage.
+

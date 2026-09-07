@@ -17,3 +17,8 @@ Invariante protegida pelo teste com `PEDAGOGY-TEST: GFX-D3D12-MAP-03`.
 ## GFX-VK-MAP-02
 
 Invariante protegida pelo teste com `PEDAGOGY-TEST: GFX-VK-MAP-02`.
+
+## Caso manual — VISUAL-01
+
+Com `state_visualizer` ligado: transições de estado exibidas por cor/layout de frame (ver RESOLUCAO); mesmo grafo de estados que os testes unitários validam.
+

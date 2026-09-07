@@ -1,0 +1,6 @@
+# Exercícios
+
+- `GFX-DEPTH-CPU-01`
+- `GFX-DEPTH-GL-02`
+- `GFX-DEPTH-PARITY-03`
+- `GFX-PERSP-04`

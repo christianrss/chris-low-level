@@ -26,6 +26,19 @@ ctest --test-dir days/2026-09-06/systems/deflate_blocks/starter/build -C Release
 
 O build compila; o teste falha nos `REQUIRE` de `0x1B` / stored / fixed enquanto os TODOs estão vazios.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## Exercício A — bitstream LSB-first (`COMP-DEFL-01`)
@@ -121,7 +134,23 @@ void BitReader::align_byte() {
 `write_bits(0b1011,4); write_bits(0b0001,4); take_bytes() → {0x1B}` e reader recupera os nibbles.
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-DEFL-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-DEFL-01` passam.
+
+
 ## Exercício B — encode stored (`COMP-DEFL-02`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/deflate.cpp` |
+| **Função / âncora** | ``encode_stored_block` — `TODO [COMP-DEFL-02]`` — comentário `TODO [COMP-DEFL-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-DEFL-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -167,7 +196,23 @@ Encode `{'D','E','F','L'}` com `final_block=true`; tamanho ≥ 1+4+4+4. Decode a
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-DEFL-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-DEFL-02` passam.
+
+
 ## Exercício C — decode stored (`COMP-DEFL-03`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/deflate.cpp` |
+| **Função / âncora** | ``decode_stored_blocks` — `TODO [COMP-DEFL-03]`` — comentário `TODO [COMP-DEFL-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-DEFL-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -221,7 +266,23 @@ decode_stored_blocks(encode_stored_block(payload, true)) == payload
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-DEFL-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-DEFL-03` passam.
+
+
 ## Exercício D — tabelas fixas + encode (`COMP-DEFL-04`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/deflate.cpp` |
+| **Função / âncora** | ``build_fixed_literal_tables` + `encode_fixed_block` — `TODO [COMP-DEFL-04]`` — comentário `TODO [COMP-DEFL-04]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-DEFL-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -304,7 +365,23 @@ std::vector<std::uint8_t> encode_fixed_block(const std::vector<std::uint8_t>& li
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-DEFL-04]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-DEFL-04` passam.
+
+
 ## Exercício E — decode fixed (`COMP-DEFL-05`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/deflate.cpp` |
+| **Função / âncora** | ``decode_fixed_block` — `TODO [COMP-DEFL-05]`` — comentário `TODO [COMP-DEFL-05]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-DEFL-05]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -376,6 +453,13 @@ stdout: OK deflate blocks
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-DEFL-05]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-DEFL-05` passam.
+
 
 ## Mapa de consistência auditada
 

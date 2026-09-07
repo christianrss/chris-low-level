@@ -87,6 +87,15 @@ No papel: `[0,8)` com tile 4 → 2; `[4,5)` → 1; `[0,0)` → 0.
 
 ## Exercício Médio A — `D2-BLOCK-SORT-TILE`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/blocked_sort.cpp` |
+| **Função / âncora** | ``sort_tile` — `TODO [D2-BLOCK-SORT-TILE]`` — comentário `TODO [D2-BLOCK-SORT-TILE]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-BLOCK-SORT-TILE]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 TODO vazio: tiles permanecem desordenados; a fase 0 não cria runs.
@@ -140,6 +149,15 @@ Caso 2 do teste: `{3,1,2}` com tile 8 → ordenado e exatamente 1 read + 1 write
 
 ## Exercício Médio B — `D2-BLOCK-MERGE-RUN`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/blocked_sort.cpp` |
+| **Função / âncora** | ``merge_runs` — `TODO [D2-BLOCK-MERGE-RUN]`` — comentário `TODO [D2-BLOCK-MERGE-RUN]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-BLOCK-MERGE-RUN]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Duas metades ordenadas em `src` não se intercalam em `dst`.
@@ -188,6 +206,15 @@ Ainda sem `D2-BLOCK-PASSES` o suite falha; confira o trace no papel e conte as 4
 ---
 
 ## Exercício Difícil — `D2-BLOCK-PASSES`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/blocked_sort.cpp` |
+| **Função / âncora** | ``blocked_merge_sort` — `TODO [D2-BLOCK-PASSES]`` — comentário `TODO [D2-BLOCK-PASSES]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-BLOCK-PASSES]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

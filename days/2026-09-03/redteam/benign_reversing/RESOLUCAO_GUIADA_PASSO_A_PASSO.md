@@ -93,6 +93,19 @@ python starter/tools/ascii_strings.py <caminho-do-lab_target>
 
 Você deve encontrar strings como o marcador do laboratório e mensagens `accepted`/`rejected`, dependendo do compilador e build.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## Exercício Médio - entender calling convention no debugger

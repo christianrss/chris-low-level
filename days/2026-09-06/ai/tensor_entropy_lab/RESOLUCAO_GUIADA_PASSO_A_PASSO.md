@@ -14,6 +14,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Rode o teste após cada TODO.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+python -m pytest tests/ -v
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## AI-ENT-01 — entropia de Shannon
@@ -89,7 +101,23 @@ Esperado: `2.0`. Suite completa ainda falha em `AI-ENT-02`/`03`.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [AI-ENT-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `AI-ENT-01` passam.
+
+
 ## AI-ENT-02 — RLE + compression_ratio_rle
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/entropy_lab.py` |
+| **Função / âncora** | ``tensor_rle_encode`, `compression_ratio_rle` — `TODO [AI-ENT-02]`` — comentário `TODO [AI-ENT-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-ENT-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stubs)
 
@@ -182,7 +210,23 @@ Esperado: `[(7, 1000), (3, 500)]` e razão `≈0.00267`.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [AI-ENT-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `AI-ENT-02` passam.
+
+
 ## AI-ENT-03 — compression_ratio_gzip
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/entropy_lab.py` |
+| **Função / âncora** | ``compression_ratio_gzip` — `TODO [AI-ENT-03]`` — comentário `TODO [AI-ENT-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-ENT-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -248,6 +292,13 @@ python starter/test_entropy_lab.py
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [AI-ENT-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `AI-ENT-03` passam.
+
 
 ## Ordem sugerida e smoke
 

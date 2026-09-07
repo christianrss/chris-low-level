@@ -1,0 +1,8 @@
+# Exercícios
+
+- `GFX-ART-PHYS-01`
+- `GFX-ART-TERRAIN-02`
+- `GFX-ART-TRAIL-03`
+- `GFX-ART-SW-04`
+- `GFX-ART-GL-05`
+- `GFX-ART-D3D-06`

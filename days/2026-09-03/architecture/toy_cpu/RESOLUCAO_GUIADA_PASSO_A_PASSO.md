@@ -6,6 +6,19 @@
 |---------|---------|-------------|
 | `CPU-STEP-01` | `starter/src/cpu.cpp` | `TinyCpu::step()` — MOVI, ADD, STORE, LOAD, JNZ |
 
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
+
 ### Onde colocar
 
 | | |
@@ -262,6 +275,15 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 
 - `CPU-STEP-01` — `starter/src/cpu.cpp` → `solutions/src/cpu.cpp`.
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/cpu.cpp` |
+| **Função / âncora** | ``TinyCpu::step()` — MOVI, ADD, STORE, LOAD, JNZ` — `TODO [CPU-STEP-01]`` — comentário `TODO [CPU-STEP-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [CPU-STEP-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ## Relatório de resolução
 
 Checklist ao concluir:
@@ -274,3 +296,10 @@ Checklist ao concluir:
 **Depuração:** breakpoint em `TinyCpu::step`; trace `pc_` e registradores por instrução.
 
 **Arquivos starter editados:** `starter/src/cpu.cpp`.
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [CPU-STEP-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `CPU-STEP-01` passam.
+

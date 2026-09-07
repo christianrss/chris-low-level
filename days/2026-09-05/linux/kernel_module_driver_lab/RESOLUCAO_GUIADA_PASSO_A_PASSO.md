@@ -12,6 +12,19 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-TEST: ID` em `test_device_
 
 > Trabalhe em `days/2026-09-05/linux/kernel_module_driver_lab/starter/`. Consulte `solutions/` só após tentativa honesta.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## 0. Baseline — build e teste antes dos TODOs
@@ -81,6 +94,15 @@ Recompile e rode `./build/test_device_model`. Os asserts das linhas 16–17 deve
 
 ## TODO `KMOD-MODEL-IO-02` — `device_write`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/device_model.c` |
+| **Função / âncora** | ``device_write` — `TODO [KMOD-MODEL-IO-02]`` — comentário `TODO [KMOD-MODEL-IO-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [KMOD-MODEL-IO-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### Arquivo
 Mesmo arquivo, função `device_write`:
 
@@ -112,6 +134,13 @@ int device_write(Device* dev, const void* src, size_t count) {
 - **Por quê:** no kernel, `copy_from_user` também valida tamanho — overflow em driver é vulnerabilidade clássica.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [KMOD-MODEL-IO-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `KMOD-MODEL-IO-02` passam.
+
 
 ## TODO `KMOD-MODEL-IO-02` — `device_read`
 
@@ -192,6 +221,13 @@ Código kernel exige `copy_to_user`, cleanup em `module_exit`, e `MODULE_LICENSE
 Checklist preenchido + correlação trace userspace ↔ fluxo mental do módulo.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [KMOD-SOURCE-REVIEW-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `KMOD-SOURCE-REVIEW-03` passam.
+
 
 ## Debug — falhas comuns
 

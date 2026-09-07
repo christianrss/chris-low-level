@@ -177,7 +177,7 @@ O transferível é **medir antes de escolher codec**, não o formato RLE em si.
 
 ## 11. Invariantes globais do módulo
 
-- APIs exatamente como em `starter/entropy_lab.py` / `solutions/entropy_lab.py`.
+- APIs exatamente como em `starter/entropy_lab.py` (gabarito separado após tentativa).
 - Helpers `tensor_rle_size_bytes` / `raw_tensor_size_bytes` já implementados — use-os no ratio.
 - Entradas vazias: H=`0.0`; ratios=`1.0`.
 

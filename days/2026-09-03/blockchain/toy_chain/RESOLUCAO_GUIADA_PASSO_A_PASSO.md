@@ -5,49 +5,26 @@
 | TODO ID | Starter | Função/área |
 |---------|---------|-------------|
 | `CHAIN-MERKLE-01` | `starter/toy_chain.py` | `merkle_root()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/toy_chain.py` |
-| **Função / âncora** | comentário `TODO [CHAIN-MERKLE-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [CHAIN-MERKLE-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `CHAIN-DIGEST-01` | `starter/toy_chain.py` | `Block.digest()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/toy_chain.py` |
-| **Função / âncora** | comentário `TODO [CHAIN-DIGEST-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [CHAIN-DIGEST-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `CHAIN-MINE-01` | `starter/toy_chain.py` | `Block.mine()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/toy_chain.py` |
-| **Função / âncora** | comentário `TODO [CHAIN-MINE-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [CHAIN-MINE-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `CHAIN-VALID-01` | `starter/toy_chain.py` | `ToyChain.valid()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/toy_chain.py` |
-| **Função / âncora** | comentário `TODO [CHAIN-VALID-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [CHAIN-VALID-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/blockchain/toy_chain/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
 
 ## 0. Arquivo que você edita
 

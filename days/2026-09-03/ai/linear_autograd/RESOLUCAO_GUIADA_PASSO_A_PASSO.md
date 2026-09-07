@@ -5,89 +5,30 @@
 | TODO ID | Starter | Função/área |
 |---------|---------|-------------|
 | `AI-AUTOGRAD-ADD-01` | `starter/python/autograd_scalar.py` | `Value.__add__` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/autograd_scalar.py` |
-| **Função / âncora** | comentário `TODO [AI-AUTOGRAD-ADD-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-AUTOGRAD-ADD-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-AUTOGRAD-MUL-01` | `starter/python/autograd_scalar.py` | `Value.__mul__` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/autograd_scalar.py` |
-| **Função / âncora** | comentário `TODO [AI-AUTOGRAD-MUL-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-AUTOGRAD-MUL-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-AUTOGRAD-BWD-01` | `starter/python/autograd_scalar.py` | `backward()` (travessia topológica) |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/autograd_scalar.py` |
-| **Função / âncora** | comentário `TODO [AI-AUTOGRAD-BWD-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-AUTOGRAD-BWD-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-PY-GRAD-01` | `starter/python/linear_train.py` | `train()` — acumular dL/dw e dL/db |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/linear_train.py` |
-| **Função / âncora** | comentário `TODO [AI-PY-GRAD-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-PY-GRAD-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-PY-SGD-01` | `starter/python/linear_train.py` | `train()` — média do batch + update SGD |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/linear_train.py` |
-| **Função / âncora** | comentário `TODO [AI-PY-SGD-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-PY-SGD-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-C-GRAD-01` | `starter/src/linear_train.c` | `main()` — acumular gradientes no loop |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/src/linear_train.c` |
-| **Função / âncora** | comentário `TODO [AI-C-GRAD-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-C-GRAD-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-C-AVG-01` | `starter/src/linear_train.c` | `main()` — média dos gradientes |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/src/linear_train.c` |
-| **Função / âncora** | comentário `TODO [AI-C-AVG-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-C-AVG-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `AI-C-SGD-01` | `starter/src/linear_train.c` | `main()` — passo SGD |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/src/linear_train.c` |
-| **Função / âncora** | comentário `TODO [AI-C-SGD-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [AI-C-SGD-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/ai/linear_autograd/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
 
 ## Exercício Fácil - calcular forward, erro, loss e um passo de SGD
 
@@ -406,35 +347,3 @@ Continuação (traces longos): `RESOLUCAO_APENDICE.md`.
 
 - TODOs: ___
 - Saída esperada: PASS
-
-
-## Codigo — AI-AUTOGRAD-ADD-01
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/autograd_scalar.py` |
-| **Função / âncora** | `TODO [AI-AUTOGRAD-ADD-01]` |
-| **Substituir** | stub |
-| **Não mexer** | resto |
-
-```python
-# AI-AUTOGRAD-ADD-01
-```
-
-
-## Codigo — AI-AUTOGRAD-MUL-01
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/python/autograd_scalar.py` |
-| **Função / âncora** | `TODO [AI-AUTOGRAD-MUL-01]` |
-| **Substituir** | stub |
-| **Não mexer** | resto |
-
-```python
-# AI-AUTOGRAD-MUL-01
-```

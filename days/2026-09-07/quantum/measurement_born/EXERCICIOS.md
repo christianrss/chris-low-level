@@ -1,0 +1,3 @@
+# EXERCICIOS
+
+Ver RESOLUCAO.

@@ -6,6 +6,19 @@
 |---------|---------|-------------|
 | `BOOT-IMAGE-01` | `starter/tools/build_minimal.py` | `build_image()` — bytes real-mode + assinatura `55 AA` |
 
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
+
 ### Onde colocar
 
 | | |
@@ -89,6 +102,15 @@ Saída: `boot image structural tests passed`.
 Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve existir no starter, nesta resolução, na solução correspondente e na cobertura de testes/validação do módulo.
 
 - `BOOT-IMAGE-01` — `starter/tools/build_minimal.py` → `solutions/tools/build_minimal.py`.
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/build_minimal.py` |
+| **Função / âncora** | ``build_image()` — bytes real-mode + assinatura `55 AA` — `TODO [BOOT-IMAGE-01]`` — comentário `TODO [BOOT-IMAGE-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [BOOT-IMAGE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ## Relatório de resolução
 

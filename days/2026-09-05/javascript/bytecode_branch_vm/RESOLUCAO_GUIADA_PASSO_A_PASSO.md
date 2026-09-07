@@ -13,6 +13,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Rode `npm test` / `node test.js` após cada case.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+npm test
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## JSVM-JZ-01 — salto condicional
@@ -106,7 +118,23 @@ Esperado: primeiro assert (`run(0)===20`, trace) passa; segundo ainda falha até
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [JSVM-JZ-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `JSVM-JZ-01` passam.
+
+
 ## JSVM-JMP-02 — salto incondicional
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/vm.js` |
+| **Função / âncora** | ``run` — case `JMP` (salto absoluto)` — `TODO [JSVM-JMP-02]`` — comentário `TODO [JSVM-JMP-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [JSVM-JMP-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -176,6 +204,13 @@ console.log(vm.trace);
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [JSVM-JMP-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `JSVM-JMP-02` passam.
+
 
 ## Mapa de consistência auditada
 

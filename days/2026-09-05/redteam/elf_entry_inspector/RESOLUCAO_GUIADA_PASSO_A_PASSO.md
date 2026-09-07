@@ -13,6 +13,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Rode o teste após cada TODO.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+python -m pytest tests/ -v
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## RT-ELF-HDR-01 — validar `e_ident`
@@ -86,7 +98,23 @@ parse_ident(b"")  # → ValueError
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RT-ELF-HDR-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RT-ELF-HDR-01` passam.
+
+
 ## RT-ELF-ENTRY-02 — extrair `e_machine` e `e_entry`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/elf_entry.py` |
+| **Função / âncora** | ``parse_elf64` — `e_type`…`e_entry` via `ELF64_OFFSETS` — `TODO [RT-ELF-ENTRY-02]`` — comentário `TODO [RT-ELF-ENTRY-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RT-ELF-ENTRY-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -163,6 +191,13 @@ bytes[24:32] = 00 10 40 00 00 00 00 00  → e_entry = 0x401000
 Debug se `e_entry` errado: `print(data[24:32].hex())`. Se magic inválido for aceito: `parse_elf64` não chamou `parse_ident`.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RT-ELF-ENTRY-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RT-ELF-ENTRY-02` passam.
+
 
 ## Mapa de consistência auditada
 

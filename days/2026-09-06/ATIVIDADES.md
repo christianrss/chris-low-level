@@ -83,7 +83,7 @@ Portal = mudança de **frame**; stencil = máscara de pixels; Verlet = posição
 
 | Módulo | TODOs |
 |--------|-------|
-| `graphics/portal_verlet_physics` | GFX-PORTAL-01..06 |
+| `graphics/verlet_rope_3d` | GFX-PORTAL-01..06 |
 
 **Checkpoint conceitual:**
 
@@ -93,7 +93,7 @@ Portal = mudança de **frame**; stencil = máscara de pixels; Verlet = posição
 **Checkpoint visual:**
 
 ```powershell
-cmake -S days/2026-09-06/graphics/portal_verlet_physics/solutions -B build-portal -A x64
+cmake -S days/2026-09-06/graphics/verlet_rope_3d/solutions -B build-portal -A x64
 cmake --build build-portal --config Release
 ctest --test-dir build-portal -C Release
 .\build-portal\Release\portal_demo.exe

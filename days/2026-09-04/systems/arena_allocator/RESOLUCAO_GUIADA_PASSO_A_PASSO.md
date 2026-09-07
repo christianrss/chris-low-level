@@ -67,6 +67,15 @@ No papel: 1→true, 8→true, 16→true, 3→false, 6→false, 0→false.
 
 ## Exercício Médio — `D2-ARENA-ALIGN-UP`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/arena.cpp` |
+| **Função / âncora** | ``align_up` — `TODO [D2-ARENA-ALIGN-UP]`` — comentário `TODO [D2-ARENA-ALIGN-UP]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ARENA-ALIGN-UP]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Lança `TODO align_up`. Sem arredondamento, `allocate` não alinha ponteiros.
@@ -102,6 +111,15 @@ Alignment 3 deve lançar. Tabela rápida: (0,8)→0; (1,8)→8; (17,8)→24.
 ---
 
 ## Exercício Difícil — `D2-ARENA-ALLOCATE`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/arena.cpp` |
+| **Função / âncora** | ``allocate` — `TODO [D2-ARENA-ALLOCATE]`` — comentário `TODO [D2-ARENA-ALLOCATE]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ARENA-ALLOCATE]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -150,6 +168,15 @@ Após duas alocações com A=32, `second % 32 == 0`. Capacidade curta → `bad_a
 ---
 
 ## Exercício Final — `D2-ARENA-RESET`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/arena.cpp` |
+| **Função / âncora** | ``reset` — `TODO [D2-ARENA-RESET]`` — comentário `TODO [D2-ARENA-RESET]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ARENA-RESET]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

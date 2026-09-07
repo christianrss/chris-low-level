@@ -6,6 +6,19 @@
 |---------|---------|-------------|
 | `HTTP-PARSE-01` | `starter/src/http_parser.cpp` | `HttpRequestParser::try_parse()` |
 
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
+
 ### Onde colocar
 
 | | |

@@ -6,7 +6,7 @@ Data: 2026-09-04
 
 | Gate | Resultado | Detalhe |
 |------|-----------|---------|
-| `pedagogy_check_unified.py --day 2026-09-04` | **PASS** | 11 módulos, 48 mapeamentos starter TODO |
+| `pedagogy_check_unified.py --day 2026-09-04` | **PASS** | 12 módulos, 52 TODOs (strict desde 2026-09-03) |
 | `quality_check.py` (repo) | **FAIL pré-existente** | linhas longas em outros dias (`2026-09-03`, `2026-09-05`, `2026-09-05-v2`); Day 02 não introduziu novas violações |
 | Critério TEORIA ≥ 120 linhas + diagramas | **PASS** | 11/11 módulos (122–231 linhas; blocos `text`/`mermaid`) |
 | EXERCICIOS.md | **PASS** | 11/11 presentes |

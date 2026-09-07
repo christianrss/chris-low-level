@@ -4,6 +4,8 @@ Esta pasta (`days/2026-09-05-v2/`) foi uma tentativa de entrega via ChatGPT com 
 
 **A entrega canônica é:** [`days/2026-09-05/`](../2026-09-05/)
 
+**Uso:** export ZIP legado apenas — **não** edite conteúdo pedagógico aqui; o gate `pedagogy_check_unified.py` ignora `-v2` em `--all-days`.
+
 Motivos da depreciação:
 - Conteúdo pedagógico superficial (resoluções ~20 linhas)
 - Validators checavam apenas metadata

@@ -29,8 +29,9 @@ flowchart LR
 ```mermaid
 flowchart LR
   mini[Day01 miniobjdump] --> triage[Day02 elf64_triage]
-  triage --> entry[Day05 elf_entry_inspector]
-  entry --> capstone[projects/chris-binary-toolkit]
+  triage -->   entry[Day05 elf_entry_inspector]
+  entry --> hidfuzz[Day07 hid_report_fuzz]
+  hidfuzz --> capstone[projects/chris-binary-toolkit]
 ```
 
 | Etapa | Módulo | Conceito |
@@ -38,7 +39,9 @@ flowchart LR
 | 1 | `2026-09-03/tooling/miniobjdump` | ELF/PE headers, primeiros opcodes |
 | 2 | `2026-09-04/redteam/elf64_triage` | Ehdr + Phdr/Shdr + dynsym + strings |
 | 3 | `2026-09-05/redteam/elf_entry_inspector` | `e_entry`, validação byte-a-byte |
-| Capstone | `projects/chris-binary-toolkit` | pipeline strings + ELF + YARA-style |
+| 4 | `2026-09-06/redteam/compressed_blob_triage` | blobs comprimidos → triage |
+| 5 | `2026-09-07/redteam/hid_report_fuzz` | HID boot malformado → bounds no parser N5 |
+| Capstone | `projects/chris-binary-toolkit` | pipeline strings + ELF + YARA-style + HID fuzz |
 
 ---
 
@@ -54,6 +57,11 @@ flowchart LR
   n1 --> n2[Day07_verifier]
   n2 --> n3[subset_mod]
   n3 --> n4[Day07_v2_strings]
+  n4 --> n7[Day07_rust_v2_verify]
+  kmod --> n5[Day07_hid_keyboard]
+  n5 --> n6[Day07_ps2_mouse]
+  n5 --> n8[Day07_dotnet_input]
+  n6 --> n8
 ```
 
 | Etapa | Módulo | Conceito |
@@ -65,6 +73,7 @@ flowchart LR
 | N2 | `2026-09-07/systems/clvm_bytecode_verifier` | stack-effect + branch bounds |
 | N3 | chris-vm `%` + `N3_SUBSET_MOD.md` | extensão subset ainda v1 |
 | N4 | `2026-09-07/systems/clvm_v2_strings` | FORMAT **v2** strings (Dia01 intocado) |
+| N7 | `2026-09-07/rust/clvm_v2_verify` | parser/verifier v2 em Rust |
 
 Estude o capstone com `TEORIA` / `RESOLUCAO_GUIADA` / `docs/STUDY_CHECKLIST_N0.md`.
 
@@ -109,6 +118,9 @@ flowchart LR
 flowchart LR
   ansi[Day01 ansi_parser] --> pty[Day05 pty_ansi]
   pty --> kmod[Day05 kernel_module]
+  kmod --> hid[Day07 hid_keyboard]
+  hid --> mouse[Day07 ps2_mouse]
+  hid --> dotnet_in[Day07 input_event_span]
   pkg[Day05 distro_pkg] --> capstone[projects/chris-linux-module-lab]
 ```
 
@@ -117,8 +129,11 @@ flowchart LR
 | 1 | `2026-09-03/terminal/ansi_parser` | FSM ESC/CSI |
 | 2 | `2026-09-05/linux/pty_ansi_terminal` | SGR, cursor, preparação PTY |
 | 3 | `2026-09-05/linux/kernel_module_driver_lab` | char device lifecycle |
-| 4 | `2026-09-05/linux/distro_pkg_rootfs` | rootfs mínimo (opcional) |
-| Capstone | `projects/chris-linux-module-lab` + VM real com `insmod` |
+| 4 | `2026-09-07/linux/hid_keyboard_boot` | HID boot → InputEvent → ring/read |
+| 5 | `2026-09-07/linux/ps2_mouse_input` | pacote PS/2 → REL_X/REL_Y |
+| 6 | `2026-09-07/dotnet/input_event_span` | struct evdev 24B + Span parsers |
+| 7 | `2026-09-05/linux/distro_pkg_rootfs` | rootfs mínimo (opcional) |
+| Capstone | `projects/chris-driver-lab` + `chris-linux-module-lab` | fila de input + módulo real |
 
 ---
 
@@ -126,22 +141,30 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  gfx[Day01 dual_backend_3d] --> portal[Day06 portal_verlet]
-  portal --> vk[Day05 vulkan_states]
-  hunt[projects/chris-lantern-hunt]
-  clr[Day02 clr_pe] --> cil[Day05 cil_decoder]
-  matmul[Day05 tiled_matmul] --> capstone[projects/chris-tensor]
+  d01[Day01 dual_backend_3d gold+depth]
+  art[Day07 artillery_2d N9]
+  depth[Day07 raster_depth N10]
+  ref[Day04 graphics_reference]
+  rope[Day06 verlet_rope_3d]
+  vk[Day05 vulkan_states]
+  d01 --> art
+  d01 --> depth
+  art --> vk
+  art --> ref
+  depth --> rope
 ```
 
 | Etapa | Módulo | Conceito |
 |-------|--------|----------|
-| 1 | `2026-09-03/graphics/dual_backend_3d` | software vs GL |
-| 1b | `projects/chris-lantern-hunt` | FPS horror OpenGL (projeto extra opcional) |
-| 2 | `2026-09-06/graphics/portal_verlet_physics` | portais stencil + Verlet + esfera |
-| 3 | `2026-09-04/os/graphics_reference` | compositor RGBA + dirty-rect + frame pacing |
-| 4 | `2026-09-05/graphics/vulkan_d3d12_resource_states` | máquina de estados GPU |
-| 5 | `2026-09-05/ai/tiled_matmul_cache` | cache blocking, benchmark |
-| Capstone | `projects/chris-tensor` + `projects/chris-gpu-state` |
+| 1 | `2026-09-03/graphics/dual_backend_3d` | software vs GL (+ D3D11 extensão) |
+| 2 | `2026-09-07/graphics/artillery_trajectory_2d` | física 2D + CPU/GL/D3D11 |
+| 3 | `2026-09-07/graphics/raster_depth_parity` | Z-buffer CPU + paridade GL |
+| 4 | `2026-09-04/os/graphics_reference` | compositor RGBA + dirty-rect |
+| 5 | `2026-09-06/graphics/verlet_rope_3d` | Verlet 3D + wireframe CPU/GL + orbit camera |
+| 6 | `2026-09-05/graphics/vulkan_d3d12_resource_states` | estados GPU + frame graph |
+| 1b | `projects/chris-lantern-hunt` | FPS horror OpenGL (opcional) |
+| 5b | `2026-09-05/ai/tiled_matmul_cache` | cache blocking, benchmark |
+| Capstone | `projects/chris-tensor` + `projects/chris-gpu-state` + `projects/chris-artillery-2d` |
 
 ---
 
@@ -165,7 +188,63 @@ flowchart LR
 | 4 | `2026-09-06/systems/deflate_blocks` | RFC 1951 subset |
 | 5 | `2026-09-06/tooling/zlib_gzip_containers` | wrappers zlib/gzip |
 | 6 | `2026-09-06/tooling/png_idat_pipeline` | chunks PNG + IDAT |
+| 7 | `2026-09-06/redteam/compressed_blob_triage` | magic bytes, limites, strings |
+| 8 | `2026-09-06/dotnet/span_deflate_buffers` | Span + inflate stored |
+| 9 | `2026-09-06/rust/rle_byte_codec` | CHRLE em Rust |
+| 10 | `2026-09-06/rust/gzip_member_parse` | header gzip sem panic |
 | Capstone | `projects/chris-compress` | CLI encadeada |
+
+---
+
+## 8. Quantum — statevector e medição
+
+```mermaid
+flowchart LR
+  sv[Day04 statevector_intro] --> meas[Day07 measurement_born]
+  meas --> cap[projects/chris-qsim]
+```
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-04/quantum/statevector_intro` | gates H, X, CNOT; amplitudes |
+| 2 | `2026-09-07/quantum/measurement_born` | medição projetiva, colapso, Born |
+| Capstone | `projects/chris-qsim` | simulador 2-qubit + testes de probabilidade |
+
+**Pergunta de síntese:** por que medir |+⟩ em base computacional dá 50/50?
+
+---
+
+## 9. AI — entropia em streams de input
+
+```mermaid
+flowchart LR
+  tensor[Day06 tensor_entropy_lab] --> evt[Day07 input_event_entropy]
+  hid[Day07 hid_keyboard] --> evt
+  evt --> cap[projects/chris-tensor]
+```
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-06/ai/tensor_entropy_lab` | Shannon, RLE, gzip ratio em tensor |
+| 2 | `2026-09-07/ai/input_event_entropy` | mesmas métricas em bytes de InputEvent |
+| Capstone | `projects/chris-tensor` | benchmarks + layouts contínuos |
+
+---
+
+## 10. Node.js — Transform de eventos de input
+
+```mermaid
+flowchart LR
+  gunzip[Day06 gunzip_transform] --> input[Day07 input_event_transform]
+  dotnet[Day07 input_event_span] --> input
+  input --> cap[projects/chris-node-streaming]
+```
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-06/nodejs/gunzip_transform` | Transform, flush, backpressure |
+| 2 | `2026-09-07/nodejs/input_event_transform` | records 24B, buffer parcial, métricas |
+| Capstone | `projects/chris-node-streaming` | pipeline com métricas de buffer |
 
 ---
 

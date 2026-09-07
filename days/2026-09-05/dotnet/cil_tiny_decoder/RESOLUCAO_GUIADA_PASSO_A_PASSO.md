@@ -13,6 +13,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` / `PEDAGOGY-
 
 > Não comece copiando `solutions/`. Rode `dotnet run` após cada caso do switch.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+dotnet test
+```
+
+**Esperado:** testes FAIL até completar os TODOs (requer SDK .NET).
+
 ---
 
 ## CLR-IL-OPCODE-01 — reconhecer opcodes
@@ -102,7 +114,23 @@ Com `0x58`/`0x2A` só: ainda falha em `0x1F`. Com os três casos + operando: dev
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [CLR-IL-OPCODE-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `CLR-IL-OPCODE-01` passam.
+
+
 ## CLR-IL-OPERAND-02 — int8 assinado e truncamento
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/Program.cs` |
+| **Função / âncora** | ``operando `sbyte` após `0x1F` + truncamento` — `TODO [CLR-IL-OPERAND-02]`` — comentário `TODO [CLR-IL-OPERAND-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [CLR-IL-OPERAND-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -161,6 +189,13 @@ Decode([0x1F]) → InvalidDataException
 Debug: se `Operand` for 5 mas Count ≠ 4, um caso não adiciona `Instruction`. Se truncado passa: falta o `if (i >= code.Length)`.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [CLR-IL-OPERAND-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `CLR-IL-OPERAND-02` passam.
+
 
 ## Mapa de consistência auditada
 

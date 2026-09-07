@@ -1,8 +1,10 @@
-# Snippet — Onde colocar (por TODO)
+# Snippet — RESOLUCAO completa por TODO
 
-Copie este bloco **para cada** `TODO [ID]` na `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`, imediatamente antes de “Escreva o código”. Preencha com paths reais do `starter/`.
+Copie este bloco **para cada** `TODO [ID]` na `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`. Preencha com paths reais do `starter/`. **Não** referencie `solutions/` — cole o código integral aqui.
 
 ```markdown
+## `<TODO-ID>` — título curto
+
 ### Onde colocar
 
 | | |
@@ -10,14 +12,48 @@ Copie este bloco **para cada** `TODO [ID]` na `RESOLUCAO_GUIADA_PASSO_A_PASSO.md
 | **Arquivo** | `starter/<caminho/relativo.ext>` |
 | **Função / âncora** | `<nomeDaFuncao>` — comentário `TODO [ID]` |
 | **Substituir** | o corpo / stub / case marcado por esse TODO |
-| **Inserir** | *(use em vez de Substituir se for código novo)* … |
 | **Não mexer** | demais arquivos até este ID estar verde |
+
+### 1. O problema
+
+(uma frase: o que quebra sem este passo)
+
+### 2. Algoritmo / trace
+
+```text
+(passo a passo no papel, hex, ou pseudocódigo)
+```
+
+### 3. Escreva o código
+
+Cole isto no lugar do stub:
+
+```language
+(código COMPLETO copiável — não "implemente X")
+```
+
+### 4. Por que funciona
+
+(raciocínio, invariantes)
+
+### 5. Verifique
+
+```powershell
+(comando exato)
+```
+
+Esperado: (saída PASS ou mensagem específica)
+
+### 6. Debug
+
+| Sintoma | Causa provável | Correção |
+|---------|----------------|----------|
+| ... | ... | ... |
 ```
 
 Regras:
 
 1. Um bloco por ID (não um genérico para o módulo inteiro).
-2. **Arquivo** deve ser o path sob `starter/` onde o `TODO [ID]` aparece.
-3. Digite **Substituir** *ou* **Inserir** (ou ambos se houver duas edições).
-4. O checker `pedagogy_check_unified.py` exige `onde colocar` **ou** a combinação arquivo + (função|âncora|todo) + (substituir|inserir|cole) na janela do ID.
-5. Referência completa: `days/2026-09-03/systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md`.
+2. O módulo inteiro deve ter `## Baseline` antes do primeiro TODO.
+3. O checker `pedagogy_check_unified.py` rejeita padding, delegação a solutions e fences vazios.
+4. Referência completa: `days/2026-09-03/systems/clvm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md`.

@@ -78,6 +78,15 @@ Compile; testes de fill/compose ainda falham. Confirme `(0,0)` → 0 e `(width-1
 
 ## Exercício Médio — `D2-GFX-FILL-RECT`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/graphics.cpp` |
+| **Função / âncora** | ``Surface::fill_rect` — `TODO [D2-GFX-FILL-RECT]`` — comentário `TODO [D2-GFX-FILL-RECT]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-GFX-FILL-RECT]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 TODO vazio: retângulos (inclusive negativos) não pintam. O teste `fill_rect(-1,-1,3,3)` espera só a interseção visível.
@@ -126,6 +135,15 @@ Surface 4×4, `(-1,-1,3,3)` → `[0,2)×[0,2)`. Pedido `(10,10,2,2)` → vazio, 
 
 ## Exercício Difícil A — `D2-GFX-ALPHA-OVER`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/graphics.cpp` |
+| **Função / âncora** | ``alpha_over` — `TODO [D2-GFX-ALPHA-OVER]`` — comentário `TODO [D2-GFX-ALPHA-OVER]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-GFX-ALPHA-OVER]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Starter devolve `dst` inalterado. Blend 50% vermelho+azul deve ~`(127,0,128)`.
@@ -162,6 +180,15 @@ Source-over 8-bit. `+127` aproxima arredondamento. Destino tratado como opaco.
 ---
 
 ## Exercício Difícil B — `D2-GFX-COMPOSE`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/graphics.cpp` |
+| **Função / âncora** | ``Compositor::compose` — `TODO [D2-GFX-COMPOSE]`` — comentário `TODO [D2-GFX-COMPOSE]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-GFX-COMPOSE]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -290,6 +317,15 @@ AABB union é O(1) por mark. Trace: marks `(0,0,2,2)` + `(5,5,2,2)` → `(0,0,7,
 ---
 
 ## Exercício Difícil D — `D2-GFX-FRAME-PACE`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/graphics.cpp` |
+| **Função / âncora** | ``FramePacer::compose_with_damage` — `TODO [D2-GFX-FRAME-PACE]`` — comentário `TODO [D2-GFX-FRAME-PACE]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-GFX-FRAME-PACE]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

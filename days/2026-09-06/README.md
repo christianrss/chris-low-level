@@ -14,7 +14,7 @@ Rust neste dia = **ownership + parsing de bytes não confiáveis** (mesmo format
 | 4 | `systems/deflate_blocks` | BFINAL/BTYPE; stored + fixed | 3–4 |
 | 5 | `tooling/zlib_gzip_containers` | CMF/FLG, Adler-32, CRC32 | 2–3 |
 | 6 | `tooling/png_idat_pipeline` | Chunks IHDR/IDAT/IEND | 2–3 |
-| 7 | `graphics/portal_verlet_physics` | Mat4 → portal → stencil → Verlet | 3–4 |
+| 7 | `graphics/verlet_rope_3d` | Mat4 → portal → stencil → Verlet | 3–4 |
 | 8 | `ai/tensor_entropy_lab` | Shannon + RLE em tensor | 2 |
 | 9 | `redteam/compressed_blob_triage` | Magic bytes, limites, strings | 2 |
 | 10 | `dotnet/span_deflate_buffers` | Span + inflate stored | 2 |

@@ -13,6 +13,19 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Compile e rode `ctest` após cada bloco.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## SYS-PAGE-ALLOC-01 — mapeamento, consulta e allocate
@@ -114,7 +127,23 @@ Trace esperado para página 13: `{13, 1, 5}`.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [SYS-PAGE-ALLOC-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `SYS-PAGE-ALLOC-01` passam.
+
+
 ## SYS-PAGE-FREE-02 — set bit e free com double-free
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/page_allocator.cpp` |
+| **Função / âncora** | ``set_used`, `free_page` — `TODO [SYS-PAGE-FREE-02]`` — comentário `TODO [SYS-PAGE-FREE-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [SYS-PAGE-FREE-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -193,6 +222,13 @@ free(1) → 101; allocate → 1; free(1) de novo → false
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [SYS-PAGE-FREE-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `SYS-PAGE-FREE-02` passam.
+
 
 ## Mapa de consistência auditada
 

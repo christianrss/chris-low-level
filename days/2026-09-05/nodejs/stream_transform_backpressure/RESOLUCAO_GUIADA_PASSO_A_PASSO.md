@@ -13,9 +13,30 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Rode `node test.js` após cada TODO.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+npm test
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## NODE-XFORM-01 — LineTransform UTF-8
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/line_transform.js` |
+| **Função / âncora** | ``_transform`, `_flush` — split UTF-8` — `TODO [NODE-XFORM-01]`` — comentário `TODO [NODE-XFORM-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [NODE-XFORM-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -100,6 +121,13 @@ Esperado **ainda FAIL** em backpressure se `NODE-BACKPRESSURE-02` estiver stub.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [NODE-XFORM-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `NODE-XFORM-01` passam.
+
+
 ## NODE-BACKPRESSURE-02 — respeitar `write() === false`
 
 ### Onde colocar
@@ -178,6 +206,13 @@ Demo isolada: `node backpressure_demo.js`.
 Debug: `falseWrites === 0` → chunks menores que HWM ou loop incompleto; hang → `await drain` sem o sink completar `callback`.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [NODE-BACKPRESSURE-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `NODE-BACKPRESSURE-02` passam.
+
 
 ## Mapa de consistência auditada
 

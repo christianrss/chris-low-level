@@ -1,0 +1,13 @@
+# Day contract template — copy to days/YYYY-MM-DD/day.contract.yaml to override tier rules
+
+day: "YYYY-MM-DD"
+tier: tier_a  # tier_a | tier_b
+min_modules: 13
+required_tracks:
+  - systems
+  - graphics
+  - ai
+  - redteam
+  - nodejs
+  # add: linux, quantum, rust, dotnet, tooling as needed
+reference_day: "2026-09-06"  # optional paridade model

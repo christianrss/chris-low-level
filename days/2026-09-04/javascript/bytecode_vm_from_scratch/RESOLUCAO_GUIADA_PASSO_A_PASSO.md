@@ -91,6 +91,15 @@ Ainda vermelho (idents/VM); confira mentalmente que `10` não fica 0.
 
 ### Exercício Fácil B — `D2-JS-LEX-IDENT`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/chris_js.cpp` |
+| **Função / âncora** | ``keywords `let`/`print` — `TODO [D2-JS-LEX-IDENT]`` — comentário `TODO [D2-JS-LEX-IDENT]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-JS-LEX-IDENT]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 #### 1. O problema
 
 Após montar `text`, o starter sempre devolve `Identifier`. `let`/`print` nunca viram `Kind::Let`/`Print` → `statement()` não entra nos branches.
@@ -131,6 +140,15 @@ O starter, após `expect(Kind::Equal)` / `expect(Kind::LParen)`, **lança** TODO
 
 ### Exercício Médio A — `D2-JS-STMT-LET`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/chris_js.cpp` |
+| **Função / âncora** | ``Compiler::statement` Let` — `TODO [D2-JS-STMT-LET]`` — comentário `TODO [D2-JS-STMT-LET]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-JS-STMT-LET]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 #### 1. O problema
 
 `idx` já calculado; falta compilar RHS, consumir `;`, emitir `StoreGlobal`.
@@ -164,6 +182,15 @@ Ordem do bytecode: primeiro a expressão (PushConst/Load…), depois Store. Se e
 ---
 
 ### Exercício Médio B — `D2-JS-STMT-PRINT`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/chris_js.cpp` |
+| **Função / âncora** | ``Compiler::statement` Print` — `TODO [D2-JS-STMT-PRINT]`` — comentário `TODO [D2-JS-STMT-PRINT]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-JS-STMT-PRINT]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 #### 1. O problema
 
@@ -235,6 +262,15 @@ Associatividade esquerda: `a*b*c` → Mul, Mul. Cada Mul consome dois valores j�
 
 ### Exercício Médio/Difícil B — `D2-JS-PREC-ADD`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/chris_js.cpp` |
+| **Função / âncora** | ``Compiler::expression` — `TODO [D2-JS-PREC-ADD]`` — comentário `TODO [D2-JS-PREC-ADD]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-JS-PREC-ADD]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 #### 1. O problema
 
 `expression()` só chama `term()` — `x + y` ignora o `+`.
@@ -275,6 +311,15 @@ Compare dumps de `x+y*2` vs `(x+y)*2` (apêndice).
 ## Camada 4 — VM
 
 ### Exercício Difícil — `D2-JS-VM-ADD`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/chris_js.cpp` |
+| **Função / âncora** | ``run` / `Op::Add` — `TODO [D2-JS-VM-ADD]`` — comentário `TODO [D2-JS-VM-ADD]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-JS-VM-ADD]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 #### 1. O problema
 

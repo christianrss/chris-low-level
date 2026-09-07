@@ -6,6 +6,19 @@
 |---------|---------|-------------|
 | `P2P-GOSSIP-01` | `starter/gossip.py` | `GossipNetwork.broadcast()` — fila, dedup e TTL |
 
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
+
 ### Onde colocar
 
 | | |
@@ -91,6 +104,15 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 
 - `P2P-GOSSIP-01` — `starter/gossip.py` → `solutions/gossip.py`.
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/gossip.py` |
+| **Função / âncora** | ``GossipNetwork.broadcast()` — fila, dedup e TTL` — `TODO [P2P-GOSSIP-01]`` — comentário `TODO [P2P-GOSSIP-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [P2P-GOSSIP-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ## Relatório de resolução
 
 Checklist ao concluir:
@@ -105,6 +127,13 @@ Checklist ao concluir:
 **Depuração:** imprima `(sender, peer, msg_id, ttl)` a cada dequeue até o triângulo estabilizar em 3 entregas.
 
 **Arquivos starter editados:** `starter/gossip.py`.
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [P2P-GOSSIP-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `P2P-GOSSIP-01` passam.
+
+
 ## Etapa de benchmark mental
 
 Para N peers em anel, uma mensagem com TTL=N deve visitar todos exatamente uma vez.

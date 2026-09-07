@@ -79,6 +79,7 @@ Laboratório unificado de low-level. O estudo é **modular**: cada pasta `<trilh
 
 ```bash
 python scripts/pedagogy_check_unified.py --day {date}
+python scripts/day_contract_check.py --day {date}
 python scripts/run_day_tests.py --day {date} --mode solutions
 python scripts/run_day_tests.py --day {date} --mode starter --expect-fail
 ```
@@ -117,24 +118,49 @@ def build_manifest(day_dir: Path) -> dict:
             continue
         rel = p.relative_to(day_dir).as_posix()
         files.append({"path": rel, "size": p.stat().st_size, "sha256": sha256_file(p)})
-    return {"day": day_dir.name, "file_count": len(files), "files": files}
+    manifest = {"day": day_dir.name, "file_count": len(files), "files": files}
+    manifest["modules"] = len(find_modules(day_dir))
+    return manifest
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--day", required=True)
+    parser.add_argument(
+        "--manifest-only",
+        action="store_true",
+        help="Only regenerate MANIFEST.json (do not touch START_HERE or TODO_MAP)",
+    )
+    parser.add_argument(
+        "--overwrite-docs",
+        action="store_true",
+        help="Overwrite START_HERE.md and TODO_MAP.md with generated templates",
+    )
     args = parser.parse_args()
     day_dir = ROOT / "days" / args.day
     if not day_dir.exists():
         print(f"Not found: {day_dir}")
         return 1
 
-    (day_dir / "START_HERE.md").write_text(build_start_here(day_dir), encoding="utf-8")
-    (day_dir / "TODO_MAP.md").write_text(build_todo_map(day_dir), encoding="utf-8")
+    manifest = build_manifest(day_dir)
     (day_dir / "MANIFEST.json").write_text(
-        json.dumps(build_manifest(day_dir), indent=2), encoding="utf-8"
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"Scaffold written for {args.day}")
+
+    if args.manifest_only:
+        print(f"MANIFEST only for {args.day} ({manifest['modules']} modules)")
+        return 0
+
+    if args.overwrite_docs:
+        (day_dir / "START_HERE.md").write_text(build_start_here(day_dir), encoding="utf-8")
+        (day_dir / "TODO_MAP.md").write_text(build_todo_map(day_dir), encoding="utf-8")
+        print(f"Scaffold written for {args.day} (docs overwritten)")
+        return 0
+
+    print(
+        f"MANIFEST written for {args.day}. "
+        "Use --overwrite-docs to regenerate START_HERE/TODO_MAP, or --manifest-only alone."
+    )
     return 0
 
 

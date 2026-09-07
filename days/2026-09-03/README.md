@@ -23,4 +23,10 @@ Open `Treino_LowLevel_Unificado_2026-09-03.docx` for the master guided document.
 
 
 ## Pedagogical audit
-All 13 Day 01 modules were re-audited after a starter/resolution mismatch was found in `graphics/dual_backend_3d`. The corrected modules use tagged TODO IDs that are mechanically cross-checked against the guided resolution, test guide and solution. Run `python scripts/pedagogy_check.py` from the repository root. See `VALIDATION_DAY01.md`.
+All 13 Day 01 modules were re-audited after a starter/resolution mismatch was found in `graphics/dual_backend_3d`. The corrected modules use tagged TODO IDs that are mechanically cross-checked against the guided resolution, test guide and solution. Run `python scripts/pedagogy_check_unified.py --day 2026-09-03`. See `VALIDATION.md` e `ATIVIDADES.md`.
+
+## Perguntas de síntese
+
+1. Como `toy_cpu` se relaciona com o dispatch loop da CLVM?
+2. Por que `dual_backend_3d` exige CPU antes de OpenGL?
+3. Capstones: `projects/chris-vm`, `projects/chris-http`, `projects/chris-renderer`.

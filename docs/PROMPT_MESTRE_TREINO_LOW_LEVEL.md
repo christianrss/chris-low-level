@@ -13,12 +13,16 @@ Este repositório mantém o prompt em dois arquivos:
 Ao gerar ou corrigir um dia:
 
 ```bash
-python scripts/upgrade_module_quality.py --day YYYY-MM-DD
+# 1. Escreva TEORIA + RESOLUCAO completas (não resuma; não delegue a solutions/)
+# 2. Scaffold só para artefatos faltantes (EXERCICIOS, relatório) — não conteúdo pedagógico
 python scripts/generate_day_scaffold.py --day YYYY-MM-DD
 python scripts/pedagogy_check_unified.py --day YYYY-MM-DD
 python scripts/run_day_tests.py --day YYYY-MM-DD --mode solutions
+python scripts/run_day_tests.py --day YYYY-MM-DD --mode starter --expect-fail
 python scripts/build_day_docx.py --day YYYY-MM-DD   # opcional
 ```
+
+**Regra de ouro:** cada `TODO [ID]` na RESOLUCAO precisa de baseline, O problema, código integral, Verifique e Debug — reproduzível sem abrir `solutions/`.
 
 ## Padrão mínimo por módulo
 

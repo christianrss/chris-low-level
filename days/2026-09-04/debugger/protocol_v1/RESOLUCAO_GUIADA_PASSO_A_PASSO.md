@@ -153,6 +153,15 @@ Altere último byte do payload (`^=0xFF`) — hash deve mudar. Payload vazio: ha
 
 ## Exercício Difícil — `D2-DBG-ENCODE`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | `encode_debug_packet` — `TODO [D2-DBG-ENCODE]` |
+| **Substituir** | o corpo da função (stub que devolve `{}`) |
+| **Não mexer** | `decode_debug_packet` até encode passar nos testes |
+
 ### 1. O problema
 
 Encode devolve `{}`. Round-trip impossível.
@@ -197,6 +206,15 @@ Encode com payload vazio: tamanho total = 20. Encode `{0xAA}`: size=21; bytes[12
 ---
 
 ## Exercício Desafio — `D2-DBG-DECODE`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/protocol.cpp` |
+| **Função / âncora** | `decode_debug_packet` — `TODO [D2-DBG-DECODE]` |
+| **Substituir** | o corpo da função (stub que lança exceção) |
+| **Não mexer** | helpers `append_*` / `read_*` já implementados |
 
 ### 1. O problema
 

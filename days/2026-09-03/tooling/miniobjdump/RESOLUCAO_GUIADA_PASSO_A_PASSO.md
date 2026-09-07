@@ -5,39 +5,25 @@
 | TODO ID | Starter | Função/área |
 |---------|---------|-------------|
 | `OBJDUMP-U16-01` | `starter/src/main.cpp` | `read_u16_le()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/src/main.cpp` |
-| **Função / âncora** | comentário `TODO [OBJDUMP-U16-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [OBJDUMP-U16-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `OBJDUMP-U32-01` | `starter/src/main.cpp` | `read_u32_le()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/src/main.cpp` |
-| **Função / âncora** | comentário `TODO [OBJDUMP-U32-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [OBJDUMP-U32-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `OBJDUMP-PARSE-01` | `starter/src/main.cpp` | `main()` — cabeçalhos ELF, seções e `.text` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/src/main.cpp` |
-| **Função / âncora** | comentário `TODO [OBJDUMP-PARSE-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [OBJDUMP-PARSE-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
 > Trabalhe em `days/2026-09-03/tooling/miniobjdump/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
+
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
 
 ## Exercício Fácil - ler inteiros little-endian com segurança
 

@@ -23,6 +23,18 @@ offset 4..7  MessageType    int32 little-endian
 
 `PooledFrame.Dispose` **já vem implementado** no starter — leia-o; não o reescreva.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+dotnet test
+```
+
+**Esperado:** testes FAIL até completar os TODOs (requer SDK .NET).
+
 ---
 
 ## Exercício Fácil — `D2-CSHARP-WRITE-HEADER`
@@ -80,6 +92,15 @@ Ainda não rode o suite completo se `ReadHeader`/`RentFrame` estão vazios; conf
 
 ## Exercício Médio — `D2-CSHARP-READ-HEADER`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/Chris.DotNet.Buffers/FrameCodec.cs` |
+| **Função / âncora** | ``FrameCodec.ReadHeader` — `TODO [D2-CSHARP-READ-HEADER]`` — comentário `TODO [D2-CSHARP-READ-HEADER]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-CSHARP-READ-HEADER]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `ReadHeader` já rejeita `source` curto, mas o TODO deixa:
@@ -128,6 +149,15 @@ O round-trip `WriteHeader` → `ReadHeader` deve passar. `RentFrame` ainda pode 
 ---
 
 ## Exercício Difícil — `D2-CSHARP-RENT-FRAME`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/Chris.DotNet.Buffers/FrameCodec.cs` |
+| **Função / âncora** | ``FrameCodec.RentFrame` — `TODO [D2-CSHARP-RENT-FRAME]`` — comentário `TODO [D2-CSHARP-RENT-FRAME]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-CSHARP-RENT-FRAME]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

@@ -1,0 +1,21 @@
+# Baseline tier-A — Day 2026-09-07 (CLVM v2 + input multi-trilha)
+day: "2026-09-07"
+tier: tier_a
+module_count: 13
+modules:
+  - systems/clvm_js_codegen
+  - systems/clvm_bytecode_verifier
+  - systems/clvm_v2_strings
+  - linux/hid_keyboard_boot
+  - linux/ps2_mouse_input
+  - rust/clvm_v2_verify
+  - dotnet/input_event_span
+  - graphics/artillery_trajectory_2d
+  - graphics/raster_depth_parity
+  - redteam/hid_report_fuzz
+  - quantum/measurement_born
+  - ai/input_event_entropy
+  - nodejs/input_event_transform
+tracks: [systems, linux, rust, dotnet, graphics, redteam, quantum, ai, nodejs]
+reference_readme: days/2026-09-07/README.md
+lesson: "PASS pedagogy_check sem day_contract permitiu dia incompleto (7–9 módulos) até correção multi-trilha"

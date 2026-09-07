@@ -12,6 +12,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION` no gabarito e `P
 
 > Trabalhe em `days/2026-09-06/nodejs/gunzip_transform/starter/`. `solutions/` só depois.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+npm test
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## ND-GZ-01 — encaminhar chunks ao gunzip
@@ -92,6 +104,13 @@ Esperado: `true` e `bytesOut > bytesIn`. A suite ainda pode falhar em `ND-GZ-02`
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [ND-GZ-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `ND-GZ-01` passam.
+
+
 ## ND-GZ-03 — métricas bytesIn / bytesOut / pauses
 
 ### 1. O problema
@@ -130,6 +149,13 @@ this.gunzip.on('data', (chunk) => {
 Após `transform.end(gz)`: `bytesIn === gz.length` e `bytesOut > bytesIn` no teste oficial.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [ND-GZ-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `ND-GZ-03` passam.
+
 
 ## ND-GZ-02 — demo de backpressure
 
@@ -250,6 +276,13 @@ node test.js
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [ND-GZ-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `ND-GZ-02` passam.
+
 
 ## Ordem sugerida
 

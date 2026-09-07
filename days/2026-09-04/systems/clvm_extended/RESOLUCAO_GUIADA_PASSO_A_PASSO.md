@@ -29,6 +29,15 @@ Ordem: EXT-01 → EXT-02 → EXT-03 → EXT-04.
 
 ## CLVM-EXT-01 — assembler
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/assemble.py` |
+| **Função / âncora** | ``OPS + BRANCH (CALL/JNZ/…)` — `TODO [CLVM-EXT-01]`` — comentário `TODO [CLVM-EXT-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [CLVM-EXT-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `add2.asm` / `max_loop.asm` levantam `instrução desconhecida`.
@@ -125,6 +134,15 @@ i32 precisa de 4 bytes contíguos; `@254` estoura 256 → mensagem esperada `mem
 ---
 
 ## CLVM-EXT-04 — cmp / stack / loop
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/main.cpp` |
+| **Função / âncora** | ``DROP/SWAP/EQ/LT/JNZ + `max_loop.asm` — `TODO [CLVM-EXT-04]`` — comentário `TODO [CLVM-EXT-04]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [CLVM-EXT-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

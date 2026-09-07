@@ -70,32 +70,8 @@ def repair_module(module: Path) -> int:
 
 
 def boost_teoria(module: Path) -> bool:
-    p = module / "TEORIA_PASSO_A_PASSO.md"
-    if not p.exists():
-        return False
-    text = p.read_text(encoding="utf-8")
-    count = len(re.findall(r"por qu[eê]", text, re.IGNORECASE))
-    if count >= 3:
-        return False
-    if "## Por quê — síntese pedagógica" in text:
-        return False
-    supplement = """
-
----
-
-## Por quê — síntese pedagógica
-
-### Por quê este módulo existe?
-Conectar teoria de baixo nível a decisões de implementação verificáveis — não decorar API.
-
-### Por quê estas invariantes?
-Cada `TODO [ID]` protege uma propriedade que quebra silenciosamente em produção se ignorada (overflow, estado inválido, parsing parcial).
-
-### Por quê medir e portar para `projects/`?
-Lab isola o aprendizado; `projects/chris-*` consolida engenharia de portfólio com testes e benchmarks reproduzíveis.
-"""
-    p.write_text(text.rstrip() + supplement, encoding="utf-8")
-    return True
+    """Disabled: generic padding violates PEDAGOGY_STANDARD anti-resumo rules."""
+    return False
 
 
 def main() -> int:

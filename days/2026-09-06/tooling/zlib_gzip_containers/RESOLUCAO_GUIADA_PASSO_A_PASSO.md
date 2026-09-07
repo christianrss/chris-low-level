@@ -15,6 +15,19 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 ---
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ## 0. Baseline — build e FAIL esperado
 
 ```powershell
@@ -93,6 +106,15 @@ A fórmula é bit-a-bit a do RFC 1950 / zlib. Qualquer desvio no init ou no mód
 
 ## Exercício Médio A — `COMP-ZLIB-02` compress + serialize
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/zlib_wrap.cpp` |
+| **Função / âncora** | ``zlib_compress`, `zlib_blob_from_packet` — `TODO [COMP-ZLIB-02]`` — comentário `TODO [COMP-ZLIB-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-ZLIB-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 `starter/zlib_wrap.cpp`:
@@ -167,6 +189,15 @@ Separar `ZlibPacket` (campos) de `blob` (bytes) deixa o header inspecionável no
 
 ## Exercício Médio B — `COMP-ZLIB-03` decompress
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/zlib_wrap.cpp` |
+| **Função / âncora** | ``zlib_decompress` — `TODO [COMP-ZLIB-03]`` — comentário `TODO [COMP-ZLIB-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-ZLIB-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 ```cpp
@@ -227,6 +258,19 @@ Payload `{'z','l','i','b'}`: `zlib_decompress(zlib_blob_from_packet(zlib_compres
 ---
 
 ## Exercício Difícil — `COMP-ZLIB-04` CRC-32 + gzip
+
+### 1. O problema
+
+CRC-32 e membros gzip retornam zero/stub; PNG IDAT e gzip round-trip falham.
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/gzip_wrap.cpp` |
+| **Função / âncora** | `comentário `TODO [COMP-ZLIB-04]` em `gzip_wrap.cpp`` — comentário `TODO [COMP-ZLIB-04]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-ZLIB-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### Parte A — `crc32` em `starter/crc32.cpp`
 
@@ -334,6 +378,15 @@ std::vector<std::uint8_t> gzip_decompress(const std::vector<std::uint8_t>& blob)
 - Bytes 3–9: flags/mtime/xfl/os zerados; `os=3` (Unix) no último.
 - Trailer **LE**: contraste consciente com Adler BE do zlib.
 - `pos = 10`: lab sem FNAME — se flags≠0 no futuro, o parser precisa pular campos.
+
+### 5. Verifique
+
+```powershell
+cmake --build starter/build --config Release
+ctest --test-dir starter/build -C Release --output-on-failure
+```
+
+**Esperado:** `OK zlib gzip containers`.
 
 ### Verificação final
 

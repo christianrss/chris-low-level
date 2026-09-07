@@ -7,14 +7,17 @@
 | `TERM-FEED-01` | `starter/src/terminal.cpp` | `Terminal::feed()` — máquina de estados ESC/CSI |
 | `TERM-CSI-01` | `starter/src/terminal.cpp` | `Terminal::handle_csi()` |
 
-### Onde colocar
+## Baseline
 
-| | |
-|--|--|
-| **Arquivo** | `starter/src/terminal.cpp` |
-| **Função / âncora** | comentário `TODO [TERM-CSI-01]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [TERM-CSI-01]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
@@ -28,17 +31,7 @@ starter/src/terminal.cpp
 
 O header já define `State::Ground`, `State::Escape`, `State::Csi`, cursores, `param_text_`, `param_or` e `handle_csi`.
 
-## 1. Baseline
-
-```bash
-cmake -S starter -B starter/build
-cmake --build starter/build
-ctest --test-dir starter/build --output-on-failure
-```
-
-O starter deve compilar e falhar nos testes CSI.
-
-## 2. `param_or`
+## 1. `param_or`
 
 Substitua o placeholder por:
 

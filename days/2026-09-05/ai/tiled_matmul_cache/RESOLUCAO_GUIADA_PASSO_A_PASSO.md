@@ -23,6 +23,15 @@ O build deve funcionar. Os testes **devem falhar**: `matmul_naive` retorna zeros
 
 ## `AI-MM-NAIVE-01` — multiplicação ingênua
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/matmul.cpp` |
+| **Função / âncora** | `comentário `TODO [AI-MM-NAIVE-01]` em `matmul.cpp`` — comentário `TODO [AI-MM-NAIVE-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-MM-NAIVE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### Arquivo
 
 Abra:
@@ -79,6 +88,26 @@ c[3] = 4*8 + 5*10 + 6*12 = 154
 
 Recompile e rode `ctest`. A primeira parte do teste (trace) ainda falha, mas os asserts de `c[0]` e `c[3]` passam se você comentar temporariamente o bloco do trace — ou siga para o próximo TODO e rode tudo junto.
 
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [AI-MM-NAIVE-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `AI-MM-NAIVE-01` passam.
+
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## `AI-MM-TILED-02` — `trace_tile_4x4`
@@ -122,7 +151,23 @@ O assert inicial de `test_matmul.cpp` (`tile_row == 1`) deve passar após recomp
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [AI-MM-TILED-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `AI-MM-TILED-02` passam.
+
+
 ## `AI-MM-TILED-02` — `matmul_tiled`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/matmul.cpp` |
+| **Função / âncora** | `comentário `TODO [AI-MM-TILED-02]` em `matmul.cpp`` — comentário `TODO [AI-MM-TILED-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [AI-MM-TILED-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### Arquivo
 

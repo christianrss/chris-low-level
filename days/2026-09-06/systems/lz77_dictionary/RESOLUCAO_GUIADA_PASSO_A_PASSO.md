@@ -33,6 +33,19 @@ ctest --test-dir days/2026-09-06/systems/lz77_dictionary/starter/build -C Releas
 
 O build deve funcionar. O teste **deve falhar** enquanto `find_longest_match` retorna `false` e `encode_lz77`/`decode_lz77` retornam `false`.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## Exercício A — janela 32 KiB (`COMP-LZ77-01`)
@@ -108,7 +121,23 @@ Ainda sem match real o teste falha no `find_longest_match` — avance para o exe
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-LZ77-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-LZ77-01` passam.
+
+
 ## Exercício B — longest match (`COMP-LZ77-02`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/lz77.cpp` |
+| **Função / âncora** | ``find_longest_match` — maior match ≥ `LZ77_MIN_MATCH` — `TODO [COMP-LZ77-02]`` — comentário `TODO [COMP-LZ77-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-LZ77-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -181,7 +210,23 @@ Recompile e rode o teste — ainda falhará em encode/decode.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-LZ77-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-LZ77-02` passam.
+
+
 ## Exercício C — encode CHLZ7 (`COMP-LZ77-03`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/lz77.cpp` |
+| **Função / âncora** | ``encode_lz77` — header CHLZ7 + tokens` — `TODO [COMP-LZ77-03]`` — comentário `TODO [COMP-LZ77-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-LZ77-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -245,7 +290,23 @@ Após encode, `enc.size() >= 9` e `memcmp(enc.data(), "CHLZ7", 5) == 0`. O teste
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-LZ77-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-LZ77-03` passam.
+
+
 ## Exercício D — decode sliding window (`COMP-LZ77-04`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/lz77.cpp` |
+| **Função / âncora** | ``decode_lz77` — literais + cópia da janela` — `TODO [COMP-LZ77-04]`` — comentário `TODO [COMP-LZ77-04]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-LZ77-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -331,6 +392,13 @@ stdout: OK lz77
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-LZ77-04]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-LZ77-04` passam.
+
 
 ## Mapa de consistência auditada
 

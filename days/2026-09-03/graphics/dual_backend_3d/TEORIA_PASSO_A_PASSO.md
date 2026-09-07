@@ -155,6 +155,27 @@ Com flip Y do viewport software, invertemos o sinal (`GFX-CULL-01`). OpenGL usa 
 - Misturar graus/radianos em yaw/pitch.
 - Atualizar física com delta variável do frame (instável).
 
+## Trace pixel-a-pixel (aprofundamento)
+
+Escolha **um** triângulo da face frontal do cubo e **um** pixel interior `(px, py)`.
+
+```text
+clip = P * V * M * vec4(local, 1)
+ndc  = clip.xyz / clip.w
+sx   = (ndc.x * 0.5f + 0.5f) * width
+sy   = (1.0f - (ndc.y * 0.5f + 0.5f)) * height   // flip Y software
+```
+
+Edge functions `E0,E1,E2` — se todas ≥ 0, pixel interior. Barycentrics interpolam `z` → depth test → Lambert.
+
+| Bug | Sintoma | Fix |
+|-----|---------|-----|
+| Y flip | triângulo espelhado | viewport + `GFX-CULL-01` |
+| row-major | mesh torcido | `Mat4` coluna-major |
+| pitch DIB | listras | `biHeight` negativo |
+
+Walkthrough de 1 frame: `RESOLUCAO_APENDICE.md` Partes H–I.
+
 ## Comparação com produção
 
 | Lab dual backend | Engine comercial (Unreal/Unity) |

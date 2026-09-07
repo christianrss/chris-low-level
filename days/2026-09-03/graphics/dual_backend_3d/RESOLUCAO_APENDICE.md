@@ -248,6 +248,80 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 - `GFX-CULL-02` — `starter/software_win32/main.cpp` → `solutions/software_win32/main.cpp`.
 - `GFX-CAMERA-04` — `starter/software_win32/main.cpp` → `solutions/software_win32/main.cpp`.
 - `GFX-CAMERA-05` — `starter/software_win32/main.cpp` → `solutions/software_win32/main.cpp`.
+
+---
+
+# Parte G — extensão D3D11 (opcional)
+
+## 13. TODO `GFX-D3D11-CTX-01`
+
+Arquivo: `starter/d3d11_win32/main.cpp`
+
+```cpp
+// PEDAGOGY-SOLUTION: GFX-D3D11-CTX-01
+DXGI_SWAP_CHAIN_DESC sd{};
+sd.BufferCount = 1;
+sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+sd.OutputWindow = hwnd;
+sd.SampleDesc.Count = 1;
+sd.Windowed = TRUE;
+D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0,
+    nullptr, 0, D3D11_SDK_VERSION, &sd, &swapchain, &device, nullptr, &context);
+```
+
+## 14. TODO `GFX-D3D11-DRAW-02`
+
+Mesmo VBO/índices do OpenGL; HLSL vertex transforma com `view*proj`, pixel shader Lambert equivalente a `GFX-LAMBERT-01`.
+
+---
+
+# Parte H — walkthrough 1 frame (software vs GL)
+
+Mesmo `timestep` fixo 1/120 s, mesma `CameraState`:
+
+| Passo | Software | OpenGL |
+|-------|----------|--------|
+| 1 | `physics_step` em `engine.cpp` | idem |
+| 2 | `build_draw_list` | idem |
+| 3 | `project_vertex` por vértice | VS GLSL |
+| 4 | `tri()` + depth test CPU | GPU raster |
+| 5 | hash região central 32×32 | screenshot equivalente |
+| 6 | `StretchDIBits` | `SwapBuffers` |
+
+Hash esperado (região central, câmera default): documente o valor após implementar — diferença >0 indica bug de paridade.
+
+---
+
+# Parte I — trace pixel-a-pixel (um triângulo, um pixel)
+
+Vértices clip após `proj * view * model`:
+
+```text
+v0 = (-0.2, -0.1, 0.5, 1.0)
+v1 = ( 0.3, -0.1, 0.5, 1.0)
+v2 = ( 0.0,  0.4, 0.5, 1.0)
+```
+
+NDC (divide por w): permanecem similares pois w≈1.
+
+Viewport 640×480, pixel alvo (320, 240):
+
+```text
+screen_x = (ndc_x * 0.5 + 0.5) * 640  → ~320
+screen_y = (1.0 - (ndc_y * 0.5 + 0.5)) * 480  → flip Y
+```
+
+Edge functions `E0,E1,E2` — se todas ≥ 0, pixel interior.
+
+Barycentrics `w0,w1,w2` → interpola `z` → `depth_test` → Lambert `rgb`.
+
+| Bug | Sintoma | Fix |
+|-----|---------|-----|
+| Y flip | triângulo espelhado | `screen_triangle_front_facing` + flip viewport |
+| row-major | mesh torcido | `Mat4` coluna-major |
+| pitch DIB | listras horizontais | `biHeight` negativo top-down |
+
 ## Relatório de resolução
 
 ### O que foi validado

@@ -15,6 +15,19 @@ Cada ID: `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito, `PEDAGOGY-
 
 > Trabalhe em `days/2026-09-06/tooling/png_idat_pipeline/starter/`. Não copie `solutions/` no início.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## 0. Baseline — build e FAIL esperado
@@ -131,7 +144,23 @@ Adicione no `png.cpp` do starter:
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-PNG-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-PNG-01` passam.
+
+
 ## Exercício Médio A — `COMP-PNG-02` IHDR
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/png.cpp` |
+| **Função / âncora** | ``build_ihdr` — `TODO [COMP-PNG-02]`` — comentário `TODO [COMP-PNG-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-PNG-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -184,7 +213,23 @@ Testes isolam o layout antes do framing. Errar endian aqui propaga para todo dec
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-PNG-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-PNG-02` passam.
+
+
 ## Exercício Médio B — `COMP-PNG-03` filter None
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/png.cpp` |
+| **Função / âncora** | ``filter_none_scanlines` — `TODO [COMP-PNG-03]`` — comentário `TODO [COMP-PNG-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-PNG-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -231,7 +276,27 @@ Sem o prefixo 0, o inflater devolveria 6 bytes e o decoder leria lixo como “fi
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-PNG-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-PNG-03` passam.
+
+
 ## Exercício Difícil — `COMP-PNG-04` encode/decode
+
+### 1. O problema
+
+Sem `encode_png`/`decode_png`, o pipeline IHDR+IDAT não fecha round-trip de pixels.
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/png.cpp` |
+| **Função / âncora** | ``encode_png`, `decode_png` — `TODO [COMP-PNG-04]`` — comentário `TODO [COMP-PNG-04]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-PNG-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### Helpers recomendados (anonymous namespace)
 
@@ -333,7 +398,14 @@ Precisa de `#include <cstring>` para `memcmp` / `strncmp`.
 
 - `pos + 12 <= size`: cabe length+type+crc mesmo com data vazia.
 - CRC antes de interpretar — nunca confie em IHDR corrompido.
-- IDATs concatenados: spec permite vários; inflate uma vez no fim.
+- IDATs concatenados: sp
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-PNG-04]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-PNG-04` passam.
+
+ec permite vários; inflate uma vez no fim.
 - Loop de unfilter espelha COMP-PNG-03.
 
 ### Verificação final

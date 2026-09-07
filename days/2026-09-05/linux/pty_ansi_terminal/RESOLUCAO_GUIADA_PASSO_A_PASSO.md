@@ -13,6 +13,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Rode `python test_ansi.py` após cada bloco.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+python -m pytest tests/ -v
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## TERM-ANSI-SGR-01 — SGR (`m`) e tokenização em `feed`
@@ -125,7 +137,23 @@ _apply_csi("0","m")  → values=[0]  → fg=7
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [TERM-ANSI-SGR-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `TERM-ANSI-SGR-01` passam.
+
+
 ## TERM-CURSOR-02 — Cursor Position (`H`)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/ansi.py` |
+| **Função / âncora** | ``_apply_csi` final `H` + loop `feed` — `TODO [TERM-CURSOR-02]`` — comentário `TODO [TERM-CURSOR-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [TERM-CURSOR-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -188,6 +216,13 @@ print(p.row, p.col)  # 2 4
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [TERM-CURSOR-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `TERM-CURSOR-02` passam.
+
 
 ## Como depurar se falhar
 

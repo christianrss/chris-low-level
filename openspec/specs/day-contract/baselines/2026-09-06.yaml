@@ -1,0 +1,20 @@
+# Baseline tier-A — Day 2026-09-06 (compressão multi-trilha)
+day: "2026-09-06"
+tier: tier_a
+module_count: 13
+modules:
+  - systems/rle_byte_codec
+  - systems/huffman_entropy
+  - systems/lz77_dictionary
+  - systems/deflate_blocks
+  - tooling/zlib_gzip_containers
+  - tooling/png_idat_pipeline
+  - graphics/verlet_rope_3d
+  - ai/tensor_entropy_lab
+  - redteam/compressed_blob_triage
+  - dotnet/span_deflate_buffers
+  - nodejs/gunzip_transform
+  - rust/rle_byte_codec
+  - rust/gzip_member_parse
+tracks: [systems, tooling, graphics, ai, redteam, dotnet, nodejs, rust]
+reference_readme: days/2026-09-06/README.md

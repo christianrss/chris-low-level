@@ -4,42 +4,18 @@
 
 | TODO ID | Starter | Função/área |
 |---------|---------|-------------|
+| `GFX-RASTER-01` | `starter/software_win32/main.cpp` | `rasterize_triangle` |
+| `GFX-LAMBERT-01` | `starter/opengl_win32/main.cpp` | fragment shader Lambert |
+| `GFX-CULL-01` | `starter/common/engine.cpp` | `screen_triangle_front_facing()` |
+| `GFX-CULL-02` | `starter/software_win32/main.cpp` | rasterização — back-face |
+| `GFX-CULL-03` | `starter/opengl_win32/main.cpp` | `render_scene()` — `GL_CULL_FACE` |
 | `GFX-CAMERA-01` | `starter/common/engine.cpp` | `camera_forward()` |
 | `GFX-CAMERA-02` | `starter/common/engine.cpp` | `camera_right()` |
 | `GFX-CAMERA-03` | `starter/common/engine.cpp` | `look_at()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/common/engine.cpp` |
-| **Função / âncora** | comentário `TODO [GFX-CAMERA-03]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CAMERA-03]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
-| `GFX-CULL-01` | `starter/common/engine.cpp` | `screen_triangle_front_facing()` |
-| `GFX-CULL-02` | `starter/software_win32/main.cpp` | rasterização — área com sinal / back-face |
 | `GFX-CAMERA-04` | `starter/software_win32/main.cpp`, `starter/opengl_win32/main.cpp` | `update_camera_keyboard()` |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/opengl_win32/main.cpp` |
-| **Função / âncora** | comentário `TODO [GFX-CAMERA-04]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CAMERA-04]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 | `GFX-CAMERA-05` | `starter/software_win32/main.cpp`, `starter/opengl_win32/main.cpp` | `WM_MOUSEMOVE` — yaw/pitch |
-
-### Onde colocar
-
-| | |
-|--|--|
-| **Arquivo** | `starter/opengl_win32/main.cpp` |
-| **Função / âncora** | comentário `TODO [GFX-CAMERA-05]` neste arquivo |
-| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-CAMERA-05]` |
-| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
-| `GFX-CULL-03` | `starter/opengl_win32/main.cpp` | `render_scene()` — `GL_CULL_FACE` |
-| `GFX-LAMBERT-01` | `starter/opengl_win32/main.cpp` | fragment shader — difuso + ambiente |
+| `GFX-D3D11-CTX-01` | `starter/d3d11_win32/main.cpp` | device/swapchain (extensão) |
+| `GFX-D3D11-DRAW-02` | `starter/d3d11_win32/main.cpp` | draw mesh Lambert (extensão) |
 
 Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` no gabarito e como `PEDAGOGY-TEST: ID` nos testes. Se um nome/caminho não bater, pare: a atividade está inconsistente.
 
@@ -92,6 +68,10 @@ ctest --test-dir build-starter -C Debug --output-on-failure
 O **build deve passar**, mas o teste portátil deve falhar inicialmente em `test_camera_yaw_changes_forward_direction`. Isso é intencional: o starter compila, mas os TODOs avançados ainda não foram implementados.
 
 Para estudar primeiro apenas rasterização/Lambert no Windows, você pode abrir os dois executáveis mesmo com esse teste pendente. Depois do exercício de câmera, o CTest deve ficar 100% verde.
+
+## Baseline
+
+Mesmos comandos da seção 1 acima: build passa, `test_camera_yaw_changes_forward_direction` falha até os TODOs de câmera.
 
 ---
 

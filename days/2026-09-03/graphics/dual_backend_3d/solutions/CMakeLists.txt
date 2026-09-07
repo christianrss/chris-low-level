@@ -16,6 +16,10 @@ if(WIN32)
     add_executable(opengl_renderer WIN32 opengl_win32/main.cpp)
     target_compile_definitions(opengl_renderer PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX)
     target_link_libraries(opengl_renderer PRIVATE scene_core user32 gdi32 opengl32)
+
+    add_executable(d3d11_renderer WIN32 d3d11_win32/main.cpp)
+    target_compile_definitions(d3d11_renderer PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX)
+    target_link_libraries(d3d11_renderer PRIVATE scene_core user32 gdi32 d3d11 dxgi d3dcompiler)
 else()
     message(STATUS
         "Windows render backends are Win32/WGL. "

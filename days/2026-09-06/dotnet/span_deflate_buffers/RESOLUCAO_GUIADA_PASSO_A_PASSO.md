@@ -14,6 +14,18 @@ Cada ID existe como `TODO [ID]` no starter e `PEDAGOGY-SOLUTION` / `PEDAGOGY-TES
 
 > `BuildStoredBlock` e `Main` já estão prontos — implemente só `DeflateStored`.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+dotnet test
+```
+
+**Esperado:** testes FAIL até completar os TODOs (requer SDK .NET).
+
 ---
 
 ## DN-SPAN-01 — ReadStoredHeader (BTYPE + offsets)
@@ -51,6 +63,15 @@ return dataOffset
 ```
 
 ### 3. Código completo (header + DN-SPAN-03 juntos)
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/Program.cs` |
+| **Função / âncora** | ``validação LEN/NLEN (+ truncamento payload)` — `TODO [DN-SPAN-03]`` — comentário `TODO [DN-SPAN-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [DN-SPAN-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 Implemente `ReadStoredHeader` assim (o gabarito une 01 e 03 no mesmo método):
 
@@ -95,6 +116,13 @@ Ainda não dá para `dotnet run` completo sem `InflateStored`. Você pode tempor
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [DN-SPAN-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `DN-SPAN-01` passam.
+
+
 ## DN-SPAN-03 — LEN/NLEN (já no bloco acima)
 
 ### 1. O problema
@@ -117,6 +145,15 @@ Scratch mental para `"LOWLEVEL"`: `len=8`, `nlen=0xFFF7`, `8 ^ 0xFFF7 = 0xFFFF`.
 ---
 
 ## DN-SPAN-02 — InflateStored via Span
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/Program.cs` |
+| **Função / âncora** | ``DeflateStored.InflateStored` (Slice/CopyTo)` — `TODO [DN-SPAN-02]`` — comentário `TODO [DN-SPAN-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [DN-SPAN-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -188,6 +225,13 @@ dotnet run
 Starter sem TODOs: `NotImplementedException`.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [DN-SPAN-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `DN-SPAN-02` passam.
+
 
 ## Ordem sugerida
 

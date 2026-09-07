@@ -1,0 +1,32 @@
+---
+description: Governança de dias multi-trilha — OpenSpec, day contract, gates obrigatórios
+globs:
+  - days/**
+  - openspec/**
+  - docs/LEARNING_PATHS.md
+  - scripts/module_project_map.py
+  - scripts/pedagogy_check_unified.py
+  - scripts/day_contract_check.py
+alwaysApply: false
+---
+
+# Portfolio days — regras para agentes
+
+Leia [AGENTS.md](../../AGENTS.md) e [openspec/specs/day-contract/spec.md](../../openspec/specs/day-contract/spec.md).
+
+## Escopo
+
+- Dias tier-A (`2026-09-06`, `2026-09-07`, futuros): ~13 módulos, trilhas em `openspec/specs/day-contract/tracks.yaml`
+- Modelo: [days/2026-09-06/README.md](../../days/2026-09-06/README.md)
+
+## Workflow
+
+1. `/opsx:propose` ou change em `openspec/changes/` antes de scaffold grande
+2. Implementar módulos + infra sincronizada
+3. Gates: `pedagogy_check_unified` + `day_contract_check` + `run_day_tests --mode solutions`
+
+## Proibido
+
+- Marcar done só com pedagogy por módulo
+- `generate_day_scaffold.py` sem `--manifest-only` em dia curado
+- Ignorar trilhas faltantes quando plano anexado é narrow

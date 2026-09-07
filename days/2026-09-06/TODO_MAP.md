@@ -58,15 +58,23 @@
 
 ## `GFX-PORTAL-06`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/main_opengl.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-06`
 - **Solution:** `solutions/src/main_opengl.cpp` + `PEDAGOGY-SOLUTION: GFX-PORTAL-06`
 
+## `GFX-PORTAL-SW-07`
+
+- **Módulo:** `graphics/verlet_rope_3d`
+- **Starter:** `starter/src/software_win32.cpp`
+- **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
+- **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-SW-07`
+- **Solution:** `solutions/src/software_win32.cpp` + `PEDAGOGY-SOLUTION: GFX-PORTAL-SW-07`
+
 ## `GFX-PORTAL-01`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/math.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-01`
@@ -74,7 +82,7 @@
 
 ## `GFX-PORTAL-01`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/math.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-01`
@@ -82,7 +90,7 @@
 
 ## `GFX-PORTAL-01`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/math.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-01`
@@ -90,7 +98,7 @@
 
 ## `GFX-PORTAL-02`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/portal.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-02`
@@ -98,7 +106,7 @@
 
 ## `GFX-PORTAL-02`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/portal.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-02`
@@ -106,7 +114,7 @@
 
 ## `GFX-PORTAL-03`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/portal.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-03`
@@ -114,7 +122,7 @@
 
 ## `GFX-PORTAL-03`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/portal.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-03`
@@ -122,7 +130,7 @@
 
 ## `GFX-PORTAL-05`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/sphere_portal.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-05`
@@ -130,7 +138,7 @@
 
 ## `GFX-PORTAL-05`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/sphere_portal.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-05`
@@ -138,7 +146,7 @@
 
 ## `GFX-PORTAL-04`
 
-- **Módulo:** `graphics/portal_verlet_physics`
+- **Módulo:** `graphics/verlet_rope_3d`
 - **Starter:** `starter/src/verlet.cpp`
 - **Resolução:** `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`
 - **Teste:** `TESTES_GUIADOS.md` + `PEDAGOGY-TEST: GFX-PORTAL-04`

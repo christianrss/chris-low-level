@@ -13,6 +13,19 @@ IDs: `TODO [ID]` no starter, `PEDAGOGY-SOLUTION` no gabarito, `PEDAGOGY-TEST` em
 
 > Trabalhe em `days/2026-09-06/systems/huffman_entropy/starter/`. Consulte `solutions/` só depois.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## COMP-HUF-01 — BitWriter / BitReader MSB-first
@@ -107,7 +120,23 @@ Suite ainda FAIL (huffman stub); Caso 1 passa se só bit I/O estiver certo.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-HUF-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-HUF-01` passam.
+
+
 ## COMP-HUF-02 — build_huffman_codes
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/huffman.cpp` |
+| **Função / âncora** | ``build_huffman_codes` — `TODO [COMP-HUF-02]`` — comentário `TODO [COMP-HUF-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-HUF-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -211,7 +240,23 @@ Rebuild/`ctest`: Caso 2 (`PEDAGOGY-TEST: COMP-HUF-02`) exige tabela não vazia. 
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-HUF-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-HUF-02` passam.
+
+
 ## COMP-HUF-03 — encode_huffman
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/huffman.cpp` |
+| **Função / âncora** | ``encode_huffman` — `TODO [COMP-HUF-03]`` — comentário `TODO [COMP-HUF-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-HUF-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -283,7 +328,23 @@ ctest --test-dir build -C Release --output-on-failure
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-HUF-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-HUF-03` passam.
+
+
 ## COMP-HUF-04 — decode_huffman
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/huffman.cpp` |
+| **Função / âncora** | ``decode_huffman` — `TODO [COMP-HUF-04]`` — comentário `TODO [COMP-HUF-04]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-HUF-04]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -382,6 +443,13 @@ ctest --test-dir build -C Release --output-on-failure
 Starter sem TODOs: FAIL intencional.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-HUF-04]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-HUF-04` passam.
+
 
 ## Mapa de consistência auditada
 

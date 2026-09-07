@@ -11,6 +11,18 @@
 > Trabalhe em `days/2026-09-06/rust/gzip_member_parse/starter/`.  
 > `crc32_gzip` e `build_minimal_member` já estão prontos.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+cargo test
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## RS-GZ-01 — validate_fixed_header
@@ -74,7 +86,23 @@ pub fn validate_fixed_header(data: &[u8]) -> Result<u8, GzipError> {
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RS-GZ-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RS-GZ-01` passam.
+
+
 ## RS-GZ-02 — deflate_payload_start
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/lib.rs` |
+| **Função / âncora** | ``deflate_payload_start` — `TODO [RS-GZ-02]`` — comentário `TODO [RS-GZ-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RS-GZ-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -144,7 +172,23 @@ pub fn deflate_payload_start(data: &[u8]) -> Result<usize, GzipError> {
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RS-GZ-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RS-GZ-02` passam.
+
+
 ## RS-GZ-03 — parse_member
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/lib.rs` |
+| **Função / âncora** | ``parse_member` — `TODO [RS-GZ-03]`` — comentário `TODO [RS-GZ-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RS-GZ-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -194,6 +238,13 @@ Member único até EOF → trailer = últimos 8 bytes. `build_minimal_member` gr
 `cargo test` no starter: 3 testes PASS.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RS-GZ-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RS-GZ-03` passam.
+
 
 ## Relatório de resolução
 

@@ -14,6 +14,19 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Compile e rode `ctest` após cada TODO.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## COMP-RLE-01 — encode: header + runs
@@ -114,7 +127,23 @@ Esperado **ainda FAIL**: `decode_rle` continua stub. O encode sozinho não compl
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-RLE-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-RLE-01` passam.
+
+
 ## COMP-RLE-02 — decode: magic + expansão
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rle.cpp` |
+| **Função / âncora** | ``decode_rle` — magic + expansão de pares` — `TODO [COMP-RLE-02]`` — comentário `TODO [COMP-RLE-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-RLE-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -196,7 +225,23 @@ Com `return out.size() == len` já no código acima, Casos 1–3 devem passar. S
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-RLE-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-RLE-02` passam.
+
+
 ## COMP-RLE-03 — rejeitar payload truncado
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/rle.cpp` |
+| **Função / âncora** | ``decode_rle` — `out.size() == len` — `TODO [COMP-RLE-03]`` — comentário `TODO [COMP-RLE-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [COMP-RLE-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -264,6 +309,13 @@ OK rle
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [COMP-RLE-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `COMP-RLE-03` passam.
+
 
 ## Ordem sugerida e smoke no gabarito
 

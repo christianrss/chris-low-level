@@ -16,7 +16,8 @@ A mesma cena roda em dois backends para comparar exatamente o que muda quando um
 - `solutions/software_win32/`: rasterizador 3D escrito na CPU. Win32 serve apenas para janela, eventos e apresentacao via `StretchDIBits`.
 - `solutions/opengl_win32/`: a mesma cena, animacao e fisica, mas os vertices sao enviados para a GPU via OpenGL. O contexto WGL e criado manualmente e as funcoes modernas sao carregadas com `wglGetProcAddress`.
 - `starter/`: versao para os exercicios. Ela continua compilavel e deixa TODOs auditáveis no rasterizador CPU, fragment shader, culling e câmera. O CTest também alcança TODOs portáteis, portanto o starter não fica falsamente verde.
-- `docs/COMPARISON.md`: comparacao etapa a etapa entre os dois pipelines.
+- `docs/COMPARISON.md`: comparacao etapa a etapa entre CPU, OpenGL e (opcional) D3D11.
+- `d3d11_win32/` (extensão opcional): terceiro backend — ver `RESOLUCAO_APENDICE.md` Parte G.
 
 ## Correcao para Visual Studio 18 / MSVC
 
@@ -69,6 +70,7 @@ cmake --build build-starter --config Release
 ```text
 build-solution\Release\software_renderer.exe
 build-solution\Release\opengl_renderer.exe
+build-solution\Release\d3d11_renderer.exe   # extensão opcional
 build-solution\Release\core_tests.exe
 ```
 

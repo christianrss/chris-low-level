@@ -1,0 +1,35 @@
+# Track coverage rules per day tier.
+# Track name = first path segment under days/YYYY-MM-DD/ (e.g. redteam, ai, nodejs).
+
+default_tier: tier_b
+
+tiers:
+  tier_a:
+    description: Multi-trilha capstone days (paridade Dia 06)
+    min_modules: 13
+    days:
+      "2026-09-06":
+        required_tracks:
+          - systems
+          - tooling
+          - graphics
+          - ai
+          - redteam
+          - dotnet
+          - nodejs
+          - rust
+      "2026-09-07":
+        required_tracks:
+          - systems
+          - linux
+          - rust
+          - dotnet
+          - graphics
+          - redteam
+          - quantum
+          - ai
+          - nodejs
+
+  tier_b:
+    description: Earlier or partial days — infra sync only, no full track matrix
+    min_modules: 1

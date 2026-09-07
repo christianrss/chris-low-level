@@ -12,6 +12,18 @@ Cada ID existe como `TODO [ID]` no starter e `PEDAGOGY-SOLUTION` / `PEDAGOGY-TES
 
 > Trabalhe em `days/2026-09-06/rust/rle_byte_codec/starter/`. `solutions/` só depois.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+cargo test
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## RS-RLE-01 — encode
@@ -85,7 +97,23 @@ Esperado: PASS. Se magic falhar, confira `CHRLE_MAGIC` vs `b"CHRLE"`.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RS-RLE-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RS-RLE-01` passam.
+
+
 ## RS-RLE-02 — decode
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/lib.rs` |
+| **Função / âncora** | ``decode` — `TODO [RS-RLE-02]`` — comentário `TODO [RS-RLE-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RS-RLE-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -144,7 +172,23 @@ Falhou `BadMagic`? Dump `&enc[0..5]`. Falhou `LengthMismatch`? Conte runs vs hea
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RS-RLE-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RS-RLE-02` passam.
+
+
 ## RS-RLE-03 — round_trip_ok
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/lib.rs` |
+| **Função / âncora** | ``round_trip_ok` — `TODO [RS-RLE-03]`` — comentário `TODO [RS-RLE-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RS-RLE-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -176,6 +220,13 @@ Compõe 01+02; se um estiver errado, o assert de `caso_3` falha. Não engole `Er
 `cargo test` no starter: todos PASS após os três TODOs.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RS-RLE-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RS-RLE-03` passam.
+
 
 ## Relatório de resolução
 

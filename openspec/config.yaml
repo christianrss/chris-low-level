@@ -1,0 +1,37 @@
+# OpenSpec project config — low-level-unified-portfolio
+# Install CLI: npm i -g @fission-ai/openspec  (then: openspec init --tools cursor)
+# This tree was scaffolded manually to match OpenSpec layout.
+
+context: |
+  Repositório de laboratórios low-level em days/YYYY-MM-DD/<trilha>/<modulo>/.
+  Formato principal: Markdown modular (PEDAGOGY_STANDARD.md). DOCX é export opcional.
+
+  Dias "capstone" multi-trilha (referência: days/2026-09-06, days/2026-09-07):
+  - ~13 módulos em 7+ trilhas verticais
+  - Infra sincronizada: README, START_HERE, ATIVIDADES, TODO_MAP, VALIDATION, MANIFEST
+  - Cada módulo novo atualiza docs/LEARNING_PATHS.md e scripts/module_project_map.py
+
+  Antes de scaffold ou expandir um dia:
+  1. Ler openspec/specs/day-contract/ e comparar plano anexado com escopo completo
+  2. Se plano omitir trilha (red team, quantum, AI, Node, etc.), expandir escopo ou pedir ACK explícito
+  3. Não marcar done só com pedagogy_check — exige day_contract_check + run_day_tests
+
+  Proibido: generate_day_scaffold.py sem --manifest-only em dias já curados (START_HERE/TODO_MAP).
+
+rules:
+  proposal:
+    - Incluir dia referência (ex. 2026-09-06) e module_count alvo
+    - Listar trilhas obrigatórias para o tier do dia
+    - Mencionar gates: pedagogy_check, day_contract_check, run_day_tests
+  design:
+    - Mapear cada módulo novo para trilha em LEARNING_PATHS e module_project_map
+  tasks:
+    - Última task sempre: validar gates e sincronizar infra do dia
+
+operations:
+  apply:
+    - Após cada bloco de módulos, rodar day_contract_check --day DATE
+    - Não sobrescrever START_HERE.md / TODO_MAP.md com template genérico
+  archive:
+    - Mesclar delta specs em openspec/specs/
+    - Mover change para openspec/changes/archive/YYYY-MM-DD-slug/

@@ -6,7 +6,7 @@ Data: 2026-09-03
 
 | Gate | Critério | Status |
 |------|----------|--------|
-| `pedagogy_check_unified.py --day 2026-09-03` | starter ↔ testes ↔ resolução ↔ solution | **PASS** (42 TODOs) |
+| `pedagogy_check_unified.py --day 2026-09-03` | starter ↔ testes ↔ resolução ↔ solution | **PASS** (44 TODOs, strict + legacy gold) |
 | TEORIA | ≥120 linhas + O quê/Como/Por quê + diagramas | **PASS** |
 | EXERCICIOS | 4 níveis (Fácil/Médio/Difícil/Desafio) | **PASS** |
 | RESOLUCAO | Mapa exato + Por que funciona? + Relatório | **PASS** |
@@ -23,6 +23,8 @@ Data: 2026-09-03
 python scripts/pedagogy_check_unified.py --day 2026-09-03
 python scripts/run_day_tests.py --day 2026-09-03 --mode solutions
 ```
+
+**Modo strict** (desde 2026-09-03): ver `docs/PEDAGOGY_STANDARD.md`; repair: `scripts/repair_resolucao_strict.py --baseline-only`.
 
 ## Módulos (13)
 

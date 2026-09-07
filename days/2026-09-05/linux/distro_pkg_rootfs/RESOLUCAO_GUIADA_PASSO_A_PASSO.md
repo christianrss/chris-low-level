@@ -10,6 +10,18 @@ Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` n
 
 > Trabalhe em `days/2026-09-05/linux/distro_pkg_rootfs/starter/`. `solutions/` é o gabarito final e só deve ser consultado depois da tentativa.
 
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+python -m pytest tests/ -v
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
+
 ## 0. Preparar o projeto
 
 Na raiz do repositório:
@@ -61,6 +73,15 @@ sh test_rootfs.sh
 Saída esperada: `OK rootfs`
 
 ## Exercício médio — `LINUX-PKG-PARSE-01`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/chris_pkg.py` |
+| **Função / âncora** | ``load_manifest` — `TODO [LINUX-PKG-PARSE-01]`` — comentário `TODO [LINUX-PKG-PARSE-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [LINUX-PKG-PARSE-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### Arquivo
 
@@ -114,7 +135,23 @@ python test_pkg.py
 
 `test_rejects_path_traversal` passa; os outros ainda falham até `install_package`.
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [LINUX-PKG-PARSE-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `LINUX-PKG-PARSE-01` passam.
+
+
 ## Exercício difícil — `LINUX-PKG-INSTALL-02`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/chris_pkg.py` |
+| **Função / âncora** | ``install_package` — `TODO [LINUX-PKG-INSTALL-02]`` — comentário `TODO [LINUX-PKG-INSTALL-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [LINUX-PKG-INSTALL-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### Arquivo
 

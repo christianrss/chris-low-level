@@ -13,6 +13,18 @@ Cada ID acima existe como `TODO [ID]` no starter, como `PEDAGOGY-SOLUTION: ID` n
 
 O parser DOS/PE, `DataDirectory[14]` e `RvaToOffset` **já vêm no scaffolding**. Seu trabalho é conectar dois RVAs ao helper e deixar a checagem `BSJB` ler bytes reais.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+dotnet test
+```
+
+**Esperado:** testes FAIL até completar os TODOs (requer SDK .NET).
+
 ---
 
 ## Leitura guiada do scaffolding
@@ -136,6 +148,15 @@ Ainda sem o segundo TODO, `metadataOffset = 0` fará a checagem BSJB olhar o in�
 ---
 
 ## Exercício Difícil — `D2-CLR-METADATA-RVA`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/Chris.DotNet.Pe/CliPeInspector.cs` |
+| **Função / âncora** | ``Inspect` — `metadataOffset = RvaToOffset(...)` — `TODO [D2-CLR-METADATA-RVA]`` — comentário `TODO [D2-CLR-METADATA-RVA]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-CLR-METADATA-RVA]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

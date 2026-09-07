@@ -143,6 +143,15 @@ Fase −1 em \|1⟩; probs iguais, mas interferência muda em circuitos maiores.
 
 ## Exercício Difícil — `D2-QSIM-CNOT`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/qsim.cpp` |
+| **Função / âncora** | ``apply_cnot` — `TODO [D2-QSIM-CNOT]`` — comentário `TODO [D2-QSIM-CNOT]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-QSIM-CNOT]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Sem CNOT não há Bell. Starter ignora control/target.

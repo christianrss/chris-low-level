@@ -85,6 +85,15 @@ python starter/tests/test_ascii_strings.py
 
 ## Exercício Médio — `D2-ELF-HEADER`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/elf64.py` |
+| **Função / âncora** | ``parse_elf64_header` — `TODO [D2-ELF-HEADER]`` — comentário `TODO [D2-ELF-HEADER]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ELF-HEADER]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Rejeitar lixo cedo; depois ler machine/entry/phoff/shoff/phnum/shnum/shstrndx.
@@ -122,6 +131,15 @@ Parte do `test_elf64.py` (asserts de header) passa; Phdr/Shdr ainda falham até 
 ---
 
 ## Exercício Médio-Difícil — `D2-ELF-PHDR`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/elf64.py` |
+| **Função / âncora** | ``parse_program_headers` — `TODO [D2-ELF-PHDR]`` — comentário `TODO [D2-ELF-PHDR]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ELF-PHDR]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 
@@ -173,6 +191,15 @@ Asserts de PHDR em `test_elf64.py` devem passar.
 
 ## Exercício Difícil — `D2-ELF-SHDR`
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/elf64.py` |
+| **Função / âncora** | ``parse_section_headers` — `TODO [D2-ELF-SHDR]`` — comentário `TODO [D2-ELF-SHDR]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ELF-SHDR]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema
 
 Ler `shnum` Shdr de **64 bytes**; resolver `name` via string table da seção `e_shstrndx`.
@@ -215,6 +242,15 @@ Asserts de seções nomeadas passam.
 ---
 
 ## Exercício Difícil — `D2-ELF-DYNSYM`
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/tools/elf64.py` |
+| **Função / âncora** | ``list_dynamic_symbols` — `TODO [D2-ELF-DYNSYM]`` — comentário `TODO [D2-ELF-DYNSYM]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [D2-ELF-DYNSYM]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema
 

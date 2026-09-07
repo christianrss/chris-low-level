@@ -122,7 +122,11 @@ def ensure_placement_blocks(module: Path) -> int:
                 nl = pos
             body = body[: nl + 1] + block + body[nl + 1 :]
         else:
-            body = body.rstrip() + f"\n\n## `{ident}`\n{block}\n```text\n# complete conforme starter/{rel}\n```\n"
+            body = body.rstrip() + f"\n\n## `{ident}`\n{block}\n"
+            body += (
+                "\n### 1. O problema\n\nComplete o stub em `starter/` — "
+                "escreva o código integral na seção abaixo (não delegue a solutions/).\n"
+            )
         added += 1
     if added:
         path.write_text(body, encoding="utf-8")

@@ -14,6 +14,18 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Trabalhe em `days/2026-09-06/redteam/compressed_blob_triage/starter/`. `solutions/` só depois da tentativa.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cd starter
+python -m pytest tests/ -v
+```
+
+**Esperado:** testes FAIL até completar os TODOs.
+
 ---
 
 ## RT-COMP-01 — detect_compression_magic
@@ -80,7 +92,23 @@ Esperado: `gzip zlib`.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RT-COMP-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RT-COMP-01` passam.
+
+
 ## RT-COMP-02 — validate_size_limits
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/blob_triage.py` |
+| **Função / âncora** | ``validate_size_limits` — `TODO [RT-COMP-02]`` — comentário `TODO [RT-COMP-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RT-COMP-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -147,7 +175,23 @@ Esperado: `False` depois `True`.
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RT-COMP-02]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RT-COMP-02` passam.
+
+
 ## RT-COMP-03 — extract_ascii_strings
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/blob_triage.py` |
+| **Função / âncora** | ``extract_ascii_strings` — `TODO [RT-COMP-03]`` — comentário `TODO [RT-COMP-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [RT-COMP-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -204,6 +248,13 @@ python solutions/test_blob_triage.py
 ```
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [RT-COMP-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `RT-COMP-03` passam.
+
 
 ## Ordem sugerida
 

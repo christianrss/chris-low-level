@@ -14,6 +14,19 @@ Cada ID existe como `TODO [ID]` no starter, `PEDAGOGY-SOLUTION: ID` no gabarito 
 
 > Não comece copiando `solutions/`. Compile e rode `ctest` após cada TODO.
 
+
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
 ---
 
 ## GFX-STATE-TRANSITION-01 — tabela de transições
@@ -98,7 +111,23 @@ CopyDst → ShaderRead → RenderTarget → Present → CopyDst?
 
 ---
 
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [GFX-STATE-TRANSITION-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `GFX-STATE-TRANSITION-01` passam.
+
+
 ## GFX-VK-MAP-02 — layouts Vulkan
+
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/resource_state.cpp` |
+| **Função / âncora** | ``to_vulkan` — `TODO [GFX-VK-MAP-02]`` — comentário `TODO [GFX-VK-MAP-02]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-VK-MAP-02]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
 
 ### 1. O problema (starter stub)
 
@@ -153,6 +182,15 @@ Recompile; o assert Vulkan passa. D3D12 ainda vazio → FAIL restante.
 
 ## GFX-D3D12-MAP-03 — estados D3D12
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/resource_state.cpp` |
+| **Função / âncora** | ``to_d3d12` — `TODO [GFX-D3D12-MAP-03]`` — comentário `TODO [GFX-D3D12-MAP-03]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [GFX-D3D12-MAP-03]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ### 1. O problema (starter stub)
 
 ```cpp
@@ -205,6 +243,13 @@ ctest --test-dir build -C Release --output-on-failure
 Esperado: `OK gpu states` e 100% passed.
 
 ---
+
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [GFX-D3D12-MAP-03]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `GFX-D3D12-MAP-03` passam.
+
 
 ## Como depurar se falhar
 

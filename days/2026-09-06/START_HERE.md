@@ -20,7 +20,7 @@ Laboratório unificado. Cada pasta `<trilha>/<modulo>/` contém teoria, exercíc
 4. `systems/deflate_blocks` — blocos RFC 1951
 5. `tooling/zlib_gzip_containers` — wrappers
 6. `tooling/png_idat_pipeline` — chunks de arquivo
-7. `graphics/portal_verlet_physics` — Mat4 / portal / Verlet / demo GL
+7. `graphics/verlet_rope_3d` — Mat4 / portal / Verlet / demo GL
 8. `ai/tensor_entropy_lab`
 9. `redteam/compressed_blob_triage`
 10. `dotnet/span_deflate_buffers`

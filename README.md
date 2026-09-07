@@ -112,18 +112,23 @@ Cada pasta `<trilha>/<modulo>/` em `days/` contém 8 arquivos MD + `starter/` + 
 | [`docs/RESEARCH_NOTE_TEMPLATE.md`](docs/RESEARCH_NOTE_TEMPLATE.md) | Template para experimentos em `research/` |
 | [`docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md`](docs/PROMPT_MESTRE_TREINO_LOW_LEVEL.md) | Índice do prompt mestre |
 | [`docs/PROMPT_MESTRE_EXTREME_QUALITY.md`](docs/PROMPT_MESTRE_EXTREME_QUALITY.md) | Thresholds e anti-padrões |
+| [`AGENTS.md`](AGENTS.md) | Instruções para agentes + OpenSpec |
+| [`openspec/README.md`](openspec/README.md) | Spec-driven workflow (`/opsx:propose`) |
 
 ### Validação
 
 ```bash
-# Gate pedagógico (34 módulos, 108 TODOs)
+# Gate pedagógico + contrato de dia (módulos, trilhas, infra)
 python scripts/pedagogy_check_unified.py --day 2026-09-03 --all-days
+python scripts/day_contract_check.py --day 2026-09-06
+python scripts/day_contract_check.py --day 2026-09-07
 
 # Testes dos módulos do dia (solutions devem passar)
 python scripts/run_day_tests.py --day 2026-09-03 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-04 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-05 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-06 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-07 --mode solutions
 
 # Benchmarks → benchmarks/results-YYYY-MM-DD.json
 python scripts/run_day_benchmarks.py --day 2026-09-03
@@ -166,7 +171,7 @@ For the complete mapping from the user-defined curriculum directives to Day 01 e
 
 ## Day 06 — 2026-09-06
 
-11 módulos: trilha compressão (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG IDAT), `graphics/portal_verlet_physics`, tensor entropy, blob triage, Span deflate, gunzip transform. Capstone: `projects/chris-compress`. Extra: `projects/chris-lantern-hunt` (fora do dia). Ver [`days/2026-09-06/README.md`](days/2026-09-06/README.md).
+11 módulos: trilha compressão (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG IDAT), `graphics/verlet_rope_3d`, tensor entropy, blob triage, Span deflate, gunzip transform. Capstone: `projects/chris-compress`. Extra: `projects/chris-lantern-hunt` (fora do dia). Ver [`days/2026-09-06/README.md`](days/2026-09-06/README.md).
 
 ## Day 05 — 2026-09-05
 

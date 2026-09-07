@@ -89,24 +89,34 @@ Final de cada `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`:
 - `TESTES_GUIADOS.md` descrevendo casos inexistentes no código
 - Validators que só checam string `TODO [ID]`
 - DOCX gerado antes do Markdown completo
-- "Veja a solution" / "o restante é semelhante"
+- "Veja a solution" / "o restante é semelhante" / "copie solutions" / "como em solutions"
+- RESOLUCAO sem `## Baseline` ou sem código completo por TODO
+- Padding: `Nota pedagógica N`, linhas duplicadas, blocos genéricos só para ≥120 linhas
 - Nome de classe divergente entre starter e teste
 - Benchmark sem seção "Resultados observados" ou skip honesto
+- Scripts (`upgrade_module_quality`, `repair_pedagogy_depth`) injetando placeholders no lugar de conteúdo real
+- Marcar dia completo com `pedagogy_check` PASS mas `day_contract_check` FAIL (dia narrow vs tier-A)
+- `generate_day_scaffold.py` sem `--manifest-only` em dias com START_HERE curado
 
 ---
 
-# 45. WORKFLOW CURSOR (8 FASES)
+# 45. WORKFLOW CURSOR (10 FASES)
 
+0. **OpenSpec:** `/opsx:propose` — escopo, dia referência (`2026-09-06`), trilhas em `openspec/specs/day-contract/`
 1. Scaffold starters + solutions
 2. Pedagogia MD completa (teoria, resolução, exercícios)
 3. Testes alinhados com TESTES_GUIADOS
-4. `pedagogy_check_unified.py` → PASS
-5. Executar solutions e starters
-6. `build_day_docx.py`
-7. QA visual do DOCX (PDF/páginas)
-8. `VALIDATION.md` + MANIFEST + TODO_MAP
+4. `pedagogy_check_unified.py` → PASS (inclui módulos + day contract)
+5. `day_contract_check.py` → PASS (pode rodar isolado para debug)
+6. Executar solutions e starters (`run_day_tests`)
+7. `build_day_docx.py`
+8. QA visual do DOCX (PDF/páginas)
+9. `VALIDATION.md` + MANIFEST (`--manifest-only`) + TODO_MAP curado
+10. `/opsx:archive` — mover change para `openspec/changes/archive/`
 
 Não avance de fase com gate falhando.
+
+**Anti falso-done:** PASS pedagógico por módulo com dia incompleto (ex. Dia 07 só CLVM+GFX) é **proibido**. Ver `AGENTS.md`.
 
 ---
 
@@ -137,10 +147,15 @@ Gravar agregados em `benchmarks/results-YYYY-MM-DD.json` quando executável.
 
 ```bash
 python scripts/pedagogy_check_unified.py --day YYYY-MM-DD
+python scripts/day_contract_check.py --day YYYY-MM-DD
 python scripts/quality_check.py
 python scripts/run_day_tests.py --day YYYY-MM-DD --mode solutions
 python scripts/run_day_tests.py --day YYYY-MM-DD --mode starter --expect-fail
 ```
+
+`pedagogy_check_unified` executa `day_contract_check` ao final para o mesmo `--day`.
+
+OpenSpec: `/opsx:verify` antes de arquivar change.
 
 ---
 

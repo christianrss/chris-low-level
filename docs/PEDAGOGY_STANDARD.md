@@ -23,7 +23,17 @@ DOCX (`Treino_LowLevel_Unificado_*.docx`) é **export opcional** via `scripts/bu
 
 ## Estrutura obrigatória por artefato
 
-### TEORIA_PASSO_A_PASSO.md (≥120 linhas)
+### Regra de ouro (anti-resumo)
+
+**Não resuma.** Cada passo deve ser reproduzível **sem abrir `solutions/`**. Proibido:
+
+- Padding artificial (`Nota pedagógica N`, linhas repetidas, seções 11–30 genéricas só para bater linha mínima)
+- Delegação: `copie solutions`, `veja solutions`, `como em solutions`, `compare com solutions`
+- Stubs na RESOLUCAO: `implemente X` sem bloco de código completo copiável
+
+Contagem de linhas mede **conteúdo substantivo**, não filler. Referência canônica: `days/2026-09-03/systems/clvm/`.
+
+### TEORIA_PASSO_A_PASSO.md (≥120 linhas substantivas)
 
 Para cada conceito central:
 
@@ -41,8 +51,10 @@ Proibido: parágrafos genéricos como "consulte os TODOs em starter/" sem explic
 ### RESOLUCAO_GUIADA_PASSO_A_PASSO.md (≥80 linhas; ≥100 em módulos complexos)
 
 1. **Mapa exato starter → resolução** — cada `TODO [ID]` com caminho de arquivo.
-2. **Baseline** — comandos de build/teste; saída **FAIL** esperada antes dos TODOs.
-3. **Por TODO** (repetir para cada ID):
+2. **Baseline** (obrigatório: `## Baseline`) — comandos de build/teste; saída **FAIL** esperada antes dos TODOs.
+3. **Por TODO** (repetir para cada ID; ordem fixa):
+   - **O problema** — o que quebra sem este passo
+   - **Algoritmo / trace** — passos no papel ou hex/bytes
    - **Onde colocar** (obrigatório) — tabela com:
      - **Arquivo** — path sob `starter/...`
      - **Função / âncora** — nome da função ou comentário `TODO [ID]`
@@ -78,6 +90,8 @@ Cada caso documentado deve existir como `PEDAGOGY-TEST: ID` no código de teste.
 | RESOLUCAO | menção ao ID + caminho `starter/...` |
 
 O checker `scripts/pedagogy_check_unified.py` valida esses vínculos e rejeita conteúdo superficial.
+
+**Strict desde 2026-09-03:** `## Baseline`, placement por TODO, anti-delegação; repair batch: `scripts/repair_resolucao_strict.py`.
 
 ## Fluxo do aluno (START_HERE)
 

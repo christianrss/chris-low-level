@@ -6,6 +6,19 @@
 |---------|---------|-------------|
 | `ASM-SUM-01` | `starter/src/sum_x86_64.S` | `asm_sum_u64` — preservar ABI e loop de soma |
 
+## Baseline
+
+Antes de editar, confirme que o starter falha por causa dos TODOs (não por ambiente):
+
+```powershell
+cmake -S starter -B starter/build
+cmake --build starter/build
+ctest --test-dir starter/build --output-on-failure
+```
+
+**Esperado:** build OK; testes FAIL até completar os TODOs.
+
+
 ### Onde colocar
 
 | | |
@@ -90,6 +103,15 @@ Cada TODO obrigatório do starter está mapeado abaixo. O identificador deve exi
 
 - `ASM-SUM-01` — `starter/src/sum_x86_64.S` → `solutions/src/sum_x86_64.S`.
 
+### Onde colocar
+
+| | |
+|--|--|
+| **Arquivo** | `starter/src/sum_x86_64.S` |
+| **Função / âncora** | ``asm_sum_u64` — preservar ABI e loop de soma` — `TODO [ASM-SUM-01]`` — comentário `TODO [ASM-SUM-01]` |
+| **Substituir** | o stub / corpo / case marcado por `TODO [ASM-SUM-01]` |
+| **Não mexer** | demais arquivos do starter até este ID passar nos testes |
+
 ## Relatório de resolução
 
 Checklist ao concluir:
@@ -104,6 +126,13 @@ Checklist ao concluir:
 **Depuração:** use GDB/LLDB em `asm_sum_u64` e confira registradores na entrada e após cada iteração.
 
 **Arquivos starter editados:** `starter/src/sum_x86_64.S`.
+### 5. Verifique
+
+Rode os testes do módulo com `TODO [ASM-SUM-01]` implementado.
+
+**Esperado:** caso(s) em TESTES_GUIADOS que cobrem `ASM-SUM-01` passam.
+
+
 ## Etapa de depuração — quando o assert falha
 
 Se a soma retornar lixo com `count>0`, inspecione com GDB:
