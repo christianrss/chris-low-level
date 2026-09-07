@@ -4,6 +4,7 @@
 
 ```powershell
 python scripts/pedagogy_check_unified.py --day 2026-09-07
+python scripts/day_contract_check.py --day 2026-09-07
 python scripts/run_day_tests.py --day 2026-09-07 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-07 --mode starter --expect-fail
 ```
@@ -12,40 +13,38 @@ python scripts/run_day_tests.py --day 2026-09-07 --mode starter --expect-fail
 
 | Gate | Esperado |
 |------|----------|
-| pedagogy_check | **PASS** — 13 módulos, 45 TODOs |
-| solutions | PASS (ctest / cargo test / dotnet test / pytest / node) |
+| pedagogy_check | **PASS** — 21 módulos, 69 TODOs |
+| day_contract | **PASS** — tier-A, tracks incl. parsers + agent |
+| solutions | 21/21 PASS |
 | starter | FAIL até TODOs |
-| GFX | `docs/COMPARISON.md` + VISUAL-01 nos módulos `graphics/*`; **smoke visual Windows** (opcional CI): `artillery_sw`, `artillery_gl`, `artillery_d3d`, `depth_sw`, `depth_gl` abrem janela com pixels |
-| Anti-padding | zero `Nota pedagógica` gerada |
+| GFX visual | `artillery_*`, `depth_*` com janela; `resource_state_tracker` headless (exempt) |
+| Benchmarks | [`benchmarks/results-2026-09-07.json`](../../benchmarks/results-2026-09-07.json) |
 
-## Módulos
+## Módulos (21)
 
 | Trilha | Módulo | Runner |
 |--------|--------|--------|
 | CLVM | clvm_js_codegen, clvm_bytecode_verifier, clvm_v2_strings | ctest + python |
-| Linux | hid_keyboard_boot, ps2_mouse_input | ctest |
+| Linux | hid_keyboard_boot, ps2_mouse_input, proc_task_snapshot | ctest / pytest |
 | Rust | clvm_v2_verify | cargo test |
-| .NET | input_event_span | dotnet test |
-| Red team | hid_report_fuzz | pytest |
+| .NET | input_event_span, cil_cfg_verifier | dotnet test |
+| Red team | hid_report_fuzz, elf_program_header_triage | pytest |
 | Quantum | measurement_born | ctest |
-| AI | input_event_entropy | pytest |
-| Node.js | input_event_transform | node test.js |
-| GFX N9 | artillery_trajectory_2d | ctest (+ Win32 demos opcionais) |
-| GFX N10 | raster_depth_parity | ctest (+ depth_gl opcional) |
+| AI | input_event_entropy, kv_cache_ring | pytest |
+| Node.js | input_event_transform, libuv_phase_probe | node test.js |
+| GFX | artillery_trajectory_2d, raster_depth_parity, resource_state_tracker | ctest |
+| Parsers | pratt_query_lang | pytest |
+| Agent | loop_state_machine | pytest |
 
 ## Skip matrix
 
 | Módulo | Skip se |
 |--------|---------|
-| dotnet/input_event_span | sem .NET SDK 8 |
-| linux/* | sem CMake/MSVC ou GCC |
-| nodejs/input_event_transform | sem Node 18+ |
-| graphics/* Win32 demos | não-Windows |
+| dotnet/* | sem .NET SDK 8 |
+| linux/hid*, ps2* | sem CMake/MSVC ou GCC |
+| graphics/artillery*, raster_depth* Win32 | não-Windows |
+| nodejs/* | sem Node 18+ |
 
-## Auditoria anti-padding
+## Complemento automatizado
 
-```powershell
-rg "Nota pedagógica \d" days/2026-09-07
-```
-
-Deve retornar vazio.
+Ver [`AUTOMATION_COMPLEMENT.md`](AUTOMATION_COMPLEMENT.md). Integrado sem remover núcleo multi-trilha (13 módulos originais).

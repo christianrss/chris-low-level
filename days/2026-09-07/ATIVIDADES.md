@@ -1,13 +1,13 @@
-# ATIVIDADES — 2026-09-07 (CLVM v2 + input + multi-trilha)
+# ATIVIDADES — 2026-09-07 (21 módulos)
 
-**Dia:** 13 módulos | **~32–40 h**  
-**Regra:** checkpoint conceitual antes de cada bloco. `pedagogy_check` + `run_day_tests` ao final.
+**Dia:** 13 núcleo + 8 complemento | **~52–60 h**  
+**Regra:** checkpoint conceitual antes de cada bloco. Gates ao final.
 
 ---
 
 ## Preparação (30 min)
 
-- [ ] `START_HERE.md`, `README.md`, `TODO_MAP.md`
+- [ ] `START_HERE.md`, `README.md`, `AUTOMATION_COMPLEMENT.md`, `TODO_MAP.md`
 - [ ] Baseline:
 
 ```powershell
@@ -16,85 +16,94 @@ python scripts/pedagogy_check_unified.py --day 2026-09-07
 
 ---
 
-## Bloco 1 — CLVM codegen + verifier (6–8 h)
+## Bloco 1 — CLVM (6–8 h)
 
-| Módulo | TODOs | Paper-trace obrigatório |
-|--------|-------|-------------------------|
-| `systems/clvm_js_codegen` | CLVM-JS-* | `let` → STORE; `while` → labels |
-| `systems/clvm_bytecode_verifier` | CLVM-VFY-* | stack-effect de `CALL` |
-| `systems/clvm_v2_strings` | CLVM-V2-* | pool de strings v2 |
+| Módulo | TODOs |
+|--------|-------|
+| `systems/clvm_js_codegen` | CLVM-JS-* |
+| `systems/clvm_bytecode_verifier` | CLVM-VFY-* |
+| `systems/clvm_v2_strings` | CLVM-V2-* |
 
-**Checkpoint conceitual:**
-
-- [ ] Desenho stack antes/depois de `CALL`; header v2 com campo strings
-- [ ] Explico por que verifier estático ≠ runtime VM
+**Checkpoint:** stack-effect de `CALL`; header v2 com pool de strings.
 
 ---
 
 ## Bloco 2 — Input Linux (4–6 h)
 
-| Módulo | TODOs | Paper-trace |
-|--------|-------|-------------|
-| `linux/hid_keyboard_boot` | HID-KBD-* | report boot 8B → InputEvent |
-| `linux/ps2_mouse_input` | PS2-MOUSE-* | pacote 3B → REL_X/REL_Y |
+| Módulo | TODOs |
+|--------|-------|
+| `linux/hid_keyboard_boot` | HID-KBD-* |
+| `linux/ps2_mouse_input` | PS2-MOUSE-* |
+| `linux/proc_task_snapshot` | D5-PROC-* |
 
-**Checkpoint conceitual:**
-
-- [ ] Hex de um `input_event` de 24 bytes anotado (type/code/value)
-
----
-
-## Bloco 3 — Rust + .NET (4–6 h)
-
-| Módulo | TODOs | Paper-trace |
-|--------|-------|-------------|
-| `rust/clvm_v2_verify` | CLVM-RS-* | opcode v2 + bounds |
-| `dotnet/input_event_span` | DN-INPUT-* | layout evdev + Span |
-
-**Checkpoint conceitual:**
-
-- [ ] Por que `Span` evita cópia no parse HID?
+**Checkpoint:** hex de `input_event` 24B; parse de uma linha `/proc/pid/stat`.
 
 ---
 
-## Bloco 4 — Red team + quantum (4–5 h)
+## Bloco 3 — Rust + .NET (5–7 h)
 
-| Módulo | TODOs | Paper-trace |
-|--------|-------|-------------|
-| `redteam/hid_report_fuzz` | RT-HID-* | report truncado vs magic 8B |
-| `quantum/measurement_born` | Q-MEAS-*, Q-BORN-* | P(|0⟩), P(|1⟩) após H |
+| Módulo | TODOs |
+|--------|-------|
+| `rust/clvm_v2_verify` | CLVM-RS-* |
+| `dotnet/input_event_span` | DN-INPUT-* |
+| `dotnet/cil_cfg_verifier` | D5-CIL-* |
 
-**Checkpoint conceitual:**
-
-- [ ] Listei 3 inputs maliciosos para o parser HID
-- [ ] Calculei probabilidades de medição em |+⟩ no papel
+**Checkpoint:** por que `Span` evita cópia; merge de stack depth em join de CFG.
 
 ---
 
-## Bloco 5 — AI + Node + GFX (8–10 h)
+## Bloco 4 — Red team + quantum (5–6 h)
 
-| Módulo | TODOs | Paper-trace |
-|--------|-------|-------------|
-| `ai/input_event_entropy` | AI-EVT-* | Shannon em bytes de evento |
-| `nodejs/input_event_transform` | ND-INPUT-* | buffer parcial 24B |
-| `graphics/artillery_trajectory_2d` | GFX-ART-* | parábola + trail |
-| `graphics/raster_depth_parity` | GFX-DEPTH-* | Z-test CPU vs GL |
+| Módulo | TODOs |
+|--------|-------|
+| `redteam/hid_report_fuzz` | RT-HID-* |
+| `redteam/elf_program_header_triage` | D5-ELF-* |
+| `quantum/measurement_born` | Q-MEAS-*, Q-BORN-* |
 
-**Checkpoint conceitual:**
+**Checkpoint:** 3 inputs maliciosos HID; P(|0⟩) após H no papel; offsets PHDR em fixture sintético.
 
-- [ ] Entropia de um stream curto de eventos no papel
-- [ ] Trace de `Transform` com chunk de 13 bytes (parcial)
-- [ ] Desenhei depth test de dois triângulos sobrepostos
+---
+
+## Bloco 5 — AI + Node (6–8 h)
+
+| Módulo | TODOs |
+|--------|-------|
+| `ai/input_event_entropy` | AI-EVT-* |
+| `ai/kv_cache_ring` | D5-KV-* |
+| `nodejs/input_event_transform` | ND-INPUT-* |
+| `nodejs/libuv_phase_probe` | D5-NODE-* |
+
+**Checkpoint:** entropia de stream curto; ordem nextTick vs promise vs immediate.
+
+---
+
+## Bloco 6 — GFX (6–8 h)
+
+| Módulo | TODOs |
+|--------|-------|
+| `graphics/artillery_trajectory_2d` | GFX-ART-* |
+| `graphics/raster_depth_parity` | GFX-DEPTH-* |
+| `graphics/resource_state_tracker` | D5-GFX-* |
+
+**Checkpoint:** depth test CPU vs GL; smoke `artillery_sw.exe`; barrier batch do state tracker.
+
+---
+
+## Bloco 7 — Parsers + agent (4 h)
+
+| Módulo | TODOs |
+|--------|-------|
+| `parsers/pratt_query_lang` | D5-PRATT-* |
+| `agent/loop_state_machine` | D5-AGENT-* |
+
+**Checkpoint:** AST de `foo AND bar:baz`; trace FSM até DONE com retry.
 
 ---
 
 ## Síntese final
 
-1. O que o verifier estático captura que a VM só veria em runtime?
-2. Como HID boot e PS/2 convergem no mesmo `InputEvent`?
-3. Por que v2 strings exige novo capstone em vez de patch no Dia 01?
-4. Como fuzz de HID se conecta ao driver legítimo do bloco 2?
-
 ```powershell
 python scripts/run_day_tests.py --day 2026-09-07 --mode solutions
 ```
+
+Benchmarks observados: [`benchmarks/results-2026-09-07.json`](../../benchmarks/results-2026-09-07.json).

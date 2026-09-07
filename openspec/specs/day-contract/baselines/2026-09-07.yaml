@@ -1,7 +1,7 @@
-# Baseline tier-A — Day 2026-09-07 (CLVM v2 + input multi-trilha)
+# Baseline tier-A — Day 2026-09-07 (CLVM v2 + input multi-trilha + complemento)
 day: "2026-09-07"
 tier: tier_a
-module_count: 13
+module_count: 21
 modules:
   - systems/clvm_js_codegen
   - systems/clvm_bytecode_verifier
@@ -16,6 +16,14 @@ modules:
   - quantum/measurement_born
   - ai/input_event_entropy
   - nodejs/input_event_transform
-tracks: [systems, linux, rust, dotnet, graphics, redteam, quantum, ai, nodejs]
+  - ai/kv_cache_ring
+  - redteam/elf_program_header_triage
+  - dotnet/cil_cfg_verifier
+  - nodejs/libuv_phase_probe
+  - graphics/resource_state_tracker
+  - linux/proc_task_snapshot
+  - parsers/pratt_query_lang
+  - agent/loop_state_machine
+tracks: [systems, linux, rust, dotnet, graphics, redteam, quantum, ai, nodejs, parsers, agent]
 reference_readme: days/2026-09-07/README.md
-lesson: "PASS pedagogy_check sem day_contract permitiu dia incompleto (7–9 módulos) até correção multi-trilha"
+lesson: "Integrar complemento ChatGPT sem perder 13 módulos curados nem governança OpenSpec/GFX visual"

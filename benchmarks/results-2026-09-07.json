@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-07",
+  "environment_note": "local validation container; not universal performance",
+  "results": [
+    {
+      "module": "kv_cache_ring",
+      "workload": "1000 windows size 128",
+      "median_ms": 12.124
+    },
+    {
+      "module": "elf_program_header_triage",
+      "workload": "128 PHDR",
+      "median_ms": 0.1285
+    },
+    {
+      "module": "proc_task_snapshot",
+      "workload": "10000 parses",
+      "median_ms": 13.587
+    },
+    {
+      "module": "pratt_query_lang",
+      "workload": "5000 parses",
+      "median_ms": 42.252
+    },
+    {
+      "module": "loop_state_machine",
+      "workload": "10000 loops",
+      "median_ms": 11.556
+    },
+    {
+      "module": "libuv_phase_probe",
+      "workload": "10000 nextTick",
+      "median_ms": 0.62
+    },
+    {
+      "module": "resource_state_tracker",
+      "workload": "1M transitions",
+      "elapsed_ms": 18.179,
+      "repetitions": 1
+    }
+  ],
+  "not_executed": [
+    {
+      "module": "cil_cfg_verifier",
+      "reason": "dotnet SDK unavailable"
+    }
+  ]
+}

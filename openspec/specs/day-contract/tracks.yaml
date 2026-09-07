@@ -29,6 +29,8 @@ tiers:
           - quantum
           - ai
           - nodejs
+          - parsers
+          - agent
 
   tier_b:
     description: Earlier or partial days — infra sync only, no full track matrix

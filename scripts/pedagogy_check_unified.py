@@ -146,6 +146,7 @@ def is_gfx_module(module: Path, root: Path) -> bool:
 GFX_VISUAL_EXEMPT = {
     "graphics_reference",
     "vulkan_d3d12_resource_states",
+    "resource_state_tracker",
 }
 GFX_WIN32_DIRS = (
     "software_win32",
@@ -234,7 +235,7 @@ def check_gfx_module(rel: str, module: Path, tg: str, errors: list[str]) -> None
         errors.append(f"{rel}: COMPARISON.md missing CPU/software column")
     if "opengl" not in body and "| gl" not in body:
         errors.append(f"{rel}: COMPARISON.md missing OpenGL column")
-    if "visual-01" not in tg.lower():
+    if module.name not in GFX_VISUAL_EXEMPT and "visual-01" not in tg.lower():
         errors.append(f"{rel}: GFX module missing VISUAL-01 in TESTES_GUIADOS")
     check_gfx_visual_solutions(rel, module, errors)
 

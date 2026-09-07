@@ -248,6 +248,38 @@ flowchart LR
 
 ---
 
+## 11. Complemento Dia 07 — AI KV cache
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-06/ai/tensor_entropy_lab` | entropia + compressão |
+| 2 | `2026-09-07/ai/kv_cache_ring` | ring buffer K/V + eviction determinística |
+| 3 | `2026-09-07/ai/input_event_entropy` | métricas em stream InputEvent |
+
+---
+
+## 12. Complemento Dia 07 — parsers + agent
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-07/parsers/pratt_query_lang` | lexer + Pratt binding power |
+| 2 | `2026-09-07/agent/loop_state_machine` | FSM perceive→verify + replay |
+| Capstone | `projects/chris-smart-grep` + `projects/chris-agent-harness` | query lang + harness |
+
+---
+
+## 13. Complemento Dia 07 — infra cross-trilha
+
+| Módulo | Trilha | Conceito |
+|--------|--------|----------|
+| `2026-09-07/redteam/elf_program_header_triage` | Red team | ELF64 PHDR triage |
+| `2026-09-07/dotnet/cil_cfg_verifier` | .NET | CFG CIL stack depth |
+| `2026-09-07/nodejs/libuv_phase_probe` | Node | fases libuv / starvation |
+| `2026-09-07/graphics/resource_state_tracker` | GFX | GPU state barriers (headless) |
+| `2026-09-07/linux/proc_task_snapshot` | Linux | `/proc` snapshot → chris-top |
+
+---
+
 ## Como usar
 
 1. Escolha uma trilha alinhada ao seu objetivo de portfólio.

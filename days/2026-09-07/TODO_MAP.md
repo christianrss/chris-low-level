@@ -71,3 +71,30 @@
 - `ND-INPUT-01` — `nodejs/input_event_transform`
 - `ND-INPUT-02` — `nodejs/input_event_transform`
 - `ND-INPUT-03` — `nodejs/input_event_transform`
+
+## Complemento — trilhas permanentes (AUTOMATION_COMPLEMENT)
+
+- `D5-KV-APPEND` — `ai/kv_cache_ring`
+- `D5-KV-WINDOW` — `ai/kv_cache_ring`
+- `D5-KV-RESET` — `ai/kv_cache_ring`
+- `D5-ELF-HEADER` — `redteam/elf_program_header_triage`
+- `D5-ELF-PHDR` — `redteam/elf_program_header_triage`
+- `D5-ELF-RANGE` — `redteam/elf_program_header_triage`
+- `D5-CIL-DECODE` — `dotnet/cil_cfg_verifier`
+- `D5-CIL-WORKLIST` — `dotnet/cil_cfg_verifier`
+- `D5-CIL-MERGE` — `dotnet/cil_cfg_verifier`
+- `D5-NODE-PROBE` — `nodejs/libuv_phase_probe`
+- `D5-NODE-BOUNDED` — `nodejs/libuv_phase_probe`
+- `D5-NODE-YIELD` — `nodejs/libuv_phase_probe`
+- `D5-GFX-REGISTER` — `graphics/resource_state_tracker`
+- `D5-GFX-TRANSITION` — `graphics/resource_state_tracker`
+- `D5-GFX-FLUSH` — `graphics/resource_state_tracker`
+- `D5-PROC-PARSE` — `linux/proc_task_snapshot`
+- `D5-PROC-SCAN` — `linux/proc_task_snapshot`
+- `D5-PROC-DELTA` — `linux/proc_task_snapshot`
+- `D5-PRATT-LEX` — `parsers/pratt_query_lang`
+- `D5-PRATT-PARSE` — `parsers/pratt_query_lang`
+- `D5-PRATT-FIELD` — `parsers/pratt_query_lang`
+- `D5-AGENT-TRANSITION` — `agent/loop_state_machine`
+- `D5-AGENT-VERIFY` — `agent/loop_state_machine`
+- `D5-AGENT-REPLAY` — `agent/loop_state_machine`
