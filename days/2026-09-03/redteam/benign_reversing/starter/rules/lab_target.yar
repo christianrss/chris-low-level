@@ -1,6 +1,7 @@
 rule LowLevel_Reversing_Lab_V1 {
     meta:
-        description: "Detecta somente o binário educacional deste laboratório"
+        description = "Detecta somente o binário educacional deste laboratório"
+        purpose = "training"
 
     strings:
         // TODO [RE-YARA-01]: add strings that uniquely identify our benign lab target.
