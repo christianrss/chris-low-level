@@ -151,6 +151,8 @@ GFX_VISUAL_EXEMPT = {
     "gpu_timer_query",
     "shader_stage_fsm",
     "alpha_blend_scanline",
+    "descriptor_binding_model",
+    "explicit_barriers",
 }
 GFX_WIN32_DIRS = (
     "software_win32",

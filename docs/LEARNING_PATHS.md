@@ -380,3 +380,36 @@ flowchart LR
 | 8 | `2026-09-08/nodejs/worker_transfer` | trilha A |
 | 9 | `2026-09-08/dotnet/gc_allocation_probe` | trilha A |
 
+### Labs GitHub incorporados (09–11)
+
+| 1 | `2026-09-09/agent/agent_state_machine` | github track |
+| 2 | `2026-09-09/ai/welford_layernorm` | github track |
+| 3 | `2026-09-09/architecture/branch_predictor` | github track |
+| 4 | `2026-09-09/dotnet/channel_backpressure` | github track |
+| 5 | `2026-09-09/graphics/explicit_barriers` | github track |
+| 6 | `2026-09-09/linux/proc_stat_parser` | github track |
+| 7 | `2026-09-09/nodejs/async_context` | github track |
+| 8 | `2026-09-09/parsers/pratt_expr` | github track |
+| 9 | `2026-09-09/redteam/x86_prologue_triage` | github track |
+| 10 | `2026-09-09/systems/buddy_allocator` | github track |
+| 11 | `2026-09-09/unix/grep_dfa` | github track |
+| 12 | `2026-09-10/agent/transactional_patcher` | github track |
+| 13 | `2026-09-10/ai/tiled_attention_online_softmax` | github track |
+| 14 | `2026-09-10/architecture/tlb_page_walk` | github track |
+| 15 | `2026-09-10/dotnet/pinned_memory_probe` | github track |
+| 16 | `2026-09-10/graphics/descriptor_binding_model` | github track |
+| 17 | `2026-09-10/linux/procfs_module_lab` | github track |
+| 18 | `2026-09-10/nodejs/message_channel_rpc` | github track |
+| 19 | `2026-09-10/parsers/backtracking_regex_vm` | github track |
+| 20 | `2026-09-10/redteam/elf64_relocation_triage` | github track |
+| 21 | `2026-09-10/systems/aba_tagged_freelist` | github track |
+| 22 | `2026-09-11/agent/context_budgeter` | github track |
+| 23 | `2026-09-11/ai/kv_cache_ring` | github track |
+| 24 | `2026-09-11/algorithms/robin_hood_hash` | github track |
+| 25 | `2026-09-11/dotnet/jit_callsite_model` | github track |
+| 26 | `2026-09-11/network/length_prefixed_framing` | github track |
+| 27 | `2026-09-11/nodejs/worker_pool_scheduler` | github track |
+| 28 | `2026-09-11/parsers/pike_regex_vm` | github track |
+| 29 | `2026-09-11/quantum/statevector_bitmask` | github track |
+| 30 | `2026-09-11/redteam/dwarf_line_program` | github track |
+| 31 | `2026-09-11/systems/hazard_pointer_stack` | github track |

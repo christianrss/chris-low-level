@@ -1,36 +1,34 @@
-# Day 09 — 2026-09-09
+# Day 2026-09-09
 
-**Observabilidade multi-linguagem** — C/C++ no núcleo; Rust, .NET, JavaScript e Python nas demais trilhas.
+**24 modulos** — core local + labs sugeridos do GitHub incorporados.
 
-## Módulos (13) — ordem cognitiva
+Core: observabilidade. GitHub: buddy/Welford/prologue/pratt/…
 
-| # | Módulo | Linguagem | Trace / contrato |
-|---|--------|-----------|------------------|
-| 1 | `systems/clvm_trace_profiler` | **C** | `02 02 08` → hottest `0x02` |
-| 2 | `systems/arena_telemetry` | **C++** | alloc 8 ok; +60 falha; reset mantém allocs |
-| 3 | `ai/attention_mask` | **C** | q=2; k=3 → −1e9; visible_count=3 |
-| 4 | `rust/stack_sample_trace` | **Rust** | `0x1000` → `main` |
-| 5 | `dotnet/activity_source_span` | **.NET** | `work\|activity_source_span` |
-| 6 | `nodejs/async_hooks_trace` | **JavaScript** | phase `init`; metrics |
-| 7 | `linux/perf_event_open_lab` | **Python** | open/read/close + fd sintético |
-| 8 | `graphics/gpu_timer_query` | **Python** | handle 0; lap `draw` |
-| 9 | `parsers/logfmt_lexer` | **Python** | `a=1 b=2` → 2 tokens |
-| 10 | `quantum/decoherence_noise` | **Python** | p0+p1≈1; len(trace)=4 |
-| 11 | `redteam/yara_match_scan` | **Python** | `AA ??` → hit @1 |
-| 12 | `agent/verify_replay_log` | **Python** | FSM → DONE; hash 16 |
-| 13 | `tooling/pdb_symbol_index` | **Python** | `1000 main` → lookup |
+| # | Modulo |
+|---|--------|
+| 1 | `agent/agent_state_machine` |
+| 2 | `agent/verify_replay_log` |
+| 3 | `ai/attention_mask` |
+| 4 | `ai/welford_layernorm` |
+| 5 | `architecture/branch_predictor` |
+| 6 | `dotnet/activity_source_span` |
+| 7 | `dotnet/channel_backpressure` |
+| 8 | `graphics/explicit_barriers` |
+| 9 | `graphics/gpu_timer_query` |
+| 10 | `linux/perf_event_open_lab` |
+| 11 | `linux/proc_stat_parser` |
+| 12 | `nodejs/async_context` |
+| 13 | `nodejs/async_hooks_trace` |
+| 14 | `parsers/logfmt_lexer` |
+| 15 | `parsers/pratt_expr` |
+| 16 | `quantum/decoherence_noise` |
+| 17 | `redteam/x86_prologue_triage` |
+| 18 | `redteam/yara_match_scan` |
+| 19 | `rust/stack_sample_trace` |
+| 20 | `systems/arena_telemetry` |
+| 21 | `systems/buddy_allocator` |
+| 22 | `systems/clvm_trace_profiler` |
+| 23 | `tooling/pdb_symbol_index` |
+| 24 | `unix/grep_dfa` |
 
-**Total:** ~24–32 h. Comece por `START_HERE.md` e os checkpoints de `ATIVIDADES.md`.
-
-## Capstones relacionados
-
-- [`projects/chris-vm/`](../../projects/chris-vm/) — bytecode / verify
-- [`projects/chris-agent-harness/`](../../projects/chris-agent-harness/) — replay / agent
-
-## Validação
-
-```powershell
-python scripts/pedagogy_check_unified.py --day 2026-09-09
-python scripts/day_contract_check.py --day 2026-09-09
-python scripts/run_day_tests.py --day 2026-09-09 --mode solutions
-```
+**Total:** ~48–72 h (fatie se preciso).

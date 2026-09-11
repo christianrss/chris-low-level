@@ -1,6 +1,4 @@
-# VALIDATION — Day 2026-09-10
-
-## Gates
+# Validacao — 2026-09-10
 
 ```powershell
 python scripts/pedagogy_check_unified.py --day 2026-09-10
@@ -8,28 +6,28 @@ python scripts/day_contract_check.py --day 2026-09-10
 python scripts/run_day_tests.py --day 2026-09-10 --mode solutions
 ```
 
-## Expectativas
+## Modulos (23)
 
-| Gate | Esperado |
-|------|----------|
-| pedagogy_check | **PASS** — 13 módulos, 39 TODOs |
-| day_contract | **PASS** — tier-A tracks |
-| solutions | 13/13 PASS |
-
-## Módulos (13)
-
-| Trilha | Módulo | Runner |
-|--------|--------|--------|
-| systems | clvm_pipeline_integration | pytest/node/cargo/dotnet |
-| systems | unified_input_pipeline | pytest/node/cargo/dotnet |
-| linux | composite_input_driver | pytest/node/cargo/dotnet |
-| rust | cross_verify_clvm | pytest/node/cargo/dotnet |
-| dotnet | capstone_input_host | pytest/node/cargo/dotnet |
-| graphics | pipeline_state_object | pytest/node/cargo/dotnet |
-| redteam | capstone_triage | pytest/node/cargo/dotnet |
-| quantum | capstone_measurement | pytest/node/cargo/dotnet |
-| ai | capstone_tokenizer | pytest/node/cargo/dotnet |
-| nodejs | capstone_stream_pipeline | pytest/node/cargo/dotnet |
-| parsers | capstone_query_eval | pytest/node/cargo/dotnet |
-| agent | capstone_agent_loop | pytest/node/cargo/dotnet |
-| tooling | capstone_format_detect | pytest/node/cargo/dotnet |
+- `agent/capstone_agent_loop`
+- `agent/transactional_patcher`
+- `ai/capstone_tokenizer`
+- `ai/tiled_attention_online_softmax`
+- `architecture/tlb_page_walk`
+- `dotnet/capstone_input_host`
+- `dotnet/pinned_memory_probe`
+- `graphics/descriptor_binding_model`
+- `graphics/pipeline_state_object`
+- `linux/composite_input_driver`
+- `linux/procfs_module_lab`
+- `nodejs/capstone_stream_pipeline`
+- `nodejs/message_channel_rpc`
+- `parsers/backtracking_regex_vm`
+- `parsers/capstone_query_eval`
+- `quantum/capstone_measurement`
+- `redteam/capstone_triage`
+- `redteam/elf64_relocation_triage`
+- `rust/cross_verify_clvm`
+- `systems/aba_tagged_freelist`
+- `systems/clvm_pipeline_integration`
+- `systems/unified_input_pipeline`
+- `tooling/capstone_format_detect`

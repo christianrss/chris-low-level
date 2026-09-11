@@ -1,35 +1,33 @@
-# Day 2026-09-11 — Relocação, ABI e verificação cruzada
+# Day 2026-09-11
 
-Continua os dias 08–10 (toolchain → telemetria → capstone) com **aplicação de reloc**, **limites de ABI/arena** e **checagens cruzadas** (C ↔ Rust ↔ .NET ↔ Assembly).
+**23 modulos** — core local + labs sugeridos do GitHub incorporados.
 
-| # | Módulo | Linguagem | Fundamento | Horas |
-|---|--------|-----------|------------|-------|
-| 1 | `systems/clvm_reloc_apply` | **C + bytecode** | patches u16 LE | 2–3 |
-| 2 | `systems/bump_poison_arena` | **C++** | poison 0xA5 + canary | 2–3 |
-| 3 | `linux/uevent_kv_parse` | **C** | KEY=value uevent | 2–3 |
-| 4 | `rust/clvm_reloc_verify` | **Rust** | reloc bounds | 2–3 |
-| 5 | `dotnet/pe_import_span` | **C#** | import RVA 0x2000 | 2–3 |
-| 6 | `graphics/alpha_blend_scanline` | **C++** | src-over headless | 2–3 |
-| 7 | `redteam/import_name_triage` | **Python** | suspicious imports | 2–3 |
-| 8 | `quantum/phase_kickback` | **C++** | CZ kickback | 2–3 |
-| 9 | `ai/rms_norm` | **C** | RMSNorm [3,4] | 2–3 |
-| 10 | `nodejs/shared_atomics_ring` | **JS** | Atomics ring CAP 4 | 2–3 |
-| 11 | `parsers/ini_rd_lexer` | **C** | INI section/key | 2–3 |
-| 12 | `agent/tool_barrier_join` | **Python** | tool barrier | 2–3 |
-| 13 | `tooling/coff_sym_name` | **Assembly** | COFF name field | 2–3 |
+Core: reloc/ABI. GitHub: hazard/KV/DWARF/Pike/…
 
-**Total:** ~28–36 h.
+| # | Modulo |
+|---|--------|
+| 1 | `agent/context_budgeter` |
+| 2 | `agent/tool_barrier_join` |
+| 3 | `ai/kv_cache_ring` |
+| 4 | `ai/rms_norm` |
+| 5 | `algorithms/robin_hood_hash` |
+| 6 | `dotnet/jit_callsite_model` |
+| 7 | `dotnet/pe_import_span` |
+| 8 | `graphics/alpha_blend_scanline` |
+| 9 | `linux/uevent_kv_parse` |
+| 10 | `network/length_prefixed_framing` |
+| 11 | `nodejs/shared_atomics_ring` |
+| 12 | `nodejs/worker_pool_scheduler` |
+| 13 | `parsers/ini_rd_lexer` |
+| 14 | `parsers/pike_regex_vm` |
+| 15 | `quantum/phase_kickback` |
+| 16 | `quantum/statevector_bitmask` |
+| 17 | `redteam/dwarf_line_program` |
+| 18 | `redteam/import_name_triage` |
+| 19 | `rust/clvm_reloc_verify` |
+| 20 | `systems/bump_poison_arena` |
+| 21 | `systems/clvm_reloc_apply` |
+| 22 | `systems/hazard_pointer_stack` |
+| 23 | `tooling/coff_sym_name` |
 
-## Como estudar
-
-1. [`START_HERE.md`](START_HERE.md)
-2. [`ATIVIDADES.md`](ATIVIDADES.md)
-3. Por módulo: TEORIA → EXERCICIOS → starter → TESTES → RESOLUCAO
-
-## Validação
-
-```powershell
-python scripts/pedagogy_check_unified.py --day 2026-09-11
-python scripts/day_contract_check.py --day 2026-09-11
-python scripts/run_day_tests.py --day 2026-09-11 --mode solutions
-```
+**Total:** ~46–69 h (fatie se preciso).
