@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(clvm_reloc C)
+enable_testing()
+add_executable(clvm_reloc_test clvm_reloc.c test_reloc.c)
+if(MSVC)
+  target_compile_options(clvm_reloc_test PRIVATE /W3)
+endif()
+add_test(NAME clvm_reloc_test COMMAND clvm_reloc_test)

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(rms C)
+enable_testing()
+add_executable(rms_test rms.c test_rms.c)
+if(MSVC)
+  target_compile_options(rms_test PRIVATE /W3)
+endif()
+add_test(NAME rms_test COMMAND rms_test)

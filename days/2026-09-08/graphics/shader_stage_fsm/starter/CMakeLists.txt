@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(shader CXX)
+enable_testing()
+add_executable(shader_test shader_fsm.hpp shader_fsm.cpp test_shader.cpp)
+if(MSVC)
+  target_compile_options(shader_test PRIVATE /W3 /EHsc)
+endif()
+add_test(NAME shader_test COMMAND shader_test)

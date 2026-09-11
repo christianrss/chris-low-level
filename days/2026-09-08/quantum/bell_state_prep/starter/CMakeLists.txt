@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(bell CXX)
+enable_testing()
+add_executable(bell_test bell.hpp bell.cpp test_bell.cpp)
+if(MSVC)
+  target_compile_options(bell_test PRIVATE /W3 /EHsc)
+endif()
+add_test(NAME bell_test COMMAND bell_test)

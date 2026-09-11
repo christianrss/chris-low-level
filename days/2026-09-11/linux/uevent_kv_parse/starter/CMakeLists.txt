@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(uevent C)
+enable_testing()
+add_executable(uevent_test uevent.c test_uevent.c)
+if(MSVC)
+  target_compile_options(uevent_test PRIVATE /W3)
+endif()
+add_test(NAME uevent_test COMMAND uevent_test)

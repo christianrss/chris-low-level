@@ -1,0 +1,5 @@
+# Testes
+
+- `NODE-RING-01`
+- `NODE-RING-02`
+- `NODE-RING-03`

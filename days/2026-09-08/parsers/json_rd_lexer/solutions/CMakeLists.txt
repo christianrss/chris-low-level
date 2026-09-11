@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(json C)
+enable_testing()
+add_executable(json_test json_lex.h json_lex.c test_json.c)
+if(MSVC)
+  target_compile_options(json_test PRIVATE /W3)
+endif()
+add_test(NAME json_test COMMAND json_test)

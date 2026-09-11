@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(arena CXX)
+enable_testing()
+add_executable(arena_test arena.hpp arena.cpp test_arena.cpp)
+if(MSVC)
+  target_compile_options(arena_test PRIVATE /W3 /EHsc)
+endif()
+add_test(NAME arena_test COMMAND arena_test)

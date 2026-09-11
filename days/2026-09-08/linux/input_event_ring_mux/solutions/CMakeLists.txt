@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(ring C)
+enable_testing()
+add_executable(ring_test ring.h ring.c test_ring.c)
+if(MSVC)
+  target_compile_options(ring_test PRIVATE /W3)
+endif()
+add_test(NAME ring_test COMMAND ring_test)

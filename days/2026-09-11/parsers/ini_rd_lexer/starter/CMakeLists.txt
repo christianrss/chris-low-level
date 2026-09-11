@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(ini C)
+enable_testing()
+add_executable(ini_test ini.c test_ini.c)
+if(MSVC)
+  target_compile_options(ini_test PRIVATE /W3)
+endif()
+add_test(NAME ini_test COMMAND ini_test)

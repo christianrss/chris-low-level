@@ -280,6 +280,46 @@ flowchart LR
 
 ---
 
+## 14. Day 2026-09-08 — CLVM toolchain + input multiplexação
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-08/systems/clvm_disassembler` | disassemble CLVM v2 bytecode |
+| 2 | `2026-09-08/systems/clvm_peephole_opt` | constant folding peephole |
+| 3 | `2026-09-08/rust/clvm_disasm` | Rust disassembler port |
+| 4 | `2026-09-08/linux/input_event_ring_mux` | mux kbd+mouse ring 24B |
+| 5 | `2026-09-08/nodejs/duplex_event_pipe` | Duplex stream 24B events |
+| 6 | `2026-09-08/dotnet/pe_export_span` | PE export directory Span |
+| 7 | `2026-09-08/redteam/pe_export_triage` | PE export triage |
+| 8 | `2026-09-08/tooling/wasm_section_header` | WASM section headers |
+| 9 | `2026-09-08/graphics/shader_stage_fsm` | shader compile stage FSM |
+| 10 | `2026-09-08/quantum/bell_state_prep` | Bell state preparation |
+| 11 | `2026-09-08/ai/softmax_stable` | numerically stable softmax |
+| 12 | `2026-09-08/parsers/json_rd_lexer` | JSON RD lexer subset |
+| 13 | `2026-09-08/agent/tool_protocol_fsm` | tool calling FSM |
+
+---
+
+## 15. Day 2026-09-09 — observabilidade, profiling e depuração
+
+| Etapa | Módulo | Conceito |
+|-------|--------|----------|
+| 1 | `2026-09-09/systems/clvm_trace_profiler` | opcode trace + hotspot counting |
+| 2 | `2026-09-09/systems/arena_telemetry` | bump allocator stats/telemetry |
+| 3 | `2026-09-09/linux/perf_event_open_lab` | perf_event syscall subset simulation |
+| 4 | `2026-09-09/rust/stack_sample_trace` | Rust stack sampling trace |
+| 5 | `2026-09-09/dotnet/activity_source_span` | ActivitySource diagnostic spans |
+| 6 | `2026-09-09/graphics/gpu_timer_query` | GPU timer query simulation |
+| 7 | `2026-09-09/redteam/yara_match_scan` | YARA-style pattern scan |
+| 8 | `2026-09-09/quantum/decoherence_noise` | simple noise channel |
+| 9 | `2026-09-09/ai/attention_mask` | attention mask computation |
+| 10 | `2026-09-09/nodejs/async_hooks_trace` | async_hooks timeline |
+| 11 | `2026-09-09/parsers/logfmt_lexer` | logfmt key=value lexer |
+| 12 | `2026-09-09/agent/verify_replay_log` | verify+replay log FSM |
+| 13 | `2026-09-09/tooling/pdb_symbol_index` | PDB symbol index basics |
+
+---
+
 ## Como usar
 
 1. Escolha uma trilha alinhada ao seu objetivo de portfólio.
@@ -287,3 +327,44 @@ flowchart LR
 3. Após cada módulo: porte para `projects/` ([PORTING_GUIDE.md](PORTING_GUIDE.md)).
 4. No capstone: integre código de 2+ dias em um único repositório com testes unificados.
 5. Documente conclusão em `research/YYYY-MM-DD-<trilha>.md`.
+
+---
+
+## 14. Day 10 — Capstone integração (2026-09-10)
+
+**Tema:** Integração multi-trilha — preparação capstone
+
+| # | Módulo | Conceito |
+|---|--------|----------|
+| 1 | `2026-09-10/systems/clvm_pipeline_integration` | capstone systems |
+| 2 | `2026-09-10/systems/unified_input_pipeline` | capstone systems |
+| 3 | `2026-09-10/linux/composite_input_driver` | capstone linux |
+| 4 | `2026-09-10/rust/cross_verify_clvm` | capstone rust |
+| 5 | `2026-09-10/dotnet/capstone_input_host` | capstone dotnet |
+| 6 | `2026-09-10/graphics/pipeline_state_object` | capstone graphics |
+| 7 | `2026-09-10/redteam/capstone_triage` | capstone redteam |
+| 8 | `2026-09-10/quantum/capstone_measurement` | capstone quantum |
+| 9 | `2026-09-10/ai/capstone_tokenizer` | capstone ai |
+| 10 | `2026-09-10/nodejs/capstone_stream_pipeline` | capstone nodejs |
+| 11 | `2026-09-10/parsers/capstone_query_eval` | capstone parsers |
+| 12 | `2026-09-10/agent/capstone_agent_loop` | capstone agent |
+| 13 | `2026-09-10/tooling/capstone_format_detect` | capstone tooling |
+
+## 15. Day 11 — Relocação, ABI e verificação cruzada (2026-09-11)
+
+| # | Módulo | Capstone |
+|---|--------|----------|
+| 1 | `2026-09-11/systems/clvm_reloc_apply` | chris-vm |
+| 2 | `2026-09-11/systems/bump_poison_arena` | chris-arena |
+| 3 | `2026-09-11/linux/uevent_kv_parse` | chris-driver-lab |
+| 4 | `2026-09-11/rust/clvm_reloc_verify` | chris-vm |
+| 5 | `2026-09-11/dotnet/pe_import_span` | chris-dotnet-pe |
+| 6 | `2026-09-11/graphics/alpha_blend_scanline` | chris-renderer |
+| 7 | `2026-09-11/redteam/import_name_triage` | chris-binary-toolkit |
+| 8 | `2026-09-11/quantum/phase_kickback` | chris-qsim |
+| 9 | `2026-09-11/ai/rms_norm` | chris-tensor |
+| 10 | `2026-09-11/nodejs/shared_atomics_ring` | chris-node-streaming |
+| 11 | `2026-09-11/parsers/ini_rd_lexer` | chris-smart-grep |
+| 12 | `2026-09-11/agent/tool_barrier_join` | chris-agent-harness |
+| 13 | `2026-09-11/tooling/coff_sym_name` | chris-binary-toolkit |
+

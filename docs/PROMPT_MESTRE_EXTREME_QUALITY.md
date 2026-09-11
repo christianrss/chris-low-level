@@ -92,6 +92,8 @@ Final de cada `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`:
 - "Veja a solution" / "o restante é semelhante" / "copie solutions" / "como em solutions"
 - RESOLUCAO sem `## Baseline` ou sem código completo por TODO
 - Padding: `Nota pedagógica N`, linhas duplicadas, blocos genéricos só para ≥120 linhas
+- Scaffold preguiçoso: "Anote no papel valores concretos", "Valide compreensão básica", "satisfaz o caso documentado", "Leia README e fixtures", "Módulo X no dia N" sem wire format, algoritmo e trace numérico do teste real
+- TEORIA/RESOLUCAO que repetem O quê/Como/Por quê sem bytes, offsets, invariantes ou código copiável alinhado ao `starter/` e aos asserts do teste
 - Nome de classe divergente entre starter e teste
 - Benchmark sem seção "Resultados observados" ou skip honesto
 - Scripts (`upgrade_module_quality`, `repair_pedagogy_depth`) injetando placeholders no lugar de conteúdo real

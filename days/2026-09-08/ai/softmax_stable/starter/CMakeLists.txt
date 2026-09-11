@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(softmax C)
+enable_testing()
+add_executable(softmax_test softmax.h softmax.c test_softmax.c)
+if(MSVC)
+  target_compile_options(softmax_test PRIVATE /W3)
+endif()
+add_test(NAME softmax_test COMMAND softmax_test)

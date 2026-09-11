@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(attn C)
+enable_testing()
+add_executable(attn_test attn.h attn.c test_attn.c)
+if(MSVC)
+  target_compile_options(attn_test PRIVATE /W3)
+endif()
+add_test(NAME attn_test COMMAND attn_test)

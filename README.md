@@ -82,7 +82,12 @@ Read [`START_HERE.md`](START_HERE.md), then open the day folder you are studying
 | 2026-09-03 | [`days/2026-09-03/`](days/2026-09-03/) | 13 | [`benchmarks/results-2026-09-03.json`](benchmarks/results-2026-09-03.json) |
 | 2026-09-04 | [`days/2026-09-04/`](days/2026-09-04/) | 11 | [`benchmarks/results-2026-09-04.json`](benchmarks/results-2026-09-04.json) |
 | 2026-09-05 | [`days/2026-09-05/`](days/2026-09-05/) | 10 | [`benchmarks/results-2026-09-05.json`](benchmarks/results-2026-09-05.json) |
-| 2026-09-06 | [`days/2026-09-06/`](days/2026-09-06/) | 11 (compressão + portal Verlet) | — |
+| 2026-09-06 | [`days/2026-09-06/`](days/2026-09-06/) | 13 (compressão + portal Verlet + Rust) | — |
+| 2026-09-07 | [`days/2026-09-07/`](days/2026-09-07/) | 21 (CLVM v2 + input + multi-trilha) | [`benchmarks/results-2026-09-07.json`](benchmarks/results-2026-09-07.json) |
+| 2026-09-08 | [`days/2026-09-08/`](days/2026-09-08/) | 13 (CLVM toolchain + input mux) | — |
+| 2026-09-09 | [`days/2026-09-09/`](days/2026-09-09/) | 13 (observabilidade + profiling) | — |
+| 2026-09-10 | [`days/2026-09-10/`](days/2026-09-10/) | 13 (integração capstone) | — |
+| 2026-09-11 | [`days/2026-09-11/`](days/2026-09-11/) | 13 (reloc/ABI) | — |
 
 ### Fluxo por módulo (ponta a ponta)
 
@@ -122,6 +127,9 @@ Cada pasta `<trilha>/<modulo>/` em `days/` contém 8 arquivos MD + `starter/` + 
 python scripts/pedagogy_check_unified.py --day 2026-09-03 --all-days
 python scripts/day_contract_check.py --day 2026-09-06
 python scripts/day_contract_check.py --day 2026-09-07
+python scripts/day_contract_check.py --day 2026-09-08
+python scripts/day_contract_check.py --day 2026-09-09
+python scripts/day_contract_check.py --day 2026-09-10
 
 # Testes dos módulos do dia (solutions devem passar)
 python scripts/run_day_tests.py --day 2026-09-03 --mode solutions
@@ -129,6 +137,9 @@ python scripts/run_day_tests.py --day 2026-09-04 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-05 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-06 --mode solutions
 python scripts/run_day_tests.py --day 2026-09-07 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-08 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-09 --mode solutions
+python scripts/run_day_tests.py --day 2026-09-10 --mode solutions
 
 # Benchmarks → benchmarks/results-YYYY-MM-DD.json
 python scripts/run_day_benchmarks.py --day 2026-09-03

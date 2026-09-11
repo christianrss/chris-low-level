@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(clvm_disasm C)
+enable_testing()
+add_executable(clvm_disasm_test clvm_disasm.c test_clvm_disasm.c)
+if(MSVC)
+  target_compile_options(clvm_disasm_test PRIVATE /W3)
+endif()
+add_test(NAME clvm_disasm_test COMMAND clvm_disasm_test)

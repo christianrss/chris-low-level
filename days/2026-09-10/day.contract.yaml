@@ -1,0 +1,17 @@
+day: 2026-09-10
+tier: tier_a
+min_modules: 13
+required_tracks:
+  - systems
+  - linux
+  - rust
+  - dotnet
+  - graphics
+  - redteam
+  - quantum
+  - ai
+  - nodejs
+  - parsers
+  - agent
+  - tooling
+theme: "Integração multi-trilha — preparação capstone"

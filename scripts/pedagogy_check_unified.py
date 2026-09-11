@@ -147,6 +147,10 @@ GFX_VISUAL_EXEMPT = {
     "graphics_reference",
     "vulkan_d3d12_resource_states",
     "resource_state_tracker",
+    "pipeline_state_object",
+    "gpu_timer_query",
+    "shader_stage_fsm",
+    "alpha_blend_scanline",
 }
 GFX_WIN32_DIRS = (
     "software_win32",
@@ -337,6 +341,35 @@ def duplicate_line_ratio(body: str) -> float:
     return dup_chars / len(lines)
 
 
+LAZY_FILLER_RES = [
+    re.compile(r"anote no papel valores concretos antes de editar", re.I),
+    re.compile(r"valide compreens[aã]o b[aá]sica do conceito central", re.I),
+    re.compile(r"implemente os todos principais do", re.I),
+    re.compile(r"satisfaz o caso documentado em testes_guiados", re.I),
+    re.compile(r"caso extra \d+ — edge case documentado", re.I),
+    re.compile(r"ver teste com pedagogy-test", re.I),
+    re.compile(r"leia readme e fixtures", re.I),
+    re.compile(r"amplie o laborat[oó]rio \(performance, formato real", re.I),
+    re.compile(r"trate edge cases documentados em `?testes_guiados", re.I),
+    re.compile(r"m[oó]dulo [a-z0-9_/]+ no dia 0\d", re.I),
+    re.compile(r"tema dia 0[89]|tema dia 10", re.I),
+    re.compile(r"para `?[A-Z0-9-]+`?: a implementa[cç][aã]o em `starter/", re.I),
+    re.compile(r"anote entrada → transforma[cç][aã]o → sa[ií]da num[eé]rica", re.I),
+    re.compile(r"desenhe no papel o fluxo de dados", re.I),
+    re.compile(r"anote cada byte ou estado com offset", re.I),
+    re.compile(r"vocabul[aá]rio usado nos testes", re.I),
+    re.compile(r"erros devem ir para o relat[oó]rio de", re.I),
+    re.compile(r"evita falha silenciosa quando integrado", re.I),
+]
+
+
+def has_lazy_filler(body: str) -> str | None:
+    for rx in LAZY_FILLER_RES:
+        if rx.search(body):
+            return rx.pattern
+    return None
+
+
 def has_teoria_padding(body: str, strict: bool) -> bool:
     if re.search(r"nota pedag[oó]gica\s+\d+", body, re.IGNORECASE):
         return True
@@ -480,6 +513,9 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
             errors.append(f"{rel}: TEORIA missing diagram/table/offset block")
         if "ao implementar este tópico, consulte os todos" in body.lower():
             errors.append(f"{rel}: TEORIA contains generic filler paragraphs")
+        lazy = has_lazy_filler(body)
+        if lazy:
+            errors.append(f"{rel}: TEORIA contains lazy scaffold filler ({lazy})")
         teoria_strict_pad = strict and duplicate_line_ratio(body) > 0.28
         if has_teoria_padding(body, strict) and (teoria_strict_pad or re.search(r"nota pedag[oó]gica\s+\d+", body, re.I)):
             errors.append(f"{rel}: TEORIA contains padding or excessive duplicate lines")
@@ -527,6 +563,17 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
                 errors.append(f"{rel}: RESOLUCAO contains padding or excessive duplicate lines")
             elif has_teoria_padding(res_body, strict) and placement_count < 2:
                 errors.append(f"{rel}: RESOLUCAO contains padding or excessive duplicate lines")
+        lazy_res = has_lazy_filler(res_body)
+        if lazy_res:
+            errors.append(f"{rel}: RESOLUCAO contains lazy scaffold filler ({lazy_res})")
+
+    for extra_name in ("EXERCICIOS.md", "TESTES_GUIADOS.md", "PESQUISA_GUIADA.md"):
+        extra_path = module / extra_name
+        if not extra_path.exists():
+            continue
+        lazy_extra = has_lazy_filler(text(extra_path))
+        if lazy_extra:
+            errors.append(f"{rel}: {extra_name} contains lazy scaffold filler ({lazy_extra})")
 
     starter = module / "starter"
     tg = tg_early if tg_early else (text(tg_path) if tg_path.exists() else "")

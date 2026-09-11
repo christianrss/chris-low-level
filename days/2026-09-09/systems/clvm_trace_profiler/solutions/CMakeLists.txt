@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(trace C)
+enable_testing()
+add_executable(trace_test trace.h trace.c test_trace.c)
+if(MSVC)
+  target_compile_options(trace_test PRIVATE /W3)
+endif()
+add_test(NAME trace_test COMMAND trace_test)

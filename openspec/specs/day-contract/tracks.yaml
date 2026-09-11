@@ -18,6 +18,35 @@ tiers:
           - dotnet
           - nodejs
           - rust
+      "2026-09-10":
+        required_tracks:
+          - systems
+          - linux
+          - rust
+          - dotnet
+          - graphics
+          - redteam
+          - quantum
+          - ai
+          - nodejs
+          - parsers
+          - agent
+          - tooling
+
+      "2026-09-11":
+        required_tracks:
+          - systems
+          - linux
+          - rust
+          - dotnet
+          - graphics
+          - redteam
+          - quantum
+          - ai
+          - nodejs
+          - parsers
+          - agent
+          - tooling
       "2026-09-07":
         required_tracks:
           - systems
@@ -31,6 +60,34 @@ tiers:
           - nodejs
           - parsers
           - agent
+      "2026-09-08":
+        required_tracks:
+          - systems
+          - linux
+          - rust
+          - dotnet
+          - graphics
+          - redteam
+          - quantum
+          - ai
+          - nodejs
+          - parsers
+          - agent
+          - tooling
+      "2026-09-09":
+        required_tracks:
+          - systems
+          - linux
+          - rust
+          - dotnet
+          - graphics
+          - redteam
+          - quantum
+          - ai
+          - nodejs
+          - parsers
+          - agent
+          - tooling
 
   tier_b:
     description: Earlier or partial days — infra sync only, no full track matrix

@@ -1,0 +1,802 @@
+{
+  "day": "2026-09-09",
+  "file_count": 159,
+  "files": [
+    {
+      "path": "agent/verify_replay_log/BENCHMARK_GUIADO.md",
+      "size": 154,
+      "sha256": "2d29df95fee2554f0356ed63f12ff93b3faf01fc6f4133dd7f9ecd3fda4d2871"
+    },
+    {
+      "path": "agent/verify_replay_log/EXERCICIOS.md",
+      "size": 272,
+      "sha256": "4a72693b9f7d5a3eff90fe08d4b13bde5c6e341aa97df4f7dd8f6079639a9936"
+    },
+    {
+      "path": "agent/verify_replay_log/PESQUISA_GUIADA.md",
+      "size": 222,
+      "sha256": "4eb3dc014da1ae2daa029a0376f3b99d3292044ce5e80f526b894c26d1352d1a"
+    },
+    {
+      "path": "agent/verify_replay_log/README.md",
+      "size": 70,
+      "sha256": "d01c7aef9c433bf9ea226cce85c33ce02caa2946794c4823ee258339ca61c556"
+    },
+    {
+      "path": "agent/verify_replay_log/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3521,
+      "sha256": "3aca3b7ef6a6e11b458e3429271ed1af8cb3a6eae4fc6b499678054df435ad71"
+    },
+    {
+      "path": "agent/verify_replay_log/solutions/agent_log.py",
+      "size": 808,
+      "sha256": "8148297663bb9a4f7e3219eef000120165354afe31b26b316883470b86230394"
+    },
+    {
+      "path": "agent/verify_replay_log/solutions/test_agent_log.py",
+      "size": 621,
+      "sha256": "d29ce5efe47625f4254f1c448aba38d923b2085068c85d18c26132670e2e06d2"
+    },
+    {
+      "path": "agent/verify_replay_log/starter/agent_log.py",
+      "size": 579,
+      "sha256": "3e6f14ee597bf79445317a3fa057566214bb34f6ffb8f672790e0a7d8e75ada3"
+    },
+    {
+      "path": "agent/verify_replay_log/starter/test_agent_log.py",
+      "size": 621,
+      "sha256": "d29ce5efe47625f4254f1c448aba38d923b2085068c85d18c26132670e2e06d2"
+    },
+    {
+      "path": "agent/verify_replay_log/TEORIA_PASSO_A_PASSO.md",
+      "size": 6033,
+      "sha256": "3dc8e5a1ffcf130195d88ec73b9e78a2dc16fe028eef5c38f6fb15213d761a23"
+    },
+    {
+      "path": "agent/verify_replay_log/TESTES_GUIADOS.md",
+      "size": 151,
+      "sha256": "40b6b0eb521225c55f72b07e616c9f4faede176770ae5b6cf6b756ae0cc86137"
+    },
+    {
+      "path": "ai/attention_mask/BENCHMARK_GUIADO.md",
+      "size": 151,
+      "sha256": "b9d28b78f3b2b71b50e9ada85beac437682ccfb6f47f9edc5bb2e7d00044589f"
+    },
+    {
+      "path": "ai/attention_mask/EXERCICIOS.md",
+      "size": 298,
+      "sha256": "a4d2e01247f881638bd6b8436189d870672c4b0286787831df513c497275b094"
+    },
+    {
+      "path": "ai/attention_mask/PESQUISA_GUIADA.md",
+      "size": 219,
+      "sha256": "1a99327b1a01b5d83814113a35ada0c81d4e13bb10cdbc7f022ad08184959327"
+    },
+    {
+      "path": "ai/attention_mask/README.md",
+      "size": 78,
+      "sha256": "23a64628e90cb16f98832658fe2a4c4b23a407ecef6fbf3fedac21645767f22b"
+    },
+    {
+      "path": "ai/attention_mask/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3694,
+      "sha256": "732ac0beac6efa5ae20dbe89532b75aa686f71d65e4d2c0afbf638f35d9ebafb"
+    },
+    {
+      "path": "ai/attention_mask/solutions/attention_mask.py",
+      "size": 795,
+      "sha256": "6feb8c02e1fe8c47656ba171c62d186d1fb115ba006ea98a42a50ad9b6baf42a"
+    },
+    {
+      "path": "ai/attention_mask/solutions/test_attention_mask.py",
+      "size": 670,
+      "sha256": "9addf20f3fc489b3367f0ee71c7b4d905463c50aab0deeeedb5b7104fb241bd7"
+    },
+    {
+      "path": "ai/attention_mask/starter/attention_mask.py",
+      "size": 625,
+      "sha256": "5e7cfc07a3f7b9e72cbee437607936b6649d2ad57d49ac3edf2b2e7eb86616b9"
+    },
+    {
+      "path": "ai/attention_mask/starter/test_attention_mask.py",
+      "size": 670,
+      "sha256": "9addf20f3fc489b3367f0ee71c7b4d905463c50aab0deeeedb5b7104fb241bd7"
+    },
+    {
+      "path": "ai/attention_mask/TEORIA_PASSO_A_PASSO.md",
+      "size": 6001,
+      "sha256": "8c4daf5fc13ed6c72e7770b11298419a77075d0949e1a015469a4a9b56bead19"
+    },
+    {
+      "path": "ai/attention_mask/TESTES_GUIADOS.md",
+      "size": 168,
+      "sha256": "929878f6a00ea49fc3d988bd162387e461ab1902645cabe09f9a6ff99191940e"
+    },
+    {
+      "path": "ATIVIDADES.md",
+      "size": 1062,
+      "sha256": "b8b62010c74b89f7d355ee4d5925c013709aaa0ce787feaea2923b98667e4d3d"
+    },
+    {
+      "path": "dotnet/activity_source_span/BENCHMARK_GUIADO.md",
+      "size": 157,
+      "sha256": "a3ba9a6a28f5f0d00336746f4f10b2e4566af906969e9380e8e5527cdf527780"
+    },
+    {
+      "path": "dotnet/activity_source_span/EXERCICIOS.md",
+      "size": 282,
+      "sha256": "4d7784d492726170209ad1da52ccbd1feac6b274094488abef12d35b8deb6b46"
+    },
+    {
+      "path": "dotnet/activity_source_span/PESQUISA_GUIADA.md",
+      "size": 225,
+      "sha256": "ca1599504fabb7de7afc260e6f1ca1573769ac37ec5c7f70bcf8d6a66ed60d1c"
+    },
+    {
+      "path": "dotnet/activity_source_span/README.md",
+      "size": 80,
+      "sha256": "a2f5e61325e694ba7d040d4e6e1ddbfe2a232f1f93eaaac2036a24ecbdeaa7b1"
+    },
+    {
+      "path": "dotnet/activity_source_span/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3476,
+      "sha256": "74d276d589a9cec95209db1bf36da68690f361c0ff5ce522a9c53beb7babcd8a"
+    },
+    {
+      "path": "dotnet/activity_source_span/solutions/ActivityLab.cs",
+      "size": 922,
+      "sha256": "5cd54fb7408b7fab9df9e1b59b664548e51631e0381a7fec02637f6e636f55fa"
+    },
+    {
+      "path": "dotnet/activity_source_span/solutions/Chris.ActivityLab.csproj",
+      "size": 331,
+      "sha256": "269353b407876c2af46906117d0f716a9798e85c5fdbb2a8ee2f70c5f3140e57"
+    },
+    {
+      "path": "dotnet/activity_source_span/solutions/tests/ActivityLab.Tests.csproj",
+      "size": 586,
+      "sha256": "138ea4071fe6c7583179da4c94aaaf10ea07970699fb4a8069412a60f7b00adc"
+    },
+    {
+      "path": "dotnet/activity_source_span/solutions/tests/ActivityTests.cs",
+      "size": 1685,
+      "sha256": "841d5cbdd0e63a173783ca36632080028577adb3a4af7a9cfee885ad5f3acf39"
+    },
+    {
+      "path": "dotnet/activity_source_span/starter/ActivityLab.cs",
+      "size": 765,
+      "sha256": "ec098798d04ed9735c704ebcbbe0ee90de02ca5b9941f017de682f0cb77a693f"
+    },
+    {
+      "path": "dotnet/activity_source_span/starter/Chris.ActivityLab.csproj",
+      "size": 331,
+      "sha256": "269353b407876c2af46906117d0f716a9798e85c5fdbb2a8ee2f70c5f3140e57"
+    },
+    {
+      "path": "dotnet/activity_source_span/starter/tests/ActivityLab.Tests.csproj",
+      "size": 586,
+      "sha256": "138ea4071fe6c7583179da4c94aaaf10ea07970699fb4a8069412a60f7b00adc"
+    },
+    {
+      "path": "dotnet/activity_source_span/starter/tests/ActivityTests.cs",
+      "size": 1685,
+      "sha256": "841d5cbdd0e63a173783ca36632080028577adb3a4af7a9cfee885ad5f3acf39"
+    },
+    {
+      "path": "dotnet/activity_source_span/TEORIA_PASSO_A_PASSO.md",
+      "size": 6154,
+      "sha256": "6c12c71bd4a5f982ac467f095a0e2010444724cf86e2765549806e643e6653fe"
+    },
+    {
+      "path": "dotnet/activity_source_span/TESTES_GUIADOS.md",
+      "size": 172,
+      "sha256": "b37e94fc58d02623a9b6cd61995a88c33a10ceb24372412fa16a3e811ccf075f"
+    },
+    {
+      "path": "graphics/gpu_timer_query/BENCHMARK_GUIADO.md",
+      "size": 152,
+      "sha256": "dfe9930b27ae37856fd4d4ea3f30ec5448bb42aa0ed28f52adf87cd10197e191"
+    },
+    {
+      "path": "graphics/gpu_timer_query/docs/COMPARISON.md",
+      "size": 275,
+      "sha256": "041c8ae7288336a816400b9d7bf43c4e6f2fd2349f1c6a75f5c0b4886530a172"
+    },
+    {
+      "path": "graphics/gpu_timer_query/EXERCICIOS.md",
+      "size": 305,
+      "sha256": "b640b9cc954524a6e74c06cd210a45cd75f5f67aa10f80f0388a4780a66b1df7"
+    },
+    {
+      "path": "graphics/gpu_timer_query/PESQUISA_GUIADA.md",
+      "size": 220,
+      "sha256": "8026d5e3402fbfb1f2652c79a6c8c6500c41e6c67f4d7f582f1d0ebdb45486e7"
+    },
+    {
+      "path": "graphics/gpu_timer_query/README.md",
+      "size": 88,
+      "sha256": "c73ce40fa574aa2e9be13bab872c0198fb8bb0aa9d17158c53a5634bfca9488c"
+    },
+    {
+      "path": "graphics/gpu_timer_query/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3455,
+      "sha256": "604c6d6438e53d8e8bf90a494deec4dd9da480f8569cc75ad6c4de15a29301a6"
+    },
+    {
+      "path": "graphics/gpu_timer_query/solutions/gpu_timer.py",
+      "size": 923,
+      "sha256": "ed0c50c7f07d47bf7d06b2aa17acb73c3fb7853deaf9b85935787df9641dc538"
+    },
+    {
+      "path": "graphics/gpu_timer_query/solutions/test_gpu_timer.py",
+      "size": 596,
+      "sha256": "b10fa1021e644a762a59b3e9e1671eb98492962fb9867436abda4df2a8b42072"
+    },
+    {
+      "path": "graphics/gpu_timer_query/starter/gpu_timer.py",
+      "size": 840,
+      "sha256": "180ef08bbbb1310bbd50de69dd4a7ccc8c116038cf7c2a06b09e25d99df73878"
+    },
+    {
+      "path": "graphics/gpu_timer_query/starter/test_gpu_timer.py",
+      "size": 596,
+      "sha256": "b10fa1021e644a762a59b3e9e1671eb98492962fb9867436abda4df2a8b42072"
+    },
+    {
+      "path": "graphics/gpu_timer_query/TEORIA_PASSO_A_PASSO.md",
+      "size": 6092,
+      "sha256": "194882a4ff632b78a09768779e38940b72b2578f79c441a61e3350727a8d88b7"
+    },
+    {
+      "path": "graphics/gpu_timer_query/TESTES_GUIADOS.md",
+      "size": 162,
+      "sha256": "b57c10fd5fef11efb4d54d8b81956c51a47f4f5f0686885694e1145104f5e891"
+    },
+    {
+      "path": "linux/perf_event_open_lab/BENCHMARK_GUIADO.md",
+      "size": 156,
+      "sha256": "19e77b1e767556311b19595eba499642b469a5552478028d2d2bf9af83f49c2b"
+    },
+    {
+      "path": "linux/perf_event_open_lab/EXERCICIOS.md",
+      "size": 286,
+      "sha256": "2bef5863e8a45628997bb8fc11bccb4996e10abff701ddf5e8d76d84a787e472"
+    },
+    {
+      "path": "linux/perf_event_open_lab/PESQUISA_GUIADA.md",
+      "size": 224,
+      "sha256": "0a2217bc356cd578a8d010074941935dc4279a0f92fa9c007da7f134dd38a607"
+    },
+    {
+      "path": "linux/perf_event_open_lab/README.md",
+      "size": 93,
+      "sha256": "0a3963531276a71808c99e90e51f8af8dfe26df95999b961bcf894e0df1f745b"
+    },
+    {
+      "path": "linux/perf_event_open_lab/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3464,
+      "sha256": "6343aec5d3964133c2b608dbec1156bfb08bf2c58866a2e8c7e00da0d0f9547c"
+    },
+    {
+      "path": "linux/perf_event_open_lab/solutions/perf_lab.py",
+      "size": 591,
+      "sha256": "8f32d96d0dd6a916a973e56f883d28c883cddf4c5090c00ab9e56e146f0efd67"
+    },
+    {
+      "path": "linux/perf_event_open_lab/solutions/test_perf_lab.py",
+      "size": 635,
+      "sha256": "9a7aee2ff1f0bae076523fb4a0cbd929cf22ac9d32438c1335dcc0afae5419c2"
+    },
+    {
+      "path": "linux/perf_event_open_lab/starter/perf_lab.py",
+      "size": 620,
+      "sha256": "90128d5690d08a36668c02cd65ac9e7f2fa0faa30b336dc8d8aa37ba7d66d8d6"
+    },
+    {
+      "path": "linux/perf_event_open_lab/starter/test_perf_lab.py",
+      "size": 635,
+      "sha256": "9a7aee2ff1f0bae076523fb4a0cbd929cf22ac9d32438c1335dcc0afae5419c2"
+    },
+    {
+      "path": "linux/perf_event_open_lab/TEORIA_PASSO_A_PASSO.md",
+      "size": 6206,
+      "sha256": "26441fae2270dd9adfc2aec40a28de6d70b55fcd575ba1c1bb92d0520b0bf745"
+    },
+    {
+      "path": "linux/perf_event_open_lab/TESTES_GUIADOS.md",
+      "size": 165,
+      "sha256": "38f9e9ed42f3d47829ad4509bafe869594b7729c2ef64e4b295f61b0b4ee099d"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 29080,
+      "sha256": "6ba21171a4a4136eada5835d150ca06b1e06e389d1e6ff620261d89d64c5bb04"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/BENCHMARK_GUIADO.md",
+      "size": 154,
+      "sha256": "c70c4c1fc47ab4e476049473382ea8c451806e1db9d6f61545b2e850ae11a4ad"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/EXERCICIOS.md",
+      "size": 286,
+      "sha256": "f7665118c6489122dff5849be1a53919c5814f93055f0ed7134727f6a614eb6c"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/PESQUISA_GUIADA.md",
+      "size": 222,
+      "sha256": "e065bdf003e4395ad19a3e166d19db965ba2960a77ef42f884c53e8a0f12b0b3"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/README.md",
+      "size": 71,
+      "sha256": "cf98e55d5894c5cf421a110b52cb345d95c7051932deb4bcb53426cd6b0daef1"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3675,
+      "sha256": "6a66522dd6913911bab31ab67ab74dbc9097c6236bb0c53f46919c50c0567951"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/solutions/async_trace.js",
+      "size": 827,
+      "sha256": "cf3d4a773e6d794403faa270146bd5da38505ed186de1b855ad4b41607688696"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/solutions/package.json",
+      "size": 19,
+      "sha256": "ccdf8de44295f59be00f6b8cf1359959938a16a4ccf8c55940d8af1894748c5f"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/solutions/test.js",
+      "size": 748,
+      "sha256": "c3525e823dff51b7c5109782b0cb0c468f4a840fce5b1e94d49249878f914fc5"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/starter/async_trace.js",
+      "size": 457,
+      "sha256": "270d90c14a676a2df84e19a66a1a0b654d754b20b28425fbc092972ef9c74f7c"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/starter/package.json",
+      "size": 19,
+      "sha256": "ccdf8de44295f59be00f6b8cf1359959938a16a4ccf8c55940d8af1894748c5f"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/starter/test.js",
+      "size": 748,
+      "sha256": "c3525e823dff51b7c5109782b0cb0c468f4a840fce5b1e94d49249878f914fc5"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/TEORIA_PASSO_A_PASSO.md",
+      "size": 5994,
+      "sha256": "105d2c4d2dc40c631f459f921bd24143619502d6aa6bde3bc903b565973af807"
+    },
+    {
+      "path": "nodejs/async_hooks_trace/TESTES_GUIADOS.md",
+      "size": 175,
+      "sha256": "d330a8960fa888dea46d2ad84d97226a34605f002a5cb1449b7d9f6d8db9ca7d"
+    },
+    {
+      "path": "parsers/logfmt_lexer/BENCHMARK_GUIADO.md",
+      "size": 149,
+      "sha256": "55b32a833aa3556cfa777e0f036f24d18bcbe330db6d8aa010b74388a8f6f0a1"
+    },
+    {
+      "path": "parsers/logfmt_lexer/EXERCICIOS.md",
+      "size": 267,
+      "sha256": "31da8da5fb1505c99e26314a1fd13fd3e780b56ad6b31990b92c97c1f14c69dc"
+    },
+    {
+      "path": "parsers/logfmt_lexer/PESQUISA_GUIADA.md",
+      "size": 217,
+      "sha256": "f49507dae8bb68c38a80301e246c15ea1fdb80647cc56fb57486b70b05c4b7d3"
+    },
+    {
+      "path": "parsers/logfmt_lexer/README.md",
+      "size": 63,
+      "sha256": "51d510ebd85b8c6b77f2c1f53bea9c66eafe27e5c04c2b547b6030912e6cd178"
+    },
+    {
+      "path": "parsers/logfmt_lexer/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3320,
+      "sha256": "0e7190e714c65b473e1d811256dd47f27fab1ea254fc26813aef31e5225547cc"
+    },
+    {
+      "path": "parsers/logfmt_lexer/solutions/logfmt.py",
+      "size": 578,
+      "sha256": "4e5328d3fe655c6c30858285eba955a3f469d3d93979be8fc5edda2055de79b3"
+    },
+    {
+      "path": "parsers/logfmt_lexer/solutions/test_logfmt.py",
+      "size": 566,
+      "sha256": "6ceb1cf1e19588820ccfdf6376ebca0b36e54cae72496fd4b090ffc3c6b1851b"
+    },
+    {
+      "path": "parsers/logfmt_lexer/starter/logfmt.py",
+      "size": 553,
+      "sha256": "c5b11803d1262c6002d9c7406c5d910119cc8313f4515457d0cfcd3861c1b7c2"
+    },
+    {
+      "path": "parsers/logfmt_lexer/starter/test_logfmt.py",
+      "size": 566,
+      "sha256": "6ceb1cf1e19588820ccfdf6376ebca0b36e54cae72496fd4b090ffc3c6b1851b"
+    },
+    {
+      "path": "parsers/logfmt_lexer/TEORIA_PASSO_A_PASSO.md",
+      "size": 5872,
+      "sha256": "af7deb92eab65f4810d43bfd906fd8420ea34af657dd62169fe9691b324e8f3f"
+    },
+    {
+      "path": "parsers/logfmt_lexer/TESTES_GUIADOS.md",
+      "size": 161,
+      "sha256": "f234499f24dbf8feb8d60eb28b96f122a0fe199e947e595f4adbc9c73807b96b"
+    },
+    {
+      "path": "quantum/decoherence_noise/BENCHMARK_GUIADO.md",
+      "size": 154,
+      "sha256": "a47da1d0309729dfe4bbdf7c71dad51bdf182aefbdbbca17bba6b500450cfdd9"
+    },
+    {
+      "path": "quantum/decoherence_noise/EXERCICIOS.md",
+      "size": 294,
+      "sha256": "13de400b0c521b3da620105d25312f7283bd02067e2d15458dfd4604aa31806c"
+    },
+    {
+      "path": "quantum/decoherence_noise/PESQUISA_GUIADA.md",
+      "size": 222,
+      "sha256": "59502159d5df15340ebeaef507f0db493158d6a8e5310e9939e9ee0066a390cb"
+    },
+    {
+      "path": "quantum/decoherence_noise/README.md",
+      "size": 71,
+      "sha256": "9a42a3721c3e1290195da5d2e07ce4fc98a4ad7e27ce84519a2ab4e63d8c1e88"
+    },
+    {
+      "path": "quantum/decoherence_noise/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3708,
+      "sha256": "09e13f619481076b913f1f3486fead95b665bb374c9a3118d440a68c0f0a81a0"
+    },
+    {
+      "path": "quantum/decoherence_noise/solutions/decoherence.py",
+      "size": 851,
+      "sha256": "eda03f8f52031b216f237d084c8a18b33031f6dd6ae3cef663da7c725481ad3e"
+    },
+    {
+      "path": "quantum/decoherence_noise/solutions/test_decoherence.py",
+      "size": 668,
+      "sha256": "74301062aac195e39ef3d9162babe10e9613a42eb303c94594f08da68b6b4c76"
+    },
+    {
+      "path": "quantum/decoherence_noise/starter/decoherence.py",
+      "size": 640,
+      "sha256": "1a8b47ab2cccff931b259ceca2609abe13bcbbc404341cfd922ebca105ce69d4"
+    },
+    {
+      "path": "quantum/decoherence_noise/starter/test_decoherence.py",
+      "size": 668,
+      "sha256": "74301062aac195e39ef3d9162babe10e9613a42eb303c94594f08da68b6b4c76"
+    },
+    {
+      "path": "quantum/decoherence_noise/TEORIA_PASSO_A_PASSO.md",
+      "size": 6021,
+      "sha256": "dc20e70f0949fccd6654a8b7f54f7a388046c5bca4e93ef143b1c51e80d4001b"
+    },
+    {
+      "path": "quantum/decoherence_noise/TESTES_GUIADOS.md",
+      "size": 161,
+      "sha256": "8076a900bd0a06b212c39908aa4a5b12d86b6db271bf242405c6535bfb0aa27f"
+    },
+    {
+      "path": "README.md",
+      "size": 1360,
+      "sha256": "0c1e43202d8ceecb25bf314b78b3a1f93c05b5f99b455437ed36a23a1033d8f8"
+    },
+    {
+      "path": "redteam/yara_match_scan/BENCHMARK_GUIADO.md",
+      "size": 152,
+      "sha256": "a02d9da540edbc1961beb7218b8c0d913ee7e00dde6f8d279b92b1d0132ce43d"
+    },
+    {
+      "path": "redteam/yara_match_scan/EXERCICIOS.md",
+      "size": 276,
+      "sha256": "c2bf905d2024e1662496c0cf40ff46d430b3000f9076510a06158f0c14dff4d1"
+    },
+    {
+      "path": "redteam/yara_match_scan/PESQUISA_GUIADA.md",
+      "size": 220,
+      "sha256": "d0f1c18fbba679492725473e261fcce8901f7b04c467714cf1a917fb37ba3e0a"
+    },
+    {
+      "path": "redteam/yara_match_scan/README.md",
+      "size": 77,
+      "sha256": "aa645929b7fb4c7a0a7de5d3e6112e3679113813150788d6676f6795124a2815"
+    },
+    {
+      "path": "redteam/yara_match_scan/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3810,
+      "sha256": "24d65a8eaa74f60c71b04910c4371c699536274522045ea0133f8cf8a95107b0"
+    },
+    {
+      "path": "redteam/yara_match_scan/solutions/test_yara_scan.py",
+      "size": 601,
+      "sha256": "325de6e7afc212f95b63778b7b43e79557af6b98d64df7bf0a91a19b5b3ff160"
+    },
+    {
+      "path": "redteam/yara_match_scan/solutions/yara_scan.py",
+      "size": 949,
+      "sha256": "3ba02a70c8b93370d3b4706f88c9f3a34e02d07a257f17d96bda8e5fd7f310e1"
+    },
+    {
+      "path": "redteam/yara_match_scan/starter/test_yara_scan.py",
+      "size": 601,
+      "sha256": "325de6e7afc212f95b63778b7b43e79557af6b98d64df7bf0a91a19b5b3ff160"
+    },
+    {
+      "path": "redteam/yara_match_scan/starter/yara_scan.py",
+      "size": 603,
+      "sha256": "3f086340d0e21d6491082f3429451e0d03043a62b7b67bb144a839df3c006365"
+    },
+    {
+      "path": "redteam/yara_match_scan/TEORIA_PASSO_A_PASSO.md",
+      "size": 5959,
+      "sha256": "547194999fadaf6e8f2ff60249c4600a41d12c78d5206b9c939f9f3216a1a1f1"
+    },
+    {
+      "path": "redteam/yara_match_scan/TESTES_GUIADOS.md",
+      "size": 169,
+      "sha256": "c846b42a6dea2014b66a41c91dc36e020ded376cfca081e87dc5ada3dac7bfec"
+    },
+    {
+      "path": "rust/stack_sample_trace/BENCHMARK_GUIADO.md",
+      "size": 155,
+      "sha256": "3c69e9b8e0b6e2224f8221cbe17144155091c2fec0e80321332a26db94e2a597"
+    },
+    {
+      "path": "rust/stack_sample_trace/EXERCICIOS.md",
+      "size": 291,
+      "sha256": "5f4bd9f03dedab9d9552ddc7c173f2e2bf68ca7d3e4eeb657baad0d323fe4175"
+    },
+    {
+      "path": "rust/stack_sample_trace/PESQUISA_GUIADA.md",
+      "size": 223,
+      "sha256": "036e9e359afc563f4f989ca808145ec35dd2cf97adcb5c4d012c2830b3c7fb4f"
+    },
+    {
+      "path": "rust/stack_sample_trace/README.md",
+      "size": 74,
+      "sha256": "6f928ab0efc4bfe2cbbe60132401242e2de85af14b1dd9ecc9ac092fad6ebf1c"
+    },
+    {
+      "path": "rust/stack_sample_trace/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3726,
+      "sha256": "f5a3f90cf47796ab80a71f0cd47315c0b112309c4ba6aa4ed1a3be0f2574b62b"
+    },
+    {
+      "path": "rust/stack_sample_trace/solutions/Cargo.lock",
+      "size": 162,
+      "sha256": "72103dc4e36ea27f1098e3ed0492e5149129e297a2630d30eed4fad19f57f384"
+    },
+    {
+      "path": "rust/stack_sample_trace/solutions/Cargo.toml",
+      "size": 107,
+      "sha256": "26f7c81e25ca04e4209056f84c4c2b904501d2cbe1e968910da8afbce16a8fdf"
+    },
+    {
+      "path": "rust/stack_sample_trace/solutions/src/lib.rs",
+      "size": 828,
+      "sha256": "648e319b9fb956ec10c37bb86323b244a398e48facbb65cc7e49e8fcb8fcd003"
+    },
+    {
+      "path": "rust/stack_sample_trace/solutions/tests/stack_tests.rs",
+      "size": 648,
+      "sha256": "c0149cc53d9ba006335d6ba37b6220d120edcb5e391a7e1af292f7fb5f80e9ba"
+    },
+    {
+      "path": "rust/stack_sample_trace/starter/Cargo.toml",
+      "size": 107,
+      "sha256": "26f7c81e25ca04e4209056f84c4c2b904501d2cbe1e968910da8afbce16a8fdf"
+    },
+    {
+      "path": "rust/stack_sample_trace/starter/src/lib.rs",
+      "size": 531,
+      "sha256": "6845b64ae4a4cb965e80c588556d25d3ead9bf60564544ac51c25a7a873ba9ca"
+    },
+    {
+      "path": "rust/stack_sample_trace/starter/tests/stack_tests.rs",
+      "size": 648,
+      "sha256": "c0149cc53d9ba006335d6ba37b6220d120edcb5e391a7e1af292f7fb5f80e9ba"
+    },
+    {
+      "path": "rust/stack_sample_trace/TEORIA_PASSO_A_PASSO.md",
+      "size": 6081,
+      "sha256": "b1d74c5c0eec7b3bdfb4e3de7280f6a82c5c80726eb42d283697c60dcb80a0dd"
+    },
+    {
+      "path": "rust/stack_sample_trace/TESTES_GUIADOS.md",
+      "size": 171,
+      "sha256": "3b751f40c39f5bee91f52510d3b7b8bc7a42f951fb31da256ddb5295712b2a0a"
+    },
+    {
+      "path": "START_HERE.md",
+      "size": 1340,
+      "sha256": "4f42aa96b6555b3b1c4e3decbbd53317a01ccb77ebcaac0c533df971aaa533c9"
+    },
+    {
+      "path": "systems/arena_telemetry/BENCHMARK_GUIADO.md",
+      "size": 152,
+      "sha256": "3f7f71a798b3c21317b2a663bfc1d70ffdc042b604f9ee2e2414dcaae52106d2"
+    },
+    {
+      "path": "systems/arena_telemetry/EXERCICIOS.md",
+      "size": 293,
+      "sha256": "90ac4b1d5320bb27c34dc36fa6a1e9d9be05562e88d54fc7d10597856e5869ec"
+    },
+    {
+      "path": "systems/arena_telemetry/PESQUISA_GUIADA.md",
+      "size": 220,
+      "sha256": "eae56d2a9e0417710499997382c6e0c7c31f2906760242179e397dca03c521fa"
+    },
+    {
+      "path": "systems/arena_telemetry/README.md",
+      "size": 71,
+      "sha256": "71649c783befaf3c3376a787f9b2d2d329cbd7f2c11d80dc3b32717003c2ac8b"
+    },
+    {
+      "path": "systems/arena_telemetry/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3557,
+      "sha256": "9ac0623684845cf6d1438067bbbf29fb06df9f556620230c02726c9ba0eb67a2"
+    },
+    {
+      "path": "systems/arena_telemetry/solutions/arena.py",
+      "size": 821,
+      "sha256": "8ddc5b87c23524d219b805f46858de73535a0c4ca331d45dbf1969e26c6fded9"
+    },
+    {
+      "path": "systems/arena_telemetry/solutions/test_arena.py",
+      "size": 522,
+      "sha256": "7dae6ff48b909ea2cdd81b079905b313daa251f790627ed2628f67747b0ae3ef"
+    },
+    {
+      "path": "systems/arena_telemetry/starter/arena.py",
+      "size": 714,
+      "sha256": "bc535214b9764e6c2ecebbe3b7948ebe2d8cc64dd78fbab5c372e589effc85c6"
+    },
+    {
+      "path": "systems/arena_telemetry/starter/test_arena.py",
+      "size": 522,
+      "sha256": "7dae6ff48b909ea2cdd81b079905b313daa251f790627ed2628f67747b0ae3ef"
+    },
+    {
+      "path": "systems/arena_telemetry/TEORIA_PASSO_A_PASSO.md",
+      "size": 6023,
+      "sha256": "67705bff0406f2bccc2505cf1600b6a4f55eb414baaa4e1e8c88e3bd6e8511aa"
+    },
+    {
+      "path": "systems/arena_telemetry/TESTES_GUIADOS.md",
+      "size": 180,
+      "sha256": "365f16ae817d32cfc204cdb98cbbd64e3f1ec68a7d796e0ce93bc76639bceab0"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/BENCHMARK_GUIADO.md",
+      "size": 156,
+      "sha256": "69d7efb840e634cfebb8b59e45a5e9fdec00160040baf02650abb3269f5ef4e9"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/EXERCICIOS.md",
+      "size": 288,
+      "sha256": "411d925ef394f7ca13d51fa68c2dd6dd936a77bf6a8c212b595bdc62c08bbdda"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/PESQUISA_GUIADA.md",
+      "size": 224,
+      "sha256": "a65a38b88335149fb30af06238d0b16974329119cd1d32b78dfd68e3e293744f"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/README.md",
+      "size": 95,
+      "sha256": "8688a9bc15425ab9d5da091a375fcb0e03cd03710f7ec84b6df8501977290e87"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3651,
+      "sha256": "804d98daf2458d86d6484a466be03041b28f83fdb552ddde224eb514a456be3e"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/solutions/clvm_trace.py",
+      "size": 686,
+      "sha256": "a544eeb6a42ebb998bd371c678925b860231a50d748d5dabc949d356e6087c34"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/solutions/test_clvm_trace.py",
+      "size": 787,
+      "sha256": "5197cd16996541199c893f9e3afac5696a8719f87253755f1a188d1a655f9461"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/starter/clvm_trace.py",
+      "size": 653,
+      "sha256": "7b3ff0d4501b896a1726faea2a47a7376d0446a98469465812a086048cee2fae"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/starter/test_clvm_trace.py",
+      "size": 787,
+      "sha256": "5197cd16996541199c893f9e3afac5696a8719f87253755f1a188d1a655f9461"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/TEORIA_PASSO_A_PASSO.md",
+      "size": 6239,
+      "sha256": "4995f2e5fce1671a436e50a39ced56a89b11aa0178dd8f70c3bf976d8915b016"
+    },
+    {
+      "path": "systems/clvm_trace_profiler/TESTES_GUIADOS.md",
+      "size": 216,
+      "sha256": "70ffc57d6180785d6d71b79bf2c12f9643d17eac051bfca931ff7a942be1dcbb"
+    },
+    {
+      "path": "TODO_MAP.md",
+      "size": 12411,
+      "sha256": "ce36288bc12f8a1b2ee949eeb83f1506e188ce4d47e0e06a3a068692119e8352"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/BENCHMARK_GUIADO.md",
+      "size": 153,
+      "sha256": "9876e37071b77893b3509f1dcd9590114eae8ab112636233e514704275caf869"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/EXERCICIOS.md",
+      "size": 281,
+      "sha256": "3a0ddb73688805c1f93ec7aa8f62c436734c586a3af327768cf1463d4f5a7ecb"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/PESQUISA_GUIADA.md",
+      "size": 221,
+      "sha256": "e1a77f67f4932e9c47488d4659619dfa6d5bb0928fd713955e5f02d81fa3fe42"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/README.md",
+      "size": 70,
+      "sha256": "977d3fe6854e7a043b58e8851db8f7836e2961926f1ec07de0ba2e532f453314"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 3467,
+      "sha256": "30c2c31951637ddc66785f387ccded5b4470f2a13b6cddb1148cb5d7f9d2368c"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/solutions/pdb_index.py",
+      "size": 709,
+      "sha256": "44d715d9ac36effacc5ea84e5d61b625f1f5a14845fed0fc69ae0aac139b9743"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/solutions/test_pdb_index.py",
+      "size": 603,
+      "sha256": "5c0170dedbe8ab855bb6e083e3ea85bf29cc6de97e63097529fad88a88f2579a"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/starter/pdb_index.py",
+      "size": 589,
+      "sha256": "bb8046f0e9a493a36f9f6e3ee62f23c0814a393ad06884e9cc09bf9d1eb00ec5"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/starter/test_pdb_index.py",
+      "size": 603,
+      "sha256": "5c0170dedbe8ab855bb6e083e3ea85bf29cc6de97e63097529fad88a88f2579a"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/TEORIA_PASSO_A_PASSO.md",
+      "size": 5978,
+      "sha256": "92da2d440e8f72d470364f481982c22ec8e5b91646bb9f2e85660e83db2aee99"
+    },
+    {
+      "path": "tooling/pdb_symbol_index/TESTES_GUIADOS.md",
+      "size": 165,
+      "sha256": "6637da14a77f0b294287fd470c230d1c331c2bcf71d26e88921cc6352d278a29"
+    },
+    {
+      "path": "VALIDATION.md",
+      "size": 1294,
+      "sha256": "4ba33481e3cff465c31228a3a90d65dbc3c4294c2832eea3914b1950cd5d5464"
+    }
+  ],
+  "modules": 13
+}

@@ -33,6 +33,8 @@ DOCX (`Treino_LowLevel_Unificado_*.docx`) é **export opcional** via `scripts/bu
 
 Contagem de linhas mede **conteúdo substantivo**, não filler. Referência canônica: `days/2026-09-03/systems/clvm/`.
 
+O checker rejeita filler de scaffold (`Anote no papel valores concretos`, "conceito central deste módulo", "satisfaz o caso documentado"). Cada módulo precisa do **formato real** (bytes/offsets ou fórmula), um **trace numérico igual ao teste** e código na RESOLUCAO **idêntico em comportamento** ao `solutions/`.
+
 ### TEORIA_PASSO_A_PASSO.md (≥120 linhas substantivas)
 
 Para cada conceito central:

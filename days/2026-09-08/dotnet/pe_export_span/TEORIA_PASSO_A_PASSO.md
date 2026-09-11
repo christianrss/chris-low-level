@@ -1,0 +1,196 @@
+# Teoria passo a passo — export directory PE com Span
+
+Este laboratório é em **.NET**. Não é um esboço em Python com o mesmo nome.
+
+## Por que este laboratório existe
+
+O triage ELF dos dias anteriores é arquivo Unix. Este lab lê um PE mínimo em C# com `ReadOnlySpan<byte>` — sem `BinaryReader` que esconde o offset.
+
+Por quê começar pelo formato, e não pela API da linguagem? Porque o bug clássico
+aqui é **desalinhamento**: o programa “funciona” no exemplo errado e falha no
+assert do teste com um número diferente do esperado.
+
+## Contrato de dados
+
+| Campo | Papel neste lab |
+|-------|-------------|
+| formato | ver a tabela abaixo |
+| teste | compara o número do trace, não a intenção |
+
+| Offset | Campo | Valor no fixture |
+|--------|-------|------------------|
+| 0 | 'M' | 0x4D |
+| 1 | 'Z' | 0x5A |
+| 0x3C | e_lfanew | 0x80 |
+| 0x80 | 'P' 'E' 0 0 | assinatura |
+| optional + 0x78 | export RVA | 0x1000 |
+
+## Trace numérico (os mesmos valores do teste)
+
+Siga no papel **antes** de abrir o editor. Os números abaixo são os do Caso 1,
+não um espaço em branco para preencher depois.
+
+```text
+buffer 0x200
+buf[0]='M' buf[1]='Z'
+int32 em 0x3C = 0x80
+PE signature em 0x80
+opt = pe + 4 + 20 = 0x80+24 = 0x98
+data directory[0] em opt+0x78 = 0x110
+uint32 = 0x1000
+IsPeFile true; offset 0x80; export RVA 0x1000
+três bytes {0,1,2} não são PE
+```
+
+## Algoritmo (ordem obrigatória)
+
+1. MZ nos dois primeiros bytes e PE no e_lfanew.
+2. Leia int32 em 0x3C.
+3. Export RVA é o primeiro data directory, 0x78 depois do início do optional header (PE32+ magic 0x20B no fixture).
+
+## Invariantes
+
+- A saída é determinística para a mesma entrada.
+- Tamanho consumido e texto/valor produzido mudam juntos: se o tamanho estiver
+  errado, o próximo byte é lido como opcode e o teste vê outra string.
+- Erro de formato falha **agora** (retorno negativo, `Err`, `false`, exceção),
+  não um valor default silencioso.
+
+## Bugs que o teste rejeita
+
+- Ignorar e_lfanew e procurar PE no offset 0x80 fixo: o teste do offset falha se você não ler 0x3C.
+- Ler RVA no lugar errado: não é 0x1000.
+
+## Lab versus produção
+
+dumpbin /exports faz o mesmo RVA. Aqui o buffer é sintético (0x200 bytes).
+
+## Checklist antes de compilar
+
+- [ ] Escrevi no papel o valor esperado do Caso 1 (está na seção de trace).
+- [ ] Sei qual arquivo e qual função recebem o corpo novo.
+- [ ] Sei o que **não** mudar (assinatura, nomes dos opcodes, capacidade do buffer).
+
+Por quê não pular o trace? O teste compara bytes, não a intenção.
+
+## Mecanismo interno (segunda camada)
+
+Neste módulo `dotnet/pe_export_span`, o fluxo de dados não é abstrato: cada função do starter
+transforma um buffer ou um estado finito e devolve um valor que o teste compara
+com igualdade estrita.
+
+```text
+entrada (fixture / literal do teste)
+    → validação de limites (OOB / estado ilegal)
+    → transformação (decode / fold / push / parse)
+    → saída (string, código, ponteiro, probabilidade)
+```
+
+Por quê essa ordem? Se a validação vier depois da transformação, um buffer curto
+gera leitura lixo e o assert falha com um número “quase certo”, difícil de depurar.
+
+## Estruturas e papéis
+
+| Peça | Papel | O que o teste fixa |
+|------|-------|--------------------|
+| buffer / stream | memória linear | bytes literais no caso |
+| cursor / pc / head | progresso | avanço exatamente do size |
+| estado / flags | FSM ou capacidade | transição ilegal rejeitada |
+| retorno de erro | falha explícita | -1 / Err / false / throw |
+
+## Trace estendido (mesmo caso, mais colunas)
+
+Reescreva o Caso 1 da TEORIA com quatro colunas no papel:
+
+```text
+passo | cursor | lê | produz
+------+--------+----+--------
+(use os números já listados acima; não invente outro exemplo)
+```
+
+Se o cursor após o passo N não for o início do passo N+1, o listing ou o anel
+desalinha e a string/valor diverge do assert.
+
+## Invariantes reforçadas
+
+1. Mesma entrada → mesma saída (determinismo).
+2. Erro de formato não vira valor default silencioso.
+3. Capacidade / size / transição ilegal falha **agora**.
+4. O arquivo editado é só o citado na RESOLUCAO; o teste não se altera.
+
+## Depuração dirigida
+
+| Sintoma no teste | Hipótese #1 | O que imprimir |
+|------------------|-------------|----------------|
+| string/valor off-by-one | endianness ou size | hex do buffer e cursor |
+| falha só no 2º caso | estado residual | reset entre casos |
+| passe local, falha no runner | cwd / fixture path | path absoluto do fixture |
+
+## Comparação com produção (detalhe)
+
+Em ferramentas reais o mesmo contrato aparece com outros nomes: `objdump` (size
+por opcode), `epoll` (anel de eventos), `softmax` em kernels CUDA (max-subtract).
+Aqui o recorte é pequeno o bastante para caber no papel e grande o bastante para
+o assert rejeitar o bug clássico.
+
+## Trecho âncora do gabarito (só para conferir assinaturas)
+
+Não copie cegamente. Use para confirmar nomes de funções e constantes:
+
+```text
+// <autogenerated />
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+```
+
+## Layout DOS + PE (offsets do teste)
+
+```text
+offset 0x00: 'M' 'Z'
+offset 0x3C: e_lfanew (i32 LE) = 0x80 neste fixture
+offset 0x80: 'P' 'E' '\0' '\0'
+opt header = pe + 4 + 20  (COFF FileHeader tem 20 bytes)
+data dir[0] Export RVA em opt+0x78 → valor 0x1000 no teste
+```
+
+Trace:
+
+```text
+IsPeFile: MZ ok ∧ PE em e_lfanew → true
+TryGetPeOffset → peOffset = 0x80
+TryReadExportRva → exportRva = 0x1000
+```
+
+## Por quê Span?
+
+`ReadOnlySpan<byte>` evita cópia e força bounds via `Length` / `Slice`.
+`MemoryMarshal.Read<int>` lê LE nativo no Windows (e no lab).
+
+**Por quê** checar `Length < 0x40` antes de `0x3C`? Sem isso, Slice lança
+ou lê lixo — o teste espera `false`, não exceção.
+
+## Invariantes
+
+- `e_lfanew > 0` e `pe+4 <= Length`
+- Export RVA lido só depois de `IsPeFile`
+- Não segue a RVA até a Export Directory (só o ponteiro) — isso é triage
+
+## Bugs comuns
+
+| Sintoma | Causa |
+|---------|-------|
+| false em PE válido | esqueceu PE signature |
+| peOffset=0 | leu e_lfanew em offset errado |
+| exportRva lixo | opt+0x78 sem bounds |
+
+## Lab vs produção
+
+`System.Reflection.Metadata` / pe-parse seguem a árvore toda (sections, names).
+Aqui você só valida o **caminho até o RVA** — base do red team do mesmo dia.
+
+## Checklist
+
+- [ ] Magic MZ nos bytes 0–1
+- [ ] e_lfanew = 0x80
+- [ ] Export RVA = 0x1000

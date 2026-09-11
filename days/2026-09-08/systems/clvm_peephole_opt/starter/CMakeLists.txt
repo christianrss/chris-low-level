@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(peephole CXX)
+enable_testing()
+add_executable(peephole_test peephole.hpp peephole.cpp test_peephole.cpp)
+if(MSVC)
+  target_compile_options(peephole_test PRIVATE /W3 /EHsc)
+endif()
+add_test(NAME peephole_test COMMAND peephole_test)
