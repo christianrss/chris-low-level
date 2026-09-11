@@ -70,3 +70,9 @@ cd days/2026-09-08/nodejs/duplex_event_pipe/starter; node test.js
 Sem `cargo`/`dotnet`/`node`, o runner do dia **pula** o módulo (mesmo padrão Dia 06).
 
 **Capstone sugerido:** portar disasm ou PE span para `projects/chris-vm` / `projects/chris-*` após os blocos A–C.
+
+## Trilha paralela GitHub (opcional no mesmo dia)
+
+Depois do core CLVM, ou em sessão separada: `spsc_ring_buffer` → `cache_set_sim` → `nfa_to_dfa` → `bm25_code_ranker`.
+Ver bloco correspondente em `ATIVIDADES.md`.
+

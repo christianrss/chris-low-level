@@ -1,0 +1,5 @@
+[
+  {"name":"buddy_allocator 500 cycles","median_ms":3.0915,"min_ms":2.981036,"max_ms":3.578053},
+  {"name":"layernorm n=10000","median_ms":1.1215704999999998,"min_ms":1.082727,"max_ms":1.601979},
+  {"name":"pratt expression ~1200 chars","median_ms":0.9714069999999999,"min_ms":0.921608,"max_ms":8.658937}
+]

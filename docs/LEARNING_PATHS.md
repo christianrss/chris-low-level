@@ -368,3 +368,15 @@ flowchart LR
 | 12 | `2026-09-11/agent/tool_barrier_join` | chris-agent-harness |
 | 13 | `2026-09-11/tooling/coff_sym_name` | chris-binary-toolkit |
 
+### Day 08 — trilha paralela GitHub
+
+| 1 | `2026-09-08/systems/spsc_ring_buffer` | trilha A |
+| 2 | `2026-09-08/architecture/cache_set_sim` | trilha A |
+| 3 | `2026-09-08/ai/online_softmax` | trilha A |
+| 4 | `2026-09-08/redteam/wasm_binary_triage` | trilha A |
+| 5 | `2026-09-08/parsers/nfa_to_dfa` | trilha A |
+| 6 | `2026-09-08/agent/bm25_code_ranker` | trilha A |
+| 7 | `2026-09-08/unix/xargs_lite` | trilha A |
+| 8 | `2026-09-08/nodejs/worker_transfer` | trilha A |
+| 9 | `2026-09-08/dotnet/gc_allocation_probe` | trilha A |
+

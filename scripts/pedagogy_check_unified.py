@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CODE_EXT = {
-    ".c", ".cc", ".cpp", ".cxx", ".h", ".hpp", ".py", ".ts", ".js", ".cs",
+    ".c", ".cc", ".cpp", ".cxx", ".h", ".hpp", ".py", ".ts", ".js", ".mjs", ".cs",
     ".rs", ".asm", ".s", ".yar", ".sh", ".glsl", ".hlsl",
 }
 SKIP_DIR_NAMES = {

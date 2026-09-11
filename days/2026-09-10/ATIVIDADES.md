@@ -143,3 +143,22 @@ Não basta `ctest` verde. O dia fecha quando:
 
 **Total planejado:** use o README do dia; se passar de 40 h, priorize systems + uma trilha adjacente no mesmo dia e retome o resto no dia seguinte com o mesmo caderno.
 
+---
+
+## Atividades extras do GitHub (ainda sem pasta `days/` completa)
+
+O remote listava estes temas; **o código portado está em `projects/`**, não como módulos canônicos deste dia. Faça como extensão depois do core.
+
+- [ ] `systems/aba_tagged_freelist` — ABA tagged freelist
+- [ ] `ai/tiled_attention_online_softmax` — Tiled attention + online softmax
+- [ ] `architecture/tlb_page_walk` — TLB page walk
+- [ ] `dotnet/pinned_memory_probe` — Pinned memory probe
+- [ ] `graphics/descriptor_binding_model` — Descriptor binding
+- [ ] `linux/procfs_module_lab` — procfs module lab
+- [ ] `nodejs/message_channel_rpc` — MessageChannel RPC
+- [ ] `parsers/backtracking_regex_vm` — Backtracking regex VM
+- [ ] `redteam/elf64_relocation_triage` — ELF64 reloc triage
+- [ ] `agent/transactional_patcher` — Transactional patcher
+
+Portas em `projects/` (ex.: `chris-regex`, `chris-renderer-vulkan`, `chris-linux-module-lab`).
+

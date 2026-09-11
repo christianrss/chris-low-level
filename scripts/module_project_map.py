@@ -789,8 +789,80 @@ MODULE_PROJECT: dict[str, dict[str, str]] = {
         "milestone": "MILESTONES.md — coff",
         "commit": "feat(toolkit): port coff name from day11",
     },
-}
 
+    "2026-09-08/systems/spsc_ring_buffer": {
+        "project": "projects/chris-driver-lab",
+        "carry": "spsc_ring_buffer from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — spsc_ring_buffer",
+        "commit": "feat(day08): port spsc_ring_buffer",
+    },
+
+    "2026-09-08/architecture/cache_set_sim": {
+        "project": "projects/chris-cpu",
+        "carry": "cache_set_sim from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — cache_set_sim",
+        "commit": "feat(day08): port cache_set_sim",
+    },
+
+    "2026-09-08/ai/online_softmax": {
+        "project": "projects/chris-tensor",
+        "carry": "online_softmax from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — online_softmax",
+        "commit": "feat(day08): port online_softmax",
+    },
+
+    "2026-09-08/redteam/wasm_binary_triage": {
+        "project": "projects/chris-binary-toolkit",
+        "carry": "wasm_binary_triage from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — wasm_binary_triage",
+        "commit": "feat(day08): port wasm_binary_triage",
+    },
+
+    "2026-09-08/parsers/nfa_to_dfa": {
+        "project": "projects/chris-regex",
+        "carry": "nfa_to_dfa from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — nfa_to_dfa",
+        "commit": "feat(day08): port nfa_to_dfa",
+    },
+
+    "2026-09-08/agent/bm25_code_ranker": {
+        "project": "projects/chris-agent-core",
+        "carry": "bm25_code_ranker from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — bm25_code_ranker",
+        "commit": "feat(day08): port bm25_code_ranker",
+    },
+
+    "2026-09-08/unix/xargs_lite": {
+        "project": "projects/chris-xargs",
+        "carry": "xargs_lite from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — xargs_lite",
+        "commit": "feat(day08): port xargs_lite",
+    },
+
+    "2026-09-08/nodejs/worker_transfer": {
+        "project": "projects/chris-node-streaming",
+        "carry": "worker_transfer from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — worker_transfer",
+        "commit": "feat(day08): port worker_transfer",
+    },
+
+    "2026-09-08/dotnet/gc_allocation_probe": {
+        "project": "projects/chris-dotnet-bench",
+        "carry": "gc_allocation_probe from day08 github track",
+        "tests": "day08 module tests",
+        "milestone": "MILESTONES.md — gc_allocation_probe",
+        "commit": "feat(day08): port gc_allocation_probe",
+    },
+
+}
 
 def module_key(day: str, rel_mod: str) -> str:
     return f"{day}/{rel_mod}"

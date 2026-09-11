@@ -262,6 +262,15 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
             return False, f"{name}: test.js failed\n{out}"
         return True, f"{name}: test.js OK"
 
+    test_mjs = base / "test.mjs"
+    if test_mjs.exists():
+        if not shutil.which("node"):
+            return True, f"{name}: node not in PATH (skipped)"
+        code, out = run_cmd(["node", str(test_mjs)], base)
+        if code != 0:
+            return False, f"{name}: test.mjs failed\n{out}"
+        return True, f"{name}: test.mjs OK"
+
     if (base / "package.json").exists():
         if not shutil.which("npm"):
             return True, f"{name}: npm not in PATH (skipped)"

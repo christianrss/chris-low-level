@@ -1,11 +1,11 @@
 {
   "day": "2026-09-11",
-  "file_count": 196,
+  "file_count": 198,
   "files": [
     {
       "path": "agent/tool_barrier_join/BENCHMARK_GUIADO.md",
-      "size": 459,
-      "sha256": "0a68e3c678687d6f3d1f9dfa3b74f4abd184b97a4eb8881bf6a7cf9dba92fcaa"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "agent/tool_barrier_join/EXERCICIOS.md",
@@ -24,8 +24,8 @@
     },
     {
       "path": "agent/tool_barrier_join/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2628,
-      "sha256": "34286ab372532e420bc7520ceb9e9629dd9de46914dc20bbd15c80c298e09187"
+      "size": 3596,
+      "sha256": "2921c884335cd58e7014afb53941061cf19c134327daf60cbef69685d145ed1f"
     },
     {
       "path": "agent/tool_barrier_join/solutions/test_tool_barrier_join.py",
@@ -59,8 +59,8 @@
     },
     {
       "path": "ai/rms_norm/BENCHMARK_GUIADO.md",
-      "size": 454,
-      "sha256": "fd3958894adc55df396b39b344bf1712c87e8331cfa5f4313f9c08203e01fdec"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "ai/rms_norm/EXERCICIOS.md",
@@ -79,8 +79,8 @@
     },
     {
       "path": "ai/rms_norm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2490,
-      "sha256": "ac07e1a2bcb7e37995b84c965fafa7c097e0cd6580eb4e14dec6958f91ba460c"
+      "size": 3397,
+      "sha256": "6f7d62208c76e9a76b1d0826a50fbb55e4f8f6d08314c1fc4b3d3a88e8e0b5de"
     },
     {
       "path": "ai/rms_norm/solutions/CMakeLists.txt",
@@ -134,13 +134,13 @@
     },
     {
       "path": "ATIVIDADES.md",
-      "size": 2500,
-      "sha256": "3a1dcd0937ea0d52a6af26376bba09896bd5c169578b24db3628e73ffa2f5859"
+      "size": 3418,
+      "sha256": "d73a278856026012c4d341c9c3cb83b078b04b7bd40a7b1f624e1dd201b21561"
     },
     {
       "path": "dotnet/pe_import_span/BENCHMARK_GUIADO.md",
-      "size": 448,
-      "sha256": "990b571d4f46951dee47700d7c184c67c6a9a7e5c749353049e889c2d232ce3d"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "dotnet/pe_import_span/EXERCICIOS.md",
@@ -159,13 +159,13 @@
     },
     {
       "path": "dotnet/pe_import_span/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2932,
-      "sha256": "6577df4f2f42383f06f858714037c034c6461107edf1e1f98ab181bd10ec128c"
+      "size": 4452,
+      "sha256": "7bddf2f4025ccfbf71be5993c204fa9cb2abbf83ef8e9e9682ba2ef55ecf2829"
     },
     {
       "path": "dotnet/pe_import_span/solutions/Chris.PeImport.csproj",
-      "size": 150,
-      "sha256": "06aedd1229dfe89202b32a8d5703c6b62c6eccfb4a45f11b41dafff166d9fcc7"
+      "size": 306,
+      "sha256": "78630dba521d926d0bbed15b098a835fcbae08ca44efca2f894c26f929a9211e"
     },
     {
       "path": "dotnet/pe_import_span/solutions/Chris.PeLab.csproj",
@@ -179,8 +179,8 @@
     },
     {
       "path": "dotnet/pe_import_span/solutions/tests/Chris.PeImport.Tests.csproj",
-      "size": 449,
-      "sha256": "10289fae56d6e3ba4c001f4ed4bac9eb0bab3bf92e220d9c4b8109184e207482"
+      "size": 488,
+      "sha256": "8fce60e831e3defe720108b76e3fe57dfc589e51806bf88df4f9842e58bef6cf"
     },
     {
       "path": "dotnet/pe_import_span/solutions/tests/Chris.PeLab.Tests.csproj",
@@ -194,8 +194,8 @@
     },
     {
       "path": "dotnet/pe_import_span/starter/Chris.PeImport.csproj",
-      "size": 150,
-      "sha256": "06aedd1229dfe89202b32a8d5703c6b62c6eccfb4a45f11b41dafff166d9fcc7"
+      "size": 306,
+      "sha256": "78630dba521d926d0bbed15b098a835fcbae08ca44efca2f894c26f929a9211e"
     },
     {
       "path": "dotnet/pe_import_span/starter/Chris.PeLab.csproj",
@@ -209,8 +209,8 @@
     },
     {
       "path": "dotnet/pe_import_span/starter/tests/Chris.PeImport.Tests.csproj",
-      "size": 449,
-      "sha256": "10289fae56d6e3ba4c001f4ed4bac9eb0bab3bf92e220d9c4b8109184e207482"
+      "size": 488,
+      "sha256": "8fce60e831e3defe720108b76e3fe57dfc589e51806bf88df4f9842e58bef6cf"
     },
     {
       "path": "dotnet/pe_import_span/starter/tests/Chris.PeLab.Tests.csproj",
@@ -234,8 +234,13 @@
     },
     {
       "path": "graphics/alpha_blend_scanline/BENCHMARK_GUIADO.md",
-      "size": 460,
-      "sha256": "38e9d5c1e84fe12f9912a49281f04dabe1e736d113a6c05ea1c931aee3787251"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
+    },
+    {
+      "path": "graphics/alpha_blend_scanline/docs/COMPARISON.md",
+      "size": 380,
+      "sha256": "58bff66c958d6734fab6582c3043771be39dc8547c76a56c809d1e5d068557b7"
     },
     {
       "path": "graphics/alpha_blend_scanline/EXERCICIOS.md",
@@ -254,8 +259,8 @@
     },
     {
       "path": "graphics/alpha_blend_scanline/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2681,
-      "sha256": "c46a936fab8929884b9c2d0dc0c870fb3f5d90277fcf21a4f3381a725e6fb73f"
+      "size": 3519,
+      "sha256": "b520b64c236474f5d4b5b4de5a9dc81bfe3f103905d37c28dc452d735524c0d8"
     },
     {
       "path": "graphics/alpha_blend_scanline/solutions/blend.cpp",
@@ -309,8 +314,8 @@
     },
     {
       "path": "linux/uevent_kv_parse/BENCHMARK_GUIADO.md",
-      "size": 464,
-      "sha256": "3c4f7aaea306aa80df49491faed88a03473aeda10be404a916434a4e6afda001"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "linux/uevent_kv_parse/EXERCICIOS.md",
@@ -329,8 +334,8 @@
     },
     {
       "path": "linux/uevent_kv_parse/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2922,
-      "sha256": "81a63fd314dac86c7f5157e4e0aa31e6921a94012c5637d3780150e0ff350fa5"
+      "size": 4388,
+      "sha256": "8e44fda141f97cefe52e7d06b918a45734383cb82c177c686246bca21b5a1de4"
     },
     {
       "path": "linux/uevent_kv_parse/solutions/CMakeLists.txt",
@@ -384,13 +389,13 @@
     },
     {
       "path": "MANIFEST.json",
-      "size": 34467,
-      "sha256": "38afbf7c9bc08e965b54ea08c7d9ec6cd4334d702961516a8d1b6578f2dc04c7"
+      "size": 35578,
+      "sha256": "42474deb82b13df188d6c7cf40db4d5a2f2360831ea804588f1d0e4242b25776"
     },
     {
       "path": "nodejs/shared_atomics_ring/BENCHMARK_GUIADO.md",
-      "size": 441,
-      "sha256": "15a1094dc07b49f1175d658e16bc683000d3f68855cfa6285a7753bbe4df317a"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "nodejs/shared_atomics_ring/EXERCICIOS.md",
@@ -409,8 +414,8 @@
     },
     {
       "path": "nodejs/shared_atomics_ring/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2764,
-      "sha256": "b488ef4e6ab39db1414982a49795b3b68eb4cbe5b463c3bf395276a663b933c9"
+      "size": 3899,
+      "sha256": "dbf0290b0bc5950a1e43e6cf5df4780d45f6b3a4de969ced714151a4b1e8f024"
     },
     {
       "path": "nodejs/shared_atomics_ring/solutions/package.json",
@@ -454,8 +459,8 @@
     },
     {
       "path": "parsers/ini_rd_lexer/BENCHMARK_GUIADO.md",
-      "size": 458,
-      "sha256": "8f42bc9c9c8a153982386dab877167fb7fd0c1e618b75335032d022dcce9d86d"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "parsers/ini_rd_lexer/EXERCICIOS.md",
@@ -474,8 +479,8 @@
     },
     {
       "path": "parsers/ini_rd_lexer/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2848,
-      "sha256": "065287807e5a8c3bd8309c9646524253de19946e54d77c06046a86912f8ded7c"
+      "size": 4067,
+      "sha256": "8d45e8b3c51c16da94fd07ff143c1032ae5215694b0be0d93870e51e80cc805d"
     },
     {
       "path": "parsers/ini_rd_lexer/solutions/CMakeLists.txt",
@@ -529,8 +534,8 @@
     },
     {
       "path": "quantum/phase_kickback/BENCHMARK_GUIADO.md",
-      "size": 450,
-      "sha256": "56c6ce4744dc9e94d61b159ea53a57a5c2b3253f2c2601f88464fbebcc795826"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "quantum/phase_kickback/EXERCICIOS.md",
@@ -549,8 +554,8 @@
     },
     {
       "path": "quantum/phase_kickback/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2380,
-      "sha256": "d4c243bfbd6696bbc265ae07a2be065ce6e16499a0cbf0708461523135781f94"
+      "size": 3134,
+      "sha256": "bfcc3fe8ddf26fe1e3f0dc3974a997d3326a896ab197247590bb5f39b856ade0"
     },
     {
       "path": "quantum/phase_kickback/solutions/CMakeLists.txt",
@@ -609,8 +614,8 @@
     },
     {
       "path": "redteam/import_name_triage/BENCHMARK_GUIADO.md",
-      "size": 469,
-      "sha256": "3f33c541ab6f746f590085d8abd0fc17c476c4750645f562a1c6fef6dd2b4c5b"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "redteam/import_name_triage/EXERCICIOS.md",
@@ -629,8 +634,8 @@
     },
     {
       "path": "redteam/import_name_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2442,
-      "sha256": "142f83db51d3861d1a07f56bf5f689e66f2eca78f01fa0da954975f44cfdcfba"
+      "size": 3198,
+      "sha256": "460585fd97ee611b82e981628585ed74325ecac678c2e79fd13aad4e41bfcad1"
     },
     {
       "path": "redteam/import_name_triage/solutions/import_name_triage.py",
@@ -664,8 +669,8 @@
     },
     {
       "path": "rust/clvm_reloc_verify/BENCHMARK_GUIADO.md",
-      "size": 452,
-      "sha256": "02b4c7494ae576ef1dc35bcf3a2c0efee9a742210f7319fd34da3115ee8f0908"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "rust/clvm_reloc_verify/EXERCICIOS.md",
@@ -684,8 +689,13 @@
     },
     {
       "path": "rust/clvm_reloc_verify/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2568,
-      "sha256": "f8c2fff0e6643b15e6c3159748a73087ebfe90bda6365b9fde0b4d966368fa34"
+      "size": 3556,
+      "sha256": "39023027ac29ead34af9632021917832a597889c604676abfff3147956bffa17"
+    },
+    {
+      "path": "rust/clvm_reloc_verify/solutions/Cargo.lock",
+      "size": 161,
+      "sha256": "c48b29a277530b7cd59fb838d3c8f3188837b81b43ff1c52b89cedf4632834d8"
     },
     {
       "path": "rust/clvm_reloc_verify/solutions/Cargo.toml",
@@ -734,8 +744,8 @@
     },
     {
       "path": "systems/bump_poison_arena/BENCHMARK_GUIADO.md",
-      "size": 457,
-      "sha256": "2e1ccc577521e8b0207145a0185f8f287eb617f37318c758422e39442de7fc89"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "systems/bump_poison_arena/EXERCICIOS.md",
@@ -754,8 +764,8 @@
     },
     {
       "path": "systems/bump_poison_arena/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2781,
-      "sha256": "e21a3fef2ca8744cfa7be42b1dff720c7c0195d2291d7c4d14e146e1d469cfda"
+      "size": 3631,
+      "sha256": "092e384bbdcac5b7c3905b065c895de35c3f562310e13b2e8b0734a3ceb1c967"
     },
     {
       "path": "systems/bump_poison_arena/solutions/bump.cpp",
@@ -809,8 +819,8 @@
     },
     {
       "path": "systems/clvm_reloc_apply/BENCHMARK_GUIADO.md",
-      "size": 532,
-      "sha256": "a856f30210a3f0aa9b3b43a99fb96f2633175a1faf7f176f40f9ae60ac7c7547"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "systems/clvm_reloc_apply/EXERCICIOS.md",
@@ -829,8 +839,8 @@
     },
     {
       "path": "systems/clvm_reloc_apply/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4343,
-      "sha256": "4b3551a038c1e7e46bcea592f3e7deb238bb6969530fb74c0380733e88001b5c"
+      "size": 5531,
+      "sha256": "0aeee0f4f65b6e5a1cdfb1682a6b23cc08a9e31d8aa4e1e5ccd2b2bd844ea9f0"
     },
     {
       "path": "systems/clvm_reloc_apply/solutions/clvm_reloc.c",
@@ -894,8 +904,8 @@
     },
     {
       "path": "tooling/coff_sym_name/BENCHMARK_GUIADO.md",
-      "size": 465,
-      "sha256": "68a3557f8a065ef57bafd113347d125b1c92f87bb41cd908fd0d674969ab158d"
+      "size": 303,
+      "sha256": "6a71b192fdae2be58607a443288492b0bd1fa715d5896e8e8c6794675e12fd2a"
     },
     {
       "path": "tooling/coff_sym_name/EXERCICIOS.md",
@@ -914,8 +924,8 @@
     },
     {
       "path": "tooling/coff_sym_name/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 2533,
-      "sha256": "a3158d693ad9ff8110d5c6f7d0e8864f56bbdde807d220ea7b730adae2854ca8"
+      "size": 3416,
+      "sha256": "f7dfb45678cbe56d45a084907657f458b57b9e8fc97e08bd9538e089eba1dd6c"
     },
     {
       "path": "tooling/coff_sym_name/solutions/api.h",

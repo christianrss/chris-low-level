@@ -1,0 +1,12 @@
+[
+  {
+    "module": "ai/online_softmax",
+    "returncode": 0,
+    "output": "median_ms=2.8967 min_ms=2.5867 max_ms=5.5271"
+  },
+  {
+    "module": "agent/bm25_code_ranker",
+    "returncode": 0,
+    "output": "docs=5000 median_ms=3.4547 min_ms=3.0214 max_ms=5.0319"
+  }
+]

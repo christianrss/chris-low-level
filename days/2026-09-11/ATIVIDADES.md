@@ -88,3 +88,23 @@ python scripts/run_day_tests.py --day 2026-09-11 --mode solutions
 - Reloc CLVM é educacional (não ELF completa).
 - PE fixture é mínimo (não um binário real).
 - GFX é headless (sem janela Win32).
+
+---
+
+## Atividades extras do GitHub (ainda sem pasta `days/` completa)
+
+O remote listava estes temas; **o código portado está em `projects/`**, não como módulos canônicos deste dia. Faça como extensão depois do core.
+
+- [ ] `systems/hazard_pointer_stack` — Hazard pointers
+- [ ] `ai/kv_cache_ring` — KV-cache ring
+- [ ] `redteam/dwarf_line_program` — DWARF line program
+- [ ] `dotnet/jit_callsite_model` — JIT call-site model
+- [ ] `nodejs/worker_pool_scheduler` — Worker pool scheduler
+- [ ] `parsers/pike_regex_vm` — Pike regex VM
+- [ ] `agent/context_budgeter` — Context budgeter
+- [ ] `quantum/statevector_bitmask` — Statevector bitmask
+- [ ] `network/length_prefixed_framing` — Length-prefixed framing
+- [ ] `algorithms/robin_hood_hash` — Robin Hood hash
+
+Portas em `projects/` (ex.: `chris-agent-core/context_budgeter.py`, `chris-binary-toolkit/dwarf_line_subset.py`, `chris-qsim`).
+

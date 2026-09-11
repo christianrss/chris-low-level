@@ -1,6 +1,6 @@
 # ATIVIDADES — 2026-09-08 (CLVM toolchain + input + trilhas)
 
-**Dia:** 13 módulos | **~24–32 h** | Linguagens: C, C++, Rust, .NET, JS, Python, ASM  
+**Dia:** 22 módulos (13 core + 9 trilha GitHub) | **~24–32 h** | Linguagens: C, C++, Rust, .NET, JS, Python, ASM  
 **Regra:** não avance de bloco sem o **checkpoint conceitual** (papel com os números abaixo). PASS no teste sozinho não basta.
 
 ---
@@ -213,3 +213,45 @@ Framing 24 B, arestas legais de pipeline gráfico, preparo Bell, protocolo de to
 | 8 duplex+FSM+Bell+agent | | ☐ | ☐ | |
 
 **Síntese:** o disassembler C e o Rust listam o mesmo `PUSH 42`. O peephole apaga o padrão que o listing acabou de mostrar. Ring C e Duplex JS recortam por capacidade/frame. PE .NET e triage Python compartilham e_lfanew.
+
+---
+
+## Trilha paralela A — GitHub (concorrência, cache, ranking) (10–14 h)
+
+Estas pastas vieram do remote e **também estão no dia**. São um eixo diferente (SPSC/cache/BM25/NFA),
+não substituto do toolchain CLVM acima. Faça depois do Bloco 1–4 ou em paralelo se já dominar bytecode.
+
+| Módulo | Linguagem | Paper-trace / foco |
+|--------|-----------|-------------------|
+| `systems/spsc_ring_buffer` | C++ | push até cheio; pop FIFO — SPSC ring push/pop/size |
+| `architecture/cache_set_sim` | C++ | set/tag decode → hit → evict — cache set decode/hit/evict |
+| `ai/online_softmax` | Python | mesmo contrato numérico estável — online softmax stats/normalize |
+| `redteam/wasm_binary_triage` | Python | magic \0asm + uleb — WASM header/ULEB/sections |
+| `parsers/nfa_to_dfa` | Python | NFA→DFA no papel — ε-closure / subset / match |
+| `agent/bm25_code_ranker` | Python | rank docs=score — BM25 tokenize/index/score |
+| `unix/xargs_lite` | Python | batch sem shell=True — split/batch/run |
+| `nodejs/worker_transfer` | JS | ArrayBuffer transfer — worker transferables |
+| `dotnet/gc_allocation_probe` | .NET | contagem de alocações — alloc/new/pool probe |
+
+**Checkpoint conceitual (trilha A):**
+
+- [ ] Desenhei SPSC cheio vs vazio (índices head/tail)
+- [ ] Decodei set/tag de um endereço no cache sim
+- [ ] Tracei ε-closure de um NFA mínimo no papel
+- [ ] Sei por que `xargs_lite` usa `shell=False`
+- [ ] Diferencio `softmax_stable` (C, dia core) de `online_softmax` (Python, trilha A)
+
+**Gate trilha A:**
+
+```powershell
+python scripts/run_day_tests.py --day 2026-09-08 --mode solutions
+```
+
+(os módulos novos devem aparecer no runner junto com o core)
+
+### Por que manter as duas trilhas
+
+- **Core (local):** ISA CLVM + ABI + PE + trilhas obrigatórias tier-A multilíngue — melhor para o fio pedagógico Dias 07→11.
+- **Trilha A (GitHub):** laboratórios clássicos (SPSC, cache, NFA→DFA, BM25) com benchmarks — melhor para sistemas/IR/search.
+- Juntas: **22 módulos**. Não é redundância: `softmax_stable` ≠ `online_softmax`; ring mux ≠ SPSC; wasm asm ≠ wasm triage.
+

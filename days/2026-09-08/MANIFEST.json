@@ -1,31 +1,91 @@
 {
   "day": "2026-09-08",
-  "file_count": 158,
+  "file_count": 310,
   "files": [
     {
+      "path": "agent/bm25_code_ranker/BENCHMARK_GUIADO.md",
+      "size": 342,
+      "sha256": "a1886abf8536c878dc9552e0a163a2b5b912d26316f098cdb1e14869a75ad677"
+    },
+    {
+      "path": "agent/bm25_code_ranker/benchmarks/bench.py",
+      "size": 465,
+      "sha256": "09e5324e2b66f87a14054b9ba9659983374d3a6b110828de8ae0ef3c4f91aa16"
+    },
+    {
+      "path": "agent/bm25_code_ranker/EXERCICIOS.md",
+      "size": 383,
+      "sha256": "2285f4de020a719ffb576a08dfe43833ee4cf089b9081aa255065292a7256632"
+    },
+    {
+      "path": "agent/bm25_code_ranker/PESQUISA_GUIADA.md",
+      "size": 475,
+      "sha256": "b2487fd77a0ecbd83a55471b5e04a4eeb90bdab1ff372f73935b649eacae453e"
+    },
+    {
+      "path": "agent/bm25_code_ranker/README.md",
+      "size": 107,
+      "sha256": "f7d178089642d9ad9a4d55accbbc62f28fd4d491c8de51b5ce30a0c6f359300a"
+    },
+    {
+      "path": "agent/bm25_code_ranker/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 644,
+      "sha256": "52d59395a65ad564df21680209e00e02cefffdb60ac4e33be853a3d381bd20fe"
+    },
+    {
+      "path": "agent/bm25_code_ranker/solutions/bm25.py",
+      "size": 1303,
+      "sha256": "9261a5de0664a8cb23c78e7e82be0c0e82c51e46feeb3bb3f25aac6c371facb8"
+    },
+    {
+      "path": "agent/bm25_code_ranker/solutions/test_bm25.py",
+      "size": 525,
+      "sha256": "1c389d743c30634c91d7d9c655c8cabce6a4a738de3e93c40e3152059a7f6dbe"
+    },
+    {
+      "path": "agent/bm25_code_ranker/starter/bm25.py",
+      "size": 462,
+      "sha256": "252bc7aa1c707249f8b68f860ffe76583e2252242e2697bd4fdce347bf7f24a7"
+    },
+    {
+      "path": "agent/bm25_code_ranker/starter/test_bm25.py",
+      "size": 525,
+      "sha256": "1c389d743c30634c91d7d9c655c8cabce6a4a738de3e93c40e3152059a7f6dbe"
+    },
+    {
+      "path": "agent/bm25_code_ranker/TEORIA_PASSO_A_PASSO.md",
+      "size": 634,
+      "sha256": "cd1e6f600e10094083c630c58f0ff6ab47a14bd24abd9992d06df06f99fa4d97"
+    },
+    {
+      "path": "agent/bm25_code_ranker/TESTES_GUIADOS.md",
+      "size": 95,
+      "sha256": "bca20517fd8170c92d4fdde359be02ff570471556bc6e3ddad8ffa27ecf061d8"
+    },
+    {
       "path": "agent/tool_protocol_fsm/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1017,
+      "sha256": "4ad565668f98211258c379218a21b780a43889e9d809b04c3e114ecd60685f40"
     },
     {
       "path": "agent/tool_protocol_fsm/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1051,
+      "sha256": "0e3b188d3fa8dadd255a32a94f67b38940da7fde3cea6c50dc2bbd263f03d285"
     },
     {
       "path": "agent/tool_protocol_fsm/PESQUISA_GUIADA.md",
-      "size": 81,
-      "sha256": "daf614955412ec6589b89c7ea5e7cb2cbf050f87a5387c27c3d0aee8b5888959"
+      "size": 892,
+      "sha256": "62271e6469e95d997b298d9232aa3bdd1b0f80e794ffbdf5d86a4d6e8b07d40b"
     },
     {
       "path": "agent/tool_protocol_fsm/README.md",
-      "size": 87,
-      "sha256": "16afceaa1b81705c856bf5980397725c06d23de91ca150e93240c193e386b254"
+      "size": 771,
+      "sha256": "b104ad75a82419efdc77b6fcc26b50f98071f8a1791e846cc7f3585c75281220"
     },
     {
       "path": "agent/tool_protocol_fsm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 3713,
-      "sha256": "640fbf5fdfbb7c6f7d24ee34779bf5ca13a0b739c5a07f0bb68bf16f8bf08a1f"
+      "size": 6264,
+      "sha256": "27697c0f0e1cfa6396941084d0c4560c7939f55d2a82039fce5bf95ac08344dd"
     },
     {
       "path": "agent/tool_protocol_fsm/solutions/test_tool_protocol_fsm.py",
@@ -49,98 +109,328 @@
     },
     {
       "path": "agent/tool_protocol_fsm/TEORIA_PASSO_A_PASSO.md",
-      "size": 4738,
-      "sha256": "a99bc7f1cc624b7a3fed65efcb8917ff73679d7bbfdcbfc48a1a1cd5c9e958bc"
+      "size": 7594,
+      "sha256": "e158de4dd243bd7094680e99a59861126aea7895f8b4cec177f6c61a348ef5ba"
     },
     {
       "path": "agent/tool_protocol_fsm/TESTES_GUIADOS.md",
-      "size": 507,
-      "sha256": "96712dd190fc9e8d9aa4b75ec8b85babe621de619a988d24bd3ecf7e0cb6b879"
+      "size": 1067,
+      "sha256": "7484569ce6e7ddde75115678627ed677b500143e2a292642c8a35acc84e7724c"
+    },
+    {
+      "path": "ai/online_softmax/BENCHMARK_GUIADO.md",
+      "size": 340,
+      "sha256": "db724f63fe8d275ff27c34c3fc422c2251650af47bb8f5d75c3ae3548aa0553c"
+    },
+    {
+      "path": "ai/online_softmax/benchmarks/bench.py",
+      "size": 440,
+      "sha256": "c15924b8478c4b0ff479a89355d043a5e2f1b22c9a005a174b9998f37cd0acda"
+    },
+    {
+      "path": "ai/online_softmax/EXERCICIOS.md",
+      "size": 381,
+      "sha256": "5d9224d486fa685615865505ea3d2440c5fd318397c470e1ae3979d497f9272a"
+    },
+    {
+      "path": "ai/online_softmax/PESQUISA_GUIADA.md",
+      "size": 473,
+      "sha256": "7f6c2920702d93800184cb631021e2fc178358f1bbe3189210f33ae052ed004e"
+    },
+    {
+      "path": "ai/online_softmax/README.md",
+      "size": 105,
+      "sha256": "4332e804400d5476895b1645e3d9bb99b0b3c2878df3206cb63d287e2c2ca980"
+    },
+    {
+      "path": "ai/online_softmax/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 836,
+      "sha256": "6b4d83721e0f5529f4c551c5ead7a44f9491b2b1d7baf8d1d2c5109907be7e79"
+    },
+    {
+      "path": "ai/online_softmax/solutions/online_softmax.py",
+      "size": 539,
+      "sha256": "b75724dfbfb48f42db7ddf7c62fafa0d82208704ddcb1ba6aeb8f0222f78a6bb"
+    },
+    {
+      "path": "ai/online_softmax/solutions/test_online_softmax.py",
+      "size": 361,
+      "sha256": "4d70f38ba84abe5fb1d03ebe22dc2197e202b4970de075135517382869786a08"
+    },
+    {
+      "path": "ai/online_softmax/starter/online_softmax.py",
+      "size": 399,
+      "sha256": "0e1ab870a2f9cdb44ecffd29da2a3e3d74b9fbb4d641eb01a2aeb563f2881df7"
+    },
+    {
+      "path": "ai/online_softmax/starter/test_online_softmax.py",
+      "size": 361,
+      "sha256": "4d70f38ba84abe5fb1d03ebe22dc2197e202b4970de075135517382869786a08"
+    },
+    {
+      "path": "ai/online_softmax/TEORIA_PASSO_A_PASSO.md",
+      "size": 847,
+      "sha256": "04efedefafcaaea6b327af7873d729d35a15e1290a06facc8ad75e5b21f18865"
+    },
+    {
+      "path": "ai/online_softmax/TESTES_GUIADOS.md",
+      "size": 107,
+      "sha256": "57237526757e1f89ec6eecb99f9ad03cdf14b5105448de8a4e2e0376c8c54e7a"
     },
     {
       "path": "ai/softmax_stable/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1014,
+      "sha256": "39677aaf1e72fdb67b5d2c27875741864ae73ec1a89a140ff9e421e6828fa09a"
     },
     {
       "path": "ai/softmax_stable/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1052,
+      "sha256": "98be3703c9e10ef5ce6c4ea9781c2c6d343226ece75539e80dfe7cac9583b5e2"
     },
     {
       "path": "ai/softmax_stable/PESQUISA_GUIADA.md",
-      "size": 61,
-      "sha256": "baaf06561ad5df88784a12f469fb2ed56bbe6765a8275e9df477aa5b2dfcc066"
+      "size": 886,
+      "sha256": "697571f90f7770c6a81ee7256700996b8c5810a6f65ecfb59891ebb212fe66c0"
     },
     {
       "path": "ai/softmax_stable/README.md",
-      "size": 85,
-      "sha256": "7df4a66114cafd4bc9980a8fd01140e31cdb44ba7232509d35edcc0c3cfbb68c"
+      "size": 861,
+      "sha256": "f594c26fb7ce116bba739673fa4e1ad9050ac23ee478de843826221ee99f795e"
     },
     {
       "path": "ai/softmax_stable/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 3849,
-      "sha256": "cce6c15d355c840ef49021a6cd6b1e7d17379233c7576adb78a467f95afdfbba"
+      "size": 6545,
+      "sha256": "8d1347701c6c16ed62965f49cfbb2f7e853896e18a8fb5b6f09f529427913340"
     },
     {
-      "path": "ai/softmax_stable/solutions/softmax_stable.py",
-      "size": 793,
-      "sha256": "3a1c9f8f3918bccb457728da0123319e77d150fe35f257f42d4a3691220c78cf"
+      "path": "ai/softmax_stable/solutions/CMakeLists.txt",
+      "size": 254,
+      "sha256": "65c48093f9b4e74745c2c550494e8d4835ff2a35a6ead8d169c5d5a7eb55c010"
     },
     {
-      "path": "ai/softmax_stable/solutions/test_softmax_stable.py",
-      "size": 850,
-      "sha256": "d8e601be4b78781d4b4908aef9f434209a2866ee7a6597c852107b989b3674c8"
+      "path": "ai/softmax_stable/solutions/softmax.c",
+      "size": 1135,
+      "sha256": "b75b0872723ed0eba66d0f4cb988444db3882903da99ade2b70edf8baa441288"
     },
     {
-      "path": "ai/softmax_stable/starter/softmax_stable.py",
-      "size": 635,
-      "sha256": "f6d817b9d0cfd6ae95e78892b31465ed3f3a446154a0804c97e53a00b775cc71"
+      "path": "ai/softmax_stable/solutions/softmax.h",
+      "size": 225,
+      "sha256": "cb113d4c753c72f6316afb4f17fd1a2c9884efce6c925bbbad43a4a370ff8bd4"
     },
     {
-      "path": "ai/softmax_stable/starter/test_softmax_stable.py",
-      "size": 848,
-      "sha256": "f578cbf8a256731c451f52dd501b4f49cdaead742670b315ba1497579a41ff23"
+      "path": "ai/softmax_stable/solutions/test_softmax.c",
+      "size": 631,
+      "sha256": "3ddfa8641f64beb9b3629f0818ae968dbca288b6c7e6036aa83aacef1e4e9b8a"
+    },
+    {
+      "path": "ai/softmax_stable/starter/CMakeLists.txt",
+      "size": 254,
+      "sha256": "65c48093f9b4e74745c2c550494e8d4835ff2a35a6ead8d169c5d5a7eb55c010"
+    },
+    {
+      "path": "ai/softmax_stable/starter/softmax.c",
+      "size": 449,
+      "sha256": "1fb6a34bae6e95ed33365c2150cc4847da747665263273543686fce2567231d5"
+    },
+    {
+      "path": "ai/softmax_stable/starter/softmax.h",
+      "size": 225,
+      "sha256": "cb113d4c753c72f6316afb4f17fd1a2c9884efce6c925bbbad43a4a370ff8bd4"
+    },
+    {
+      "path": "ai/softmax_stable/starter/test_softmax.c",
+      "size": 631,
+      "sha256": "3ddfa8641f64beb9b3629f0818ae968dbca288b6c7e6036aa83aacef1e4e9b8a"
     },
     {
       "path": "ai/softmax_stable/TEORIA_PASSO_A_PASSO.md",
-      "size": 4723,
-      "sha256": "116016821b771e05ccec8267ab29542abc084d3a79ec6b4c81a665155db901c8"
+      "size": 7718,
+      "sha256": "f87916cf4401e091e0af34e9b7565c4281bad4d3212912f18e2789f2090061fe"
     },
     {
       "path": "ai/softmax_stable/TESTES_GUIADOS.md",
-      "size": 527,
-      "sha256": "2074712baff881eb774003131ec5ee538ff40fb9b6bf1e382d33bdfd5be82395"
+      "size": 1085,
+      "sha256": "f5b1829b495a7accc4fee3070890bd40704b29859e6f40fe124ff52615501e35"
+    },
+    {
+      "path": "architecture/cache_set_sim/BENCHMARK_GUIADO.md",
+      "size": 357,
+      "sha256": "824e700e3f60879775cebc5a1a75c71f7014b24a9c684ddb67b0d43ba2de0e3b"
+    },
+    {
+      "path": "architecture/cache_set_sim/EXERCICIOS.md",
+      "size": 398,
+      "sha256": "6143ec154ba59276c10bf88f2f9321a40ffd1a2fdf298411b68b7a82a688f425"
+    },
+    {
+      "path": "architecture/cache_set_sim/PESQUISA_GUIADA.md",
+      "size": 490,
+      "sha256": "87f213e09a1d383d7d0b248c7d00c323f7f073ebb906af294ae319477cfa88ca"
+    },
+    {
+      "path": "architecture/cache_set_sim/README.md",
+      "size": 122,
+      "sha256": "3766af69bb17b5683ee16535efe4fd25f80abee38e560309cce1460da514602a"
+    },
+    {
+      "path": "architecture/cache_set_sim/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 718,
+      "sha256": "167cd7c183287330e09b7cc297669bde097fbc5fb44f1d15007bf533eee2d3b1"
+    },
+    {
+      "path": "architecture/cache_set_sim/solutions/CMakeLists.txt",
+      "size": 385,
+      "sha256": "30804e5563835751fad6c5b8ed4984cc5e525e181676fbe423f815e283eba1d6"
+    },
+    {
+      "path": "architecture/cache_set_sim/solutions/include/cache.hpp",
+      "size": 466,
+      "sha256": "9758aa09778f1a24f569e2803a216ae3d5a3c558bf17f5f8d854c692fc678d9a"
+    },
+    {
+      "path": "architecture/cache_set_sim/solutions/src/cache.cpp",
+      "size": 851,
+      "sha256": "80fbe7c7f3d2d808517d0f350071987c3301bea083f431a50f74177ec3f5b2e5"
+    },
+    {
+      "path": "architecture/cache_set_sim/solutions/tests/test_cache.cpp",
+      "size": 514,
+      "sha256": "805ed20576c347c6162cb85a57bf06a45605be119b38d359589b037326a5c9bd"
+    },
+    {
+      "path": "architecture/cache_set_sim/starter/CMakeLists.txt",
+      "size": 385,
+      "sha256": "30804e5563835751fad6c5b8ed4984cc5e525e181676fbe423f815e283eba1d6"
+    },
+    {
+      "path": "architecture/cache_set_sim/starter/include/cache.hpp",
+      "size": 466,
+      "sha256": "9758aa09778f1a24f569e2803a216ae3d5a3c558bf17f5f8d854c692fc678d9a"
+    },
+    {
+      "path": "architecture/cache_set_sim/starter/src/cache.cpp",
+      "size": 437,
+      "sha256": "0f434139682ae8015faf633f05eb0fe90d32338ae9e49d4bdcc6c26443355cc1"
+    },
+    {
+      "path": "architecture/cache_set_sim/starter/tests/test_cache.cpp",
+      "size": 514,
+      "sha256": "805ed20576c347c6162cb85a57bf06a45605be119b38d359589b037326a5c9bd"
+    },
+    {
+      "path": "architecture/cache_set_sim/TEORIA_PASSO_A_PASSO.md",
+      "size": 611,
+      "sha256": "011a08c5a9a979fc7930e842322c14ec340c01461852d6f589e75939c157a1b8"
+    },
+    {
+      "path": "architecture/cache_set_sim/TESTES_GUIADOS.md",
+      "size": 97,
+      "sha256": "e712caba174ff8779d2e787265c724a172f6a9eb67c4935d59dc5801fc48e75c"
     },
     {
       "path": "ATIVIDADES.md",
-      "size": 1147,
-      "sha256": "01241fdff662d1e4836cc7edd4cbdded465b29559dfef8c87b696566fb4a69fd"
+      "size": 8891,
+      "sha256": "0cbf68196ea7200a5878550960a5cbcbb53b5cf1b9d87dce128717e210df01eb"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/BENCHMARK_GUIADO.md",
+      "size": 345,
+      "sha256": "7ad24e8f1bd6e6824d5f161b742d6293e6c4651a15bde00a7e22b0fd697c0efd"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/EXERCICIOS.md",
+      "size": 386,
+      "sha256": "27b12722da04c8c9164be915d826770354c28415405c08fa1499e11052526b00"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/PESQUISA_GUIADA.md",
+      "size": 478,
+      "sha256": "ad6265d9b4b5b1ecd95c75ba21428e87fc8711734e4664290b7b141e2ad8f458"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/README.md",
+      "size": 110,
+      "sha256": "1bdfda9b1bbcbe59f8d0e7e68c85d797c7ad733960e3b3b37db4660ba264b22c"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 975,
+      "sha256": "0c1185e948c2dcdd35cbf5123af01ab1aed5c7e12454eeac7eaa42a9d3600a2b"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/solutions/Chris.GcProbe/Chris.GcProbe.csproj",
+      "size": 182,
+      "sha256": "130befba0cff4f414b147bf251bca57cdc8c95d059d63f15f94ff00a15a3560d"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/solutions/Chris.GcProbe/Probe.cs",
+      "size": 874,
+      "sha256": "8249259017591034967c98f52b70e43e186def1e98cecdd390521e36f99e939b"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/solutions/Chris.GcProbe.Tests/Chris.GcProbe.Tests.csproj",
+      "size": 273,
+      "sha256": "c092645c91430c265debde338dd13631ff2368835ec883567b9d0f2e73d67526"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/solutions/Chris.GcProbe.Tests/Program.cs",
+      "size": 427,
+      "sha256": "07f170a36d00ed3d7c3c308f3b1cb1cfd4b829a4ce9b4d00909800a62064962c"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/starter/Chris.GcProbe/Chris.GcProbe.csproj",
+      "size": 182,
+      "sha256": "130befba0cff4f414b147bf251bca57cdc8c95d059d63f15f94ff00a15a3560d"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/starter/Chris.GcProbe/Probe.cs",
+      "size": 504,
+      "sha256": "b4f6d2885bc87f57993267ba9160fa83f7dafecda4707225710a192b2d9abb78"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/starter/Chris.GcProbe.Tests/Chris.GcProbe.Tests.csproj",
+      "size": 273,
+      "sha256": "c092645c91430c265debde338dd13631ff2368835ec883567b9d0f2e73d67526"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/starter/Chris.GcProbe.Tests/Program.cs",
+      "size": 427,
+      "sha256": "07f170a36d00ed3d7c3c308f3b1cb1cfd4b829a4ce9b4d00909800a62064962c"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/TEORIA_PASSO_A_PASSO.md",
+      "size": 820,
+      "sha256": "436648744e640af4c81e1588249e34ca530cb36eaec193fa72fe298c43156b24"
+    },
+    {
+      "path": "dotnet/gc_allocation_probe/TESTES_GUIADOS.md",
+      "size": 168,
+      "sha256": "fa29531659f8b946a2b994d2442ec3afd59f777ab60edbbd23ecfae3fbc44287"
     },
     {
       "path": "dotnet/pe_export_span/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1014,
+      "sha256": "c412831a68ffd3fadf7255ebff2273ce925551a23c9d3beb56cd0752b7e3eb31"
     },
     {
       "path": "dotnet/pe_export_span/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1042,
+      "sha256": "d63c322ab065769075160586fbe5f18dfe431add22d7810a3e543ce1f987022d"
     },
     {
       "path": "dotnet/pe_export_span/PESQUISA_GUIADA.md",
-      "size": 83,
-      "sha256": "dd3e03ebf8bd208699ac59f1372ef1f475e3fcdb20b36e0cdb368fb95794df39"
+      "size": 890,
+      "sha256": "b0ac32c84d9cd4546e748e163280baa429e672b121bae9da576a8b66eb16e6e3"
     },
     {
       "path": "dotnet/pe_export_span/README.md",
-      "size": 89,
-      "sha256": "d8c8ee74c97b5609e205783b9232d939bb8e16bfd12f549a314c29a25bd75f37"
+      "size": 749,
+      "sha256": "0d0357b1264c9556959fd061ad01f9a50acbee9114854a77afeef50f01924ef6"
     },
     {
       "path": "dotnet/pe_export_span/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4264,
-      "sha256": "e99090bb171b31cf7d3dcb12f8f7d1b5e8b08ac735d518f271bd233316848124"
+      "size": 6655,
+      "sha256": "7520fcb5c32ba431e56ce58f71ee77aa360b38309c814802bfd5c495e8c0b242"
     },
     {
       "path": "dotnet/pe_export_span/solutions/Chris.PeLab.csproj",
@@ -159,8 +449,8 @@
     },
     {
       "path": "dotnet/pe_export_span/solutions/tests/PeExportTests.cs",
-      "size": 1224,
-      "sha256": "8d8c6c043dabbdd53b46f64fa8ddd9e4f73565e13bbdba3b88e634f7b335284d"
+      "size": 1239,
+      "sha256": "fce4567d4e4a56b3ef05db000bcc75d10c3a8f443dd3c48cbd23de5229535c3c"
     },
     {
       "path": "dotnet/pe_export_span/starter/Chris.PeLab.csproj",
@@ -179,163 +469,203 @@
     },
     {
       "path": "dotnet/pe_export_span/starter/tests/PeExportTests.cs",
-      "size": 1345,
-      "sha256": "4d9646a03d65be1286b1bdcdac43650005ca3e315dd9bc1b0bae65f1535f567d"
+      "size": 1360,
+      "sha256": "e0079cbb45af6d5d135bec6687abd9b01d5dc419fcb6a562cd0bfedf5c7766df"
     },
     {
       "path": "dotnet/pe_export_span/TEORIA_PASSO_A_PASSO.md",
-      "size": 4696,
-      "sha256": "9c797415e5ff771d87750d9b5edd80c40ac91ea8ade86e7e6d9aae30f4b31466"
+      "size": 6758,
+      "sha256": "6f21bdca03e650fca6723d63ac870a0c3f32501e2fbd40476a374937590f2dec"
     },
     {
       "path": "dotnet/pe_export_span/TESTES_GUIADOS.md",
-      "size": 508,
-      "sha256": "670245010146807cd1792db64662328d49bd2ca3402d3fe2d702a04b29fcaee8"
+      "size": 1077,
+      "sha256": "61414bc6a7f6c55f563e9be263572505e676259d5a35b731294a6f410caaafe6"
     },
     {
       "path": "graphics/shader_stage_fsm/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1016,
+      "sha256": "c4efb94c753deb9335e6f23d917b2967595b620c92e12e9bc4b29ef0db55970a"
     },
     {
       "path": "graphics/shader_stage_fsm/docs/COMPARISON.md",
-      "size": 313,
-      "sha256": "c6bd7e9edf67354fdabe318e02c7421bad7f3ee521bf55c6eb9cbc81ce3dbbef"
+      "size": 599,
+      "sha256": "8f52653376e7ea0670aaa8f9544ddc30af4efcd3a44470bac64afe6c596abfec"
     },
     {
       "path": "graphics/shader_stage_fsm/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1061,
+      "sha256": "26e429c1623654d08ab0cf5d34fa980f9b3b06b9874c12999242029ea3d7a182"
     },
     {
       "path": "graphics/shader_stage_fsm/PESQUISA_GUIADA.md",
-      "size": 86,
-      "sha256": "af18da693960bdd7142deb967f08166dafb37fb5199a6d8665640949402d40fc"
+      "size": 894,
+      "sha256": "ff0bc4f2f04fcbafd23c9a509297bd0dab885729f1d8eef556943764ea6eadc8"
     },
     {
       "path": "graphics/shader_stage_fsm/README.md",
-      "size": 98,
-      "sha256": "8a0d0730f7e18c0d54bbd2b17e50b0e519ec3c6b3217091bf5c4f7098d32708b"
+      "size": 889,
+      "sha256": "e5daba200960cf701c29c61fbe1e98fd1cfc0f893b547e0f3a5add9c33a1721a"
     },
     {
       "path": "graphics/shader_stage_fsm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4126,
-      "sha256": "a156341b8b4dc596807fbbc3430aa7b0c1c7e39f59591ffcdabc2c2786b037fa"
+      "size": 6337,
+      "sha256": "79f327b62ae3d22be2df7c9c6a068364210e60a1f4a94471b92f6dc5f7a3513e"
     },
     {
-      "path": "graphics/shader_stage_fsm/solutions/shader_stage_fsm.py",
-      "size": 1258,
-      "sha256": "578aee16c8f0ac6373112f1156c87e14cf62f0a0d53884515717e1a12c1415f5"
+      "path": "graphics/shader_stage_fsm/solutions/CMakeLists.txt",
+      "size": 268,
+      "sha256": "08eda9cb2cd2ecfbfcf0dce312bac1b149f48d34aafa834ffc636416e69c9fc5"
     },
     {
-      "path": "graphics/shader_stage_fsm/solutions/test_shader_stage_fsm.py",
-      "size": 841,
-      "sha256": "b858e21eec773b80b94fbff578ceaa897b8200139b04525bf5966d859c1459d0"
+      "path": "graphics/shader_stage_fsm/solutions/shader_fsm.cpp",
+      "size": 652,
+      "sha256": "0007e2f9a4db8bc730e0f399ad8665298953b72d55efc57faffc87bfa9a8b6bf"
     },
     {
-      "path": "graphics/shader_stage_fsm/starter/shader_stage_fsm.py",
-      "size": 923,
-      "sha256": "2e9ca42e45f62433830b7d7df8d6f798a0e71b9526c62615c5e8a0132135cc65"
+      "path": "graphics/shader_stage_fsm/solutions/shader_fsm.hpp",
+      "size": 200,
+      "sha256": "32f21e0cde6e1e4fb3059fbe2072d82afd8e5a1173f05846e5fb961250d8c6c0"
     },
     {
-      "path": "graphics/shader_stage_fsm/starter/test_shader_stage_fsm.py",
-      "size": 839,
-      "sha256": "4fa01048b5616f1964aad69e674efb4dd8766f007d2dcc544f33a68ad51424d6"
+      "path": "graphics/shader_stage_fsm/solutions/test_shader.cpp",
+      "size": 535,
+      "sha256": "caea7612f78a19dcad0eb96642dc3274cae80c615585d7fd22b244b20947f5f9"
+    },
+    {
+      "path": "graphics/shader_stage_fsm/starter/CMakeLists.txt",
+      "size": 268,
+      "sha256": "08eda9cb2cd2ecfbfcf0dce312bac1b149f48d34aafa834ffc636416e69c9fc5"
+    },
+    {
+      "path": "graphics/shader_stage_fsm/starter/shader_fsm.cpp",
+      "size": 351,
+      "sha256": "81290df0c0baf297e86a4832abee106a35378b95f36f3d03c18841adf0ed5b2d"
+    },
+    {
+      "path": "graphics/shader_stage_fsm/starter/shader_fsm.hpp",
+      "size": 200,
+      "sha256": "32f21e0cde6e1e4fb3059fbe2072d82afd8e5a1173f05846e5fb961250d8c6c0"
+    },
+    {
+      "path": "graphics/shader_stage_fsm/starter/test_shader.cpp",
+      "size": 535,
+      "sha256": "caea7612f78a19dcad0eb96642dc3274cae80c615585d7fd22b244b20947f5f9"
     },
     {
       "path": "graphics/shader_stage_fsm/TEORIA_PASSO_A_PASSO.md",
-      "size": 4771,
-      "sha256": "472597d08b4bbba1e66c9b1c4ba4aa473da8cb64ce031b639cf99a3e2f4f4621"
+      "size": 8329,
+      "sha256": "934b2215a5b5856a44a867b542d3875b8ed6d81e1ebdeaea3395b83deae51c75"
     },
     {
       "path": "graphics/shader_stage_fsm/TESTES_GUIADOS.md",
-      "size": 642,
-      "sha256": "96d202e0cd19ca32eaf6164e7e7a04822dfc24b5f2a9653bb824db2aeb7d8ae6"
+      "size": 1291,
+      "sha256": "7da83a66ef7f406a1f09016d819c6861b24a721c1bfdaa40375bd7d5061df86f"
     },
     {
       "path": "linux/input_event_ring_mux/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1020,
+      "sha256": "3ea6e886539c8d3c875254dea78cb8b05318050c432f096034ac62b77bcaa90a"
     },
     {
       "path": "linux/input_event_ring_mux/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1018,
+      "sha256": "5ad6f4d065c62173200736d0ae4cf967b74c36bbe8845263bf5f07f9555d5f83"
     },
     {
       "path": "linux/input_event_ring_mux/PESQUISA_GUIADA.md",
-      "size": 78,
-      "sha256": "ed024b58e103500f759f100796100e5827b488044d43c1b0efbac022e9662b6d"
+      "size": 895,
+      "sha256": "f9c12deffbed570cd4005a0edf3ba65e407900d17ab55fe9bbfb3af3d4605b49"
     },
     {
       "path": "linux/input_event_ring_mux/README.md",
-      "size": 75,
-      "sha256": "113fcd121c6d0226328ce43ebe03584dbfead51dacbfbe41cfe22113f2df27ca"
+      "size": 870,
+      "sha256": "477cf98ea017aab8dc6880eed38482c8727f2c4d44edc66b4bec1a6828f75a11"
     },
     {
       "path": "linux/input_event_ring_mux/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 3896,
-      "sha256": "cf3d3b50152e984c1668615f49496d6c6c6e1248140a2a904554231b96d8d2b5"
+      "size": 6235,
+      "sha256": "e60c1fe74870171c2f732aae26f4f1cd6a90901cf6f16ea09d0915674edea98d"
     },
     {
-      "path": "linux/input_event_ring_mux/solutions/input_event_ring_mux.py",
-      "size": 1529,
-      "sha256": "47238730128f5a70a96e27590a98731a8053dd3ecb0a5f766c412ec94664bf51"
+      "path": "linux/input_event_ring_mux/solutions/CMakeLists.txt",
+      "size": 230,
+      "sha256": "12aafddaa6df73c277d29634fe40013eddd7427563d5367d914b7c1f35b16814"
     },
     {
-      "path": "linux/input_event_ring_mux/solutions/test_input_event_ring_mux.py",
-      "size": 1014,
-      "sha256": "36eac61c202fd0f7d68a72e8e7f4c8461caca21ad5e415b39df7a65c3a027252"
+      "path": "linux/input_event_ring_mux/solutions/ring.c",
+      "size": 709,
+      "sha256": "160aff5cce90b7f9f73cf59e08e9d9cef2007dcb19727090ca937483a779d88b"
     },
     {
-      "path": "linux/input_event_ring_mux/starter/input_event_ring_mux.py",
-      "size": 970,
-      "sha256": "29a9ceafbc07e81e2c6157e4601c1892b74e9d77f14f5ad2d092504194a32e9f"
+      "path": "linux/input_event_ring_mux/solutions/ring.h",
+      "size": 397,
+      "sha256": "595bd9882448ebcff75fbc2e81156463a3d043276c232961e4a8e002d0edb4aa"
     },
     {
-      "path": "linux/input_event_ring_mux/starter/test_input_event_ring_mux.py",
-      "size": 1012,
-      "sha256": "b52ee68b678d5efc7185912fb04a1848bdd02c1eef578287a5580dbd40d8718c"
+      "path": "linux/input_event_ring_mux/solutions/test_ring.c",
+      "size": 668,
+      "sha256": "53abc2bdc44c23ff85e52c657f0012455d224972308b790866c5ba57d599eccd"
+    },
+    {
+      "path": "linux/input_event_ring_mux/starter/CMakeLists.txt",
+      "size": 230,
+      "sha256": "12aafddaa6df73c277d29634fe40013eddd7427563d5367d914b7c1f35b16814"
+    },
+    {
+      "path": "linux/input_event_ring_mux/starter/ring.c",
+      "size": 406,
+      "sha256": "43a4e3450eec68a48c4025d5355389a3a0800f4e3ed17083b70f95c8275552c2"
+    },
+    {
+      "path": "linux/input_event_ring_mux/starter/ring.h",
+      "size": 397,
+      "sha256": "595bd9882448ebcff75fbc2e81156463a3d043276c232961e4a8e002d0edb4aa"
+    },
+    {
+      "path": "linux/input_event_ring_mux/starter/test_ring.c",
+      "size": 668,
+      "sha256": "53abc2bdc44c23ff85e52c657f0012455d224972308b790866c5ba57d599eccd"
     },
     {
       "path": "linux/input_event_ring_mux/TEORIA_PASSO_A_PASSO.md",
-      "size": 4750,
-      "sha256": "c977174e0065a1c331154dca145cbedcf3015da66ec0ac2e9a59efb52b539d41"
+      "size": 8074,
+      "sha256": "dee93571c8724c900f1f91cec15cf202cb4b187477fc7ccb5d47fd0981a93550"
     },
     {
       "path": "linux/input_event_ring_mux/TESTES_GUIADOS.md",
-      "size": 491,
-      "sha256": "6ebb8b735c4c351ef2d20cead00ac051a1db4ba13a44e66a4bbb9941c3d37e11"
+      "size": 1077,
+      "sha256": "4c66ffe9ba47e235c3a1d2cbc0288b938afbd3fd26b177ae7579366ccc1689f3"
     },
     {
       "path": "MANIFEST.json",
-      "size": 29075,
-      "sha256": "f554240ccf8d8072d9c9c7aca7a2299b39a5abedd5c591e85e9d77bb3f4cb1a9"
+      "size": 29081,
+      "sha256": "78a42df9e0a6fd89b42f94942a2dc7fd8ad81bde8657cbee3cb6044af0ecca94"
     },
     {
       "path": "nodejs/duplex_event_pipe/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1017,
+      "sha256": "446c21a2127a84f321ccaf2e0a31a96273441f9d0cff7e69e8e037bae65c7292"
     },
     {
       "path": "nodejs/duplex_event_pipe/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1030,
+      "sha256": "e8c21e0b35b7d0d661ca1b430f4ce110c46884f5fdc69ba765b7e05fc85b328d"
     },
     {
       "path": "nodejs/duplex_event_pipe/PESQUISA_GUIADA.md",
-      "size": 70,
-      "sha256": "6cb3e450c13e0c4742c6a8eda910a272086b0a2246772c3f7ce17ff75481a835"
+      "size": 893,
+      "sha256": "f99550b1ba58a9fdc445ef878e479ca3dac378d084e8f8cffe63774a602b50ad"
     },
     {
       "path": "nodejs/duplex_event_pipe/README.md",
-      "size": 68,
-      "sha256": "13dc1c6a2bfef23c8b1adc65fa019a364c3cb02539faebc6399791c6d5d51367"
+      "size": 756,
+      "sha256": "c383b87385eeab9bc75ed119af3e1659b5ddbf8326224907fc2376b538b76c3f"
     },
     {
       "path": "nodejs/duplex_event_pipe/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4193,
-      "sha256": "e182049f5c71fadce0a4881ac666a96a1cb05972b51b74935e9cae5f5eaa82c4"
+      "size": 6472,
+      "sha256": "ddb54edd5a34081ef2a840ac2ad8ac8e267a33c7cc25e86d7703142e78bff2bf"
     },
     {
       "path": "nodejs/duplex_event_pipe/solutions/duplex_event_pipe.js",
@@ -369,153 +699,313 @@
     },
     {
       "path": "nodejs/duplex_event_pipe/TEORIA_PASSO_A_PASSO.md",
-      "size": 4711,
-      "sha256": "12b5784e096c9e4923e89b77175ae3a4275d1a379f4be47829e3f349b05133fb"
+      "size": 7379,
+      "sha256": "2c946560794ecb3a647a41aa97bf2ffcf3139e744ce66fe42efe7f03c5db0102"
     },
     {
       "path": "nodejs/duplex_event_pipe/TESTES_GUIADOS.md",
-      "size": 495,
-      "sha256": "bff37cc152b57086dff7575b35ddefbb49c1a14076546b6904723bbf43bc4708"
+      "size": 1096,
+      "sha256": "2f0f4794227c2834a6626d812be1349ab15d562f63cec5a86104f1268aaf832f"
+    },
+    {
+      "path": "nodejs/worker_transfer/BENCHMARK_GUIADO.md",
+      "size": 341,
+      "sha256": "bfdfb7aad856b81be6d2d686a4257a27596688ff0b0e19483c35ec0c5e399cd5"
+    },
+    {
+      "path": "nodejs/worker_transfer/EXERCICIOS.md",
+      "size": 382,
+      "sha256": "9e31b02cdaaedc3a5472a770eabd4bed36bc33043d478b12e5c2c78806dd8cc1"
+    },
+    {
+      "path": "nodejs/worker_transfer/PESQUISA_GUIADA.md",
+      "size": 474,
+      "sha256": "ee2aa8c9af3bda884cadc1a70f8d6a4b3df55c390eb644de8d545e02909269a1"
+    },
+    {
+      "path": "nodejs/worker_transfer/README.md",
+      "size": 106,
+      "sha256": "6a778e1433a8d6360ab89bb6cc177350417b9dbe91e87fdb7995ce402604ae86"
+    },
+    {
+      "path": "nodejs/worker_transfer/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 815,
+      "sha256": "16555c2f69a642e7672fd71063ed4ea6a22712f1f71da4e716a6999a764742b4"
+    },
+    {
+      "path": "nodejs/worker_transfer/solutions/main.mjs",
+      "size": 747,
+      "sha256": "81d9022b4845e56521393454259499434cd602f8f3f6cd5a9d9120786a4d6491"
+    },
+    {
+      "path": "nodejs/worker_transfer/solutions/test.mjs",
+      "size": 301,
+      "sha256": "f1c2b40c01a010fd8a4515f155018a196f03d35dd1c254f756020dea6377fbfb"
+    },
+    {
+      "path": "nodejs/worker_transfer/solutions/worker.mjs",
+      "size": 248,
+      "sha256": "8e2c7901e14be0673b7c755b4a9597c00e02f32323379f8c8279817ad26bbe48"
+    },
+    {
+      "path": "nodejs/worker_transfer/starter/main.mjs",
+      "size": 237,
+      "sha256": "27250563e16450af9327ee08b330e56d6556cc59e88516afaaccb5341f8ee161"
+    },
+    {
+      "path": "nodejs/worker_transfer/starter/test.mjs",
+      "size": 301,
+      "sha256": "f1c2b40c01a010fd8a4515f155018a196f03d35dd1c254f756020dea6377fbfb"
+    },
+    {
+      "path": "nodejs/worker_transfer/starter/worker.mjs",
+      "size": 113,
+      "sha256": "7a06ed299cc0bfb246968af5b65f2bd3aaa50bde6577b0b59b589167381cdd8d"
+    },
+    {
+      "path": "nodejs/worker_transfer/TEORIA_PASSO_A_PASSO.md",
+      "size": 661,
+      "sha256": "09a957ff193a159a9c040232231b15c5f077b68fe5eb45de5efec71d2b86343a"
+    },
+    {
+      "path": "nodejs/worker_transfer/TESTES_GUIADOS.md",
+      "size": 102,
+      "sha256": "70a598a61c58052a27bd9aab2113b6b36cd66de6ed48f6db977d55f89134cb66"
     },
     {
       "path": "parsers/json_rd_lexer/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1013,
+      "sha256": "27c6b024c9043795c67c9362e442d4c19f89c10aa1b3c3b78368b94e7ac42200"
     },
     {
       "path": "parsers/json_rd_lexer/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1036,
+      "sha256": "f554cdbaded68ed551a535aad493467c94912d52a8c2ce55fd804b3c95a48480"
     },
     {
       "path": "parsers/json_rd_lexer/PESQUISA_GUIADA.md",
-      "size": 63,
-      "sha256": "0ee02bc2a71b60ea664899e4cb495282715358a3d83457a19e96b5d29fc38dd3"
+      "size": 890,
+      "sha256": "4958cb1a621a273960eac10e07afbb70109e3e150fd28bbda1d92e2c627fc4b6"
     },
     {
       "path": "parsers/json_rd_lexer/README.md",
-      "size": 73,
-      "sha256": "6ab0b74fa5c2b0fe2ddb6bf3972592e85681814a0cd2edddf639feb6fb79bce6"
+      "size": 875,
+      "sha256": "68a8a48f3f79dd6742788334a71bb1842c383fc1dccea9929fafdca48661b58a"
     },
     {
       "path": "parsers/json_rd_lexer/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4233,
-      "sha256": "64a5906dbd37c64f8d8c51d681bca98457180e6a6d891c3da95d53e91792572d"
+      "size": 6997,
+      "sha256": "e4e43cfa100a7c493379038a7b0da5402f778a95d76bb899a5ea6f79a23beba3"
     },
     {
-      "path": "parsers/json_rd_lexer/solutions/json_rd_lexer.py",
-      "size": 1266,
-      "sha256": "20fd594af621a47cb989269473fccaa9b6041d4e6206b8a9aa1ba847dbfe34a9"
+      "path": "parsers/json_rd_lexer/solutions/CMakeLists.txt",
+      "size": 238,
+      "sha256": "cb05be90dd85196330d4260bfef2997532b8efc62f80afdeb068b6d3697a6d9d"
     },
     {
-      "path": "parsers/json_rd_lexer/solutions/test_json_rd_lexer.py",
-      "size": 703,
-      "sha256": "6141a86e4058372aee904173015d566edffd51c3814e128fd27393e1b108f6c2"
+      "path": "parsers/json_rd_lexer/solutions/json_lex.c",
+      "size": 1416,
+      "sha256": "2912d38c5bd81afe2cfaa5d4269343e5de63991467b4d9ab4273d42a49336c9f"
     },
     {
-      "path": "parsers/json_rd_lexer/starter/json_rd_lexer.py",
-      "size": 736,
-      "sha256": "78d96e1002f317040c9cd713d33358783336588eeed82c21b918b1c7daca44cf"
+      "path": "parsers/json_rd_lexer/solutions/json_lex.h",
+      "size": 336,
+      "sha256": "1817f90206f1b2735f4a692d2a80d5699da34693d9de49796d563feb8cde88b6"
     },
     {
-      "path": "parsers/json_rd_lexer/starter/test_json_rd_lexer.py",
-      "size": 701,
-      "sha256": "58ec2ea92c2f9f5261314b8d40169299f1decd41219234f45eb2b62aa94822f1"
+      "path": "parsers/json_rd_lexer/solutions/test_json.c",
+      "size": 541,
+      "sha256": "6754383f97bc5629f388a23fe77a55d7ed3ad306f90e4dd9f633379d493338c1"
+    },
+    {
+      "path": "parsers/json_rd_lexer/starter/CMakeLists.txt",
+      "size": 238,
+      "sha256": "cb05be90dd85196330d4260bfef2997532b8efc62f80afdeb068b6d3697a6d9d"
+    },
+    {
+      "path": "parsers/json_rd_lexer/starter/json_lex.c",
+      "size": 347,
+      "sha256": "4059067d9035f801d8f275fd33941cd31531e022ef1ed2e375795e5b6d79991c"
+    },
+    {
+      "path": "parsers/json_rd_lexer/starter/json_lex.h",
+      "size": 336,
+      "sha256": "1817f90206f1b2735f4a692d2a80d5699da34693d9de49796d563feb8cde88b6"
+    },
+    {
+      "path": "parsers/json_rd_lexer/starter/test_json.c",
+      "size": 541,
+      "sha256": "6754383f97bc5629f388a23fe77a55d7ed3ad306f90e4dd9f633379d493338c1"
     },
     {
       "path": "parsers/json_rd_lexer/TEORIA_PASSO_A_PASSO.md",
-      "size": 4714,
-      "sha256": "6c6a52a8ba915b44cc0158d3c664ed560b11bf5aab8f08c15bce10b291b8aab8"
+      "size": 7699,
+      "sha256": "de1de91d17ffc238f8dd6e8e8fa60c542e19c5c41578cd195b1a7e9acfb5f623"
     },
     {
       "path": "parsers/json_rd_lexer/TESTES_GUIADOS.md",
-      "size": 529,
-      "sha256": "7cb95a53bcfb1af60513061fd4501948188536f111c1ffd64fee828455a573df"
+      "size": 1094,
+      "sha256": "57c14cd7c4196846b9c92ba92c9b5d8cc094ff92c304dd43f79fa7fa22282b79"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/BENCHMARK_GUIADO.md",
+      "size": 336,
+      "sha256": "612337285c0a0db95fa548462af37e49329cdb917b5ccfe19d3ef8a5ce122324"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/EXERCICIOS.md",
+      "size": 377,
+      "sha256": "35aa215f537de5bf62b9503a74c915180ead16fcfcae660826f386cff60bafd4"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/PESQUISA_GUIADA.md",
+      "size": 469,
+      "sha256": "1c88619e66dabbe16d0bb86a33682eeea3789fcb07ee0202019a130e5c439451"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/README.md",
+      "size": 101,
+      "sha256": "95c7a09c4e5af0a181ff9af459c8c04b5dca9eabd67991faf4c28717c74b6b39"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 664,
+      "sha256": "9de16ded2ffc45c50449f317e9960b7cfacb028549da4ab8ff4dfc388d0b2bc7"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/solutions/dfa.py",
+      "size": 1205,
+      "sha256": "723705735222c260a26b11fb74d69b52a07c312f90e3bb2b5e29b1300cba6ebb"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/solutions/test_dfa.py",
+      "size": 401,
+      "sha256": "af0139836a4ca2518e3b310eaeb0fbe37b21db62ed2e762591c0c9bb08a094e0"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/starter/dfa.py",
+      "size": 344,
+      "sha256": "d6cd9e15b44de46554d72e65c2d80126081eba6e5b76081c23a9d665f5be1965"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/starter/test_dfa.py",
+      "size": 401,
+      "sha256": "af0139836a4ca2518e3b310eaeb0fbe37b21db62ed2e762591c0c9bb08a094e0"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/TEORIA_PASSO_A_PASSO.md",
+      "size": 650,
+      "sha256": "121fdbd99e553de9cb3d3ee1e4f2818ab1af2288dd468fb3b2683f6bc30d89cc"
+    },
+    {
+      "path": "parsers/nfa_to_dfa/TESTES_GUIADOS.md",
+      "size": 98,
+      "sha256": "55369f611c36d321fac1094476dd5f5551d32f8bbfd0e1364f3f3d5eab444cac"
     },
     {
       "path": "quantum/bell_state_prep/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1015,
+      "sha256": "01943c27e73f0bdb1d515bc147e92332436f64af6721aebfa0d70da7525b1922"
     },
     {
       "path": "quantum/bell_state_prep/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1003,
+      "sha256": "a956841e7f720eceab44cc4d2c1e76bd15a45b03e94b6f384df98f477ea4cd37"
     },
     {
       "path": "quantum/bell_state_prep/PESQUISA_GUIADA.md",
-      "size": 58,
-      "sha256": "7c49f3ea54e96d2e75acf5dd691a5ee181ee90c6a2ffa1f98e09bfcd2a043d60"
+      "size": 892,
+      "sha256": "4bada55c61beca735ef8df1209eda5c61131d5be551e69f5aa431994de997530"
     },
     {
       "path": "quantum/bell_state_prep/README.md",
-      "size": 81,
-      "sha256": "7259e0531cc6752335b5b0842203ab6b12a6aa29ec2339044e27189637987939"
+      "size": 861,
+      "sha256": "bfd969ea92a852afb144477bd6cda3282926e64adce5282aa2049cf738de4533"
     },
     {
       "path": "quantum/bell_state_prep/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4096,
-      "sha256": "e56ab14da172fdab55151ad602d02c45579e375d7484caaaa7f59a67a745c75e"
+      "size": 5936,
+      "sha256": "5bad08b36e7e4e728505045668f05ac66731d884a2880d80b34981af155c2fc5"
     },
     {
-      "path": "quantum/bell_state_prep/solutions/bell_state_prep.py",
-      "size": 1172,
-      "sha256": "2536f8e258c49e13fde519c27c155b3abecfc29d8ee897356148536510b7f30b"
+      "path": "quantum/bell_state_prep/solutions/bell.cpp",
+      "size": 713,
+      "sha256": "2487682dc7567b0e66f6ee2cc837e0058ef0e902f846706ba7c0b708993ef43a"
     },
     {
-      "path": "quantum/bell_state_prep/solutions/test_bell_state_prep.py",
-      "size": 799,
-      "sha256": "d20617e14762ceda7dffbef1c65a42e7ae069a003526b0b5d283ec06e1aae9c9"
+      "path": "quantum/bell_state_prep/solutions/bell.hpp",
+      "size": 143,
+      "sha256": "b08af3b3360793b88577357fa71b798e9a0a6af0274f886e131c7d28983557d2"
     },
     {
-      "path": "quantum/bell_state_prep/starter/bell_state_prep.py",
-      "size": 653,
-      "sha256": "7aaa579e877bb524ac9d5b62b11a8624cf235629a106ff286a5ecba284a2516a"
+      "path": "quantum/bell_state_prep/solutions/CMakeLists.txt",
+      "size": 244,
+      "sha256": "b7a618673f798e6e41c58f60b43a346b7609b9abad7cde43923d9efec94d7716"
     },
     {
-      "path": "quantum/bell_state_prep/starter/test_bell_state_prep.py",
-      "size": 797,
-      "sha256": "fd0f46a49bd6baceff51399b09ada0209cde4b4f6247e769adeaa35d1e94b980"
+      "path": "quantum/bell_state_prep/solutions/test_bell.cpp",
+      "size": 540,
+      "sha256": "656e58071c9704e4eb72c9d25d1f8a5eba3a44f4d2c8c189176893145d6e793e"
+    },
+    {
+      "path": "quantum/bell_state_prep/starter/bell.cpp",
+      "size": 301,
+      "sha256": "9e645fcbc540ed8eb224fedf4ee1ce59e6dad3b9edddd43d628d95ac8944f25f"
+    },
+    {
+      "path": "quantum/bell_state_prep/starter/bell.hpp",
+      "size": 143,
+      "sha256": "b08af3b3360793b88577357fa71b798e9a0a6af0274f886e131c7d28983557d2"
+    },
+    {
+      "path": "quantum/bell_state_prep/starter/CMakeLists.txt",
+      "size": 244,
+      "sha256": "b7a618673f798e6e41c58f60b43a346b7609b9abad7cde43923d9efec94d7716"
+    },
+    {
+      "path": "quantum/bell_state_prep/starter/test_bell.cpp",
+      "size": 540,
+      "sha256": "656e58071c9704e4eb72c9d25d1f8a5eba3a44f4d2c8c189176893145d6e793e"
     },
     {
       "path": "quantum/bell_state_prep/TEORIA_PASSO_A_PASSO.md",
-      "size": 4688,
-      "sha256": "677b3b009afceebed5d8c759fc3b1d3b994935839b71f64718b5a09d54ee8032"
+      "size": 7004,
+      "sha256": "45649419bde0172611c36b819aa85dd8c6f23f457893a62123036bef80a1a4ed"
     },
     {
       "path": "quantum/bell_state_prep/TESTES_GUIADOS.md",
-      "size": 488,
-      "sha256": "1f81ac6aef8ff6cc1a92cc66c4f2f69e36b3b21c2d8213519c371ec6d55097ca"
+      "size": 1005,
+      "sha256": "5ce39f72f0178359cd417be0a148634e8254a4b9f0f65ae618bab9938ec0d36e"
     },
     {
       "path": "README.md",
-      "size": 1184,
-      "sha256": "106c2566d9ebcdb9f06b0861064c1ad43e4319e83cefae53aac3a183d99db0a3"
+      "size": 2138,
+      "sha256": "23f04e0f527a0fb03c677db7edec3f8047e3bcd9cc8767c1b9157a4e8b39d5ae"
     },
     {
       "path": "redteam/pe_export_triage/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1016,
+      "sha256": "06e578ce3662526d906be37f0fcf2c132a074aa4de244cc8487223bb1c27aaf5"
     },
     {
       "path": "redteam/pe_export_triage/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1065,
+      "sha256": "73148969db7d07a800b7d4ca234e7fcf80949aa2c277aee27c7ffc811e62a09d"
     },
     {
       "path": "redteam/pe_export_triage/PESQUISA_GUIADA.md",
-      "size": 61,
-      "sha256": "6bfc69b0a081b025a0852e85aec9b6e80dea0f824a2078538a22b60bfad92b11"
+      "size": 893,
+      "sha256": "103eb7699562f13645c37dacbc3f39c76766d8f39c6b8941697a2ade645a1f58"
     },
     {
       "path": "redteam/pe_export_triage/README.md",
-      "size": 90,
-      "sha256": "4790e3286787696caee5bcec77307376c54d41546b8db999c2d2a129eb6d92cd"
+      "size": 775,
+      "sha256": "e66d82641df015162eeaf907d780fff4a105a918ba517b5f3199e4ebb4207437"
     },
     {
       "path": "redteam/pe_export_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 3869,
-      "sha256": "f4b5723cc554703b4c4f26517fff050b2bdec0a92eb54e0d2c3c93997b36c7bd"
+      "size": 6247,
+      "sha256": "bbcd96250a3b9b1a8467798f1c96059fb1aad4ccd0c499731c9074a21b26310e"
     },
     {
       "path": "redteam/pe_export_triage/solutions/pe_export_triage.py",
@@ -539,38 +1029,98 @@
     },
     {
       "path": "redteam/pe_export_triage/TEORIA_PASSO_A_PASSO.md",
-      "size": 4764,
-      "sha256": "a334f61055bb6139db198275098db5501cfc6f651d260133b7a453a66e1d8eff"
+      "size": 7159,
+      "sha256": "74e2990d0ffba4007b536990b398023e24f2003a88f2859c52affcdfffae89a9"
     },
     {
       "path": "redteam/pe_export_triage/TESTES_GUIADOS.md",
-      "size": 527,
-      "sha256": "6f536af6a9147f0d02cdb573d069c0fef1d883a70aae1e907678d53175d1c36a"
+      "size": 1090,
+      "sha256": "b6b25dd8526c1849c2cbe7827fb014d990cd9f2c6bff9d786353a087f9c9bd37"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/BENCHMARK_GUIADO.md",
+      "size": 344,
+      "sha256": "b42ce7a9e622b855e483a5ac3138e6548835bbff1ae1cbcd4d3017a77bc8f838"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/EXERCICIOS.md",
+      "size": 385,
+      "sha256": "94442d936ca77b909e371c1ca76324385962a6f888d8988b351e0261020322a4"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/PESQUISA_GUIADA.md",
+      "size": 477,
+      "sha256": "aa54768c12bb6cc96067c243e244793d9fe989520b427c82fcc36a3b5a2e3784"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/README.md",
+      "size": 109,
+      "sha256": "240812ff6a38d58c57430430caf9a2de804674c886fc82c806dd4a42593a507b"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 891,
+      "sha256": "ed979f1f917c46df88dbd3b60f47ecf6a5112babed44b8eab510f06947aa14c2"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/solutions/test_wasm_triage.py",
+      "size": 385,
+      "sha256": "c72b58dae9b09758900eeb190fb2360212c9013a9e617efcb6cfac040f608710"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/solutions/wasm_triage.py",
+      "size": 877,
+      "sha256": "4d963484657aed717478fac355a4ab1f3a2d1121077e9d084cdb84923b00fe06"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/starter/test_wasm_triage.py",
+      "size": 385,
+      "sha256": "c72b58dae9b09758900eeb190fb2360212c9013a9e617efcb6cfac040f608710"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/starter/wasm_triage.py",
+      "size": 265,
+      "sha256": "c29945f75544c02d33babf875b44a6a65c84c2e6e834a42e7cd44641e704cea8"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/TEORIA_PASSO_A_PASSO.md",
+      "size": 681,
+      "sha256": "0ae976999a70e4b41e2c668f6e205f1cf5dad8a8945b82be6c80db1327012363"
+    },
+    {
+      "path": "redteam/wasm_binary_triage/TESTES_GUIADOS.md",
+      "size": 125,
+      "sha256": "535dd79bb65109bdd76837f8d168bf95dc1d24195ece0a6b7a3a055740876d14"
     },
     {
       "path": "rust/clvm_disasm/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1011,
+      "sha256": "74c89bd3d78b9ee8a2d137423fc77b6be37715fffd4d3cac310971082a7983e7"
     },
     {
       "path": "rust/clvm_disasm/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1042,
+      "sha256": "098db5eefb2736777fc8efd63ee030e4ae7a2f9b79701756b3b9cf75e5091c55"
     },
     {
       "path": "rust/clvm_disasm/PESQUISA_GUIADA.md",
-      "size": 80,
-      "sha256": "fcf2ceb0be8d023d4e54b459e4dbb16fff964ef9b087708044a3f0739de9b9a4"
+      "size": 885,
+      "sha256": "0e284faa8eaf747927232003e642a8a373b0100028b88ca355c66bdb970531c4"
     },
     {
       "path": "rust/clvm_disasm/README.md",
-      "size": 67,
-      "sha256": "b2145759899a0a67404ca9296ced1a76b4999b44fe64b53ca0318247fabaccd5"
+      "size": 744,
+      "sha256": "8a60d8ef7c7f40ea27b6d4313384b259aad95eaa552c4944953c47f501c96bb8"
     },
     {
       "path": "rust/clvm_disasm/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 5204,
-      "sha256": "2ec1afb6900e208e07da44bc90267a666a173d8dc29b195d73d21cf5389b8777"
+      "size": 7094,
+      "sha256": "770c04955d2b6274ced1374cc6d8260baedf6bd2acf0a9d073c75b7c9e4cce8c"
+    },
+    {
+      "path": "rust/clvm_disasm/solutions/Cargo.lock",
+      "size": 155,
+      "sha256": "319bb4d54be9d48ae418b0520fd3a0e4d7f21a353296b06f33cfdc8a05eaaa78"
     },
     {
       "path": "rust/clvm_disasm/solutions/Cargo.toml",
@@ -604,194 +1154,404 @@
     },
     {
       "path": "rust/clvm_disasm/TEORIA_PASSO_A_PASSO.md",
-      "size": 4647,
-      "sha256": "3d307cb3ce1143e98ca20415ef69d43f928e68e9b34b6ad26edfb2fa5a5d3c3b"
+      "size": 7633,
+      "sha256": "1334e72230c8b0e01f179af92ea0059234139001145dd4473c0afd55b341a15f"
     },
     {
       "path": "rust/clvm_disasm/TESTES_GUIADOS.md",
-      "size": 511,
-      "sha256": "9cfd069584fd38fb3a2d0f0aed30bfc1c8b60dfadef6f37e1e3f9f994e2f626a"
+      "size": 1102,
+      "sha256": "ea73803f72b0fffc6ee25ee21d2272c3c091a8861cb2ce60557c3fdafd853112"
     },
     {
       "path": "START_HERE.md",
-      "size": 993,
-      "sha256": "a418270ad6509a64cccf57c627568b63fb7a11205e657c7035ff3a5d2999fb62"
+      "size": 2846,
+      "sha256": "96d696f6a421c094de0de9b97075dceb764bf44fb1dc016da1e4d37c77cfd8fb"
     },
     {
       "path": "systems/clvm_disassembler/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1017,
+      "sha256": "a2c816837238c5599ce2f79e93e6e0bb3c1c629e5237584efdd3734743dbf376"
     },
     {
       "path": "systems/clvm_disassembler/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1040,
+      "sha256": "9be117147042b799f52c9c733d54870e37a8b8e2eb648605bf83c82673a77dd4"
     },
     {
       "path": "systems/clvm_disassembler/PESQUISA_GUIADA.md",
-      "size": 102,
-      "sha256": "44dfe4148cf5cd31d4484a898fe3f1c59b13d93caa5abf56e2995d0fcc68e7e4"
+      "size": 894,
+      "sha256": "5f78fae7336a01dbdb52d72ab161284c563dffe01980d5c82cf8c98da30d0c45"
     },
     {
       "path": "systems/clvm_disassembler/README.md",
-      "size": 99,
-      "sha256": "4176703eef0d851e25d89157ef3aac45d2498be2cfe966fa925aaa21920ec51a"
+      "size": 871,
+      "sha256": "6038e69afa1a9e9a49050cbe1467420de32fcf8e3a4ae02d07c25901cf2efa4a"
     },
     {
       "path": "systems/clvm_disassembler/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4258,
-      "sha256": "7e00b471d36d1b8fe4b94876030b773a317b353dff36e471e6325828371e53f0"
+      "size": 7544,
+      "sha256": "11f0feced0dee13b0d1578d3ee6d703322c5436fabd2c2d240aee9c3a32b6582"
     },
     {
-      "path": "systems/clvm_disassembler/solutions/clvm_disassembler.py",
-      "size": 1601,
-      "sha256": "aa329813935961ff91d425a7dbdab62b95c04a0bb91302831ff8de24153639f5"
+      "path": "systems/clvm_disassembler/solutions/clvm_disasm.c",
+      "size": 2202,
+      "sha256": "530dfa41a3953c286a0fd61bac364f4d7ea87c356a85b50301724f2ef9363c4b"
     },
     {
-      "path": "systems/clvm_disassembler/solutions/test_clvm_disassembler.py",
-      "size": 994,
-      "sha256": "54958743453e5229c05fa80e2d298b52f3dab5217e5e702bac1a57d39e5be3e4"
+      "path": "systems/clvm_disassembler/solutions/clvm_disasm.h",
+      "size": 417,
+      "sha256": "f18ed30c8739e2c1e0e64e58a446bd0624dfb7ad028cf3c28e9aaf9711643a40"
     },
     {
-      "path": "systems/clvm_disassembler/starter/clvm_disassembler.py",
-      "size": 999,
-      "sha256": "91cbe61a28295cbe2aa1a42f8aa3b240797255bec9006bc2eaec81c31a14e801"
+      "path": "systems/clvm_disassembler/solutions/CMakeLists.txt",
+      "size": 272,
+      "sha256": "c72a02b820e4524338b341ca7460476184c2318b2a02749aca99d37c9dd06380"
     },
     {
-      "path": "systems/clvm_disassembler/starter/test_clvm_disassembler.py",
-      "size": 992,
-      "sha256": "7c4863e5be2a710aa16ab50645141407d360c7ac3f87b8442b039ff06425d8f7"
+      "path": "systems/clvm_disassembler/solutions/fixtures/push42.clbc",
+      "size": 5,
+      "sha256": "54a9fc9cc1ebb46c6257d79a5f512135ef54ca839155386e6a365c999fa98432"
+    },
+    {
+      "path": "systems/clvm_disassembler/solutions/test_clvm_disasm.c",
+      "size": 957,
+      "sha256": "f8f0aedde624b57811e1bcfd60976e68356631a97f989e191d4a9ac987a40c91"
+    },
+    {
+      "path": "systems/clvm_disassembler/starter/clvm_disasm.c",
+      "size": 701,
+      "sha256": "dfb9e2eb74427de26a726a489679db092ef6635a6dc98b5996debd1889dbf6fa"
+    },
+    {
+      "path": "systems/clvm_disassembler/starter/clvm_disasm.h",
+      "size": 417,
+      "sha256": "f18ed30c8739e2c1e0e64e58a446bd0624dfb7ad028cf3c28e9aaf9711643a40"
+    },
+    {
+      "path": "systems/clvm_disassembler/starter/CMakeLists.txt",
+      "size": 272,
+      "sha256": "c72a02b820e4524338b341ca7460476184c2318b2a02749aca99d37c9dd06380"
+    },
+    {
+      "path": "systems/clvm_disassembler/starter/fixtures/push42.clbc",
+      "size": 5,
+      "sha256": "54a9fc9cc1ebb46c6257d79a5f512135ef54ca839155386e6a365c999fa98432"
+    },
+    {
+      "path": "systems/clvm_disassembler/starter/test_clvm_disasm.c",
+      "size": 957,
+      "sha256": "f8f0aedde624b57811e1bcfd60976e68356631a97f989e191d4a9ac987a40c91"
     },
     {
       "path": "systems/clvm_disassembler/TEORIA_PASSO_A_PASSO.md",
-      "size": 4738,
-      "sha256": "e43f1f81f0c4053b5e9f910e215f6ad2034011ef1a312023ee2a6f195810a01c"
+      "size": 9352,
+      "sha256": "ebed30a41225ea2e4db0dc6c4c17af0f1a63882d51a235e55739a6a50293d5d8"
     },
     {
       "path": "systems/clvm_disassembler/TESTES_GUIADOS.md",
-      "size": 505,
-      "sha256": "d69f52fbf69c2efdf419c52b2a3ba9a3b84b12c18444122572273af9fa63f393"
+      "size": 1205,
+      "sha256": "64daaecbb76f615c5d2247d714cec10968757c601211adb943a28dab0ab958a3"
     },
     {
       "path": "systems/clvm_peephole_opt/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1017,
+      "sha256": "f141f8ef55a4f530fb65be6c25e7cb08efaf12c0e45ce4f526632f0e151d79b6"
     },
     {
       "path": "systems/clvm_peephole_opt/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1044,
+      "sha256": "feca41743aed7de5a7efb545103ede5900aed749d10bfbba718b49b24daa4e57"
     },
     {
       "path": "systems/clvm_peephole_opt/PESQUISA_GUIADA.md",
-      "size": 82,
-      "sha256": "4ece3d66d901727816c2264622525e5032d88e5d59da0d8e67ea2f2bc9b109de"
+      "size": 894,
+      "sha256": "1185bbe99a989c1b1a9e3d8175adfcb240e3ef2ec89098fb45ab52a2120b25f4"
     },
     {
       "path": "systems/clvm_peephole_opt/README.md",
-      "size": 74,
-      "sha256": "745bbc907b92dc438e8ae1a5a82c009bbec60cc0156402b3cde295aa93474dc6"
+      "size": 874,
+      "sha256": "bee14a8b871ffbed6c15dc011ba39baf53f61edfd8174725c8adba500e52ae63"
     },
     {
       "path": "systems/clvm_peephole_opt/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 3968,
-      "sha256": "52054c2de40ebc8df6617e5f72f08362d54b8413d7b7c74609d1b38ca4d5aa42"
+      "size": 7018,
+      "sha256": "a3fbb7797bed1d6ff46ef36dbde45ea8bb6f7ce65f29fce095e191664329125c"
     },
     {
-      "path": "systems/clvm_peephole_opt/solutions/clvm_peephole_opt.py",
-      "size": 972,
-      "sha256": "1ca4955f9b24aa468be74703d1700ac61c0d62504ab43b50fc8089ad4f119188"
+      "path": "systems/clvm_peephole_opt/solutions/CMakeLists.txt",
+      "size": 276,
+      "sha256": "3ec047fcc133cf8e61e88f8be97c2ed9bbc61505620b9d8aab1d474541957df2"
     },
     {
-      "path": "systems/clvm_peephole_opt/solutions/test_clvm_peephole_opt.py",
-      "size": 883,
-      "sha256": "ea98ec419f5fa5d944afee62b8a893f9b2453bc161997996da36f14c3e9f407e"
+      "path": "systems/clvm_peephole_opt/solutions/peephole.cpp",
+      "size": 1467,
+      "sha256": "a60fbb838145546eae1ae3cc6ad0da14765102255e5449f7ef1737f2646604a3"
     },
     {
-      "path": "systems/clvm_peephole_opt/starter/clvm_peephole_opt.py",
-      "size": 661,
-      "sha256": "68e4c993534a6cfc02830eab1c946d37c565ca7c06f1c707fe06de987b178cee"
+      "path": "systems/clvm_peephole_opt/solutions/peephole.hpp",
+      "size": 277,
+      "sha256": "a03a091c2a889d3947ce4a9e2ff43c734dd470cf42035082ea9fc14f08773182"
     },
     {
-      "path": "systems/clvm_peephole_opt/starter/test_clvm_peephole_opt.py",
-      "size": 881,
-      "sha256": "7b0942dcd2b83611f150b5cc04e96cfee6311bcc076e0315daa0779be7447352"
+      "path": "systems/clvm_peephole_opt/solutions/test_peephole.cpp",
+      "size": 540,
+      "sha256": "a9559d29d57169cd5049258e0b5df5d2fc43b6f76847c31d9cf206f3b1e23aa4"
+    },
+    {
+      "path": "systems/clvm_peephole_opt/starter/CMakeLists.txt",
+      "size": 276,
+      "sha256": "3ec047fcc133cf8e61e88f8be97c2ed9bbc61505620b9d8aab1d474541957df2"
+    },
+    {
+      "path": "systems/clvm_peephole_opt/starter/peephole.cpp",
+      "size": 512,
+      "sha256": "1371169d33e9099dbd8271685a3e6476faa4757d7ed8f19aabf99ca6f762eaa2"
+    },
+    {
+      "path": "systems/clvm_peephole_opt/starter/peephole.hpp",
+      "size": 277,
+      "sha256": "a03a091c2a889d3947ce4a9e2ff43c734dd470cf42035082ea9fc14f08773182"
+    },
+    {
+      "path": "systems/clvm_peephole_opt/starter/test_peephole.cpp",
+      "size": 540,
+      "sha256": "a9559d29d57169cd5049258e0b5df5d2fc43b6f76847c31d9cf206f3b1e23aa4"
     },
     {
       "path": "systems/clvm_peephole_opt/TEORIA_PASSO_A_PASSO.md",
-      "size": 4749,
-      "sha256": "c9f76ca691cedac199a8eb0e534389ab19a2bc1f8b2a9440bebcfaa32b1fcbf9"
+      "size": 8692,
+      "sha256": "500295c83ac0a940d8cd6400a6b951e37631eceecd5bd18821d73974020caaac"
     },
     {
       "path": "systems/clvm_peephole_opt/TESTES_GUIADOS.md",
+      "size": 1128,
+      "sha256": "5cea9d5a3b5248af8ce1bc4802a01c89339efbd9592d3bd0a507666093fdd166"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/BENCHMARK_GUIADO.md",
+      "size": 342,
+      "sha256": "26cd14984767321acba2f87c58ad20cb7111b54bccf2e821bf80dd1a7fb577dc"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/EXERCICIOS.md",
+      "size": 383,
+      "sha256": "30a6327f24f697b6b6f797bf4abf40d90700544dff4d6376758db0fb30258874"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/PESQUISA_GUIADA.md",
+      "size": 475,
+      "sha256": "67b7b76f53c7d2e3c6631a874a5ecacc51894ae167da1ffaa056272a8ce59e4d"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/README.md",
+      "size": 107,
+      "sha256": "ea771c836f904c6b0e32c5c7ea4f53f118f5742c3643a05f0a6bd8632fda10b5"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 1527,
+      "sha256": "ba47d624f9271b43dec090a6145725056fd93b3b22e7c992adf2082151493d8f"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/solutions/CMakeLists.txt",
+      "size": 375,
+      "sha256": "13c8b2d43d680cfea86fb5915120a12acffc0711088c11c0bf365db937255510"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/solutions/include/spsc.hpp",
+      "size": 298,
+      "sha256": "bac62bbf704e82e6fe55c8fb13648066a38439f5feeab15c88095124bd4d3f38"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/solutions/src/spsc.cpp",
+      "size": 960,
+      "sha256": "59ff2ece0264d5497da41a666a81fc5dc06fe7f8d19b57c18bc645253fc700e6"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/solutions/tests/test_spsc.cpp",
+      "size": 515,
+      "sha256": "48ab2c29ca856d2eadb75cda6a253772acf4bb946b3a3062ce209dfac1ff7455"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/starter/CMakeLists.txt",
+      "size": 375,
+      "sha256": "13c8b2d43d680cfea86fb5915120a12acffc0711088c11c0bf365db937255510"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/starter/include/spsc.hpp",
+      "size": 298,
+      "sha256": "bac62bbf704e82e6fe55c8fb13648066a38439f5feeab15c88095124bd4d3f38"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/starter/src/spsc.cpp",
       "size": 513,
-      "sha256": "0309395edabaad53ada37565b35fbe43100eb05c3cc53cc9d93f0af7cc902742"
+      "sha256": "34e0c98a1b38a3832e1846f19a25ea2793eb0c08d016ef56b9975d6c22bef9d2"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/starter/tests/test_spsc.cpp",
+      "size": 515,
+      "sha256": "48ab2c29ca856d2eadb75cda6a253772acf4bb946b3a3062ce209dfac1ff7455"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/TEORIA_PASSO_A_PASSO.md",
+      "size": 1229,
+      "sha256": "adef91c5f8a34c1b065efdd90fc424b835b3014419c81c95d6b5e981a2a51dd8"
+    },
+    {
+      "path": "systems/spsc_ring_buffer/TESTES_GUIADOS.md",
+      "size": 143,
+      "sha256": "afb37206167f7f0a0a9e98adb4793a116e1394af6ae55b415644d2df1fa66d63"
     },
     {
       "path": "TODO_MAP.md",
-      "size": 12410,
-      "sha256": "ca3347e26b9e38c706b8095f67a0ede8b7241ea3bd6ba8378dad06ccec6cdcb2"
+      "size": 1254,
+      "sha256": "ad9064596c86f3a632471c69e86b8f41c53a49b1509c33c3dd619352c06a76b8"
     },
     {
       "path": "tooling/wasm_section_header/BENCHMARK_GUIADO.md",
-      "size": 150,
-      "sha256": "c5b58494d13d021d1f00f357435265b878b355f7dd73d4246388a98f8be1b61d"
+      "size": 1019,
+      "sha256": "1aee9f0a2194b0fe0f3b259362a3d82fe5924fe35ef945620ee15c0020a281fb"
     },
     {
       "path": "tooling/wasm_section_header/EXERCICIOS.md",
-      "size": 450,
-      "sha256": "07d685a90e72c8e9ad713accdb05524830e777efd03ee7b9ab42c6795752ef52"
+      "size": 1053,
+      "sha256": "f334d9a885e56a889bca2d0613ff250ecde1f7f12c33b2ed155d9c2975e372e2"
     },
     {
       "path": "tooling/wasm_section_header/PESQUISA_GUIADA.md",
-      "size": 67,
-      "sha256": "435269f3d55f8d0236077018303f5c9df3b35a840ed75d86344f97f4c52d54b8"
+      "size": 896,
+      "sha256": "881f1a08c4d30cd4496ce8461a2685c5f457cb899a3682575b284ae25ae2a276"
     },
     {
       "path": "tooling/wasm_section_header/README.md",
-      "size": 76,
-      "sha256": "5ca80cd5f3c4f8b4a0c203f559c5d865416b60df993a276ba0867148663456b3"
+      "size": 878,
+      "sha256": "fc79243e16cade87a1900e897f5dd518825128dc1394cb69209d21feccc5746f"
     },
     {
       "path": "tooling/wasm_section_header/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
-      "size": 4296,
-      "sha256": "55dbc9529fb8dfcde7b4e7c8fe1fda65eb0677d04977a722d0d7a85e40b44375"
+      "size": 6329,
+      "sha256": "4526df4fc5ffdd34124ee2465494433750b3aaa43242379e65fede51ca470566"
     },
     {
-      "path": "tooling/wasm_section_header/solutions/test_wasm_section_header.py",
-      "size": 950,
-      "sha256": "70bf6a306ff0dfd05ed4b6b2bbaf5f0aa078c7bebe7ad230dccae2516f7d8e35"
+      "path": "tooling/wasm_section_header/solutions/api.h",
+      "size": 172,
+      "sha256": "0cd9ba0238a5242068b8e57d031b5a6125fe33bde3a8699c92a47f5c59529b99"
     },
     {
-      "path": "tooling/wasm_section_header/solutions/wasm_section_header.py",
-      "size": 1201,
-      "sha256": "5effd3461e5d097b20596c2cb1cd9c4b009bfaa5220fd787a35b4925bcfaa62a"
+      "path": "tooling/wasm_section_header/solutions/CMakeLists.txt",
+      "size": 340,
+      "sha256": "2a5f4b26d27ee6c3161aa45d8e459e4818fadf209ffa437bb25cb29441d36b02"
     },
     {
-      "path": "tooling/wasm_section_header/starter/test_wasm_section_header.py",
-      "size": 948,
-      "sha256": "d4867c9b2866810f2e70b4da325900138dfd84d5543756eb9cb2c76711eb15d6"
+      "path": "tooling/wasm_section_header/solutions/test_main.c",
+      "size": 589,
+      "sha256": "cbb986ea646232ff63cfd7077b4eef8835c6b99bc8eff5d4eea06a5127d42d49"
     },
     {
-      "path": "tooling/wasm_section_header/starter/wasm_section_header.py",
-      "size": 647,
-      "sha256": "06f9db885a97aedb41a9a92b58e76ff0b0917cf57aa57c664967db898b69d6f4"
+      "path": "tooling/wasm_section_header/solutions/wasm_section.asm",
+      "size": 762,
+      "sha256": "ea50de2ea891a80df8262b1c0e89218fdf2d93bb9b0c8473b1b24acea73d40d4"
+    },
+    {
+      "path": "tooling/wasm_section_header/solutions/wasm_section.S",
+      "size": 615,
+      "sha256": "44ee49f538c565c2a62918c7a6b2be45acf6ef0c234fe36ed3701da4a15b98f0"
+    },
+    {
+      "path": "tooling/wasm_section_header/starter/api.h",
+      "size": 172,
+      "sha256": "0cd9ba0238a5242068b8e57d031b5a6125fe33bde3a8699c92a47f5c59529b99"
+    },
+    {
+      "path": "tooling/wasm_section_header/starter/CMakeLists.txt",
+      "size": 340,
+      "sha256": "2a5f4b26d27ee6c3161aa45d8e459e4818fadf209ffa437bb25cb29441d36b02"
+    },
+    {
+      "path": "tooling/wasm_section_header/starter/test_main.c",
+      "size": 589,
+      "sha256": "cbb986ea646232ff63cfd7077b4eef8835c6b99bc8eff5d4eea06a5127d42d49"
+    },
+    {
+      "path": "tooling/wasm_section_header/starter/wasm_section.asm",
+      "size": 473,
+      "sha256": "e1752108a2b64de7254fa36b95f0e530cac813207aa19e25cbabae36a3aea7d0"
+    },
+    {
+      "path": "tooling/wasm_section_header/starter/wasm_section.S",
+      "size": 249,
+      "sha256": "f7bbc1931cd5ccbe9ecb6d8ad329a6766ad6aebfe31187d86b773f3e17cbf939"
     },
     {
       "path": "tooling/wasm_section_header/TEORIA_PASSO_A_PASSO.md",
-      "size": 4795,
-      "sha256": "703b4f4c8e9dcb2f3da28a4f9bfc413882dfead4749e77a5cdc936de0033a745"
+      "size": 6654,
+      "sha256": "68db720f8d484f6d46de260f4a2a04b84f41af1aea682126034d96c3e9d5038c"
     },
     {
       "path": "tooling/wasm_section_header/TESTES_GUIADOS.md",
-      "size": 523,
-      "sha256": "c2812747242c5c1d4db076e7d36b00181f45295d683cf2ee65f3e7a00967e02d"
+      "size": 1051,
+      "sha256": "745641988e24660ef3db3d772b417b74be96dd26d105323573494eb3076df0f4"
+    },
+    {
+      "path": "unix/xargs_lite/BENCHMARK_GUIADO.md",
+      "size": 342,
+      "sha256": "c40ed717ff0d374f749bd5328875b2c8f03c43cd49c4e3483c476710c5d4af3a"
+    },
+    {
+      "path": "unix/xargs_lite/EXERCICIOS.md",
+      "size": 383,
+      "sha256": "f84c3278fd5d9a3ec2bbdee2e0f99b826e37f8557d647ed75dca71e5a8975e7f"
+    },
+    {
+      "path": "unix/xargs_lite/PESQUISA_GUIADA.md",
+      "size": 475,
+      "sha256": "f843b34be342bbf71a63ee3a05e8d1601eec922170fea157ed5ce4cc522efbb4"
+    },
+    {
+      "path": "unix/xargs_lite/README.md",
+      "size": 107,
+      "sha256": "279690cece33634e939e914e2874ef67cfd3c8bd8f0858ee3c7a29ea80a8cc92"
+    },
+    {
+      "path": "unix/xargs_lite/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 613,
+      "sha256": "abde227a77597e40d04693c99c83a9fc8742b794a932c4c410c052ef959a2777"
+    },
+    {
+      "path": "unix/xargs_lite/solutions/test_xargs_lite.py",
+      "size": 429,
+      "sha256": "0e37ec438dc987e3c012298ebd43d4c2272f0405e12c400608b07088bf164323"
+    },
+    {
+      "path": "unix/xargs_lite/solutions/xargs_lite.py",
+      "size": 543,
+      "sha256": "037bd938a09a247c9f07ddade8d22f260c6cdbb6fc8d6fa3a0efd5eb1fc012b3"
+    },
+    {
+      "path": "unix/xargs_lite/starter/test_xargs_lite.py",
+      "size": 429,
+      "sha256": "0e37ec438dc987e3c012298ebd43d4c2272f0405e12c400608b07088bf164323"
+    },
+    {
+      "path": "unix/xargs_lite/starter/xargs_lite.py",
+      "size": 316,
+      "sha256": "97bf9119394a247d1a71f7b1ca9562286caba6680538373ba826f8e60268366e"
+    },
+    {
+      "path": "unix/xargs_lite/TEORIA_PASSO_A_PASSO.md",
+      "size": 647,
+      "sha256": "31d0efa1d19d6d3998adbf7a9e895cdd381f7ff96ba7c8b64f3bec8c8af3b991"
+    },
+    {
+      "path": "unix/xargs_lite/TESTES_GUIADOS.md",
+      "size": 127,
+      "sha256": "55c7d3593721c50d22a008e28c9bcc33072166ede1c159524c8509e48b4ea1ff"
     },
     {
       "path": "VALIDATION.md",
-      "size": 502,
-      "sha256": "16a7747544cf230647650a010078ac29328604639cf0e93dc5b7e6a3234d2083"
+      "size": 1506,
+      "sha256": "ec2591479eecb7ffcf30388a3ec6234cd046f0b5517f528b6bdfbafd84f12203"
     }
   ],
-  "modules": 13
+  "modules": 22
 }
