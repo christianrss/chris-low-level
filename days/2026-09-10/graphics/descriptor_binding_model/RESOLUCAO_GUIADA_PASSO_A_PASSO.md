@@ -1,147 +1,147 @@
-# Resolucao guiada — descriptor_binding_model
+# Resolução guiada — descriptor_binding_model
 
-## Mapa exato starter → resolucao
+## Mapa exato starter → resolução
 
-| TODO | Arquivo | Funcao |
-|------|---------|--------|
-| `D8-GFX-BIND` | `starter/descriptor_binding_model.py` | `bind` |
-| `D8-GFX-SET` | `starter/descriptor_binding_model.py` | `validate_set` |
-| `D8-GFX-LAYOUT` | `starter/descriptor_binding_model.py` | `layout_of` |
+| TODO ID | Arquivo starter | Função / âncora | Substituir |
+|---------|-----------------|-----------------|------------|
+| `GFX-DESC-LAYOUT` | `starter/core/descriptor.cpp` | `make_layout` | stub `TODO [GFX-DESC-LAYOUT]` |
+| `GFX-DESC-BIND` | `starter/core/descriptor.cpp` | `bind` | stub `TODO [GFX-DESC-BIND]` |
+| `GFX-DESC-SAMPLE` | `starter/core/descriptor.cpp` | `sample` | stub `TODO [GFX-DESC-SAMPLE]` |
 
+---
 
 ## Baseline
 
 ```powershell
 cd days/2026-09-10/graphics/descriptor_binding_model/starter
-python test_descriptor_binding_model.py
+cmake -S . -B build_ci -DCMAKE_BUILD_TYPE=Release
+cmake --build build_ci
+ctest --test-dir build_ci --output-on-failure
 ```
 
-**Esperado antes dos TODOs:** FAIL.
+**Esperado antes dos TODOs:** `test_descriptor` falha nos asserts de layout/bind/sample.
 
+---
 
-## D8-GFX-BIND
+## Relatório de resolução
 
-### Onde colocar (D8-GFX-BIND)
+## GFX-DESC-LAYOUT — `make_layout`
+
+### Onde colocar (LAYOUT)
 
 | Campo | Valor |
 |-------|-------|
-| Arquivo | `starter/descriptor_binding_model.py` |
-| Funcao | `bind` |
-| Substituir | corpo sob `TODO [D8-GFX-BIND]` |
-| Nao mexer | assinatura / testes |
+| Arquivo | `starter/core/descriptor.cpp` |
+| Função | `make_layout` |
+| Substituir | stub `TODO [GFX-DESC-LAYOUT]` |
 
-### O problema
-Sem este passo o assert de `D8-GFX-BIND` falha.
+### 1. O problema (LAYOUT)
 
-### Algoritmo / trace
-Caso do TESTES_GUIADOS ligado a `D8-GFX-BIND`.
+Sem clamp, `slot_count` inválido quebra o array fixo e o Caso 1 falha.
 
-### Escreva o codigo
+### Escreva o código (LAYOUT)
 
-```python
-    if binding not in layout["bindings"]:
-        raise KeyError(binding)
-    return {"set": set_id, "binding": binding, "resource": resource}
-def validate_set(layout, set_id, table):
-    for b in layout["bindings"]:
-        if b not in table:
-            raise KeyError(f"missing {b}")
-    return True
+```cpp
+DescriptorLayout make_layout(int slot_count) {
+    DescriptorLayout layout{};
+    if (slot_count < 0) slot_count = 0;
+    if (slot_count > kMaxSlots) slot_count = kMaxSlots;
+    layout.slot_count = slot_count;
+    return layout;
+}
 ```
 
-### Por que funciona?
-Materializa o contrato numerico de `D8-GFX-BIND`.
+### Por que funciona (LAYOUT)
 
-### Verifique
-Baseline parcial; `D8-GFX-BIND` PASS.
+Normaliza a capacidade antes de qualquer bind — contrato estável para o set.
 
-### Checkpoint
-- [ ] `D8-GFX-BIND` PASS
+### Verifique (LAYOUT)
 
-## D8-GFX-SET
+`make_layout(3)==3`, `make_layout(99)==kMaxSlots`. `ctest` ainda falha em bind.
 
-### Onde colocar (D8-GFX-SET)
+### Debug (LAYOUT)
+
+| Sintoma | Causa | Ação |
+|---------|-------|------|
+| 99 não clampa | faltou max | compare com `kMaxSlots` |
+
+---
+
+## GFX-DESC-BIND — `bind`
+
+### Onde colocar (BIND)
 
 | Campo | Valor |
 |-------|-------|
-| Arquivo | `starter/descriptor_binding_model.py` |
-| Funcao | `validate_set` |
-| Substituir | corpo sob `TODO [D8-GFX-SET]` |
-| Nao mexer | assinatura / testes |
+| Arquivo | `starter/core/descriptor.cpp` |
+| Função | `bind` |
+| Substituir | stub `TODO [GFX-DESC-BIND]` |
 
-### O problema
-Sem este passo o assert de `D8-GFX-SET` falha.
+### 1. O problema (BIND)
 
-### Algoritmo / trace
-Caso do TESTES_GUIADOS ligado a `D8-GFX-SET`.
+Sem gravar tint + flag, `sample` não tem o que devolver e os painéis ficam pretos.
 
-### Escreva o codigo
+### Escreva o código (BIND)
 
-```python
-    for b in layout["bindings"]:
-        if b not in table:
-            raise KeyError(f"missing {b}")
-    return True
+```cpp
+void bind(DescriptorSet& set, int slot, Vec3 tint) {
+    if (slot < 0 || slot >= set.slot_count || slot >= kMaxSlots) return;
+    set.tints[slot] = tint;
+    set.bound[slot] = true;
+}
 ```
 
-### Por que funciona?
-Materializa o contrato numerico de `D8-GFX-SET`.
+### Por que funciona (BIND)
 
-### Verifique
-Baseline parcial; `D8-GFX-SET` PASS.
+Guarda o recurso e marca o slot válido — espelho de update de descriptor.
 
-### Checkpoint
-- [ ] `D8-GFX-SET` PASS
+### Verifique (BIND)
 
-## D8-GFX-LAYOUT
+Após três binds RGB, `bound[0..2]` true. Sample ainda pode falhar se não implementado.
 
-### Onde colocar (D8-GFX-LAYOUT)
+### Debug (BIND)
+
+| Sintoma | Causa | Ação |
+|---------|-------|------|
+| escrita ignorada | `slot_count` 0 | setar do layout |
+
+---
+
+## GFX-DESC-SAMPLE — `sample`
+
+### Onde colocar (SAMPLE)
 
 | Campo | Valor |
 |-------|-------|
-| Arquivo | `starter/descriptor_binding_model.py` |
-| Funcao | `layout_of` |
-| Substituir | corpo sob `TODO [D8-GFX-LAYOUT]` |
-| Nao mexer | assinatura / testes |
+| Arquivo | `starter/core/descriptor.cpp` |
+| Função | `sample` |
+| Substituir | stub `TODO [GFX-DESC-SAMPLE]` |
 
-### O problema
-Sem este passo o assert de `D8-GFX-LAYOUT` falha.
+### 1. O problema (SAMPLE)
 
-### Algoritmo / trace
-Caso do TESTES_GUIADOS ligado a `D8-GFX-LAYOUT`.
+O draw precisa de um tint por painel; sem sample seguro, ou crash ou lixo.
 
-### Escreva o codigo
+### Escreva o código (SAMPLE)
 
-```python
-    return {"bindings": list(bindings)}
-def bind(layout, set_id, binding, resource):
-    if binding not in layout["bindings"]:
-        raise KeyError(binding)
-    return {"set": set_id, "binding": binding, "resource": resource}
-def validate_set(layout, set_id, table):
-    for b in layout["bindings"]:
-        if b not in table:
+```cpp
+Vec3 sample(const DescriptorSet& set, int slot) {
+    if (slot < 0 || slot >= set.slot_count || slot >= kMaxSlots || !set.bound[slot]) {
+        return Vec3{0.0f, 0.0f, 0.0f};
+    }
+    return set.tints[slot];
+}
 ```
 
-### Por que funciona?
-Materializa o contrato numerico de `D8-GFX-LAYOUT`.
+### Por que funciona (SAMPLE)
 
-### Verifique
-Baseline parcial; `D8-GFX-LAYOUT` PASS.
+Valida range + bound; devolve zero definido quando inválido — Caso 3 cobre o slot 7.
 
-### Checkpoint
-- [ ] `D8-GFX-LAYOUT` PASS
+### Verifique (SAMPLE)
 
-## Debug
+`ctest` passa: R/G/B nos slots 0..2 e zero no 7.
 
-| Sintoma | Causa | Correcao |
-|---------|-------|----------|
-| stub | corpo intacto | cole o bloco |
-| off-by-one | size | refaca trace |
+### Debug (SAMPLE)
 
-## Relatorio de resolucao
-
-- TODOs:
-- Saida:
-- Invariantes:
-- Benchmark: nao executado
+| Sintoma | Causa | Ação |
+|---------|-------|------|
+| sempre zero | não checou `bound` ao contrário | retorne tint se bound |

@@ -1,22 +1,20 @@
-# Exercícios — shader_stage_fsm
+# Exercicios — shader_stage_fsm
 
-## Fácil — paper-trace do Caso 1
+## Nivel 1 — Advance (GFX-SH-ADVANCE)
 
-Reproduza no papel o trace numérico da `TEORIA_PASSO_A_PASSO.md` (mesmos bytes/estados do teste).
-Arquivo-alvo: nenhum (caderno). Critério de aceite: os números batem com `TESTES_GUIADOS.md` Caso 1 **antes** de editar código.
+Implemente o ciclo de estados em `starter/core/shader_fsm.cpp`.
+**Aceite:** Caso 1 em TESTES_GUIADOS passa.
 
-## Médio — `GFX-SHADER-FSM-01`
+## Nivel 2 — Reset (GFX-SH-RESET)
 
-Implemente `shader_can` em `starter/shader_fsm.cpp`.
-Critério de aceite: o `PEDAGOGY-TEST` ligado a `GFX-SHADER-FSM-01` PASS; valores iguais ao paper-trace.
+Force retorno a Edit.
+**Aceite:** Caso 2 passa; tecla R na demo (solutions) reinicia cor amarela.
 
-## Difícil — `GFX-SHADER-FSM-02` + `GFX-SHADER-FSM-03`
+## Nivel 3 — Color (GFX-SH-COLOR)
 
-Complete `shader_apply` e `shader_illegal` mantendo invariantes dos passos anteriores.
-Critério de aceite: suíte completa do starter PASS; caso negativo (erro/bounds) ainda falha como documentado.
+Mapeie Stage → RGB.
+**Aceite:** Caso 3 passa; HUD e triangulo compartilham a mesma paleta.
 
-## Desafio — extensão sem quebrar testes
+## Nivel 4 — Dual visual
 
-Altere apenas documentação ou um assert extra local: escolha um input *vizinho* ao Caso 1
-(ex.: PUSH 256, 5º push no anel, id WASM 3, logits {1000,1001,1002}) e mostre no papel
-o resultado esperado. Não relaxe os asserts existentes.
+Rode `shader_fsm_sw` e `shader_fsm_gl` (solutions). Confirme VISUAL-01 e preencha COMPARISON.md mentalmente (CPU vs GL).

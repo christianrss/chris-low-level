@@ -1,201 +1,169 @@
-# Resolução guiada — shader_stage_fsm
+# Resolucao guiada — shader_stage_fsm
 
-## Mapa exato starter → resolução
+## Mapa exato starter → resolucao
 
-| TODO ID | Arquivo | Função / âncora | Substituir | Não mexer |
-|---------|---------|-----------------|------------|-----------|
-| `GFX-SHADER-FSM-01` | `starter/shader_fsm.cpp` | `shader_can` | corpo sob `TODO [GFX-SHADER-FSM-01]` | assinaturas e testes |
-| `GFX-SHADER-FSM-02` | `starter/shader_fsm.cpp` | `shader_apply` | corpo sob `TODO [GFX-SHADER-FSM-02]` | assinaturas e testes |
-| `GFX-SHADER-FSM-03` | `starter/shader_fsm.cpp` | `shader_illegal` | corpo sob `TODO [GFX-SHADER-FSM-03]` | assinaturas e testes |
+| TODO ID | Arquivo starter | Funcao / ancora | Substituir |
+|---------|-----------------|-----------------|------------|
+| `GFX-SH-ADVANCE` | `starter/core/shader_fsm.cpp` | `ShaderFsm::advance` | stub `TODO [GFX-SH-ADVANCE]` |
+| `GFX-SH-RESET` | `starter/core/shader_fsm.cpp` | `ShaderFsm::reset` | stub `TODO [GFX-SH-RESET]` |
+| `GFX-SH-COLOR` | `starter/core/shader_fsm.cpp` | `ShaderFsm::stage_color` | stub `TODO [GFX-SH-COLOR]` |
+
+---
 
 ## Baseline
 
 ```powershell
 cd days/2026-09-08/graphics/shader_stage_fsm/starter
-cmake -S . -B build_ci -A x64
-cmake --build build_ci --config Release
-ctest --test-dir build_ci -C Release --output-on-failure
+cmake -S . -B build_ci -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build_ci
+ctest --test-dir build_ci --output-on-failure
 ```
 
-**Esperado antes dos TODOs:** FAIL (stub, NotImplemented, assert, ou retorno de erro).
-
-Registre a mensagem de falha. Só avance quando souber qual TODO desbloqueia o Caso 1.
-
-## GFX-SHADER-FSM-01
-
-### Onde colocar
-
-| Campo | Valor |
-|-------|-------|
-| Arquivo | `starter/shader_fsm.cpp` |
-| Função / âncora | `shader_can` / comentário `TODO [GFX-SHADER-FSM-01]` |
-| Substituir | corpo do stub (mantenha a assinatura) |
-| Não mexer | headers, testes, outros TODOs neste passo |
-
-### O problema
-
-Sem can, EDIT→COMPILE não é permitido.
-
-### Algoritmo / trace
-
-Tabela de arestas permitidas; default 0.
-
-No papel, execute o Caso ligado a este TODO com os números de `TEORIA_PASSO_A_PASSO.md`
-antes de digitar. Confirme size/estado/retorno esperado.
-
-### Escreva o código
-
-```cpp
-int shader_can(int from, int to) {
-    // PEDAGOGY-SOLUTION: GFX-SHADER-FSM-01
-    if (from == ST_EDIT && to == ST_COMPILE) return 1;
-    if (from == ST_COMPILE && (to == ST_LINK || to == ST_EDIT)) return 1;
-    if (from == ST_LINK && to == ST_READY) return 1;
-    if (from == ST_READY && to == ST_EDIT) return 1;
-    return 0;
-}
-```
-
-### Por que funciona?
-
-A rotina `shader_can` materializa o contrato de `GFX-SHADER-FSM-01`: os mesmos números do trace
-da teoria aparecem no assert. Cada branch de erro (-1 / Err / false / ValueError)
-corresponde a um caso negativo documentado em `TESTES_GUIADOS.md`.
-
-### Verifique
-
-1. Recompile/rode só o caminho que exerce `GFX-SHADER-FSM-01`.
-2. Confira o valor numérico (não só “passou”).
-3. Se falhar, diff hex/estado com o trace da TEORIA.
-
-### Checkpoint
-
-- [ ] `GFX-SHADER-FSM-01` PASS no starter
-- [ ] Não quebrei TODOs anteriores
-- [ ] Entendi o *porquê* do size/estado, não só o resultado
+**Esperado antes dos TODOs:** compila; `test_shader_stage_fsm` falha no primeiro `assert` de `advance` (permanece Edit).
 
 ---
 
-## GFX-SHADER-FSM-02
+## Relatorio de resolucao
 
-### Onde colocar
+Preencha apos passar o ctest:
 
-| Campo | Valor |
-|-------|-------|
-| Arquivo | `starter/shader_fsm.cpp` |
-| Função / âncora | `shader_apply` / comentário `TODO [GFX-SHADER-FSM-02]` |
-| Substituir | corpo do stub (mantenha a assinatura) |
-| Não mexer | headers, testes, outros TODOs neste passo |
-
-### O problema
-
-Sem apply, o estado não avança com segurança.
-
-### Algoritmo / trace
-
-Se !can return -1; senão *stage=to.
-
-No papel, execute o Caso ligado a este TODO com os números de `TEORIA_PASSO_A_PASSO.md`
-antes de digitar. Confirme size/estado/retorno esperado.
-
-### Escreva o código
-
-```cpp
-int shader_apply(int *stage, int to) {
-    // PEDAGOGY-SOLUTION: GFX-SHADER-FSM-02
-    if (!stage || !shader_can(*stage, to)) return -1;
-    *stage = to;
-    return 0;
-}
-```
-
-### Por que funciona?
-
-A rotina `shader_apply` materializa o contrato de `GFX-SHADER-FSM-02`: os mesmos números do trace
-da teoria aparecem no assert. Cada branch de erro (-1 / Err / false / ValueError)
-corresponde a um caso negativo documentado em `TESTES_GUIADOS.md`.
-
-### Verifique
-
-1. Recompile/rode só o caminho que exerce `GFX-SHADER-FSM-02`.
-2. Confira o valor numérico (não só “passou”).
-3. Se falhar, diff hex/estado com o trace da TEORIA.
-
-### Checkpoint
-
-- [ ] `GFX-SHADER-FSM-02` PASS no starter
-- [ ] Não quebrei TODOs anteriores
-- [ ] Entendi o *porquê* do size/estado, não só o resultado
+| TODO | Status | Notas |
+|------|--------|-------|
+| GFX-SH-ADVANCE | | |
+| GFX-SH-RESET | | |
+| GFX-SH-COLOR | | |
 
 ---
 
-## GFX-SHADER-FSM-03
+## GFX-SH-ADVANCE — `advance`
 
-### Onde colocar
+### Onde colocar (ADVANCE)
 
 | Campo | Valor |
 |-------|-------|
-| Arquivo | `starter/shader_fsm.cpp` |
-| Função / âncora | `shader_illegal` / comentário `TODO [GFX-SHADER-FSM-03]` |
-| Substituir | corpo do stub (mantenha a assinatura) |
-| Não mexer | headers, testes, outros TODOs neste passo |
+| **Arquivo** | `starter/core/shader_fsm.cpp` |
+| **Funcao / ancora** | `ShaderFsm::advance` |
+| **Substituir** | corpo com `TODO [GFX-SH-ADVANCE]` |
+| **Nao mexer** | construtor, `stage()` |
 
-### O problema
+### 1. O problema (ADVANCE)
 
-Sem illegal, o teste de aresta proibida falha.
+Sem `advance`, o triangulo fica amarelo (Edit) para sempre e o Caso 1 falha.
 
-### Algoritmo / trace
-
-return can?0:1.
-
-No papel, execute o Caso ligado a este TODO com os números de `TEORIA_PASSO_A_PASSO.md`
-antes de digitar. Confirme size/estado/retorno esperado.
-
-### Escreva o código
+### Escreva o codigo (ADVANCE)
 
 ```cpp
-int shader_illegal(int from, int to) {
-    // PEDAGOGY-SOLUTION: GFX-SHADER-FSM-03
-    return shader_can(from, to) ? 0 : 1;
+void ShaderFsm::advance() {
+    switch (stage_) {
+    case Stage::Edit:
+        stage_ = Stage::Compile;
+        break;
+    case Stage::Compile:
+        stage_ = Stage::Link;
+        break;
+    case Stage::Link:
+        stage_ = Stage::Ready;
+        break;
+    case Stage::Ready:
+        stage_ = Stage::Edit;
+        break;
+    }
 }
 ```
 
-### Por que funciona?
+### Por que funciona (ADVANCE)
 
-A rotina `shader_illegal` materializa o contrato de `GFX-SHADER-FSM-03`: os mesmos números do trace
-da teoria aparecem no assert. Cada branch de erro (-1 / Err / false / ValueError)
-corresponde a um caso negativo documentado em `TESTES_GUIADOS.md`.
+Cada estado tem exatamente um sucessor; Ready volta a Edit para fechar o ciclo pedagogico.
 
-### Verifique
+### Verifique (ADVANCE)
 
-1. Recompile/rode só o caminho que exerce `GFX-SHADER-FSM-03`.
-2. Confira o valor numérico (não só “passou”).
-3. Se falhar, diff hex/estado com o trace da TEORIA.
+Caso 1: quatro `advance` a partir de Edit terminam em Edit novamente.
 
-### Checkpoint
+---
 
-- [ ] `GFX-SHADER-FSM-03` PASS no starter
-- [ ] Não quebrei TODOs anteriores
-- [ ] Entendi o *porquê* do size/estado, não só o resultado
+## GFX-SH-RESET — `reset`
+
+### Onde colocar (RESET)
+
+| Campo | Valor |
+|-------|-------|
+| **Arquivo** | `starter/core/shader_fsm.cpp` |
+| **Funcao / ancora** | `ShaderFsm::reset` |
+| **Substituir** | corpo com `TODO [GFX-SH-RESET]` |
+| **Nao mexer** | `advance` ja resolvido |
+
+### 1. O problema (RESET)
+
+Sem reset, tecla R na demo e o Caso 2 nao restauram o editor.
+
+### Escreva o codigo (RESET)
+
+```cpp
+void ShaderFsm::reset() {
+    stage_ = Stage::Edit;
+}
+```
+
+### Por que funciona (RESET)
+
+Atribuicao direta ignora o caminho ciclico — espelha “discard shader” em toolchains.
+
+### Verifique (RESET)
+
+Caso 2: apos dois advances (Link), `reset()` → Edit.
+
+---
+
+## GFX-SH-COLOR — `stage_color`
+
+### Onde colocar (COLOR)
+
+| Campo | Valor |
+|-------|-------|
+| **Arquivo** | `starter/core/shader_fsm.cpp` |
+| **Funcao / ancora** | `ShaderFsm::stage_color` |
+| **Substituir** | corpo com `TODO [GFX-SH-COLOR]` |
+| **Nao mexer** | backends (ja leem a API) |
+
+### 1. O problema (COLOR)
+
+Sem cores corretas, HUD e triangulo ficam pretos; asserts RGB falham.
+
+### Escreva o codigo (COLOR)
+
+```cpp
+Rgb ShaderFsm::stage_color() const {
+    switch (stage_) {
+    case Stage::Edit:
+        return {0.95f, 0.75f, 0.20f};
+    case Stage::Compile:
+        return {0.25f, 0.55f, 0.95f};
+    case Stage::Link:
+        return {0.70f, 0.35f, 0.90f};
+    case Stage::Ready:
+        return {0.25f, 0.85f, 0.40f};
+    }
+    return {1.0f, 1.0f, 1.0f};
+}
+```
+
+### Por que funciona (COLOR)
+
+Constantes batem com a tabela da TEORIA e com `near()` no teste — contrato unico CPU/GL.
+
+### Verifique (COLOR)
+
+Caso 3: cores Edit/Compile/Link/Ready batem com tolerancia 1e-4.
 
 ---
 
 ## Debug
 
-| Sintoma | Causa provável | Correção |
-|---------|----------------|----------|
-| FAIL no Caso 1 | stub intacto / endian errado | releia o trace da TEORIA e o bloco do primeiro TODO |
-| PASS parcial | size/estado desalinhado no TODO do meio | imprima pc/head/estado antes do assert |
-| Crash / panic | bounds | valide Length/len antes de indexar |
-| Diff de string | snprintf/format | compare caractere a caractere com o esperado |
+| Sintoma | Causa | Acao |
+|---------|-------|------|
+| assert Compile falhou | esquceu break / fallthrough | use break em cada case |
+| cor Link != roxo | valores trocados | copie a tabela literal |
+| ctest OK mas janela MessageBox | so resolveu core | rode `solutions` sw/gl |
+| triangulo nao gira | dt=0 / Sleep demais | confira loop PeekMessage |
 
-## Relatório de resolução
-
-| TODO | Horas | Maior bug | O que aprendia de novo |
-|------|-------|-----------|------------------------|
-| `GFX-SHADER-FSM-01` |  |  |  |
-| `GFX-SHADER-FSM-02` |  |  |  |
-| `GFX-SHADER-FSM-03` |  |  |  |
-
-Síntese (3–5 linhas): o que o wire-format/estado deste módulo força você a respeitar
-que uma API de alto nível esconderia.
+**Esperado final:** `ctest` PASS; VISUAL-01 mostra triangulo rotativo mudando de cor a cada ~1.5s.

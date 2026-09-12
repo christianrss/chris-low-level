@@ -4,143 +4,145 @@
 
 | TODO | Arquivo | Funcao |
 |------|---------|--------|
-| `D7-GFX-VALIDATE` | `starter/explicit_barriers.py` | `validate_transition` |
-| `D7-GFX-D3D12` | `starter/explicit_barriers.py` | `d3d12_barrier` |
-| `D7-GFX-VULKAN` | `starter/explicit_barriers.py` | `vulkan_barrier` |
-
+| `GFX-BAR-VALID` | `starter/core/barriers.cpp` | `can_transition` |
+| `GFX-BAR-APPLY` | `starter/core/barriers.cpp` | `apply_barrier` |
+| `GFX-BAR-TICK` | `starter/core/barriers.cpp` | `next_state` |
 
 ## Baseline
 
 ```powershell
 cd days/2026-09-09/graphics/explicit_barriers/starter
-python test_explicit_barriers.py
+cmake -S . -B build_ci -G Ninja
+cmake --build build_ci
+ctest --test-dir build_ci --output-on-failure
 ```
 
 **Esperado antes dos TODOs:** FAIL.
 
 
-## D7-GFX-VALIDATE
+## GFX-BAR-VALID
 
-### Onde colocar (D7-GFX-VALIDATE)
-
-| Campo | Valor |
-|-------|-------|
-| Arquivo | `starter/explicit_barriers.py` |
-| Funcao | `validate_transition` |
-| Substituir | corpo sob `TODO [D7-GFX-VALIDATE]` |
-| Nao mexer | assinatura / testes |
-
-### O problema
-Sem este passo o assert de `D7-GFX-VALIDATE` falha.
-
-### Algoritmo / trace
-1. Leia o assert do teste ligado a este TODO.
-2. Execute o Caso 1 no papel (entrada → estado → saida).
-3. Compare com o bloco abaixo antes de colar no starter.
-
-### Escreva o codigo
-
-```python
-    if (before,after) not in _ALLOWED: raise ValueError("invalid transition")
-    return True
-def d3d12_barrier(before,after):
-    validate_transition(before,after);m={"Undefined":"COMMON","CopyDst":"COPY_DEST","ShaderRead":"PIXEL_SHADER_RESOURCE","RenderTarget":"RENDER_TARGET","Present":"PRESENT"};return {"before":m[before],"after":m[after]}
-def vulkan_barrier(before,after):
-    validate_transition(before,after);m={"Undefined":("UNDEFINED","TOP_OF_PIPE","NONE"),"CopyDst":("TRANSFER_DST_OPTIMAL","TRANSFER","TRANSFER_WRITE"),"ShaderRead":("SHADER_READ_ONLY_OPTIMAL","FRAGMENT_SHADER","SHADER_READ"),"RenderTarget":("COLOR_ATTACHMENT_OPTIMAL","COLOR_ATTACHMENT_OUTPUT","COLOR_ATTACHMENT_WRITE"),"Present":("PRESENT_SRC_KHR","BOTTOM_OF_PIPE","NONE")};return {"before":m[before],"after":m[after]}
-```
-
-### Por que funciona?
-Materializa o contrato numerico de `D7-GFX-VALIDATE`.
-
-### Verifique
-Baseline parcial; `D7-GFX-VALIDATE` PASS.
-
-### Checkpoint
-- [ ] `D7-GFX-VALIDATE` PASS
-
-## D7-GFX-D3D12
-
-### Onde colocar (D7-GFX-D3D12)
+### Onde colocar (GFX-BAR-VALID)
 
 | Campo | Valor |
 |-------|-------|
-| Arquivo | `starter/explicit_barriers.py` |
-| Funcao | `d3d12_barrier` |
-| Substituir | corpo sob `TODO [D7-GFX-D3D12]` |
+| Arquivo | `starter/core/barriers.cpp` |
+| Funcao | `can_transition` |
+| Substituir | corpo sob `TODO [GFX-BAR-VALID]` |
 | Nao mexer | assinatura / testes |
 
 ### O problema
-Sem este passo o assert de `D7-GFX-D3D12` falha.
+Sem este passo o assert de `GFX-BAR-VALID` falha e a cena visual fica incompleta.
 
 ### Algoritmo / trace
-1. Leia o assert do teste ligado a este TODO.
-2. Execute o Caso 1 no papel (entrada → estado → saida).
-3. Compare com o bloco abaixo antes de colar no starter.
+1. Leia o PEDAGOGY-TEST de `GFX-BAR-VALID`.
+2. Execute o Caso 1 no papel.
+3. Cole o bloco abaixo no starter.
 
 ### Escreva o codigo
 
-```python
-    validate_transition(before,after);m={"Undefined":"COMMON","CopyDst":"COPY_DEST","ShaderRead":"PIXEL_SHADER_RESOURCE","RenderTarget":"RENDER_TARGET","Present":"PRESENT"};return {"before":m[before],"after":m[after]}
-def vulkan_barrier(before,after):
-    validate_transition(before,after);m={"Undefined":("UNDEFINED","TOP_OF_PIPE","NONE"),"CopyDst":("TRANSFER_DST_OPTIMAL","TRANSFER","TRANSFER_WRITE"),"ShaderRead":("SHADER_READ_ONLY_OPTIMAL","FRAGMENT_SHADER","SHADER_READ"),"RenderTarget":("COLOR_ATTACHMENT_OPTIMAL","COLOR_ATTACHMENT_OUTPUT","COLOR_ATTACHMENT_WRITE"),"Present":("PRESENT_SRC_KHR","BOTTOM_OF_PIPE","NONE")};return {"before":m[before],"after":m[after]}
+```cpp
+if (from == ResourceState::Undefined && to == ResourceState::CopyDst) return true;
+if (from == ResourceState::CopyDst && to == ResourceState::ShaderRead) return true;
+return from == to;
 ```
 
 ### Por que funciona?
-Materializa o contrato numerico de `D7-GFX-D3D12`.
+Materializa o contrato numerico de `GFX-BAR-VALID` usado pelo render.
 
 ### Verifique
-Baseline parcial; `D7-GFX-D3D12` PASS.
+Baseline parcial; `GFX-BAR-VALID` PASS.
 
 ### Checkpoint
-- [ ] `D7-GFX-D3D12` PASS
+- [ ] `GFX-BAR-VALID` PASS
 
-## D7-GFX-VULKAN
 
-### Onde colocar (D7-GFX-VULKAN)
+## GFX-BAR-APPLY
+
+### Onde colocar (GFX-BAR-APPLY)
 
 | Campo | Valor |
 |-------|-------|
-| Arquivo | `starter/explicit_barriers.py` |
-| Funcao | `vulkan_barrier` |
-| Substituir | corpo sob `TODO [D7-GFX-VULKAN]` |
+| Arquivo | `starter/core/barriers.cpp` |
+| Funcao | `apply_barrier` |
+| Substituir | corpo sob `TODO [GFX-BAR-APPLY]` |
 | Nao mexer | assinatura / testes |
 
 ### O problema
-Sem este passo o assert de `D7-GFX-VULKAN` falha.
+Sem este passo o assert de `GFX-BAR-APPLY` falha e a cena visual fica incompleta.
 
 ### Algoritmo / trace
-1. Leia o assert do teste ligado a este TODO.
-2. Execute o Caso 1 no papel (entrada → estado → saida).
-3. Compare com o bloco abaixo antes de colar no starter.
+1. Leia o PEDAGOGY-TEST de `GFX-BAR-APPLY`.
+2. Execute o Caso 1 no papel.
+3. Cole o bloco abaixo no starter.
 
 ### Escreva o codigo
 
-```python
-    validate_transition(before,after);m={"Undefined":("UNDEFINED","TOP_OF_PIPE","NONE"),"CopyDst":("TRANSFER_DST_OPTIMAL","TRANSFER","TRANSFER_WRITE"),"ShaderRead":("SHADER_READ_ONLY_OPTIMAL","FRAGMENT_SHADER","SHADER_READ"),"RenderTarget":("COLOR_ATTACHMENT_OPTIMAL","COLOR_ATTACHMENT_OUTPUT","COLOR_ATTACHMENT_WRITE"),"Present":("PRESENT_SRC_KHR","BOTTOM_OF_PIPE","NONE")};return {"before":m[before],"after":m[after]}
-result = handle_d7_gfx_vulkan(state)
-assert result is not None  # D7-GFX-VULKAN
-return result
+```cpp
+if (!can_transition(r.state, to)) return false;
+r.state = to;
+return true;
 ```
 
 ### Por que funciona?
-Materializa o contrato numerico de `D7-GFX-VULKAN`.
+Materializa o contrato numerico de `GFX-BAR-APPLY` usado pelo render.
 
 ### Verifique
-Baseline parcial; `D7-GFX-VULKAN` PASS.
+Baseline parcial; `GFX-BAR-APPLY` PASS.
 
 ### Checkpoint
-- [ ] `D7-GFX-VULKAN` PASS
+- [ ] `GFX-BAR-APPLY` PASS
+
+
+## GFX-BAR-TICK
+
+### Onde colocar (GFX-BAR-TICK)
+
+| Campo | Valor |
+|-------|-------|
+| Arquivo | `starter/core/barriers.cpp` |
+| Funcao | `next_state` |
+| Substituir | corpo sob `TODO [GFX-BAR-TICK]` |
+| Nao mexer | assinatura / testes |
+
+### O problema
+Sem este passo o assert de `GFX-BAR-TICK` falha e a cena visual fica incompleta.
+
+### Algoritmo / trace
+1. Leia o PEDAGOGY-TEST de `GFX-BAR-TICK`.
+2. Execute o Caso 1 no papel.
+3. Cole o bloco abaixo no starter.
+
+### Escreva o codigo
+
+```cpp
+if (s == ResourceState::Undefined) return ResourceState::CopyDst;
+if (s == ResourceState::CopyDst) return ResourceState::ShaderRead;
+return ResourceState::Present;
+```
+
+### Por que funciona?
+Materializa o contrato numerico de `GFX-BAR-TICK` usado pelo render.
+
+### Verifique
+Baseline parcial; `GFX-BAR-TICK` PASS.
+
+### Checkpoint
+- [ ] `GFX-BAR-TICK` PASS
+
 
 ## Debug
 
 | Sintoma | Causa | Correcao |
 |---------|-------|----------|
-| stub | corpo intacto | cole o bloco |
-| off-by-one | size | refaca trace |
+| stub | TODO intacto | cole o bloco |
+| off-by-one | indices | refaca o trace |
+| sem janela | backend errado | rode o `_sw` / `_gl` |
 
 ## Relatorio de resolucao
 
-- TODOs:
-- Saida:
+- TODOs concluidos:
+- Comandos + saida:
 - Invariantes:
+- Edge cases:
 - Benchmark: nao executado

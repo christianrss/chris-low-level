@@ -1,9 +1,9 @@
-# COMPARISON — alpha_blend_scanline
+# Comparacao: alpha_blend_scanline
 
-| Aspecto | CPU/software (este lab) | OpenGL | D3D/GPU blend |
-|---------|-------------------------|--------|---------------|
-| Formula | (d*(255-a)+s*a)/255 | glBlendFunc | BlendState |
-| Scanline | loop C++ | fragment | ROP |
-| Visual | headless exempt | framebuffer | swap chain |
-
-Headless de proposito: o numero 128 e o mesmo contrato.
+| Etapa | Software/CPU | OpenGL |
+|---|---|---|
+| blend_pixel / scanline | `core/blend.cpp` | equivalente via `GL_BLEND` |
+| Fundo | checkerboard no framebuffer | quads checker |
+| Sprites | blit + `blend_scanline` | `glColor4f` + src-over |
+| Bounce | `update_sprite` core | mesma função |
+| Present | `StretchDIBits` | `SwapBuffers` |

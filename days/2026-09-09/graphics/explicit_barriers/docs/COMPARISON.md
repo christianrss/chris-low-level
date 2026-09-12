@@ -1,8 +1,8 @@
-# COMPARISON — explicit_barriers
+# Comparacao — explicit_barriers
 
-| Aspecto | CPU/software (lab) | OpenGL | D3D12/Vulkan |
-|---------|-------------------|--------|--------------|
-| Modelo | tabela de arestas | implícito | barreiras explícitas |
-| Validação | set `_ALLOWED` | driver | app + validation layers |
-
-Headless exempt: contrato de estados, sem janela.
+| Etapa | CPU (`software_win32`) | OpenGL (`opengl_win32`) |
+|-------|------------------------|-------------------------|
+| Estado | `core/` | mesmo `core/` |
+| Raster | StretchDIBits | glBegin/glEnd + SwapBuffers |
+| Animacao | steady_clock | steady_clock |
+| Validacao | CTest | CTest + VISUAL-01 |

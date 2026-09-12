@@ -1,126 +1,127 @@
 # Teoria passo a passo — explicit_barriers
 
-Laboratório em **python** (trilha GitHub incorporada ao dia).
+Laboratório **visual C++** (software Win32 + OpenGL WGL), dual-backend.
 
 ## 1. O quê
 
-Validacao de transicoes + mapa D3D12/Vulkan (headless).
+Transicoes explicitas de ResourceState com validacao; cor de fundo muda a cada barreira aplicada.
 
-## 2. Como
+## 2. Como — fluxo
 
 ```text
-entrada fixture/literal -> validacao -> TODO transform -> assert
+core (estado/TODOs) -> software_win32 StretchDIBits
+                    -> opengl_win32 SwapBuffers
+                    -> mesma cena animada
 ```
 
-## 3. Tabela de contrato
+## 3. Tabela de pastas
 
-| Campo | Papel |
+| Pasta | Papel |
 |-------|-------|
-| starter | stubs TODO |
-| solutions | PEDAGOGY-SOLUTION |
-| teste | PEDAGOGY-TEST |
+| `core/` | lógica testável |
+| `software_win32/` | CPU + DIB |
+| `opengl_win32/` | WGL + GL legado |
+| `tests/` | CTest |
 
 ## 4. TODOs
 
 | ID | Papel |
 |----|-------|
-| `D7-GFX-VALIDATE` | assert do teste |
-| `D7-GFX-D3D12` | assert do teste |
-| `D7-GFX-VULKAN` | assert do teste |
+| `GFX-BAR-VALID` | contrato do assert |
+| `GFX-BAR-APPLY` | contrato do assert |
+| `GFX-BAR-TICK` | contrato do assert |
 
 ## 5. Trace numerico
 
-Use o Caso 1 do teste no papel antes de editar.
+Execute o Caso 1 do teste no papel antes de editar o starter.
 
-## 6. Por quê este lab
+## 6. Por que dual-backend
 
-Por quê está neste dia? Complementa o core com um eixo classico (allocator/parser/agent/…).
+Por que CPU e GL? Para separar contrato de estado da API de present.
 
-## 7. Por quê falhar cedo
+## 7. Por que animacao
 
-Por quê erro explicito? Evita default silencioso.
+Por que mover todo frame? Prova que o loop de mensagem + render esta vivo.
 
-## 8. Por quê literais no teste
+## 8. Por que CTest no core
 
-Por quê o assert fixa numeros? Reproduzibilidade sem adivinhar.
+Por que assert no core? Gates CI sem precisar de janela interativa.
 
 ## 9. Invariantes
 
-1. Determinismo
-2. Bounds / estados ilegais rejeitados
-3. Nao alterar o teste
-4. Ordem dos TODOs
+1. Determinismo do core
+2. Mesma cena nos dois backends
+3. Nao alterar testes
+4. solutions abre janela e apresenta pixels
 
 ## 10. Bugs comuns
 
 | Sintoma | Causa | Checagem |
 |---------|-------|----------|
-| off-by-one | indice | imprima cursor |
-| estado sujo | sem reset | isole o caso |
-| NaN/None | dominio | guarde eps |
+| janela preta | clear sem draw | confira render |
+| sem movimento | dt=0 | steady_clock |
+| teste falha | stub TODO | implemente core |
 
 ## 11. Lab vs producao
 
-Recorte pedagogico do mesmo problema real.
+Recorte pedagogico do mesmo problema de engine/API.
 
 ## 12. Checklist
 
-- [ ] Caso 1 no papel
-- [ ] Arquivo + funcao
-- [ ] Sei o que nao mudar
+- [ ] Core PASS no CTest
+- [ ] software_win32 mostra cena
+- [ ] opengl_win32 mostra cena
+- [ ] VISUAL-01 ok
 
-## 13. Relacao com o core
+## 13. Diagrama de estados
 
-Compare com o modulo core da mesma trilha neste dia quando houver sobreposicao tematica.
+| Frame | Acao |
+|-------|------|
+| N | simula core |
+| N | raster/GL |
+| N | present |
 
-## Nota operacional 1 — explicit_barriers
+## 14. Offsets / layout mental
 
-Detalhe 1: literal do Caso 1 nao e sinonimo do core vizinho.
+Framebuffer BGRA little-endian via `0x00RRGGBB` no StretchDIBits top-down.
 
-## Nota operacional 2 — explicit_barriers
+## 15. Extensao
 
-Detalhe 2: literal do Caso 1 nao e sinonimo do core vizinho.
+Opcional: D3D11 Present com a mesma cena (fora do escopo minimo).
 
-## Nota operacional 3 — explicit_barriers
+## 16. Referencias internas
 
-Detalhe 3: literal do Caso 1 nao e sinonimo do core vizinho.
+- `docs/GFX_PEDAGOGY_STANDARD.md`
+- `days/2026-09-07/graphics/artillery_trajectory_2d`
 
-## Nota operacional 4 — explicit_barriers
+## Nota
 
-Detalhe 4: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 5 — explicit_barriers
+## Nota
 
-Detalhe 5: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 6 — explicit_barriers
+## Nota
 
-Detalhe 6: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 7 — explicit_barriers
+## Nota
 
-Detalhe 7: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 8 — explicit_barriers
+## Nota
 
-Detalhe 8: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 9 — explicit_barriers
+## Nota
 
-Detalhe 9: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 10 — explicit_barriers
+## Nota
 
-Detalhe 10: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.
 
-## Nota operacional 11 — explicit_barriers
+## Nota
 
-Detalhe 11: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 12 — explicit_barriers
-
-Detalhe 12: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 13 — explicit_barriers
-
-Detalhe 13: literal do Caso 1 nao e sinonimo do core vizinho.
+Mantenha o contrato dos TODOs; nao invente APIs extras no teste.

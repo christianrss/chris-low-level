@@ -1,10 +1,10 @@
-# Comparação — shader stage FSM
+# Comparacao: shader_stage_fsm
 
-Lab **headless**: a máquina de estados é a parte testável. Não há janela Win32
-neste módulo (regra visual do Dia 07 não se aplica a FSM pura).
-
-| Etapa | CPU / software | OpenGL | Este lab |
-|-------|----------------|--------|----------|
-| Estado | objeto C++ | `glCompileShader` / program | enumeração + tabela de transições |
-| Evidência | printf / assert | framebuffer | `ctest` na tabela |
-| Por quê headless? | A transição ilegal é um invariante, não um pixel | pixel vem depois que o PSO está válido | testamos a tabela sem driver GPU |
+| Etapa | Software/CPU | OpenGL |
+|---|---|---|
+| FSM | `core/shader_fsm.cpp` (`advance`/`reset`/`stage_color`) | compartilhada |
+| Cor do fill | `stage_color()` → pixels DIB | `stage_color()` → `glColor3f` |
+| Triangulo | raster CPU + rotacao por tempo | `GL_TRIANGLES` + rotacao |
+| HUD de estagios | barras `fill_rect` | barras `GL_QUADS` |
+| Auto-advance | timer 1.5s no loop | mesmo timer |
+| Present | `StretchDIBits` | `SwapBuffers` |

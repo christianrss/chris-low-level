@@ -16,6 +16,9 @@ For every module under `days/**/graphics/**` (and Win32 GFX extensions), **solut
 |--------|--------|
 | `os/graphics_reference` | Headless compositor; documented in README |
 | `graphics/vulkan_d3d12_resource_states` | State-machine simulation, no Win32 window |
+| `resource_state_tracker` | Same class of headless state tracker |
+
+Days 08–11 graphics modules (`shader_stage_fsm`, `gpu_timer_query`, `explicit_barriers`, `pipeline_state_object`, `descriptor_binding_model`, `alpha_blend_scanline`) are **not** exempt — they MUST ship visual `software_win32` + `opengl_win32` solutions.
 
 ## Enforcement
 

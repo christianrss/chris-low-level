@@ -1,240 +1,163 @@
-# Teoria passo a passo — FSM de pipeline state object
+# Teoria — pipeline_state_object
 
-Este laboratório é em **Python**.
+## Visão geral
 
-## 1. O que estamos construindo
+Um **Pipeline State Object (PSO)** agrupa o estado que a GPU (ou o raster CPU) usa para desenhar: topologia, modo de preenchimento, cor fixa. Neste lab o PSO é uma struct C++ pequena, mas o *contrato* é o mesmo das APIs modernas: criar, bindar, e só então emitir primitivas.
 
-PSOs/ Vulkan-like: estados UNINITIALIZED→…→READY→RECORDING. O lab valida transições e traça a sequência.
-
-## 2. Por que este módulo existe neste dia
-
-Por quê estudar isso agora? Porque o contrato numérico do teste fixa o vocabulário
-do resto do dia — sem o paper-trace, o código “quase certo” passa no olho e falha
-no assert.
-
-## 3. Formato / contrato de dados (wire)
-
-| Transição | Válida? |
-|-----------|---------|
-| UNINITIALIZED → VERTEX_SHADER | sim (can_transition) |
-| READY → RECORDING | apply → RECORDING |
-| pipeline_trace(seq) | True/listing conforme teste |
-
-## 4. Trace numérico (valores dos testes)
-
-Siga no papel **antes** de abrir o editor. Estes números são os do Caso 1.
-
-```text
-can_transition("UNINITIALIZED","VERTEX_SHADER") → True
-apply_transition("READY","RECORDING") → "RECORDING"
-pipeline_trace(seq) → ok
+```mermaid
+flowchart LR
+  CREATE[create_default_pso] --> BIND[bind active]
+  BIND --> DRAW[draw triangle]
+  CYCLE[cycle_pso ~2s] --> BIND
+  CORE[core/pso.cpp] --> SW[software_win32]
+  CORE --> GL[opengl_win32]
 ```
 
-## 5. Algoritmo (ordem obrigatória)
+| Etapa | Responsabilidade | Por que importa |
+|-------|------------------|-----------------|
+| Create | valor inicial estável | demos e testes partem do mesmo estado |
+| Bind | aplica snapshot | evita estado global “sujo” |
+| Cycle | 3 presets | prova visual fill vs wire vs cor |
 
-1. tabela de arestas permitidas.
-2. apply só se can.
-3. trace percorre seq.
-
-## 6. Invariantes
-
-- A saída é determinística para a mesma entrada do teste.
-- Erros de pré-condição falham **agora** (retorno negativo, `Err`, `false`, exceção),
-  não um default silencioso.
-- O valor que o assert compara é o da seção de trace — não um sinônimo.
-
-## 7. Bugs que o teste rejeita
-
-- Aceitar aresta inexistente.
-- apply sem validar.
-- trace que ignora falha.
-
-## 8. Lab versus produção
-
-Vulkan PSO é imutável após create; aqui FSM didática de estágios.
-
-## Modelo mental
-
-grafo dirigido de estados.
-
-## Por quê FSM?
-
-API gráfica rejeita comandos fora de ordem.
-
-## Por quê RECORDING?
-
-Analogia a command buffers.
-
-## Invariante
-
-apply só muda estado se can_transition.
-
-## Ligação
-
-Dia 08 shader_stage_fsm.
-
-## Headless
-
-Sem janela: estados são o artefato.
-
-
-## Por quê — síntese
-
-### Por quê estas invariantes?
-Cada `TODO [ID]` isola uma propriedade que quebra silenciosamente se ignorada.
-
-### Por quê medir?
-O `BENCHMARK_GUIADO.md` pede a métrica `1e5 transitions` — mesmo que o ambiente
-pule a medição, o aluno registra o protocolo.
-
-### Por quê não alterar o teste?
-O teste é o contrato. Ajuste o código até a saída igualar o caderno.
-
-## Checklist antes de implementar
-
-- [ ] Escrevi no papel o valor do Caso 1 (seção 4).
-- [ ] Sei arquivo/função de cada TODO (`RESOLUCAO` / `TODO_MAP`).
-- [ ] Sei o que **não** mudar (assinaturas, nomes públicos, capacidade fixa).
-
-## Como saber se está correto
-
-Rode os testes do `starter/` (esperado FAIL) e depois os de `solutions/` (PASS).
-A string/número impresso deve bater com o trace caractere a caractere / bit a bit.
-
-## Fluxo de dados (visão única deste módulo)
+## 1. O que vive dentro do PSO
 
 ```text
-entrada do Caso 1  →  transformação do algoritmo (seção 5)  →  valor do assert
-       ↑                          ↑                                ↑
-  paper-trace              código no starter                  TESTES_GUIADOS
-```
-
-Se qualquer seta divergir, pare: o bug está na seta, não no “conceito geral”.
-
-## Tabela rápida TODO → propriedade
-
-| Ordem | Propriedade protegida |
-|-------|------------------------|
-| 1º TODO | base do contrato (parse/init/open) |
-| 2º TODO | transformação / estado intermediário |
-| 3º TODO | agregação / export / verificação final |
-
-Substitua na ordem da RESOLUCAO: pular o 1º faz o 2º mentir com dados lixo.
-
-## O que não fazer
-
-- Não reescrever o módulo em outra linguagem “porque é mais fácil”.
-- Não alterar asserts para caber na sua saída.
-- Não inventar um segundo exemplo no lugar do trace do Caso 1.
-- Não copiar `solutions/` no começo — use a RESOLUCAO só ao travar.
-
-## Fechamento
-
-Releia o wire (seção 3) e o trace (seção 4). Risque no caderno a linha que você
-calculou diferente do teste. Só então abra o arquivo do starter citado na
-resolução e substitua o corpo da função nomeada.
-
-## Mecanismo interno (segunda camada)
-
-Neste módulo `graphics/pipeline_state_object`, o fluxo de dados não é abstrato: cada função do starter
-transforma um buffer ou um estado finito e devolve um valor que o teste compara
-com igualdade estrita.
-
-```text
-entrada (fixture / literal do teste)
-    → validação de limites (OOB / estado ilegal)
-    → transformação (decode / fold / push / parse)
-    → saída (string, código, ponteiro, probabilidade)
-```
-
-Por quê essa ordem? Se a validação vier depois da transformação, um buffer curto
-gera leitura lixo e o assert falha com um número “quase certo”, difícil de depurar.
-
-## Estruturas e papéis
-
-| Peça | Papel | O que o teste fixa |
-|------|-------|--------------------|
-| buffer / stream | memória linear | bytes literais no caso |
-| cursor / pc / head | progresso | avanço exatamente do size |
-| estado / flags | FSM ou capacidade | transição ilegal rejeitada |
-| retorno de erro | falha explícita | -1 / Err / false / throw |
-
-## Trace estendido (mesmo caso, mais colunas)
-
-Reescreva o Caso 1 da TEORIA com quatro colunas no papel:
-
-```text
-passo | cursor | lê | produz
-------+--------+----+--------
-(use os números já listados acima; não invente outro exemplo)
-```
-
-Se o cursor após o passo N não for o início do passo N+1, o listing ou o anel
-desalinha e a string/valor diverge do assert.
-
-## Invariantes reforçadas
-
-1. Mesma entrada → mesma saída (determinismo).
-2. Erro de formato não vira valor default silencioso.
-3. Capacidade / size / transição ilegal falha **agora**.
-4. O arquivo editado é só o citado na RESOLUCAO; o teste não se altera.
-
-## Depuração dirigida
-
-| Sintoma no teste | Hipótese #1 | O que imprimir |
-|------------------|-------------|----------------|
-| string/valor off-by-one | endianness ou size | hex do buffer e cursor |
-| falha só no 2º caso | estado residual | reset entre casos |
-| passe local, falha no runner | cwd / fixture path | path absoluto do fixture |
-
-## Comparação com produção (detalhe)
-
-Em ferramentas reais o mesmo contrato aparece com outros nomes: `objdump` (size
-por opcode), `epoll` (anel de eventos), `softmax` em kernels CUDA (max-subtract).
-Aqui o recorte é pequeno o bastante para caber no papel e grande o bastante para
-o assert rejeitar o bug clássico.
-
-## Trecho âncora do gabarito (só para conferir assinaturas)
-
-Não copie cegamente. Use para confirmar nomes de funções e constantes:
-
-```text
-"""Pipeline State Object FSM — headless Python model."""
-from __future__ import annotations
-
-VALID_TRANSITIONS = {
-    "UNINITIALIZED": {"VERTEX_SHADER"},
-    "VERTEX_SHADER": {"FRAGMENT_SHADER"},
-    "FRAGMENT_SHADER": {"READY"},
-    "READY": {"RECORDING"},
-    "RECORDING": {"READY"},
+PipelineState {
+  topology   // 0 = triângulos, 1 = linhas (lab usa triângulos)
+  fill_mode  // 0 = sólido, 1 = wire
+  r, g, b    // cor constante do primitivo
 }
-
-
-def can_transition(current: str, target: str) -> bool:
-    # PEDAGOGY-SOLUTION: CAP-GFX-PSO-01
-    return target in VALID_TRANSITIONS.get(current, set())
-
-
-def apply_transition(current: str, target: str) -> str:
-    # PEDAGOGY-SOLUTION: CAP-GFX-PSO-02
-    if not can_transition(current, target):
-        raise ValueError(f"invalid {current}->{target}")
-    return target
-
-
-def pipeline_trace(states: list[str]) -> bool:
-    # PEDAGOGY-SOLUTION: CAP-GFX-PSO-03
-    if not states or states[0] != "UNINITIALIZED":
-        return False
-    for a, b in zip(states, states[1:]):
-        if not can_transition(a, b):
-            return False
-    return True
 ```
 
-## Fechamento teórico
+Em D3D12/Vulkan o PSO também congela shaders, blend, depth. Aqui reduzimos ao mínimo pedagógico: fill/wire + cor. Isso basta para o aluno *ver* a mudança de estado na tela.
 
-Antes de abrir o editor: (1) valor do Caso 1 no papel; (2) arquivo + função;
-(3) o que **não** mudar. Por quê essa trava? Porque “compilar até passar”
-sem o número no papel produz soluções que quebram no próximo fixture.
+### Por que este recorte?
+
+Se o PSO tivesse 40 campos, o aluno passaria o tempo a preencher structs. Com três campos, o foco fica no ciclo create → bind → draw.
+
+## 2. Create: preset 0 como default
+
+`create_default_pso()` devolve o preset 0: fill sólido, vermelho (~0.95, 0.25, 0.20).
+
+```text
+trace create:
+  index = 0
+  fill_mode = kFillSolid (0)
+  rgb ≈ (0.95, 0.25, 0.20)
+  assert: r > 0.5  → passa Caso 1
+```
+
+### Por que create separado de bind?
+
+Create produz um valor; bind escreve no “slot” ativo. Em engines reais, muitos PSOs vivem em cache; o draw só faz bind do handle desejado.
+
+## 3. Bind: cópia estrutural
+
+```text
+active = {}
+src = preset_at(1)  // wire verde
+bind(active, src)
+→ active.fill_mode == kFillWire
+→ active.g ≈ 0.90
+```
+
+Bind não desenha. Só atualiza o estado que o backend lê no frame seguinte.
+
+| Campo | Antes | Depois (preset 1) |
+|-------|-------|-------------------|
+| fill_mode | 0 | 1 (wire) |
+| r | 0 | ~0.25 |
+| g | 0 | ~0.90 |
+| b | 0 | ~0.35 |
+
+## 4. Cycle: máquina de três estados
+
+```text
+presets:
+  0: solid red
+  1: wire green
+  2: solid blue
+
+cycle: idx = (idx + 1) % 3; bind(active, preset_at(idx))
+```
+
+```mermaid
+stateDiagram-v2
+  [*] --> P0
+  P0 --> P1: cycle
+  P1 --> P2: cycle
+  P2 --> P0: cycle
+```
+
+Trace numérico:
+
+```text
+idx=0, bind default
+cycle → idx=1, wire
+cycle → idx=2, blue (b>0.5)
+cycle → idx=0, solid again
+```
+
+### Por que ciclar automaticamente?
+
+Sem animação de estado, o aluno poderia achar que “PSO” é só um struct morto. O timer de ~2s força a percepção de *troca de pipeline* durante a execução.
+
+## 5. Animação geométrica (backends)
+
+Independente do PSO, os backends aplicam:
+
+```text
+bob = sin(t * 1.2) * 18
+ang = t * 0.6
+vértices locais → rotação 2D → centro da janela
+```
+
+Assim a cena nunca fica estática mesmo entre ciclos de PSO.
+
+## 6. Software vs OpenGL — mesma decisão
+
+| fill_mode | CPU | OpenGL |
+|-----------|-----|--------|
+| solid | `fill_triangle` | `GL_TRIANGLES` |
+| wire | três `draw_line` | `GL_LINE_LOOP` |
+
+A cor vem sempre de `g_active.r/g/b`. O core não sabe o que é `StretchDIBits` nem `SwapBuffers`.
+
+```text
+diagrama de dados:
+  cycle_pso → g_active → render_scene → present
+```
+
+## 7. Erros clássicos
+
+| Sintoma | Causa | Correção |
+|---------|-------|----------|
+| testes falham no create | retornou `{}` | use `preset_at(0)` |
+| bind não muda cor | esqueceu `active = src` | cópia completa |
+| cycle fica no 0 | não incrementa idx | `(idx+1)%3` |
+| wire invisível no GL | esqueceu `LINE_LOOP` | ramo fill_mode |
+
+## 8. Ligação com APIs reais
+
+Em Vulkan, trocar PSO implica `vkCmdBindPipeline`. Aqui `bind` é o análogo. O ciclo de presets simula um material/pass que troca fill mode em runtime — algo que em APIs modernas exigiria outro PSO (imutável).
+
+## 9. Checklist conceitual
+
+1. PSO = snapshot de estado de desenho.
+2. Create ≠ Bind ≠ Draw.
+3. Três presets cobrem fill/wire/cor.
+4. Backends só interpretam o snapshot.
+5. Animação prova que o estado vive no tempo.
+
+## 10. Mini-lab mental
+
+Calcule a cor após dois cycles a partir do default:
+
+```text
+start preset 0 (red solid)
+cycle → 1 (green wire)
+cycle → 2 (blue solid)
+esperado: fill_mode=0, b>0.5
+```
+
+Se esse raciocínio estiver claro, o código de `GFX-PSO-CYCLE` cabe em poucas linhas.

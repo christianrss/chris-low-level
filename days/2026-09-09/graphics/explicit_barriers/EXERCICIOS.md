@@ -1,13 +1,13 @@
 # Exercicios — explicit_barriers
 
 ## Facil
-Caso 1 no papel.
+Paper-trace do Caso 1.
 
 ## Medio
-Primeiro TODO verde.
+Implemente o primeiro TODO ate o CTest passar.
 
 ## Dificil
-Caso negativo sem mudar teste.
+Rode VISUAL-01 nos dois backends.
 
 ## Desafio
-Extensao documentada.
+Documente uma extensao D3D11 Present.

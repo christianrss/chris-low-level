@@ -1,15 +1,9 @@
-# Benchmark guiado
-
-## Hipótese
-Caso 1 x100k com jitter < 20%%.
-
-## Como medir
-Baseline da RESOLUCAO.
+# Benchmark — alpha_blend_scanline
 
 ## Resultados observados
-- Ambiente: geracao automatica
-- Tempo: nao executado (meça localmente apos PASS)
-- Interpretação: O(n) esperado
 
-## Skip honesto
-nao executado neste ambiente de geracao.
+CI headless só corre `test_blend`. No Windows compare FPS `blend_sw` (scanline CPU) vs `blend_gl` (blend HW).
+
+## Procedimento
+1. Aumentar `w/h` dos sprites e medir frame time.
+2. Anotar quando o CPU cai abaixo de 60 FPS.

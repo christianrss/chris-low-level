@@ -1,15 +1,8 @@
-# Benchmark guiado
-
-## Hipótese
-Caso 1 em loop deve ser estável.
-
-## Como medir
-Baseline da RESOLUCAO.
+# Benchmark — descriptor_binding_model
 
 ## Resultados observados
-- Ambiente: merge
-- Tempo: nao executado
-- Interpretação: O(n) esperado
 
-## Skip honesto
-nao executado neste scaffold; valide corretude primeiro.
+`bind`/`sample` são O(1). O custo visual é raster de três quads. Compare `desc_sw` vs `desc_gl` em FPS; o rebind periódico não deve aparecer no perfil.
+
+## Procedimento
+Cronometrar 5s com e sem o loop de rebind para confirmar que o gargalo é paint, não descriptors.

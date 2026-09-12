@@ -1,17 +1,9 @@
-# Benchmark guiado — FSM de pipeline state object
-
-## Hipótese
-
-A métrica `1e5 transitions` permanece estável (±20%) em 3 corridas no mesmo hardware.
-
-## Método
-
-```powershell
-python days/2026-09-10/graphics/pipeline_state_object/solutions/test_pipeline_state_object.py
-```
-
-Repita 3 vezes; anote tempo de parede ou a métrica específica do lab.
+# Benchmark — pipeline_state_object
 
 ## Resultados observados
 
-não executado neste ambiente na geração do dia — registre aqui: 1e5 transitions.
+Em CI headless só corre `test_pso`. No Windows, compare FPS de `pso_sw` (raster CPU do triângulo) vs `pso_gl` (draw imediato). O custo dominante no software é o fill scan do triângulo; o cycle de PSO em si é O(1).
+
+## Procedimento
+1. Cronometrar 10s de frame loop com e sem `fill_triangle`.
+2. Anotar diferença fill vs wire (wire deve ser bem mais barato no CPU).

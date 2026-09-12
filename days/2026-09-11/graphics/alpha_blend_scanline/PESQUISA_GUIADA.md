@@ -1,11 +1,6 @@
-# Pesquisa guiada — alpha
+# Pesquisa guiada — alpha_blend_scanline
 
-Responda no papel com números ou offsets verificáveis neste lab.
-
-1. Porter-Duff src-over?
-2. premultiplied?
-3. scanline?
-
-## Fontes
-
-- https://en.wikipedia.org/wiki/Alpha_compositing
+1. Porter-Duff source-over: fórmula straight vs pré-multiplicado.
+2. Por que blend por scanline ajuda locality de cache.
+3. `glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)`.
+4. Reflexão elástica 1D ao inverter vx/vy nas bordas.

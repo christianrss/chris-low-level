@@ -1,21 +1,15 @@
-# Testes guiados
+# Testes guiados — explicit_barriers
 
-## Caso 1: `D7-GFX-VALIDATE`
+## Caso 1 — core
 
-Harness do starter.
+Exercido por `tests/test_*.cpp` (PEDAGOGY-TEST).
 
-## Caso 2: `D7-GFX-D3D12`
+## Caso manual — VISUAL-01
 
-Harness do starter.
-
-## Caso 3: `D7-GFX-VULKAN`
-
-Harness do starter.
+Abra `barriers_sw.exe` / `barriers_gl.exe`: fundo muda de cor a cada ~1s (ciclo de estados) e um sprite branco se move.
 
 ## Identificadores
 
-- `D7-GFX-VALIDATE`
-
-- `D7-GFX-D3D12`
-
-- `D7-GFX-VULKAN`
+- `GFX-BAR-VALID`
+- `GFX-BAR-APPLY`
+- `GFX-BAR-TICK`

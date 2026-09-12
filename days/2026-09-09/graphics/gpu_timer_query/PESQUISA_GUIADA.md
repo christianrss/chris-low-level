@@ -1,14 +1,11 @@
-# Pesquisa guiada — GPU timer query (simulação headless)
+# Pesquisa guiada — gpu_timer_query
 
-Responda no papel com valores verificáveis neste lab (não ensaios vagos).
-
-1. O que é timer query em OpenGL?
-2. Por que simular com perf_counter?
-3. Diferença GPU timestamp vs CPU?
-4. O que VISUAL-01 pede no relatório?
-5. Como comparar dois laps?
+1. Qual invariante deste lab existe em engines reais?
+2. O que o off-by-one quebra no Caso 1?
+3. Como o CTest evita falha silenciosa sem janela?
+4. Que parte da API real foi cortada?
+5. Onde logar sem mudar o contrato dos TODOs?
 
 ## Fontes
-
 - docs/GFX_PEDAGOGY_STANDARD.md
-- OpenGL TIMER_QUERY
+- README do modulo

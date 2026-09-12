@@ -1,126 +1,138 @@
-# Teoria passo a passo — descriptor_binding_model
+# Teoria — descriptor_binding_model
 
-Laboratório em **python** (trilha GitHub incorporada ao dia).
+## Visão geral
 
-## 1. O quê
+Descriptors ligam recursos (aqui: **tints RGB**) a *slots* numerados. O layout diz quantos slots existem; o set guarda os valores; o draw **sample** cada slot.
 
-Modelo de descriptor set/binding (headless).
-
-## 2. Como
-
-```text
-entrada fixture/literal -> validacao -> TODO transform -> assert
+```mermaid
+flowchart TB
+  L[make_layout N] --> S[DescriptorSet.slot_count = N]
+  S --> B[bind slot tint]
+  B --> SMP[sample slot]
+  SMP --> DRAW[painel i]
 ```
 
-## 3. Tabela de contrato
+| Conceito | Analogia API | Lab |
+|----------|--------------|-----|
+| Layout | set layout / root sig | `slot_count` |
+| Bind | update descriptors | `tints[slot]` |
+| Sample | shader read | `sample(i)` no CPU/GL |
 
-| Campo | Papel |
-|-------|-------|
-| starter | stubs TODO |
-| solutions | PEDAGOGY-SOLUTION |
-| teste | PEDAGOGY-TEST |
+## 1. Layout: quantos slots?
 
-## 4. TODOs
+```text
+make_layout(3)  → slot_count = 3
+make_layout(99) → slot_count = kMaxSlots (8)
+make_layout(-1) → 0
+```
 
-| ID | Papel |
-|----|-------|
-| `D8-GFX-BIND` | assert do teste |
-| `D8-GFX-SET` | assert do teste |
-| `D8-GFX-LAYOUT` | assert do teste |
+### Por que clamar?
 
-## 5. Trace numerico
+Sem clamp, um layout inválido estoura o array fixo `tints[kMaxSlots]`. Em APIs reais a validação acontece na criação do layout.
 
-Use o Caso 1 do teste no papel antes de editar.
+## 2. Bind: escrever no set
 
-## 6. Por quê este lab
+```text
+set.slot_count = 3
+bind(set, 0, {1,0,0})
+bind(set, 1, {0,1,0})
+bind(set, 2, {0,0,1})
+→ bound[0..2] = true
+```
 
-Por quê está neste dia? Complementa o core com um eixo classico (allocator/parser/agent/…).
+Bind fora do range é no-op (lab defensivo). Não lança exceção para manter o core simples em C++.
 
-## 7. Por quê falhar cedo
+| Slot | Tint | bound |
+|------|------|-------|
+| 0 | vermelho | true |
+| 1 | verde | true |
+| 2 | azul | true |
+| 7 | — | false (sample→0) |
 
-Por quê erro explicito? Evita default silencioso.
+## 3. Sample: ler com fallback
 
-## 8. Por quê literais no teste
+```text
+sample(set, 1) → {0,1,0}
+sample(set, 7) → {0,0,0}   // OOB / unbound
+```
 
-Por quê o assert fixa numeros? Reproduzibilidade sem adivinhar.
+### Por que zero e não crash?
 
-## 9. Invariantes
+No draw path, um crash por slot errado é difícil de depurar visualmente. Zero aparece como painel preto — sintoma claro.
 
-1. Determinismo
-2. Bounds / estados ilegais rejeitados
-3. Nao alterar o teste
-4. Ordem dos TODOs
+## 4. Cena visual: três painéis
 
-## 10. Bugs comuns
+```text
+largura janela / 3
+painel i: x0 = i*panel_w + pad
+cor = sample(set, i)
+bob = sin(t*2)*12
+```
 
-| Sintoma | Causa | Checagem |
+```mermaid
+flowchart LR
+  P0[slot0] --> Q0[quad esquerdo]
+  P1[slot1] --> Q1[quad centro]
+  P2[slot2] --> Q2[quad direito]
+```
+
+## 5. Animação por rebind
+
+A cada ~1.5s:
+
+```text
+phase = (phase + 1) % 3
+bind(i, palette[(phase + i) % 3])
+```
+
+Os painéis “trocam” de cor sem o draw conhecer a paleta — só sample.
+
+### Por que rebind e não mutar o draw?
+
+Em engines, o shader lê descriptors; a CPU atualiza tabelas. Separar bind de sample treina esse hábito.
+
+## 6. Software vs OpenGL
+
+| Etapa | CPU | GL |
+|-------|-----|----|
+| Cor | `rgb_f(sample)` → fill_rect | `glColor3f` + `GL_QUADS` |
+| Present | StretchDIBits | SwapBuffers |
+
+O core é idêntico; só a apresentação muda.
+
+## 7. Trace completo do Caso 3
+
+```text
+layout = make_layout(3)
+set.slot_count = 3
+bind 0,1,2 com R,G,B
+sample(0).x == 1
+sample(1).y == 1
+sample(2).z == 1
+sample(7) == zero
+```
+
+## 8. Erros clássicos
+
+| Sintoma | Causa | Correção |
 |---------|-------|----------|
-| off-by-one | indice | imprima cursor |
-| estado sujo | sem reset | isole o caso |
-| NaN/None | dominio | guarde eps |
+| layout 99 → 99 | sem clamp | `min(n, kMaxSlots)` |
+| sample sempre 0 | não setou `bound` | `bound[slot]=true` |
+| painéis pretos | `slot_count` ficou 0 | copie do layout |
+| cores não ciclam | esqueceu rebind | timer + bind |
 
-## 11. Lab vs producao
+## 9. Ligação com Vulkan/D3D12
 
-Recorte pedagogico do mesmo problema real.
+Vulkan: `VkDescriptorSetLayout` ≈ layout; `vkUpdateDescriptorSets` ≈ bind; leitura no shader ≈ sample. D3D12: root signature define slots; CPU copia para heap; shader indexa.
 
-## 12. Checklist
+## 10. Checklist
 
-- [ ] Caso 1 no papel
-- [ ] Arquivo + funcao
-- [ ] Sei o que nao mudar
+1. Layout define capacidade.
+2. Bind escreve + marca.
+3. Sample lê com fallback.
+4. Draw só sampleia.
+5. Animação = rebind no tempo.
 
-## 13. Relacao com o core
+## 11. Exercício mental
 
-Compare com o modulo core da mesma trilha neste dia quando houver sobreposicao tematica.
-
-## Nota operacional 1 — descriptor_binding_model
-
-Detalhe 1: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 2 — descriptor_binding_model
-
-Detalhe 2: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 3 — descriptor_binding_model
-
-Detalhe 3: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 4 — descriptor_binding_model
-
-Detalhe 4: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 5 — descriptor_binding_model
-
-Detalhe 5: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 6 — descriptor_binding_model
-
-Detalhe 6: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 7 — descriptor_binding_model
-
-Detalhe 7: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 8 — descriptor_binding_model
-
-Detalhe 8: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 9 — descriptor_binding_model
-
-Detalhe 9: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 10 — descriptor_binding_model
-
-Detalhe 10: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 11 — descriptor_binding_model
-
-Detalhe 11: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 12 — descriptor_binding_model
-
-Detalhe 12: literal do Caso 1 nao e sinonimo do core vizinho.
-
-## Nota operacional 13 — descriptor_binding_model
-
-Detalhe 13: literal do Caso 1 nao e sinonimo do core vizinho.
+Se `phase=1` e palette = [R,G,B], slot0 recebe G, slot1 recebe B, slot2 recebe R. Confirme no papel antes de olhar a demo.

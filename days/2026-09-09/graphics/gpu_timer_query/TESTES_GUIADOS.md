@@ -1,21 +1,15 @@
-# Testes guiados
+# Testes guiados — gpu_timer_query
 
-## Caso 1: `GFX-GPU-TIMER-01`
+## Caso 1 — core
 
-primeiro handle == 0.
+Exercido por `tests/test_*.cpp` (PEDAGOGY-TEST).
 
-## Caso 2: `GFX-GPU-LAP-02`
+## Caso manual — VISUAL-01
 
-ms >= 0.
-
-## Caso 3: `GFX-GPU-BENCH-03`
-
-"draw" in lap_times.
+Abra `gpu_timer_sw.exe` / `gpu_timer_gl.exe`: quad bounceia e uma barra amarela cresce com last_ms do timer.
 
 ## Identificadores
 
-- `GFX-GPU-TIMER-01` — exercido pelo caso acima; o assert usa o valor da TEORIA.
-
-- `GFX-GPU-LAP-02` — exercido pelo caso acima; o assert usa o valor da TEORIA.
-
-- `GFX-GPU-BENCH-03` — exercido pelo caso acima; o assert usa o valor da TEORIA.
+- `GFX-TQ-BEGIN`
+- `GFX-TQ-END`
+- `GFX-TQ-READ`

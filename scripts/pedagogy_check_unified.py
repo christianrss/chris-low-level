@@ -147,12 +147,6 @@ GFX_VISUAL_EXEMPT = {
     "graphics_reference",
     "vulkan_d3d12_resource_states",
     "resource_state_tracker",
-    "pipeline_state_object",
-    "gpu_timer_query",
-    "shader_stage_fsm",
-    "alpha_blend_scanline",
-    "descriptor_binding_model",
-    "explicit_barriers",
 }
 GFX_WIN32_DIRS = (
     "software_win32",

@@ -1,15 +1,15 @@
 # Benchmark guiado
 
-## Hipótese
-Caso 1 em loop deve ser estável.
+## Hipotese
+Frame estavel ~60 Hz apos PASS.
 
 ## Como medir
-Baseline da RESOLUCAO.
+Rode o backend software e observe tempo de frame (Sleep/dt).
 
 ## Resultados observados
-- Ambiente: merge
+- Ambiente: merge local
 - Tempo: nao executado
-- Interpretação: O(n) esperado
+- Interpretacao: valide corretude primeiro
 
 ## Skip honesto
-nao executado neste scaffold; valide corretude primeiro.
+nao executado neste passo; rode apos CTest PASS.
