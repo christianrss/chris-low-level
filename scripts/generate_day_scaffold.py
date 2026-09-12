@@ -8,6 +8,8 @@ import json
 import re
 from pathlib import Path
 
+from depth_manifest import load_yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 TODO_RE = re.compile(r"TODO\s*\[([A-Z0-9-]+)\]")
 CODE_EXT = {".c", ".cc", ".cpp", ".cxx", ".h", ".hpp", ".py", ".ts", ".js", ".cs", ".rs", ".asm", ".s", ".yar", ".sh"}
@@ -55,12 +57,44 @@ def build_todo_map(day_dir: Path) -> str:
 def build_start_here(day_dir: Path) -> str:
     date = day_dir.name
     modules = find_modules(day_dir)
+    contract_path = day_dir / "day.contract.yaml"
+    contract = load_yaml(contract_path) if contract_path.exists() else {}
+    if contract.get("profile") == "depth_first":
+        project = modules[0].relative_to(day_dir).as_posix() if len(modules) == 1 else "<projeto>"
+        return f"""# START HERE — Day {date}
+
+**Perfil:** depth-first | **Projeto:** `{project}` | **Carga:** 6–8 h
+
+## Fluxo
+
+1. Leia o brief, a teoria e o `ASSESSMENT.yaml`.
+2. Execute o starter e registre a previsão das falhas.
+3. Siga M1–M6 em `ATIVIDADES.md` e `EXERCICIOS.md`.
+4. Construa o núcleo nos arquivos `student_owned`; o starter contém apenas infraestrutura.
+5. Adicione testes de fronteira antes de consultar a resolução.
+6. Use a ajuda progressiva da resolução somente após registrar sua hipótese.
+7. Execute benchmark, rejeite os mutantes críticos e preencha `RUBRIC.md`.
+
+## Gates
+
+```powershell
+python scripts/day_contract_check.py --day {date}
+python scripts/pedagogy_check_unified.py --day {date}
+python scripts/run_day_tests.py --day {date} --mode starter --expect-fail
+python scripts/run_day_tests.py --day {date} --mode solutions
+python scripts/run_depth_mutants.py --day {date}
+python scripts/cycle_contract_check.py --cycle {contract.get("cycle", "<cycle>")}
+```
+
+DOCX é export opcional; Markdown é a fonte primária.
+"""
     mod_list = "\n".join(
         f"{i}. `{m.relative_to(day_dir).as_posix()}`" for i, m in enumerate(modules, 1)
     )
     return f"""# START HERE — Day {date}
 
-Laboratório unificado de low-level. O estudo é **modular**: cada pasta `<trilha>/<modulo>/` contém teoria, exercícios, resolução guiada e código.
+Laboratório unificado de low-level. O estudo é **modular**: cada pasta
+`<trilha>/<modulo>/` contém teoria, exercícios, resolução guiada e código.
 
 ## Fluxo por módulo
 
@@ -68,7 +102,8 @@ Laboratório unificado de low-level. O estudo é **modular**: cada pasta `<trilh
 2. Abra `EXERCICIOS.md` — quatro níveis: Fácil → Médio → Difícil → Desafio.
 3. Implemente no `starter/` seguindo os `TODO [ID]` (veja `TODO_MAP.md`).
 4. Rode testes — procure `PEDAGOGY-TEST: ID` nos arquivos de teste.
-5. Consulte `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` só ao travar; inclui mapa starter→TODO, **Onde colocar** (arquivo/função/substituir|inserir) por TODO e Relatório de resolução.
+5. Consulte `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` só ao travar; inclui
+   mapa starter→TODO, placement por TODO e Relatório de resolução.
 6. Compare com `solutions/` após tentativa honesta; registre benchmark em `BENCHMARK_GUIADO.md`.
 
 ## Ordem recomendada

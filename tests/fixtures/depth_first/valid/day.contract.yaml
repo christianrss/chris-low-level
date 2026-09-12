@@ -1,0 +1,9 @@
+schema_version: 2
+day: valid
+profile: depth_first
+project_count: 1
+planned_hours:
+  min: 6
+  max: 8
+primary_lane: systems
+cycle: fixture-cycle

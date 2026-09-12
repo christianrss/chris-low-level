@@ -138,6 +138,14 @@ def is_complex(module: Path) -> bool:
     return module.name in COMPLEX_MODULES
 
 
+def is_depth_first_module(module: Path) -> bool:
+    contract = module.parent.parent / "day.contract.yaml"
+    if not contract.exists():
+        return False
+    body = contract.read_text(encoding="utf-8", errors="replace")
+    return bool(re.search(r"^\s*profile:\s*depth_first\s*$", body, re.MULTILINE))
+
+
 def is_gfx_module(module: Path, root: Path) -> bool:
     rel = module.relative_to(root).as_posix()
     return "/graphics/" in f"/{rel}/" or module.name == "graphics_reference"
@@ -388,6 +396,23 @@ def has_teoria_padding(body: str, strict: bool) -> bool:
     return False
 
 
+def has_numbered_padding(body: str) -> bool:
+    """Catch numbered filler whose changing digits evade exact duplicate checks."""
+    from collections import Counter
+
+    normalized: list[str] = []
+    for raw in body.splitlines():
+        line = raw.strip().lower()
+        if len(line) < 25 or line.startswith(("```", "|")):
+            continue
+        line = re.sub(r"-?\d+", "#", line)
+        normalized.append(line)
+    if not normalized:
+        return False
+    repeated = max(Counter(normalized).values(), default=0)
+    return repeated >= 5
+
+
 def check_anti_delegation(rel: str, body: str, errors: list[str], label: str) -> None:
     for line in body.splitlines():
         if re.search(r"não copie|nao copie", line, re.I):
@@ -477,6 +502,7 @@ def todo_section_ok(window: str, ident: str) -> tuple[bool, str]:
 def check_module(module: Path, root: Path, errors: list[str]) -> int:
     rel = module.relative_to(root)
     strict = is_strict_day(module)
+    depth_first = is_depth_first_module(module)
     total = 0
     required = [
         "README.md",
@@ -502,7 +528,7 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
     res_path = module / "RESOLUCAO_GUIADA_PASSO_A_PASSO.md"
     if teoria_path.exists():
         tl = line_count(teoria_path)
-        if tl < MIN_TEORIA:
+        if not depth_first and tl < MIN_TEORIA:
             errors.append(f"{rel}: TEORIA has {tl} lines (min {MIN_TEORIA})")
         body = text(teoria_path)
         if not DIAGRAM_RE.search(body):
@@ -517,6 +543,8 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
             errors.append(f"{rel}: TEORIA contains padding or excessive duplicate lines")
         if strict:
             check_anti_delegation(rel, body, errors, "TEORIA")
+        if depth_first and has_numbered_padding(body):
+            errors.append(f"{rel}: TEORIA contains numbered/rephrased padding")
         pq_count = len(re.findall(r"por qu[eê]", body, re.IGNORECASE))
         if pq_count < 3:
             errors.append(f"{rel}: TEORIA needs >=3 'Por quê/Por que' sections (found {pq_count})")
@@ -524,7 +552,7 @@ def check_module(module: Path, root: Path, errors: list[str]) -> int:
     if res_path.exists():
         rl = line_count(res_path)
         min_r = MIN_RESOLUCAO_COMPLEX if is_complex(module) else MIN_RESOLUCAO_SIMPLE
-        if rl < min_r:
+        if not depth_first and rl < min_r:
             errors.append(f"{rel}: RESOLUCAO has {rl} lines (min {min_r})")
         if rl > MAX_RESOLUCAO and not (module / "RESOLUCAO_APENDICE.md").exists():
             errors.append(
@@ -747,6 +775,12 @@ def main() -> int:
         day_total = 0
         for module in modules:
             day_total += check_module(module, ROOT, all_errors)
+        try:
+            from depth_quality_check import check_assessment
+        except ImportError:
+            sys.path.insert(0, str(ROOT / "scripts"))
+            from depth_quality_check import check_assessment
+        all_errors.extend(check_assessment(day_dir))
         grand_total += day_total
         print(f"{day_dir.name}: {len(modules)} modules, {day_total} TODO mappings")
 

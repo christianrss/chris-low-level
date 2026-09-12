@@ -1,0 +1,163 @@
+schema_version: 1
+profile: depth_first
+project: systems/clvm_xdbg
+
+student_owned:
+  - starter/src/**
+solution_owned:
+  - solutions/src/**
+expected_student_sloc:
+  min: 250
+starter_logic_max_percent: 15
+
+concepts:
+  - id: CONCEPT-IMAGE-01
+    invariant: "Arquivo CLVM v1 só vira sessão se magic, tamanho, entry e FNV-1a baterem."
+    implementation_anchor: starter/src/session.cpp:Session::load
+    milestone: M3
+    behaviors: [BEHAVIOR-LOAD-01, FAILURE-TRUNC-01]
+    traces:
+      happy: "add2.clvm (header 16 B + 17 B de code) → loaded, pc=0."
+      failure: "8 bytes → parse error: file too small."
+  - id: CONCEPT-HEX-01
+    invariant: "O dump marca os 16 bytes do header e o code a partir do offset 0x10."
+    implementation_anchor: starter/src/session.cpp:Session::hex_dump
+    milestone: M3
+    behaviors: [BEHAVIOR-HEX-01, BEHAVIOR-DISASM-01]
+    traces:
+      happy: "offset 0000 contém 43 4C 56 4D e a linha diz header."
+      failure: "imagem truncada não produz dump; load falha antes."
+  - id: CONCEPT-DECODE-01
+    invariant: "PUSH consome 4 bytes i32 LE; JMP/JZ/CALL/JNZ consomem i16 relativo."
+    implementation_anchor: starter/src/session.cpp:Session::disasm
+    milestone: M3
+    behaviors: [BEHAVIOR-DISASM-01, BEHAVIOR-DISASM-CALL-01]
+    traces:
+      happy: "pc=0 → PUSH 3; pc=10 → CALL +2."
+      failure: "opcode 0xFF → unknown opcode no step."
+  - id: CONCEPT-STEP-01
+    invariant: "step executa exatamente um opcode e atualiza PC, pilhas, mem e prints."
+    implementation_anchor: starter/src/session.cpp:Session::step
+    milestone: M4
+    behaviors: [BEHAVIOR-STEP-PUSH-01, BEHAVIOR-E2E-01]
+    traces:
+      happy: "add2: sete steps → prints=[8], status=halted."
+      failure: "PRINT com pilha vazia → stack underflow."
+  - id: CONCEPT-STACKS-01
+    invariant: "data stack e call stack são estruturas distintas; RET vazio não lê a data stack."
+    implementation_anchor: starter/src/session.cpp:Session::regs
+    milestone: M4
+    behaviors: [BEHAVIOR-REGS-01, FAILURE-RET-01]
+    traces:
+      happy: "após CALL add2, call=[13] e data=[3,5]."
+      failure: "bad_ret.asm → return stack underflow."
+  - id: CONCEPT-MEM-01
+    invariant: "LOAD/STORE exigem addr>=0 e addr+4<=256; RAM não vive no header."
+    implementation_anchor: starter/src/session.cpp:Session::mem_view
+    milestone: M5
+    behaviors: [BEHAVIOR-MEM-01, FAILURE-MEM-01]
+    traces:
+      happy: "STORE 42 em 0; mem 0 4 começa 2A 00 00 00."
+      failure: "STORE em 254 → memory out of bounds."
+  - id: CONCEPT-BREAK-01
+    invariant: "continue executa o PC atual e para ao pousar de novo num breakpoint."
+    implementation_anchor: starter/src/session.cpp:Session::cont
+    milestone: M6
+    behaviors: [BEHAVIOR-BREAK-01, BEHAVIOR-CONT-01]
+    traces:
+      happy: "break 13; continue em add2 para em pc=13 (PRINT) sem imprimir ainda."
+      failure: "continue em RET nua → error e status=error."
+
+milestones:
+  - id: M1
+    title: Baseline e previsão
+    acceptance: "Starter falha nos testes do shell; falhas previstas registradas."
+  - id: M2
+    title: Modelo mental e paper-trace
+    acceptance: "Trace de add2.asm com hex do header, PC e as duas pilhas."
+  - id: M3
+    title: Hex e disasm
+    acceptance: "hex distingue header/code; disasm mostra PUSH i32 e CALL i16."
+  - id: M4
+    title: Step end-to-end
+    acceptance: "step até PRINT/HALT imprime 8 em add2."
+  - id: M5
+    title: Robustez
+    acceptance: "Truncamento, opcode inválido, underflow, OOB e RET vazio são observáveis."
+  - id: M6
+    title: Continue, breakpoints e medição
+    acceptance: "break/continue funcionam; benchmark de N steps tem mediana/p95."
+
+behaviors:
+  - id: BEHAVIOR-LOAD-01
+    kind: happy
+    test: tests/test_xdbg.py::test_load_valid_add2
+  - id: BEHAVIOR-HEX-01
+    kind: happy
+    test: tests/test_xdbg.py::test_hex_header_and_code
+  - id: BEHAVIOR-DISASM-01
+    kind: happy
+    test: tests/test_xdbg.py::test_disasm_push_at_entry
+  - id: BEHAVIOR-DISASM-CALL-01
+    kind: happy
+    test: tests/test_xdbg.py::test_disasm_call_operand
+  - id: BEHAVIOR-STEP-PUSH-01
+    kind: happy
+    test: tests/test_xdbg.py::test_step_push_updates_stack
+  - id: BEHAVIOR-REGS-01
+    kind: happy
+    test: tests/test_xdbg.py::test_regs_shows_pc_and_stacks
+  - id: BEHAVIOR-MEM-01
+    kind: happy
+    test: tests/test_xdbg.py::test_mem_view_after_store
+  - id: BEHAVIOR-BREAK-01
+    kind: happy
+    test: tests/test_xdbg.py::test_breakpoint_stops_before_print
+  - id: BEHAVIOR-CONT-01
+    kind: happy
+    test: tests/test_xdbg.py::test_continue_to_halt
+  - id: BEHAVIOR-E2E-01
+    kind: end_to_end
+    test: tests/test_xdbg.py::test_e2e_add2_prints_8
+
+failure_modes:
+  - id: FAILURE-TRUNC-01
+    test: tests/test_xdbg.py::test_truncated_image
+  - id: FAILURE-OPCODE-01
+    test: tests/test_xdbg.py::test_unknown_opcode
+  - id: FAILURE-UNDERFLOW-01
+    test: tests/test_xdbg.py::test_stack_underflow
+  - id: FAILURE-MEM-01
+    test: tests/test_xdbg.py::test_memory_out_of_bounds
+  - id: FAILURE-RET-01
+    test: tests/test_xdbg.py::test_return_stack_underflow
+
+starter_expected_failures:
+  - systems/clvm_xdbg
+
+critical_mutants:
+  - id: MUTANT-NO-BOUNDS
+    description: "LOAD/STORE sem checar addr+4 contra 256 B."
+    evidence_test: tests/test_xdbg.py::test_memory_out_of_bounds
+    command: python tests/run_mutant_check.py MUTANT-NO-BOUNDS
+  - id: MUTANT-OPSIZE
+    description: "Decoder que ignora os 4 bytes do operando PUSH."
+    evidence_test: tests/test_xdbg.py::test_disasm_push_at_entry
+    command: python tests/run_mutant_check.py MUTANT-OPSIZE
+
+benchmark:
+  command: python benchmarks/benchmark.py
+  results: benchmarks/results.json
+  required_metrics: [median, p95, samples]
+
+rubric:
+  passing_score: 75
+  excellence_score: 90
+  categories:
+    model: 15
+    implementation: 30
+    robustness: 20
+    tests: 15
+    integration: 10
+    benchmark: 5
+    explanation: 5

@@ -2,6 +2,43 @@
 
 Módulos dentro de um dia são independentes. Estas trilhas conectam conceitos entre dias e terminam em **capstones** em `projects/`.
 
+## Currículo depth-first (após 2026-09-11)
+
+Os caminhos abaixo preservam o histórico. Novos dias não repetem todas
+as trilhas: cada um entrega um projeto de 6–8 horas em uma lane principal
+e o ciclo cobre a amplitude.
+
+```mermaid
+flowchart LR
+  dayProject[Um projeto profundo] --> portfolio[Projeto cumulativo]
+  portfolio --> research[Benchmark e nota de pesquisa]
+  research --> nextLane[Próxima lane do ciclo]
+```
+
+Ciclo planejado: `depth-core-01`, em
+`openspec/specs/day-contract/cycles/depth-core-01.yaml`.
+
+| Ordem | Lane | Destino cumulativo típico |
+|------:|------|---------------------------|
+| 1 | systems | VM, allocator ou storage |
+| 2 | architecture | CPU, ISA ou boot |
+| 3 | os | kernel, driver ou terminal |
+| 4 | networking | protocolo ou sistema distribuído |
+| 5 | graphics | renderer ou GPU |
+| 6 | ai | tensor, kernel ou inference |
+| 7 | security | reversing defensivo |
+| 8 | runtimes | Rust, .NET, Node ou VM |
+| 9 | quantum | simulador e medições |
+| 10 | tooling | parser, debugger ou agente verificável |
+
+Enquanto o ciclo estiver `planned`, as datas são agenda. Quando um dia
+for publicado, esta seção deve ganhar o caminho
+`YYYY-MM-DD/<trilha>/<projeto>` e seu destino em `projects/chris-*`.
+
+| Dia | Lane | Projeto | Capstone |
+|-----|------|---------|----------|
+| 2026-09-12 | systems | `2026-09-12/systems/clvm_xdbg` | `projects/chris-debugger` (views/step); ISA em `projects/chris-vm` |
+
 ---
 
 ## 1. Memória e alocação
@@ -52,6 +89,8 @@ flowchart LR
 ```mermaid
 flowchart LR
   d1[Day01_clvm] --> d4[Day04_clvm_extended]
+  d4 --> xdbg[Day12_clvm_xdbg]
+  xdbg --> dbg[chris_debugger]
   d4 --> cap[chris_vm_js2clvm]
   cap --> n1[Day07_js_codegen]
   n1 --> n2[Day07_verifier]
@@ -68,7 +107,9 @@ flowchart LR
 |-------|--------|----------|
 | 1 | `2026-09-03/systems/clvm` | loader, stack VM, JMP/JZ; assembler como IR legível |
 | 2 | `2026-09-04/systems/clvm_extended` | CALL/RET, mem, EQ/LT/JNZ |
-| Capstone | `projects/chris-vm` | ISA + **`js2clvm`** + checklist N0 |
+| 3 | `2026-09-12/systems/clvm_xdbg` | hex, disasm, step, stacks, RAM; mini xdbg in-process |
+| Capstone VM | `projects/chris-vm` | ISA + **`js2clvm`** + checklist N0 |
+| Capstone dbg | `projects/chris-debugger` | views/step da sessão CLVM (não x64dbg nativo) |
 | N1 | `2026-09-07/systems/clvm_js_codegen` | você implementa codegen (LET/WHILE/CALL) |
 | N2 | `2026-09-07/systems/clvm_bytecode_verifier` | stack-effect + branch bounds |
 | N3 | chris-vm `%` + `N3_SUBSET_MOD.md` | extensão subset ainda v1 |

@@ -1,44 +1,43 @@
 # ATIVIDADES — YYYY-MM-DD
 
-**Dia:** N módulos | **~X–Y h**  
-**Regra:** não avance sem **checkpoint conceitual** (papel). Testes PASS sozinhos não bastam.
+**Perfil:** `depth_first` | **1 projeto** | **6–8 h**
+**Regra:** não avance sem evidência do checkpoint. Testes PASS sozinhos
+não demonstram entendimento.
 
 ---
 
-## Preparação (30 min)
+## M1 — Baseline e previsão (30 min)
 
 - [ ] Ler `START_HERE.md` e `README.md`
-- [ ] Baseline:
+- [ ] Executar o starter e registrar as falhas previstas no assessment:
 
 ```powershell
-python scripts/pedagogy_check_unified.py --day YYYY-MM-DD
+python scripts/run_day_tests.py --day YYYY-MM-DD --mode starter --expect-fail
 ```
 
----
+## M2 — Modelo mental e testes (60–75 min)
 
-## Bloco 1 — Título do bloco (X–Y h)
+- [ ] Produzir um trace feliz e um trace de falha.
+- [ ] Explicar as invariantes com palavras próprias.
+- [ ] Relacionar cada trust boundary a um caso de teste.
 
-### Objetivo conceitual
+## M3 — Caminho mínimo end-to-end (2–3 h)
 
-(Uma frase: o que o aluno deve conseguir explicar sem olhar o código.)
+- [ ] Construir entrada → núcleo → saída observável.
+- [ ] Rodar o teste end-to-end antes de otimizar.
 
-| Módulo | TODOs | Paper-trace obrigatório |
-|--------|-------|-------------------------|
-| `trilha/modulo` | ID-01..03 | (ex.: hexdump, stack trace) |
+## M4 — Robustez (60–90 min)
 
-**Checkpoint conceitual (marque antes do código):**
+- [ ] Tratar os quatro modos de falha do `ASSESSMENT.yaml`.
+- [ ] Confirmar que os mutantes críticos são rejeitados.
 
-- [ ] Trace no papel: ___
-- [ ] Explico em uma frase: ___
+## M5 — Integração e ergonomia (45–60 min)
 
-**Depois:** implemente starter; testes solutions devem PASS.
+- [ ] Usar somente a API pública entre componentes.
+- [ ] Documentar limitações e não objetivos.
 
----
+## M6 — Medição e síntese (45–60 min)
 
-## Relatório do dia
-
-| Bloco | Checkpoint | Testes |
-|-------|------------|--------|
-| 1 | ☐ | ☐ |
-
-**Perguntas de síntese:** (3–5 ligando módulos do dia)
+- [ ] Registrar hipótese antes do benchmark.
+- [ ] Guardar dados, mediana, p95 e interpretação.
+- [ ] Preencher `RUBRIC.md` com evidências.

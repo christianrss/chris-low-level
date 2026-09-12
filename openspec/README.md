@@ -20,7 +20,10 @@ Se o CLI não estiver instalado, use os artefatos em `specs/` e `changes/` diret
    ```powershell
    python scripts/pedagogy_check_unified.py --day YYYY-MM-DD
    python scripts/day_contract_check.py --day YYYY-MM-DD
+   python scripts/run_day_tests.py --day YYYY-MM-DD --mode starter --expect-fail
    python scripts/run_day_tests.py --day YYYY-MM-DD --mode solutions
+   python scripts/run_depth_mutants.py --day YYYY-MM-DD
+   python scripts/cycle_contract_check.py --cycle CYCLE_ID
    ```
 5. **`/opsx:archive`** — mover change para `changes/archive/`
 
@@ -32,5 +35,9 @@ Se o CLI não estiver instalado, use os artefatos em `specs/` e `changes/` diret
 | [specs/day-contract/](specs/day-contract/spec.md) | Completude multi-trilha + infra |
 | [specs/pedagogy/](specs/pedagogy/spec.md) | Thresholds pedagógicos |
 | [specs/learning-paths/](specs/learning-paths/spec.md) | Trilhas verticais |
+
+Dias posteriores a 2026-09-11 usam `profile: depth_first`: exatamente
+um projeto de 6–8 horas. O tier-A de 13 módulos permanece apenas como
+contrato legado.
 
 Ver também [AGENTS.md](../AGENTS.md) na raiz do repositório.

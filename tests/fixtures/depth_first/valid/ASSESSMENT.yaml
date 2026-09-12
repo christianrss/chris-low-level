@@ -1,0 +1,71 @@
+schema_version: 1
+profile: depth_first
+project: systems/deep_fixture
+student_owned: [starter/src/*.py]
+solution_owned: [solutions/src/*.py]
+expected_student_sloc:
+  min: 250
+starter_logic_max_percent: 15
+concepts:
+  - id: CONCEPT-FIXTURE-01
+    invariant: "A saída preserva o contrato."
+    implementation_anchor: starter/src/core.py:run
+    milestone: M3
+    behaviors: [B01, F01]
+    traces:
+      happy: "1 -> 1"
+      failure: "-1 -> erro"
+milestones:
+  - id: M1
+    title: Baseline
+    acceptance: Registrar falha.
+  - id: M2
+    title: Modelo
+    acceptance: Traçar estados.
+  - id: M3
+    title: Núcleo
+    acceptance: Implementar fluxo.
+  - id: M4
+    title: Robustez
+    acceptance: Rejeitar inválidos.
+  - id: M5
+    title: Integração
+    acceptance: Executar ponta a ponta.
+  - id: M6
+    title: Medição
+    acceptance: Interpretar dados.
+behaviors:
+  - {id: B01, kind: happy, test: "tests/test_core.py::test_b01"}
+  - {id: B02, kind: happy, test: "tests/test_core.py::test_b02"}
+  - {id: B03, kind: happy, test: "tests/test_core.py::test_b03"}
+  - {id: B04, kind: happy, test: "tests/test_core.py::test_b04"}
+  - {id: B05, kind: happy, test: "tests/test_core.py::test_b05"}
+  - {id: B06, kind: happy, test: "tests/test_core.py::test_b06"}
+  - {id: B07, kind: happy, test: "tests/test_core.py::test_b07"}
+  - {id: B08, kind: happy, test: "tests/test_core.py::test_b08"}
+  - {id: B09, kind: happy, test: "tests/test_core.py::test_b09"}
+  - {id: B10, kind: end_to_end, test: "tests/test_core.py::test_b10"}
+failure_modes:
+  - {id: F01, test: "tests/test_core.py::test_f01"}
+  - {id: F02, test: "tests/test_core.py::test_f02"}
+  - {id: F03, test: "tests/test_core.py::test_f03"}
+  - {id: F04, test: "tests/test_core.py::test_f04"}
+starter_expected_failures: [systems/deep_fixture]
+critical_mutants:
+  - {id: MUTANT-01, description: "Retorno constante", evidence_test: "tests/test_core.py::test_f01", command: "python starter/tests/mutant_check.py MUTANT-01"}
+  - {id: MUTANT-02, description: "Sem bounds", evidence_test: "tests/test_core.py::test_f02", command: "python starter/tests/mutant_check.py MUTANT-02"}
+benchmark:
+  command: python benchmarks/benchmark.py
+  results: benchmarks/results.json
+  required_metrics: [median, p95, samples]
+rubric:
+  passing_score: 75
+  excellence_score: 90
+  categories:
+    model: 15
+    implementation: 30
+    robustness: 20
+    tests: 15
+    integration: 10
+    benchmark: 5
+    explanation: 5

@@ -4,6 +4,7 @@
 - [ ] serial transport
 - [ ] kernel breakpoint stub
 - [ ] register/memory commands
+- [ ] CLVM in-process xdbg views (hex/disasm/step) from `2026-09-12/systems/clvm_xdbg`
 - [ ] symbols and stack unwinding
 - [ ] crash dump analyzer
 - [ ] user-mode debug API

@@ -1,0 +1,85 @@
+schema_version: 1
+profile: depth_first
+project: trilha/nome_do_projeto
+
+student_owned:
+  - starter/src/**
+solution_owned:
+  - solutions/src/**
+expected_student_sloc:
+  min: 250
+starter_logic_max_percent: 15
+
+concepts:
+  - id: CONCEPT-EXAMPLE-01
+    invariant: "Descreva uma propriedade verificável."
+    implementation_anchor: starter/src/example.c:example
+    milestone: M3
+    behaviors: [BEHAVIOR-HAPPY-01, FAILURE-BOUNDS-01]
+    traces:
+      happy: "Entrada concreta → estados → saída."
+      failure: "Entrada adversa → rejeição observável."
+
+milestones:
+  - id: M1
+    title: Baseline e previsão
+    acceptance: "Registrar as falhas esperadas antes de implementar."
+  - id: M2
+    title: Modelo mental e testes
+    acceptance: "Produzir traces e adicionar casos de fronteira."
+  - id: M3
+    title: Caminho mínimo end-to-end
+    acceptance: "Entrada real alcança uma saída verificável."
+  - id: M4
+    title: Robustez
+    acceptance: "Falhas de limite e estado inválido são observáveis."
+  - id: M5
+    title: Integração
+    acceptance: "Componentes funcionam pelo contrato público."
+  - id: M6
+    title: Medição e síntese
+    acceptance: "Benchmark tem hipótese, dados e interpretação."
+
+behaviors:
+  - id: BEHAVIOR-HAPPY-01
+    kind: happy
+    test: tests/test_example.py::test_happy
+  - id: BEHAVIOR-E2E-01
+    kind: end_to_end
+    test: tests/test_example.py::test_end_to_end
+  # Adicione até haver pelo menos 10 comportamentos.
+
+failure_modes:
+  - id: FAILURE-BOUNDS-01
+    test: tests/test_example.py::test_bounds
+  # Adicione até haver pelo menos 4 modos de falha.
+
+starter_expected_failures:
+  - trilha/nome_do_projeto
+
+critical_mutants:
+  - id: MUTANT-NO-BOUNDS
+    description: Remove a validação de limites.
+    evidence_test: tests/test_example.py::test_bounds
+    command: python tests/run_mutant_check.py MUTANT-NO-BOUNDS
+  - id: MUTANT-OFF-BY-ONE
+    description: Aceita um byte além do limite.
+    evidence_test: tests/test_example.py::test_exact_boundary
+    command: python tests/run_mutant_check.py MUTANT-OFF-BY-ONE
+
+benchmark:
+  command: python benchmarks/benchmark.py
+  results: benchmarks/results.json
+  required_metrics: [median, p95, samples]
+
+rubric:
+  passing_score: 75
+  excellence_score: 90
+  categories:
+    model: 15
+    implementation: 30
+    robustness: 20
+    tests: 15
+    integration: 10
+    benchmark: 5
+    explanation: 5

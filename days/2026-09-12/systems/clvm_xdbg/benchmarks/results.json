@@ -1,0 +1,16 @@
+{
+  "steps": 20000,
+  "samples": [
+    118900,
+    372400,
+    119300,
+    347900,
+    119100,
+    119200,
+    129900
+  ],
+  "median": 119300,
+  "p95": 347900,
+  "unit": "ns",
+  "hypothesis": "20k fetch/decode/execute steps stay well under one second on this host."
+}

@@ -26,15 +26,15 @@ git push -u origin main
 ```
 
 ## 4. Daily workflow
-1. Open `days/YYYY-MM-DD/START_HERE.md` and follow the module order listed there.
-2. Per module: `TEORIA_PASSO_A_PASSO.md` → `EXERCICIOS.md` → implement `TODO [ID]` in `starter/`.
-3. Run module tests (look for `PEDAGOGY-TEST` markers).
-4. Use `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` only when stuck (mapa starter→TODO + **Por que funciona?**).
-5. Compare with `solutions/` only after your attempt.
-6. Port the clean result into the corresponding `projects/` project.
-7. Run `python scripts/pedagogy_check_unified.py --day YYYY-MM-DD`.
-8. Run the full repository test suite and meaningful benchmarks.
-9. Update `PROGRESS.md` and design/research notes.
+1. Days through 2026-09-11 are legacy reference material; new days use one depth-first project.
+2. Open `day.contract.yaml`, `ASSESSMENT.yaml` and the day's `START_HERE.md`.
+3. Run the starter baseline and record the expected failures before coding.
+4. Follow milestones M1–M6: model, tests, end-to-end core, robustness, integration and measurement.
+5. Build the files marked `student_owned`; the starter should provide almost no final logic.
+6. Use `RESOLUCAO_GUIADA_PASSO_A_PASSO.md` progressively only after recording a hypothesis.
+7. Compare with `solutions/`, run the benchmark and complete `RUBRIC.md`.
+8. Port the clean result into the corresponding `projects/` project.
+9. Run pedagogy, day contract, starter expected-fail, solutions and cycle gates.
 
 Optional: export `Treino_LowLevel_Unificado_YYYY-MM-DD.docx` via `python scripts/build_day_docx.py --day YYYY-MM-DD`.
 

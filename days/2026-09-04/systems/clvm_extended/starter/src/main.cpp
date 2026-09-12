@@ -63,7 +63,8 @@ bool pop_value(std::vector<std::int32_t>& stack, std::int32_t& value) {
 
 // TODO [CLVM-EXT-03]: addr >= 0 && addr + 4 <= kMemSize
 bool mem_in_bounds(std::int32_t addr) {
-    return addr >= 0 && static_cast<std::size_t>(addr) + 4 <= kMemSize;
+    (void)addr;
+    return false;
 }
 
 int run(const clvm_image& image, bool trace) {
@@ -95,7 +96,14 @@ int run(const clvm_image& image, bool trace) {
             std::cerr << "error: step limit exceeded\n";
             return 2;
         }
+        const std::size_t opcode_pc = pc;
         const Op op = static_cast<Op>(image.code[pc++]);
+        if (trace) {
+            std::cerr << "pc=" << opcode_pc
+                      << " op=0x" << std::hex << static_cast<unsigned>(op) << std::dec
+                      << " data_depth=" << stack.size()
+                      << " call_depth=" << call_stack.size() << '\n';
+        }
         std::int32_t lhs = 0;
         std::int32_t rhs = 0;
 
@@ -178,112 +186,33 @@ int run(const clvm_image& image, bool trace) {
             }
             case Op::Call: {
                 // TODO [CLVM-EXT-02]: push return-PC; relative jump (como JMP)
-                if (!need(2) || call_stack.size() >= kMaxCall) {
-                    std::cerr << "error: bad CALL\n";
-                }
-                const std::int16_t relative = read_i16_le(image.code + pc);
-                pc += 2;
-                call_stack.push_back(pc);
-                if (!checked_jump(relative)) {
-                    std::cerr << "error: call outside code\n";
-                    return 2;
-                }
-                break;
+                std::cerr << "error: CALL not implemented\n";
+                return 2;
             }
             case Op::Ret: {
                 // TODO [CLVM-EXT-02]: pop call_stack → pc; underflow → "return stack underflow"
-                if (call_stack.empty()) {
-                    std::cerr << "error: return stack underflow\n";
-                    return 2;
-                }
-                pc = call_stack.back();
-                call_stack.pop_back();
-                break;
+                std::cerr << "error: RET not implemented\n";
+                return 2;
             }
-            case Op::Store: {
-                std::int32_t addr = 0;
-                std::int32_t value = 0;
-                if (!pop_value(stack, addr) || !pop_value(stack, value)) {
-                    std::cerr << "error: stack underflow\n";
-                    return 2;
-                }
-                if (!mem_in_bounds(addr)) {
-                    std::cerr << "error: memory out of bounds\n";
-                    return 2;
-                }
-                const auto u = static_cast<std::uint32_t>(value);
-                mem[static_cast<std::size_t>(addr) + 0] = static_cast<std::uint8_t>(u & 0xFF);
-                mem[static_cast<std::size_t>(addr) + 1] = static_cast<std::uint8_t>((u >> 8) & 0xFF);
-                mem[static_cast<std::size_t>(addr) + 2] = static_cast<std::uint8_t>((u >> 16) & 0xFF);
-                mem[static_cast<std::size_t>(addr) + 3] = static_cast<std::uint8_t>((u >> 24) & 0xFF);
-                break;
-            }
+            case Op::Store:
             case Op::Load: {
-                std::int32_t addr = 0;
-                if (!pop_value(stack, addr)) {
-                    std::cerr << "error: stack underflow\n";
-                    return 2;
-                }
-                if (!mem_in_bounds(addr)) {
-                    std::cerr << "error: memory out of bounds\n";
-                    return 2;
-                }
-                if (stack.size() >= kMaxStack) {
-                    std::cerr << "error: stack overflow\n";
-                    return 2;
-                }
-                stack.push_back(read_i32_le(mem.data() + static_cast<std::size_t>(addr)));
-                break;
+                // TODO [CLVM-EXT-03]: LOAD/STORE with mem_in_bounds
+                std::cerr << "error: LOAD/STORE not implemented\n";
+                return 2;
             }
             case Op::Drop:
-                if (!pop_value(stack, lhs)) {
-                    std::cerr << "error: stack underflow\n";
-                    return 2;
-                }
-                break;
-            case Op::Swap: {
-                if (!pop_value(stack, rhs) || !pop_value(stack, lhs)) {
-                    std::cerr << "error: stack underflow\n";
-                    return 2;
-                }
-                stack.push_back(rhs);
-                stack.push_back(lhs);
-                break;
-            }
+            case Op::Swap:
             case Op::Eq:
             case Op::Lt:
-                if (!pop_value(stack, rhs) || !pop_value(stack, lhs)) {
-                    std::cerr << "error: stack underflow\n";
-                    return 2;
-                }
-                if (op == Op::Eq) {
-                    stack.push_back(lhs == rhs ? 1 : 0);
-                } else {
-                    stack.push_back(lhs < rhs ? 1 : 0);
-                }
-                break;
             case Op::Jnz: {
-                if (!need(2)) {
-                    std::cerr << "error: truncated JNZ\n";
-                    return 2;
-                }
-                const std::int16_t relative = read_i16_le(image.code + pc);
-                pc += 2;
-                if (!pop_value(stack, lhs)) {
-                    std::cerr << "error: stack underflow\n";
-                    return 2;
-                }
-                if (lhs != 0 && !checked_jump(relative)) {
-                    std::cerr << "error: jump outside code\n";
-                    return 2;
-                }
-                break;
+                // TODO [CLVM-EXT-04]: DROP/SWAP/EQ/LT/JNZ
+                std::cerr << "error: stack/cmp opcode not implemented\n";
+                return 2;
             }
             default:
                 std::cerr << "error: unknown opcode\n";
                 return 2;
         }
-        (void)trace;
     }
     std::cerr << "error: execution reached end without HALT\n";
     return 2;

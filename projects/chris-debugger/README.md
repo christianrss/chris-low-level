@@ -9,5 +9,9 @@ A portable **debug transport protocol codec**. Packets have a magic/version, com
 ## Future architecture
 `chris-kd-stub` in the kernel ↔ serial/virtio/TCP transport ↔ `chris-debugger` host ↔ `chris-symbols`/`chris-dump`.
 
-## Safety
-The project is designed for the user's own OS/processes and controlled VMs.
+## Day 12 milestone (lab)
+
+`days/2026-09-12/systems/clvm_xdbg` is an in-process CLVM mini-xdbg
+(hex, disasm, step, stacks, 256 B RAM). Port the session/views here;
+do not treat it as a native Windows debugger.
+

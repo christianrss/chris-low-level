@@ -1,0 +1,10 @@
+schema_version: 2
+day: "2026-09-12"
+profile: depth_first
+project_count: 1
+planned_hours:
+  min: 6
+  max: 8
+primary_lane: systems
+cycle: depth-core-01
+assessment: ASSESSMENT.yaml

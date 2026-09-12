@@ -1,0 +1,48 @@
+schema_version: 1
+id: depth-core-01
+status: planned
+planned_hours_per_day:
+  min: 6
+  max: 8
+required_lanes:
+  - systems
+  - architecture
+  - os
+  - networking
+  - graphics
+  - ai
+  - security
+  - runtimes
+  - quantum
+  - tooling
+days:
+  - day: "2026-09-12"
+    primary_lane: systems
+    published: true
+  - day: "2026-09-13"
+    primary_lane: architecture
+    published: false
+  - day: "2026-09-14"
+    primary_lane: os
+    published: false
+  - day: "2026-09-15"
+    primary_lane: networking
+    published: false
+  - day: "2026-09-16"
+    primary_lane: graphics
+    published: false
+  - day: "2026-09-17"
+    primary_lane: ai
+    published: false
+  - day: "2026-09-18"
+    primary_lane: security
+    published: false
+  - day: "2026-09-19"
+    primary_lane: runtimes
+    published: false
+  - day: "2026-09-20"
+    primary_lane: quantum
+    published: false
+  - day: "2026-09-21"
+    primary_lane: tooling
+    published: false

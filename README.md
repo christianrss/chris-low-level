@@ -4,11 +4,17 @@ A long-term repository for learning computer systems from first principles while
 
 The target is not to collect tutorial projects. The target is to build **vertical understanding**: from logic gates, ISA encodings and firmware to kernels, drivers, protocols, compilers, emulators, graphics and ML systems.
 
-## Daily mandatory cores
+## Depth-first curriculum
 
-1. **Systems / Low-Level Engineering** - C, C++, Rust, Python, Assembly, runtimes, toolchains, operating systems, storage, networks, emulation and performance.
-2. **AI / ML Systems Low-Level** - manual gradients, autograd, tensor storage, kernels, SIMD, GPU, inference, training, quantization and serving.
-3. **Safe Red Team / Reverse Engineering** - benign binaries and owned lab systems only; assembly, PE/ELF, debugging, deobfuscation, instrumentation and defensive telemetry.
+Days through 2026-09-11 are a legacy catalogue. Every later day contains
+**one authentic 6–8 hour project**, with a near-empty starter and a
+measurable end-to-end result. Breadth is achieved by rotating curriculum
+lanes across a 7–10 day cycle, not by repeating every track every day.
+
+The lanes are systems, architecture, operating systems, networking,
+graphics, AI systems, safe reverse engineering, runtimes, quantum and
+tooling. A project has one primary lane but may integrate several
+languages where the problem naturally requires them.
 
 ## Permanent advanced tracks
 
@@ -77,6 +83,10 @@ Every mature project should eventually show:
 
 Read [`START_HERE.md`](START_HERE.md), then open the day folder you are studying:
 
+The entries below are the **legacy collection**, preserved as published.
+They are useful references, but their module counts are not templates
+for future days.
+
 | Day | Path | Modules | Benchmarks |
 |-----|------|---------|------------|
 | 2026-09-03 | [`days/2026-09-03/`](days/2026-09-03/) | 13 | [`benchmarks/results-2026-09-03.json`](benchmarks/results-2026-09-03.json) |
@@ -87,25 +97,31 @@ Read [`START_HERE.md`](START_HERE.md), then open the day folder you are studying
 | 2026-09-08 | [`days/2026-09-08/`](days/2026-09-08/) | 13 (CLVM toolchain + input mux) | — |
 | 2026-09-09 | [`days/2026-09-09/`](days/2026-09-09/) | 13 (observabilidade + profiling) | — |
 | 2026-09-10 | [`days/2026-09-10/`](days/2026-09-10/) | 13 (integração capstone) | — |
-| 2026-09-11 | [`days/2026-09-11/`](days/2026-09-11/) | 13 (reloc/ABI) | — |
+| 2026-09-11 | [`days/2026-09-11/`](days/2026-09-11/) | 23 (reloc/ABI + labs incorporados) | — |
 
-### Fluxo por módulo (ponta a ponta)
+Published depth-first days (one project, 6–8 h):
+
+| Day | Path | Project | Capstone |
+|-----|------|---------|----------|
+| 2026-09-12 | [`days/2026-09-12/`](days/2026-09-12/) | `systems/clvm_xdbg` | `projects/chris-debugger` |
+
+### Fluxo por projeto depth-first
 
 ```text
-START_HERE do dia
-  → TEORIA_PASSO_A_PASSO.md   (O quê / Como / Por quê)
-  → PESQUISA_GUIADA.md        (worksheet + checkpoint)
-  → EXERCICIOS.md             (Fácil → Desafio)
-  → starter/                  (TODO [ID], PEDAGOGY-TEST)
-  → TESTES_GUIADOS.md         (Casos numerados)
-  → RESOLUCAO_GUIADA_...md    (só ao travar)
-  → solutions/                (após tentativa honesta)
-  → BENCHMARK_GUIADO.md       (medir + Resultados observados)
-  → projects/chris-*          (portar — ver PORTING_GUIDE)
-  → research/                 (nota de conclusão — template em docs/)
+day.contract.yaml + ASSESSMENT.yaml
+  → baseline e previsão de falhas
+  → teoria + traces + invariantes
+  → testes de fronteira
+  → starter/                  (construir o núcleo)
+  → caminho mínimo end-to-end
+  → robustez + mutantes críticos
+  → benchmark + RUBRIC.md
+  → solutions/                (comparação tardia)
+  → projects/chris-*          (porte cumulativo)
 ```
 
-Cada pasta `<trilha>/<modulo>/` em `days/` contém 8 arquivos MD + `starter/` + `solutions/`. **MD modular é o formato principal**; DOCX é export opcional.
+Cada projeto contém 7 documentos canônicos + `starter/` + `solutions/`.
+**Markdown é o formato principal**; DOCX é export opcional.
 
 ### Documentação pedagógica
 
@@ -123,6 +139,14 @@ Cada pasta `<trilha>/<modulo>/` em `days/` contém 8 arquivos MD + `starter/` + 
 ### Validação
 
 ```bash
+# Novos dias depth-first
+python scripts/day_contract_check.py --day YYYY-MM-DD
+python scripts/pedagogy_check_unified.py --day YYYY-MM-DD
+python scripts/run_day_tests.py --day YYYY-MM-DD --mode starter --expect-fail
+python scripts/run_day_tests.py --day YYYY-MM-DD --mode solutions
+python scripts/run_depth_mutants.py --day YYYY-MM-DD
+python scripts/cycle_contract_check.py --cycle CYCLE_ID
+
 # Gate pedagógico + contrato de dia (módulos, trilhas, infra)
 python scripts/pedagogy_check_unified.py --day 2026-09-03 --all-days
 python scripts/day_contract_check.py --day 2026-09-06
@@ -182,7 +206,7 @@ For the complete mapping from the user-defined curriculum directives to Day 01 e
 
 ## Day 06 — 2026-09-06
 
-11 módulos: trilha compressão (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG IDAT), `graphics/verlet_rope_3d`, tensor entropy, blob triage, Span deflate, gunzip transform. Capstone: `projects/chris-compress`. Extra: `projects/chris-lantern-hunt` (fora do dia). Ver [`days/2026-09-06/README.md`](days/2026-09-06/README.md).
+13 módulos: trilha compressão (RLE → Huffman → LZ77 → DEFLATE → zlib/gzip → PNG IDAT), `graphics/verlet_rope_3d`, tensor entropy, blob triage, Span deflate, gunzip transform e dois espelhos Rust. Capstone: `projects/chris-compress`. Extra: `projects/chris-lantern-hunt` (fora do dia). Ver [`days/2026-09-06/README.md`](days/2026-09-06/README.md).
 
 ## Day 05 — 2026-09-05
 

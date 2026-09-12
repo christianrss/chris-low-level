@@ -1,0 +1,8 @@
+# (7 * 5) + 3 = 38
+PUSH 7
+PUSH 5
+MUL
+PUSH 3
+ADD
+PRINT
+HALT

@@ -1,0 +1,26 @@
+# Conta 0..3 em mem[0] (LT/JNZ); epílogo SWAP/DROP/EQ → imprime 1
+PUSH 0
+PUSH 0
+STORE
+loop:
+PUSH 0
+LOAD
+DUP
+PRINT
+PUSH 1
+ADD
+PUSH 0
+STORE
+PUSH 0
+LOAD
+PUSH 4
+LT
+JNZ loop
+PUSH 3
+PUSH 5
+SWAP
+DROP
+PUSH 5
+EQ
+PRINT
+HALT

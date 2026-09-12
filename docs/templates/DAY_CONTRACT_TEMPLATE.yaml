@@ -1,13 +1,16 @@
-# Day contract template — copy to days/YYYY-MM-DD/day.contract.yaml to override tier rules
+# Contrato padrão para todo novo dia posterior a 2026-09-11.
 
+schema_version: 2
 day: "YYYY-MM-DD"
-tier: tier_a  # tier_a | tier_b
-min_modules: 13
-required_tracks:
-  - systems
-  - graphics
-  - ai
-  - redteam
-  - nodejs
-  # add: linux, quantum, rust, dotnet, tooling as needed
-reference_day: "2026-09-06"  # optional paridade model
+profile: depth_first
+project_count: 1
+planned_hours:
+  min: 6
+  max: 8
+primary_lane: systems
+cycle: depth-core-01
+assessment: ASSESSMENT.yaml
+
+# Lanes válidas:
+# systems, architecture, os, networking, graphics,
+# ai, security, runtimes, quantum, tooling

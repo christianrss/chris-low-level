@@ -247,11 +247,19 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
                 return True, f"{name}: ctest OK"
         return False, last
 
-    for test_py in list(base.glob("test_*.py")) + list(base.glob("tests/test_*.py")):
+    python_tests = list(base.glob("test_*.py")) + list(base.glob("tests/test_*.py"))
+    python_outputs: list[str] = []
+    python_failures: list[str] = []
+    for test_py in python_tests:
         code, out = run_cmd([sys.executable, str(test_py)], base)
         if code != 0:
-            return False, f"{name}: {test_py.name} failed\n{out}"
-        return True, f"{name}: {test_py.name} OK"
+            python_failures.append(f"{test_py.name} failed\n{out}")
+        else:
+            python_outputs.append(test_py.name)
+    if python_failures:
+        return False, f"{name}: Python tests failed\n" + "\n".join(python_failures)
+    if python_outputs:
+        return True, f"{name}: {len(python_outputs)} Python test file(s) OK"
 
     test_js = base / "test.js"
     if test_js.exists():
@@ -324,16 +332,49 @@ def run_module(module: Path, mode: str) -> tuple[bool, str]:
         return True, f"{name}: dotnet run OK"
 
     sh_tests = list(base.glob("test_*.sh"))
+    shell_outputs: list[str] = []
+    shell_failures: list[str] = []
     for sh in sh_tests:
         bash = shutil.which("bash")
         if not bash:
             return True, f"{name}: bash not in PATH (skipped {sh.name})"
         code, out = run_cmd([bash, str(sh)], base)
         if code != 0:
-            return False, f"{name}: {sh.name} failed\n{out}"
-        return True, f"{name}: {sh.name} OK"
+            shell_failures.append(f"{sh.name} failed\n{out}")
+        else:
+            shell_outputs.append(sh.name)
+    if shell_failures:
+        return False, f"{name}: shell tests failed\n" + "\n".join(shell_failures)
+    if shell_outputs:
+        return True, f"{name}: {len(shell_outputs)} shell test file(s) OK"
 
     return True, f"{name}: no automated runner (skipped)"
+
+
+def is_skipped_result(message: str) -> bool:
+    low = message.lower()
+    return (
+        "(skipped" in low
+        or "not found in path" in low
+        or "no automated runner" in low
+        or "not available" in low
+    )
+
+
+def depth_expectations(day_dir: Path) -> tuple[bool, set[str]]:
+    contract = day_dir / "day.contract.yaml"
+    if not contract.exists():
+        return False, set()
+    from depth_manifest import load_yaml
+
+    contract_data = load_yaml(contract)
+    if contract_data.get("profile") != "depth_first":
+        return False, set()
+    assessment = day_dir / "ASSESSMENT.yaml"
+    if not assessment.exists():
+        return True, set()
+    data = load_yaml(assessment)
+    return True, {str(item) for item in data.get("starter_expected_failures") or []}
 
 
 def main() -> int:
@@ -342,6 +383,8 @@ def main() -> int:
     parser.add_argument("--mode", choices=["starter", "solutions"], default="solutions")
     parser.add_argument("--expect-fail", action="store_true", help="For starter mode: failure is OK")
     args = parser.parse_args()
+    if args.expect_fail and args.mode != "starter":
+        parser.error("--expect-fail is valid only with --mode starter")
 
     day_dir = ROOT / "days" / args.day
     if not day_dir.exists():
@@ -350,9 +393,34 @@ def main() -> int:
 
     failures: list[str] = []
     passes: list[str] = []
+    is_depth, expected_failures = depth_expectations(day_dir)
+    observed_failures: set[str] = set()
     for module in find_modules(day_dir):
         ok, msg = run_module(module, args.mode)
-        if ok:
+        rel_module = module.relative_to(day_dir).as_posix()
+        skipped = is_skipped_result(msg)
+        if is_depth and skipped:
+            failures.append(msg)
+            print(f"SKIP: {msg}")
+        elif is_depth and args.expect_fail and args.mode == "starter":
+            expected = rel_module in expected_failures
+            if not ok:
+                observed_failures.add(rel_module)
+            if expected and not ok:
+                passes.append(f"EXPECTED FAIL: {msg}")
+                print(f"EXPECTED FAIL: {msg}")
+            elif expected and ok:
+                failure = f"{rel_module}: starter unexpectedly passed"
+                failures.append(failure)
+                print(f"UNEXPECTED PASS: {failure}")
+            elif not expected and not ok:
+                failure = f"{rel_module}: unexpected starter failure\n{msg}"
+                failures.append(failure)
+                print(f"FAIL: {failure}")
+            else:
+                passes.append(msg)
+                print(f"PASS: {msg}")
+        elif ok:
             passes.append(msg)
             print(f"PASS: {msg}")
         elif args.expect_fail and args.mode == "starter":
@@ -361,6 +429,14 @@ def main() -> int:
         else:
             failures.append(msg)
             print(f"FAIL: {msg}")
+
+    if is_depth and args.expect_fail:
+        missing = expected_failures - observed_failures
+        unexpected = observed_failures - expected_failures
+        if missing:
+            failures.append("expected failures not observed: " + ", ".join(sorted(missing)))
+        if unexpected:
+            failures.append("unexpected failures observed: " + ", ".join(sorted(unexpected)))
 
     print(f"\n{len(passes)} passed, {len(failures)} failed")
     return 1 if failures else 0

@@ -2,6 +2,7 @@
 # Track name = first path segment under days/YYYY-MM-DD/ (e.g. redteam, ai, nodejs).
 
 default_tier: tier_b
+depth_first_from: "2026-09-12"
 
 tiers:
   tier_a:
@@ -89,6 +90,39 @@ tiers:
           - agent
           - tooling
 
+  depth_first:
+    description: Um projeto profundo por dia; amplitude medida por ciclo
+    min_modules: 1
+    max_modules: 1
+    min_planned_hours: 6
+    max_planned_hours: 8
+    requires_cycle: true
+    required_day_files:
+      - ASSESSMENT.yaml
+      - RUBRIC.md
+
   tier_b:
     description: Earlier or partial days — infra sync only, no full track matrix
     min_modules: 1
+
+curriculum_lanes:
+  systems:
+    paths: [systems, rust]
+  architecture:
+    paths: [architecture, assembly, boot, hardware]
+  os:
+    paths: [linux, os, terminal]
+  networking:
+    paths: [network, p2p, blockchain]
+  graphics:
+    paths: [graphics]
+  ai:
+    paths: [ai]
+  security:
+    paths: [redteam]
+  runtimes:
+    paths: [dotnet, nodejs, javascript]
+  quantum:
+    paths: [quantum]
+  tooling:
+    paths: [tooling, parsers, agent, debugger]

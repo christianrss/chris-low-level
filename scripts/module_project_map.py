@@ -87,6 +87,13 @@ MODULE_PROJECT: dict[str, dict[str, str]] = {
         "milestone": "MILESTONES.md — Day 04 extended ISA",
         "commit": "feat(vm): extended ISA from day04 clvm_extended",
     },
+    "2026-09-12/systems/clvm_xdbg": {
+        "project": "projects/chris-debugger",
+        "carry": "hex dump, disasm, single-step, stacks and mem views over CLVM",
+        "tests": "add2 step e2e + bounds/underflow/unknown opcode",
+        "milestone": "MILESTONES.md — CLVM xdbg views",
+        "commit": "feat(debugger): port CLVM xdbg session from day12",
+    },
     "2026-09-07/systems/clvm_js_codegen": {
         "project": "projects/chris-vm",
         "carry": "js2clvm codegen (LET/WHILE/CALL)",

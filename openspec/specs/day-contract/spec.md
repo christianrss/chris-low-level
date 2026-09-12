@@ -23,6 +23,26 @@ For days listed in `tracks.yaml` under `tier_a`, the system SHALL include at lea
 - **WHEN** checking day `2026-09-07`
 - **THEN** at least one module SHALL exist under `quantum/` and `redteam/`
 
+### Requirement: Depth-first future days
+
+Days on or after the configured `depth_first_from` date SHALL use the
+`depth_first` profile unless an explicit contract selects another
+profile.
+
+#### Scenario: One substantial project
+
+- **WHEN** a future day uses `profile: depth_first`
+- **THEN** it SHALL contain exactly one project module
+- **AND** declare 6–8 planned hours
+- **AND** reference one curriculum cycle and one primary lane
+- **AND** include `ASSESSMENT.yaml` and `RUBRIC.md`
+
+#### Scenario: Legacy days remain stable
+
+- **WHEN** checking a day dated on or before `2026-09-11`
+- **THEN** its existing tier-A or tier-B behavior SHALL remain unchanged
+- **AND** depth-first requirements SHALL NOT be applied implicitly
+
 ### Requirement: Learning path wiring
 
 Each module in a tier-A day SHALL be referenced in `docs/LEARNING_PATHS.md` or `scripts/module_project_map.py`.
@@ -40,6 +60,25 @@ The system SHALL NOT overwrite curated `START_HERE.md` or `TODO_MAP.md` via `gen
 
 - **WHEN** regenerating inventory for an existing curated day
 - **THEN** operators SHALL use `generate_day_scaffold.py --day DATE --manifest-only`
+
+### Requirement: Cycle coverage
+
+Depth-first breadth SHALL be measured across a declared cycle of 7–10
+days instead of requiring every track on every day.
+
+#### Scenario: Planned cycle
+
+- **WHEN** a cycle has status `planned` or `active`
+- **THEN** its schedule SHALL contain 7–10 unique dates
+- **AND** cover every `required_lane`
+- **AND** every scheduled day SHALL have exactly one primary lane
+
+#### Scenario: Completed cycle
+
+- **WHEN** a cycle has status `complete`
+- **THEN** every scheduled day SHALL exist
+- **AND** each day contract SHALL reference that cycle and matching lane
+- **AND** every project SHALL be wired to a learning path or portfolio project
 
 ### Requirement: Anti false-done
 

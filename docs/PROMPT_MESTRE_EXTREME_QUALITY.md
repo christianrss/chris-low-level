@@ -16,7 +16,7 @@ days/YYYY-MM-DD/
 ├── VALIDATION.md
 ├── MANIFEST.json
 ├── Treino_LowLevel_Unificado_YYYY-MM-DD.docx   # OPCIONAL (export)
-└── <trilha>/<modulo>/  (8 arquivos MD + starter + solutions)
+└── <trilha>/<modulo>/  (7 arquivos MD + starter + solutions)
 ```
 
 **Formato principal de estudo:** Markdown modular por pasta de módulo. Ver [PEDAGOGY_STANDARD.md](PEDAGOGY_STANDARD.md).
@@ -30,6 +30,12 @@ Scripts unificados no repositório:
 ---
 
 # 41. THRESHOLDS MENSURÁVEIS (ANTI-SUPERFICIALIDADE)
+
+Os mínimos de linhas e quatro níveis abaixo são compatibilidade para
+dias legados. Dias `depth_first` usam evidências semânticas,
+`ASSESSMENT.yaml`, 6–10 marcos e orçamento de autoria conforme
+`PEDAGOGY_STANDARD.md`; atingir uma contagem de linhas não é critério de
+publicação.
 
 | Artefato | Mínimo | Conteúdo obrigatório |
 |----------|--------|----------------------|
@@ -111,8 +117,8 @@ Final de cada `RESOLUCAO_GUIADA_PASSO_A_PASSO.md`:
 4. `pedagogy_check_unified.py` → PASS (inclui módulos + day contract)
 5. `day_contract_check.py` → PASS (pode rodar isolado para debug)
 6. Executar solutions e starters (`run_day_tests`)
-7. `build_day_docx.py`
-8. QA visual do DOCX (PDF/páginas)
+7. Opcional: `build_day_docx.py`
+8. Opcional: QA visual do DOCX (PDF/páginas)
 9. `VALIDATION.md` + MANIFEST (`--manifest-only`) + TODO_MAP curado
 10. `/opsx:archive` — mover change para `openspec/changes/archive/`
 
@@ -124,8 +130,13 @@ Não avance de fase com gate falhando.
 
 # 46. RETROATIVIDADE
 
-Quando novas diretivas surgem, **dias anteriores devem ser corrigidos** — não apenas o dia atual.
-Manter DOCX sincronizado com Markdown em todos os dias publicados.
+Diretivas `depth_first` valem para dias posteriores a 2026-09-11. Dias
+anteriores são acervo legado e não devem ser reescritos em massa.
+Correções retroativas ficam restritas a bugs de segurança, execução ou
+integridade explicitamente solicitados.
+
+DOCX é export opcional. Quando existir e for regenerado, deve refletir o
+Markdown, que permanece a fonte primária.
 
 ---
 
@@ -166,4 +177,5 @@ OpenSpec: `/opsx:verify` antes de arquivar change.
 Prefira **menos módulos extremamente bem ensinados** a muitos módulos superficiais.
 Cada exercício deve ser abrível, seguível passo a passo, implementável, quebrável, depurável e testável **sem ChatGPT externo**.
 
-**DOCX completo é obrigatório em todo dia — sem exceção.**
+Para dias `depth_first`: exatamente um projeto de 6–8 horas, com starter
+quase vazio e cobertura de trilhas por ciclo. DOCX é opcional.

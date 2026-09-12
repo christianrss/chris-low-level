@@ -1,0 +1,262 @@
+{
+  "day": "2026-09-12",
+  "file_count": 51,
+  "files": [
+    {
+      "path": "ASSESSMENT.yaml",
+      "size": 5901,
+      "sha256": "18aa90c4365e3a264ca9e9898e213f41d217ab9d8ffff5b63e628b5516f5b51b"
+    },
+    {
+      "path": "ATIVIDADES.md",
+      "size": 1268,
+      "sha256": "8f45a1aedcd6e8e12502ab4d7117c04f4933bcca23396f4352e32e75ab60cefa"
+    },
+    {
+      "path": "day.contract.yaml",
+      "size": 178,
+      "sha256": "80f52edd7514497870408ec477f3b17fb5a43790e8213af1fc08d9de1e3e8da2"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 8915,
+      "sha256": "30f4ea2905ee45dfb1b6b77ceebb5455dbf38a320d0941da7d09c5982d78c57a"
+    },
+    {
+      "path": "README.md",
+      "size": 1108,
+      "sha256": "5338f96b4e237d6317de75e0b381c9eb6151bc586d85bf480d2d93b2879ded47"
+    },
+    {
+      "path": "RUBRIC.md",
+      "size": 1255,
+      "sha256": "87e7a873b53dd3f2fa100a543b685a25a779d61ed8536bb073719645c03c8a01"
+    },
+    {
+      "path": "START_HERE.md",
+      "size": 1791,
+      "sha256": "8ea1a635bc49dad78bd1c40bbcc3dbd42aafd273c8081b7ffc6c78ff5819fc76"
+    },
+    {
+      "path": "systems/clvm_xdbg/BENCHMARK_GUIADO.md",
+      "size": 1182,
+      "sha256": "3c8ec39de49cc5ab92025cf0a82f206adfe11a3905f9f5205afa9ba65803d5c7"
+    },
+    {
+      "path": "systems/clvm_xdbg/benchmarks/benchmark.py",
+      "size": 2221,
+      "sha256": "ff92e9875dfede755e5c79e954eddefc4df389e7a818390b56cf03e83fe83e44"
+    },
+    {
+      "path": "systems/clvm_xdbg/benchmarks/results.json",
+      "size": 284,
+      "sha256": "9636fd78405bee19a619c5ff2fc30f74096c69b99a41c341fa18fea8c3866408"
+    },
+    {
+      "path": "systems/clvm_xdbg/docs/FORMAT.md",
+      "size": 1605,
+      "sha256": "3f002b935c34269b10c27047ad9b284065f4acfc9f12b3e6662607a0ef63e33f"
+    },
+    {
+      "path": "systems/clvm_xdbg/EXERCICIOS.md",
+      "size": 1897,
+      "sha256": "1bfdec702b1ba0e133efc9acb6489be6c86f38498499b1d73701c4df919a8e38"
+    },
+    {
+      "path": "systems/clvm_xdbg/PESQUISA_GUIADA.md",
+      "size": 1306,
+      "sha256": "c5d9e7749f8e018e09c6db8008413bbabce49cf10d11e33f519d587cec214881"
+    },
+    {
+      "path": "systems/clvm_xdbg/README.md",
+      "size": 972,
+      "sha256": "2be2639da112f8d49dda3d9d94598f581cac3263383ec8f10152875135e96005"
+    },
+    {
+      "path": "systems/clvm_xdbg/RESOLUCAO_APENDICE.md",
+      "size": 8268,
+      "sha256": "3e7bd9bb51b49d691ce0f681ebd36183703469fd62209ee17473e7e31192e045"
+    },
+    {
+      "path": "systems/clvm_xdbg/RESOLUCAO_GUIADA_PASSO_A_PASSO.md",
+      "size": 10525,
+      "sha256": "b2530ab45f663bc50e13e687dca60f1c5e59b41ec835622c3cd426f69bd9a0af"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/CMakeLists.txt",
+      "size": 1146,
+      "sha256": "f68a1371434a5703fdae4f5ac442f5554549594f87780c5e643f76795bd068b7"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/host/clvm_loader.c",
+      "size": 2149,
+      "sha256": "c29f4d75618345e94dfcbdcd01992bbacce91b6bb211b0b4a36eae35611c36f1"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/host/main.cpp",
+      "size": 4509,
+      "sha256": "5e51fe35e2af3f1aab4e94c9e1c9e8486af20f453468e55fb2b305e9303586de"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/include/clvm_format.h",
+      "size": 559,
+      "sha256": "dc06ad03f74ccdbd82c87828fe3062dafe5f3388f98d506e8aeb3c996d654032"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/include/session.hpp",
+      "size": 960,
+      "sha256": "34e1efdf592e934cdfcddddfa3132fc82011a3bf65f73806d2d2cdff0f330003"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/add2.asm",
+      "size": 97,
+      "sha256": "7cd82b34da5eb09b1a33cfc25800b0ef6205d6e12806785e3b340dac6b002a0f"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/arithmetic.asm",
+      "size": 59,
+      "sha256": "2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/bad_mem.asm",
+      "size": 84,
+      "sha256": "a7dd5d5ba0ab0ddc78a5da6721f623c532edeec82893abe14abaf14771f68022"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/bad_ret.asm",
+      "size": 55,
+      "sha256": "acf3561b1095df79e4fbfa5a9752980e68ff2d75808dc05acdb215b777ca092a"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/max_loop.asm",
+      "size": 217,
+      "sha256": "d0a4c480c02dbf2ecc89ebd5a685a6d8ed35bcef3ade664edc9463393a9de7b8"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/mem_demo.asm",
+      "size": 85,
+      "sha256": "fa15982eb380e3049bdbcc0fa3fe1c459401c179143cb7269aac02ffea7b8edd"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/programs/spin.asm",
+      "size": 67,
+      "sha256": "3b1d40474461801d16b520a11e8a1c9c35cd941090a7479bf2599552f3f2781b"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/src/session.cpp",
+      "size": 14926,
+      "sha256": "15cd676acf31f918cdfee0796d21eafa89eee4d68ce6a88d1efa1a5bea1573a6"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/tests/test_xdbg.py",
+      "size": 8008,
+      "sha256": "782f0b17ef2eec333d2f48ad0e79a58ae33b417ee3acab1db7c2d8866a6a5cba"
+    },
+    {
+      "path": "systems/clvm_xdbg/solutions/tools/assemble.py",
+      "size": 3430,
+      "sha256": "98a4a52c7c3a3484685bc0d0ccae28add4e6df4c631d8e037177a56b0b77d7e4"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/CMakeLists.txt",
+      "size": 1146,
+      "sha256": "f68a1371434a5703fdae4f5ac442f5554549594f87780c5e643f76795bd068b7"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/host/clvm_loader.c",
+      "size": 2149,
+      "sha256": "c29f4d75618345e94dfcbdcd01992bbacce91b6bb211b0b4a36eae35611c36f1"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/host/main.cpp",
+      "size": 4509,
+      "sha256": "5e51fe35e2af3f1aab4e94c9e1c9e8486af20f453468e55fb2b305e9303586de"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/include/clvm_format.h",
+      "size": 559,
+      "sha256": "dc06ad03f74ccdbd82c87828fe3062dafe5f3388f98d506e8aeb3c996d654032"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/include/session.hpp",
+      "size": 960,
+      "sha256": "34e1efdf592e934cdfcddddfa3132fc82011a3bf65f73806d2d2cdff0f330003"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/add2.asm",
+      "size": 97,
+      "sha256": "7cd82b34da5eb09b1a33cfc25800b0ef6205d6e12806785e3b340dac6b002a0f"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/arithmetic.asm",
+      "size": 59,
+      "sha256": "2ceb4cb1e3b737fdff9a3870ec53ce0422c9475bda8b4abc6e74c32dc1ab6290"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/bad_mem.asm",
+      "size": 84,
+      "sha256": "a7dd5d5ba0ab0ddc78a5da6721f623c532edeec82893abe14abaf14771f68022"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/bad_ret.asm",
+      "size": 55,
+      "sha256": "acf3561b1095df79e4fbfa5a9752980e68ff2d75808dc05acdb215b777ca092a"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/max_loop.asm",
+      "size": 217,
+      "sha256": "d0a4c480c02dbf2ecc89ebd5a685a6d8ed35bcef3ade664edc9463393a9de7b8"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/mem_demo.asm",
+      "size": 85,
+      "sha256": "fa15982eb380e3049bdbcc0fa3fe1c459401c179143cb7269aac02ffea7b8edd"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/programs/spin.asm",
+      "size": 67,
+      "sha256": "3b1d40474461801d16b520a11e8a1c9c35cd941090a7479bf2599552f3f2781b"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/src/session.cpp",
+      "size": 1461,
+      "sha256": "0afda07503041a32d1fda71b3ba30d093d68175651adb0610d788871ecc884d2"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/tests/test_xdbg.py",
+      "size": 8008,
+      "sha256": "782f0b17ef2eec333d2f48ad0e79a58ae33b417ee3acab1db7c2d8866a6a5cba"
+    },
+    {
+      "path": "systems/clvm_xdbg/starter/tools/assemble.py",
+      "size": 3430,
+      "sha256": "98a4a52c7c3a3484685bc0d0ccae28add4e6df4c631d8e037177a56b0b77d7e4"
+    },
+    {
+      "path": "systems/clvm_xdbg/TEORIA_PASSO_A_PASSO.md",
+      "size": 8422,
+      "sha256": "5969a3d410e79f41bfe6baa346a602b3a2d09f7b0001b0c137dc537c34dbf2e6"
+    },
+    {
+      "path": "systems/clvm_xdbg/TESTES_GUIADOS.md",
+      "size": 1973,
+      "sha256": "7eeedb706711b66a82e8edba7194b73aebb1bd260569fc581022090b5cdf8f86"
+    },
+    {
+      "path": "systems/clvm_xdbg/tests/run_mutant_check.py",
+      "size": 2738,
+      "sha256": "f9fba63a593cc330515e752a769c20c525fa0848e02d69b5122b42553328c6ba"
+    },
+    {
+      "path": "TODO_MAP.md",
+      "size": 2417,
+      "sha256": "d94902f535f7e5135939c5fd7fb90afeeb7ab5dc8c57da7bc071be21ec33d577"
+    },
+    {
+      "path": "VALIDATION.md",
+      "size": 801,
+      "sha256": "f7258334247ca8c004c34c9bbf8ec04fff7a30b6e8b5c989d162b8302983cb76"
+    }
+  ],
+  "modules": 1
+}
