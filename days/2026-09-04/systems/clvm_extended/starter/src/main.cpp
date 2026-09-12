@@ -63,8 +63,7 @@ bool pop_value(std::vector<std::int32_t>& stack, std::int32_t& value) {
 
 // TODO [CLVM-EXT-03]: addr >= 0 && addr + 4 <= kMemSize
 bool mem_in_bounds(std::int32_t addr) {
-    (void)addr;
-    return false;
+    return addr >= 0 && static_cast<std::size_t>(addr) + 4 <= kMemSize;
 }
 
 int run(const clvm_image& image, bool trace) {
@@ -179,36 +178,107 @@ int run(const clvm_image& image, bool trace) {
             }
             case Op::Call: {
                 // TODO [CLVM-EXT-02]: push return-PC; relative jump (como JMP)
-                (void)call_stack;
-                (void)kMaxCall;
-                std::cerr << "error: CALL not implemented\n";
-                return 2;
+                if (!need(2) || call_stack.size() >= kMaxCall) {
+                    std::cerr << "error: bad CALL\n";
+                }
+                const std::int16_t relative = read_i16_le(image.code + pc);
+                pc += 2;
+                call_stack.push_back(pc);
+                if (!checked_jump(relative)) {
+                    std::cerr << "error: call outside code\n";
+                    return 2;
+                }
+                break;
             }
             case Op::Ret: {
                 // TODO [CLVM-EXT-02]: pop call_stack → pc; underflow → "return stack underflow"
-                std::cerr << "error: RET not implemented\n";
-                return 2;
+                if (call_stack.empty()) {
+                    std::cerr << "error: return stack underflow\n";
+                    return 2;
+                }
+                pc = call_stack.back();
+                call_stack.pop_back();
+                break;
             }
             case Op::Store: {
-                // TODO [CLVM-EXT-03]: pop addr, value; bounds; write i32 LE
-                (void)mem;
-                (void)mem_in_bounds(0);
-                std::cerr << "error: STORE not implemented\n";
-                return 2;
+                std::int32_t addr = 0;
+                std::int32_t value = 0;
+                if (!pop_value(stack, addr) || !pop_value(stack, value)) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                if (!mem_in_bounds(addr)) {
+                    std::cerr << "error: memory out of bounds\n";
+                    return 2;
+                }
+                const auto u = static_cast<std::uint32_t>(value);
+                mem[static_cast<std::size_t>(addr) + 0] = static_cast<std::uint8_t>(u & 0xFF);
+                mem[static_cast<std::size_t>(addr) + 1] = static_cast<std::uint8_t>((u >> 8) & 0xFF);
+                mem[static_cast<std::size_t>(addr) + 2] = static_cast<std::uint8_t>((u >> 16) & 0xFF);
+                mem[static_cast<std::size_t>(addr) + 3] = static_cast<std::uint8_t>((u >> 24) & 0xFF);
+                break;
             }
             case Op::Load: {
-                // TODO [CLVM-EXT-03]: pop addr; bounds; push i32 LE
-                std::cerr << "error: LOAD not implemented\n";
-                return 2;
+                std::int32_t addr = 0;
+                if (!pop_value(stack, addr)) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                if (!mem_in_bounds(addr)) {
+                    std::cerr << "error: memory out of bounds\n";
+                    return 2;
+                }
+                if (stack.size() >= kMaxStack) {
+                    std::cerr << "error: stack overflow\n";
+                    return 2;
+                }
+                stack.push_back(read_i32_le(mem.data() + static_cast<std::size_t>(addr)));
+                break;
             }
             case Op::Drop:
-            case Op::Swap:
+                if (!pop_value(stack, lhs)) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                break;
+            case Op::Swap: {
+                if (!pop_value(stack, rhs) || !pop_value(stack, lhs)) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                stack.push_back(rhs);
+                stack.push_back(lhs);
+                break;
+            }
             case Op::Eq:
             case Op::Lt:
-            case Op::Jnz:
-                // TODO [CLVM-EXT-04]: DROP/SWAP/EQ/LT/JNZ
-                std::cerr << "error: extended opcode not implemented\n";
-                return 2;
+                if (!pop_value(stack, rhs) || !pop_value(stack, lhs)) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                if (op == Op::Eq) {
+                    stack.push_back(lhs == rhs ? 1 : 0);
+                } else {
+                    stack.push_back(lhs < rhs ? 1 : 0);
+                }
+                break;
+            case Op::Jnz: {
+                if (!need(2)) {
+                    std::cerr << "error: truncated JNZ\n";
+                    return 2;
+                }
+                const std::int16_t relative = read_i16_le(image.code + pc);
+                pc += 2;
+                if (!pop_value(stack, lhs)) {
+                    std::cerr << "error: stack underflow\n";
+                    return 2;
+                }
+                if (lhs != 0 && !checked_jump(relative)) {
+                    std::cerr << "error: jump outside code\n";
+                    return 2;
+                }
+                break;
+            }
             default:
                 std::cerr << "error: unknown opcode\n";
                 return 2;
